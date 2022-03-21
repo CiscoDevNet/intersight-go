@@ -29,7 +29,7 @@ type IamLdapDnsParameters struct {
 	// Forest name that acts as a source for a DNS query.
 	SearchForest *string `json:"SearchForest,omitempty"`
 	// Source of the domain name used for the DNS SRV request. * `Extracted` - The domain name extracted-domain from the login ID. * `Configured` - The configured-search domain. * `ConfiguredExtracted` - The domain name extracted from the login ID than the configured-search domain.
-	Source *string `json:"Source,omitempty"`
+	Source               *string `json:"Source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *IamLdapDnsParameters) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapDnsParameters) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *IamLdapDnsParameters) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapDnsParameters) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -345,5 +345,3 @@ func (v *NullableIamLdapDnsParameters) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

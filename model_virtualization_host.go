@@ -29,7 +29,7 @@ type VirtualizationHost struct {
 	// Flag to indicate whether the configuration is created from inventory object.
 	Discovered *bool `json:"Discovered,omitempty"`
 	// If true, move powered-off and suspended virtual machines to other hosts in the cluster.
-	Evacuate *bool `json:"Evacuate,omitempty"`
+	Evacuate   *bool                                       `json:"Evacuate,omitempty"`
 	HostConfig NullableVirtualizationBaseHostConfiguration `json:"HostConfig,omitempty"`
 	// Identifies the broad product type of the hypervisor but without any version information. It is here to easily identify the type of the virtual machine. There are other entities (Host, Cluster, etc.) that can be indirectly used to determine the hypervisor but a direct attribute makes it easier to work with. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 	HypervisorType *string `json:"HypervisorType,omitempty"`
@@ -44,10 +44,10 @@ type VirtualizationHost struct {
 	// Serial number of this host (internally generated).
 	Serial *string `json:"Serial,omitempty"`
 	// Commercial vendor details of this hardware.
-	Vendor *string `json:"Vendor,omitempty"`
-	Inventory *VirtualizationBaseHostRelationship `json:"Inventory,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Vendor               *string                              `json:"Vendor,omitempty"`
+	Inventory            *VirtualizationBaseHostRelationship  `json:"Inventory,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship    `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *VirtualizationHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *VirtualizationHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -241,7 +241,7 @@ func (o *VirtualizationHost) GetHostConfig() VirtualizationBaseHostConfiguration
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationHost) GetHostConfigOk() (*VirtualizationBaseHostConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HostConfig.Get(), o.HostConfig.IsSet()
@@ -260,6 +260,7 @@ func (o *VirtualizationHost) HasHostConfig() bool {
 func (o *VirtualizationHost) SetHostConfig(v VirtualizationBaseHostConfiguration) {
 	o.HostConfig.Set(&v)
 }
+
 // SetHostConfigNil sets the value for HostConfig to be an explicit nil
 func (o *VirtualizationHost) SetHostConfigNil() {
 	o.HostConfig.Set(nil)
@@ -667,7 +668,7 @@ func (o *VirtualizationHost) UnmarshalJSON(bytes []byte) (err error) {
 		// Flag to indicate whether the configuration is created from inventory object.
 		Discovered *bool `json:"Discovered,omitempty"`
 		// If true, move powered-off and suspended virtual machines to other hosts in the cluster.
-		Evacuate *bool `json:"Evacuate,omitempty"`
+		Evacuate   *bool                                       `json:"Evacuate,omitempty"`
 		HostConfig NullableVirtualizationBaseHostConfiguration `json:"HostConfig,omitempty"`
 		// Identifies the broad product type of the hypervisor but without any version information. It is here to easily identify the type of the virtual machine. There are other entities (Host, Cluster, etc.) that can be indirectly used to determine the hypervisor but a direct attribute makes it easier to work with. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 		HypervisorType *string `json:"HypervisorType,omitempty"`
@@ -682,10 +683,10 @@ func (o *VirtualizationHost) UnmarshalJSON(bytes []byte) (err error) {
 		// Serial number of this host (internally generated).
 		Serial *string `json:"Serial,omitempty"`
 		// Commercial vendor details of this hardware.
-		Vendor *string `json:"Vendor,omitempty"`
-		Inventory *VirtualizationBaseHostRelationship `json:"Inventory,omitempty"`
+		Vendor           *string                              `json:"Vendor,omitempty"`
+		Inventory        *VirtualizationBaseHostRelationship  `json:"Inventory,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		WorkflowInfo     *WorkflowWorkflowInfoRelationship    `json:"WorkflowInfo,omitempty"`
 	}
 
 	varVirtualizationHostWithoutEmbeddedStruct := VirtualizationHostWithoutEmbeddedStruct{}
@@ -802,5 +803,3 @@ func (v *NullableVirtualizationHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

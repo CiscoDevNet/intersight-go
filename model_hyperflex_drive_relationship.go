@@ -19,19 +19,18 @@ import (
 // HyperflexDriveRelationship - A relationship to the 'hyperflex.Drive' resource, or the expanded 'hyperflex.Drive' resource, or the 'null' value.
 type HyperflexDriveRelationship struct {
 	HyperflexDrive *HyperflexDrive
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // HyperflexDriveAsHyperflexDriveRelationship is a convenience function that returns HyperflexDrive wrapped in HyperflexDriveRelationship
 func HyperflexDriveAsHyperflexDriveRelationship(v *HyperflexDrive) HyperflexDriveRelationship {
-	return HyperflexDriveRelationship{ HyperflexDrive: v}
+	return HyperflexDriveRelationship{HyperflexDrive: v}
 }
 
 // MoMoRefAsHyperflexDriveRelationship is a convenience function that returns MoMoRef wrapped in HyperflexDriveRelationship
 func MoMoRefAsHyperflexDriveRelationship(v *MoMoRef) HyperflexDriveRelationship {
-	return HyperflexDriveRelationship{ MoMoRef: v}
+	return HyperflexDriveRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexDriveRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexDriveRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexDriveRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexDriveRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexDrive != nil {
 		return obj.HyperflexDrive
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexDriveRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

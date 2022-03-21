@@ -19,31 +19,30 @@ import (
 // BiosTokenSettingsResponse - The response body of a HTTP GET request for the 'bios.TokenSettings' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'bios.TokenSettings' resources.
 type BiosTokenSettingsResponse struct {
 	BiosTokenSettingsList *BiosTokenSettingsList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // BiosTokenSettingsListAsBiosTokenSettingsResponse is a convenience function that returns BiosTokenSettingsList wrapped in BiosTokenSettingsResponse
 func BiosTokenSettingsListAsBiosTokenSettingsResponse(v *BiosTokenSettingsList) BiosTokenSettingsResponse {
-	return BiosTokenSettingsResponse{ BiosTokenSettingsList: v}
+	return BiosTokenSettingsResponse{BiosTokenSettingsList: v}
 }
 
 // MoAggregateTransformAsBiosTokenSettingsResponse is a convenience function that returns MoAggregateTransform wrapped in BiosTokenSettingsResponse
 func MoAggregateTransformAsBiosTokenSettingsResponse(v *MoAggregateTransform) BiosTokenSettingsResponse {
-	return BiosTokenSettingsResponse{ MoAggregateTransform: v}
+	return BiosTokenSettingsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBiosTokenSettingsResponse is a convenience function that returns MoDocumentCount wrapped in BiosTokenSettingsResponse
 func MoDocumentCountAsBiosTokenSettingsResponse(v *MoDocumentCount) BiosTokenSettingsResponse {
-	return BiosTokenSettingsResponse{ MoDocumentCount: v}
+	return BiosTokenSettingsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBiosTokenSettingsResponse is a convenience function that returns MoTagSummary wrapped in BiosTokenSettingsResponse
 func MoTagSummaryAsBiosTokenSettingsResponse(v *MoTagSummary) BiosTokenSettingsResponse {
-	return BiosTokenSettingsResponse{ MoTagSummary: v}
+	return BiosTokenSettingsResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosTokenSettingsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BiosTokenSettingsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosTokenSettingsResponse) GetActualInstance() (interface{}) {
+func (obj *BiosTokenSettingsResponse) GetActualInstance() interface{} {
 	if obj.BiosTokenSettingsList != nil {
 		return obj.BiosTokenSettingsList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBiosTokenSettingsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

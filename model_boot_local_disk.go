@@ -23,10 +23,10 @@ type BootLocalDisk struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                 `json:"ObjectType"`
 	Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 	// The slot id of the local disk device. Supported values for Standalone Rack servers are (1-205, \"M\", \"HBA\", \"SAS\", \"RAID\", \"MRAID\", \"MRAID1\", \"MRAID2\", \"MSTOR-RAID\"). Supported values for FI-attached servers are (1-205, \"MRAID\", \"FMEZZ1-SAS\", \"MRAID1\", \"MRAID2\", \"MSTOR-RAID\", \"MSTOR-RAID-1\", \"MSTOR-RAID-2\").
-	Slot *string `json:"Slot,omitempty"`
+	Slot                 *string `json:"Slot,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *BootLocalDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootLocalDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *BootLocalDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootLocalDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *BootLocalDisk) GetBootloader() BootBootloader {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BootLocalDisk) GetBootloaderOk() (*BootBootloader, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bootloader.Get(), o.Bootloader.IsSet()
@@ -137,6 +137,7 @@ func (o *BootLocalDisk) HasBootloader() bool {
 func (o *BootLocalDisk) SetBootloader(v BootBootloader) {
 	o.Bootloader.Set(&v)
 }
+
 // SetBootloaderNil sets the value for Bootloader to be an explicit nil
 func (o *BootLocalDisk) SetBootloaderNil() {
 	o.Bootloader.Set(nil)
@@ -214,7 +215,7 @@ func (o *BootLocalDisk) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                 `json:"ObjectType"`
 		Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 		// The slot id of the local disk device. Supported values for Standalone Rack servers are (1-205, \"M\", \"HBA\", \"SAS\", \"RAID\", \"MRAID\", \"MRAID1\", \"MRAID2\", \"MSTOR-RAID\"). Supported values for FI-attached servers are (1-205, \"MRAID\", \"FMEZZ1-SAS\", \"MRAID1\", \"MRAID2\", \"MSTOR-RAID\", \"MSTOR-RAID-1\", \"MSTOR-RAID-2\").
 		Slot *string `json:"Slot,omitempty"`
@@ -310,5 +311,3 @@ func (v *NullableBootLocalDisk) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

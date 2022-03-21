@@ -18,32 +18,31 @@ import (
 
 // IamRoleResponse - The response body of a HTTP GET request for the 'iam.Role' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.Role' resources.
 type IamRoleResponse struct {
-	IamRoleList *IamRoleList
+	IamRoleList          *IamRoleList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamRoleListAsIamRoleResponse is a convenience function that returns IamRoleList wrapped in IamRoleResponse
 func IamRoleListAsIamRoleResponse(v *IamRoleList) IamRoleResponse {
-	return IamRoleResponse{ IamRoleList: v}
+	return IamRoleResponse{IamRoleList: v}
 }
 
 // MoAggregateTransformAsIamRoleResponse is a convenience function that returns MoAggregateTransform wrapped in IamRoleResponse
 func MoAggregateTransformAsIamRoleResponse(v *MoAggregateTransform) IamRoleResponse {
-	return IamRoleResponse{ MoAggregateTransform: v}
+	return IamRoleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamRoleResponse is a convenience function that returns MoDocumentCount wrapped in IamRoleResponse
 func MoDocumentCountAsIamRoleResponse(v *MoDocumentCount) IamRoleResponse {
-	return IamRoleResponse{ MoDocumentCount: v}
+	return IamRoleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamRoleResponse is a convenience function that returns MoTagSummary wrapped in IamRoleResponse
 func MoTagSummaryAsIamRoleResponse(v *MoTagSummary) IamRoleResponse {
-	return IamRoleResponse{ MoTagSummary: v}
+	return IamRoleResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamRoleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamRoleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamRoleResponse) GetActualInstance() (interface{}) {
+func (obj *IamRoleResponse) GetActualInstance() interface{} {
 	if obj.IamRoleList != nil {
 		return obj.IamRoleList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamRoleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

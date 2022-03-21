@@ -37,8 +37,8 @@ type NiatelemetryMsoContractDetails struct {
 	// Schema name this contract belongs to in Multi-Site Orchestrator.
 	SchemaName *string `json:"SchemaName,omitempty"`
 	// Template name this contract belongs to in Multi-Site Orchestrator.
-	TemplateName *string `json:"TemplateName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TemplateName         *string                              `json:"TemplateName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *NiatelemetryMsoContractDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoContractDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *NiatelemetryMsoContractDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoContractDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *NiatelemetryMsoContractDetails) UnmarshalJSON(bytes []byte) (err error)
 		// Schema name this contract belongs to in Multi-Site Orchestrator.
 		SchemaName *string `json:"SchemaName,omitempty"`
 		// Template name this contract belongs to in Multi-Site Orchestrator.
-		TemplateName *string `json:"TemplateName,omitempty"`
+		TemplateName     *string                              `json:"TemplateName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableNiatelemetryMsoContractDetails) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

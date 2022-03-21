@@ -19,31 +19,30 @@ import (
 // CapabilitySiocModuleDescriptorResponse - The response body of a HTTP GET request for the 'capability.SiocModuleDescriptor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.SiocModuleDescriptor' resources.
 type CapabilitySiocModuleDescriptorResponse struct {
 	CapabilitySiocModuleDescriptorList *CapabilitySiocModuleDescriptorList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 }
 
 // CapabilitySiocModuleDescriptorListAsCapabilitySiocModuleDescriptorResponse is a convenience function that returns CapabilitySiocModuleDescriptorList wrapped in CapabilitySiocModuleDescriptorResponse
 func CapabilitySiocModuleDescriptorListAsCapabilitySiocModuleDescriptorResponse(v *CapabilitySiocModuleDescriptorList) CapabilitySiocModuleDescriptorResponse {
-	return CapabilitySiocModuleDescriptorResponse{ CapabilitySiocModuleDescriptorList: v}
+	return CapabilitySiocModuleDescriptorResponse{CapabilitySiocModuleDescriptorList: v}
 }
 
 // MoAggregateTransformAsCapabilitySiocModuleDescriptorResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilitySiocModuleDescriptorResponse
 func MoAggregateTransformAsCapabilitySiocModuleDescriptorResponse(v *MoAggregateTransform) CapabilitySiocModuleDescriptorResponse {
-	return CapabilitySiocModuleDescriptorResponse{ MoAggregateTransform: v}
+	return CapabilitySiocModuleDescriptorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilitySiocModuleDescriptorResponse is a convenience function that returns MoDocumentCount wrapped in CapabilitySiocModuleDescriptorResponse
 func MoDocumentCountAsCapabilitySiocModuleDescriptorResponse(v *MoDocumentCount) CapabilitySiocModuleDescriptorResponse {
-	return CapabilitySiocModuleDescriptorResponse{ MoDocumentCount: v}
+	return CapabilitySiocModuleDescriptorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilitySiocModuleDescriptorResponse is a convenience function that returns MoTagSummary wrapped in CapabilitySiocModuleDescriptorResponse
 func MoTagSummaryAsCapabilitySiocModuleDescriptorResponse(v *MoTagSummary) CapabilitySiocModuleDescriptorResponse {
-	return CapabilitySiocModuleDescriptorResponse{ MoTagSummary: v}
+	return CapabilitySiocModuleDescriptorResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilitySiocModuleDescriptorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilitySiocModuleDescriptorResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *CapabilitySiocModuleDescriptorResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilitySiocModuleDescriptorResponse) GetActualInstance() interface{} {
 	if obj.CapabilitySiocModuleDescriptorList != nil {
 		return obj.CapabilitySiocModuleDescriptorList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilitySiocModuleDescriptorResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

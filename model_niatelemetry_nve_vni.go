@@ -35,7 +35,7 @@ type NiatelemetryNveVni struct {
 	// Return value of cp vni down count.
 	DpVniDown *int64 `json:"DpVniDown,omitempty"`
 	// Return value of cp vni up count.
-	DpVniUp *int64 `json:"DpVniUp,omitempty"`
+	DpVniUp              *int64 `json:"DpVniUp,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryNveVni) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNveVni) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *NiatelemetryNveVni) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNveVni) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -464,5 +464,3 @@ func (v *NullableNiatelemetryNveVni) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

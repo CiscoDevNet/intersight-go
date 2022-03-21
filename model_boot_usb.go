@@ -25,7 +25,7 @@ type BootUsb struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The subtype for the selected device type. * `None` - No sub type for USB boot device. * `usb-cd` - Use of Compact Disk (CD) as sub-type for the USB boot device. * `usb-fdd` - Use of Floppy Disk Drive (FDD) as sub-type for the USB boot device. * `usb-hdd` - Use of Hard Disk Drive (HDD) as sub-type for the USB boot device.
-	Subtype *string `json:"Subtype,omitempty"`
+	Subtype              *string `json:"Subtype,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *BootUsb) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootUsb) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *BootUsb) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootUsb) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -265,5 +265,3 @@ func (v *NullableBootUsb) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

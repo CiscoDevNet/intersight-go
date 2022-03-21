@@ -24,7 +24,7 @@ type PolicyAbstractPolicyAllOf struct {
 	// Description of the policy.
 	Description *string `json:"Description,omitempty"`
 	// Name of the concrete policy.
-	Name *string `json:"Name,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,7 +62,7 @@ func (o *PolicyAbstractPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -86,7 +86,7 @@ func (o *PolicyAbstractPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,5 +238,3 @@ func (v *NullablePolicyAbstractPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

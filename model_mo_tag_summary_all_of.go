@@ -18,8 +18,8 @@ import (
 // MoTagSummaryAllOf struct for MoTagSummaryAllOf
 type MoTagSummaryAllOf struct {
 	// A discriminator value to disambiguate the schema of a HTTP GET response body.
-	ObjectType *string `json:"ObjectType,omitempty"`
-	Results []MoTagKeySummary `json:"Results,omitempty"`
+	ObjectType           *string           `json:"ObjectType,omitempty"`
+	Results              []MoTagKeySummary `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *MoTagSummaryAllOf) SetObjectType(v string) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoTagSummaryAllOf) GetResults() []MoTagKeySummary {
-	if o == nil  {
+	if o == nil {
 		var ret []MoTagKeySummary
 		return ret
 	}
@@ -176,5 +176,3 @@ func (v *NullableMoTagSummaryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

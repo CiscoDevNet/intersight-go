@@ -22,7 +22,7 @@ type CommHttpProxyPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *CommHttpProxyPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CommHttpProxyPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *CommHttpProxyPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CommHttpProxyPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *CommHttpProxyPolicyAllOf) SetObjectType(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommHttpProxyPolicyAllOf) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -205,5 +205,3 @@ func (v *NullableCommHttpProxyPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

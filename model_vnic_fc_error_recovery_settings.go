@@ -33,7 +33,7 @@ type VnicFcErrorRecoverySettings struct {
 	// The number of milliseconds the port should actually be down before it is marked down and fabric connectivity is lost.
 	LinkDownTimeout *int64 `json:"LinkDownTimeout,omitempty"`
 	// The number of milliseconds a remote Fibre Channel port should be offline before informing the SCSI upper layer that the port is unavailable. For a server with a VIC adapter running ESXi, the recommended value is 10000. For a server with a port used to boot a Windows OS from the SAN, the recommended value is 5000 milliseconds.
-	PortDownTimeout *int64 `json:"PortDownTimeout,omitempty"`
+	PortDownTimeout      *int64 `json:"PortDownTimeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *VnicFcErrorRecoverySettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcErrorRecoverySettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *VnicFcErrorRecoverySettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcErrorRecoverySettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -439,5 +439,3 @@ func (v *NullableVnicFcErrorRecoverySettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

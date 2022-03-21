@@ -20,7 +20,7 @@ type StorageFlexFlashVirtualDriveListAllOf struct {
 	// The total number of 'storage.FlexFlashVirtualDrive' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.FlexFlashVirtualDrive' resources matching the request.
-	Results []StorageFlexFlashVirtualDrive `json:"Results,omitempty"`
+	Results              []StorageFlexFlashVirtualDrive `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageFlexFlashVirtualDriveListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexFlashVirtualDriveListAllOf) GetResults() []StorageFlexFlashVirtualDrive {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexFlashVirtualDrive
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageFlexFlashVirtualDriveListAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

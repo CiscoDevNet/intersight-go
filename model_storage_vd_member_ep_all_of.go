@@ -30,10 +30,10 @@ type StorageVdMemberEpAllOf struct {
 	// The span id number of the virtual drive.
 	SpanId *string `json:"SpanId,omitempty"`
 	// The local disk slot number as id.
-	VdMemberEpId *int64 `json:"VdMemberEpId,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageVirtualDrive *StorageVirtualDriveRelationship `json:"StorageVirtualDrive,omitempty"`
+	VdMemberEpId         *int64                               `json:"VdMemberEpId,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StorageVirtualDrive  *StorageVirtualDriveRelationship     `json:"StorageVirtualDrive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *StorageVdMemberEpAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVdMemberEpAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *StorageVdMemberEpAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVdMemberEpAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -467,5 +467,3 @@ func (v *NullableStorageVdMemberEpAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

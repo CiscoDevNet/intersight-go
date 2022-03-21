@@ -18,20 +18,19 @@ import (
 
 // SecurityUnitRelationship - A relationship to the 'security.Unit' resource, or the expanded 'security.Unit' resource, or the 'null' value.
 type SecurityUnitRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 	SecurityUnit *SecurityUnit
 }
 
 // MoMoRefAsSecurityUnitRelationship is a convenience function that returns MoMoRef wrapped in SecurityUnitRelationship
 func MoMoRefAsSecurityUnitRelationship(v *MoMoRef) SecurityUnitRelationship {
-	return SecurityUnitRelationship{ MoMoRef: v}
+	return SecurityUnitRelationship{MoMoRef: v}
 }
 
 // SecurityUnitAsSecurityUnitRelationship is a convenience function that returns SecurityUnit wrapped in SecurityUnitRelationship
 func SecurityUnitAsSecurityUnitRelationship(v *SecurityUnit) SecurityUnitRelationship {
-	return SecurityUnitRelationship{ SecurityUnit: v}
+	return SecurityUnitRelationship{SecurityUnit: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SecurityUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SecurityUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SecurityUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *SecurityUnitRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSecurityUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

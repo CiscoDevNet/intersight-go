@@ -20,7 +20,7 @@ type TelemetryDruidDefaultLimitSpecAllOf struct {
 	// How many rows to return. If not specified, all rows will be returned.
 	Limit int32 `json:"limit"`
 	// null
-	Columns []TelemetryDruidOrderByColumnSpec `json:"columns"`
+	Columns              []TelemetryDruidOrderByColumnSpec `json:"columns"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidDefaultLimitSpecAllOf) GetLimit() int32 {
 // GetLimitOk returns a tuple with the Limit field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDefaultLimitSpecAllOf) GetLimitOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Limit, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidDefaultLimitSpecAllOf) GetColumns() []TelemetryDruidOrder
 // GetColumnsOk returns a tuple with the Columns field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDefaultLimitSpecAllOf) GetColumnsOk() (*[]TelemetryDruidOrderByColumnSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Columns, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidDefaultLimitSpecAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

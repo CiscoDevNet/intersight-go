@@ -31,8 +31,8 @@ type ApplianceGroupStatus struct {
 	// The overall API status from this group's applications.
 	OverallStatus *string `json:"OverallStatus,omitempty"`
 	// An array of relationships to applianceAppStatus resources.
-	Apps []ApplianceAppStatusRelationship `json:"Apps,omitempty"`
-	SystemStatus *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
+	Apps                 []ApplianceAppStatusRelationship   `json:"Apps,omitempty"`
+	SystemStatus         *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *ApplianceGroupStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceGroupStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *ApplianceGroupStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceGroupStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *ApplianceGroupStatus) SetOverallStatus(v string) {
 
 // GetApps returns the Apps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceGroupStatus) GetApps() []ApplianceAppStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceAppStatusRelationship
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *ApplianceGroupStatus) UnmarshalJSON(bytes []byte) (err error) {
 		// The overall API status from this group's applications.
 		OverallStatus *string `json:"OverallStatus,omitempty"`
 		// An array of relationships to applianceAppStatus resources.
-		Apps []ApplianceAppStatusRelationship `json:"Apps,omitempty"`
+		Apps         []ApplianceAppStatusRelationship   `json:"Apps,omitempty"`
 		SystemStatus *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
 	}
 
@@ -422,5 +422,3 @@ func (v *NullableApplianceGroupStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

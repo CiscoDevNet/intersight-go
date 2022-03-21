@@ -29,7 +29,7 @@ type VirtualizationIpAddressInfo struct {
 	// An IP address is a 32-bit number. It uniquely identifies a host in given network.
 	IpAddress *string `json:"IpAddress,omitempty"`
 	// A 32 bit number which helps to identify the host and rest of the network.
-	SubnetMask *string `json:"SubnetMask,omitempty"`
+	SubnetMask           *string `json:"SubnetMask,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VirtualizationIpAddressInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIpAddressInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationIpAddressInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIpAddressInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableVirtualizationIpAddressInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

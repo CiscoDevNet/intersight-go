@@ -20,30 +20,29 @@ import (
 type FcpoolPoolMemberResponse struct {
 	FcpoolPoolMemberList *FcpoolPoolMemberList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FcpoolPoolMemberListAsFcpoolPoolMemberResponse is a convenience function that returns FcpoolPoolMemberList wrapped in FcpoolPoolMemberResponse
 func FcpoolPoolMemberListAsFcpoolPoolMemberResponse(v *FcpoolPoolMemberList) FcpoolPoolMemberResponse {
-	return FcpoolPoolMemberResponse{ FcpoolPoolMemberList: v}
+	return FcpoolPoolMemberResponse{FcpoolPoolMemberList: v}
 }
 
 // MoAggregateTransformAsFcpoolPoolMemberResponse is a convenience function that returns MoAggregateTransform wrapped in FcpoolPoolMemberResponse
 func MoAggregateTransformAsFcpoolPoolMemberResponse(v *MoAggregateTransform) FcpoolPoolMemberResponse {
-	return FcpoolPoolMemberResponse{ MoAggregateTransform: v}
+	return FcpoolPoolMemberResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFcpoolPoolMemberResponse is a convenience function that returns MoDocumentCount wrapped in FcpoolPoolMemberResponse
 func MoDocumentCountAsFcpoolPoolMemberResponse(v *MoDocumentCount) FcpoolPoolMemberResponse {
-	return FcpoolPoolMemberResponse{ MoDocumentCount: v}
+	return FcpoolPoolMemberResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFcpoolPoolMemberResponse is a convenience function that returns MoTagSummary wrapped in FcpoolPoolMemberResponse
 func MoTagSummaryAsFcpoolPoolMemberResponse(v *MoTagSummary) FcpoolPoolMemberResponse {
-	return FcpoolPoolMemberResponse{ MoTagSummary: v}
+	return FcpoolPoolMemberResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FcpoolPoolMemberResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FcpoolPoolMemberResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FcpoolPoolMemberResponse) GetActualInstance() (interface{}) {
+func (obj *FcpoolPoolMemberResponse) GetActualInstance() interface{} {
 	if obj.FcpoolPoolMemberList != nil {
 		return obj.FcpoolPoolMemberList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFcpoolPoolMemberResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

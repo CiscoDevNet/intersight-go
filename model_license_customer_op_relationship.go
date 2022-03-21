@@ -19,19 +19,18 @@ import (
 // LicenseCustomerOpRelationship - A relationship to the 'license.CustomerOp' resource, or the expanded 'license.CustomerOp' resource, or the 'null' value.
 type LicenseCustomerOpRelationship struct {
 	LicenseCustomerOp *LicenseCustomerOp
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // LicenseCustomerOpAsLicenseCustomerOpRelationship is a convenience function that returns LicenseCustomerOp wrapped in LicenseCustomerOpRelationship
 func LicenseCustomerOpAsLicenseCustomerOpRelationship(v *LicenseCustomerOp) LicenseCustomerOpRelationship {
-	return LicenseCustomerOpRelationship{ LicenseCustomerOp: v}
+	return LicenseCustomerOpRelationship{LicenseCustomerOp: v}
 }
 
 // MoMoRefAsLicenseCustomerOpRelationship is a convenience function that returns MoMoRef wrapped in LicenseCustomerOpRelationship
 func MoMoRefAsLicenseCustomerOpRelationship(v *MoMoRef) LicenseCustomerOpRelationship {
-	return LicenseCustomerOpRelationship{ MoMoRef: v}
+	return LicenseCustomerOpRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseCustomerOpRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src LicenseCustomerOpRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseCustomerOpRelationship) GetActualInstance() (interface{}) {
+func (obj *LicenseCustomerOpRelationship) GetActualInstance() interface{} {
 	if obj.LicenseCustomerOp != nil {
 		return obj.LicenseCustomerOp
 	}
@@ -137,5 +136,3 @@ func (v *NullableLicenseCustomerOpRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

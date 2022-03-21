@@ -18,32 +18,31 @@ import (
 
 // BootPxeDeviceResponse - The response body of a HTTP GET request for the 'boot.PxeDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'boot.PxeDevice' resources.
 type BootPxeDeviceResponse struct {
-	BootPxeDeviceList *BootPxeDeviceList
+	BootPxeDeviceList    *BootPxeDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BootPxeDeviceListAsBootPxeDeviceResponse is a convenience function that returns BootPxeDeviceList wrapped in BootPxeDeviceResponse
 func BootPxeDeviceListAsBootPxeDeviceResponse(v *BootPxeDeviceList) BootPxeDeviceResponse {
-	return BootPxeDeviceResponse{ BootPxeDeviceList: v}
+	return BootPxeDeviceResponse{BootPxeDeviceList: v}
 }
 
 // MoAggregateTransformAsBootPxeDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootPxeDeviceResponse
 func MoAggregateTransformAsBootPxeDeviceResponse(v *MoAggregateTransform) BootPxeDeviceResponse {
-	return BootPxeDeviceResponse{ MoAggregateTransform: v}
+	return BootPxeDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootPxeDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootPxeDeviceResponse
 func MoDocumentCountAsBootPxeDeviceResponse(v *MoDocumentCount) BootPxeDeviceResponse {
-	return BootPxeDeviceResponse{ MoDocumentCount: v}
+	return BootPxeDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootPxeDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootPxeDeviceResponse
 func MoTagSummaryAsBootPxeDeviceResponse(v *MoTagSummary) BootPxeDeviceResponse {
-	return BootPxeDeviceResponse{ MoTagSummary: v}
+	return BootPxeDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootPxeDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootPxeDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootPxeDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootPxeDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootPxeDeviceList != nil {
 		return obj.BootPxeDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootPxeDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

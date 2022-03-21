@@ -54,9 +54,9 @@ type VirtualizationVmwareDatastoreClusterAllOf struct {
 	// Minimum level of consumed space for each datastore that is the threshold for action.
 	UtilizedSpaceThreshold *int32 `json:"UtilizedSpaceThreshold,omitempty"`
 	// Storage DRS behavior when it generates recommendations for VM evacuations from datastores in a datastore cluster.
-	VmEvacuationAutomationMode *string `json:"VmEvacuationAutomationMode,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VmEvacuationAutomationMode *string                                     `json:"VmEvacuationAutomationMode,omitempty"`
+	Datacenter                 *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _VirtualizationVmwareDatastoreClusterAllOf VirtualizationVmwareDatastoreClusterAllOf
@@ -101,7 +101,7 @@ func (o *VirtualizationVmwareDatastoreClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatastoreClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -125,7 +125,7 @@ func (o *VirtualizationVmwareDatastoreClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatastoreClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -853,5 +853,3 @@ func (v *NullableVirtualizationVmwareDatastoreClusterAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

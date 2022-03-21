@@ -37,8 +37,8 @@ type NiatelemetrySnmpSrc struct {
 	// List of SNMP trap destination for the above src.
 	SnmpTrapDest *string `json:"SnmpTrapDest,omitempty"`
 	// SNMP trap destination group for the above src.
-	SnmpTrapDestGrp *string `json:"SnmpTrapDestGrp,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SnmpTrapDestGrp      *string                              `json:"SnmpTrapDestGrp,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *NiatelemetrySnmpSrc) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySnmpSrc) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *NiatelemetrySnmpSrc) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySnmpSrc) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *NiatelemetrySnmpSrc) UnmarshalJSON(bytes []byte) (err error) {
 		// List of SNMP trap destination for the above src.
 		SnmpTrapDest *string `json:"SnmpTrapDest,omitempty"`
 		// SNMP trap destination group for the above src.
-		SnmpTrapDestGrp *string `json:"SnmpTrapDestGrp,omitempty"`
+		SnmpTrapDestGrp  *string                              `json:"SnmpTrapDestGrp,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableNiatelemetrySnmpSrc) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

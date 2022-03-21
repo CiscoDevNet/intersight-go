@@ -20,7 +20,7 @@ type CondAlarmAggregationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                   `json:"ObjectType"`
 	AlarmSummary NullableCondAlarmSummary `json:"AlarmSummary,omitempty"`
 	// Count of all alarms with severity Critical, irrespective of acknowledgement status.
 	CriticalAlarmsCount *int64 `json:"CriticalAlarmsCount,omitempty"`
@@ -31,9 +31,9 @@ type CondAlarmAggregationAllOf struct {
 	// Managed object type. For example, FI managed object type will be network.Element.
 	MoType *string `json:"MoType,omitempty"`
 	// Count of all alarms with severity Warning, irrespective of acknowledgement status.
-	WarningAlarmsCount *int64 `json:"WarningAlarmsCount,omitempty"`
+	WarningAlarmsCount     *int64                `json:"WarningAlarmsCount,omitempty"`
 	AlarmAggregationSource *MoBaseMoRelationship `json:"AlarmAggregationSource,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _CondAlarmAggregationAllOf CondAlarmAggregationAllOf
@@ -78,7 +78,7 @@ func (o *CondAlarmAggregationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CondAlarmAggregationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *CondAlarmAggregationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CondAlarmAggregationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -126,7 +126,7 @@ func (o *CondAlarmAggregationAllOf) GetAlarmSummary() CondAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CondAlarmAggregationAllOf) GetAlarmSummaryOk() (*CondAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -145,6 +145,7 @@ func (o *CondAlarmAggregationAllOf) HasAlarmSummary() bool {
 func (o *CondAlarmAggregationAllOf) SetAlarmSummary(v CondAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *CondAlarmAggregationAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -444,5 +445,3 @@ func (v *NullableCondAlarmAggregationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

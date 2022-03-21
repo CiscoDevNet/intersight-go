@@ -22,7 +22,7 @@ type PkixEddsaKeySpecAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The EdDSA algorithm, as defined in RFC 8032. * `Ed25519` - The edwards25519 curve, as defined in RFC 8032 section 5.1. * `Ed25519ph` - The edwards25519 curve for the PureEdDSA variant. * `Ed25519ctx` - The edwards25519 curve for the HashEdDSA variant.
-	Algorithm *string `json:"Algorithm,omitempty"`
+	Algorithm            *string `json:"Algorithm,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *PkixEddsaKeySpecAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PkixEddsaKeySpecAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *PkixEddsaKeySpecAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PkixEddsaKeySpecAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -208,5 +208,3 @@ func (v *NullablePkixEddsaKeySpecAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

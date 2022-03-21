@@ -20,13 +20,13 @@ type ConnectorpackUpgradeImpactAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                             `json:"ObjectType"`
 	ConnectorPack []ConnectorpackConnectorPackUpdate `json:"ConnectorPack,omitempty"`
 	// States whether the UCS Director is eligible for an upgrade. Set to true if connector packs are available for upgrade, else set to false.
 	IsEligibleForUpgrade *bool `json:"IsEligibleForUpgrade,omitempty"`
 	// States whether all the requisite updates have been downloaded to the target UCS Director. Set to true if all connector packs required to upgrade UCS Director to the next iteration have been downloaded, else set to false.
-	IsUpdateDownloaded *bool `json:"IsUpdateDownloaded,omitempty"`
-	UcsdInfo *IaasUcsdInfoRelationship `json:"UcsdInfo,omitempty"`
+	IsUpdateDownloaded   *bool                     `json:"IsUpdateDownloaded,omitempty"`
+	UcsdInfo             *IaasUcsdInfoRelationship `json:"UcsdInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConnectorpackUpgradeImpactAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackUpgradeImpactAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConnectorpackUpgradeImpactAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackUpgradeImpactAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *ConnectorpackUpgradeImpactAllOf) SetObjectType(v string) {
 
 // GetConnectorPack returns the ConnectorPack field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorpackUpgradeImpactAllOf) GetConnectorPack() []ConnectorpackConnectorPackUpdate {
-	if o == nil  {
+	if o == nil {
 		var ret []ConnectorpackConnectorPackUpdate
 		return ret
 	}
@@ -317,5 +317,3 @@ func (v *NullableConnectorpackUpgradeImpactAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

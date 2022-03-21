@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceFileGateway FileGateway is a non-persistent model for accessing files from the Intersight. Intersight Appliances queries the FileGateway API, supplying a filename and version, to get the signed URL from the Intersight. Intersight Appliance services uses the signed URLs to download files and store them in the local image cache. Intersight will not store any record of the file access in the initial revision. This model is a pure pass through proxy for the cloud storage service.
@@ -42,8 +42,8 @@ type ApplianceFileGateway struct {
 	// Signed URL's validity period in minutes.
 	ValidityPeriod *int64 `json:"ValidityPeriod,omitempty"`
 	// File version as reported by the cloud storage service.
-	Version *string `json:"Version,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Version              *string                 `json:"Version,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *ApplianceFileGateway) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceFileGateway) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *ApplianceFileGateway) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceFileGateway) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -517,7 +517,7 @@ func (o *ApplianceFileGateway) UnmarshalJSON(bytes []byte) (err error) {
 		// Signed URL's validity period in minutes.
 		ValidityPeriod *int64 `json:"ValidityPeriod,omitempty"`
 		// File version as reported by the cloud storage service.
-		Version *string `json:"Version,omitempty"`
+		Version *string                 `json:"Version,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -627,5 +627,3 @@ func (v *NullableApplianceFileGateway) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

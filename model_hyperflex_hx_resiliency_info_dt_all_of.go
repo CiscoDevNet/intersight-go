@@ -24,8 +24,8 @@ type HyperflexHxResiliencyInfoDtAllOf struct {
 	// The number of copies of data replicated by the cluster. * `ONE_COPY` - The HyperFlex cluster does not replicate data. * `TWO_COPIES` - The HyperFlex cluster keeps 2 copies of data. * `THREE_COPIES` - The HyperFlex cluster keeps 3 copies of data. * `FOUR_COPIES` - The HyperFlex cluster keeps 4 copies of data. * `SIX_COPIES` - The HyperFlex cluster keeps 6 copies of data.
 	DataReplicationFactor *string `json:"DataReplicationFactor,omitempty"`
 	// The number of persistent device disruptions the HyperFlex storage cluster can handle at this point in time.
-	HddFailuresTolerable *int64 `json:"HddFailuresTolerable,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	HddFailuresTolerable *int64   `json:"HddFailuresTolerable,omitempty"`
+	Messages             []string `json:"Messages,omitempty"`
 	// The number of node disruptions the HyperFlex storage cluster can handle at this point in time.
 	NodeFailuresTolerable *int64 `json:"NodeFailuresTolerable,omitempty"`
 	// The state of the storage cluster's compliance with the cluster access policy. * `UNKNOWN` - The HyperFlex cluster's compliance with the data replication policy could not be determined. * `COMPLIANT` - The HyperFlex cluster is compliant with the data replication policy and data is replicated to the configured replication factor. * `NON_COMPLIANT` - The HyperFlex cluster is not compliant with the data replication policy because some data is not replicated.
@@ -75,7 +75,7 @@ func (o *HyperflexHxResiliencyInfoDtAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxResiliencyInfoDtAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexHxResiliencyInfoDtAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxResiliencyInfoDtAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *HyperflexHxResiliencyInfoDtAllOf) SetHddFailuresTolerable(v int64) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexHxResiliencyInfoDtAllOf) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -432,5 +432,3 @@ func (v *NullableHyperflexHxResiliencyInfoDtAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

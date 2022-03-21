@@ -27,7 +27,7 @@ type AssetWorkloadOptimizerHypervOptions struct {
 	// When enabled, all Hyper-V hosts in the same cluster of specified Hyper-V host target will be discovered Each server must still be configured to allow remote management (for example, configuring WinRM using a GPO).
 	DiscoverHostCluster *bool `json:"DiscoverHostCluster,omitempty"`
 	// Fully qualified domain name of the Hyper-V target. It is used to get the name of the Hyper-V cluster node and do Active Directory authentication process through Kerberos scheme.
-	FullDomainName *string `json:"FullDomainName,omitempty"`
+	FullDomainName       *string `json:"FullDomainName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *AssetWorkloadOptimizerHypervOptions) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerHypervOptions) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *AssetWorkloadOptimizerHypervOptions) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerHypervOptions) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableAssetWorkloadOptimizerHypervOptions) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

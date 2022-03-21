@@ -22,18 +22,18 @@ type VirtualizationVirtualMachineAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Action to be performed on a virtual machine (Create, PowerState, Migrate, Clone etc). * `None` - A place holder for the default value. * `PowerState` - Power action is performed on the virtual machine. * `Migrate` - The virtual machine will be migrated from existing node to a different node in cluster. The behavior depends on the underlying hypervisor. * `Create` - The virtual machine will be created on the specified hypervisor. This action is also useful if the virtual machine creation failed during first POST operation on VirtualMachine managed object. User can set this action to retry the virtual machine creation. * `Delete` - The virtual machine will be deleted from the specified hypervisor. User can either set this action or can do a DELETE operation on the VirtualMachine managed object.
-	Action *string `json:"Action,omitempty"`
-	ActionInfo NullableVirtualizationActionInfo `json:"ActionInfo,omitempty"`
-	AffinitySelectors []InfraMetaData `json:"AffinitySelectors,omitempty"`
-	AntiAffinitySelectors []InfraMetaData `json:"AntiAffinitySelectors,omitempty"`
-	CloudInitConfig NullableVirtualizationCloudInitConfig `json:"CloudInitConfig,omitempty"`
+	Action                *string                               `json:"Action,omitempty"`
+	ActionInfo            NullableVirtualizationActionInfo      `json:"ActionInfo,omitempty"`
+	AffinitySelectors     []InfraMetaData                       `json:"AffinitySelectors,omitempty"`
+	AntiAffinitySelectors []InfraMetaData                       `json:"AntiAffinitySelectors,omitempty"`
+	CloudInitConfig       NullableVirtualizationCloudInitConfig `json:"CloudInitConfig,omitempty"`
 	// Cluster where virtual machine is deployed.
 	ClusterEsxi *string `json:"ClusterEsxi,omitempty"`
 	// Number of vCPUs allocated to virtual machine.
 	Cpu *int64 `json:"Cpu,omitempty"`
 	// Flag to indicate whether the configuration is created from inventory object.
-	Discovered *bool `json:"Discovered,omitempty"`
-	Disk []VirtualizationVirtualMachineDisk `json:"Disk,omitempty"`
+	Discovered *bool                              `json:"Discovered,omitempty"`
+	Disk       []VirtualizationVirtualMachineDisk `json:"Disk,omitempty"`
 	// Normally any virtual machine that is still powered on cannot be deleted. The expected sequence from a user is to first power off the virtual machine and then invoke the delete operation. However, in special circumstances, the owner of the virtual machine may know very well that the virtual machine is no longer needed and just wants to dispose it off. In such situations a delete operation of a virtual machine object is accepted only when this forceDelete attribute is set to true. Under normal circumstances (forceDelete is false), delete operation first confirms that the virtual machine is powered off and then proceeds to delete the virtual machine.
 	ForceDelete *bool `json:"ForceDelete,omitempty"`
 	// Guest operating system running on virtual machine. * `linux` - A Linux operating system. * `windows` - A Windows operating system.
@@ -41,9 +41,9 @@ type VirtualizationVirtualMachineAllOf struct {
 	// Host where virtual machine is deployed.
 	HostEsxi *string `json:"HostEsxi,omitempty"`
 	// Identifies the broad product type of the hypervisor but without any version information. It is here to easily identify the type of the virtual machine. There are other entities (Host, Cluster, etc.) that can be indirectly used to determine the hypervisor but a direct attribute makes it easier to work with. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
-	HypervisorType *string `json:"HypervisorType,omitempty"`
-	Interfaces []VirtualizationNetworkInterface `json:"Interfaces,omitempty"`
-	Labels []InfraMetaData `json:"Labels,omitempty"`
+	HypervisorType *string                          `json:"HypervisorType,omitempty"`
+	Interfaces     []VirtualizationNetworkInterface `json:"Interfaces,omitempty"`
+	Labels         []InfraMetaData                  `json:"Labels,omitempty"`
 	// Virtual machine memory in mebi bytes (one mebibyte, 1MiB, is 1048576 bytes, and 1KiB is 1024 bytes). Input must be a whole number and scientific notation is not acceptable. For example, enter 1730 and not 1.73e03.
 	Memory *int64 `json:"Memory,omitempty"`
 	// Virtual machine name that is unique. Hypervisors enforce platform specific limits and character sets. The name length limit, both min and max, vary among hypervisors. Therefore, the basic limits are set here and proper enforcement is done elsewhere.
@@ -51,13 +51,13 @@ type VirtualizationVirtualMachineAllOf struct {
 	// Expected power state of virtual machine (PowerOn, PowerOff, Restart). * `PowerOff` - The virtual machine will be powered off if it is already not in powered off state. If it is already powered off, no side-effects are expected. * `PowerOn` - The virtual machine will be powered on if it is already not in powered on state. If it is already powered on, no side-effects are expected. * `Suspend` - The virtual machine will be put into  a suspended state. * `ShutDownGuestOS` - The guest operating system is shut down gracefully. * `RestartGuestOS` - It can either act as a reset switch and abruptly reset the guest operating system, or it can send a restart signal to the guest operating system so that it shuts down gracefully and restarts. * `Reset` - Resets the virtual machine abruptly, with no consideration for work in progress. * `Restart` - The virtual machine will be restarted only if it is in powered on state. If it is powered off, it will not be started up. * `Unknown` - Power state of the entity is unknown.
 	PowerState *string `json:"PowerState,omitempty"`
 	// Identifies the provision type to create a new virtual machine. * `OVA` - Deploy virtual machine using OVA/F file. * `Template` - Provision virtual machine using a template file. * `Discovered` - A virtual machine was 'discovered' and not created from Intersight. No provisioning information is available.
-	ProvisionType *string `json:"ProvisionType,omitempty"`
-	VmConfig NullableVirtualizationBaseVmConfiguration `json:"VmConfig,omitempty"`
-	Cluster *VirtualizationBaseClusterRelationship `json:"Cluster,omitempty"`
-	Host *VirtualizationBaseHostRelationship `json:"Host,omitempty"`
-	Inventory *VirtualizationBaseVirtualMachineRelationship `json:"Inventory,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	ProvisionType        *string                                       `json:"ProvisionType,omitempty"`
+	VmConfig             NullableVirtualizationBaseVmConfiguration     `json:"VmConfig,omitempty"`
+	Cluster              *VirtualizationBaseClusterRelationship        `json:"Cluster,omitempty"`
+	Host                 *VirtualizationBaseHostRelationship           `json:"Host,omitempty"`
+	Inventory            *VirtualizationBaseVirtualMachineRelationship `json:"Inventory,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship             `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -115,7 +115,7 @@ func (o *VirtualizationVirtualMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -139,7 +139,7 @@ func (o *VirtualizationVirtualMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -195,7 +195,7 @@ func (o *VirtualizationVirtualMachineAllOf) GetActionInfo() VirtualizationAction
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVirtualMachineAllOf) GetActionInfoOk() (*VirtualizationActionInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ActionInfo.Get(), o.ActionInfo.IsSet()
@@ -214,6 +214,7 @@ func (o *VirtualizationVirtualMachineAllOf) HasActionInfo() bool {
 func (o *VirtualizationVirtualMachineAllOf) SetActionInfo(v VirtualizationActionInfo) {
 	o.ActionInfo.Set(&v)
 }
+
 // SetActionInfoNil sets the value for ActionInfo to be an explicit nil
 func (o *VirtualizationVirtualMachineAllOf) SetActionInfoNil() {
 	o.ActionInfo.Set(nil)
@@ -226,7 +227,7 @@ func (o *VirtualizationVirtualMachineAllOf) UnsetActionInfo() {
 
 // GetAffinitySelectors returns the AffinitySelectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualMachineAllOf) GetAffinitySelectors() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -259,7 +260,7 @@ func (o *VirtualizationVirtualMachineAllOf) SetAffinitySelectors(v []InfraMetaDa
 
 // GetAntiAffinitySelectors returns the AntiAffinitySelectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualMachineAllOf) GetAntiAffinitySelectors() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -303,7 +304,7 @@ func (o *VirtualizationVirtualMachineAllOf) GetCloudInitConfig() VirtualizationC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVirtualMachineAllOf) GetCloudInitConfigOk() (*VirtualizationCloudInitConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CloudInitConfig.Get(), o.CloudInitConfig.IsSet()
@@ -322,6 +323,7 @@ func (o *VirtualizationVirtualMachineAllOf) HasCloudInitConfig() bool {
 func (o *VirtualizationVirtualMachineAllOf) SetCloudInitConfig(v VirtualizationCloudInitConfig) {
 	o.CloudInitConfig.Set(&v)
 }
+
 // SetCloudInitConfigNil sets the value for CloudInitConfig to be an explicit nil
 func (o *VirtualizationVirtualMachineAllOf) SetCloudInitConfigNil() {
 	o.CloudInitConfig.Set(nil)
@@ -430,7 +432,7 @@ func (o *VirtualizationVirtualMachineAllOf) SetDiscovered(v bool) {
 
 // GetDisk returns the Disk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualMachineAllOf) GetDisk() []VirtualizationVirtualMachineDisk {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVirtualMachineDisk
 		return ret
 	}
@@ -591,7 +593,7 @@ func (o *VirtualizationVirtualMachineAllOf) SetHypervisorType(v string) {
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualMachineAllOf) GetInterfaces() []VirtualizationNetworkInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationNetworkInterface
 		return ret
 	}
@@ -624,7 +626,7 @@ func (o *VirtualizationVirtualMachineAllOf) SetInterfaces(v []VirtualizationNetw
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualMachineAllOf) GetLabels() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -796,7 +798,7 @@ func (o *VirtualizationVirtualMachineAllOf) GetVmConfig() VirtualizationBaseVmCo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVirtualMachineAllOf) GetVmConfigOk() (*VirtualizationBaseVmConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmConfig.Get(), o.VmConfig.IsSet()
@@ -815,6 +817,7 @@ func (o *VirtualizationVirtualMachineAllOf) HasVmConfig() bool {
 func (o *VirtualizationVirtualMachineAllOf) SetVmConfig(v VirtualizationBaseVmConfiguration) {
 	o.VmConfig.Set(&v)
 }
+
 // SetVmConfigNil sets the value for VmConfig to be an explicit nil
 func (o *VirtualizationVirtualMachineAllOf) SetVmConfigNil() {
 	o.VmConfig.Set(nil)
@@ -1154,5 +1157,3 @@ func (v *NullableVirtualizationVirtualMachineAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

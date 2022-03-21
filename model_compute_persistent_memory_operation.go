@@ -27,10 +27,10 @@ type ComputePersistentMemoryOperation struct {
 	// Administrative actions that can be performed on the Persistent Memory Modules. * `None` - No action on the selected Persistent Memory Modules. * `SecureErase` - Secure Erase action on the selected Persistent Memory Modules. * `Unlock` - Unlock action on the selected Persistent Memory Modules.
 	AdminAction *string `json:"AdminAction,omitempty"`
 	// Indicates whether the value of the 'securePassphrase' property has been set.
-	IsSecurePassphraseSet *bool `json:"IsSecurePassphraseSet,omitempty"`
-	Modules []ComputePersistentMemoryModule `json:"Modules,omitempty"`
+	IsSecurePassphraseSet *bool                           `json:"IsSecurePassphraseSet,omitempty"`
+	Modules               []ComputePersistentMemoryModule `json:"Modules,omitempty"`
 	// Secure passphrase of the Persistent Memory Modules of the server.
-	SecurePassphrase *string `json:"SecurePassphrase,omitempty"`
+	SecurePassphrase     *string `json:"SecurePassphrase,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ComputePersistentMemoryOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputePersistentMemoryOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *ComputePersistentMemoryOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputePersistentMemoryOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *ComputePersistentMemoryOperation) SetIsSecurePassphraseSet(v bool) {
 
 // GetModules returns the Modules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePersistentMemoryOperation) GetModules() []ComputePersistentMemoryModule {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputePersistentMemoryModule
 		return ret
 	}
@@ -285,8 +285,8 @@ func (o *ComputePersistentMemoryOperation) UnmarshalJSON(bytes []byte) (err erro
 		// Administrative actions that can be performed on the Persistent Memory Modules. * `None` - No action on the selected Persistent Memory Modules. * `SecureErase` - Secure Erase action on the selected Persistent Memory Modules. * `Unlock` - Unlock action on the selected Persistent Memory Modules.
 		AdminAction *string `json:"AdminAction,omitempty"`
 		// Indicates whether the value of the 'securePassphrase' property has been set.
-		IsSecurePassphraseSet *bool `json:"IsSecurePassphraseSet,omitempty"`
-		Modules []ComputePersistentMemoryModule `json:"Modules,omitempty"`
+		IsSecurePassphraseSet *bool                           `json:"IsSecurePassphraseSet,omitempty"`
+		Modules               []ComputePersistentMemoryModule `json:"Modules,omitempty"`
 		// Secure passphrase of the Persistent Memory Modules of the server.
 		SecurePassphrase *string `json:"SecurePassphrase,omitempty"`
 	}
@@ -385,5 +385,3 @@ func (v *NullableComputePersistentMemoryOperation) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

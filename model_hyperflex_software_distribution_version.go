@@ -27,9 +27,9 @@ type HyperflexSoftwareDistributionVersion struct {
 	// The HyperFlex Software Distribution version.
 	Version *string `json:"Version,omitempty"`
 	// An array of relationships to hyperflexSoftwareDistributionComponent resources.
-	DistributionComponents []HyperflexSoftwareDistributionComponentRelationship `json:"DistributionComponents,omitempty"`
-	SoftwareDistributionEntry *HyperflexSoftwareDistributionEntryRelationship `json:"SoftwareDistributionEntry,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DistributionComponents    []HyperflexSoftwareDistributionComponentRelationship `json:"DistributionComponents,omitempty"`
+	SoftwareDistributionEntry *HyperflexSoftwareDistributionEntryRelationship      `json:"SoftwareDistributionEntry,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _HyperflexSoftwareDistributionVersion HyperflexSoftwareDistributionVersion
@@ -70,7 +70,7 @@ func (o *HyperflexSoftwareDistributionVersion) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionVersion) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *HyperflexSoftwareDistributionVersion) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionVersion) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *HyperflexSoftwareDistributionVersion) SetVersion(v string) {
 
 // GetDistributionComponents returns the DistributionComponents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareDistributionVersion) GetDistributionComponents() []HyperflexSoftwareDistributionComponentRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexSoftwareDistributionComponentRelationship
 		return ret
 	}
@@ -244,8 +244,8 @@ func (o *HyperflexSoftwareDistributionVersion) UnmarshalJSON(bytes []byte) (err 
 		// The HyperFlex Software Distribution version.
 		Version *string `json:"Version,omitempty"`
 		// An array of relationships to hyperflexSoftwareDistributionComponent resources.
-		DistributionComponents []HyperflexSoftwareDistributionComponentRelationship `json:"DistributionComponents,omitempty"`
-		SoftwareDistributionEntry *HyperflexSoftwareDistributionEntryRelationship `json:"SoftwareDistributionEntry,omitempty"`
+		DistributionComponents    []HyperflexSoftwareDistributionComponentRelationship `json:"DistributionComponents,omitempty"`
+		SoftwareDistributionEntry *HyperflexSoftwareDistributionEntryRelationship      `json:"SoftwareDistributionEntry,omitempty"`
 	}
 
 	varHyperflexSoftwareDistributionVersionWithoutEmbeddedStruct := HyperflexSoftwareDistributionVersionWithoutEmbeddedStruct{}
@@ -340,5 +340,3 @@ func (v *NullableHyperflexSoftwareDistributionVersion) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

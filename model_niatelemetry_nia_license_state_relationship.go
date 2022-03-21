@@ -18,20 +18,19 @@ import (
 
 // NiatelemetryNiaLicenseStateRelationship - A relationship to the 'niatelemetry.NiaLicenseState' resource, or the expanded 'niatelemetry.NiaLicenseState' resource, or the 'null' value.
 type NiatelemetryNiaLicenseStateRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 	NiatelemetryNiaLicenseState *NiatelemetryNiaLicenseState
 }
 
 // MoMoRefAsNiatelemetryNiaLicenseStateRelationship is a convenience function that returns MoMoRef wrapped in NiatelemetryNiaLicenseStateRelationship
 func MoMoRefAsNiatelemetryNiaLicenseStateRelationship(v *MoMoRef) NiatelemetryNiaLicenseStateRelationship {
-	return NiatelemetryNiaLicenseStateRelationship{ MoMoRef: v}
+	return NiatelemetryNiaLicenseStateRelationship{MoMoRef: v}
 }
 
 // NiatelemetryNiaLicenseStateAsNiatelemetryNiaLicenseStateRelationship is a convenience function that returns NiatelemetryNiaLicenseState wrapped in NiatelemetryNiaLicenseStateRelationship
 func NiatelemetryNiaLicenseStateAsNiatelemetryNiaLicenseStateRelationship(v *NiatelemetryNiaLicenseState) NiatelemetryNiaLicenseStateRelationship {
-	return NiatelemetryNiaLicenseStateRelationship{ NiatelemetryNiaLicenseState: v}
+	return NiatelemetryNiaLicenseStateRelationship{NiatelemetryNiaLicenseState: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryNiaLicenseStateRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NiatelemetryNiaLicenseStateRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *NiatelemetryNiaLicenseStateRelationship) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryNiaLicenseStateRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNiatelemetryNiaLicenseStateRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

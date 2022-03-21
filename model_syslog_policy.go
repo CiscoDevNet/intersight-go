@@ -23,12 +23,12 @@ type SyslogPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	LocalClients []SyslogLocalClientBase `json:"LocalClients,omitempty"`
-	RemoteClients []SyslogRemoteClientBase `json:"RemoteClients,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType    string                                `json:"ObjectType"`
+	LocalClients  []SyslogLocalClientBase               `json:"LocalClients,omitempty"`
+	RemoteClients []SyslogRemoteClientBase              `json:"RemoteClients,omitempty"`
+	Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *SyslogPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SyslogPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *SyslogPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SyslogPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *SyslogPolicy) SetObjectType(v string) {
 
 // GetLocalClients returns the LocalClients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicy) GetLocalClients() []SyslogLocalClientBase {
-	if o == nil  {
+	if o == nil {
 		var ret []SyslogLocalClientBase
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *SyslogPolicy) SetLocalClients(v []SyslogLocalClientBase) {
 
 // GetRemoteClients returns the RemoteClients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicy) GetRemoteClients() []SyslogRemoteClientBase {
-	if o == nil  {
+	if o == nil {
 		var ret []SyslogRemoteClientBase
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *SyslogPolicy) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SyslogPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -277,10 +277,10 @@ func (o *SyslogPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		LocalClients []SyslogLocalClientBase `json:"LocalClients,omitempty"`
-		RemoteClients []SyslogRemoteClientBase `json:"RemoteClients,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		ObjectType    string                                `json:"ObjectType"`
+		LocalClients  []SyslogLocalClientBase               `json:"LocalClients,omitempty"`
+		RemoteClients []SyslogRemoteClientBase              `json:"RemoteClients,omitempty"`
+		Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -379,5 +379,3 @@ func (v *NullableSyslogPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

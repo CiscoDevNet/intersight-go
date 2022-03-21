@@ -28,13 +28,13 @@ type OsConfigurationFileAllOf struct {
 	// The internal flag is set to true when configuration file is uploaded from OS Install wizard. Internal Configuration files will not be displayed in Answer Management Page.
 	Internal *bool `json:"Internal,omitempty"`
 	// The name of the OS ConfigurationFile that uniquely identifies the configuration file.
-	Name *string `json:"Name,omitempty"`
+	Name         *string         `json:"Name,omitempty"`
 	Placeholders []OsPlaceHolder `json:"Placeholders,omitempty"`
 	// An internal property that is used to distinguish between the pre-canned OS configuration file entries and user provided entries.
-	Supported *bool `json:"Supported,omitempty"`
-	Catalog *OsCatalogRelationship `json:"Catalog,omitempty"`
+	Supported *bool                  `json:"Supported,omitempty"`
+	Catalog   *OsCatalogRelationship `json:"Catalog,omitempty"`
 	// An array of relationships to hclOperatingSystem resources.
-	Distributions []HclOperatingSystemRelationship `json:"Distributions,omitempty"`
+	Distributions        []HclOperatingSystemRelationship `json:"Distributions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *OsConfigurationFileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsConfigurationFileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *OsConfigurationFileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsConfigurationFileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -245,7 +245,7 @@ func (o *OsConfigurationFileAllOf) SetName(v string) {
 
 // GetPlaceholders returns the Placeholders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsConfigurationFileAllOf) GetPlaceholders() []OsPlaceHolder {
-	if o == nil  {
+	if o == nil {
 		var ret []OsPlaceHolder
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *OsConfigurationFileAllOf) SetCatalog(v OsCatalogRelationship) {
 
 // GetDistributions returns the Distributions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsConfigurationFileAllOf) GetDistributions() []HclOperatingSystemRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HclOperatingSystemRelationship
 		return ret
 	}
@@ -474,5 +474,3 @@ func (v *NullableOsConfigurationFileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

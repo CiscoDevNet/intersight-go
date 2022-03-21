@@ -25,8 +25,8 @@ type WorkflowValidationInformation struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The current validation state of this workflow. The possible states are Valid, Invalid, NotValidated (default). * `NotValidated` - The state when workflow definition has not been validated. * `Valid` - The state when workflow definition is valid. * `Invalid` - The state when workflow definition is invalid.
-	State *string `json:"State,omitempty"`
-	ValidationError []WorkflowValidationError `json:"ValidationError,omitempty"`
+	State                *string                   `json:"State,omitempty"`
+	ValidationError      []WorkflowValidationError `json:"ValidationError,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowValidationInformation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowValidationInformation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowValidationInformation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowValidationInformation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *WorkflowValidationInformation) SetState(v string) {
 
 // GetValidationError returns the ValidationError field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowValidationInformation) GetValidationError() []WorkflowValidationError {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowValidationError
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *WorkflowValidationInformation) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The current validation state of this workflow. The possible states are Valid, Invalid, NotValidated (default). * `NotValidated` - The state when workflow definition has not been validated. * `Valid` - The state when workflow definition is valid. * `Invalid` - The state when workflow definition is invalid.
-		State *string `json:"State,omitempty"`
+		State           *string                   `json:"State,omitempty"`
 		ValidationError []WorkflowValidationError `json:"ValidationError,omitempty"`
 	}
 
@@ -299,5 +299,3 @@ func (v *NullableWorkflowValidationInformation) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

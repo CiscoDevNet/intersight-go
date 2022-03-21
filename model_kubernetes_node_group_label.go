@@ -27,7 +27,7 @@ type KubernetesNodeGroupLabel struct {
 	// The key for a Kubernetes label for a node.
 	Key *string `json:"Key,omitempty"`
 	// The value for a Kubernetes label for a node.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *KubernetesNodeGroupLabel) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupLabel) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *KubernetesNodeGroupLabel) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupLabel) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableKubernetesNodeGroupLabel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

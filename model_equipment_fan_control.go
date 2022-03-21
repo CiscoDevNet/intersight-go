@@ -25,10 +25,10 @@ type EquipmentFanControl struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// This field identifies the Fan Control Mode on the endpoint. * `Balanced` - Value of Fan Speed is Balanced. * `LowPower` - Value of Fan Speed is LowPower. * `HighPower` - Value of Fan Speed is HighPower. * `MaximumPower` - Value of Fan Speed is MaximumPower. * `Acoustic` - Value of Fan Speed is Acoustic.
-	Mode *string `json:"Mode,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Mode                 *string                              `json:"Mode,omitempty"`
+	EquipmentChassis     *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *EquipmentFanControl) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanControl) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *EquipmentFanControl) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanControl) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -276,10 +276,10 @@ func (o *EquipmentFanControl) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// This field identifies the Fan Control Mode on the endpoint. * `Balanced` - Value of Fan Speed is Balanced. * `LowPower` - Value of Fan Speed is LowPower. * `HighPower` - Value of Fan Speed is HighPower. * `MaximumPower` - Value of Fan Speed is MaximumPower. * `Acoustic` - Value of Fan Speed is Acoustic.
-		Mode *string `json:"Mode,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Mode                *string                              `json:"Mode,omitempty"`
+		EquipmentChassis    *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentFanControlWithoutEmbeddedStruct := EquipmentFanControlWithoutEmbeddedStruct{}
@@ -376,5 +376,3 @@ func (v *NullableEquipmentFanControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

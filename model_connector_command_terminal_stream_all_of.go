@@ -26,7 +26,7 @@ type ConnectorCommandTerminalStreamAllOf struct {
 	// Sequence of the message within a session to handle out-of-order delivery.
 	Sequence *int64 `json:"Sequence,omitempty"`
 	// The input/output payload to/from the pseudo terminal session. When sent from the cloud service if the msgType is CommandInput stream is piped to stdin of the command or a resize message if msgType is CommandResize. From the device connector value is always the combined output of stdout & stderr.
-	Stream *string `json:"Stream,omitempty"`
+	Stream               *string `json:"Stream,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConnectorCommandTerminalStreamAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorCommandTerminalStreamAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConnectorCommandTerminalStreamAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorCommandTerminalStreamAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableConnectorCommandTerminalStreamAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

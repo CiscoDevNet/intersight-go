@@ -19,19 +19,18 @@ import (
 // ComputePhysicalSummaryRelationship - A relationship to the 'compute.PhysicalSummary' resource, or the expanded 'compute.PhysicalSummary' resource, or the 'null' value.
 type ComputePhysicalSummaryRelationship struct {
 	ComputePhysicalSummary *ComputePhysicalSummary
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 }
 
 // ComputePhysicalSummaryAsComputePhysicalSummaryRelationship is a convenience function that returns ComputePhysicalSummary wrapped in ComputePhysicalSummaryRelationship
 func ComputePhysicalSummaryAsComputePhysicalSummaryRelationship(v *ComputePhysicalSummary) ComputePhysicalSummaryRelationship {
-	return ComputePhysicalSummaryRelationship{ ComputePhysicalSummary: v}
+	return ComputePhysicalSummaryRelationship{ComputePhysicalSummary: v}
 }
 
 // MoMoRefAsComputePhysicalSummaryRelationship is a convenience function that returns MoMoRef wrapped in ComputePhysicalSummaryRelationship
 func MoMoRefAsComputePhysicalSummaryRelationship(v *MoMoRef) ComputePhysicalSummaryRelationship {
-	return ComputePhysicalSummaryRelationship{ MoMoRef: v}
+	return ComputePhysicalSummaryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputePhysicalSummaryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputePhysicalSummaryRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputePhysicalSummaryRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputePhysicalSummaryRelationship) GetActualInstance() interface{} {
 	if obj.ComputePhysicalSummary != nil {
 		return obj.ComputePhysicalSummary
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputePhysicalSummaryRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

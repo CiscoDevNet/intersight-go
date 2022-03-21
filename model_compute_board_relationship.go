@@ -19,19 +19,18 @@ import (
 // ComputeBoardRelationship - A relationship to the 'compute.Board' resource, or the expanded 'compute.Board' resource, or the 'null' value.
 type ComputeBoardRelationship struct {
 	ComputeBoard *ComputeBoard
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // ComputeBoardAsComputeBoardRelationship is a convenience function that returns ComputeBoard wrapped in ComputeBoardRelationship
 func ComputeBoardAsComputeBoardRelationship(v *ComputeBoard) ComputeBoardRelationship {
-	return ComputeBoardRelationship{ ComputeBoard: v}
+	return ComputeBoardRelationship{ComputeBoard: v}
 }
 
 // MoMoRefAsComputeBoardRelationship is a convenience function that returns MoMoRef wrapped in ComputeBoardRelationship
 func MoMoRefAsComputeBoardRelationship(v *MoMoRef) ComputeBoardRelationship {
-	return ComputeBoardRelationship{ MoMoRef: v}
+	return ComputeBoardRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeBoardRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeBoardRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeBoardRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeBoardRelationship) GetActualInstance() interface{} {
 	if obj.ComputeBoard != nil {
 		return obj.ComputeBoard
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeBoardRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // CapabilityServerModelsCapabilityDefResponse - The response body of a HTTP GET request for the 'capability.ServerModelsCapabilityDef' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.ServerModelsCapabilityDef' resources.
 type CapabilityServerModelsCapabilityDefResponse struct {
 	CapabilityServerModelsCapabilityDefList *CapabilityServerModelsCapabilityDefList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                    *MoAggregateTransform
+	MoDocumentCount                         *MoDocumentCount
+	MoTagSummary                            *MoTagSummary
 }
 
 // CapabilityServerModelsCapabilityDefListAsCapabilityServerModelsCapabilityDefResponse is a convenience function that returns CapabilityServerModelsCapabilityDefList wrapped in CapabilityServerModelsCapabilityDefResponse
 func CapabilityServerModelsCapabilityDefListAsCapabilityServerModelsCapabilityDefResponse(v *CapabilityServerModelsCapabilityDefList) CapabilityServerModelsCapabilityDefResponse {
-	return CapabilityServerModelsCapabilityDefResponse{ CapabilityServerModelsCapabilityDefList: v}
+	return CapabilityServerModelsCapabilityDefResponse{CapabilityServerModelsCapabilityDefList: v}
 }
 
 // MoAggregateTransformAsCapabilityServerModelsCapabilityDefResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilityServerModelsCapabilityDefResponse
 func MoAggregateTransformAsCapabilityServerModelsCapabilityDefResponse(v *MoAggregateTransform) CapabilityServerModelsCapabilityDefResponse {
-	return CapabilityServerModelsCapabilityDefResponse{ MoAggregateTransform: v}
+	return CapabilityServerModelsCapabilityDefResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilityServerModelsCapabilityDefResponse is a convenience function that returns MoDocumentCount wrapped in CapabilityServerModelsCapabilityDefResponse
 func MoDocumentCountAsCapabilityServerModelsCapabilityDefResponse(v *MoDocumentCount) CapabilityServerModelsCapabilityDefResponse {
-	return CapabilityServerModelsCapabilityDefResponse{ MoDocumentCount: v}
+	return CapabilityServerModelsCapabilityDefResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilityServerModelsCapabilityDefResponse is a convenience function that returns MoTagSummary wrapped in CapabilityServerModelsCapabilityDefResponse
 func MoTagSummaryAsCapabilityServerModelsCapabilityDefResponse(v *MoTagSummary) CapabilityServerModelsCapabilityDefResponse {
-	return CapabilityServerModelsCapabilityDefResponse{ MoTagSummary: v}
+	return CapabilityServerModelsCapabilityDefResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilityServerModelsCapabilityDefResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilityServerModelsCapabilityDefResponse) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *CapabilityServerModelsCapabilityDefResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilityServerModelsCapabilityDefResponse) GetActualInstance() interface{} {
 	if obj.CapabilityServerModelsCapabilityDefList != nil {
 		return obj.CapabilityServerModelsCapabilityDefList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilityServerModelsCapabilityDefResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

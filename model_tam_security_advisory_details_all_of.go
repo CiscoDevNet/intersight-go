@@ -23,13 +23,13 @@ type TamSecurityAdvisoryDetailsAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// CVSS version 3 base score for the security Advisory.
 	BaseScore *float32 `json:"BaseScore,omitempty"`
-	CveIds []string `json:"CveIds,omitempty"`
+	CveIds    []string `json:"CveIds,omitempty"`
 	// CVSS version 3 environmental score for the security Advisory.
 	EnvironmentalScore *float32 `json:"EnvironmentalScore,omitempty"`
 	// Cisco assigned status of the published advisory. Depends on whether the investigation is complete or on-going. * `interim` - The Cisco investigation for the advisory is ongoing. Cisco will issue revisions to the advisory when additional information, including fixed software release data, becomes available. * `final` - Cisco has completed its evaluation of the vulnerability described in the advisory. There will be no further updates unless there is a material change in the nature of the vulnerability.
 	Status *string `json:"Status,omitempty"`
 	// CVSS version 3 temporal score for the security Advisory.
-	TemporalScore *float32 `json:"TemporalScore,omitempty"`
+	TemporalScore        *float32 `json:"TemporalScore,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *TamSecurityAdvisoryDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisoryDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *TamSecurityAdvisoryDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisoryDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -144,7 +144,7 @@ func (o *TamSecurityAdvisoryDetailsAllOf) SetBaseScore(v float32) {
 
 // GetCveIds returns the CveIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisoryDetailsAllOf) GetCveIds() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -360,5 +360,3 @@ func (v *NullableTamSecurityAdvisoryDetailsAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

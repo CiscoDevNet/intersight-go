@@ -35,8 +35,8 @@ type NiatelemetryMsoSchemaDetails struct {
 	// Schema ID in Multi-Site Orchestrator.
 	SchemaId *string `json:"SchemaId,omitempty"`
 	// Schema name in Multi-Site Orchestrator.
-	SchemaName *string `json:"SchemaName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SchemaName           *string                              `json:"SchemaName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *NiatelemetryMsoSchemaDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoSchemaDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *NiatelemetryMsoSchemaDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoSchemaDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -399,7 +399,7 @@ func (o *NiatelemetryMsoSchemaDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// Schema ID in Multi-Site Orchestrator.
 		SchemaId *string `json:"SchemaId,omitempty"`
 		// Schema name in Multi-Site Orchestrator.
-		SchemaName *string `json:"SchemaName,omitempty"`
+		SchemaName       *string                              `json:"SchemaName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -503,5 +503,3 @@ func (v *NullableNiatelemetryMsoSchemaDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

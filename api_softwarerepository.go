@@ -29,11 +29,11 @@ var (
 type SoftwarerepositoryApiService service
 
 type ApiCreateSoftwarerepositoryAuthorizationRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                             _context.Context
+	ApiService                      *SoftwarerepositoryApiService
 	softwarerepositoryAuthorization *SoftwarerepositoryAuthorization
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                         *string
+	ifNoneMatch                     *string
 }
 
 // The &#39;softwarerepository.Authorization&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateSoftwarerepositoryAuthorizationRequest) SoftwarerepositoryAutho
 	r.softwarerepositoryAuthorization = &softwarerepositoryAuthorization
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryAuthorizationRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryAuthorizationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryAuthorizationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryAuthorizationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateSoftwarerepositoryAuthorization Create a 'softwarerepository.Authorization
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryAuthorization(ctx _context.Context) ApiCreateSoftwarerepositoryAuthorizationRequest {
 	return ApiCreateSoftwarerepositoryAuthorizationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryAuthorizationExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryAuthorizationExec
 }
 
 type ApiCreateSoftwarerepositoryCategoryMapperRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                              _context.Context
+	ApiService                       *SoftwarerepositoryApiService
 	softwarerepositoryCategoryMapper *SoftwarerepositoryCategoryMapper
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;softwarerepository.CategoryMapper&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateSoftwarerepositoryCategoryMapperRequest) SoftwarerepositoryCate
 	r.softwarerepositoryCategoryMapper = &softwarerepositoryCategoryMapper
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryCategoryMapperRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryCategoryMapperRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryCategoryMapperRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryCategoryMapperRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateSoftwarerepositoryCategoryMapper Create a 'softwarerepository.CategoryMapp
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapper(ctx _context.Context) ApiCreateSoftwarerepositoryCategoryMapperRequest {
 	return ApiCreateSoftwarerepositoryCategoryMapperRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapperExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapperExe
 }
 
 type ApiCreateSoftwarerepositoryCategoryMapperModelRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
 	softwarerepositoryCategoryMapperModel *SoftwarerepositoryCategoryMapperModel
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                               *string
+	ifNoneMatch                           *string
 }
 
 // The &#39;softwarerepository.CategoryMapperModel&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateSoftwarerepositoryCategoryMapperModelRequest) Softwarerepositor
 	r.softwarerepositoryCategoryMapperModel = &softwarerepositoryCategoryMapperModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryCategoryMapperModelRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryCategoryMapperModelRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryCategoryMapperModelRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryCategoryMapperModelRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateSoftwarerepositoryCategoryMapperModel Create a 'softwarerepository.Categor
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapperModel(ctx _context.Context) ApiCreateSoftwarerepositoryCategoryMapperModelRequest {
 	return ApiCreateSoftwarerepositoryCategoryMapperModelRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapperMod
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategoryMapperMod
 }
 
 type ApiCreateSoftwarerepositoryCategorySupportConstraintRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                                         _context.Context
+	ApiService                                  *SoftwarerepositoryApiService
 	softwarerepositoryCategorySupportConstraint *SoftwarerepositoryCategorySupportConstraint
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                     *string
+	ifNoneMatch                                 *string
 }
 
 // The &#39;softwarerepository.CategorySupportConstraint&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateSoftwarerepositoryCategorySupportConstraintRequest) Softwarerep
 	r.softwarerepositoryCategorySupportConstraint = &softwarerepositoryCategorySupportConstraint
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryCategorySupportConstraintRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryCategorySupportConstraintRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryCategorySupportConstraintRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryCategorySupportConstraintRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateSoftwarerepositoryCategorySupportConstraint Create a 'softwarerepository.C
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategorySupportConstraint(ctx _context.Context) ApiCreateSoftwarerepositoryCategorySupportConstraintRequest {
 	return ApiCreateSoftwarerepositoryCategorySupportConstraintRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategorySupportCo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryCategorySupportCo
 }
 
 type ApiCreateSoftwarerepositoryOperatingSystemFileRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
 	softwarerepositoryOperatingSystemFile *SoftwarerepositoryOperatingSystemFile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                               *string
+	ifNoneMatch                           *string
 }
 
 // The &#39;softwarerepository.OperatingSystemFile&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateSoftwarerepositoryOperatingSystemFileRequest) Softwarerepositor
 	r.softwarerepositoryOperatingSystemFile = &softwarerepositoryOperatingSystemFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryOperatingSystemFileRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryOperatingSystemFileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryOperatingSystemFileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryOperatingSystemFileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateSoftwarerepositoryOperatingSystemFile Create a 'softwarerepository.Operati
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryOperatingSystemFile(ctx _context.Context) ApiCreateSoftwarerepositoryOperatingSystemFileRequest {
 	return ApiCreateSoftwarerepositoryOperatingSystemFileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryOperatingSystemFi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryOperatingSystemFi
 }
 
 type ApiCreateSoftwarerepositoryReleaseRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
+	ctx                       _context.Context
+	ApiService                *SoftwarerepositoryApiService
 	softwarerepositoryRelease *SoftwarerepositoryRelease
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;softwarerepository.Release&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateSoftwarerepositoryReleaseRequest) SoftwarerepositoryRelease(sof
 	r.softwarerepositoryRelease = &softwarerepositoryRelease
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwarerepositoryReleaseRequest) IfMatch(ifMatch string) ApiCreateSoftwarerepositoryReleaseRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwarerepositoryReleaseRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwarerepositoryReleaseRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateSoftwarerepositoryRelease Create a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryRelease(ctx _context.Context) ApiCreateSoftwarerepositoryReleaseRequest {
 	return ApiCreateSoftwarerepositoryReleaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryReleaseExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,10 @@ func (a *SoftwarerepositoryApiService) CreateSoftwarerepositoryReleaseExecute(r 
 }
 
 type ApiDeleteSoftwarerepositoryCategoryMapperRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwarerepositoryCategoryMapperRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwarerepositoryCategoryMapperExecute(r)
@@ -1105,8 +1116,8 @@ DeleteSoftwarerepositoryCategoryMapper Delete a 'softwarerepository.CategoryMapp
 func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapper(ctx _context.Context, moid string) ApiDeleteSoftwarerepositoryCategoryMapperRequest {
 	return ApiDeleteSoftwarerepositoryCategoryMapperRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1211,13 +1222,13 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapperExe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1225,11 +1236,10 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapperExe
 }
 
 type ApiDeleteSoftwarerepositoryCategoryMapperModelRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwarerepositoryCategoryMapperModelRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwarerepositoryCategoryMapperModelExecute(r)
@@ -1245,8 +1255,8 @@ DeleteSoftwarerepositoryCategoryMapperModel Delete a 'softwarerepository.Categor
 func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapperModel(ctx _context.Context, moid string) ApiDeleteSoftwarerepositoryCategoryMapperModelRequest {
 	return ApiDeleteSoftwarerepositoryCategoryMapperModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1351,13 +1361,13 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapperMod
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1365,11 +1375,10 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategoryMapperMod
 }
 
 type ApiDeleteSoftwarerepositoryCategorySupportConstraintRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwarerepositoryCategorySupportConstraintRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwarerepositoryCategorySupportConstraintExecute(r)
@@ -1385,8 +1394,8 @@ DeleteSoftwarerepositoryCategorySupportConstraint Delete a 'softwarerepository.C
 func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategorySupportConstraint(ctx _context.Context, moid string) ApiDeleteSoftwarerepositoryCategorySupportConstraintRequest {
 	return ApiDeleteSoftwarerepositoryCategorySupportConstraintRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1491,13 +1500,13 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategorySupportCo
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1505,11 +1514,10 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryCategorySupportCo
 }
 
 type ApiDeleteSoftwarerepositoryOperatingSystemFileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwarerepositoryOperatingSystemFileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwarerepositoryOperatingSystemFileExecute(r)
@@ -1525,8 +1533,8 @@ DeleteSoftwarerepositoryOperatingSystemFile Delete a 'softwarerepository.Operati
 func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryOperatingSystemFile(ctx _context.Context, moid string) ApiDeleteSoftwarerepositoryOperatingSystemFileRequest {
 	return ApiDeleteSoftwarerepositoryOperatingSystemFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1631,13 +1639,13 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryOperatingSystemFi
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1645,11 +1653,10 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryOperatingSystemFi
 }
 
 type ApiDeleteSoftwarerepositoryReleaseRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwarerepositoryReleaseRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwarerepositoryReleaseExecute(r)
@@ -1665,8 +1672,8 @@ DeleteSoftwarerepositoryRelease Delete a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryRelease(ctx _context.Context, moid string) ApiDeleteSoftwarerepositoryReleaseRequest {
 	return ApiDeleteSoftwarerepositoryReleaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1771,13 +1778,13 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryReleaseExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1785,11 +1792,10 @@ func (a *SoftwarerepositoryApiService) DeleteSoftwarerepositoryReleaseExecute(r 
 }
 
 type ApiGetSoftwarerepositoryAuthorizationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryAuthorizationByMoidRequest) Execute() (SoftwarerepositoryAuthorization, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryAuthorizationByMoidExecute(r)
@@ -1805,8 +1811,8 @@ GetSoftwarerepositoryAuthorizationByMoid Read a 'softwarerepository.Authorizatio
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryAuthorizationByMoidRequest {
 	return ApiGetSoftwarerepositoryAuthorizationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1913,13 +1919,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationByMoidE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1936,19 +1942,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationByMoidE
 }
 
 type ApiGetSoftwarerepositoryAuthorizationListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1956,51 +1962,61 @@ func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Top(top int32) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Skip(skip int32) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Select_(select_ string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Expand(expand string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Apply(apply string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Count(count bool) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) At(at string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryAuthorizationListRequest) Tags(tags string) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	r.tags = &tags
@@ -2020,7 +2036,7 @@ GetSoftwarerepositoryAuthorizationList Read a 'softwarerepository.Authorization'
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationList(ctx _context.Context) ApiGetSoftwarerepositoryAuthorizationListRequest {
 	return ApiGetSoftwarerepositoryAuthorizationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2159,13 +2175,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationListExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2182,11 +2198,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryAuthorizationListExe
 }
 
 type ApiGetSoftwarerepositoryCachedImageByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryCachedImageByMoidRequest) Execute() (SoftwarerepositoryCachedImage, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryCachedImageByMoidExecute(r)
@@ -2202,8 +2217,8 @@ GetSoftwarerepositoryCachedImageByMoid Read a 'softwarerepository.CachedImage' r
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryCachedImageByMoidRequest {
 	return ApiGetSoftwarerepositoryCachedImageByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2310,13 +2325,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2333,19 +2348,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageByMoidExe
 }
 
 type ApiGetSoftwarerepositoryCachedImageListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2353,51 +2368,61 @@ func (r ApiGetSoftwarerepositoryCachedImageListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Top(top int32) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Skip(skip int32) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Select_(select_ string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Expand(expand string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Apply(apply string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Count(count bool) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) At(at string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryCachedImageListRequest) Tags(tags string) ApiGetSoftwarerepositoryCachedImageListRequest {
 	r.tags = &tags
@@ -2417,7 +2442,7 @@ GetSoftwarerepositoryCachedImageList Read a 'softwarerepository.CachedImage' res
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageList(ctx _context.Context) ApiGetSoftwarerepositoryCachedImageListRequest {
 	return ApiGetSoftwarerepositoryCachedImageListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2556,13 +2581,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2579,11 +2604,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCachedImageListExecu
 }
 
 type ApiGetSoftwarerepositoryCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryCatalogByMoidRequest) Execute() (SoftwarerepositoryCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryCatalogByMoidExecute(r)
@@ -2599,8 +2623,8 @@ GetSoftwarerepositoryCatalogByMoid Read a 'softwarerepository.Catalog' resource.
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryCatalogByMoidRequest {
 	return ApiGetSoftwarerepositoryCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2707,13 +2731,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2730,19 +2754,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogByMoidExecute
 }
 
 type ApiGetSoftwarerepositoryCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2750,51 +2774,61 @@ func (r ApiGetSoftwarerepositoryCatalogListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Top(top int32) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Skip(skip int32) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Select_(select_ string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Expand(expand string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Apply(apply string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Count(count bool) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) At(at string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryCatalogListRequest) Tags(tags string) ApiGetSoftwarerepositoryCatalogListRequest {
 	r.tags = &tags
@@ -2814,7 +2848,7 @@ GetSoftwarerepositoryCatalogList Read a 'softwarerepository.Catalog' resource.
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogList(ctx _context.Context) ApiGetSoftwarerepositoryCatalogListRequest {
 	return ApiGetSoftwarerepositoryCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2953,13 +2987,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2976,11 +3010,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCatalogListExecute(r
 }
 
 type ApiGetSoftwarerepositoryCategoryMapperByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryCategoryMapperByMoidRequest) Execute() (SoftwarerepositoryCategoryMapper, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryCategoryMapperByMoidExecute(r)
@@ -2996,8 +3029,8 @@ GetSoftwarerepositoryCategoryMapperByMoid Read a 'softwarerepository.CategoryMap
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryCategoryMapperByMoidRequest {
 	return ApiGetSoftwarerepositoryCategoryMapperByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3104,13 +3137,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3127,19 +3160,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperByMoid
 }
 
 type ApiGetSoftwarerepositoryCategoryMapperListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3147,51 +3180,61 @@ func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Top(top int32) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Skip(skip int32) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Select_(select_ string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Expand(expand string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Apply(apply string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Count(count bool) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) At(at string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryCategoryMapperListRequest) Tags(tags string) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	r.tags = &tags
@@ -3211,7 +3254,7 @@ GetSoftwarerepositoryCategoryMapperList Read a 'softwarerepository.CategoryMappe
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperList(ctx _context.Context) ApiGetSoftwarerepositoryCategoryMapperListRequest {
 	return ApiGetSoftwarerepositoryCategoryMapperListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3393,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperListEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3416,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperListEx
 }
 
 type ApiGetSoftwarerepositoryCategoryMapperModelByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryCategoryMapperModelByMoidRequest) Execute() (SoftwarerepositoryCategoryMapperModel, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryCategoryMapperModelByMoidExecute(r)
@@ -3393,8 +3435,8 @@ GetSoftwarerepositoryCategoryMapperModelByMoid Read a 'softwarerepository.Catego
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryCategoryMapperModelByMoidRequest {
 	return ApiGetSoftwarerepositoryCategoryMapperModelByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3501,13 +3543,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3524,19 +3566,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelB
 }
 
 type ApiGetSoftwarerepositoryCategoryMapperModelListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3544,51 +3586,61 @@ func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Top(top int32) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Skip(skip int32) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Select_(select_ string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Expand(expand string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Apply(apply string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Count(count bool) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) At(at string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryCategoryMapperModelListRequest) Tags(tags string) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	r.tags = &tags
@@ -3608,7 +3660,7 @@ GetSoftwarerepositoryCategoryMapperModelList Read a 'softwarerepository.Category
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelList(ctx _context.Context) ApiGetSoftwarerepositoryCategoryMapperModelListRequest {
 	return ApiGetSoftwarerepositoryCategoryMapperModelListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3747,13 +3799,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3770,11 +3822,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategoryMapperModelL
 }
 
 type ApiGetSoftwarerepositoryCategorySupportConstraintByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintByMoidRequest) Execute() (SoftwarerepositoryCategorySupportConstraint, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryCategorySupportConstraintByMoidExecute(r)
@@ -3790,8 +3841,8 @@ GetSoftwarerepositoryCategorySupportConstraintByMoid Read a 'softwarerepository.
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConstraintByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryCategorySupportConstraintByMoidRequest {
 	return ApiGetSoftwarerepositoryCategorySupportConstraintByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3898,13 +3949,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConst
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3921,19 +3972,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConst
 }
 
 type ApiGetSoftwarerepositoryCategorySupportConstraintListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3941,51 +3992,61 @@ func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Filter(fil
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Top(top int32) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Skip(skip int32) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Select_(select_ string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Expand(expand string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Apply(apply string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Count(count bool) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) At(at string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryCategorySupportConstraintListRequest) Tags(tags string) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	r.tags = &tags
@@ -4005,7 +4066,7 @@ GetSoftwarerepositoryCategorySupportConstraintList Read a 'softwarerepository.Ca
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConstraintList(ctx _context.Context) ApiGetSoftwarerepositoryCategorySupportConstraintListRequest {
 	return ApiGetSoftwarerepositoryCategorySupportConstraintListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4144,13 +4205,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConst
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4167,11 +4228,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryCategorySupportConst
 }
 
 type ApiGetSoftwarerepositoryDownloadSpecByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryDownloadSpecByMoidRequest) Execute() (SoftwarerepositoryDownloadSpec, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryDownloadSpecByMoidExecute(r)
@@ -4187,8 +4247,8 @@ GetSoftwarerepositoryDownloadSpecByMoid Read a 'softwarerepository.DownloadSpec'
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryDownloadSpecByMoidRequest {
 	return ApiGetSoftwarerepositoryDownloadSpecByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4295,13 +4355,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecByMoidEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4318,19 +4378,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecByMoidEx
 }
 
 type ApiGetSoftwarerepositoryDownloadSpecListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4338,51 +4398,61 @@ func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Top(top int32) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Skip(skip int32) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Select_(select_ string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Expand(expand string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Apply(apply string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Count(count bool) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) At(at string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryDownloadSpecListRequest) Tags(tags string) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	r.tags = &tags
@@ -4402,7 +4472,7 @@ GetSoftwarerepositoryDownloadSpecList Read a 'softwarerepository.DownloadSpec' r
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecList(ctx _context.Context) ApiGetSoftwarerepositoryDownloadSpecListRequest {
 	return ApiGetSoftwarerepositoryDownloadSpecListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4541,13 +4611,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecListExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4564,11 +4634,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryDownloadSpecListExec
 }
 
 type ApiGetSoftwarerepositoryOperatingSystemFileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryOperatingSystemFileByMoidRequest) Execute() (SoftwarerepositoryOperatingSystemFile, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryOperatingSystemFileByMoidExecute(r)
@@ -4584,8 +4653,8 @@ GetSoftwarerepositoryOperatingSystemFileByMoid Read a 'softwarerepository.Operat
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryOperatingSystemFileByMoidRequest {
 	return ApiGetSoftwarerepositoryOperatingSystemFileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4692,13 +4761,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4715,19 +4784,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileB
 }
 
 type ApiGetSoftwarerepositoryOperatingSystemFileListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4735,51 +4804,61 @@ func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Top(top int32) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Skip(skip int32) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Select_(select_ string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Expand(expand string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Apply(apply string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Count(count bool) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) At(at string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryOperatingSystemFileListRequest) Tags(tags string) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	r.tags = &tags
@@ -4799,7 +4878,7 @@ GetSoftwarerepositoryOperatingSystemFileList Read a 'softwarerepository.Operatin
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileList(ctx _context.Context) ApiGetSoftwarerepositoryOperatingSystemFileListRequest {
 	return ApiGetSoftwarerepositoryOperatingSystemFileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4938,13 +5017,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4961,11 +5040,10 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryOperatingSystemFileL
 }
 
 type ApiGetSoftwarerepositoryReleaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwarerepositoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwarerepositoryReleaseByMoidRequest) Execute() (SoftwarerepositoryRelease, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwarerepositoryReleaseByMoidExecute(r)
@@ -4981,8 +5059,8 @@ GetSoftwarerepositoryReleaseByMoid Read a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseByMoid(ctx _context.Context, moid string) ApiGetSoftwarerepositoryReleaseByMoidRequest {
 	return ApiGetSoftwarerepositoryReleaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5089,13 +5167,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5112,19 +5190,19 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseByMoidExecute
 }
 
 type ApiGetSoftwarerepositoryReleaseListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwarerepositoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5132,51 +5210,61 @@ func (r ApiGetSoftwarerepositoryReleaseListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Orderby(orderby string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Top(top int32) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Skip(skip int32) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Select_(select_ string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Expand(expand string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Apply(apply string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Count(count bool) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Inlinecount(inlinecount string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) At(at string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwarerepositoryReleaseListRequest) Tags(tags string) ApiGetSoftwarerepositoryReleaseListRequest {
 	r.tags = &tags
@@ -5196,7 +5284,7 @@ GetSoftwarerepositoryReleaseList Read a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseList(ctx _context.Context) ApiGetSoftwarerepositoryReleaseListRequest {
 	return ApiGetSoftwarerepositoryReleaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5335,13 +5423,13 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5358,11 +5446,11 @@ func (a *SoftwarerepositoryApiService) GetSoftwarerepositoryReleaseListExecute(r
 }
 
 type ApiPatchSoftwarerepositoryAuthorizationRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *SoftwarerepositoryApiService
+	moid                            string
 	softwarerepositoryAuthorization *SoftwarerepositoryAuthorization
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;softwarerepository.Authorization&#39; resource to update.
@@ -5370,6 +5458,7 @@ func (r ApiPatchSoftwarerepositoryAuthorizationRequest) SoftwarerepositoryAuthor
 	r.softwarerepositoryAuthorization = &softwarerepositoryAuthorization
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryAuthorizationRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryAuthorizationRequest {
 	r.ifMatch = &ifMatch
@@ -5390,8 +5479,8 @@ PatchSoftwarerepositoryAuthorization Update a 'softwarerepository.Authorization'
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryAuthorization(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryAuthorizationRequest {
 	return ApiPatchSoftwarerepositoryAuthorizationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5506,13 +5595,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryAuthorizationExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5529,11 +5618,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryAuthorizationExecu
 }
 
 type ApiPatchSoftwarerepositoryCategoryMapperRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *SoftwarerepositoryApiService
+	moid                             string
 	softwarerepositoryCategoryMapper *SoftwarerepositoryCategoryMapper
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;softwarerepository.CategoryMapper&#39; resource to update.
@@ -5541,6 +5630,7 @@ func (r ApiPatchSoftwarerepositoryCategoryMapperRequest) SoftwarerepositoryCateg
 	r.softwarerepositoryCategoryMapper = &softwarerepositoryCategoryMapper
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryCategoryMapperRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryCategoryMapperRequest {
 	r.ifMatch = &ifMatch
@@ -5561,8 +5651,8 @@ PatchSoftwarerepositoryCategoryMapper Update a 'softwarerepository.CategoryMappe
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapper(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryCategoryMapperRequest {
 	return ApiPatchSoftwarerepositoryCategoryMapperRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5677,13 +5767,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapperExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5700,11 +5790,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapperExec
 }
 
 type ApiPatchSoftwarerepositoryCategoryMapperModelRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
+	moid                                  string
 	softwarerepositoryCategoryMapperModel *SoftwarerepositoryCategoryMapperModel
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;softwarerepository.CategoryMapperModel&#39; resource to update.
@@ -5712,6 +5802,7 @@ func (r ApiPatchSoftwarerepositoryCategoryMapperModelRequest) Softwarerepository
 	r.softwarerepositoryCategoryMapperModel = &softwarerepositoryCategoryMapperModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryCategoryMapperModelRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryCategoryMapperModelRequest {
 	r.ifMatch = &ifMatch
@@ -5732,8 +5823,8 @@ PatchSoftwarerepositoryCategoryMapperModel Update a 'softwarerepository.Category
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapperModel(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryCategoryMapperModelRequest {
 	return ApiPatchSoftwarerepositoryCategoryMapperModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5848,13 +5939,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapperMode
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5871,11 +5962,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategoryMapperMode
 }
 
 type ApiPatchSoftwarerepositoryCategorySupportConstraintRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *SoftwarerepositoryApiService
+	moid                                        string
 	softwarerepositoryCategorySupportConstraint *SoftwarerepositoryCategorySupportConstraint
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;softwarerepository.CategorySupportConstraint&#39; resource to update.
@@ -5883,6 +5974,7 @@ func (r ApiPatchSoftwarerepositoryCategorySupportConstraintRequest) Softwarerepo
 	r.softwarerepositoryCategorySupportConstraint = &softwarerepositoryCategorySupportConstraint
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryCategorySupportConstraintRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryCategorySupportConstraintRequest {
 	r.ifMatch = &ifMatch
@@ -5903,8 +5995,8 @@ PatchSoftwarerepositoryCategorySupportConstraint Update a 'softwarerepository.Ca
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategorySupportConstraint(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryCategorySupportConstraintRequest {
 	return ApiPatchSoftwarerepositoryCategorySupportConstraintRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6019,13 +6111,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategorySupportCon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6042,11 +6134,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryCategorySupportCon
 }
 
 type ApiPatchSoftwarerepositoryOperatingSystemFileRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
+	moid                                  string
 	softwarerepositoryOperatingSystemFile *SoftwarerepositoryOperatingSystemFile
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;softwarerepository.OperatingSystemFile&#39; resource to update.
@@ -6054,6 +6146,7 @@ func (r ApiPatchSoftwarerepositoryOperatingSystemFileRequest) Softwarerepository
 	r.softwarerepositoryOperatingSystemFile = &softwarerepositoryOperatingSystemFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryOperatingSystemFileRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryOperatingSystemFileRequest {
 	r.ifMatch = &ifMatch
@@ -6074,8 +6167,8 @@ PatchSoftwarerepositoryOperatingSystemFile Update a 'softwarerepository.Operatin
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryOperatingSystemFile(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryOperatingSystemFileRequest {
 	return ApiPatchSoftwarerepositoryOperatingSystemFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6190,13 +6283,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryOperatingSystemFil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6213,11 +6306,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryOperatingSystemFil
 }
 
 type ApiPatchSoftwarerepositoryReleaseRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *SoftwarerepositoryApiService
+	moid                      string
 	softwarerepositoryRelease *SoftwarerepositoryRelease
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;softwarerepository.Release&#39; resource to update.
@@ -6225,6 +6318,7 @@ func (r ApiPatchSoftwarerepositoryReleaseRequest) SoftwarerepositoryRelease(soft
 	r.softwarerepositoryRelease = &softwarerepositoryRelease
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwarerepositoryReleaseRequest) IfMatch(ifMatch string) ApiPatchSoftwarerepositoryReleaseRequest {
 	r.ifMatch = &ifMatch
@@ -6245,8 +6339,8 @@ PatchSoftwarerepositoryRelease Update a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryRelease(ctx _context.Context, moid string) ApiPatchSoftwarerepositoryReleaseRequest {
 	return ApiPatchSoftwarerepositoryReleaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6361,13 +6455,13 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryReleaseExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6384,11 +6478,11 @@ func (a *SoftwarerepositoryApiService) PatchSoftwarerepositoryReleaseExecute(r A
 }
 
 type ApiUpdateSoftwarerepositoryAuthorizationRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *SoftwarerepositoryApiService
+	moid                            string
 	softwarerepositoryAuthorization *SoftwarerepositoryAuthorization
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;softwarerepository.Authorization&#39; resource to update.
@@ -6396,6 +6490,7 @@ func (r ApiUpdateSoftwarerepositoryAuthorizationRequest) SoftwarerepositoryAutho
 	r.softwarerepositoryAuthorization = &softwarerepositoryAuthorization
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryAuthorizationRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryAuthorizationRequest {
 	r.ifMatch = &ifMatch
@@ -6416,8 +6511,8 @@ UpdateSoftwarerepositoryAuthorization Update a 'softwarerepository.Authorization
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryAuthorization(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryAuthorizationRequest {
 	return ApiUpdateSoftwarerepositoryAuthorizationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6532,13 +6627,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryAuthorizationExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6555,11 +6650,11 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryAuthorizationExec
 }
 
 type ApiUpdateSoftwarerepositoryCategoryMapperRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *SoftwarerepositoryApiService
+	moid                             string
 	softwarerepositoryCategoryMapper *SoftwarerepositoryCategoryMapper
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;softwarerepository.CategoryMapper&#39; resource to update.
@@ -6567,6 +6662,7 @@ func (r ApiUpdateSoftwarerepositoryCategoryMapperRequest) SoftwarerepositoryCate
 	r.softwarerepositoryCategoryMapper = &softwarerepositoryCategoryMapper
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryCategoryMapperRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryCategoryMapperRequest {
 	r.ifMatch = &ifMatch
@@ -6587,8 +6683,8 @@ UpdateSoftwarerepositoryCategoryMapper Update a 'softwarerepository.CategoryMapp
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapper(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryCategoryMapperRequest {
 	return ApiUpdateSoftwarerepositoryCategoryMapperRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6703,13 +6799,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapperExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6726,11 +6822,11 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapperExe
 }
 
 type ApiUpdateSoftwarerepositoryCategoryMapperModelRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
+	moid                                  string
 	softwarerepositoryCategoryMapperModel *SoftwarerepositoryCategoryMapperModel
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;softwarerepository.CategoryMapperModel&#39; resource to update.
@@ -6738,6 +6834,7 @@ func (r ApiUpdateSoftwarerepositoryCategoryMapperModelRequest) Softwarerepositor
 	r.softwarerepositoryCategoryMapperModel = &softwarerepositoryCategoryMapperModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryCategoryMapperModelRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryCategoryMapperModelRequest {
 	r.ifMatch = &ifMatch
@@ -6758,8 +6855,8 @@ UpdateSoftwarerepositoryCategoryMapperModel Update a 'softwarerepository.Categor
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapperModel(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryCategoryMapperModelRequest {
 	return ApiUpdateSoftwarerepositoryCategoryMapperModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6874,13 +6971,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapperMod
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6897,11 +6994,11 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategoryMapperMod
 }
 
 type ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *SoftwarerepositoryApiService
+	moid                                        string
 	softwarerepositoryCategorySupportConstraint *SoftwarerepositoryCategorySupportConstraint
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;softwarerepository.CategorySupportConstraint&#39; resource to update.
@@ -6909,6 +7006,7 @@ func (r ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest) Softwarerep
 	r.softwarerepositoryCategorySupportConstraint = &softwarerepositoryCategorySupportConstraint
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest {
 	r.ifMatch = &ifMatch
@@ -6929,8 +7027,8 @@ UpdateSoftwarerepositoryCategorySupportConstraint Update a 'softwarerepository.C
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategorySupportConstraint(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest {
 	return ApiUpdateSoftwarerepositoryCategorySupportConstraintRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7045,13 +7143,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategorySupportCo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7068,11 +7166,11 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryCategorySupportCo
 }
 
 type ApiUpdateSoftwarerepositoryOperatingSystemFileRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                                   _context.Context
+	ApiService                            *SoftwarerepositoryApiService
+	moid                                  string
 	softwarerepositoryOperatingSystemFile *SoftwarerepositoryOperatingSystemFile
-	ifMatch *string
+	ifMatch                               *string
 }
 
 // The &#39;softwarerepository.OperatingSystemFile&#39; resource to update.
@@ -7080,6 +7178,7 @@ func (r ApiUpdateSoftwarerepositoryOperatingSystemFileRequest) Softwarerepositor
 	r.softwarerepositoryOperatingSystemFile = &softwarerepositoryOperatingSystemFile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryOperatingSystemFileRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryOperatingSystemFileRequest {
 	r.ifMatch = &ifMatch
@@ -7100,8 +7199,8 @@ UpdateSoftwarerepositoryOperatingSystemFile Update a 'softwarerepository.Operati
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryOperatingSystemFile(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryOperatingSystemFileRequest {
 	return ApiUpdateSoftwarerepositoryOperatingSystemFileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7216,13 +7315,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryOperatingSystemFi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7239,11 +7338,11 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryOperatingSystemFi
 }
 
 type ApiUpdateSoftwarerepositoryReleaseRequest struct {
-	ctx _context.Context
-	ApiService *SoftwarerepositoryApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *SoftwarerepositoryApiService
+	moid                      string
 	softwarerepositoryRelease *SoftwarerepositoryRelease
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;softwarerepository.Release&#39; resource to update.
@@ -7251,6 +7350,7 @@ func (r ApiUpdateSoftwarerepositoryReleaseRequest) SoftwarerepositoryRelease(sof
 	r.softwarerepositoryRelease = &softwarerepositoryRelease
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwarerepositoryReleaseRequest) IfMatch(ifMatch string) ApiUpdateSoftwarerepositoryReleaseRequest {
 	r.ifMatch = &ifMatch
@@ -7271,8 +7371,8 @@ UpdateSoftwarerepositoryRelease Update a 'softwarerepository.Release' resource.
 func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryRelease(ctx _context.Context, moid string) ApiUpdateSoftwarerepositoryReleaseRequest {
 	return ApiUpdateSoftwarerepositoryReleaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7387,13 +7487,13 @@ func (a *SoftwarerepositoryApiService) UpdateSoftwarerepositoryReleaseExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

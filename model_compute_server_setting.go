@@ -27,7 +27,7 @@ type ComputeServerSetting struct {
 	// User configured state of the locator LED for the server. * `None` - No operation property for locator led. * `On` - The Locator Led is turned on. * `Off` - The Locator Led is turned off.
 	AdminLocatorLedState *string `json:"AdminLocatorLedState,omitempty"`
 	// User configured power state of the server. * `Policy` - Power state is set to the default value in the policy. * `PowerOn` - Power state of the server is set to On. * `PowerOff` - Power state is the server set to Off. * `PowerCycle` - Power state the server is reset. * `HardReset` - Power state the server is hard reset. * `Shutdown` - Operating system on the server is shut down. * `Reboot` - Power state of IMC is rebooted.
-	AdminPowerState *string `json:"AdminPowerState,omitempty"`
+	AdminPowerState    *string                                      `json:"AdminPowerState,omitempty"`
 	CertificatesAction NullableCertificatemanagementCertificateBase `json:"CertificatesAction,omitempty"`
 	// The allowed actions on the CMOS Reset. * `Ready` - CMOS Reset operation is allowed to be done on the server in this state. * `Pending` - The identifier to state that the previous CMOS Reset operation on this server has not completed due to a pending power cycle. CMOS Reset operation cannot be done on the server when in this state. * `Reset` - The value that the UI/API needs to provide to trigger a CMOS Reset operation on a server.
 	CmosReset *string `json:"CmosReset,omitempty"`
@@ -40,19 +40,19 @@ type ComputeServerSetting struct {
 	// The property used to identify the name of the server it is associated with.
 	Name *string `json:"Name,omitempty"`
 	// The name of the device chosen by user for configuring One-Time Boot device.
-	OneTimeBootDevice *string `json:"OneTimeBootDevice,omitempty"`
-	PersistentMemoryOperation NullableComputePersistentMemoryOperation `json:"PersistentMemoryOperation,omitempty"`
-	ServerConfig NullableComputeServerConfig `json:"ServerConfig,omitempty"`
-	ServerOpStatus []ComputeServerOpStatus `json:"ServerOpStatus,omitempty"`
-	StorageControllerOperation NullableComputeStorageControllerOperation `json:"StorageControllerOperation,omitempty"`
+	OneTimeBootDevice             *string                                      `json:"OneTimeBootDevice,omitempty"`
+	PersistentMemoryOperation     NullableComputePersistentMemoryOperation     `json:"PersistentMemoryOperation,omitempty"`
+	ServerConfig                  NullableComputeServerConfig                  `json:"ServerConfig,omitempty"`
+	ServerOpStatus                []ComputeServerOpStatus                      `json:"ServerOpStatus,omitempty"`
+	StorageControllerOperation    NullableComputeStorageControllerOperation    `json:"StorageControllerOperation,omitempty"`
 	StoragePhysicalDriveOperation NullableComputeStoragePhysicalDriveOperation `json:"StoragePhysicalDriveOperation,omitempty"`
-	StorageVirtualDriveOperation NullableComputeStorageVirtualDriveOperation `json:"StorageVirtualDriveOperation,omitempty"`
+	StorageVirtualDriveOperation  NullableComputeStorageVirtualDriveOperation  `json:"StorageVirtualDriveOperation,omitempty"`
 	// By default, the tunneled vKVM property appears in Ready state. The property can be configured by performing allowed actions. Once the property is configured, it reverts to Ready state. * `Ready` - Tunneled vKVM is ready to be configured on the server. * `Enable` - Tunneled vKVM is enabled for the server. * `Disable` - Tunneled vKVM is disabled for the server.
-	TunneledKvmState *string `json:"TunneledKvmState,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	RunningWorkflow *WorkflowWorkflowInfoRelationship `json:"RunningWorkflow,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
+	TunneledKvmState     *string                              `json:"TunneledKvmState,omitempty"`
+	LocatorLed           *EquipmentLocatorLedRelationship     `json:"LocatorLed,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	RunningWorkflow      *WorkflowWorkflowInfoRelationship    `json:"RunningWorkflow,omitempty"`
+	Server               *ComputePhysicalRelationship         `json:"Server,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -118,7 +118,7 @@ func (o *ComputeServerSetting) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeServerSetting) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -142,7 +142,7 @@ func (o *ComputeServerSetting) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeServerSetting) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -230,7 +230,7 @@ func (o *ComputeServerSetting) GetCertificatesAction() CertificatemanagementCert
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetCertificatesActionOk() (*CertificatemanagementCertificateBase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CertificatesAction.Get(), o.CertificatesAction.IsSet()
@@ -249,6 +249,7 @@ func (o *ComputeServerSetting) HasCertificatesAction() bool {
 func (o *ComputeServerSetting) SetCertificatesAction(v CertificatemanagementCertificateBase) {
 	o.CertificatesAction.Set(&v)
 }
+
 // SetCertificatesActionNil sets the value for CertificatesAction to be an explicit nil
 func (o *ComputeServerSetting) SetCertificatesActionNil() {
 	o.CertificatesAction.Set(nil)
@@ -464,7 +465,7 @@ func (o *ComputeServerSetting) GetPersistentMemoryOperation() ComputePersistentM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetPersistentMemoryOperationOk() (*ComputePersistentMemoryOperation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PersistentMemoryOperation.Get(), o.PersistentMemoryOperation.IsSet()
@@ -483,6 +484,7 @@ func (o *ComputeServerSetting) HasPersistentMemoryOperation() bool {
 func (o *ComputeServerSetting) SetPersistentMemoryOperation(v ComputePersistentMemoryOperation) {
 	o.PersistentMemoryOperation.Set(&v)
 }
+
 // SetPersistentMemoryOperationNil sets the value for PersistentMemoryOperation to be an explicit nil
 func (o *ComputeServerSetting) SetPersistentMemoryOperationNil() {
 	o.PersistentMemoryOperation.Set(nil)
@@ -506,7 +508,7 @@ func (o *ComputeServerSetting) GetServerConfig() ComputeServerConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetServerConfigOk() (*ComputeServerConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServerConfig.Get(), o.ServerConfig.IsSet()
@@ -525,6 +527,7 @@ func (o *ComputeServerSetting) HasServerConfig() bool {
 func (o *ComputeServerSetting) SetServerConfig(v ComputeServerConfig) {
 	o.ServerConfig.Set(&v)
 }
+
 // SetServerConfigNil sets the value for ServerConfig to be an explicit nil
 func (o *ComputeServerSetting) SetServerConfigNil() {
 	o.ServerConfig.Set(nil)
@@ -537,7 +540,7 @@ func (o *ComputeServerSetting) UnsetServerConfig() {
 
 // GetServerOpStatus returns the ServerOpStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeServerSetting) GetServerOpStatus() []ComputeServerOpStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeServerOpStatus
 		return ret
 	}
@@ -581,7 +584,7 @@ func (o *ComputeServerSetting) GetStorageControllerOperation() ComputeStorageCon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetStorageControllerOperationOk() (*ComputeStorageControllerOperation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageControllerOperation.Get(), o.StorageControllerOperation.IsSet()
@@ -600,6 +603,7 @@ func (o *ComputeServerSetting) HasStorageControllerOperation() bool {
 func (o *ComputeServerSetting) SetStorageControllerOperation(v ComputeStorageControllerOperation) {
 	o.StorageControllerOperation.Set(&v)
 }
+
 // SetStorageControllerOperationNil sets the value for StorageControllerOperation to be an explicit nil
 func (o *ComputeServerSetting) SetStorageControllerOperationNil() {
 	o.StorageControllerOperation.Set(nil)
@@ -623,7 +627,7 @@ func (o *ComputeServerSetting) GetStoragePhysicalDriveOperation() ComputeStorage
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetStoragePhysicalDriveOperationOk() (*ComputeStoragePhysicalDriveOperation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StoragePhysicalDriveOperation.Get(), o.StoragePhysicalDriveOperation.IsSet()
@@ -642,6 +646,7 @@ func (o *ComputeServerSetting) HasStoragePhysicalDriveOperation() bool {
 func (o *ComputeServerSetting) SetStoragePhysicalDriveOperation(v ComputeStoragePhysicalDriveOperation) {
 	o.StoragePhysicalDriveOperation.Set(&v)
 }
+
 // SetStoragePhysicalDriveOperationNil sets the value for StoragePhysicalDriveOperation to be an explicit nil
 func (o *ComputeServerSetting) SetStoragePhysicalDriveOperationNil() {
 	o.StoragePhysicalDriveOperation.Set(nil)
@@ -665,7 +670,7 @@ func (o *ComputeServerSetting) GetStorageVirtualDriveOperation() ComputeStorageV
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputeServerSetting) GetStorageVirtualDriveOperationOk() (*ComputeStorageVirtualDriveOperation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageVirtualDriveOperation.Get(), o.StorageVirtualDriveOperation.IsSet()
@@ -684,6 +689,7 @@ func (o *ComputeServerSetting) HasStorageVirtualDriveOperation() bool {
 func (o *ComputeServerSetting) SetStorageVirtualDriveOperation(v ComputeStorageVirtualDriveOperation) {
 	o.StorageVirtualDriveOperation.Set(&v)
 }
+
 // SetStorageVirtualDriveOperationNil sets the value for StorageVirtualDriveOperation to be an explicit nil
 func (o *ComputeServerSetting) SetStorageVirtualDriveOperationNil() {
 	o.StorageVirtualDriveOperation.Set(nil)
@@ -947,7 +953,7 @@ func (o *ComputeServerSetting) UnmarshalJSON(bytes []byte) (err error) {
 		// User configured state of the locator LED for the server. * `None` - No operation property for locator led. * `On` - The Locator Led is turned on. * `Off` - The Locator Led is turned off.
 		AdminLocatorLedState *string `json:"AdminLocatorLedState,omitempty"`
 		// User configured power state of the server. * `Policy` - Power state is set to the default value in the policy. * `PowerOn` - Power state of the server is set to On. * `PowerOff` - Power state is the server set to Off. * `PowerCycle` - Power state the server is reset. * `HardReset` - Power state the server is hard reset. * `Shutdown` - Operating system on the server is shut down. * `Reboot` - Power state of IMC is rebooted.
-		AdminPowerState *string `json:"AdminPowerState,omitempty"`
+		AdminPowerState    *string                                      `json:"AdminPowerState,omitempty"`
 		CertificatesAction NullableCertificatemanagementCertificateBase `json:"CertificatesAction,omitempty"`
 		// The allowed actions on the CMOS Reset. * `Ready` - CMOS Reset operation is allowed to be done on the server in this state. * `Pending` - The identifier to state that the previous CMOS Reset operation on this server has not completed due to a pending power cycle. CMOS Reset operation cannot be done on the server when in this state. * `Reset` - The value that the UI/API needs to provide to trigger a CMOS Reset operation on a server.
 		CmosReset *string `json:"CmosReset,omitempty"`
@@ -960,19 +966,19 @@ func (o *ComputeServerSetting) UnmarshalJSON(bytes []byte) (err error) {
 		// The property used to identify the name of the server it is associated with.
 		Name *string `json:"Name,omitempty"`
 		// The name of the device chosen by user for configuring One-Time Boot device.
-		OneTimeBootDevice *string `json:"OneTimeBootDevice,omitempty"`
-		PersistentMemoryOperation NullableComputePersistentMemoryOperation `json:"PersistentMemoryOperation,omitempty"`
-		ServerConfig NullableComputeServerConfig `json:"ServerConfig,omitempty"`
-		ServerOpStatus []ComputeServerOpStatus `json:"ServerOpStatus,omitempty"`
-		StorageControllerOperation NullableComputeStorageControllerOperation `json:"StorageControllerOperation,omitempty"`
+		OneTimeBootDevice             *string                                      `json:"OneTimeBootDevice,omitempty"`
+		PersistentMemoryOperation     NullableComputePersistentMemoryOperation     `json:"PersistentMemoryOperation,omitempty"`
+		ServerConfig                  NullableComputeServerConfig                  `json:"ServerConfig,omitempty"`
+		ServerOpStatus                []ComputeServerOpStatus                      `json:"ServerOpStatus,omitempty"`
+		StorageControllerOperation    NullableComputeStorageControllerOperation    `json:"StorageControllerOperation,omitempty"`
 		StoragePhysicalDriveOperation NullableComputeStoragePhysicalDriveOperation `json:"StoragePhysicalDriveOperation,omitempty"`
-		StorageVirtualDriveOperation NullableComputeStorageVirtualDriveOperation `json:"StorageVirtualDriveOperation,omitempty"`
+		StorageVirtualDriveOperation  NullableComputeStorageVirtualDriveOperation  `json:"StorageVirtualDriveOperation,omitempty"`
 		// By default, the tunneled vKVM property appears in Ready state. The property can be configured by performing allowed actions. Once the property is configured, it reverts to Ready state. * `Ready` - Tunneled vKVM is ready to be configured on the server. * `Enable` - Tunneled vKVM is enabled for the server. * `Disable` - Tunneled vKVM is disabled for the server.
-		TunneledKvmState *string `json:"TunneledKvmState,omitempty"`
-		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+		TunneledKvmState *string                              `json:"TunneledKvmState,omitempty"`
+		LocatorLed       *EquipmentLocatorLedRelationship     `json:"LocatorLed,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		RunningWorkflow *WorkflowWorkflowInfoRelationship `json:"RunningWorkflow,omitempty"`
-		Server *ComputePhysicalRelationship `json:"Server,omitempty"`
+		RunningWorkflow  *WorkflowWorkflowInfoRelationship    `json:"RunningWorkflow,omitempty"`
+		Server           *ComputePhysicalRelationship         `json:"Server,omitempty"`
 	}
 
 	varComputeServerSettingWithoutEmbeddedStruct := ComputeServerSettingWithoutEmbeddedStruct{}
@@ -1101,5 +1107,3 @@ func (v *NullableComputeServerSetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

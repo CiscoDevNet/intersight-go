@@ -29,10 +29,10 @@ type HyperflexConfigResult struct {
 	// The duration of the running configuration or workflow.
 	Duration *string `json:"Duration,omitempty"`
 	// The start time of the configuration or workflow.
-	StartTime *string `json:"StartTime,omitempty"`
+	StartTime      *string                              `json:"StartTime,omitempty"`
 	ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
 	// An array of relationships to hyperflexConfigResultEntry resources.
-	ResultEntries []HyperflexConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
+	ResultEntries        []HyperflexConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *HyperflexConfigResult) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexConfigResult) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *HyperflexConfigResult) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexConfigResult) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *HyperflexConfigResult) SetClusterProfile(v HyperflexClusterProfileRelat
 
 // GetResultEntries returns the ResultEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexConfigResult) GetResultEntries() []HyperflexConfigResultEntryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexConfigResultEntryRelationship
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *HyperflexConfigResult) UnmarshalJSON(bytes []byte) (err error) {
 		// The duration of the running configuration or workflow.
 		Duration *string `json:"Duration,omitempty"`
 		// The start time of the configuration or workflow.
-		StartTime *string `json:"StartTime,omitempty"`
+		StartTime      *string                              `json:"StartTime,omitempty"`
 		ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
 		// An array of relationships to hyperflexConfigResultEntry resources.
 		ResultEntries []HyperflexConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
@@ -422,5 +422,3 @@ func (v *NullableHyperflexConfigResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

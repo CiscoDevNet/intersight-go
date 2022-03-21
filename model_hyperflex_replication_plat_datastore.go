@@ -23,9 +23,9 @@ type HyperflexReplicationPlatDatastore struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ClusterEr NullableHyperflexEntityReference `json:"ClusterEr,omitempty"`
-	DatastoreEr NullableHyperflexEntityReference `json:"DatastoreEr,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	ClusterEr            NullableHyperflexEntityReference `json:"ClusterEr,omitempty"`
+	DatastoreEr          NullableHyperflexEntityReference `json:"DatastoreEr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *HyperflexReplicationPlatDatastore) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastore) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *HyperflexReplicationPlatDatastore) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastore) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *HyperflexReplicationPlatDatastore) GetClusterEr() HyperflexEntityRefere
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastore) GetClusterErOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClusterEr.Get(), o.ClusterEr.IsSet()
@@ -134,6 +134,7 @@ func (o *HyperflexReplicationPlatDatastore) HasClusterEr() bool {
 func (o *HyperflexReplicationPlatDatastore) SetClusterEr(v HyperflexEntityReference) {
 	o.ClusterEr.Set(&v)
 }
+
 // SetClusterErNil sets the value for ClusterEr to be an explicit nil
 func (o *HyperflexReplicationPlatDatastore) SetClusterErNil() {
 	o.ClusterEr.Set(nil)
@@ -157,7 +158,7 @@ func (o *HyperflexReplicationPlatDatastore) GetDatastoreEr() HyperflexEntityRefe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastore) GetDatastoreErOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DatastoreEr.Get(), o.DatastoreEr.IsSet()
@@ -176,6 +177,7 @@ func (o *HyperflexReplicationPlatDatastore) HasDatastoreEr() bool {
 func (o *HyperflexReplicationPlatDatastore) SetDatastoreEr(v HyperflexEntityReference) {
 	o.DatastoreEr.Set(&v)
 }
+
 // SetDatastoreErNil sets the value for DatastoreEr to be an explicit nil
 func (o *HyperflexReplicationPlatDatastore) SetDatastoreErNil() {
 	o.DatastoreEr.Set(nil)
@@ -221,8 +223,8 @@ func (o *HyperflexReplicationPlatDatastore) UnmarshalJSON(bytes []byte) (err err
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ClusterEr NullableHyperflexEntityReference `json:"ClusterEr,omitempty"`
+		ObjectType  string                           `json:"ObjectType"`
+		ClusterEr   NullableHyperflexEntityReference `json:"ClusterEr,omitempty"`
 		DatastoreEr NullableHyperflexEntityReference `json:"DatastoreEr,omitempty"`
 	}
 
@@ -316,5 +318,3 @@ func (v *NullableHyperflexReplicationPlatDatastore) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryPodCommPoliciesResponse - The response body of a HTTP GET request for the 'niatelemetry.PodCommPolicies' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.PodCommPolicies' resources.
 type NiatelemetryPodCommPoliciesResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	NiatelemetryPodCommPoliciesList *NiatelemetryPodCommPoliciesList
 }
 
 // MoAggregateTransformAsNiatelemetryPodCommPoliciesResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryPodCommPoliciesResponse
 func MoAggregateTransformAsNiatelemetryPodCommPoliciesResponse(v *MoAggregateTransform) NiatelemetryPodCommPoliciesResponse {
-	return NiatelemetryPodCommPoliciesResponse{ MoAggregateTransform: v}
+	return NiatelemetryPodCommPoliciesResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryPodCommPoliciesResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryPodCommPoliciesResponse
 func MoDocumentCountAsNiatelemetryPodCommPoliciesResponse(v *MoDocumentCount) NiatelemetryPodCommPoliciesResponse {
-	return NiatelemetryPodCommPoliciesResponse{ MoDocumentCount: v}
+	return NiatelemetryPodCommPoliciesResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryPodCommPoliciesResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryPodCommPoliciesResponse
 func MoTagSummaryAsNiatelemetryPodCommPoliciesResponse(v *MoTagSummary) NiatelemetryPodCommPoliciesResponse {
-	return NiatelemetryPodCommPoliciesResponse{ MoTagSummary: v}
+	return NiatelemetryPodCommPoliciesResponse{MoTagSummary: v}
 }
 
 // NiatelemetryPodCommPoliciesListAsNiatelemetryPodCommPoliciesResponse is a convenience function that returns NiatelemetryPodCommPoliciesList wrapped in NiatelemetryPodCommPoliciesResponse
 func NiatelemetryPodCommPoliciesListAsNiatelemetryPodCommPoliciesResponse(v *NiatelemetryPodCommPoliciesList) NiatelemetryPodCommPoliciesResponse {
-	return NiatelemetryPodCommPoliciesResponse{ NiatelemetryPodCommPoliciesList: v}
+	return NiatelemetryPodCommPoliciesResponse{NiatelemetryPodCommPoliciesList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryPodCommPoliciesResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryPodCommPoliciesResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryPodCommPoliciesResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryPodCommPoliciesResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryPodCommPoliciesResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

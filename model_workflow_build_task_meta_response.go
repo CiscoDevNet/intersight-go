@@ -18,32 +18,31 @@ import (
 
 // WorkflowBuildTaskMetaResponse - The response body of a HTTP GET request for the 'workflow.BuildTaskMeta' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.BuildTaskMeta' resources.
 type WorkflowBuildTaskMetaResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 	WorkflowBuildTaskMetaList *WorkflowBuildTaskMetaList
 }
 
 // MoAggregateTransformAsWorkflowBuildTaskMetaResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowBuildTaskMetaResponse
 func MoAggregateTransformAsWorkflowBuildTaskMetaResponse(v *MoAggregateTransform) WorkflowBuildTaskMetaResponse {
-	return WorkflowBuildTaskMetaResponse{ MoAggregateTransform: v}
+	return WorkflowBuildTaskMetaResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowBuildTaskMetaResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowBuildTaskMetaResponse
 func MoDocumentCountAsWorkflowBuildTaskMetaResponse(v *MoDocumentCount) WorkflowBuildTaskMetaResponse {
-	return WorkflowBuildTaskMetaResponse{ MoDocumentCount: v}
+	return WorkflowBuildTaskMetaResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowBuildTaskMetaResponse is a convenience function that returns MoTagSummary wrapped in WorkflowBuildTaskMetaResponse
 func MoTagSummaryAsWorkflowBuildTaskMetaResponse(v *MoTagSummary) WorkflowBuildTaskMetaResponse {
-	return WorkflowBuildTaskMetaResponse{ MoTagSummary: v}
+	return WorkflowBuildTaskMetaResponse{MoTagSummary: v}
 }
 
 // WorkflowBuildTaskMetaListAsWorkflowBuildTaskMetaResponse is a convenience function that returns WorkflowBuildTaskMetaList wrapped in WorkflowBuildTaskMetaResponse
 func WorkflowBuildTaskMetaListAsWorkflowBuildTaskMetaResponse(v *WorkflowBuildTaskMetaList) WorkflowBuildTaskMetaResponse {
-	return WorkflowBuildTaskMetaResponse{ WorkflowBuildTaskMetaList: v}
+	return WorkflowBuildTaskMetaResponse{WorkflowBuildTaskMetaList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowBuildTaskMetaResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowBuildTaskMetaResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowBuildTaskMetaResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowBuildTaskMetaResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowBuildTaskMetaResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

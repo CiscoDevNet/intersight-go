@@ -20,7 +20,7 @@ type FirmwareMswitchDescriptorListAllOf struct {
 	// The total number of 'firmware.MswitchDescriptor' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.MswitchDescriptor' resources matching the request.
-	Results []FirmwareMswitchDescriptor `json:"Results,omitempty"`
+	Results              []FirmwareMswitchDescriptor `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareMswitchDescriptorListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareMswitchDescriptorListAllOf) GetResults() []FirmwareMswitchDescriptor {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareMswitchDescriptor
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareMswitchDescriptorListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type KubernetesNodeGroupTaint struct {
 	// The key for a Kubernetes taint.
 	Key *string `json:"Key,omitempty"`
 	// If the key does not match this value, the specified effect is enforced.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *KubernetesNodeGroupTaint) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupTaint) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *KubernetesNodeGroupTaint) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupTaint) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableKubernetesNodeGroupTaint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

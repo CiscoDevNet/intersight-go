@@ -23,10 +23,10 @@ type HyperflexMapUuidToTrackedDisk struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                       `json:"ObjectType"`
 	TrackedDisk NullableHyperflexTrackedDisk `json:"TrackedDisk,omitempty"`
 	// Disk unique id for a snapshot.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid                 *string `json:"Uuid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *HyperflexMapUuidToTrackedDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapUuidToTrackedDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexMapUuidToTrackedDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapUuidToTrackedDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *HyperflexMapUuidToTrackedDisk) GetTrackedDisk() HyperflexTrackedDisk {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexMapUuidToTrackedDisk) GetTrackedDiskOk() (*HyperflexTrackedDisk, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TrackedDisk.Get(), o.TrackedDisk.IsSet()
@@ -135,6 +135,7 @@ func (o *HyperflexMapUuidToTrackedDisk) HasTrackedDisk() bool {
 func (o *HyperflexMapUuidToTrackedDisk) SetTrackedDisk(v HyperflexTrackedDisk) {
 	o.TrackedDisk.Set(&v)
 }
+
 // SetTrackedDiskNil sets the value for TrackedDisk to be an explicit nil
 func (o *HyperflexMapUuidToTrackedDisk) SetTrackedDiskNil() {
 	o.TrackedDisk.Set(nil)
@@ -212,7 +213,7 @@ func (o *HyperflexMapUuidToTrackedDisk) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string                       `json:"ObjectType"`
 		TrackedDisk NullableHyperflexTrackedDisk `json:"TrackedDisk,omitempty"`
 		// Disk unique id for a snapshot.
 		Uuid *string `json:"Uuid,omitempty"`
@@ -308,5 +309,3 @@ func (v *NullableHyperflexMapUuidToTrackedDisk) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

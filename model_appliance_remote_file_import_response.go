@@ -19,31 +19,30 @@ import (
 // ApplianceRemoteFileImportResponse - The response body of a HTTP GET request for the 'appliance.RemoteFileImport' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.RemoteFileImport' resources.
 type ApplianceRemoteFileImportResponse struct {
 	ApplianceRemoteFileImportList *ApplianceRemoteFileImportList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 }
 
 // ApplianceRemoteFileImportListAsApplianceRemoteFileImportResponse is a convenience function that returns ApplianceRemoteFileImportList wrapped in ApplianceRemoteFileImportResponse
 func ApplianceRemoteFileImportListAsApplianceRemoteFileImportResponse(v *ApplianceRemoteFileImportList) ApplianceRemoteFileImportResponse {
-	return ApplianceRemoteFileImportResponse{ ApplianceRemoteFileImportList: v}
+	return ApplianceRemoteFileImportResponse{ApplianceRemoteFileImportList: v}
 }
 
 // MoAggregateTransformAsApplianceRemoteFileImportResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceRemoteFileImportResponse
 func MoAggregateTransformAsApplianceRemoteFileImportResponse(v *MoAggregateTransform) ApplianceRemoteFileImportResponse {
-	return ApplianceRemoteFileImportResponse{ MoAggregateTransform: v}
+	return ApplianceRemoteFileImportResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceRemoteFileImportResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceRemoteFileImportResponse
 func MoDocumentCountAsApplianceRemoteFileImportResponse(v *MoDocumentCount) ApplianceRemoteFileImportResponse {
-	return ApplianceRemoteFileImportResponse{ MoDocumentCount: v}
+	return ApplianceRemoteFileImportResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceRemoteFileImportResponse is a convenience function that returns MoTagSummary wrapped in ApplianceRemoteFileImportResponse
 func MoTagSummaryAsApplianceRemoteFileImportResponse(v *MoTagSummary) ApplianceRemoteFileImportResponse {
-	return ApplianceRemoteFileImportResponse{ MoTagSummary: v}
+	return ApplianceRemoteFileImportResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceRemoteFileImportResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceRemoteFileImportResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceRemoteFileImportResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceRemoteFileImportResponse) GetActualInstance() interface{} {
 	if obj.ApplianceRemoteFileImportList != nil {
 		return obj.ApplianceRemoteFileImportList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceRemoteFileImportResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

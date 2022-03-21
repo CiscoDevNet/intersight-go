@@ -27,14 +27,14 @@ type IamPrivilegeSet struct {
 	// Description of the privilege set.
 	Description *string `json:"Description,omitempty"`
 	// Name of the privilege set.
-	Name *string `json:"Name,omitempty"`
-	PrivilegeNames []string `json:"PrivilegeNames,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Name           *string                 `json:"Name,omitempty"`
+	PrivilegeNames []string                `json:"PrivilegeNames,omitempty"`
+	Account        *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to iamPrivilegeSet resources.
 	AssociatedPrivilegeSets []IamPrivilegeSetRelationship `json:"AssociatedPrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
-	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	Privileges           []IamPrivilegeRelationship `json:"Privileges,omitempty"`
+	System               *IamSystemRelationship     `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *IamPrivilegeSet) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeSet) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *IamPrivilegeSet) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPrivilegeSet) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *IamPrivilegeSet) SetName(v string) {
 
 // GetPrivilegeNames returns the PrivilegeNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSet) GetPrivilegeNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *IamPrivilegeSet) SetAccount(v IamAccountRelationship) {
 
 // GetAssociatedPrivilegeSets returns the AssociatedPrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSet) GetAssociatedPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *IamPrivilegeSet) SetAssociatedPrivilegeSets(v []IamPrivilegeSetRelation
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPrivilegeSet) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -392,14 +392,14 @@ func (o *IamPrivilegeSet) UnmarshalJSON(bytes []byte) (err error) {
 		// Description of the privilege set.
 		Description *string `json:"Description,omitempty"`
 		// Name of the privilege set.
-		Name *string `json:"Name,omitempty"`
-		PrivilegeNames []string `json:"PrivilegeNames,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Name           *string                 `json:"Name,omitempty"`
+		PrivilegeNames []string                `json:"PrivilegeNames,omitempty"`
+		Account        *IamAccountRelationship `json:"Account,omitempty"`
 		// An array of relationships to iamPrivilegeSet resources.
 		AssociatedPrivilegeSets []IamPrivilegeSetRelationship `json:"AssociatedPrivilegeSets,omitempty"`
 		// An array of relationships to iamPrivilege resources.
 		Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
-		System *IamSystemRelationship `json:"System,omitempty"`
+		System     *IamSystemRelationship     `json:"System,omitempty"`
 	}
 
 	varIamPrivilegeSetWithoutEmbeddedStruct := IamPrivilegeSetWithoutEmbeddedStruct{}
@@ -502,5 +502,3 @@ func (v *NullableIamPrivilegeSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

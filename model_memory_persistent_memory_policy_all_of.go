@@ -20,17 +20,17 @@ type MemoryPersistentMemoryPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Goals []MemoryPersistentMemoryGoal `json:"Goals,omitempty"`
-	LocalSecurity NullableMemoryPersistentMemoryLocalSecurity `json:"LocalSecurity,omitempty"`
-	LogicalNamespaces []MemoryPersistentMemoryLogicalNamespace `json:"LogicalNamespaces,omitempty"`
+	ObjectType        string                                      `json:"ObjectType"`
+	Goals             []MemoryPersistentMemoryGoal                `json:"Goals,omitempty"`
+	LocalSecurity     NullableMemoryPersistentMemoryLocalSecurity `json:"LocalSecurity,omitempty"`
+	LogicalNamespaces []MemoryPersistentMemoryLogicalNamespace    `json:"LogicalNamespaces,omitempty"`
 	// Management Mode of the policy. This can be either Configured from Intersight or Configured from Operating System. * `configured-from-intersight` - The Persistent Memory Modules are configured from Intersight thorugh Persistent Memory policy. * `configured-from-operating-system` - The Persistent Memory Modules are configured from operating system thorugh OS tools.
 	ManagementMode *string `json:"ManagementMode,omitempty"`
 	// Persistent Memory Namespaces to be retained or not.
-	RetainNamespaces *bool `json:"RetainNamespaces,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	RetainNamespaces *bool                                 `json:"RetainNamespaces,omitempty"`
+	Organization     *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) SetObjectType(v string) {
 
 // GetGoals returns the Goals field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryPolicyAllOf) GetGoals() []MemoryPersistentMemoryGoal {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryGoal
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) GetLocalSecurity() MemoryPersistentM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MemoryPersistentMemoryPolicyAllOf) GetLocalSecurityOk() (*MemoryPersistentMemoryLocalSecurity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LocalSecurity.Get(), o.LocalSecurity.IsSet()
@@ -180,6 +180,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) HasLocalSecurity() bool {
 func (o *MemoryPersistentMemoryPolicyAllOf) SetLocalSecurity(v MemoryPersistentMemoryLocalSecurity) {
 	o.LocalSecurity.Set(&v)
 }
+
 // SetLocalSecurityNil sets the value for LocalSecurity to be an explicit nil
 func (o *MemoryPersistentMemoryPolicyAllOf) SetLocalSecurityNil() {
 	o.LocalSecurity.Set(nil)
@@ -192,7 +193,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) UnsetLocalSecurity() {
 
 // GetLogicalNamespaces returns the LogicalNamespaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryPolicyAllOf) GetLogicalNamespaces() []MemoryPersistentMemoryLogicalNamespace {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryLogicalNamespace
 		return ret
 	}
@@ -321,7 +322,7 @@ func (o *MemoryPersistentMemoryPolicyAllOf) SetOrganization(v OrganizationOrgani
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -449,5 +450,3 @@ func (v *NullableMemoryPersistentMemoryPolicyAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

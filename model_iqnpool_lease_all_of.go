@@ -22,11 +22,11 @@ type IqnpoolLeaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// IQN address allocated for pool-based allocation \"prefix+suffix+number\".
-	IqnAddress *string `json:"IqnAddress,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	Pool *IqnpoolPoolRelationship `json:"Pool,omitempty"`
-	PoolMember *IqnpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-	Universe *IqnpoolUniverseRelationship `json:"Universe,omitempty"`
+	IqnAddress           *string                        `json:"IqnAddress,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship          `json:"AssignedToEntity,omitempty"`
+	Pool                 *IqnpoolPoolRelationship       `json:"Pool,omitempty"`
+	PoolMember           *IqnpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+	Universe             *IqnpoolUniverseRelationship   `json:"Universe,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *IqnpoolLeaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolLeaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *IqnpoolLeaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolLeaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -352,5 +352,3 @@ func (v *NullableIqnpoolLeaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

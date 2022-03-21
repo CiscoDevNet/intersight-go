@@ -18,44 +18,43 @@ import (
 
 // TelemetryDruidFilter - struct for TelemetryDruidFilter
 type TelemetryDruidFilter struct {
-	TelemetryDruidAndFilter *TelemetryDruidAndFilter
+	TelemetryDruidAndFilter              *TelemetryDruidAndFilter
 	TelemetryDruidColumnComparisonFilter *TelemetryDruidColumnComparisonFilter
-	TelemetryDruidNotFilter *TelemetryDruidNotFilter
-	TelemetryDruidOrFilter *TelemetryDruidOrFilter
-	TelemetryDruidRegexFilter *TelemetryDruidRegexFilter
-	TelemetryDruidSelectorFilter *TelemetryDruidSelectorFilter
+	TelemetryDruidNotFilter              *TelemetryDruidNotFilter
+	TelemetryDruidOrFilter               *TelemetryDruidOrFilter
+	TelemetryDruidRegexFilter            *TelemetryDruidRegexFilter
+	TelemetryDruidSelectorFilter         *TelemetryDruidSelectorFilter
 }
 
 // TelemetryDruidAndFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidAndFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidAndFilterAsTelemetryDruidFilter(v *TelemetryDruidAndFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidAndFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidAndFilter: v}
 }
 
 // TelemetryDruidColumnComparisonFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidColumnComparisonFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidColumnComparisonFilterAsTelemetryDruidFilter(v *TelemetryDruidColumnComparisonFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidColumnComparisonFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidColumnComparisonFilter: v}
 }
 
 // TelemetryDruidNotFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidNotFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidNotFilterAsTelemetryDruidFilter(v *TelemetryDruidNotFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidNotFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidNotFilter: v}
 }
 
 // TelemetryDruidOrFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidOrFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidOrFilterAsTelemetryDruidFilter(v *TelemetryDruidOrFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidOrFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidOrFilter: v}
 }
 
 // TelemetryDruidRegexFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidRegexFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidRegexFilterAsTelemetryDruidFilter(v *TelemetryDruidRegexFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidRegexFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidRegexFilter: v}
 }
 
 // TelemetryDruidSelectorFilterAsTelemetryDruidFilter is a convenience function that returns TelemetryDruidSelectorFilter wrapped in TelemetryDruidFilter
 func TelemetryDruidSelectorFilterAsTelemetryDruidFilter(v *TelemetryDruidSelectorFilter) TelemetryDruidFilter {
-	return TelemetryDruidFilter{ TelemetryDruidSelectorFilter: v}
+	return TelemetryDruidFilter{TelemetryDruidSelectorFilter: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidFilter) UnmarshalJSON(data []byte) error {
@@ -244,7 +243,7 @@ func (src TelemetryDruidFilter) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidFilter) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidFilter) GetActualInstance() interface{} {
 	if obj.TelemetryDruidAndFilter != nil {
 		return obj.TelemetryDruidAndFilter
 	}
@@ -308,5 +307,3 @@ func (v *NullableTelemetryDruidFilter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

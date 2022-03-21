@@ -29,11 +29,11 @@ var (
 type CapabilityApiService service
 
 type ApiCreateCapabilityAdapterUnitDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                             _context.Context
+	ApiService                      *CapabilityApiService
 	capabilityAdapterUnitDescriptor *CapabilityAdapterUnitDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                         *string
+	ifNoneMatch                     *string
 }
 
 // The &#39;capability.AdapterUnitDescriptor&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateCapabilityAdapterUnitDescriptorRequest) CapabilityAdapterUnitDe
 	r.capabilityAdapterUnitDescriptor = &capabilityAdapterUnitDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityAdapterUnitDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityAdapterUnitDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityAdapterUnitDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityAdapterUnitDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateCapabilityAdapterUnitDescriptor Create a 'capability.AdapterUnitDescriptor
 func (a *CapabilityApiService) CreateCapabilityAdapterUnitDescriptor(ctx _context.Context) ApiCreateCapabilityAdapterUnitDescriptorRequest {
 	return ApiCreateCapabilityAdapterUnitDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *CapabilityApiService) CreateCapabilityAdapterUnitDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *CapabilityApiService) CreateCapabilityAdapterUnitDescriptorExecute(r Ap
 }
 
 type ApiCreateCapabilityChassisDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                         _context.Context
+	ApiService                  *CapabilityApiService
 	capabilityChassisDescriptor *CapabilityChassisDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;capability.ChassisDescriptor&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateCapabilityChassisDescriptorRequest) CapabilityChassisDescriptor
 	r.capabilityChassisDescriptor = &capabilityChassisDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityChassisDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityChassisDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityChassisDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityChassisDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateCapabilityChassisDescriptor Create a 'capability.ChassisDescriptor' resour
 func (a *CapabilityApiService) CreateCapabilityChassisDescriptor(ctx _context.Context) ApiCreateCapabilityChassisDescriptorRequest {
 	return ApiCreateCapabilityChassisDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *CapabilityApiService) CreateCapabilityChassisDescriptorExecute(r ApiCre
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *CapabilityApiService) CreateCapabilityChassisDescriptorExecute(r ApiCre
 }
 
 type ApiCreateCapabilityChassisManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
 	capabilityChassisManufacturingDef *CapabilityChassisManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;capability.ChassisManufacturingDef&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateCapabilityChassisManufacturingDefRequest) CapabilityChassisManu
 	r.capabilityChassisManufacturingDef = &capabilityChassisManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityChassisManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityChassisManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityChassisManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityChassisManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateCapabilityChassisManufacturingDef Create a 'capability.ChassisManufacturin
 func (a *CapabilityApiService) CreateCapabilityChassisManufacturingDef(ctx _context.Context) ApiCreateCapabilityChassisManufacturingDefRequest {
 	return ApiCreateCapabilityChassisManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *CapabilityApiService) CreateCapabilityChassisManufacturingDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *CapabilityApiService) CreateCapabilityChassisManufacturingDefExecute(r 
 }
 
 type ApiCreateCapabilityCimcFirmwareDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
 	capabilityCimcFirmwareDescriptor *CapabilityCimcFirmwareDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;capability.CimcFirmwareDescriptor&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateCapabilityCimcFirmwareDescriptorRequest) CapabilityCimcFirmware
 	r.capabilityCimcFirmwareDescriptor = &capabilityCimcFirmwareDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityCimcFirmwareDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityCimcFirmwareDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityCimcFirmwareDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityCimcFirmwareDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateCapabilityCimcFirmwareDescriptor Create a 'capability.CimcFirmwareDescript
 func (a *CapabilityApiService) CreateCapabilityCimcFirmwareDescriptor(ctx _context.Context) ApiCreateCapabilityCimcFirmwareDescriptorRequest {
 	return ApiCreateCapabilityCimcFirmwareDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *CapabilityApiService) CreateCapabilityCimcFirmwareDescriptorExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *CapabilityApiService) CreateCapabilityCimcFirmwareDescriptorExecute(r A
 }
 
 type ApiCreateCapabilityEquipmentPhysicalDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
 	capabilityEquipmentPhysicalDef *CapabilityEquipmentPhysicalDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;capability.EquipmentPhysicalDef&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateCapabilityEquipmentPhysicalDefRequest) CapabilityEquipmentPhysi
 	r.capabilityEquipmentPhysicalDef = &capabilityEquipmentPhysicalDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityEquipmentPhysicalDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityEquipmentPhysicalDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityEquipmentPhysicalDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityEquipmentPhysicalDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateCapabilityEquipmentPhysicalDef Create a 'capability.EquipmentPhysicalDef' 
 func (a *CapabilityApiService) CreateCapabilityEquipmentPhysicalDef(ctx _context.Context) ApiCreateCapabilityEquipmentPhysicalDefRequest {
 	return ApiCreateCapabilityEquipmentPhysicalDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *CapabilityApiService) CreateCapabilityEquipmentPhysicalDefExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *CapabilityApiService) CreateCapabilityEquipmentPhysicalDefExecute(r Api
 }
 
 type ApiCreateCapabilityEquipmentSlotArrayRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                          _context.Context
+	ApiService                   *CapabilityApiService
 	capabilityEquipmentSlotArray *CapabilityEquipmentSlotArray
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;capability.EquipmentSlotArray&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateCapabilityEquipmentSlotArrayRequest) CapabilityEquipmentSlotArr
 	r.capabilityEquipmentSlotArray = &capabilityEquipmentSlotArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityEquipmentSlotArrayRequest) IfMatch(ifMatch string) ApiCreateCapabilityEquipmentSlotArrayRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityEquipmentSlotArrayRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityEquipmentSlotArrayRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateCapabilityEquipmentSlotArray Create a 'capability.EquipmentSlotArray' reso
 func (a *CapabilityApiService) CreateCapabilityEquipmentSlotArray(ctx _context.Context) ApiCreateCapabilityEquipmentSlotArrayRequest {
 	return ApiCreateCapabilityEquipmentSlotArrayRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *CapabilityApiService) CreateCapabilityEquipmentSlotArrayExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *CapabilityApiService) CreateCapabilityEquipmentSlotArrayExecute(r ApiCr
 }
 
 type ApiCreateCapabilityFanModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
 	capabilityFanModuleDescriptor *CapabilityFanModuleDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;capability.FanModuleDescriptor&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateCapabilityFanModuleDescriptorRequest) CapabilityFanModuleDescri
 	r.capabilityFanModuleDescriptor = &capabilityFanModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityFanModuleDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityFanModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityFanModuleDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityFanModuleDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateCapabilityFanModuleDescriptor Create a 'capability.FanModuleDescriptor' re
 func (a *CapabilityApiService) CreateCapabilityFanModuleDescriptor(ctx _context.Context) ApiCreateCapabilityFanModuleDescriptorRequest {
 	return ApiCreateCapabilityFanModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *CapabilityApiService) CreateCapabilityFanModuleDescriptorExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *CapabilityApiService) CreateCapabilityFanModuleDescriptorExecute(r ApiC
 }
 
 type ApiCreateCapabilityFanModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
 	capabilityFanModuleManufacturingDef *CapabilityFanModuleManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;capability.FanModuleManufacturingDef&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateCapabilityFanModuleManufacturingDefRequest) CapabilityFanModule
 	r.capabilityFanModuleManufacturingDef = &capabilityFanModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityFanModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityFanModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityFanModuleManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityFanModuleManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateCapabilityFanModuleManufacturingDef Create a 'capability.FanModuleManufact
 func (a *CapabilityApiService) CreateCapabilityFanModuleManufacturingDef(ctx _context.Context) ApiCreateCapabilityFanModuleManufacturingDefRequest {
 	return ApiCreateCapabilityFanModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *CapabilityApiService) CreateCapabilityFanModuleManufacturingDefExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *CapabilityApiService) CreateCapabilityFanModuleManufacturingDefExecute(
 }
 
 type ApiCreateCapabilityIoCardCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
 	capabilityIoCardCapabilityDef *CapabilityIoCardCapabilityDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;capability.IoCardCapabilityDef&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateCapabilityIoCardCapabilityDefRequest) CapabilityIoCardCapabilit
 	r.capabilityIoCardCapabilityDef = &capabilityIoCardCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityIoCardCapabilityDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityIoCardCapabilityDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityIoCardCapabilityDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityIoCardCapabilityDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateCapabilityIoCardCapabilityDef Create a 'capability.IoCardCapabilityDef' re
 func (a *CapabilityApiService) CreateCapabilityIoCardCapabilityDef(ctx _context.Context) ApiCreateCapabilityIoCardCapabilityDefRequest {
 	return ApiCreateCapabilityIoCardCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *CapabilityApiService) CreateCapabilityIoCardCapabilityDefExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *CapabilityApiService) CreateCapabilityIoCardCapabilityDefExecute(r ApiC
 }
 
 type ApiCreateCapabilityIoCardDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
 	capabilityIoCardDescriptor *CapabilityIoCardDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;capability.IoCardDescriptor&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateCapabilityIoCardDescriptorRequest) CapabilityIoCardDescriptor(c
 	r.capabilityIoCardDescriptor = &capabilityIoCardDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityIoCardDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityIoCardDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityIoCardDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityIoCardDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateCapabilityIoCardDescriptor Create a 'capability.IoCardDescriptor' resource
 func (a *CapabilityApiService) CreateCapabilityIoCardDescriptor(ctx _context.Context) ApiCreateCapabilityIoCardDescriptorRequest {
 	return ApiCreateCapabilityIoCardDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *CapabilityApiService) CreateCapabilityIoCardDescriptorExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *CapabilityApiService) CreateCapabilityIoCardDescriptorExecute(r ApiCrea
 }
 
 type ApiCreateCapabilityIoCardManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
 	capabilityIoCardManufacturingDef *CapabilityIoCardManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;capability.IoCardManufacturingDef&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateCapabilityIoCardManufacturingDefRequest) CapabilityIoCardManufa
 	r.capabilityIoCardManufacturingDef = &capabilityIoCardManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityIoCardManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityIoCardManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityIoCardManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityIoCardManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateCapabilityIoCardManufacturingDef Create a 'capability.IoCardManufacturingD
 func (a *CapabilityApiService) CreateCapabilityIoCardManufacturingDef(ctx _context.Context) ApiCreateCapabilityIoCardManufacturingDefRequest {
 	return ApiCreateCapabilityIoCardManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *CapabilityApiService) CreateCapabilityIoCardManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *CapabilityApiService) CreateCapabilityIoCardManufacturingDefExecute(r A
 }
 
 type ApiCreateCapabilityPortGroupAggregationDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
 	capabilityPortGroupAggregationDef *CapabilityPortGroupAggregationDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;capability.PortGroupAggregationDef&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateCapabilityPortGroupAggregationDefRequest) CapabilityPortGroupAg
 	r.capabilityPortGroupAggregationDef = &capabilityPortGroupAggregationDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityPortGroupAggregationDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityPortGroupAggregationDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityPortGroupAggregationDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityPortGroupAggregationDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateCapabilityPortGroupAggregationDef Create a 'capability.PortGroupAggregatio
 func (a *CapabilityApiService) CreateCapabilityPortGroupAggregationDef(ctx _context.Context) ApiCreateCapabilityPortGroupAggregationDefRequest {
 	return ApiCreateCapabilityPortGroupAggregationDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *CapabilityApiService) CreateCapabilityPortGroupAggregationDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *CapabilityApiService) CreateCapabilityPortGroupAggregationDefExecute(r 
 }
 
 type ApiCreateCapabilityPsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                     _context.Context
+	ApiService              *CapabilityApiService
 	capabilityPsuDescriptor *CapabilityPsuDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;capability.PsuDescriptor&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateCapabilityPsuDescriptorRequest) CapabilityPsuDescriptor(capabil
 	r.capabilityPsuDescriptor = &capabilityPsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityPsuDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityPsuDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityPsuDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityPsuDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateCapabilityPsuDescriptor Create a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) CreateCapabilityPsuDescriptor(ctx _context.Context) ApiCreateCapabilityPsuDescriptorRequest {
 	return ApiCreateCapabilityPsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *CapabilityApiService) CreateCapabilityPsuDescriptorExecute(r ApiCreateC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *CapabilityApiService) CreateCapabilityPsuDescriptorExecute(r ApiCreateC
 }
 
 type ApiCreateCapabilityPsuManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
 	capabilityPsuManufacturingDef *CapabilityPsuManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;capability.PsuManufacturingDef&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateCapabilityPsuManufacturingDefRequest) CapabilityPsuManufacturin
 	r.capabilityPsuManufacturingDef = &capabilityPsuManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityPsuManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityPsuManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityPsuManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityPsuManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateCapabilityPsuManufacturingDef Create a 'capability.PsuManufacturingDef' re
 func (a *CapabilityApiService) CreateCapabilityPsuManufacturingDef(ctx _context.Context) ApiCreateCapabilityPsuManufacturingDefRequest {
 	return ApiCreateCapabilityPsuManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *CapabilityApiService) CreateCapabilityPsuManufacturingDefExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *CapabilityApiService) CreateCapabilityPsuManufacturingDefExecute(r ApiC
 }
 
 type ApiCreateCapabilityServerModelsCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
 	capabilityServerModelsCapabilityDef *CapabilityServerModelsCapabilityDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;capability.ServerModelsCapabilityDef&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateCapabilityServerModelsCapabilityDefRequest) CapabilityServerMod
 	r.capabilityServerModelsCapabilityDef = &capabilityServerModelsCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityServerModelsCapabilityDefRequest) IfMatch(ifMatch string) ApiCreateCapabilityServerModelsCapabilityDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityServerModelsCapabilityDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityServerModelsCapabilityDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateCapabilityServerModelsCapabilityDef Create a 'capability.ServerModelsCapab
 func (a *CapabilityApiService) CreateCapabilityServerModelsCapabilityDef(ctx _context.Context) ApiCreateCapabilityServerModelsCapabilityDefRequest {
 	return ApiCreateCapabilityServerModelsCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *CapabilityApiService) CreateCapabilityServerModelsCapabilityDefExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *CapabilityApiService) CreateCapabilityServerModelsCapabilityDefExecute(
 }
 
 type ApiCreateCapabilityServerSchemaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
 	capabilityServerSchemaDescriptor *CapabilityServerSchemaDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;capability.ServerSchemaDescriptor&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateCapabilityServerSchemaDescriptorRequest) CapabilityServerSchema
 	r.capabilityServerSchemaDescriptor = &capabilityServerSchemaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilityServerSchemaDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilityServerSchemaDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilityServerSchemaDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilityServerSchemaDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateCapabilityServerSchemaDescriptor Create a 'capability.ServerSchemaDescript
 func (a *CapabilityApiService) CreateCapabilityServerSchemaDescriptor(ctx _context.Context) ApiCreateCapabilityServerSchemaDescriptorRequest {
 	return ApiCreateCapabilityServerSchemaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *CapabilityApiService) CreateCapabilityServerSchemaDescriptorExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *CapabilityApiService) CreateCapabilityServerSchemaDescriptorExecute(r A
 }
 
 type ApiCreateCapabilitySiocModuleCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
 	capabilitySiocModuleCapabilityDef *CapabilitySiocModuleCapabilityDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;capability.SiocModuleCapabilityDef&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateCapabilitySiocModuleCapabilityDefRequest) CapabilitySiocModuleC
 	r.capabilitySiocModuleCapabilityDef = &capabilitySiocModuleCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySiocModuleCapabilityDefRequest) IfMatch(ifMatch string) ApiCreateCapabilitySiocModuleCapabilityDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySiocModuleCapabilityDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySiocModuleCapabilityDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateCapabilitySiocModuleCapabilityDef Create a 'capability.SiocModuleCapabilit
 func (a *CapabilityApiService) CreateCapabilitySiocModuleCapabilityDef(ctx _context.Context) ApiCreateCapabilitySiocModuleCapabilityDefRequest {
 	return ApiCreateCapabilitySiocModuleCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleCapabilityDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,11 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleCapabilityDefExecute(r 
 }
 
 type ApiCreateCapabilitySiocModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
 	capabilitySiocModuleDescriptor *CapabilitySiocModuleDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;capability.SiocModuleDescriptor&#39; resource to create.
@@ -3033,11 +3067,13 @@ func (r ApiCreateCapabilitySiocModuleDescriptorRequest) CapabilitySiocModuleDesc
 	r.capabilitySiocModuleDescriptor = &capabilitySiocModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySiocModuleDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilitySiocModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySiocModuleDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySiocModuleDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3057,7 +3093,7 @@ CreateCapabilitySiocModuleDescriptor Create a 'capability.SiocModuleDescriptor' 
 func (a *CapabilityApiService) CreateCapabilitySiocModuleDescriptor(ctx _context.Context) ApiCreateCapabilitySiocModuleDescriptorRequest {
 	return ApiCreateCapabilitySiocModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3210,13 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleDescriptorExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3233,11 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleDescriptorExecute(r Api
 }
 
 type ApiCreateCapabilitySiocModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                                  _context.Context
+	ApiService                           *CapabilityApiService
 	capabilitySiocModuleManufacturingDef *CapabilitySiocModuleManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                              *string
+	ifNoneMatch                          *string
 }
 
 // The &#39;capability.SiocModuleManufacturingDef&#39; resource to create.
@@ -3209,11 +3245,13 @@ func (r ApiCreateCapabilitySiocModuleManufacturingDefRequest) CapabilitySiocModu
 	r.capabilitySiocModuleManufacturingDef = &capabilitySiocModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySiocModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilitySiocModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySiocModuleManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySiocModuleManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3233,7 +3271,7 @@ CreateCapabilitySiocModuleManufacturingDef Create a 'capability.SiocModuleManufa
 func (a *CapabilityApiService) CreateCapabilitySiocModuleManufacturingDef(ctx _context.Context) ApiCreateCapabilitySiocModuleManufacturingDefRequest {
 	return ApiCreateCapabilitySiocModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3388,13 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleManufacturingDefExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3411,11 @@ func (a *CapabilityApiService) CreateCapabilitySiocModuleManufacturingDefExecute
 }
 
 type ApiCreateCapabilitySwitchCapabilityRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
 	capabilitySwitchCapability *CapabilitySwitchCapability
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;capability.SwitchCapability&#39; resource to create.
@@ -3385,11 +3423,13 @@ func (r ApiCreateCapabilitySwitchCapabilityRequest) CapabilitySwitchCapability(c
 	r.capabilitySwitchCapability = &capabilitySwitchCapability
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySwitchCapabilityRequest) IfMatch(ifMatch string) ApiCreateCapabilitySwitchCapabilityRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySwitchCapabilityRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySwitchCapabilityRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3409,7 +3449,7 @@ CreateCapabilitySwitchCapability Create a 'capability.SwitchCapability' resource
 func (a *CapabilityApiService) CreateCapabilitySwitchCapability(ctx _context.Context) ApiCreateCapabilitySwitchCapabilityRequest {
 	return ApiCreateCapabilitySwitchCapabilityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3526,13 +3566,13 @@ func (a *CapabilityApiService) CreateCapabilitySwitchCapabilityExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3549,11 +3589,11 @@ func (a *CapabilityApiService) CreateCapabilitySwitchCapabilityExecute(r ApiCrea
 }
 
 type ApiCreateCapabilitySwitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
 	capabilitySwitchDescriptor *CapabilitySwitchDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;capability.SwitchDescriptor&#39; resource to create.
@@ -3561,11 +3601,13 @@ func (r ApiCreateCapabilitySwitchDescriptorRequest) CapabilitySwitchDescriptor(c
 	r.capabilitySwitchDescriptor = &capabilitySwitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySwitchDescriptorRequest) IfMatch(ifMatch string) ApiCreateCapabilitySwitchDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySwitchDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySwitchDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3585,7 +3627,7 @@ CreateCapabilitySwitchDescriptor Create a 'capability.SwitchDescriptor' resource
 func (a *CapabilityApiService) CreateCapabilitySwitchDescriptor(ctx _context.Context) ApiCreateCapabilitySwitchDescriptorRequest {
 	return ApiCreateCapabilitySwitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3702,13 +3744,13 @@ func (a *CapabilityApiService) CreateCapabilitySwitchDescriptorExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3725,11 +3767,11 @@ func (a *CapabilityApiService) CreateCapabilitySwitchDescriptorExecute(r ApiCrea
 }
 
 type ApiCreateCapabilitySwitchManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
 	capabilitySwitchManufacturingDef *CapabilitySwitchManufacturingDef
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;capability.SwitchManufacturingDef&#39; resource to create.
@@ -3737,11 +3779,13 @@ func (r ApiCreateCapabilitySwitchManufacturingDefRequest) CapabilitySwitchManufa
 	r.capabilitySwitchManufacturingDef = &capabilitySwitchManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCapabilitySwitchManufacturingDefRequest) IfMatch(ifMatch string) ApiCreateCapabilitySwitchManufacturingDefRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCapabilitySwitchManufacturingDefRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCapabilitySwitchManufacturingDefRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3761,7 +3805,7 @@ CreateCapabilitySwitchManufacturingDef Create a 'capability.SwitchManufacturingD
 func (a *CapabilityApiService) CreateCapabilitySwitchManufacturingDef(ctx _context.Context) ApiCreateCapabilitySwitchManufacturingDefRequest {
 	return ApiCreateCapabilitySwitchManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3878,13 +3922,13 @@ func (a *CapabilityApiService) CreateCapabilitySwitchManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3901,11 +3945,10 @@ func (a *CapabilityApiService) CreateCapabilitySwitchManufacturingDefExecute(r A
 }
 
 type ApiDeleteCapabilityAdapterUnitDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityAdapterUnitDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityAdapterUnitDescriptorExecute(r)
@@ -3921,8 +3964,8 @@ DeleteCapabilityAdapterUnitDescriptor Delete a 'capability.AdapterUnitDescriptor
 func (a *CapabilityApiService) DeleteCapabilityAdapterUnitDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityAdapterUnitDescriptorRequest {
 	return ApiDeleteCapabilityAdapterUnitDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4027,13 +4070,13 @@ func (a *CapabilityApiService) DeleteCapabilityAdapterUnitDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4041,11 +4084,10 @@ func (a *CapabilityApiService) DeleteCapabilityAdapterUnitDescriptorExecute(r Ap
 }
 
 type ApiDeleteCapabilityChassisDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityChassisDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityChassisDescriptorExecute(r)
@@ -4061,8 +4103,8 @@ DeleteCapabilityChassisDescriptor Delete a 'capability.ChassisDescriptor' resour
 func (a *CapabilityApiService) DeleteCapabilityChassisDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityChassisDescriptorRequest {
 	return ApiDeleteCapabilityChassisDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4167,13 +4209,13 @@ func (a *CapabilityApiService) DeleteCapabilityChassisDescriptorExecute(r ApiDel
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4181,11 +4223,10 @@ func (a *CapabilityApiService) DeleteCapabilityChassisDescriptorExecute(r ApiDel
 }
 
 type ApiDeleteCapabilityChassisManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityChassisManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityChassisManufacturingDefExecute(r)
@@ -4201,8 +4242,8 @@ DeleteCapabilityChassisManufacturingDef Delete a 'capability.ChassisManufacturin
 func (a *CapabilityApiService) DeleteCapabilityChassisManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilityChassisManufacturingDefRequest {
 	return ApiDeleteCapabilityChassisManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4307,13 +4348,13 @@ func (a *CapabilityApiService) DeleteCapabilityChassisManufacturingDefExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4321,11 +4362,10 @@ func (a *CapabilityApiService) DeleteCapabilityChassisManufacturingDefExecute(r 
 }
 
 type ApiDeleteCapabilityCimcFirmwareDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityCimcFirmwareDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityCimcFirmwareDescriptorExecute(r)
@@ -4341,8 +4381,8 @@ DeleteCapabilityCimcFirmwareDescriptor Delete a 'capability.CimcFirmwareDescript
 func (a *CapabilityApiService) DeleteCapabilityCimcFirmwareDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityCimcFirmwareDescriptorRequest {
 	return ApiDeleteCapabilityCimcFirmwareDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4447,13 +4487,13 @@ func (a *CapabilityApiService) DeleteCapabilityCimcFirmwareDescriptorExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4461,11 +4501,10 @@ func (a *CapabilityApiService) DeleteCapabilityCimcFirmwareDescriptorExecute(r A
 }
 
 type ApiDeleteCapabilityEquipmentPhysicalDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityEquipmentPhysicalDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityEquipmentPhysicalDefExecute(r)
@@ -4481,8 +4520,8 @@ DeleteCapabilityEquipmentPhysicalDef Delete a 'capability.EquipmentPhysicalDef' 
 func (a *CapabilityApiService) DeleteCapabilityEquipmentPhysicalDef(ctx _context.Context, moid string) ApiDeleteCapabilityEquipmentPhysicalDefRequest {
 	return ApiDeleteCapabilityEquipmentPhysicalDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4587,13 +4626,13 @@ func (a *CapabilityApiService) DeleteCapabilityEquipmentPhysicalDefExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4601,11 +4640,10 @@ func (a *CapabilityApiService) DeleteCapabilityEquipmentPhysicalDefExecute(r Api
 }
 
 type ApiDeleteCapabilityEquipmentSlotArrayRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityEquipmentSlotArrayRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityEquipmentSlotArrayExecute(r)
@@ -4621,8 +4659,8 @@ DeleteCapabilityEquipmentSlotArray Delete a 'capability.EquipmentSlotArray' reso
 func (a *CapabilityApiService) DeleteCapabilityEquipmentSlotArray(ctx _context.Context, moid string) ApiDeleteCapabilityEquipmentSlotArrayRequest {
 	return ApiDeleteCapabilityEquipmentSlotArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4727,13 +4765,13 @@ func (a *CapabilityApiService) DeleteCapabilityEquipmentSlotArrayExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4741,11 +4779,10 @@ func (a *CapabilityApiService) DeleteCapabilityEquipmentSlotArrayExecute(r ApiDe
 }
 
 type ApiDeleteCapabilityFanModuleDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityFanModuleDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityFanModuleDescriptorExecute(r)
@@ -4761,8 +4798,8 @@ DeleteCapabilityFanModuleDescriptor Delete a 'capability.FanModuleDescriptor' re
 func (a *CapabilityApiService) DeleteCapabilityFanModuleDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityFanModuleDescriptorRequest {
 	return ApiDeleteCapabilityFanModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4867,13 +4904,13 @@ func (a *CapabilityApiService) DeleteCapabilityFanModuleDescriptorExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4881,11 +4918,10 @@ func (a *CapabilityApiService) DeleteCapabilityFanModuleDescriptorExecute(r ApiD
 }
 
 type ApiDeleteCapabilityFanModuleManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityFanModuleManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityFanModuleManufacturingDefExecute(r)
@@ -4901,8 +4937,8 @@ DeleteCapabilityFanModuleManufacturingDef Delete a 'capability.FanModuleManufact
 func (a *CapabilityApiService) DeleteCapabilityFanModuleManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilityFanModuleManufacturingDefRequest {
 	return ApiDeleteCapabilityFanModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5007,13 +5043,13 @@ func (a *CapabilityApiService) DeleteCapabilityFanModuleManufacturingDefExecute(
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5021,11 +5057,10 @@ func (a *CapabilityApiService) DeleteCapabilityFanModuleManufacturingDefExecute(
 }
 
 type ApiDeleteCapabilityIoCardCapabilityDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityIoCardCapabilityDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityIoCardCapabilityDefExecute(r)
@@ -5041,8 +5076,8 @@ DeleteCapabilityIoCardCapabilityDef Delete a 'capability.IoCardCapabilityDef' re
 func (a *CapabilityApiService) DeleteCapabilityIoCardCapabilityDef(ctx _context.Context, moid string) ApiDeleteCapabilityIoCardCapabilityDefRequest {
 	return ApiDeleteCapabilityIoCardCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5147,13 +5182,13 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardCapabilityDefExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5161,11 +5196,10 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardCapabilityDefExecute(r ApiD
 }
 
 type ApiDeleteCapabilityIoCardDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityIoCardDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityIoCardDescriptorExecute(r)
@@ -5181,8 +5215,8 @@ DeleteCapabilityIoCardDescriptor Delete a 'capability.IoCardDescriptor' resource
 func (a *CapabilityApiService) DeleteCapabilityIoCardDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityIoCardDescriptorRequest {
 	return ApiDeleteCapabilityIoCardDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5287,13 +5321,13 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardDescriptorExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5301,11 +5335,10 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardDescriptorExecute(r ApiDele
 }
 
 type ApiDeleteCapabilityIoCardManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityIoCardManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityIoCardManufacturingDefExecute(r)
@@ -5321,8 +5354,8 @@ DeleteCapabilityIoCardManufacturingDef Delete a 'capability.IoCardManufacturingD
 func (a *CapabilityApiService) DeleteCapabilityIoCardManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilityIoCardManufacturingDefRequest {
 	return ApiDeleteCapabilityIoCardManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5427,13 +5460,13 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5441,11 +5474,10 @@ func (a *CapabilityApiService) DeleteCapabilityIoCardManufacturingDefExecute(r A
 }
 
 type ApiDeleteCapabilityPortGroupAggregationDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityPortGroupAggregationDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityPortGroupAggregationDefExecute(r)
@@ -5461,8 +5493,8 @@ DeleteCapabilityPortGroupAggregationDef Delete a 'capability.PortGroupAggregatio
 func (a *CapabilityApiService) DeleteCapabilityPortGroupAggregationDef(ctx _context.Context, moid string) ApiDeleteCapabilityPortGroupAggregationDefRequest {
 	return ApiDeleteCapabilityPortGroupAggregationDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5567,13 +5599,13 @@ func (a *CapabilityApiService) DeleteCapabilityPortGroupAggregationDefExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5581,11 +5613,10 @@ func (a *CapabilityApiService) DeleteCapabilityPortGroupAggregationDefExecute(r 
 }
 
 type ApiDeleteCapabilityPsuDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityPsuDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityPsuDescriptorExecute(r)
@@ -5601,8 +5632,8 @@ DeleteCapabilityPsuDescriptor Delete a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) DeleteCapabilityPsuDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityPsuDescriptorRequest {
 	return ApiDeleteCapabilityPsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5707,13 +5738,13 @@ func (a *CapabilityApiService) DeleteCapabilityPsuDescriptorExecute(r ApiDeleteC
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5721,11 +5752,10 @@ func (a *CapabilityApiService) DeleteCapabilityPsuDescriptorExecute(r ApiDeleteC
 }
 
 type ApiDeleteCapabilityPsuManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityPsuManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityPsuManufacturingDefExecute(r)
@@ -5741,8 +5771,8 @@ DeleteCapabilityPsuManufacturingDef Delete a 'capability.PsuManufacturingDef' re
 func (a *CapabilityApiService) DeleteCapabilityPsuManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilityPsuManufacturingDefRequest {
 	return ApiDeleteCapabilityPsuManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5847,13 +5877,13 @@ func (a *CapabilityApiService) DeleteCapabilityPsuManufacturingDefExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5861,11 +5891,10 @@ func (a *CapabilityApiService) DeleteCapabilityPsuManufacturingDefExecute(r ApiD
 }
 
 type ApiDeleteCapabilityServerModelsCapabilityDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityServerModelsCapabilityDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityServerModelsCapabilityDefExecute(r)
@@ -5881,8 +5910,8 @@ DeleteCapabilityServerModelsCapabilityDef Delete a 'capability.ServerModelsCapab
 func (a *CapabilityApiService) DeleteCapabilityServerModelsCapabilityDef(ctx _context.Context, moid string) ApiDeleteCapabilityServerModelsCapabilityDefRequest {
 	return ApiDeleteCapabilityServerModelsCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5987,13 +6016,13 @@ func (a *CapabilityApiService) DeleteCapabilityServerModelsCapabilityDefExecute(
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6001,11 +6030,10 @@ func (a *CapabilityApiService) DeleteCapabilityServerModelsCapabilityDefExecute(
 }
 
 type ApiDeleteCapabilityServerSchemaDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilityServerSchemaDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilityServerSchemaDescriptorExecute(r)
@@ -6021,8 +6049,8 @@ DeleteCapabilityServerSchemaDescriptor Delete a 'capability.ServerSchemaDescript
 func (a *CapabilityApiService) DeleteCapabilityServerSchemaDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilityServerSchemaDescriptorRequest {
 	return ApiDeleteCapabilityServerSchemaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6127,13 +6155,13 @@ func (a *CapabilityApiService) DeleteCapabilityServerSchemaDescriptorExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6141,11 +6169,10 @@ func (a *CapabilityApiService) DeleteCapabilityServerSchemaDescriptorExecute(r A
 }
 
 type ApiDeleteCapabilitySiocModuleCapabilityDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySiocModuleCapabilityDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySiocModuleCapabilityDefExecute(r)
@@ -6161,8 +6188,8 @@ DeleteCapabilitySiocModuleCapabilityDef Delete a 'capability.SiocModuleCapabilit
 func (a *CapabilityApiService) DeleteCapabilitySiocModuleCapabilityDef(ctx _context.Context, moid string) ApiDeleteCapabilitySiocModuleCapabilityDefRequest {
 	return ApiDeleteCapabilitySiocModuleCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6267,13 +6294,13 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleCapabilityDefExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6281,11 +6308,10 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleCapabilityDefExecute(r 
 }
 
 type ApiDeleteCapabilitySiocModuleDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySiocModuleDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySiocModuleDescriptorExecute(r)
@@ -6301,8 +6327,8 @@ DeleteCapabilitySiocModuleDescriptor Delete a 'capability.SiocModuleDescriptor' 
 func (a *CapabilityApiService) DeleteCapabilitySiocModuleDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilitySiocModuleDescriptorRequest {
 	return ApiDeleteCapabilitySiocModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6407,13 +6433,13 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleDescriptorExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6421,11 +6447,10 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleDescriptorExecute(r Api
 }
 
 type ApiDeleteCapabilitySiocModuleManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySiocModuleManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySiocModuleManufacturingDefExecute(r)
@@ -6441,8 +6466,8 @@ DeleteCapabilitySiocModuleManufacturingDef Delete a 'capability.SiocModuleManufa
 func (a *CapabilityApiService) DeleteCapabilitySiocModuleManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilitySiocModuleManufacturingDefRequest {
 	return ApiDeleteCapabilitySiocModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6547,13 +6572,13 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleManufacturingDefExecute
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6561,11 +6586,10 @@ func (a *CapabilityApiService) DeleteCapabilitySiocModuleManufacturingDefExecute
 }
 
 type ApiDeleteCapabilitySwitchCapabilityRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySwitchCapabilityRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySwitchCapabilityExecute(r)
@@ -6581,8 +6605,8 @@ DeleteCapabilitySwitchCapability Delete a 'capability.SwitchCapability' resource
 func (a *CapabilityApiService) DeleteCapabilitySwitchCapability(ctx _context.Context, moid string) ApiDeleteCapabilitySwitchCapabilityRequest {
 	return ApiDeleteCapabilitySwitchCapabilityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6687,13 +6711,13 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchCapabilityExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6701,11 +6725,10 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchCapabilityExecute(r ApiDele
 }
 
 type ApiDeleteCapabilitySwitchDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySwitchDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySwitchDescriptorExecute(r)
@@ -6721,8 +6744,8 @@ DeleteCapabilitySwitchDescriptor Delete a 'capability.SwitchDescriptor' resource
 func (a *CapabilityApiService) DeleteCapabilitySwitchDescriptor(ctx _context.Context, moid string) ApiDeleteCapabilitySwitchDescriptorRequest {
 	return ApiDeleteCapabilitySwitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6827,13 +6850,13 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchDescriptorExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6841,11 +6864,10 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchDescriptorExecute(r ApiDele
 }
 
 type ApiDeleteCapabilitySwitchManufacturingDefRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteCapabilitySwitchManufacturingDefRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteCapabilitySwitchManufacturingDefExecute(r)
@@ -6861,8 +6883,8 @@ DeleteCapabilitySwitchManufacturingDef Delete a 'capability.SwitchManufacturingD
 func (a *CapabilityApiService) DeleteCapabilitySwitchManufacturingDef(ctx _context.Context, moid string) ApiDeleteCapabilitySwitchManufacturingDefRequest {
 	return ApiDeleteCapabilitySwitchManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6967,13 +6989,13 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6981,11 +7003,10 @@ func (a *CapabilityApiService) DeleteCapabilitySwitchManufacturingDefExecute(r A
 }
 
 type ApiGetCapabilityAdapterUnitDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityAdapterUnitDescriptorByMoidRequest) Execute() (CapabilityAdapterUnitDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityAdapterUnitDescriptorByMoidExecute(r)
@@ -7001,8 +7022,8 @@ GetCapabilityAdapterUnitDescriptorByMoid Read a 'capability.AdapterUnitDescripto
 func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityAdapterUnitDescriptorByMoidRequest {
 	return ApiGetCapabilityAdapterUnitDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7109,13 +7130,13 @@ func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7132,19 +7153,19 @@ func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorByMoidExecute(r
 }
 
 type ApiGetCapabilityAdapterUnitDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7152,51 +7173,61 @@ func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Top(top int32) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Skip(skip int32) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Select_(select_ string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Expand(expand string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Apply(apply string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Count(count bool) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) At(at string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityAdapterUnitDescriptorListRequest) Tags(tags string) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	r.tags = &tags
@@ -7216,7 +7247,7 @@ GetCapabilityAdapterUnitDescriptorList Read a 'capability.AdapterUnitDescriptor'
 func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorList(ctx _context.Context) ApiGetCapabilityAdapterUnitDescriptorListRequest {
 	return ApiGetCapabilityAdapterUnitDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7355,13 +7386,13 @@ func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7378,11 +7409,10 @@ func (a *CapabilityApiService) GetCapabilityAdapterUnitDescriptorListExecute(r A
 }
 
 type ApiGetCapabilityCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityCatalogByMoidRequest) Execute() (CapabilityCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityCatalogByMoidExecute(r)
@@ -7398,8 +7428,8 @@ GetCapabilityCatalogByMoid Read a 'capability.Catalog' resource.
 func (a *CapabilityApiService) GetCapabilityCatalogByMoid(ctx _context.Context, moid string) ApiGetCapabilityCatalogByMoidRequest {
 	return ApiGetCapabilityCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7506,13 +7536,13 @@ func (a *CapabilityApiService) GetCapabilityCatalogByMoidExecute(r ApiGetCapabil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7529,19 +7559,19 @@ func (a *CapabilityApiService) GetCapabilityCatalogByMoidExecute(r ApiGetCapabil
 }
 
 type ApiGetCapabilityCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7549,51 +7579,61 @@ func (r ApiGetCapabilityCatalogListRequest) Filter(filter string) ApiGetCapabili
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityCatalogListRequest) Orderby(orderby string) ApiGetCapabilityCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityCatalogListRequest) Top(top int32) ApiGetCapabilityCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityCatalogListRequest) Skip(skip int32) ApiGetCapabilityCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityCatalogListRequest) Select_(select_ string) ApiGetCapabilityCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityCatalogListRequest) Expand(expand string) ApiGetCapabilityCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityCatalogListRequest) Apply(apply string) ApiGetCapabilityCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityCatalogListRequest) Count(count bool) ApiGetCapabilityCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityCatalogListRequest) Inlinecount(inlinecount string) ApiGetCapabilityCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityCatalogListRequest) At(at string) ApiGetCapabilityCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityCatalogListRequest) Tags(tags string) ApiGetCapabilityCatalogListRequest {
 	r.tags = &tags
@@ -7613,7 +7653,7 @@ GetCapabilityCatalogList Read a 'capability.Catalog' resource.
 func (a *CapabilityApiService) GetCapabilityCatalogList(ctx _context.Context) ApiGetCapabilityCatalogListRequest {
 	return ApiGetCapabilityCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7752,13 +7792,13 @@ func (a *CapabilityApiService) GetCapabilityCatalogListExecute(r ApiGetCapabilit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7775,11 +7815,10 @@ func (a *CapabilityApiService) GetCapabilityCatalogListExecute(r ApiGetCapabilit
 }
 
 type ApiGetCapabilityChassisDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityChassisDescriptorByMoidRequest) Execute() (CapabilityChassisDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityChassisDescriptorByMoidExecute(r)
@@ -7795,8 +7834,8 @@ GetCapabilityChassisDescriptorByMoid Read a 'capability.ChassisDescriptor' resou
 func (a *CapabilityApiService) GetCapabilityChassisDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityChassisDescriptorByMoidRequest {
 	return ApiGetCapabilityChassisDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7903,13 +7942,13 @@ func (a *CapabilityApiService) GetCapabilityChassisDescriptorByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7926,19 +7965,19 @@ func (a *CapabilityApiService) GetCapabilityChassisDescriptorByMoidExecute(r Api
 }
 
 type ApiGetCapabilityChassisDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7946,51 +7985,61 @@ func (r ApiGetCapabilityChassisDescriptorListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Top(top int32) ApiGetCapabilityChassisDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Skip(skip int32) ApiGetCapabilityChassisDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Select_(select_ string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Expand(expand string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Apply(apply string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Count(count bool) ApiGetCapabilityChassisDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityChassisDescriptorListRequest) At(at string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityChassisDescriptorListRequest) Tags(tags string) ApiGetCapabilityChassisDescriptorListRequest {
 	r.tags = &tags
@@ -8010,7 +8059,7 @@ GetCapabilityChassisDescriptorList Read a 'capability.ChassisDescriptor' resourc
 func (a *CapabilityApiService) GetCapabilityChassisDescriptorList(ctx _context.Context) ApiGetCapabilityChassisDescriptorListRequest {
 	return ApiGetCapabilityChassisDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8149,13 +8198,13 @@ func (a *CapabilityApiService) GetCapabilityChassisDescriptorListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8172,11 +8221,10 @@ func (a *CapabilityApiService) GetCapabilityChassisDescriptorListExecute(r ApiGe
 }
 
 type ApiGetCapabilityChassisManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityChassisManufacturingDefByMoidRequest) Execute() (CapabilityChassisManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityChassisManufacturingDefByMoidExecute(r)
@@ -8192,8 +8240,8 @@ GetCapabilityChassisManufacturingDefByMoid Read a 'capability.ChassisManufacturi
 func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityChassisManufacturingDefByMoidRequest {
 	return ApiGetCapabilityChassisManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8300,13 +8348,13 @@ func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8323,19 +8371,19 @@ func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefByMoidExecute
 }
 
 type ApiGetCapabilityChassisManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8343,51 +8391,61 @@ func (r ApiGetCapabilityChassisManufacturingDefListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Top(top int32) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Expand(expand string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Apply(apply string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Count(count bool) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) At(at string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityChassisManufacturingDefListRequest) Tags(tags string) ApiGetCapabilityChassisManufacturingDefListRequest {
 	r.tags = &tags
@@ -8407,7 +8465,7 @@ GetCapabilityChassisManufacturingDefList Read a 'capability.ChassisManufacturing
 func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefList(ctx _context.Context) ApiGetCapabilityChassisManufacturingDefListRequest {
 	return ApiGetCapabilityChassisManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8546,13 +8604,13 @@ func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8569,11 +8627,10 @@ func (a *CapabilityApiService) GetCapabilityChassisManufacturingDefListExecute(r
 }
 
 type ApiGetCapabilityCimcFirmwareDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityCimcFirmwareDescriptorByMoidRequest) Execute() (CapabilityCimcFirmwareDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityCimcFirmwareDescriptorByMoidExecute(r)
@@ -8589,8 +8646,8 @@ GetCapabilityCimcFirmwareDescriptorByMoid Read a 'capability.CimcFirmwareDescrip
 func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityCimcFirmwareDescriptorByMoidRequest {
 	return ApiGetCapabilityCimcFirmwareDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8697,13 +8754,13 @@ func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8720,19 +8777,19 @@ func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorByMoidExecute(
 }
 
 type ApiGetCapabilityCimcFirmwareDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8740,51 +8797,61 @@ func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Top(top int32) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Skip(skip int32) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Select_(select_ string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Expand(expand string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Apply(apply string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Count(count bool) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) At(at string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityCimcFirmwareDescriptorListRequest) Tags(tags string) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	r.tags = &tags
@@ -8804,7 +8871,7 @@ GetCapabilityCimcFirmwareDescriptorList Read a 'capability.CimcFirmwareDescripto
 func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorList(ctx _context.Context) ApiGetCapabilityCimcFirmwareDescriptorListRequest {
 	return ApiGetCapabilityCimcFirmwareDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8943,13 +9010,13 @@ func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8966,11 +9033,10 @@ func (a *CapabilityApiService) GetCapabilityCimcFirmwareDescriptorListExecute(r 
 }
 
 type ApiGetCapabilityEquipmentPhysicalDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityEquipmentPhysicalDefByMoidRequest) Execute() (CapabilityEquipmentPhysicalDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityEquipmentPhysicalDefByMoidExecute(r)
@@ -8986,8 +9052,8 @@ GetCapabilityEquipmentPhysicalDefByMoid Read a 'capability.EquipmentPhysicalDef'
 func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityEquipmentPhysicalDefByMoidRequest {
 	return ApiGetCapabilityEquipmentPhysicalDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9094,13 +9160,13 @@ func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9117,19 +9183,19 @@ func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefByMoidExecute(r 
 }
 
 type ApiGetCapabilityEquipmentPhysicalDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9137,51 +9203,61 @@ func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Orderby(orderby string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Top(top int32) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Skip(skip int32) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Select_(select_ string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Expand(expand string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Apply(apply string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Count(count bool) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) At(at string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityEquipmentPhysicalDefListRequest) Tags(tags string) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	r.tags = &tags
@@ -9201,7 +9277,7 @@ GetCapabilityEquipmentPhysicalDefList Read a 'capability.EquipmentPhysicalDef' r
 func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefList(ctx _context.Context) ApiGetCapabilityEquipmentPhysicalDefListRequest {
 	return ApiGetCapabilityEquipmentPhysicalDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9340,13 +9416,13 @@ func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9363,11 +9439,10 @@ func (a *CapabilityApiService) GetCapabilityEquipmentPhysicalDefListExecute(r Ap
 }
 
 type ApiGetCapabilityEquipmentSlotArrayByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityEquipmentSlotArrayByMoidRequest) Execute() (CapabilityEquipmentSlotArray, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityEquipmentSlotArrayByMoidExecute(r)
@@ -9383,8 +9458,8 @@ GetCapabilityEquipmentSlotArrayByMoid Read a 'capability.EquipmentSlotArray' res
 func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayByMoid(ctx _context.Context, moid string) ApiGetCapabilityEquipmentSlotArrayByMoidRequest {
 	return ApiGetCapabilityEquipmentSlotArrayByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9491,13 +9566,13 @@ func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9514,19 +9589,19 @@ func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayByMoidExecute(r Ap
 }
 
 type ApiGetCapabilityEquipmentSlotArrayListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9534,51 +9609,61 @@ func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Orderby(orderby string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Top(top int32) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Skip(skip int32) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Select_(select_ string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Expand(expand string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Apply(apply string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Count(count bool) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Inlinecount(inlinecount string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) At(at string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityEquipmentSlotArrayListRequest) Tags(tags string) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	r.tags = &tags
@@ -9598,7 +9683,7 @@ GetCapabilityEquipmentSlotArrayList Read a 'capability.EquipmentSlotArray' resou
 func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayList(ctx _context.Context) ApiGetCapabilityEquipmentSlotArrayListRequest {
 	return ApiGetCapabilityEquipmentSlotArrayListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9737,13 +9822,13 @@ func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9760,11 +9845,10 @@ func (a *CapabilityApiService) GetCapabilityEquipmentSlotArrayListExecute(r ApiG
 }
 
 type ApiGetCapabilityFanModuleDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityFanModuleDescriptorByMoidRequest) Execute() (CapabilityFanModuleDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityFanModuleDescriptorByMoidExecute(r)
@@ -9780,8 +9864,8 @@ GetCapabilityFanModuleDescriptorByMoid Read a 'capability.FanModuleDescriptor' r
 func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityFanModuleDescriptorByMoidRequest {
 	return ApiGetCapabilityFanModuleDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9888,13 +9972,13 @@ func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9911,19 +9995,19 @@ func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorByMoidExecute(r A
 }
 
 type ApiGetCapabilityFanModuleDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9931,51 +10015,61 @@ func (r ApiGetCapabilityFanModuleDescriptorListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Top(top int32) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Skip(skip int32) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Select_(select_ string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Expand(expand string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Apply(apply string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Count(count bool) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) At(at string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityFanModuleDescriptorListRequest) Tags(tags string) ApiGetCapabilityFanModuleDescriptorListRequest {
 	r.tags = &tags
@@ -9995,7 +10089,7 @@ GetCapabilityFanModuleDescriptorList Read a 'capability.FanModuleDescriptor' res
 func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorList(ctx _context.Context) ApiGetCapabilityFanModuleDescriptorListRequest {
 	return ApiGetCapabilityFanModuleDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10134,13 +10228,13 @@ func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10157,11 +10251,10 @@ func (a *CapabilityApiService) GetCapabilityFanModuleDescriptorListExecute(r Api
 }
 
 type ApiGetCapabilityFanModuleManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityFanModuleManufacturingDefByMoidRequest) Execute() (CapabilityFanModuleManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityFanModuleManufacturingDefByMoidExecute(r)
@@ -10177,8 +10270,8 @@ GetCapabilityFanModuleManufacturingDefByMoid Read a 'capability.FanModuleManufac
 func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityFanModuleManufacturingDefByMoidRequest {
 	return ApiGetCapabilityFanModuleManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10285,13 +10378,13 @@ func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10308,19 +10401,19 @@ func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefByMoidExecu
 }
 
 type ApiGetCapabilityFanModuleManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10328,51 +10421,61 @@ func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Top(top int32) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Expand(expand string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Apply(apply string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Count(count bool) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) At(at string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityFanModuleManufacturingDefListRequest) Tags(tags string) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	r.tags = &tags
@@ -10392,7 +10495,7 @@ GetCapabilityFanModuleManufacturingDefList Read a 'capability.FanModuleManufactu
 func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefList(ctx _context.Context) ApiGetCapabilityFanModuleManufacturingDefListRequest {
 	return ApiGetCapabilityFanModuleManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10531,13 +10634,13 @@ func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10554,11 +10657,10 @@ func (a *CapabilityApiService) GetCapabilityFanModuleManufacturingDefListExecute
 }
 
 type ApiGetCapabilityIoCardCapabilityDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityIoCardCapabilityDefByMoidRequest) Execute() (CapabilityIoCardCapabilityDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityIoCardCapabilityDefByMoidExecute(r)
@@ -10574,8 +10676,8 @@ GetCapabilityIoCardCapabilityDefByMoid Read a 'capability.IoCardCapabilityDef' r
 func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityIoCardCapabilityDefByMoidRequest {
 	return ApiGetCapabilityIoCardCapabilityDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10682,13 +10784,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10705,19 +10807,19 @@ func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefByMoidExecute(r A
 }
 
 type ApiGetCapabilityIoCardCapabilityDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10725,51 +10827,61 @@ func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Orderby(orderby string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Top(top int32) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Skip(skip int32) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Select_(select_ string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Expand(expand string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Apply(apply string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Count(count bool) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) At(at string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityIoCardCapabilityDefListRequest) Tags(tags string) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	r.tags = &tags
@@ -10789,7 +10901,7 @@ GetCapabilityIoCardCapabilityDefList Read a 'capability.IoCardCapabilityDef' res
 func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefList(ctx _context.Context) ApiGetCapabilityIoCardCapabilityDefListRequest {
 	return ApiGetCapabilityIoCardCapabilityDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10928,13 +11040,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10951,11 +11063,10 @@ func (a *CapabilityApiService) GetCapabilityIoCardCapabilityDefListExecute(r Api
 }
 
 type ApiGetCapabilityIoCardDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityIoCardDescriptorByMoidRequest) Execute() (CapabilityIoCardDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityIoCardDescriptorByMoidExecute(r)
@@ -10971,8 +11082,8 @@ GetCapabilityIoCardDescriptorByMoid Read a 'capability.IoCardDescriptor' resourc
 func (a *CapabilityApiService) GetCapabilityIoCardDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityIoCardDescriptorByMoidRequest {
 	return ApiGetCapabilityIoCardDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11079,13 +11190,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardDescriptorByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11102,19 +11213,19 @@ func (a *CapabilityApiService) GetCapabilityIoCardDescriptorByMoidExecute(r ApiG
 }
 
 type ApiGetCapabilityIoCardDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11122,51 +11233,61 @@ func (r ApiGetCapabilityIoCardDescriptorListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Top(top int32) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Skip(skip int32) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Select_(select_ string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Expand(expand string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Apply(apply string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Count(count bool) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) At(at string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityIoCardDescriptorListRequest) Tags(tags string) ApiGetCapabilityIoCardDescriptorListRequest {
 	r.tags = &tags
@@ -11186,7 +11307,7 @@ GetCapabilityIoCardDescriptorList Read a 'capability.IoCardDescriptor' resource.
 func (a *CapabilityApiService) GetCapabilityIoCardDescriptorList(ctx _context.Context) ApiGetCapabilityIoCardDescriptorListRequest {
 	return ApiGetCapabilityIoCardDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11325,13 +11446,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardDescriptorListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11348,11 +11469,10 @@ func (a *CapabilityApiService) GetCapabilityIoCardDescriptorListExecute(r ApiGet
 }
 
 type ApiGetCapabilityIoCardManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityIoCardManufacturingDefByMoidRequest) Execute() (CapabilityIoCardManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityIoCardManufacturingDefByMoidExecute(r)
@@ -11368,8 +11488,8 @@ GetCapabilityIoCardManufacturingDefByMoid Read a 'capability.IoCardManufacturing
 func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityIoCardManufacturingDefByMoidRequest {
 	return ApiGetCapabilityIoCardManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11476,13 +11596,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11499,19 +11619,19 @@ func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefByMoidExecute(
 }
 
 type ApiGetCapabilityIoCardManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11519,51 +11639,61 @@ func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Top(top int32) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Expand(expand string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Apply(apply string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Count(count bool) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) At(at string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityIoCardManufacturingDefListRequest) Tags(tags string) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	r.tags = &tags
@@ -11583,7 +11713,7 @@ GetCapabilityIoCardManufacturingDefList Read a 'capability.IoCardManufacturingDe
 func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefList(ctx _context.Context) ApiGetCapabilityIoCardManufacturingDefListRequest {
 	return ApiGetCapabilityIoCardManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11722,13 +11852,13 @@ func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11745,11 +11875,10 @@ func (a *CapabilityApiService) GetCapabilityIoCardManufacturingDefListExecute(r 
 }
 
 type ApiGetCapabilityPortGroupAggregationDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityPortGroupAggregationDefByMoidRequest) Execute() (CapabilityPortGroupAggregationDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityPortGroupAggregationDefByMoidExecute(r)
@@ -11765,8 +11894,8 @@ GetCapabilityPortGroupAggregationDefByMoid Read a 'capability.PortGroupAggregati
 func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityPortGroupAggregationDefByMoidRequest {
 	return ApiGetCapabilityPortGroupAggregationDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11873,13 +12002,13 @@ func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11896,19 +12025,19 @@ func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefByMoidExecute
 }
 
 type ApiGetCapabilityPortGroupAggregationDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11916,51 +12045,61 @@ func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Orderby(orderby string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Top(top int32) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Skip(skip int32) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Select_(select_ string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Expand(expand string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Apply(apply string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Count(count bool) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) At(at string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityPortGroupAggregationDefListRequest) Tags(tags string) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	r.tags = &tags
@@ -11980,7 +12119,7 @@ GetCapabilityPortGroupAggregationDefList Read a 'capability.PortGroupAggregation
 func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefList(ctx _context.Context) ApiGetCapabilityPortGroupAggregationDefListRequest {
 	return ApiGetCapabilityPortGroupAggregationDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12119,13 +12258,13 @@ func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12142,11 +12281,10 @@ func (a *CapabilityApiService) GetCapabilityPortGroupAggregationDefListExecute(r
 }
 
 type ApiGetCapabilityPsuDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityPsuDescriptorByMoidRequest) Execute() (CapabilityPsuDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityPsuDescriptorByMoidExecute(r)
@@ -12162,8 +12300,8 @@ GetCapabilityPsuDescriptorByMoid Read a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) GetCapabilityPsuDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityPsuDescriptorByMoidRequest {
 	return ApiGetCapabilityPsuDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12270,13 +12408,13 @@ func (a *CapabilityApiService) GetCapabilityPsuDescriptorByMoidExecute(r ApiGetC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12293,19 +12431,19 @@ func (a *CapabilityApiService) GetCapabilityPsuDescriptorByMoidExecute(r ApiGetC
 }
 
 type ApiGetCapabilityPsuDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12313,51 +12451,61 @@ func (r ApiGetCapabilityPsuDescriptorListRequest) Filter(filter string) ApiGetCa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Top(top int32) ApiGetCapabilityPsuDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Skip(skip int32) ApiGetCapabilityPsuDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Select_(select_ string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Expand(expand string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Apply(apply string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Count(count bool) ApiGetCapabilityPsuDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityPsuDescriptorListRequest) At(at string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityPsuDescriptorListRequest) Tags(tags string) ApiGetCapabilityPsuDescriptorListRequest {
 	r.tags = &tags
@@ -12377,7 +12525,7 @@ GetCapabilityPsuDescriptorList Read a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) GetCapabilityPsuDescriptorList(ctx _context.Context) ApiGetCapabilityPsuDescriptorListRequest {
 	return ApiGetCapabilityPsuDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12516,13 +12664,13 @@ func (a *CapabilityApiService) GetCapabilityPsuDescriptorListExecute(r ApiGetCap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12539,11 +12687,10 @@ func (a *CapabilityApiService) GetCapabilityPsuDescriptorListExecute(r ApiGetCap
 }
 
 type ApiGetCapabilityPsuManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityPsuManufacturingDefByMoidRequest) Execute() (CapabilityPsuManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityPsuManufacturingDefByMoidExecute(r)
@@ -12559,8 +12706,8 @@ GetCapabilityPsuManufacturingDefByMoid Read a 'capability.PsuManufacturingDef' r
 func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityPsuManufacturingDefByMoidRequest {
 	return ApiGetCapabilityPsuManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12667,13 +12814,13 @@ func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12690,19 +12837,19 @@ func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefByMoidExecute(r A
 }
 
 type ApiGetCapabilityPsuManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12710,51 +12857,61 @@ func (r ApiGetCapabilityPsuManufacturingDefListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Top(top int32) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Expand(expand string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Apply(apply string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Count(count bool) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) At(at string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityPsuManufacturingDefListRequest) Tags(tags string) ApiGetCapabilityPsuManufacturingDefListRequest {
 	r.tags = &tags
@@ -12774,7 +12931,7 @@ GetCapabilityPsuManufacturingDefList Read a 'capability.PsuManufacturingDef' res
 func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefList(ctx _context.Context) ApiGetCapabilityPsuManufacturingDefListRequest {
 	return ApiGetCapabilityPsuManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12913,13 +13070,13 @@ func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12936,11 +13093,10 @@ func (a *CapabilityApiService) GetCapabilityPsuManufacturingDefListExecute(r Api
 }
 
 type ApiGetCapabilityServerModelsCapabilityDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityServerModelsCapabilityDefByMoidRequest) Execute() (CapabilityServerModelsCapabilityDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityServerModelsCapabilityDefByMoidExecute(r)
@@ -12956,8 +13112,8 @@ GetCapabilityServerModelsCapabilityDefByMoid Read a 'capability.ServerModelsCapa
 func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefByMoid(ctx _context.Context, moid string) ApiGetCapabilityServerModelsCapabilityDefByMoidRequest {
 	return ApiGetCapabilityServerModelsCapabilityDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13064,13 +13220,13 @@ func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13087,19 +13243,19 @@ func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefByMoidExecu
 }
 
 type ApiGetCapabilityServerModelsCapabilityDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13107,51 +13263,61 @@ func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Orderby(orderby string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Top(top int32) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Skip(skip int32) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Select_(select_ string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Expand(expand string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Apply(apply string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Count(count bool) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) At(at string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityServerModelsCapabilityDefListRequest) Tags(tags string) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	r.tags = &tags
@@ -13171,7 +13337,7 @@ GetCapabilityServerModelsCapabilityDefList Read a 'capability.ServerModelsCapabi
 func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefList(ctx _context.Context) ApiGetCapabilityServerModelsCapabilityDefListRequest {
 	return ApiGetCapabilityServerModelsCapabilityDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13310,13 +13476,13 @@ func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13333,11 +13499,10 @@ func (a *CapabilityApiService) GetCapabilityServerModelsCapabilityDefListExecute
 }
 
 type ApiGetCapabilityServerSchemaDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilityServerSchemaDescriptorByMoidRequest) Execute() (CapabilityServerSchemaDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilityServerSchemaDescriptorByMoidExecute(r)
@@ -13353,8 +13518,8 @@ GetCapabilityServerSchemaDescriptorByMoid Read a 'capability.ServerSchemaDescrip
 func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilityServerSchemaDescriptorByMoidRequest {
 	return ApiGetCapabilityServerSchemaDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13461,13 +13626,13 @@ func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13484,19 +13649,19 @@ func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorByMoidExecute(
 }
 
 type ApiGetCapabilityServerSchemaDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13504,51 +13669,61 @@ func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Orderby(orderby string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Top(top int32) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Skip(skip int32) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Select_(select_ string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Expand(expand string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Apply(apply string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Count(count bool) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) At(at string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilityServerSchemaDescriptorListRequest) Tags(tags string) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	r.tags = &tags
@@ -13568,7 +13743,7 @@ GetCapabilityServerSchemaDescriptorList Read a 'capability.ServerSchemaDescripto
 func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorList(ctx _context.Context) ApiGetCapabilityServerSchemaDescriptorListRequest {
 	return ApiGetCapabilityServerSchemaDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13707,13 +13882,13 @@ func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13730,11 +13905,10 @@ func (a *CapabilityApiService) GetCapabilityServerSchemaDescriptorListExecute(r 
 }
 
 type ApiGetCapabilitySiocModuleCapabilityDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySiocModuleCapabilityDefByMoidRequest) Execute() (CapabilitySiocModuleCapabilityDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySiocModuleCapabilityDefByMoidExecute(r)
@@ -13750,8 +13924,8 @@ GetCapabilitySiocModuleCapabilityDefByMoid Read a 'capability.SiocModuleCapabili
 func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefByMoid(ctx _context.Context, moid string) ApiGetCapabilitySiocModuleCapabilityDefByMoidRequest {
 	return ApiGetCapabilitySiocModuleCapabilityDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13858,13 +14032,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13881,19 +14055,19 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefByMoidExecute
 }
 
 type ApiGetCapabilitySiocModuleCapabilityDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13901,51 +14075,61 @@ func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Orderby(orderby string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Top(top int32) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Skip(skip int32) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Select_(select_ string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Expand(expand string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Apply(apply string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Count(count bool) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) At(at string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySiocModuleCapabilityDefListRequest) Tags(tags string) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	r.tags = &tags
@@ -13965,7 +14149,7 @@ GetCapabilitySiocModuleCapabilityDefList Read a 'capability.SiocModuleCapability
 func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefList(ctx _context.Context) ApiGetCapabilitySiocModuleCapabilityDefListRequest {
 	return ApiGetCapabilitySiocModuleCapabilityDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14104,13 +14288,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14127,11 +14311,10 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleCapabilityDefListExecute(r
 }
 
 type ApiGetCapabilitySiocModuleDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySiocModuleDescriptorByMoidRequest) Execute() (CapabilitySiocModuleDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySiocModuleDescriptorByMoidExecute(r)
@@ -14147,8 +14330,8 @@ GetCapabilitySiocModuleDescriptorByMoid Read a 'capability.SiocModuleDescriptor'
 func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilitySiocModuleDescriptorByMoidRequest {
 	return ApiGetCapabilitySiocModuleDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14255,13 +14438,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14278,19 +14461,19 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorByMoidExecute(r 
 }
 
 type ApiGetCapabilitySiocModuleDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14298,51 +14481,61 @@ func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Orderby(orderby string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Top(top int32) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Skip(skip int32) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Select_(select_ string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Expand(expand string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Apply(apply string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Count(count bool) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) At(at string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySiocModuleDescriptorListRequest) Tags(tags string) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	r.tags = &tags
@@ -14362,7 +14555,7 @@ GetCapabilitySiocModuleDescriptorList Read a 'capability.SiocModuleDescriptor' r
 func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorList(ctx _context.Context) ApiGetCapabilitySiocModuleDescriptorListRequest {
 	return ApiGetCapabilitySiocModuleDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14501,13 +14694,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14524,11 +14717,10 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleDescriptorListExecute(r Ap
 }
 
 type ApiGetCapabilitySiocModuleManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySiocModuleManufacturingDefByMoidRequest) Execute() (CapabilitySiocModuleManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySiocModuleManufacturingDefByMoidExecute(r)
@@ -14544,8 +14736,8 @@ GetCapabilitySiocModuleManufacturingDefByMoid Read a 'capability.SiocModuleManuf
 func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilitySiocModuleManufacturingDefByMoidRequest {
 	return ApiGetCapabilitySiocModuleManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14652,13 +14844,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefByMoidExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14675,19 +14867,19 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefByMoidExec
 }
 
 type ApiGetCapabilitySiocModuleManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14695,51 +14887,61 @@ func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Top(top int32) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Expand(expand string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Apply(apply string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Count(count bool) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) At(at string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySiocModuleManufacturingDefListRequest) Tags(tags string) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	r.tags = &tags
@@ -14759,7 +14961,7 @@ GetCapabilitySiocModuleManufacturingDefList Read a 'capability.SiocModuleManufac
 func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefList(ctx _context.Context) ApiGetCapabilitySiocModuleManufacturingDefListRequest {
 	return ApiGetCapabilitySiocModuleManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14898,13 +15100,13 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefListExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14921,11 +15123,10 @@ func (a *CapabilityApiService) GetCapabilitySiocModuleManufacturingDefListExecut
 }
 
 type ApiGetCapabilitySwitchCapabilityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySwitchCapabilityByMoidRequest) Execute() (CapabilitySwitchCapability, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySwitchCapabilityByMoidExecute(r)
@@ -14941,8 +15142,8 @@ GetCapabilitySwitchCapabilityByMoid Read a 'capability.SwitchCapability' resourc
 func (a *CapabilityApiService) GetCapabilitySwitchCapabilityByMoid(ctx _context.Context, moid string) ApiGetCapabilitySwitchCapabilityByMoidRequest {
 	return ApiGetCapabilitySwitchCapabilityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15049,13 +15250,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchCapabilityByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15072,19 +15273,19 @@ func (a *CapabilityApiService) GetCapabilitySwitchCapabilityByMoidExecute(r ApiG
 }
 
 type ApiGetCapabilitySwitchCapabilityListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15092,51 +15293,61 @@ func (r ApiGetCapabilitySwitchCapabilityListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Orderby(orderby string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Top(top int32) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Skip(skip int32) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Select_(select_ string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Expand(expand string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Apply(apply string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Count(count bool) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) At(at string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySwitchCapabilityListRequest) Tags(tags string) ApiGetCapabilitySwitchCapabilityListRequest {
 	r.tags = &tags
@@ -15156,7 +15367,7 @@ GetCapabilitySwitchCapabilityList Read a 'capability.SwitchCapability' resource.
 func (a *CapabilityApiService) GetCapabilitySwitchCapabilityList(ctx _context.Context) ApiGetCapabilitySwitchCapabilityListRequest {
 	return ApiGetCapabilitySwitchCapabilityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15295,13 +15506,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchCapabilityListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15318,11 +15529,10 @@ func (a *CapabilityApiService) GetCapabilitySwitchCapabilityListExecute(r ApiGet
 }
 
 type ApiGetCapabilitySwitchDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySwitchDescriptorByMoidRequest) Execute() (CapabilitySwitchDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySwitchDescriptorByMoidExecute(r)
@@ -15338,8 +15548,8 @@ GetCapabilitySwitchDescriptorByMoid Read a 'capability.SwitchDescriptor' resourc
 func (a *CapabilityApiService) GetCapabilitySwitchDescriptorByMoid(ctx _context.Context, moid string) ApiGetCapabilitySwitchDescriptorByMoidRequest {
 	return ApiGetCapabilitySwitchDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15446,13 +15656,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchDescriptorByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15469,19 +15679,19 @@ func (a *CapabilityApiService) GetCapabilitySwitchDescriptorByMoidExecute(r ApiG
 }
 
 type ApiGetCapabilitySwitchDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15489,51 +15699,61 @@ func (r ApiGetCapabilitySwitchDescriptorListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Orderby(orderby string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Top(top int32) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Skip(skip int32) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Select_(select_ string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Expand(expand string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Apply(apply string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Count(count bool) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) At(at string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySwitchDescriptorListRequest) Tags(tags string) ApiGetCapabilitySwitchDescriptorListRequest {
 	r.tags = &tags
@@ -15553,7 +15773,7 @@ GetCapabilitySwitchDescriptorList Read a 'capability.SwitchDescriptor' resource.
 func (a *CapabilityApiService) GetCapabilitySwitchDescriptorList(ctx _context.Context) ApiGetCapabilitySwitchDescriptorListRequest {
 	return ApiGetCapabilitySwitchDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15692,13 +15912,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchDescriptorListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15715,11 +15935,10 @@ func (a *CapabilityApiService) GetCapabilitySwitchDescriptorListExecute(r ApiGet
 }
 
 type ApiGetCapabilitySwitchManufacturingDefByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CapabilityApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCapabilitySwitchManufacturingDefByMoidRequest) Execute() (CapabilitySwitchManufacturingDef, *_nethttp.Response, error) {
 	return r.ApiService.GetCapabilitySwitchManufacturingDefByMoidExecute(r)
@@ -15735,8 +15954,8 @@ GetCapabilitySwitchManufacturingDefByMoid Read a 'capability.SwitchManufacturing
 func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefByMoid(ctx _context.Context, moid string) ApiGetCapabilitySwitchManufacturingDefByMoidRequest {
 	return ApiGetCapabilitySwitchManufacturingDefByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15843,13 +16062,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15866,19 +16085,19 @@ func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefByMoidExecute(
 }
 
 type ApiGetCapabilitySwitchManufacturingDefListRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CapabilityApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15886,51 +16105,61 @@ func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Orderby(orderby string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Top(top int32) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Skip(skip int32) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Select_(select_ string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Expand(expand string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Apply(apply string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Count(count bool) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Inlinecount(inlinecount string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) At(at string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCapabilitySwitchManufacturingDefListRequest) Tags(tags string) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	r.tags = &tags
@@ -15950,7 +16179,7 @@ GetCapabilitySwitchManufacturingDefList Read a 'capability.SwitchManufacturingDe
 func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefList(ctx _context.Context) ApiGetCapabilitySwitchManufacturingDefListRequest {
 	return ApiGetCapabilitySwitchManufacturingDefListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16089,13 +16318,13 @@ func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16112,11 +16341,11 @@ func (a *CapabilityApiService) GetCapabilitySwitchManufacturingDefListExecute(r 
 }
 
 type ApiPatchCapabilityAdapterUnitDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *CapabilityApiService
+	moid                            string
 	capabilityAdapterUnitDescriptor *CapabilityAdapterUnitDescriptor
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;capability.AdapterUnitDescriptor&#39; resource to update.
@@ -16124,6 +16353,7 @@ func (r ApiPatchCapabilityAdapterUnitDescriptorRequest) CapabilityAdapterUnitDes
 	r.capabilityAdapterUnitDescriptor = &capabilityAdapterUnitDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityAdapterUnitDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityAdapterUnitDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -16144,8 +16374,8 @@ PatchCapabilityAdapterUnitDescriptor Update a 'capability.AdapterUnitDescriptor'
 func (a *CapabilityApiService) PatchCapabilityAdapterUnitDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityAdapterUnitDescriptorRequest {
 	return ApiPatchCapabilityAdapterUnitDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16260,13 +16490,13 @@ func (a *CapabilityApiService) PatchCapabilityAdapterUnitDescriptorExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16283,11 +16513,11 @@ func (a *CapabilityApiService) PatchCapabilityAdapterUnitDescriptorExecute(r Api
 }
 
 type ApiPatchCapabilityCatalogRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *CapabilityApiService
+	moid              string
 	capabilityCatalog *CapabilityCatalog
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;capability.Catalog&#39; resource to update.
@@ -16295,6 +16525,7 @@ func (r ApiPatchCapabilityCatalogRequest) CapabilityCatalog(capabilityCatalog Ca
 	r.capabilityCatalog = &capabilityCatalog
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityCatalogRequest) IfMatch(ifMatch string) ApiPatchCapabilityCatalogRequest {
 	r.ifMatch = &ifMatch
@@ -16315,8 +16546,8 @@ PatchCapabilityCatalog Update a 'capability.Catalog' resource.
 func (a *CapabilityApiService) PatchCapabilityCatalog(ctx _context.Context, moid string) ApiPatchCapabilityCatalogRequest {
 	return ApiPatchCapabilityCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16431,13 +16662,13 @@ func (a *CapabilityApiService) PatchCapabilityCatalogExecute(r ApiPatchCapabilit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16454,11 +16685,11 @@ func (a *CapabilityApiService) PatchCapabilityCatalogExecute(r ApiPatchCapabilit
 }
 
 type ApiPatchCapabilityChassisDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *CapabilityApiService
+	moid                        string
 	capabilityChassisDescriptor *CapabilityChassisDescriptor
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;capability.ChassisDescriptor&#39; resource to update.
@@ -16466,6 +16697,7 @@ func (r ApiPatchCapabilityChassisDescriptorRequest) CapabilityChassisDescriptor(
 	r.capabilityChassisDescriptor = &capabilityChassisDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityChassisDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityChassisDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -16486,8 +16718,8 @@ PatchCapabilityChassisDescriptor Update a 'capability.ChassisDescriptor' resourc
 func (a *CapabilityApiService) PatchCapabilityChassisDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityChassisDescriptorRequest {
 	return ApiPatchCapabilityChassisDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16602,13 +16834,13 @@ func (a *CapabilityApiService) PatchCapabilityChassisDescriptorExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16625,11 +16857,11 @@ func (a *CapabilityApiService) PatchCapabilityChassisDescriptorExecute(r ApiPatc
 }
 
 type ApiPatchCapabilityChassisManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilityChassisManufacturingDef *CapabilityChassisManufacturingDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.ChassisManufacturingDef&#39; resource to update.
@@ -16637,6 +16869,7 @@ func (r ApiPatchCapabilityChassisManufacturingDefRequest) CapabilityChassisManuf
 	r.capabilityChassisManufacturingDef = &capabilityChassisManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityChassisManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityChassisManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -16657,8 +16890,8 @@ PatchCapabilityChassisManufacturingDef Update a 'capability.ChassisManufacturing
 func (a *CapabilityApiService) PatchCapabilityChassisManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilityChassisManufacturingDefRequest {
 	return ApiPatchCapabilityChassisManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16773,13 +17006,13 @@ func (a *CapabilityApiService) PatchCapabilityChassisManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16796,11 +17029,11 @@ func (a *CapabilityApiService) PatchCapabilityChassisManufacturingDefExecute(r A
 }
 
 type ApiPatchCapabilityCimcFirmwareDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityCimcFirmwareDescriptor *CapabilityCimcFirmwareDescriptor
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.CimcFirmwareDescriptor&#39; resource to update.
@@ -16808,6 +17041,7 @@ func (r ApiPatchCapabilityCimcFirmwareDescriptorRequest) CapabilityCimcFirmwareD
 	r.capabilityCimcFirmwareDescriptor = &capabilityCimcFirmwareDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityCimcFirmwareDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityCimcFirmwareDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -16828,8 +17062,8 @@ PatchCapabilityCimcFirmwareDescriptor Update a 'capability.CimcFirmwareDescripto
 func (a *CapabilityApiService) PatchCapabilityCimcFirmwareDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityCimcFirmwareDescriptorRequest {
 	return ApiPatchCapabilityCimcFirmwareDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16944,13 +17178,13 @@ func (a *CapabilityApiService) PatchCapabilityCimcFirmwareDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16967,11 +17201,11 @@ func (a *CapabilityApiService) PatchCapabilityCimcFirmwareDescriptorExecute(r Ap
 }
 
 type ApiPatchCapabilityEquipmentPhysicalDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
+	moid                           string
 	capabilityEquipmentPhysicalDef *CapabilityEquipmentPhysicalDef
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;capability.EquipmentPhysicalDef&#39; resource to update.
@@ -16979,6 +17213,7 @@ func (r ApiPatchCapabilityEquipmentPhysicalDefRequest) CapabilityEquipmentPhysic
 	r.capabilityEquipmentPhysicalDef = &capabilityEquipmentPhysicalDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityEquipmentPhysicalDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityEquipmentPhysicalDefRequest {
 	r.ifMatch = &ifMatch
@@ -16999,8 +17234,8 @@ PatchCapabilityEquipmentPhysicalDef Update a 'capability.EquipmentPhysicalDef' r
 func (a *CapabilityApiService) PatchCapabilityEquipmentPhysicalDef(ctx _context.Context, moid string) ApiPatchCapabilityEquipmentPhysicalDefRequest {
 	return ApiPatchCapabilityEquipmentPhysicalDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17115,13 +17350,13 @@ func (a *CapabilityApiService) PatchCapabilityEquipmentPhysicalDefExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17138,11 +17373,11 @@ func (a *CapabilityApiService) PatchCapabilityEquipmentPhysicalDefExecute(r ApiP
 }
 
 type ApiPatchCapabilityEquipmentSlotArrayRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *CapabilityApiService
+	moid                         string
 	capabilityEquipmentSlotArray *CapabilityEquipmentSlotArray
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;capability.EquipmentSlotArray&#39; resource to update.
@@ -17150,6 +17385,7 @@ func (r ApiPatchCapabilityEquipmentSlotArrayRequest) CapabilityEquipmentSlotArra
 	r.capabilityEquipmentSlotArray = &capabilityEquipmentSlotArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityEquipmentSlotArrayRequest) IfMatch(ifMatch string) ApiPatchCapabilityEquipmentSlotArrayRequest {
 	r.ifMatch = &ifMatch
@@ -17170,8 +17406,8 @@ PatchCapabilityEquipmentSlotArray Update a 'capability.EquipmentSlotArray' resou
 func (a *CapabilityApiService) PatchCapabilityEquipmentSlotArray(ctx _context.Context, moid string) ApiPatchCapabilityEquipmentSlotArrayRequest {
 	return ApiPatchCapabilityEquipmentSlotArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17286,13 +17522,13 @@ func (a *CapabilityApiService) PatchCapabilityEquipmentSlotArrayExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17309,11 +17545,11 @@ func (a *CapabilityApiService) PatchCapabilityEquipmentSlotArrayExecute(r ApiPat
 }
 
 type ApiPatchCapabilityFanModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityFanModuleDescriptor *CapabilityFanModuleDescriptor
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.FanModuleDescriptor&#39; resource to update.
@@ -17321,6 +17557,7 @@ func (r ApiPatchCapabilityFanModuleDescriptorRequest) CapabilityFanModuleDescrip
 	r.capabilityFanModuleDescriptor = &capabilityFanModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityFanModuleDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityFanModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -17341,8 +17578,8 @@ PatchCapabilityFanModuleDescriptor Update a 'capability.FanModuleDescriptor' res
 func (a *CapabilityApiService) PatchCapabilityFanModuleDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityFanModuleDescriptorRequest {
 	return ApiPatchCapabilityFanModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17457,13 +17694,13 @@ func (a *CapabilityApiService) PatchCapabilityFanModuleDescriptorExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17480,11 +17717,11 @@ func (a *CapabilityApiService) PatchCapabilityFanModuleDescriptorExecute(r ApiPa
 }
 
 type ApiPatchCapabilityFanModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
+	moid                                string
 	capabilityFanModuleManufacturingDef *CapabilityFanModuleManufacturingDef
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;capability.FanModuleManufacturingDef&#39; resource to update.
@@ -17492,6 +17729,7 @@ func (r ApiPatchCapabilityFanModuleManufacturingDefRequest) CapabilityFanModuleM
 	r.capabilityFanModuleManufacturingDef = &capabilityFanModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityFanModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityFanModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -17512,8 +17750,8 @@ PatchCapabilityFanModuleManufacturingDef Update a 'capability.FanModuleManufactu
 func (a *CapabilityApiService) PatchCapabilityFanModuleManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilityFanModuleManufacturingDefRequest {
 	return ApiPatchCapabilityFanModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17628,13 +17866,13 @@ func (a *CapabilityApiService) PatchCapabilityFanModuleManufacturingDefExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17651,11 +17889,11 @@ func (a *CapabilityApiService) PatchCapabilityFanModuleManufacturingDefExecute(r
 }
 
 type ApiPatchCapabilityIoCardCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityIoCardCapabilityDef *CapabilityIoCardCapabilityDef
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.IoCardCapabilityDef&#39; resource to update.
@@ -17663,6 +17901,7 @@ func (r ApiPatchCapabilityIoCardCapabilityDefRequest) CapabilityIoCardCapability
 	r.capabilityIoCardCapabilityDef = &capabilityIoCardCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityIoCardCapabilityDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityIoCardCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -17683,8 +17922,8 @@ PatchCapabilityIoCardCapabilityDef Update a 'capability.IoCardCapabilityDef' res
 func (a *CapabilityApiService) PatchCapabilityIoCardCapabilityDef(ctx _context.Context, moid string) ApiPatchCapabilityIoCardCapabilityDefRequest {
 	return ApiPatchCapabilityIoCardCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17799,13 +18038,13 @@ func (a *CapabilityApiService) PatchCapabilityIoCardCapabilityDefExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17822,11 +18061,11 @@ func (a *CapabilityApiService) PatchCapabilityIoCardCapabilityDefExecute(r ApiPa
 }
 
 type ApiPatchCapabilityIoCardDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilityIoCardDescriptor *CapabilityIoCardDescriptor
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.IoCardDescriptor&#39; resource to update.
@@ -17834,6 +18073,7 @@ func (r ApiPatchCapabilityIoCardDescriptorRequest) CapabilityIoCardDescriptor(ca
 	r.capabilityIoCardDescriptor = &capabilityIoCardDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityIoCardDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityIoCardDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -17854,8 +18094,8 @@ PatchCapabilityIoCardDescriptor Update a 'capability.IoCardDescriptor' resource.
 func (a *CapabilityApiService) PatchCapabilityIoCardDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityIoCardDescriptorRequest {
 	return ApiPatchCapabilityIoCardDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17970,13 +18210,13 @@ func (a *CapabilityApiService) PatchCapabilityIoCardDescriptorExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17993,11 +18233,11 @@ func (a *CapabilityApiService) PatchCapabilityIoCardDescriptorExecute(r ApiPatch
 }
 
 type ApiPatchCapabilityIoCardManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityIoCardManufacturingDef *CapabilityIoCardManufacturingDef
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.IoCardManufacturingDef&#39; resource to update.
@@ -18005,6 +18245,7 @@ func (r ApiPatchCapabilityIoCardManufacturingDefRequest) CapabilityIoCardManufac
 	r.capabilityIoCardManufacturingDef = &capabilityIoCardManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityIoCardManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityIoCardManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -18025,8 +18266,8 @@ PatchCapabilityIoCardManufacturingDef Update a 'capability.IoCardManufacturingDe
 func (a *CapabilityApiService) PatchCapabilityIoCardManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilityIoCardManufacturingDefRequest {
 	return ApiPatchCapabilityIoCardManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18141,13 +18382,13 @@ func (a *CapabilityApiService) PatchCapabilityIoCardManufacturingDefExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18164,11 +18405,11 @@ func (a *CapabilityApiService) PatchCapabilityIoCardManufacturingDefExecute(r Ap
 }
 
 type ApiPatchCapabilityPortGroupAggregationDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilityPortGroupAggregationDef *CapabilityPortGroupAggregationDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.PortGroupAggregationDef&#39; resource to update.
@@ -18176,6 +18417,7 @@ func (r ApiPatchCapabilityPortGroupAggregationDefRequest) CapabilityPortGroupAgg
 	r.capabilityPortGroupAggregationDef = &capabilityPortGroupAggregationDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityPortGroupAggregationDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityPortGroupAggregationDefRequest {
 	r.ifMatch = &ifMatch
@@ -18196,8 +18438,8 @@ PatchCapabilityPortGroupAggregationDef Update a 'capability.PortGroupAggregation
 func (a *CapabilityApiService) PatchCapabilityPortGroupAggregationDef(ctx _context.Context, moid string) ApiPatchCapabilityPortGroupAggregationDefRequest {
 	return ApiPatchCapabilityPortGroupAggregationDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18312,13 +18554,13 @@ func (a *CapabilityApiService) PatchCapabilityPortGroupAggregationDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18335,11 +18577,11 @@ func (a *CapabilityApiService) PatchCapabilityPortGroupAggregationDefExecute(r A
 }
 
 type ApiPatchCapabilityPsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *CapabilityApiService
+	moid                    string
 	capabilityPsuDescriptor *CapabilityPsuDescriptor
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;capability.PsuDescriptor&#39; resource to update.
@@ -18347,6 +18589,7 @@ func (r ApiPatchCapabilityPsuDescriptorRequest) CapabilityPsuDescriptor(capabili
 	r.capabilityPsuDescriptor = &capabilityPsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityPsuDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityPsuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18367,8 +18610,8 @@ PatchCapabilityPsuDescriptor Update a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) PatchCapabilityPsuDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityPsuDescriptorRequest {
 	return ApiPatchCapabilityPsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18483,13 +18726,13 @@ func (a *CapabilityApiService) PatchCapabilityPsuDescriptorExecute(r ApiPatchCap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18506,11 +18749,11 @@ func (a *CapabilityApiService) PatchCapabilityPsuDescriptorExecute(r ApiPatchCap
 }
 
 type ApiPatchCapabilityPsuManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityPsuManufacturingDef *CapabilityPsuManufacturingDef
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.PsuManufacturingDef&#39; resource to update.
@@ -18518,6 +18761,7 @@ func (r ApiPatchCapabilityPsuManufacturingDefRequest) CapabilityPsuManufacturing
 	r.capabilityPsuManufacturingDef = &capabilityPsuManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityPsuManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityPsuManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -18538,8 +18782,8 @@ PatchCapabilityPsuManufacturingDef Update a 'capability.PsuManufacturingDef' res
 func (a *CapabilityApiService) PatchCapabilityPsuManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilityPsuManufacturingDefRequest {
 	return ApiPatchCapabilityPsuManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18654,13 +18898,13 @@ func (a *CapabilityApiService) PatchCapabilityPsuManufacturingDefExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18677,11 +18921,11 @@ func (a *CapabilityApiService) PatchCapabilityPsuManufacturingDefExecute(r ApiPa
 }
 
 type ApiPatchCapabilityServerModelsCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
+	moid                                string
 	capabilityServerModelsCapabilityDef *CapabilityServerModelsCapabilityDef
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;capability.ServerModelsCapabilityDef&#39; resource to update.
@@ -18689,6 +18933,7 @@ func (r ApiPatchCapabilityServerModelsCapabilityDefRequest) CapabilityServerMode
 	r.capabilityServerModelsCapabilityDef = &capabilityServerModelsCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityServerModelsCapabilityDefRequest) IfMatch(ifMatch string) ApiPatchCapabilityServerModelsCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -18709,8 +18954,8 @@ PatchCapabilityServerModelsCapabilityDef Update a 'capability.ServerModelsCapabi
 func (a *CapabilityApiService) PatchCapabilityServerModelsCapabilityDef(ctx _context.Context, moid string) ApiPatchCapabilityServerModelsCapabilityDefRequest {
 	return ApiPatchCapabilityServerModelsCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18825,13 +19070,13 @@ func (a *CapabilityApiService) PatchCapabilityServerModelsCapabilityDefExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18848,11 +19093,11 @@ func (a *CapabilityApiService) PatchCapabilityServerModelsCapabilityDefExecute(r
 }
 
 type ApiPatchCapabilityServerSchemaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityServerSchemaDescriptor *CapabilityServerSchemaDescriptor
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.ServerSchemaDescriptor&#39; resource to update.
@@ -18860,6 +19105,7 @@ func (r ApiPatchCapabilityServerSchemaDescriptorRequest) CapabilityServerSchemaD
 	r.capabilityServerSchemaDescriptor = &capabilityServerSchemaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilityServerSchemaDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilityServerSchemaDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18880,8 +19126,8 @@ PatchCapabilityServerSchemaDescriptor Update a 'capability.ServerSchemaDescripto
 func (a *CapabilityApiService) PatchCapabilityServerSchemaDescriptor(ctx _context.Context, moid string) ApiPatchCapabilityServerSchemaDescriptorRequest {
 	return ApiPatchCapabilityServerSchemaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18996,13 +19242,13 @@ func (a *CapabilityApiService) PatchCapabilityServerSchemaDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19019,11 +19265,11 @@ func (a *CapabilityApiService) PatchCapabilityServerSchemaDescriptorExecute(r Ap
 }
 
 type ApiPatchCapabilitySiocModuleCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilitySiocModuleCapabilityDef *CapabilitySiocModuleCapabilityDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.SiocModuleCapabilityDef&#39; resource to update.
@@ -19031,6 +19277,7 @@ func (r ApiPatchCapabilitySiocModuleCapabilityDefRequest) CapabilitySiocModuleCa
 	r.capabilitySiocModuleCapabilityDef = &capabilitySiocModuleCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySiocModuleCapabilityDefRequest) IfMatch(ifMatch string) ApiPatchCapabilitySiocModuleCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -19051,8 +19298,8 @@ PatchCapabilitySiocModuleCapabilityDef Update a 'capability.SiocModuleCapability
 func (a *CapabilityApiService) PatchCapabilitySiocModuleCapabilityDef(ctx _context.Context, moid string) ApiPatchCapabilitySiocModuleCapabilityDefRequest {
 	return ApiPatchCapabilitySiocModuleCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19167,13 +19414,13 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleCapabilityDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19190,11 +19437,11 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleCapabilityDefExecute(r A
 }
 
 type ApiPatchCapabilitySiocModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
+	moid                           string
 	capabilitySiocModuleDescriptor *CapabilitySiocModuleDescriptor
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;capability.SiocModuleDescriptor&#39; resource to update.
@@ -19202,6 +19449,7 @@ func (r ApiPatchCapabilitySiocModuleDescriptorRequest) CapabilitySiocModuleDescr
 	r.capabilitySiocModuleDescriptor = &capabilitySiocModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySiocModuleDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilitySiocModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19222,8 +19470,8 @@ PatchCapabilitySiocModuleDescriptor Update a 'capability.SiocModuleDescriptor' r
 func (a *CapabilityApiService) PatchCapabilitySiocModuleDescriptor(ctx _context.Context, moid string) ApiPatchCapabilitySiocModuleDescriptorRequest {
 	return ApiPatchCapabilitySiocModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19338,13 +19586,13 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleDescriptorExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19361,11 +19609,11 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleDescriptorExecute(r ApiP
 }
 
 type ApiPatchCapabilitySiocModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *CapabilityApiService
+	moid                                 string
 	capabilitySiocModuleManufacturingDef *CapabilitySiocModuleManufacturingDef
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;capability.SiocModuleManufacturingDef&#39; resource to update.
@@ -19373,6 +19621,7 @@ func (r ApiPatchCapabilitySiocModuleManufacturingDefRequest) CapabilitySiocModul
 	r.capabilitySiocModuleManufacturingDef = &capabilitySiocModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySiocModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilitySiocModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -19393,8 +19642,8 @@ PatchCapabilitySiocModuleManufacturingDef Update a 'capability.SiocModuleManufac
 func (a *CapabilityApiService) PatchCapabilitySiocModuleManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilitySiocModuleManufacturingDefRequest {
 	return ApiPatchCapabilitySiocModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19509,13 +19758,13 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleManufacturingDefExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19532,11 +19781,11 @@ func (a *CapabilityApiService) PatchCapabilitySiocModuleManufacturingDefExecute(
 }
 
 type ApiPatchCapabilitySwitchCapabilityRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilitySwitchCapability *CapabilitySwitchCapability
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.SwitchCapability&#39; resource to update.
@@ -19544,6 +19793,7 @@ func (r ApiPatchCapabilitySwitchCapabilityRequest) CapabilitySwitchCapability(ca
 	r.capabilitySwitchCapability = &capabilitySwitchCapability
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySwitchCapabilityRequest) IfMatch(ifMatch string) ApiPatchCapabilitySwitchCapabilityRequest {
 	r.ifMatch = &ifMatch
@@ -19564,8 +19814,8 @@ PatchCapabilitySwitchCapability Update a 'capability.SwitchCapability' resource.
 func (a *CapabilityApiService) PatchCapabilitySwitchCapability(ctx _context.Context, moid string) ApiPatchCapabilitySwitchCapabilityRequest {
 	return ApiPatchCapabilitySwitchCapabilityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19680,13 +19930,13 @@ func (a *CapabilityApiService) PatchCapabilitySwitchCapabilityExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19703,11 +19953,11 @@ func (a *CapabilityApiService) PatchCapabilitySwitchCapabilityExecute(r ApiPatch
 }
 
 type ApiPatchCapabilitySwitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilitySwitchDescriptor *CapabilitySwitchDescriptor
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.SwitchDescriptor&#39; resource to update.
@@ -19715,6 +19965,7 @@ func (r ApiPatchCapabilitySwitchDescriptorRequest) CapabilitySwitchDescriptor(ca
 	r.capabilitySwitchDescriptor = &capabilitySwitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySwitchDescriptorRequest) IfMatch(ifMatch string) ApiPatchCapabilitySwitchDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19735,8 +19986,8 @@ PatchCapabilitySwitchDescriptor Update a 'capability.SwitchDescriptor' resource.
 func (a *CapabilityApiService) PatchCapabilitySwitchDescriptor(ctx _context.Context, moid string) ApiPatchCapabilitySwitchDescriptorRequest {
 	return ApiPatchCapabilitySwitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19851,13 +20102,13 @@ func (a *CapabilityApiService) PatchCapabilitySwitchDescriptorExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19874,11 +20125,11 @@ func (a *CapabilityApiService) PatchCapabilitySwitchDescriptorExecute(r ApiPatch
 }
 
 type ApiPatchCapabilitySwitchManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilitySwitchManufacturingDef *CapabilitySwitchManufacturingDef
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.SwitchManufacturingDef&#39; resource to update.
@@ -19886,6 +20137,7 @@ func (r ApiPatchCapabilitySwitchManufacturingDefRequest) CapabilitySwitchManufac
 	r.capabilitySwitchManufacturingDef = &capabilitySwitchManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCapabilitySwitchManufacturingDefRequest) IfMatch(ifMatch string) ApiPatchCapabilitySwitchManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -19906,8 +20158,8 @@ PatchCapabilitySwitchManufacturingDef Update a 'capability.SwitchManufacturingDe
 func (a *CapabilityApiService) PatchCapabilitySwitchManufacturingDef(ctx _context.Context, moid string) ApiPatchCapabilitySwitchManufacturingDefRequest {
 	return ApiPatchCapabilitySwitchManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20022,13 +20274,13 @@ func (a *CapabilityApiService) PatchCapabilitySwitchManufacturingDefExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20045,11 +20297,11 @@ func (a *CapabilityApiService) PatchCapabilitySwitchManufacturingDefExecute(r Ap
 }
 
 type ApiUpdateCapabilityAdapterUnitDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *CapabilityApiService
+	moid                            string
 	capabilityAdapterUnitDescriptor *CapabilityAdapterUnitDescriptor
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;capability.AdapterUnitDescriptor&#39; resource to update.
@@ -20057,6 +20309,7 @@ func (r ApiUpdateCapabilityAdapterUnitDescriptorRequest) CapabilityAdapterUnitDe
 	r.capabilityAdapterUnitDescriptor = &capabilityAdapterUnitDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityAdapterUnitDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityAdapterUnitDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -20077,8 +20330,8 @@ UpdateCapabilityAdapterUnitDescriptor Update a 'capability.AdapterUnitDescriptor
 func (a *CapabilityApiService) UpdateCapabilityAdapterUnitDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityAdapterUnitDescriptorRequest {
 	return ApiUpdateCapabilityAdapterUnitDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20193,13 +20446,13 @@ func (a *CapabilityApiService) UpdateCapabilityAdapterUnitDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20216,11 +20469,11 @@ func (a *CapabilityApiService) UpdateCapabilityAdapterUnitDescriptorExecute(r Ap
 }
 
 type ApiUpdateCapabilityCatalogRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *CapabilityApiService
+	moid              string
 	capabilityCatalog *CapabilityCatalog
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;capability.Catalog&#39; resource to update.
@@ -20228,6 +20481,7 @@ func (r ApiUpdateCapabilityCatalogRequest) CapabilityCatalog(capabilityCatalog C
 	r.capabilityCatalog = &capabilityCatalog
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityCatalogRequest) IfMatch(ifMatch string) ApiUpdateCapabilityCatalogRequest {
 	r.ifMatch = &ifMatch
@@ -20248,8 +20502,8 @@ UpdateCapabilityCatalog Update a 'capability.Catalog' resource.
 func (a *CapabilityApiService) UpdateCapabilityCatalog(ctx _context.Context, moid string) ApiUpdateCapabilityCatalogRequest {
 	return ApiUpdateCapabilityCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20364,13 +20618,13 @@ func (a *CapabilityApiService) UpdateCapabilityCatalogExecute(r ApiUpdateCapabil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20387,11 +20641,11 @@ func (a *CapabilityApiService) UpdateCapabilityCatalogExecute(r ApiUpdateCapabil
 }
 
 type ApiUpdateCapabilityChassisDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *CapabilityApiService
+	moid                        string
 	capabilityChassisDescriptor *CapabilityChassisDescriptor
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;capability.ChassisDescriptor&#39; resource to update.
@@ -20399,6 +20653,7 @@ func (r ApiUpdateCapabilityChassisDescriptorRequest) CapabilityChassisDescriptor
 	r.capabilityChassisDescriptor = &capabilityChassisDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityChassisDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityChassisDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -20419,8 +20674,8 @@ UpdateCapabilityChassisDescriptor Update a 'capability.ChassisDescriptor' resour
 func (a *CapabilityApiService) UpdateCapabilityChassisDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityChassisDescriptorRequest {
 	return ApiUpdateCapabilityChassisDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20535,13 +20790,13 @@ func (a *CapabilityApiService) UpdateCapabilityChassisDescriptorExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20558,11 +20813,11 @@ func (a *CapabilityApiService) UpdateCapabilityChassisDescriptorExecute(r ApiUpd
 }
 
 type ApiUpdateCapabilityChassisManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilityChassisManufacturingDef *CapabilityChassisManufacturingDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.ChassisManufacturingDef&#39; resource to update.
@@ -20570,6 +20825,7 @@ func (r ApiUpdateCapabilityChassisManufacturingDefRequest) CapabilityChassisManu
 	r.capabilityChassisManufacturingDef = &capabilityChassisManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityChassisManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityChassisManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -20590,8 +20846,8 @@ UpdateCapabilityChassisManufacturingDef Update a 'capability.ChassisManufacturin
 func (a *CapabilityApiService) UpdateCapabilityChassisManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilityChassisManufacturingDefRequest {
 	return ApiUpdateCapabilityChassisManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20706,13 +20962,13 @@ func (a *CapabilityApiService) UpdateCapabilityChassisManufacturingDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20729,11 +20985,11 @@ func (a *CapabilityApiService) UpdateCapabilityChassisManufacturingDefExecute(r 
 }
 
 type ApiUpdateCapabilityCimcFirmwareDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityCimcFirmwareDescriptor *CapabilityCimcFirmwareDescriptor
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.CimcFirmwareDescriptor&#39; resource to update.
@@ -20741,6 +20997,7 @@ func (r ApiUpdateCapabilityCimcFirmwareDescriptorRequest) CapabilityCimcFirmware
 	r.capabilityCimcFirmwareDescriptor = &capabilityCimcFirmwareDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityCimcFirmwareDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityCimcFirmwareDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -20761,8 +21018,8 @@ UpdateCapabilityCimcFirmwareDescriptor Update a 'capability.CimcFirmwareDescript
 func (a *CapabilityApiService) UpdateCapabilityCimcFirmwareDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityCimcFirmwareDescriptorRequest {
 	return ApiUpdateCapabilityCimcFirmwareDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20877,13 +21134,13 @@ func (a *CapabilityApiService) UpdateCapabilityCimcFirmwareDescriptorExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20900,11 +21157,11 @@ func (a *CapabilityApiService) UpdateCapabilityCimcFirmwareDescriptorExecute(r A
 }
 
 type ApiUpdateCapabilityEquipmentPhysicalDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
+	moid                           string
 	capabilityEquipmentPhysicalDef *CapabilityEquipmentPhysicalDef
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;capability.EquipmentPhysicalDef&#39; resource to update.
@@ -20912,6 +21169,7 @@ func (r ApiUpdateCapabilityEquipmentPhysicalDefRequest) CapabilityEquipmentPhysi
 	r.capabilityEquipmentPhysicalDef = &capabilityEquipmentPhysicalDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityEquipmentPhysicalDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityEquipmentPhysicalDefRequest {
 	r.ifMatch = &ifMatch
@@ -20932,8 +21190,8 @@ UpdateCapabilityEquipmentPhysicalDef Update a 'capability.EquipmentPhysicalDef' 
 func (a *CapabilityApiService) UpdateCapabilityEquipmentPhysicalDef(ctx _context.Context, moid string) ApiUpdateCapabilityEquipmentPhysicalDefRequest {
 	return ApiUpdateCapabilityEquipmentPhysicalDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21048,13 +21306,13 @@ func (a *CapabilityApiService) UpdateCapabilityEquipmentPhysicalDefExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21071,11 +21329,11 @@ func (a *CapabilityApiService) UpdateCapabilityEquipmentPhysicalDefExecute(r Api
 }
 
 type ApiUpdateCapabilityEquipmentSlotArrayRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *CapabilityApiService
+	moid                         string
 	capabilityEquipmentSlotArray *CapabilityEquipmentSlotArray
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;capability.EquipmentSlotArray&#39; resource to update.
@@ -21083,6 +21341,7 @@ func (r ApiUpdateCapabilityEquipmentSlotArrayRequest) CapabilityEquipmentSlotArr
 	r.capabilityEquipmentSlotArray = &capabilityEquipmentSlotArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityEquipmentSlotArrayRequest) IfMatch(ifMatch string) ApiUpdateCapabilityEquipmentSlotArrayRequest {
 	r.ifMatch = &ifMatch
@@ -21103,8 +21362,8 @@ UpdateCapabilityEquipmentSlotArray Update a 'capability.EquipmentSlotArray' reso
 func (a *CapabilityApiService) UpdateCapabilityEquipmentSlotArray(ctx _context.Context, moid string) ApiUpdateCapabilityEquipmentSlotArrayRequest {
 	return ApiUpdateCapabilityEquipmentSlotArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21219,13 +21478,13 @@ func (a *CapabilityApiService) UpdateCapabilityEquipmentSlotArrayExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21242,11 +21501,11 @@ func (a *CapabilityApiService) UpdateCapabilityEquipmentSlotArrayExecute(r ApiUp
 }
 
 type ApiUpdateCapabilityFanModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityFanModuleDescriptor *CapabilityFanModuleDescriptor
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.FanModuleDescriptor&#39; resource to update.
@@ -21254,6 +21513,7 @@ func (r ApiUpdateCapabilityFanModuleDescriptorRequest) CapabilityFanModuleDescri
 	r.capabilityFanModuleDescriptor = &capabilityFanModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityFanModuleDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityFanModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21274,8 +21534,8 @@ UpdateCapabilityFanModuleDescriptor Update a 'capability.FanModuleDescriptor' re
 func (a *CapabilityApiService) UpdateCapabilityFanModuleDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityFanModuleDescriptorRequest {
 	return ApiUpdateCapabilityFanModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21390,13 +21650,13 @@ func (a *CapabilityApiService) UpdateCapabilityFanModuleDescriptorExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21413,11 +21673,11 @@ func (a *CapabilityApiService) UpdateCapabilityFanModuleDescriptorExecute(r ApiU
 }
 
 type ApiUpdateCapabilityFanModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
+	moid                                string
 	capabilityFanModuleManufacturingDef *CapabilityFanModuleManufacturingDef
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;capability.FanModuleManufacturingDef&#39; resource to update.
@@ -21425,6 +21685,7 @@ func (r ApiUpdateCapabilityFanModuleManufacturingDefRequest) CapabilityFanModule
 	r.capabilityFanModuleManufacturingDef = &capabilityFanModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityFanModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityFanModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -21445,8 +21706,8 @@ UpdateCapabilityFanModuleManufacturingDef Update a 'capability.FanModuleManufact
 func (a *CapabilityApiService) UpdateCapabilityFanModuleManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilityFanModuleManufacturingDefRequest {
 	return ApiUpdateCapabilityFanModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21561,13 +21822,13 @@ func (a *CapabilityApiService) UpdateCapabilityFanModuleManufacturingDefExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21584,11 +21845,11 @@ func (a *CapabilityApiService) UpdateCapabilityFanModuleManufacturingDefExecute(
 }
 
 type ApiUpdateCapabilityIoCardCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityIoCardCapabilityDef *CapabilityIoCardCapabilityDef
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.IoCardCapabilityDef&#39; resource to update.
@@ -21596,6 +21857,7 @@ func (r ApiUpdateCapabilityIoCardCapabilityDefRequest) CapabilityIoCardCapabilit
 	r.capabilityIoCardCapabilityDef = &capabilityIoCardCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityIoCardCapabilityDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityIoCardCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -21616,8 +21878,8 @@ UpdateCapabilityIoCardCapabilityDef Update a 'capability.IoCardCapabilityDef' re
 func (a *CapabilityApiService) UpdateCapabilityIoCardCapabilityDef(ctx _context.Context, moid string) ApiUpdateCapabilityIoCardCapabilityDefRequest {
 	return ApiUpdateCapabilityIoCardCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21732,13 +21994,13 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardCapabilityDefExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21755,11 +22017,11 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardCapabilityDefExecute(r ApiU
 }
 
 type ApiUpdateCapabilityIoCardDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilityIoCardDescriptor *CapabilityIoCardDescriptor
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.IoCardDescriptor&#39; resource to update.
@@ -21767,6 +22029,7 @@ func (r ApiUpdateCapabilityIoCardDescriptorRequest) CapabilityIoCardDescriptor(c
 	r.capabilityIoCardDescriptor = &capabilityIoCardDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityIoCardDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityIoCardDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21787,8 +22050,8 @@ UpdateCapabilityIoCardDescriptor Update a 'capability.IoCardDescriptor' resource
 func (a *CapabilityApiService) UpdateCapabilityIoCardDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityIoCardDescriptorRequest {
 	return ApiUpdateCapabilityIoCardDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21903,13 +22166,13 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardDescriptorExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21926,11 +22189,11 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardDescriptorExecute(r ApiUpda
 }
 
 type ApiUpdateCapabilityIoCardManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityIoCardManufacturingDef *CapabilityIoCardManufacturingDef
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.IoCardManufacturingDef&#39; resource to update.
@@ -21938,6 +22201,7 @@ func (r ApiUpdateCapabilityIoCardManufacturingDefRequest) CapabilityIoCardManufa
 	r.capabilityIoCardManufacturingDef = &capabilityIoCardManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityIoCardManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityIoCardManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -21958,8 +22222,8 @@ UpdateCapabilityIoCardManufacturingDef Update a 'capability.IoCardManufacturingD
 func (a *CapabilityApiService) UpdateCapabilityIoCardManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilityIoCardManufacturingDefRequest {
 	return ApiUpdateCapabilityIoCardManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22074,13 +22338,13 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22097,11 +22361,11 @@ func (a *CapabilityApiService) UpdateCapabilityIoCardManufacturingDefExecute(r A
 }
 
 type ApiUpdateCapabilityPortGroupAggregationDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilityPortGroupAggregationDef *CapabilityPortGroupAggregationDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.PortGroupAggregationDef&#39; resource to update.
@@ -22109,6 +22373,7 @@ func (r ApiUpdateCapabilityPortGroupAggregationDefRequest) CapabilityPortGroupAg
 	r.capabilityPortGroupAggregationDef = &capabilityPortGroupAggregationDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityPortGroupAggregationDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityPortGroupAggregationDefRequest {
 	r.ifMatch = &ifMatch
@@ -22129,8 +22394,8 @@ UpdateCapabilityPortGroupAggregationDef Update a 'capability.PortGroupAggregatio
 func (a *CapabilityApiService) UpdateCapabilityPortGroupAggregationDef(ctx _context.Context, moid string) ApiUpdateCapabilityPortGroupAggregationDefRequest {
 	return ApiUpdateCapabilityPortGroupAggregationDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22245,13 +22510,13 @@ func (a *CapabilityApiService) UpdateCapabilityPortGroupAggregationDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22268,11 +22533,11 @@ func (a *CapabilityApiService) UpdateCapabilityPortGroupAggregationDefExecute(r 
 }
 
 type ApiUpdateCapabilityPsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *CapabilityApiService
+	moid                    string
 	capabilityPsuDescriptor *CapabilityPsuDescriptor
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;capability.PsuDescriptor&#39; resource to update.
@@ -22280,6 +22545,7 @@ func (r ApiUpdateCapabilityPsuDescriptorRequest) CapabilityPsuDescriptor(capabil
 	r.capabilityPsuDescriptor = &capabilityPsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityPsuDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityPsuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22300,8 +22566,8 @@ UpdateCapabilityPsuDescriptor Update a 'capability.PsuDescriptor' resource.
 func (a *CapabilityApiService) UpdateCapabilityPsuDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityPsuDescriptorRequest {
 	return ApiUpdateCapabilityPsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22416,13 +22682,13 @@ func (a *CapabilityApiService) UpdateCapabilityPsuDescriptorExecute(r ApiUpdateC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22439,11 +22705,11 @@ func (a *CapabilityApiService) UpdateCapabilityPsuDescriptorExecute(r ApiUpdateC
 }
 
 type ApiUpdateCapabilityPsuManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *CapabilityApiService
+	moid                          string
 	capabilityPsuManufacturingDef *CapabilityPsuManufacturingDef
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;capability.PsuManufacturingDef&#39; resource to update.
@@ -22451,6 +22717,7 @@ func (r ApiUpdateCapabilityPsuManufacturingDefRequest) CapabilityPsuManufacturin
 	r.capabilityPsuManufacturingDef = &capabilityPsuManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityPsuManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityPsuManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -22471,8 +22738,8 @@ UpdateCapabilityPsuManufacturingDef Update a 'capability.PsuManufacturingDef' re
 func (a *CapabilityApiService) UpdateCapabilityPsuManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilityPsuManufacturingDefRequest {
 	return ApiUpdateCapabilityPsuManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22587,13 +22854,13 @@ func (a *CapabilityApiService) UpdateCapabilityPsuManufacturingDefExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22610,11 +22877,11 @@ func (a *CapabilityApiService) UpdateCapabilityPsuManufacturingDefExecute(r ApiU
 }
 
 type ApiUpdateCapabilityServerModelsCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *CapabilityApiService
+	moid                                string
 	capabilityServerModelsCapabilityDef *CapabilityServerModelsCapabilityDef
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;capability.ServerModelsCapabilityDef&#39; resource to update.
@@ -22622,6 +22889,7 @@ func (r ApiUpdateCapabilityServerModelsCapabilityDefRequest) CapabilityServerMod
 	r.capabilityServerModelsCapabilityDef = &capabilityServerModelsCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityServerModelsCapabilityDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilityServerModelsCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -22642,8 +22910,8 @@ UpdateCapabilityServerModelsCapabilityDef Update a 'capability.ServerModelsCapab
 func (a *CapabilityApiService) UpdateCapabilityServerModelsCapabilityDef(ctx _context.Context, moid string) ApiUpdateCapabilityServerModelsCapabilityDefRequest {
 	return ApiUpdateCapabilityServerModelsCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22758,13 +23026,13 @@ func (a *CapabilityApiService) UpdateCapabilityServerModelsCapabilityDefExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22781,11 +23049,11 @@ func (a *CapabilityApiService) UpdateCapabilityServerModelsCapabilityDefExecute(
 }
 
 type ApiUpdateCapabilityServerSchemaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilityServerSchemaDescriptor *CapabilityServerSchemaDescriptor
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.ServerSchemaDescriptor&#39; resource to update.
@@ -22793,6 +23061,7 @@ func (r ApiUpdateCapabilityServerSchemaDescriptorRequest) CapabilityServerSchema
 	r.capabilityServerSchemaDescriptor = &capabilityServerSchemaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilityServerSchemaDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilityServerSchemaDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22813,8 +23082,8 @@ UpdateCapabilityServerSchemaDescriptor Update a 'capability.ServerSchemaDescript
 func (a *CapabilityApiService) UpdateCapabilityServerSchemaDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilityServerSchemaDescriptorRequest {
 	return ApiUpdateCapabilityServerSchemaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22929,13 +23198,13 @@ func (a *CapabilityApiService) UpdateCapabilityServerSchemaDescriptorExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22952,11 +23221,11 @@ func (a *CapabilityApiService) UpdateCapabilityServerSchemaDescriptorExecute(r A
 }
 
 type ApiUpdateCapabilitySiocModuleCapabilityDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *CapabilityApiService
+	moid                              string
 	capabilitySiocModuleCapabilityDef *CapabilitySiocModuleCapabilityDef
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;capability.SiocModuleCapabilityDef&#39; resource to update.
@@ -22964,6 +23233,7 @@ func (r ApiUpdateCapabilitySiocModuleCapabilityDefRequest) CapabilitySiocModuleC
 	r.capabilitySiocModuleCapabilityDef = &capabilitySiocModuleCapabilityDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySiocModuleCapabilityDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySiocModuleCapabilityDefRequest {
 	r.ifMatch = &ifMatch
@@ -22984,8 +23254,8 @@ UpdateCapabilitySiocModuleCapabilityDef Update a 'capability.SiocModuleCapabilit
 func (a *CapabilityApiService) UpdateCapabilitySiocModuleCapabilityDef(ctx _context.Context, moid string) ApiUpdateCapabilitySiocModuleCapabilityDefRequest {
 	return ApiUpdateCapabilitySiocModuleCapabilityDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23100,13 +23370,13 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleCapabilityDefExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23123,11 +23393,11 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleCapabilityDefExecute(r 
 }
 
 type ApiUpdateCapabilitySiocModuleDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *CapabilityApiService
+	moid                           string
 	capabilitySiocModuleDescriptor *CapabilitySiocModuleDescriptor
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;capability.SiocModuleDescriptor&#39; resource to update.
@@ -23135,6 +23405,7 @@ func (r ApiUpdateCapabilitySiocModuleDescriptorRequest) CapabilitySiocModuleDesc
 	r.capabilitySiocModuleDescriptor = &capabilitySiocModuleDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySiocModuleDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySiocModuleDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23155,8 +23426,8 @@ UpdateCapabilitySiocModuleDescriptor Update a 'capability.SiocModuleDescriptor' 
 func (a *CapabilityApiService) UpdateCapabilitySiocModuleDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilitySiocModuleDescriptorRequest {
 	return ApiUpdateCapabilitySiocModuleDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23271,13 +23542,13 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleDescriptorExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23294,11 +23565,11 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleDescriptorExecute(r Api
 }
 
 type ApiUpdateCapabilitySiocModuleManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *CapabilityApiService
+	moid                                 string
 	capabilitySiocModuleManufacturingDef *CapabilitySiocModuleManufacturingDef
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;capability.SiocModuleManufacturingDef&#39; resource to update.
@@ -23306,6 +23577,7 @@ func (r ApiUpdateCapabilitySiocModuleManufacturingDefRequest) CapabilitySiocModu
 	r.capabilitySiocModuleManufacturingDef = &capabilitySiocModuleManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySiocModuleManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySiocModuleManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -23326,8 +23598,8 @@ UpdateCapabilitySiocModuleManufacturingDef Update a 'capability.SiocModuleManufa
 func (a *CapabilityApiService) UpdateCapabilitySiocModuleManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilitySiocModuleManufacturingDefRequest {
 	return ApiUpdateCapabilitySiocModuleManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23442,13 +23714,13 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleManufacturingDefExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23465,11 +23737,11 @@ func (a *CapabilityApiService) UpdateCapabilitySiocModuleManufacturingDefExecute
 }
 
 type ApiUpdateCapabilitySwitchCapabilityRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilitySwitchCapability *CapabilitySwitchCapability
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.SwitchCapability&#39; resource to update.
@@ -23477,6 +23749,7 @@ func (r ApiUpdateCapabilitySwitchCapabilityRequest) CapabilitySwitchCapability(c
 	r.capabilitySwitchCapability = &capabilitySwitchCapability
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySwitchCapabilityRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySwitchCapabilityRequest {
 	r.ifMatch = &ifMatch
@@ -23497,8 +23770,8 @@ UpdateCapabilitySwitchCapability Update a 'capability.SwitchCapability' resource
 func (a *CapabilityApiService) UpdateCapabilitySwitchCapability(ctx _context.Context, moid string) ApiUpdateCapabilitySwitchCapabilityRequest {
 	return ApiUpdateCapabilitySwitchCapabilityRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23613,13 +23886,13 @@ func (a *CapabilityApiService) UpdateCapabilitySwitchCapabilityExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23636,11 +23909,11 @@ func (a *CapabilityApiService) UpdateCapabilitySwitchCapabilityExecute(r ApiUpda
 }
 
 type ApiUpdateCapabilitySwitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *CapabilityApiService
+	moid                       string
 	capabilitySwitchDescriptor *CapabilitySwitchDescriptor
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;capability.SwitchDescriptor&#39; resource to update.
@@ -23648,6 +23921,7 @@ func (r ApiUpdateCapabilitySwitchDescriptorRequest) CapabilitySwitchDescriptor(c
 	r.capabilitySwitchDescriptor = &capabilitySwitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySwitchDescriptorRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySwitchDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23668,8 +23942,8 @@ UpdateCapabilitySwitchDescriptor Update a 'capability.SwitchDescriptor' resource
 func (a *CapabilityApiService) UpdateCapabilitySwitchDescriptor(ctx _context.Context, moid string) ApiUpdateCapabilitySwitchDescriptorRequest {
 	return ApiUpdateCapabilitySwitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23784,13 +24058,13 @@ func (a *CapabilityApiService) UpdateCapabilitySwitchDescriptorExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23807,11 +24081,11 @@ func (a *CapabilityApiService) UpdateCapabilitySwitchDescriptorExecute(r ApiUpda
 }
 
 type ApiUpdateCapabilitySwitchManufacturingDefRequest struct {
-	ctx _context.Context
-	ApiService *CapabilityApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *CapabilityApiService
+	moid                             string
 	capabilitySwitchManufacturingDef *CapabilitySwitchManufacturingDef
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;capability.SwitchManufacturingDef&#39; resource to update.
@@ -23819,6 +24093,7 @@ func (r ApiUpdateCapabilitySwitchManufacturingDefRequest) CapabilitySwitchManufa
 	r.capabilitySwitchManufacturingDef = &capabilitySwitchManufacturingDef
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCapabilitySwitchManufacturingDefRequest) IfMatch(ifMatch string) ApiUpdateCapabilitySwitchManufacturingDefRequest {
 	r.ifMatch = &ifMatch
@@ -23839,8 +24114,8 @@ UpdateCapabilitySwitchManufacturingDef Update a 'capability.SwitchManufacturingD
 func (a *CapabilityApiService) UpdateCapabilitySwitchManufacturingDef(ctx _context.Context, moid string) ApiUpdateCapabilitySwitchManufacturingDefRequest {
 	return ApiUpdateCapabilitySwitchManufacturingDefRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23955,13 +24230,13 @@ func (a *CapabilityApiService) UpdateCapabilitySwitchManufacturingDefExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

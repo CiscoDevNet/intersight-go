@@ -25,8 +25,8 @@ type VirtualizationVmwareKernelNetwork struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Indicates that fault tolerance logging is enabled on this kernel network.
-	FaultToleranceLogging *bool `json:"FaultToleranceLogging,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	FaultToleranceLogging *bool    `json:"FaultToleranceLogging,omitempty"`
+	IpAddress             []string `json:"IpAddress,omitempty"`
 	// Standard MAC address assigned to this kernel network.
 	MacAddress *string `json:"MacAddress,omitempty"`
 	// Indicates that management traffic is enabled on this kernel network.
@@ -46,11 +46,11 @@ type VirtualizationVmwareKernelNetwork struct {
 	// Indicates that vsphere replication is enabled on this kernel network.
 	VsphereReplication *bool `json:"VsphereReplication,omitempty"`
 	// Indicates that vsphere replication nfc is enabled on this kernel network.
-	VsphereReplicationNfc *bool `json:"VsphereReplicationNfc,omitempty"`
-	DistributedNetwork *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
-	Network *VirtualizationVmwareNetworkRelationship `json:"Network,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VsphereReplicationNfc *bool                                               `json:"VsphereReplicationNfc,omitempty"`
+	DistributedNetwork    *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
+	Host                  *VirtualizationVmwareHostRelationship               `json:"Host,omitempty"`
+	Network               *VirtualizationVmwareNetworkRelationship            `json:"Network,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _VirtualizationVmwareKernelNetwork VirtualizationVmwareKernelNetwork
@@ -91,7 +91,7 @@ func (o *VirtualizationVmwareKernelNetwork) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareKernelNetwork) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *VirtualizationVmwareKernelNetwork) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareKernelNetwork) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -160,7 +160,7 @@ func (o *VirtualizationVmwareKernelNetwork) SetFaultToleranceLogging(v bool) {
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareKernelNetwork) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -683,8 +683,8 @@ func (o *VirtualizationVmwareKernelNetwork) UnmarshalJSON(bytes []byte) (err err
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Indicates that fault tolerance logging is enabled on this kernel network.
-		FaultToleranceLogging *bool `json:"FaultToleranceLogging,omitempty"`
-		IpAddress []string `json:"IpAddress,omitempty"`
+		FaultToleranceLogging *bool    `json:"FaultToleranceLogging,omitempty"`
+		IpAddress             []string `json:"IpAddress,omitempty"`
 		// Standard MAC address assigned to this kernel network.
 		MacAddress *string `json:"MacAddress,omitempty"`
 		// Indicates that management traffic is enabled on this kernel network.
@@ -704,10 +704,10 @@ func (o *VirtualizationVmwareKernelNetwork) UnmarshalJSON(bytes []byte) (err err
 		// Indicates that vsphere replication is enabled on this kernel network.
 		VsphereReplication *bool `json:"VsphereReplication,omitempty"`
 		// Indicates that vsphere replication nfc is enabled on this kernel network.
-		VsphereReplicationNfc *bool `json:"VsphereReplicationNfc,omitempty"`
-		DistributedNetwork *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
-		Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
-		Network *VirtualizationVmwareNetworkRelationship `json:"Network,omitempty"`
+		VsphereReplicationNfc *bool                                               `json:"VsphereReplicationNfc,omitempty"`
+		DistributedNetwork    *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
+		Host                  *VirtualizationVmwareHostRelationship               `json:"Host,omitempty"`
+		Network               *VirtualizationVmwareNetworkRelationship            `json:"Network,omitempty"`
 	}
 
 	varVirtualizationVmwareKernelNetworkWithoutEmbeddedStruct := VirtualizationVmwareKernelNetworkWithoutEmbeddedStruct{}
@@ -826,5 +826,3 @@ func (v *NullableVirtualizationVmwareKernelNetwork) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

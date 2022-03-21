@@ -19,19 +19,18 @@ import (
 // HyperflexServerModelRelationship - A relationship to the 'hyperflex.ServerModel' resource, or the expanded 'hyperflex.ServerModel' resource, or the 'null' value.
 type HyperflexServerModelRelationship struct {
 	HyperflexServerModel *HyperflexServerModel
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // HyperflexServerModelAsHyperflexServerModelRelationship is a convenience function that returns HyperflexServerModel wrapped in HyperflexServerModelRelationship
 func HyperflexServerModelAsHyperflexServerModelRelationship(v *HyperflexServerModel) HyperflexServerModelRelationship {
-	return HyperflexServerModelRelationship{ HyperflexServerModel: v}
+	return HyperflexServerModelRelationship{HyperflexServerModel: v}
 }
 
 // MoMoRefAsHyperflexServerModelRelationship is a convenience function that returns MoMoRef wrapped in HyperflexServerModelRelationship
 func MoMoRefAsHyperflexServerModelRelationship(v *MoMoRef) HyperflexServerModelRelationship {
-	return HyperflexServerModelRelationship{ MoMoRef: v}
+	return HyperflexServerModelRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexServerModelRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexServerModelRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexServerModelRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexServerModelRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexServerModel != nil {
 		return obj.HyperflexServerModel
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexServerModelRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

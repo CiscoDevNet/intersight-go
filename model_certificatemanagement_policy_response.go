@@ -19,31 +19,30 @@ import (
 // CertificatemanagementPolicyResponse - The response body of a HTTP GET request for the 'certificatemanagement.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'certificatemanagement.Policy' resources.
 type CertificatemanagementPolicyResponse struct {
 	CertificatemanagementPolicyList *CertificatemanagementPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 }
 
 // CertificatemanagementPolicyListAsCertificatemanagementPolicyResponse is a convenience function that returns CertificatemanagementPolicyList wrapped in CertificatemanagementPolicyResponse
 func CertificatemanagementPolicyListAsCertificatemanagementPolicyResponse(v *CertificatemanagementPolicyList) CertificatemanagementPolicyResponse {
-	return CertificatemanagementPolicyResponse{ CertificatemanagementPolicyList: v}
+	return CertificatemanagementPolicyResponse{CertificatemanagementPolicyList: v}
 }
 
 // MoAggregateTransformAsCertificatemanagementPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in CertificatemanagementPolicyResponse
 func MoAggregateTransformAsCertificatemanagementPolicyResponse(v *MoAggregateTransform) CertificatemanagementPolicyResponse {
-	return CertificatemanagementPolicyResponse{ MoAggregateTransform: v}
+	return CertificatemanagementPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCertificatemanagementPolicyResponse is a convenience function that returns MoDocumentCount wrapped in CertificatemanagementPolicyResponse
 func MoDocumentCountAsCertificatemanagementPolicyResponse(v *MoDocumentCount) CertificatemanagementPolicyResponse {
-	return CertificatemanagementPolicyResponse{ MoDocumentCount: v}
+	return CertificatemanagementPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCertificatemanagementPolicyResponse is a convenience function that returns MoTagSummary wrapped in CertificatemanagementPolicyResponse
 func MoTagSummaryAsCertificatemanagementPolicyResponse(v *MoTagSummary) CertificatemanagementPolicyResponse {
-	return CertificatemanagementPolicyResponse{ MoTagSummary: v}
+	return CertificatemanagementPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CertificatemanagementPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CertificatemanagementPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CertificatemanagementPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *CertificatemanagementPolicyResponse) GetActualInstance() interface{} {
 	if obj.CertificatemanagementPolicyList != nil {
 		return obj.CertificatemanagementPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCertificatemanagementPolicyResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -28,7 +28,7 @@ type ConnectorAuthMessageAllOf struct {
 	// The list of roles to pass to the platform to validate the action against.
 	RemoteUserRoles *string `json:"RemoteUserRoles,omitempty"`
 	// The session Id passed to the platform for use in platforms auditing.
-	RemoteUserSessionId *string `json:"RemoteUserSessionId,omitempty"`
+	RemoteUserSessionId  *string `json:"RemoteUserSessionId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *ConnectorAuthMessageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorAuthMessageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *ConnectorAuthMessageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorAuthMessageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -314,5 +314,3 @@ func (v *NullableConnectorAuthMessageAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

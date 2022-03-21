@@ -19,31 +19,30 @@ import (
 // HyperflexBackupClusterResponse - The response body of a HTTP GET request for the 'hyperflex.BackupCluster' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.BackupCluster' resources.
 type HyperflexBackupClusterResponse struct {
 	HyperflexBackupClusterList *HyperflexBackupClusterList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // HyperflexBackupClusterListAsHyperflexBackupClusterResponse is a convenience function that returns HyperflexBackupClusterList wrapped in HyperflexBackupClusterResponse
 func HyperflexBackupClusterListAsHyperflexBackupClusterResponse(v *HyperflexBackupClusterList) HyperflexBackupClusterResponse {
-	return HyperflexBackupClusterResponse{ HyperflexBackupClusterList: v}
+	return HyperflexBackupClusterResponse{HyperflexBackupClusterList: v}
 }
 
 // MoAggregateTransformAsHyperflexBackupClusterResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexBackupClusterResponse
 func MoAggregateTransformAsHyperflexBackupClusterResponse(v *MoAggregateTransform) HyperflexBackupClusterResponse {
-	return HyperflexBackupClusterResponse{ MoAggregateTransform: v}
+	return HyperflexBackupClusterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexBackupClusterResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexBackupClusterResponse
 func MoDocumentCountAsHyperflexBackupClusterResponse(v *MoDocumentCount) HyperflexBackupClusterResponse {
-	return HyperflexBackupClusterResponse{ MoDocumentCount: v}
+	return HyperflexBackupClusterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexBackupClusterResponse is a convenience function that returns MoTagSummary wrapped in HyperflexBackupClusterResponse
 func MoTagSummaryAsHyperflexBackupClusterResponse(v *MoTagSummary) HyperflexBackupClusterResponse {
-	return HyperflexBackupClusterResponse{ MoTagSummary: v}
+	return HyperflexBackupClusterResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexBackupClusterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexBackupClusterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexBackupClusterResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexBackupClusterResponse) GetActualInstance() interface{} {
 	if obj.HyperflexBackupClusterList != nil {
 		return obj.HyperflexBackupClusterList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexBackupClusterResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

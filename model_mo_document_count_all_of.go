@@ -18,7 +18,7 @@ import (
 // MoDocumentCountAllOf struct for MoDocumentCountAllOf
 type MoDocumentCountAllOf struct {
 	// The total number of resources matching the query filter, accross all pages.
-	Count *int32 `json:"Count,omitempty"`
+	Count                *int32 `json:"Count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,5 +138,3 @@ func (v *NullableMoDocumentCountAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

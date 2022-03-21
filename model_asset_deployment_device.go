@@ -23,31 +23,31 @@ type AssetDeploymentDevice struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AlarmInfo NullableAssetDeploymentDeviceAlarmInfo `json:"AlarmInfo,omitempty"`
+	ObjectType string                                 `json:"ObjectType"`
+	AlarmInfo  NullableAssetDeploymentDeviceAlarmInfo `json:"AlarmInfo,omitempty"`
 	// Unique identifier of the Cisco device.
-	DeviceId *string `json:"DeviceId,omitempty"`
+	DeviceId          *string                                  `json:"DeviceId,omitempty"`
 	DeviceInformation NullableAssetDeploymentDeviceInformation `json:"DeviceInformation,omitempty"`
 	// Product identifier for the specified Cisco device. It is used to distinguish between HyperFlex and UCS devices.
-	DevicePid *string `json:"DevicePid,omitempty"`
+	DevicePid        *string                       `json:"DevicePid,omitempty"`
 	DeviceStatistics NullableAssetDeviceStatistics `json:"DeviceStatistics,omitempty"`
 	// Product Subgroup type helps to determine if device subgroup within Product type has to be billed using consumption metering. example \"N9300 Series\" in Product type \"SWITCH\".
 	ProductSubgroup *string `json:"ProductSubgroup,omitempty"`
 	// Product type helps to determine if device has to be billed using consumption metering. example \"SERVER\".
 	ProductType *string `json:"ProductType,omitempty"`
 	// String reference to the device connector.
-	RegisteredDeviceMoid *string `json:"RegisteredDeviceMoid,omitempty"`
-	UnitOfMeasure []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
+	RegisteredDeviceMoid *string             `json:"RegisteredDeviceMoid,omitempty"`
+	UnitOfMeasure        []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
 	// Virtualization platform is used to identify the hypervisor type. example \"ESXi\".
 	VirtualizationPlatform *string `json:"VirtualizationPlatform,omitempty"`
 	// Workload/Usecase running on the device.
-	Workload *string `json:"Workload,omitempty"`
-	Deployment *AssetDeploymentRelationship `json:"Deployment,omitempty"`
+	Workload                  *string                                     `json:"Workload,omitempty"`
+	Deployment                *AssetDeploymentRelationship                `json:"Deployment,omitempty"`
 	DeviceContractInformation *AssetDeviceContractInformationRelationship `json:"DeviceContractInformation,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Subscription *AssetSubscriptionRelationship `json:"Subscription,omitempty"`
-	SubscriptionAccount *AssetSubscriptionAccountRelationship `json:"SubscriptionAccount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice          *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+	Subscription              *AssetSubscriptionRelationship              `json:"Subscription,omitempty"`
+	SubscriptionAccount       *AssetSubscriptionAccountRelationship       `json:"SubscriptionAccount,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _AssetDeploymentDevice AssetDeploymentDevice
@@ -88,7 +88,7 @@ func (o *AssetDeploymentDevice) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentDevice) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *AssetDeploymentDevice) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentDevice) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -136,7 +136,7 @@ func (o *AssetDeploymentDevice) GetAlarmInfo() AssetDeploymentDeviceAlarmInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeploymentDevice) GetAlarmInfoOk() (*AssetDeploymentDeviceAlarmInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmInfo.Get(), o.AlarmInfo.IsSet()
@@ -155,6 +155,7 @@ func (o *AssetDeploymentDevice) HasAlarmInfo() bool {
 func (o *AssetDeploymentDevice) SetAlarmInfo(v AssetDeploymentDeviceAlarmInfo) {
 	o.AlarmInfo.Set(&v)
 }
+
 // SetAlarmInfoNil sets the value for AlarmInfo to be an explicit nil
 func (o *AssetDeploymentDevice) SetAlarmInfoNil() {
 	o.AlarmInfo.Set(nil)
@@ -210,7 +211,7 @@ func (o *AssetDeploymentDevice) GetDeviceInformation() AssetDeploymentDeviceInfo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeploymentDevice) GetDeviceInformationOk() (*AssetDeploymentDeviceInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeviceInformation.Get(), o.DeviceInformation.IsSet()
@@ -229,6 +230,7 @@ func (o *AssetDeploymentDevice) HasDeviceInformation() bool {
 func (o *AssetDeploymentDevice) SetDeviceInformation(v AssetDeploymentDeviceInformation) {
 	o.DeviceInformation.Set(&v)
 }
+
 // SetDeviceInformationNil sets the value for DeviceInformation to be an explicit nil
 func (o *AssetDeploymentDevice) SetDeviceInformationNil() {
 	o.DeviceInformation.Set(nil)
@@ -284,7 +286,7 @@ func (o *AssetDeploymentDevice) GetDeviceStatistics() AssetDeviceStatistics {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeploymentDevice) GetDeviceStatisticsOk() (*AssetDeviceStatistics, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeviceStatistics.Get(), o.DeviceStatistics.IsSet()
@@ -303,6 +305,7 @@ func (o *AssetDeploymentDevice) HasDeviceStatistics() bool {
 func (o *AssetDeploymentDevice) SetDeviceStatistics(v AssetDeviceStatistics) {
 	o.DeviceStatistics.Set(&v)
 }
+
 // SetDeviceStatisticsNil sets the value for DeviceStatistics to be an explicit nil
 func (o *AssetDeploymentDevice) SetDeviceStatisticsNil() {
 	o.DeviceStatistics.Set(nil)
@@ -411,7 +414,7 @@ func (o *AssetDeploymentDevice) SetRegisteredDeviceMoid(v string) {
 
 // GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentDevice) GetUnitOfMeasure() []AssetMeteringType {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetMeteringType
 		return ret
 	}
@@ -743,30 +746,30 @@ func (o *AssetDeploymentDevice) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		AlarmInfo NullableAssetDeploymentDeviceAlarmInfo `json:"AlarmInfo,omitempty"`
+		ObjectType string                                 `json:"ObjectType"`
+		AlarmInfo  NullableAssetDeploymentDeviceAlarmInfo `json:"AlarmInfo,omitempty"`
 		// Unique identifier of the Cisco device.
-		DeviceId *string `json:"DeviceId,omitempty"`
+		DeviceId          *string                                  `json:"DeviceId,omitempty"`
 		DeviceInformation NullableAssetDeploymentDeviceInformation `json:"DeviceInformation,omitempty"`
 		// Product identifier for the specified Cisco device. It is used to distinguish between HyperFlex and UCS devices.
-		DevicePid *string `json:"DevicePid,omitempty"`
+		DevicePid        *string                       `json:"DevicePid,omitempty"`
 		DeviceStatistics NullableAssetDeviceStatistics `json:"DeviceStatistics,omitempty"`
 		// Product Subgroup type helps to determine if device subgroup within Product type has to be billed using consumption metering. example \"N9300 Series\" in Product type \"SWITCH\".
 		ProductSubgroup *string `json:"ProductSubgroup,omitempty"`
 		// Product type helps to determine if device has to be billed using consumption metering. example \"SERVER\".
 		ProductType *string `json:"ProductType,omitempty"`
 		// String reference to the device connector.
-		RegisteredDeviceMoid *string `json:"RegisteredDeviceMoid,omitempty"`
-		UnitOfMeasure []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
+		RegisteredDeviceMoid *string             `json:"RegisteredDeviceMoid,omitempty"`
+		UnitOfMeasure        []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
 		// Virtualization platform is used to identify the hypervisor type. example \"ESXi\".
 		VirtualizationPlatform *string `json:"VirtualizationPlatform,omitempty"`
 		// Workload/Usecase running on the device.
-		Workload *string `json:"Workload,omitempty"`
-		Deployment *AssetDeploymentRelationship `json:"Deployment,omitempty"`
+		Workload                  *string                                     `json:"Workload,omitempty"`
+		Deployment                *AssetDeploymentRelationship                `json:"Deployment,omitempty"`
 		DeviceContractInformation *AssetDeviceContractInformationRelationship `json:"DeviceContractInformation,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Subscription *AssetSubscriptionRelationship `json:"Subscription,omitempty"`
-		SubscriptionAccount *AssetSubscriptionAccountRelationship `json:"SubscriptionAccount,omitempty"`
+		RegisteredDevice          *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+		Subscription              *AssetSubscriptionRelationship              `json:"Subscription,omitempty"`
+		SubscriptionAccount       *AssetSubscriptionAccountRelationship       `json:"SubscriptionAccount,omitempty"`
 	}
 
 	varAssetDeploymentDeviceWithoutEmbeddedStruct := AssetDeploymentDeviceWithoutEmbeddedStruct{}
@@ -887,5 +890,3 @@ func (v *NullableAssetDeploymentDevice) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type KubernetesNodeStatusAllOf struct {
 	// Statue of the node. Indicate if the node is kubernetes ready or not.
 	Status *string `json:"Status,omitempty"`
 	// Type of the node. It can be either Master or Worker.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *KubernetesNodeStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *KubernetesNodeStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableKubernetesNodeStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

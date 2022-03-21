@@ -29,11 +29,11 @@ var (
 type FirmwareApiService service
 
 type ApiCreateFirmwareBiosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwareBiosDescriptor *FirmwareBiosDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.BiosDescriptor&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateFirmwareBiosDescriptorRequest) FirmwareBiosDescriptor(firmwareB
 	r.firmwareBiosDescriptor = &firmwareBiosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareBiosDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareBiosDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareBiosDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareBiosDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateFirmwareBiosDescriptor Create a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareBiosDescriptor(ctx _context.Context) ApiCreateFirmwareBiosDescriptorRequest {
 	return ApiCreateFirmwareBiosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *FirmwareApiService) CreateFirmwareBiosDescriptorExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *FirmwareApiService) CreateFirmwareBiosDescriptorExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwareBoardControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
 	firmwareBoardControllerDescriptor *FirmwareBoardControllerDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;firmware.BoardControllerDescriptor&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateFirmwareBoardControllerDescriptorRequest) FirmwareBoardControll
 	r.firmwareBoardControllerDescriptor = &firmwareBoardControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareBoardControllerDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareBoardControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareBoardControllerDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareBoardControllerDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateFirmwareBoardControllerDescriptor Create a 'firmware.BoardControllerDescri
 func (a *FirmwareApiService) CreateFirmwareBoardControllerDescriptor(ctx _context.Context) ApiCreateFirmwareBoardControllerDescriptorRequest {
 	return ApiCreateFirmwareBoardControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *FirmwareApiService) CreateFirmwareBoardControllerDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *FirmwareApiService) CreateFirmwareBoardControllerDescriptorExecute(r Ap
 }
 
 type ApiCreateFirmwareChassisUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwareChassisUpgrade *FirmwareChassisUpgrade
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.ChassisUpgrade&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateFirmwareChassisUpgradeRequest) FirmwareChassisUpgrade(firmwareC
 	r.firmwareChassisUpgrade = &firmwareChassisUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareChassisUpgradeRequest) IfMatch(ifMatch string) ApiCreateFirmwareChassisUpgradeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareChassisUpgradeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareChassisUpgradeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateFirmwareChassisUpgrade Create a 'firmware.ChassisUpgrade' resource.
 func (a *FirmwareApiService) CreateFirmwareChassisUpgrade(ctx _context.Context) ApiCreateFirmwareChassisUpgradeRequest {
 	return ApiCreateFirmwareChassisUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *FirmwareApiService) CreateFirmwareChassisUpgradeExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *FirmwareApiService) CreateFirmwareChassisUpgradeExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwareCimcDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwareCimcDescriptor *FirmwareCimcDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.CimcDescriptor&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateFirmwareCimcDescriptorRequest) FirmwareCimcDescriptor(firmwareC
 	r.firmwareCimcDescriptor = &firmwareCimcDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareCimcDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareCimcDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareCimcDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareCimcDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateFirmwareCimcDescriptor Create a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareCimcDescriptor(ctx _context.Context) ApiCreateFirmwareCimcDescriptorRequest {
 	return ApiCreateFirmwareCimcDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *FirmwareApiService) CreateFirmwareCimcDescriptorExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *FirmwareApiService) CreateFirmwareCimcDescriptorExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwareDimmDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwareDimmDescriptor *FirmwareDimmDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.DimmDescriptor&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateFirmwareDimmDescriptorRequest) FirmwareDimmDescriptor(firmwareD
 	r.firmwareDimmDescriptor = &firmwareDimmDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareDimmDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareDimmDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareDimmDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareDimmDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateFirmwareDimmDescriptor Create a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareDimmDescriptor(ctx _context.Context) ApiCreateFirmwareDimmDescriptorRequest {
 	return ApiCreateFirmwareDimmDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *FirmwareApiService) CreateFirmwareDimmDescriptorExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *FirmwareApiService) CreateFirmwareDimmDescriptorExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwareDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareDistributable *FirmwareDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.Distributable&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateFirmwareDistributableRequest) FirmwareDistributable(firmwareDis
 	r.firmwareDistributable = &firmwareDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareDistributableRequest) IfMatch(ifMatch string) ApiCreateFirmwareDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateFirmwareDistributable Create a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) CreateFirmwareDistributable(ctx _context.Context) ApiCreateFirmwareDistributableRequest {
 	return ApiCreateFirmwareDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *FirmwareApiService) CreateFirmwareDistributableExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *FirmwareApiService) CreateFirmwareDistributableExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareDriveDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                     _context.Context
+	ApiService              *FirmwareApiService
 	firmwareDriveDescriptor *FirmwareDriveDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;firmware.DriveDescriptor&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateFirmwareDriveDescriptorRequest) FirmwareDriveDescriptor(firmwar
 	r.firmwareDriveDescriptor = &firmwareDriveDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareDriveDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareDriveDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareDriveDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareDriveDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateFirmwareDriveDescriptor Create a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareDriveDescriptor(ctx _context.Context) ApiCreateFirmwareDriveDescriptorRequest {
 	return ApiCreateFirmwareDriveDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *FirmwareApiService) CreateFirmwareDriveDescriptorExecute(r ApiCreateFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *FirmwareApiService) CreateFirmwareDriveDescriptorExecute(r ApiCreateFir
 }
 
 type ApiCreateFirmwareDriverDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                         _context.Context
+	ApiService                  *FirmwareApiService
 	firmwareDriverDistributable *FirmwareDriverDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;firmware.DriverDistributable&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateFirmwareDriverDistributableRequest) FirmwareDriverDistributable
 	r.firmwareDriverDistributable = &firmwareDriverDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareDriverDistributableRequest) IfMatch(ifMatch string) ApiCreateFirmwareDriverDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareDriverDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareDriverDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateFirmwareDriverDistributable Create a 'firmware.DriverDistributable' resour
 func (a *FirmwareApiService) CreateFirmwareDriverDistributable(ctx _context.Context) ApiCreateFirmwareDriverDistributableRequest {
 	return ApiCreateFirmwareDriverDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *FirmwareApiService) CreateFirmwareDriverDistributableExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *FirmwareApiService) CreateFirmwareDriverDistributableExecute(r ApiCreat
 }
 
 type ApiCreateFirmwareEulaRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx          _context.Context
+	ApiService   *FirmwareApiService
 	firmwareEula *FirmwareEula
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;firmware.Eula&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateFirmwareEulaRequest) FirmwareEula(firmwareEula FirmwareEula) Ap
 	r.firmwareEula = &firmwareEula
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareEulaRequest) IfMatch(ifMatch string) ApiCreateFirmwareEulaRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareEulaRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareEulaRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateFirmwareEula Create a 'firmware.Eula' resource.
 func (a *FirmwareApiService) CreateFirmwareEula(ctx _context.Context) ApiCreateFirmwareEulaRequest {
 	return ApiCreateFirmwareEulaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *FirmwareApiService) CreateFirmwareEulaExecute(r ApiCreateFirmwareEulaRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *FirmwareApiService) CreateFirmwareEulaExecute(r ApiCreateFirmwareEulaRe
 }
 
 type ApiCreateFirmwareGpuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareGpuDescriptor *FirmwareGpuDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.GpuDescriptor&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateFirmwareGpuDescriptorRequest) FirmwareGpuDescriptor(firmwareGpu
 	r.firmwareGpuDescriptor = &firmwareGpuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareGpuDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareGpuDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareGpuDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareGpuDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateFirmwareGpuDescriptor Create a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareGpuDescriptor(ctx _context.Context) ApiCreateFirmwareGpuDescriptorRequest {
 	return ApiCreateFirmwareGpuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *FirmwareApiService) CreateFirmwareGpuDescriptorExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *FirmwareApiService) CreateFirmwareGpuDescriptorExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareHbaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareHbaDescriptor *FirmwareHbaDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.HbaDescriptor&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateFirmwareHbaDescriptorRequest) FirmwareHbaDescriptor(firmwareHba
 	r.firmwareHbaDescriptor = &firmwareHbaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareHbaDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareHbaDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareHbaDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareHbaDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateFirmwareHbaDescriptor Create a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareHbaDescriptor(ctx _context.Context) ApiCreateFirmwareHbaDescriptorRequest {
 	return ApiCreateFirmwareHbaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *FirmwareApiService) CreateFirmwareHbaDescriptorExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *FirmwareApiService) CreateFirmwareHbaDescriptorExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareIomDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareIomDescriptor *FirmwareIomDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.IomDescriptor&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateFirmwareIomDescriptorRequest) FirmwareIomDescriptor(firmwareIom
 	r.firmwareIomDescriptor = &firmwareIomDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareIomDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareIomDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareIomDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareIomDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateFirmwareIomDescriptor Create a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareIomDescriptor(ctx _context.Context) ApiCreateFirmwareIomDescriptorRequest {
 	return ApiCreateFirmwareIomDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *FirmwareApiService) CreateFirmwareIomDescriptorExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *FirmwareApiService) CreateFirmwareIomDescriptorExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareMswitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                       _context.Context
+	ApiService                *FirmwareApiService
 	firmwareMswitchDescriptor *FirmwareMswitchDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;firmware.MswitchDescriptor&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateFirmwareMswitchDescriptorRequest) FirmwareMswitchDescriptor(fir
 	r.firmwareMswitchDescriptor = &firmwareMswitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareMswitchDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareMswitchDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareMswitchDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareMswitchDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateFirmwareMswitchDescriptor Create a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareMswitchDescriptor(ctx _context.Context) ApiCreateFirmwareMswitchDescriptorRequest {
 	return ApiCreateFirmwareMswitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *FirmwareApiService) CreateFirmwareMswitchDescriptorExecute(r ApiCreateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *FirmwareApiService) CreateFirmwareMswitchDescriptorExecute(r ApiCreateF
 }
 
 type ApiCreateFirmwareNxosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwareNxosDescriptor *FirmwareNxosDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.NxosDescriptor&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateFirmwareNxosDescriptorRequest) FirmwareNxosDescriptor(firmwareN
 	r.firmwareNxosDescriptor = &firmwareNxosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareNxosDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareNxosDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareNxosDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareNxosDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateFirmwareNxosDescriptor Create a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwareNxosDescriptor(ctx _context.Context) ApiCreateFirmwareNxosDescriptorRequest {
 	return ApiCreateFirmwareNxosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *FirmwareApiService) CreateFirmwareNxosDescriptorExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *FirmwareApiService) CreateFirmwareNxosDescriptorExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwarePcieDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
 	firmwarePcieDescriptor *FirmwarePcieDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;firmware.PcieDescriptor&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateFirmwarePcieDescriptorRequest) FirmwarePcieDescriptor(firmwareP
 	r.firmwarePcieDescriptor = &firmwarePcieDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwarePcieDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwarePcieDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwarePcieDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwarePcieDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateFirmwarePcieDescriptor Create a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwarePcieDescriptor(ctx _context.Context) ApiCreateFirmwarePcieDescriptorRequest {
 	return ApiCreateFirmwarePcieDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *FirmwareApiService) CreateFirmwarePcieDescriptorExecute(r ApiCreateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *FirmwareApiService) CreateFirmwarePcieDescriptorExecute(r ApiCreateFirm
 }
 
 type ApiCreateFirmwarePsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwarePsuDescriptor *FirmwarePsuDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.PsuDescriptor&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateFirmwarePsuDescriptorRequest) FirmwarePsuDescriptor(firmwarePsu
 	r.firmwarePsuDescriptor = &firmwarePsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwarePsuDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwarePsuDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwarePsuDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwarePsuDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateFirmwarePsuDescriptor Create a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) CreateFirmwarePsuDescriptor(ctx _context.Context) ApiCreateFirmwarePsuDescriptorRequest {
 	return ApiCreateFirmwarePsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *FirmwareApiService) CreateFirmwarePsuDescriptorExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *FirmwareApiService) CreateFirmwarePsuDescriptorExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareSasExpanderDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                           _context.Context
+	ApiService                    *FirmwareApiService
 	firmwareSasExpanderDescriptor *FirmwareSasExpanderDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;firmware.SasExpanderDescriptor&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateFirmwareSasExpanderDescriptorRequest) FirmwareSasExpanderDescri
 	r.firmwareSasExpanderDescriptor = &firmwareSasExpanderDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareSasExpanderDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareSasExpanderDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareSasExpanderDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareSasExpanderDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateFirmwareSasExpanderDescriptor Create a 'firmware.SasExpanderDescriptor' re
 func (a *FirmwareApiService) CreateFirmwareSasExpanderDescriptor(ctx _context.Context) ApiCreateFirmwareSasExpanderDescriptorRequest {
 	return ApiCreateFirmwareSasExpanderDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *FirmwareApiService) CreateFirmwareSasExpanderDescriptorExecute(r ApiCre
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,11 @@ func (a *FirmwareApiService) CreateFirmwareSasExpanderDescriptorExecute(r ApiCre
 }
 
 type ApiCreateFirmwareServerConfigurationUtilityDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                                             _context.Context
+	ApiService                                      *FirmwareApiService
 	firmwareServerConfigurationUtilityDistributable *FirmwareServerConfigurationUtilityDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                         *string
+	ifNoneMatch                                     *string
 }
 
 // The &#39;firmware.ServerConfigurationUtilityDistributable&#39; resource to create.
@@ -3033,11 +3067,13 @@ func (r ApiCreateFirmwareServerConfigurationUtilityDistributableRequest) Firmwar
 	r.firmwareServerConfigurationUtilityDistributable = &firmwareServerConfigurationUtilityDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareServerConfigurationUtilityDistributableRequest) IfMatch(ifMatch string) ApiCreateFirmwareServerConfigurationUtilityDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareServerConfigurationUtilityDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareServerConfigurationUtilityDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3057,7 +3093,7 @@ CreateFirmwareServerConfigurationUtilityDistributable Create a 'firmware.ServerC
 func (a *FirmwareApiService) CreateFirmwareServerConfigurationUtilityDistributable(ctx _context.Context) ApiCreateFirmwareServerConfigurationUtilityDistributableRequest {
 	return ApiCreateFirmwareServerConfigurationUtilityDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3210,13 @@ func (a *FirmwareApiService) CreateFirmwareServerConfigurationUtilityDistributab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3233,11 @@ func (a *FirmwareApiService) CreateFirmwareServerConfigurationUtilityDistributab
 }
 
 type ApiCreateFirmwareStorageControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                                 _context.Context
+	ApiService                          *FirmwareApiService
 	firmwareStorageControllerDescriptor *FirmwareStorageControllerDescriptor
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;firmware.StorageControllerDescriptor&#39; resource to create.
@@ -3209,11 +3245,13 @@ func (r ApiCreateFirmwareStorageControllerDescriptorRequest) FirmwareStorageCont
 	r.firmwareStorageControllerDescriptor = &firmwareStorageControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareStorageControllerDescriptorRequest) IfMatch(ifMatch string) ApiCreateFirmwareStorageControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareStorageControllerDescriptorRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareStorageControllerDescriptorRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3233,7 +3271,7 @@ CreateFirmwareStorageControllerDescriptor Create a 'firmware.StorageControllerDe
 func (a *FirmwareApiService) CreateFirmwareStorageControllerDescriptor(ctx _context.Context) ApiCreateFirmwareStorageControllerDescriptorRequest {
 	return ApiCreateFirmwareStorageControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3388,13 @@ func (a *FirmwareApiService) CreateFirmwareStorageControllerDescriptorExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3411,11 @@ func (a *FirmwareApiService) CreateFirmwareStorageControllerDescriptorExecute(r 
 }
 
 type ApiCreateFirmwareSwitchUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareSwitchUpgrade *FirmwareSwitchUpgrade
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.SwitchUpgrade&#39; resource to create.
@@ -3385,11 +3423,13 @@ func (r ApiCreateFirmwareSwitchUpgradeRequest) FirmwareSwitchUpgrade(firmwareSwi
 	r.firmwareSwitchUpgrade = &firmwareSwitchUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareSwitchUpgradeRequest) IfMatch(ifMatch string) ApiCreateFirmwareSwitchUpgradeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareSwitchUpgradeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareSwitchUpgradeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3409,7 +3449,7 @@ CreateFirmwareSwitchUpgrade Create a 'firmware.SwitchUpgrade' resource.
 func (a *FirmwareApiService) CreateFirmwareSwitchUpgrade(ctx _context.Context) ApiCreateFirmwareSwitchUpgradeRequest {
 	return ApiCreateFirmwareSwitchUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3526,13 +3566,13 @@ func (a *FirmwareApiService) CreateFirmwareSwitchUpgradeExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3549,11 +3589,11 @@ func (a *FirmwareApiService) CreateFirmwareSwitchUpgradeExecute(r ApiCreateFirmw
 }
 
 type ApiCreateFirmwareUnsupportedVersionUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
 	firmwareUnsupportedVersionUpgrade *FirmwareUnsupportedVersionUpgrade
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;firmware.UnsupportedVersionUpgrade&#39; resource to create.
@@ -3561,11 +3601,13 @@ func (r ApiCreateFirmwareUnsupportedVersionUpgradeRequest) FirmwareUnsupportedVe
 	r.firmwareUnsupportedVersionUpgrade = &firmwareUnsupportedVersionUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareUnsupportedVersionUpgradeRequest) IfMatch(ifMatch string) ApiCreateFirmwareUnsupportedVersionUpgradeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareUnsupportedVersionUpgradeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareUnsupportedVersionUpgradeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3585,7 +3627,7 @@ CreateFirmwareUnsupportedVersionUpgrade Create a 'firmware.UnsupportedVersionUpg
 func (a *FirmwareApiService) CreateFirmwareUnsupportedVersionUpgrade(ctx _context.Context) ApiCreateFirmwareUnsupportedVersionUpgradeRequest {
 	return ApiCreateFirmwareUnsupportedVersionUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3702,13 +3744,13 @@ func (a *FirmwareApiService) CreateFirmwareUnsupportedVersionUpgradeExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3725,11 +3767,11 @@ func (a *FirmwareApiService) CreateFirmwareUnsupportedVersionUpgradeExecute(r Ap
 }
 
 type ApiCreateFirmwareUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx             _context.Context
+	ApiService      *FirmwareApiService
 	firmwareUpgrade *FirmwareUpgrade
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;firmware.Upgrade&#39; resource to create.
@@ -3737,11 +3779,13 @@ func (r ApiCreateFirmwareUpgradeRequest) FirmwareUpgrade(firmwareUpgrade Firmwar
 	r.firmwareUpgrade = &firmwareUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareUpgradeRequest) IfMatch(ifMatch string) ApiCreateFirmwareUpgradeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareUpgradeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareUpgradeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3761,7 +3805,7 @@ CreateFirmwareUpgrade Create a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) CreateFirmwareUpgrade(ctx _context.Context) ApiCreateFirmwareUpgradeRequest {
 	return ApiCreateFirmwareUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3878,13 +3922,13 @@ func (a *FirmwareApiService) CreateFirmwareUpgradeExecute(r ApiCreateFirmwareUpg
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3901,11 +3945,11 @@ func (a *FirmwareApiService) CreateFirmwareUpgradeExecute(r ApiCreateFirmwareUpg
 }
 
 type ApiCreateFirmwareUpgradeImpactRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
 	firmwareUpgradeImpact *FirmwareUpgradeImpact
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;firmware.UpgradeImpact&#39; resource to create.
@@ -3913,11 +3957,13 @@ func (r ApiCreateFirmwareUpgradeImpactRequest) FirmwareUpgradeImpact(firmwareUpg
 	r.firmwareUpgradeImpact = &firmwareUpgradeImpact
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFirmwareUpgradeImpactRequest) IfMatch(ifMatch string) ApiCreateFirmwareUpgradeImpactRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFirmwareUpgradeImpactRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFirmwareUpgradeImpactRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3937,7 +3983,7 @@ CreateFirmwareUpgradeImpact Create a 'firmware.UpgradeImpact' resource.
 func (a *FirmwareApiService) CreateFirmwareUpgradeImpact(ctx _context.Context) ApiCreateFirmwareUpgradeImpactRequest {
 	return ApiCreateFirmwareUpgradeImpactRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4054,13 +4100,13 @@ func (a *FirmwareApiService) CreateFirmwareUpgradeImpactExecute(r ApiCreateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4077,11 +4123,10 @@ func (a *FirmwareApiService) CreateFirmwareUpgradeImpactExecute(r ApiCreateFirmw
 }
 
 type ApiDeleteFirmwareBiosDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareBiosDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareBiosDescriptorExecute(r)
@@ -4097,8 +4142,8 @@ DeleteFirmwareBiosDescriptor Delete a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareBiosDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareBiosDescriptorRequest {
 	return ApiDeleteFirmwareBiosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4203,13 +4248,13 @@ func (a *FirmwareApiService) DeleteFirmwareBiosDescriptorExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4217,11 +4262,10 @@ func (a *FirmwareApiService) DeleteFirmwareBiosDescriptorExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwareBoardControllerDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareBoardControllerDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareBoardControllerDescriptorExecute(r)
@@ -4237,8 +4281,8 @@ DeleteFirmwareBoardControllerDescriptor Delete a 'firmware.BoardControllerDescri
 func (a *FirmwareApiService) DeleteFirmwareBoardControllerDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareBoardControllerDescriptorRequest {
 	return ApiDeleteFirmwareBoardControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4343,13 +4387,13 @@ func (a *FirmwareApiService) DeleteFirmwareBoardControllerDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4357,11 +4401,10 @@ func (a *FirmwareApiService) DeleteFirmwareBoardControllerDescriptorExecute(r Ap
 }
 
 type ApiDeleteFirmwareChassisUpgradeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareChassisUpgradeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareChassisUpgradeExecute(r)
@@ -4377,8 +4420,8 @@ DeleteFirmwareChassisUpgrade Delete a 'firmware.ChassisUpgrade' resource.
 func (a *FirmwareApiService) DeleteFirmwareChassisUpgrade(ctx _context.Context, moid string) ApiDeleteFirmwareChassisUpgradeRequest {
 	return ApiDeleteFirmwareChassisUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4483,13 +4526,13 @@ func (a *FirmwareApiService) DeleteFirmwareChassisUpgradeExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4497,11 +4540,10 @@ func (a *FirmwareApiService) DeleteFirmwareChassisUpgradeExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwareCimcDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareCimcDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareCimcDescriptorExecute(r)
@@ -4517,8 +4559,8 @@ DeleteFirmwareCimcDescriptor Delete a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareCimcDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareCimcDescriptorRequest {
 	return ApiDeleteFirmwareCimcDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4623,13 +4665,13 @@ func (a *FirmwareApiService) DeleteFirmwareCimcDescriptorExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4637,11 +4679,10 @@ func (a *FirmwareApiService) DeleteFirmwareCimcDescriptorExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwareDimmDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareDimmDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareDimmDescriptorExecute(r)
@@ -4657,8 +4698,8 @@ DeleteFirmwareDimmDescriptor Delete a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareDimmDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareDimmDescriptorRequest {
 	return ApiDeleteFirmwareDimmDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4763,13 +4804,13 @@ func (a *FirmwareApiService) DeleteFirmwareDimmDescriptorExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4777,11 +4818,10 @@ func (a *FirmwareApiService) DeleteFirmwareDimmDescriptorExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwareDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareDistributableExecute(r)
@@ -4797,8 +4837,8 @@ DeleteFirmwareDistributable Delete a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) DeleteFirmwareDistributable(ctx _context.Context, moid string) ApiDeleteFirmwareDistributableRequest {
 	return ApiDeleteFirmwareDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4903,13 +4943,13 @@ func (a *FirmwareApiService) DeleteFirmwareDistributableExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4917,11 +4957,10 @@ func (a *FirmwareApiService) DeleteFirmwareDistributableExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareDriveDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareDriveDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareDriveDescriptorExecute(r)
@@ -4937,8 +4976,8 @@ DeleteFirmwareDriveDescriptor Delete a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareDriveDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareDriveDescriptorRequest {
 	return ApiDeleteFirmwareDriveDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5043,13 +5082,13 @@ func (a *FirmwareApiService) DeleteFirmwareDriveDescriptorExecute(r ApiDeleteFir
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5057,11 +5096,10 @@ func (a *FirmwareApiService) DeleteFirmwareDriveDescriptorExecute(r ApiDeleteFir
 }
 
 type ApiDeleteFirmwareDriverDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareDriverDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareDriverDistributableExecute(r)
@@ -5077,8 +5115,8 @@ DeleteFirmwareDriverDistributable Delete a 'firmware.DriverDistributable' resour
 func (a *FirmwareApiService) DeleteFirmwareDriverDistributable(ctx _context.Context, moid string) ApiDeleteFirmwareDriverDistributableRequest {
 	return ApiDeleteFirmwareDriverDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5183,13 +5221,13 @@ func (a *FirmwareApiService) DeleteFirmwareDriverDistributableExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5197,11 +5235,10 @@ func (a *FirmwareApiService) DeleteFirmwareDriverDistributableExecute(r ApiDelet
 }
 
 type ApiDeleteFirmwareGpuDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareGpuDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareGpuDescriptorExecute(r)
@@ -5217,8 +5254,8 @@ DeleteFirmwareGpuDescriptor Delete a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareGpuDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareGpuDescriptorRequest {
 	return ApiDeleteFirmwareGpuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5323,13 +5360,13 @@ func (a *FirmwareApiService) DeleteFirmwareGpuDescriptorExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5337,11 +5374,10 @@ func (a *FirmwareApiService) DeleteFirmwareGpuDescriptorExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareHbaDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareHbaDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareHbaDescriptorExecute(r)
@@ -5357,8 +5393,8 @@ DeleteFirmwareHbaDescriptor Delete a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareHbaDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareHbaDescriptorRequest {
 	return ApiDeleteFirmwareHbaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5463,13 +5499,13 @@ func (a *FirmwareApiService) DeleteFirmwareHbaDescriptorExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5477,11 +5513,10 @@ func (a *FirmwareApiService) DeleteFirmwareHbaDescriptorExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareIomDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareIomDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareIomDescriptorExecute(r)
@@ -5497,8 +5532,8 @@ DeleteFirmwareIomDescriptor Delete a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareIomDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareIomDescriptorRequest {
 	return ApiDeleteFirmwareIomDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5603,13 +5638,13 @@ func (a *FirmwareApiService) DeleteFirmwareIomDescriptorExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5617,11 +5652,10 @@ func (a *FirmwareApiService) DeleteFirmwareIomDescriptorExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareMswitchDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareMswitchDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareMswitchDescriptorExecute(r)
@@ -5637,8 +5671,8 @@ DeleteFirmwareMswitchDescriptor Delete a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareMswitchDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareMswitchDescriptorRequest {
 	return ApiDeleteFirmwareMswitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5743,13 +5777,13 @@ func (a *FirmwareApiService) DeleteFirmwareMswitchDescriptorExecute(r ApiDeleteF
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5757,11 +5791,10 @@ func (a *FirmwareApiService) DeleteFirmwareMswitchDescriptorExecute(r ApiDeleteF
 }
 
 type ApiDeleteFirmwareNxosDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareNxosDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareNxosDescriptorExecute(r)
@@ -5777,8 +5810,8 @@ DeleteFirmwareNxosDescriptor Delete a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwareNxosDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareNxosDescriptorRequest {
 	return ApiDeleteFirmwareNxosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5883,13 +5916,13 @@ func (a *FirmwareApiService) DeleteFirmwareNxosDescriptorExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5897,11 +5930,10 @@ func (a *FirmwareApiService) DeleteFirmwareNxosDescriptorExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwarePcieDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwarePcieDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwarePcieDescriptorExecute(r)
@@ -5917,8 +5949,8 @@ DeleteFirmwarePcieDescriptor Delete a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwarePcieDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwarePcieDescriptorRequest {
 	return ApiDeleteFirmwarePcieDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6023,13 +6055,13 @@ func (a *FirmwareApiService) DeleteFirmwarePcieDescriptorExecute(r ApiDeleteFirm
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6037,11 +6069,10 @@ func (a *FirmwareApiService) DeleteFirmwarePcieDescriptorExecute(r ApiDeleteFirm
 }
 
 type ApiDeleteFirmwarePsuDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwarePsuDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwarePsuDescriptorExecute(r)
@@ -6057,8 +6088,8 @@ DeleteFirmwarePsuDescriptor Delete a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) DeleteFirmwarePsuDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwarePsuDescriptorRequest {
 	return ApiDeleteFirmwarePsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6163,13 +6194,13 @@ func (a *FirmwareApiService) DeleteFirmwarePsuDescriptorExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6177,11 +6208,10 @@ func (a *FirmwareApiService) DeleteFirmwarePsuDescriptorExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareSasExpanderDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareSasExpanderDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareSasExpanderDescriptorExecute(r)
@@ -6197,8 +6227,8 @@ DeleteFirmwareSasExpanderDescriptor Delete a 'firmware.SasExpanderDescriptor' re
 func (a *FirmwareApiService) DeleteFirmwareSasExpanderDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareSasExpanderDescriptorRequest {
 	return ApiDeleteFirmwareSasExpanderDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6303,13 +6333,13 @@ func (a *FirmwareApiService) DeleteFirmwareSasExpanderDescriptorExecute(r ApiDel
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6317,11 +6347,10 @@ func (a *FirmwareApiService) DeleteFirmwareSasExpanderDescriptorExecute(r ApiDel
 }
 
 type ApiDeleteFirmwareServerConfigurationUtilityDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareServerConfigurationUtilityDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareServerConfigurationUtilityDistributableExecute(r)
@@ -6337,8 +6366,8 @@ DeleteFirmwareServerConfigurationUtilityDistributable Delete a 'firmware.ServerC
 func (a *FirmwareApiService) DeleteFirmwareServerConfigurationUtilityDistributable(ctx _context.Context, moid string) ApiDeleteFirmwareServerConfigurationUtilityDistributableRequest {
 	return ApiDeleteFirmwareServerConfigurationUtilityDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6443,13 +6472,13 @@ func (a *FirmwareApiService) DeleteFirmwareServerConfigurationUtilityDistributab
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6457,11 +6486,10 @@ func (a *FirmwareApiService) DeleteFirmwareServerConfigurationUtilityDistributab
 }
 
 type ApiDeleteFirmwareStorageControllerDescriptorRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareStorageControllerDescriptorRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareStorageControllerDescriptorExecute(r)
@@ -6477,8 +6505,8 @@ DeleteFirmwareStorageControllerDescriptor Delete a 'firmware.StorageControllerDe
 func (a *FirmwareApiService) DeleteFirmwareStorageControllerDescriptor(ctx _context.Context, moid string) ApiDeleteFirmwareStorageControllerDescriptorRequest {
 	return ApiDeleteFirmwareStorageControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6583,13 +6611,13 @@ func (a *FirmwareApiService) DeleteFirmwareStorageControllerDescriptorExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6597,11 +6625,10 @@ func (a *FirmwareApiService) DeleteFirmwareStorageControllerDescriptorExecute(r 
 }
 
 type ApiDeleteFirmwareSwitchUpgradeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareSwitchUpgradeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareSwitchUpgradeExecute(r)
@@ -6617,8 +6644,8 @@ DeleteFirmwareSwitchUpgrade Delete a 'firmware.SwitchUpgrade' resource.
 func (a *FirmwareApiService) DeleteFirmwareSwitchUpgrade(ctx _context.Context, moid string) ApiDeleteFirmwareSwitchUpgradeRequest {
 	return ApiDeleteFirmwareSwitchUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6723,13 +6750,13 @@ func (a *FirmwareApiService) DeleteFirmwareSwitchUpgradeExecute(r ApiDeleteFirmw
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6737,11 +6764,10 @@ func (a *FirmwareApiService) DeleteFirmwareSwitchUpgradeExecute(r ApiDeleteFirmw
 }
 
 type ApiDeleteFirmwareUnsupportedVersionUpgradeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareUnsupportedVersionUpgradeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareUnsupportedVersionUpgradeExecute(r)
@@ -6757,8 +6783,8 @@ DeleteFirmwareUnsupportedVersionUpgrade Delete a 'firmware.UnsupportedVersionUpg
 func (a *FirmwareApiService) DeleteFirmwareUnsupportedVersionUpgrade(ctx _context.Context, moid string) ApiDeleteFirmwareUnsupportedVersionUpgradeRequest {
 	return ApiDeleteFirmwareUnsupportedVersionUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6863,13 +6889,13 @@ func (a *FirmwareApiService) DeleteFirmwareUnsupportedVersionUpgradeExecute(r Ap
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6877,11 +6903,10 @@ func (a *FirmwareApiService) DeleteFirmwareUnsupportedVersionUpgradeExecute(r Ap
 }
 
 type ApiDeleteFirmwareUpgradeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFirmwareUpgradeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFirmwareUpgradeExecute(r)
@@ -6897,8 +6922,8 @@ DeleteFirmwareUpgrade Delete a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) DeleteFirmwareUpgrade(ctx _context.Context, moid string) ApiDeleteFirmwareUpgradeRequest {
 	return ApiDeleteFirmwareUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7003,13 +7028,13 @@ func (a *FirmwareApiService) DeleteFirmwareUpgradeExecute(r ApiDeleteFirmwareUpg
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7017,11 +7042,10 @@ func (a *FirmwareApiService) DeleteFirmwareUpgradeExecute(r ApiDeleteFirmwareUpg
 }
 
 type ApiGetFirmwareBiosDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareBiosDescriptorByMoidRequest) Execute() (FirmwareBiosDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareBiosDescriptorByMoidExecute(r)
@@ -7037,8 +7061,8 @@ GetFirmwareBiosDescriptorByMoid Read a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareBiosDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareBiosDescriptorByMoidRequest {
 	return ApiGetFirmwareBiosDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7145,13 +7169,13 @@ func (a *FirmwareApiService) GetFirmwareBiosDescriptorByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7168,19 +7192,19 @@ func (a *FirmwareApiService) GetFirmwareBiosDescriptorByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwareBiosDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7188,51 +7212,61 @@ func (r ApiGetFirmwareBiosDescriptorListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Top(top int32) ApiGetFirmwareBiosDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Skip(skip int32) ApiGetFirmwareBiosDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Select_(select_ string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Expand(expand string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Apply(apply string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Count(count bool) ApiGetFirmwareBiosDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareBiosDescriptorListRequest) At(at string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareBiosDescriptorListRequest) Tags(tags string) ApiGetFirmwareBiosDescriptorListRequest {
 	r.tags = &tags
@@ -7252,7 +7286,7 @@ GetFirmwareBiosDescriptorList Read a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareBiosDescriptorList(ctx _context.Context) ApiGetFirmwareBiosDescriptorListRequest {
 	return ApiGetFirmwareBiosDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7391,13 +7425,13 @@ func (a *FirmwareApiService) GetFirmwareBiosDescriptorListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7414,11 +7448,10 @@ func (a *FirmwareApiService) GetFirmwareBiosDescriptorListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwareBoardControllerDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareBoardControllerDescriptorByMoidRequest) Execute() (FirmwareBoardControllerDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareBoardControllerDescriptorByMoidExecute(r)
@@ -7434,8 +7467,8 @@ GetFirmwareBoardControllerDescriptorByMoid Read a 'firmware.BoardControllerDescr
 func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareBoardControllerDescriptorByMoidRequest {
 	return ApiGetFirmwareBoardControllerDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7542,13 +7575,13 @@ func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7565,19 +7598,19 @@ func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorByMoidExecute(r
 }
 
 type ApiGetFirmwareBoardControllerDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7585,51 +7618,61 @@ func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Top(top int32) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Skip(skip int32) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Select_(select_ string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Expand(expand string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Apply(apply string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Count(count bool) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) At(at string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareBoardControllerDescriptorListRequest) Tags(tags string) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	r.tags = &tags
@@ -7649,7 +7692,7 @@ GetFirmwareBoardControllerDescriptorList Read a 'firmware.BoardControllerDescrip
 func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorList(ctx _context.Context) ApiGetFirmwareBoardControllerDescriptorListRequest {
 	return ApiGetFirmwareBoardControllerDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7788,13 +7831,13 @@ func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7811,11 +7854,10 @@ func (a *FirmwareApiService) GetFirmwareBoardControllerDescriptorListExecute(r A
 }
 
 type ApiGetFirmwareChassisUpgradeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareChassisUpgradeByMoidRequest) Execute() (FirmwareChassisUpgrade, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareChassisUpgradeByMoidExecute(r)
@@ -7831,8 +7873,8 @@ GetFirmwareChassisUpgradeByMoid Read a 'firmware.ChassisUpgrade' resource.
 func (a *FirmwareApiService) GetFirmwareChassisUpgradeByMoid(ctx _context.Context, moid string) ApiGetFirmwareChassisUpgradeByMoidRequest {
 	return ApiGetFirmwareChassisUpgradeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7939,13 +7981,13 @@ func (a *FirmwareApiService) GetFirmwareChassisUpgradeByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7962,19 +8004,19 @@ func (a *FirmwareApiService) GetFirmwareChassisUpgradeByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwareChassisUpgradeListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7982,51 +8024,61 @@ func (r ApiGetFirmwareChassisUpgradeListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Orderby(orderby string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Top(top int32) ApiGetFirmwareChassisUpgradeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Skip(skip int32) ApiGetFirmwareChassisUpgradeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Select_(select_ string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Expand(expand string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Apply(apply string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Count(count bool) ApiGetFirmwareChassisUpgradeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Inlinecount(inlinecount string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareChassisUpgradeListRequest) At(at string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareChassisUpgradeListRequest) Tags(tags string) ApiGetFirmwareChassisUpgradeListRequest {
 	r.tags = &tags
@@ -8046,7 +8098,7 @@ GetFirmwareChassisUpgradeList Read a 'firmware.ChassisUpgrade' resource.
 func (a *FirmwareApiService) GetFirmwareChassisUpgradeList(ctx _context.Context) ApiGetFirmwareChassisUpgradeListRequest {
 	return ApiGetFirmwareChassisUpgradeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8185,13 +8237,13 @@ func (a *FirmwareApiService) GetFirmwareChassisUpgradeListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8208,11 +8260,10 @@ func (a *FirmwareApiService) GetFirmwareChassisUpgradeListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwareCimcDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareCimcDescriptorByMoidRequest) Execute() (FirmwareCimcDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareCimcDescriptorByMoidExecute(r)
@@ -8228,8 +8279,8 @@ GetFirmwareCimcDescriptorByMoid Read a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareCimcDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareCimcDescriptorByMoidRequest {
 	return ApiGetFirmwareCimcDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8336,13 +8387,13 @@ func (a *FirmwareApiService) GetFirmwareCimcDescriptorByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8359,19 +8410,19 @@ func (a *FirmwareApiService) GetFirmwareCimcDescriptorByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwareCimcDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8379,51 +8430,61 @@ func (r ApiGetFirmwareCimcDescriptorListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Top(top int32) ApiGetFirmwareCimcDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Skip(skip int32) ApiGetFirmwareCimcDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Select_(select_ string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Expand(expand string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Apply(apply string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Count(count bool) ApiGetFirmwareCimcDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareCimcDescriptorListRequest) At(at string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareCimcDescriptorListRequest) Tags(tags string) ApiGetFirmwareCimcDescriptorListRequest {
 	r.tags = &tags
@@ -8443,7 +8504,7 @@ GetFirmwareCimcDescriptorList Read a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareCimcDescriptorList(ctx _context.Context) ApiGetFirmwareCimcDescriptorListRequest {
 	return ApiGetFirmwareCimcDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8582,13 +8643,13 @@ func (a *FirmwareApiService) GetFirmwareCimcDescriptorListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8605,11 +8666,10 @@ func (a *FirmwareApiService) GetFirmwareCimcDescriptorListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwareDimmDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareDimmDescriptorByMoidRequest) Execute() (FirmwareDimmDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareDimmDescriptorByMoidExecute(r)
@@ -8625,8 +8685,8 @@ GetFirmwareDimmDescriptorByMoid Read a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareDimmDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareDimmDescriptorByMoidRequest {
 	return ApiGetFirmwareDimmDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8733,13 +8793,13 @@ func (a *FirmwareApiService) GetFirmwareDimmDescriptorByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8756,19 +8816,19 @@ func (a *FirmwareApiService) GetFirmwareDimmDescriptorByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwareDimmDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8776,51 +8836,61 @@ func (r ApiGetFirmwareDimmDescriptorListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Top(top int32) ApiGetFirmwareDimmDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Skip(skip int32) ApiGetFirmwareDimmDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Select_(select_ string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Expand(expand string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Apply(apply string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Count(count bool) ApiGetFirmwareDimmDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareDimmDescriptorListRequest) At(at string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareDimmDescriptorListRequest) Tags(tags string) ApiGetFirmwareDimmDescriptorListRequest {
 	r.tags = &tags
@@ -8840,7 +8910,7 @@ GetFirmwareDimmDescriptorList Read a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareDimmDescriptorList(ctx _context.Context) ApiGetFirmwareDimmDescriptorListRequest {
 	return ApiGetFirmwareDimmDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8979,13 +9049,13 @@ func (a *FirmwareApiService) GetFirmwareDimmDescriptorListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9002,11 +9072,10 @@ func (a *FirmwareApiService) GetFirmwareDimmDescriptorListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwareDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareDistributableByMoidRequest) Execute() (FirmwareDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareDistributableByMoidExecute(r)
@@ -9022,8 +9091,8 @@ GetFirmwareDistributableByMoid Read a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) GetFirmwareDistributableByMoid(ctx _context.Context, moid string) ApiGetFirmwareDistributableByMoidRequest {
 	return ApiGetFirmwareDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9130,13 +9199,13 @@ func (a *FirmwareApiService) GetFirmwareDistributableByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9153,19 +9222,19 @@ func (a *FirmwareApiService) GetFirmwareDistributableByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9173,51 +9242,61 @@ func (r ApiGetFirmwareDistributableListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareDistributableListRequest) Orderby(orderby string) ApiGetFirmwareDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareDistributableListRequest) Top(top int32) ApiGetFirmwareDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareDistributableListRequest) Skip(skip int32) ApiGetFirmwareDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareDistributableListRequest) Select_(select_ string) ApiGetFirmwareDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareDistributableListRequest) Expand(expand string) ApiGetFirmwareDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareDistributableListRequest) Apply(apply string) ApiGetFirmwareDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareDistributableListRequest) Count(count bool) ApiGetFirmwareDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareDistributableListRequest) Inlinecount(inlinecount string) ApiGetFirmwareDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareDistributableListRequest) At(at string) ApiGetFirmwareDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareDistributableListRequest) Tags(tags string) ApiGetFirmwareDistributableListRequest {
 	r.tags = &tags
@@ -9237,7 +9316,7 @@ GetFirmwareDistributableList Read a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) GetFirmwareDistributableList(ctx _context.Context) ApiGetFirmwareDistributableListRequest {
 	return ApiGetFirmwareDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9376,13 +9455,13 @@ func (a *FirmwareApiService) GetFirmwareDistributableListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9399,11 +9478,10 @@ func (a *FirmwareApiService) GetFirmwareDistributableListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareDistributableMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareDistributableMetaByMoidRequest) Execute() (FirmwareDistributableMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareDistributableMetaByMoidExecute(r)
@@ -9419,8 +9497,8 @@ GetFirmwareDistributableMetaByMoid Read a 'firmware.DistributableMeta' resource.
 func (a *FirmwareApiService) GetFirmwareDistributableMetaByMoid(ctx _context.Context, moid string) ApiGetFirmwareDistributableMetaByMoidRequest {
 	return ApiGetFirmwareDistributableMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9527,13 +9605,13 @@ func (a *FirmwareApiService) GetFirmwareDistributableMetaByMoidExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9550,19 +9628,19 @@ func (a *FirmwareApiService) GetFirmwareDistributableMetaByMoidExecute(r ApiGetF
 }
 
 type ApiGetFirmwareDistributableMetaListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9570,51 +9648,61 @@ func (r ApiGetFirmwareDistributableMetaListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareDistributableMetaListRequest) Orderby(orderby string) ApiGetFirmwareDistributableMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareDistributableMetaListRequest) Top(top int32) ApiGetFirmwareDistributableMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareDistributableMetaListRequest) Skip(skip int32) ApiGetFirmwareDistributableMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareDistributableMetaListRequest) Select_(select_ string) ApiGetFirmwareDistributableMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareDistributableMetaListRequest) Expand(expand string) ApiGetFirmwareDistributableMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareDistributableMetaListRequest) Apply(apply string) ApiGetFirmwareDistributableMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareDistributableMetaListRequest) Count(count bool) ApiGetFirmwareDistributableMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareDistributableMetaListRequest) Inlinecount(inlinecount string) ApiGetFirmwareDistributableMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareDistributableMetaListRequest) At(at string) ApiGetFirmwareDistributableMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareDistributableMetaListRequest) Tags(tags string) ApiGetFirmwareDistributableMetaListRequest {
 	r.tags = &tags
@@ -9634,7 +9722,7 @@ GetFirmwareDistributableMetaList Read a 'firmware.DistributableMeta' resource.
 func (a *FirmwareApiService) GetFirmwareDistributableMetaList(ctx _context.Context) ApiGetFirmwareDistributableMetaListRequest {
 	return ApiGetFirmwareDistributableMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9773,13 +9861,13 @@ func (a *FirmwareApiService) GetFirmwareDistributableMetaListExecute(r ApiGetFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9796,11 +9884,10 @@ func (a *FirmwareApiService) GetFirmwareDistributableMetaListExecute(r ApiGetFir
 }
 
 type ApiGetFirmwareDriveDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareDriveDescriptorByMoidRequest) Execute() (FirmwareDriveDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareDriveDescriptorByMoidExecute(r)
@@ -9816,8 +9903,8 @@ GetFirmwareDriveDescriptorByMoid Read a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareDriveDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareDriveDescriptorByMoidRequest {
 	return ApiGetFirmwareDriveDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9924,13 +10011,13 @@ func (a *FirmwareApiService) GetFirmwareDriveDescriptorByMoidExecute(r ApiGetFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9947,19 +10034,19 @@ func (a *FirmwareApiService) GetFirmwareDriveDescriptorByMoidExecute(r ApiGetFir
 }
 
 type ApiGetFirmwareDriveDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9967,51 +10054,61 @@ func (r ApiGetFirmwareDriveDescriptorListRequest) Filter(filter string) ApiGetFi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Top(top int32) ApiGetFirmwareDriveDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Skip(skip int32) ApiGetFirmwareDriveDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Select_(select_ string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Expand(expand string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Apply(apply string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Count(count bool) ApiGetFirmwareDriveDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareDriveDescriptorListRequest) At(at string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareDriveDescriptorListRequest) Tags(tags string) ApiGetFirmwareDriveDescriptorListRequest {
 	r.tags = &tags
@@ -10031,7 +10128,7 @@ GetFirmwareDriveDescriptorList Read a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareDriveDescriptorList(ctx _context.Context) ApiGetFirmwareDriveDescriptorListRequest {
 	return ApiGetFirmwareDriveDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10170,13 +10267,13 @@ func (a *FirmwareApiService) GetFirmwareDriveDescriptorListExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10193,11 +10290,10 @@ func (a *FirmwareApiService) GetFirmwareDriveDescriptorListExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareDriverDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareDriverDistributableByMoidRequest) Execute() (FirmwareDriverDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareDriverDistributableByMoidExecute(r)
@@ -10213,8 +10309,8 @@ GetFirmwareDriverDistributableByMoid Read a 'firmware.DriverDistributable' resou
 func (a *FirmwareApiService) GetFirmwareDriverDistributableByMoid(ctx _context.Context, moid string) ApiGetFirmwareDriverDistributableByMoidRequest {
 	return ApiGetFirmwareDriverDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10321,13 +10417,13 @@ func (a *FirmwareApiService) GetFirmwareDriverDistributableByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10344,19 +10440,19 @@ func (a *FirmwareApiService) GetFirmwareDriverDistributableByMoidExecute(r ApiGe
 }
 
 type ApiGetFirmwareDriverDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10364,51 +10460,61 @@ func (r ApiGetFirmwareDriverDistributableListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareDriverDistributableListRequest) Orderby(orderby string) ApiGetFirmwareDriverDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareDriverDistributableListRequest) Top(top int32) ApiGetFirmwareDriverDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareDriverDistributableListRequest) Skip(skip int32) ApiGetFirmwareDriverDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareDriverDistributableListRequest) Select_(select_ string) ApiGetFirmwareDriverDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareDriverDistributableListRequest) Expand(expand string) ApiGetFirmwareDriverDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareDriverDistributableListRequest) Apply(apply string) ApiGetFirmwareDriverDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareDriverDistributableListRequest) Count(count bool) ApiGetFirmwareDriverDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareDriverDistributableListRequest) Inlinecount(inlinecount string) ApiGetFirmwareDriverDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareDriverDistributableListRequest) At(at string) ApiGetFirmwareDriverDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareDriverDistributableListRequest) Tags(tags string) ApiGetFirmwareDriverDistributableListRequest {
 	r.tags = &tags
@@ -10428,7 +10534,7 @@ GetFirmwareDriverDistributableList Read a 'firmware.DriverDistributable' resourc
 func (a *FirmwareApiService) GetFirmwareDriverDistributableList(ctx _context.Context) ApiGetFirmwareDriverDistributableListRequest {
 	return ApiGetFirmwareDriverDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10567,13 +10673,13 @@ func (a *FirmwareApiService) GetFirmwareDriverDistributableListExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10590,11 +10696,10 @@ func (a *FirmwareApiService) GetFirmwareDriverDistributableListExecute(r ApiGetF
 }
 
 type ApiGetFirmwareEulaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareEulaByMoidRequest) Execute() (FirmwareEula, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareEulaByMoidExecute(r)
@@ -10610,8 +10715,8 @@ GetFirmwareEulaByMoid Read a 'firmware.Eula' resource.
 func (a *FirmwareApiService) GetFirmwareEulaByMoid(ctx _context.Context, moid string) ApiGetFirmwareEulaByMoidRequest {
 	return ApiGetFirmwareEulaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10718,13 +10823,13 @@ func (a *FirmwareApiService) GetFirmwareEulaByMoidExecute(r ApiGetFirmwareEulaBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10741,19 +10846,19 @@ func (a *FirmwareApiService) GetFirmwareEulaByMoidExecute(r ApiGetFirmwareEulaBy
 }
 
 type ApiGetFirmwareEulaListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10761,51 +10866,61 @@ func (r ApiGetFirmwareEulaListRequest) Filter(filter string) ApiGetFirmwareEulaL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareEulaListRequest) Orderby(orderby string) ApiGetFirmwareEulaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareEulaListRequest) Top(top int32) ApiGetFirmwareEulaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareEulaListRequest) Skip(skip int32) ApiGetFirmwareEulaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareEulaListRequest) Select_(select_ string) ApiGetFirmwareEulaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareEulaListRequest) Expand(expand string) ApiGetFirmwareEulaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareEulaListRequest) Apply(apply string) ApiGetFirmwareEulaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareEulaListRequest) Count(count bool) ApiGetFirmwareEulaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareEulaListRequest) Inlinecount(inlinecount string) ApiGetFirmwareEulaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareEulaListRequest) At(at string) ApiGetFirmwareEulaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareEulaListRequest) Tags(tags string) ApiGetFirmwareEulaListRequest {
 	r.tags = &tags
@@ -10825,7 +10940,7 @@ GetFirmwareEulaList Read a 'firmware.Eula' resource.
 func (a *FirmwareApiService) GetFirmwareEulaList(ctx _context.Context) ApiGetFirmwareEulaListRequest {
 	return ApiGetFirmwareEulaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10964,13 +11079,13 @@ func (a *FirmwareApiService) GetFirmwareEulaListExecute(r ApiGetFirmwareEulaList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10987,11 +11102,10 @@ func (a *FirmwareApiService) GetFirmwareEulaListExecute(r ApiGetFirmwareEulaList
 }
 
 type ApiGetFirmwareFirmwareSummaryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareFirmwareSummaryByMoidRequest) Execute() (FirmwareFirmwareSummary, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareFirmwareSummaryByMoidExecute(r)
@@ -11007,8 +11121,8 @@ GetFirmwareFirmwareSummaryByMoid Read a 'firmware.FirmwareSummary' resource.
 func (a *FirmwareApiService) GetFirmwareFirmwareSummaryByMoid(ctx _context.Context, moid string) ApiGetFirmwareFirmwareSummaryByMoidRequest {
 	return ApiGetFirmwareFirmwareSummaryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11115,13 +11229,13 @@ func (a *FirmwareApiService) GetFirmwareFirmwareSummaryByMoidExecute(r ApiGetFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11138,19 +11252,19 @@ func (a *FirmwareApiService) GetFirmwareFirmwareSummaryByMoidExecute(r ApiGetFir
 }
 
 type ApiGetFirmwareFirmwareSummaryListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11158,51 +11272,61 @@ func (r ApiGetFirmwareFirmwareSummaryListRequest) Filter(filter string) ApiGetFi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Orderby(orderby string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Top(top int32) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Skip(skip int32) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Select_(select_ string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Expand(expand string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Apply(apply string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Count(count bool) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Inlinecount(inlinecount string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) At(at string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareFirmwareSummaryListRequest) Tags(tags string) ApiGetFirmwareFirmwareSummaryListRequest {
 	r.tags = &tags
@@ -11222,7 +11346,7 @@ GetFirmwareFirmwareSummaryList Read a 'firmware.FirmwareSummary' resource.
 func (a *FirmwareApiService) GetFirmwareFirmwareSummaryList(ctx _context.Context) ApiGetFirmwareFirmwareSummaryListRequest {
 	return ApiGetFirmwareFirmwareSummaryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11361,13 +11485,13 @@ func (a *FirmwareApiService) GetFirmwareFirmwareSummaryListExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11384,11 +11508,10 @@ func (a *FirmwareApiService) GetFirmwareFirmwareSummaryListExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareGpuDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareGpuDescriptorByMoidRequest) Execute() (FirmwareGpuDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareGpuDescriptorByMoidExecute(r)
@@ -11404,8 +11527,8 @@ GetFirmwareGpuDescriptorByMoid Read a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareGpuDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareGpuDescriptorByMoidRequest {
 	return ApiGetFirmwareGpuDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11512,13 +11635,13 @@ func (a *FirmwareApiService) GetFirmwareGpuDescriptorByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11535,19 +11658,19 @@ func (a *FirmwareApiService) GetFirmwareGpuDescriptorByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareGpuDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11555,51 +11678,61 @@ func (r ApiGetFirmwareGpuDescriptorListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Top(top int32) ApiGetFirmwareGpuDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Skip(skip int32) ApiGetFirmwareGpuDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Select_(select_ string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Expand(expand string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Apply(apply string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Count(count bool) ApiGetFirmwareGpuDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareGpuDescriptorListRequest) At(at string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareGpuDescriptorListRequest) Tags(tags string) ApiGetFirmwareGpuDescriptorListRequest {
 	r.tags = &tags
@@ -11619,7 +11752,7 @@ GetFirmwareGpuDescriptorList Read a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareGpuDescriptorList(ctx _context.Context) ApiGetFirmwareGpuDescriptorListRequest {
 	return ApiGetFirmwareGpuDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11758,13 +11891,13 @@ func (a *FirmwareApiService) GetFirmwareGpuDescriptorListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11781,11 +11914,10 @@ func (a *FirmwareApiService) GetFirmwareGpuDescriptorListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareHbaDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareHbaDescriptorByMoidRequest) Execute() (FirmwareHbaDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareHbaDescriptorByMoidExecute(r)
@@ -11801,8 +11933,8 @@ GetFirmwareHbaDescriptorByMoid Read a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareHbaDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareHbaDescriptorByMoidRequest {
 	return ApiGetFirmwareHbaDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11909,13 +12041,13 @@ func (a *FirmwareApiService) GetFirmwareHbaDescriptorByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11932,19 +12064,19 @@ func (a *FirmwareApiService) GetFirmwareHbaDescriptorByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareHbaDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11952,51 +12084,61 @@ func (r ApiGetFirmwareHbaDescriptorListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Top(top int32) ApiGetFirmwareHbaDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Skip(skip int32) ApiGetFirmwareHbaDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Select_(select_ string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Expand(expand string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Apply(apply string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Count(count bool) ApiGetFirmwareHbaDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareHbaDescriptorListRequest) At(at string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareHbaDescriptorListRequest) Tags(tags string) ApiGetFirmwareHbaDescriptorListRequest {
 	r.tags = &tags
@@ -12016,7 +12158,7 @@ GetFirmwareHbaDescriptorList Read a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareHbaDescriptorList(ctx _context.Context) ApiGetFirmwareHbaDescriptorListRequest {
 	return ApiGetFirmwareHbaDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12155,13 +12297,13 @@ func (a *FirmwareApiService) GetFirmwareHbaDescriptorListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12178,11 +12320,10 @@ func (a *FirmwareApiService) GetFirmwareHbaDescriptorListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareIomDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareIomDescriptorByMoidRequest) Execute() (FirmwareIomDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareIomDescriptorByMoidExecute(r)
@@ -12198,8 +12339,8 @@ GetFirmwareIomDescriptorByMoid Read a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareIomDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareIomDescriptorByMoidRequest {
 	return ApiGetFirmwareIomDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12306,13 +12447,13 @@ func (a *FirmwareApiService) GetFirmwareIomDescriptorByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12329,19 +12470,19 @@ func (a *FirmwareApiService) GetFirmwareIomDescriptorByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareIomDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12349,51 +12490,61 @@ func (r ApiGetFirmwareIomDescriptorListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareIomDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareIomDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareIomDescriptorListRequest) Top(top int32) ApiGetFirmwareIomDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareIomDescriptorListRequest) Skip(skip int32) ApiGetFirmwareIomDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareIomDescriptorListRequest) Select_(select_ string) ApiGetFirmwareIomDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareIomDescriptorListRequest) Expand(expand string) ApiGetFirmwareIomDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareIomDescriptorListRequest) Apply(apply string) ApiGetFirmwareIomDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareIomDescriptorListRequest) Count(count bool) ApiGetFirmwareIomDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareIomDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareIomDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareIomDescriptorListRequest) At(at string) ApiGetFirmwareIomDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareIomDescriptorListRequest) Tags(tags string) ApiGetFirmwareIomDescriptorListRequest {
 	r.tags = &tags
@@ -12413,7 +12564,7 @@ GetFirmwareIomDescriptorList Read a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareIomDescriptorList(ctx _context.Context) ApiGetFirmwareIomDescriptorListRequest {
 	return ApiGetFirmwareIomDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12552,13 +12703,13 @@ func (a *FirmwareApiService) GetFirmwareIomDescriptorListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12575,11 +12726,10 @@ func (a *FirmwareApiService) GetFirmwareIomDescriptorListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareMswitchDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareMswitchDescriptorByMoidRequest) Execute() (FirmwareMswitchDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareMswitchDescriptorByMoidExecute(r)
@@ -12595,8 +12745,8 @@ GetFirmwareMswitchDescriptorByMoid Read a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareMswitchDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareMswitchDescriptorByMoidRequest {
 	return ApiGetFirmwareMswitchDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12703,13 +12853,13 @@ func (a *FirmwareApiService) GetFirmwareMswitchDescriptorByMoidExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12726,19 +12876,19 @@ func (a *FirmwareApiService) GetFirmwareMswitchDescriptorByMoidExecute(r ApiGetF
 }
 
 type ApiGetFirmwareMswitchDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12746,51 +12896,61 @@ func (r ApiGetFirmwareMswitchDescriptorListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Top(top int32) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Skip(skip int32) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Select_(select_ string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Expand(expand string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Apply(apply string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Count(count bool) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) At(at string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareMswitchDescriptorListRequest) Tags(tags string) ApiGetFirmwareMswitchDescriptorListRequest {
 	r.tags = &tags
@@ -12810,7 +12970,7 @@ GetFirmwareMswitchDescriptorList Read a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareMswitchDescriptorList(ctx _context.Context) ApiGetFirmwareMswitchDescriptorListRequest {
 	return ApiGetFirmwareMswitchDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12949,13 +13109,13 @@ func (a *FirmwareApiService) GetFirmwareMswitchDescriptorListExecute(r ApiGetFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12972,11 +13132,10 @@ func (a *FirmwareApiService) GetFirmwareMswitchDescriptorListExecute(r ApiGetFir
 }
 
 type ApiGetFirmwareNxosDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareNxosDescriptorByMoidRequest) Execute() (FirmwareNxosDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareNxosDescriptorByMoidExecute(r)
@@ -12992,8 +13151,8 @@ GetFirmwareNxosDescriptorByMoid Read a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareNxosDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareNxosDescriptorByMoidRequest {
 	return ApiGetFirmwareNxosDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13100,13 +13259,13 @@ func (a *FirmwareApiService) GetFirmwareNxosDescriptorByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13123,19 +13282,19 @@ func (a *FirmwareApiService) GetFirmwareNxosDescriptorByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwareNxosDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13143,51 +13302,61 @@ func (r ApiGetFirmwareNxosDescriptorListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Top(top int32) ApiGetFirmwareNxosDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Skip(skip int32) ApiGetFirmwareNxosDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Select_(select_ string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Expand(expand string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Apply(apply string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Count(count bool) ApiGetFirmwareNxosDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareNxosDescriptorListRequest) At(at string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareNxosDescriptorListRequest) Tags(tags string) ApiGetFirmwareNxosDescriptorListRequest {
 	r.tags = &tags
@@ -13207,7 +13376,7 @@ GetFirmwareNxosDescriptorList Read a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwareNxosDescriptorList(ctx _context.Context) ApiGetFirmwareNxosDescriptorListRequest {
 	return ApiGetFirmwareNxosDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13346,13 +13515,13 @@ func (a *FirmwareApiService) GetFirmwareNxosDescriptorListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13369,11 +13538,10 @@ func (a *FirmwareApiService) GetFirmwareNxosDescriptorListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwarePcieDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwarePcieDescriptorByMoidRequest) Execute() (FirmwarePcieDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwarePcieDescriptorByMoidExecute(r)
@@ -13389,8 +13557,8 @@ GetFirmwarePcieDescriptorByMoid Read a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwarePcieDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwarePcieDescriptorByMoidRequest {
 	return ApiGetFirmwarePcieDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13497,13 +13665,13 @@ func (a *FirmwareApiService) GetFirmwarePcieDescriptorByMoidExecute(r ApiGetFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13520,19 +13688,19 @@ func (a *FirmwareApiService) GetFirmwarePcieDescriptorByMoidExecute(r ApiGetFirm
 }
 
 type ApiGetFirmwarePcieDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13540,51 +13708,61 @@ func (r ApiGetFirmwarePcieDescriptorListRequest) Filter(filter string) ApiGetFir
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Orderby(orderby string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Top(top int32) ApiGetFirmwarePcieDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Skip(skip int32) ApiGetFirmwarePcieDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Select_(select_ string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Expand(expand string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Apply(apply string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Count(count bool) ApiGetFirmwarePcieDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwarePcieDescriptorListRequest) At(at string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwarePcieDescriptorListRequest) Tags(tags string) ApiGetFirmwarePcieDescriptorListRequest {
 	r.tags = &tags
@@ -13604,7 +13782,7 @@ GetFirmwarePcieDescriptorList Read a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwarePcieDescriptorList(ctx _context.Context) ApiGetFirmwarePcieDescriptorListRequest {
 	return ApiGetFirmwarePcieDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13743,13 +13921,13 @@ func (a *FirmwareApiService) GetFirmwarePcieDescriptorListExecute(r ApiGetFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13766,11 +13944,10 @@ func (a *FirmwareApiService) GetFirmwarePcieDescriptorListExecute(r ApiGetFirmwa
 }
 
 type ApiGetFirmwarePsuDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwarePsuDescriptorByMoidRequest) Execute() (FirmwarePsuDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwarePsuDescriptorByMoidExecute(r)
@@ -13786,8 +13963,8 @@ GetFirmwarePsuDescriptorByMoid Read a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwarePsuDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwarePsuDescriptorByMoidRequest {
 	return ApiGetFirmwarePsuDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13894,13 +14071,13 @@ func (a *FirmwareApiService) GetFirmwarePsuDescriptorByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13917,19 +14094,19 @@ func (a *FirmwareApiService) GetFirmwarePsuDescriptorByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwarePsuDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13937,51 +14114,61 @@ func (r ApiGetFirmwarePsuDescriptorListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Orderby(orderby string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Top(top int32) ApiGetFirmwarePsuDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Skip(skip int32) ApiGetFirmwarePsuDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Select_(select_ string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Expand(expand string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Apply(apply string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Count(count bool) ApiGetFirmwarePsuDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwarePsuDescriptorListRequest) At(at string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwarePsuDescriptorListRequest) Tags(tags string) ApiGetFirmwarePsuDescriptorListRequest {
 	r.tags = &tags
@@ -14001,7 +14188,7 @@ GetFirmwarePsuDescriptorList Read a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) GetFirmwarePsuDescriptorList(ctx _context.Context) ApiGetFirmwarePsuDescriptorListRequest {
 	return ApiGetFirmwarePsuDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14140,13 +14327,13 @@ func (a *FirmwareApiService) GetFirmwarePsuDescriptorListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14163,11 +14350,10 @@ func (a *FirmwareApiService) GetFirmwarePsuDescriptorListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareRunningFirmwareByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareRunningFirmwareByMoidRequest) Execute() (FirmwareRunningFirmware, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareRunningFirmwareByMoidExecute(r)
@@ -14183,8 +14369,8 @@ GetFirmwareRunningFirmwareByMoid Read a 'firmware.RunningFirmware' resource.
 func (a *FirmwareApiService) GetFirmwareRunningFirmwareByMoid(ctx _context.Context, moid string) ApiGetFirmwareRunningFirmwareByMoidRequest {
 	return ApiGetFirmwareRunningFirmwareByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14291,13 +14477,13 @@ func (a *FirmwareApiService) GetFirmwareRunningFirmwareByMoidExecute(r ApiGetFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14314,19 +14500,19 @@ func (a *FirmwareApiService) GetFirmwareRunningFirmwareByMoidExecute(r ApiGetFir
 }
 
 type ApiGetFirmwareRunningFirmwareListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14334,51 +14520,61 @@ func (r ApiGetFirmwareRunningFirmwareListRequest) Filter(filter string) ApiGetFi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Orderby(orderby string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Top(top int32) ApiGetFirmwareRunningFirmwareListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Skip(skip int32) ApiGetFirmwareRunningFirmwareListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Select_(select_ string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Expand(expand string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Apply(apply string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Count(count bool) ApiGetFirmwareRunningFirmwareListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Inlinecount(inlinecount string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareRunningFirmwareListRequest) At(at string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareRunningFirmwareListRequest) Tags(tags string) ApiGetFirmwareRunningFirmwareListRequest {
 	r.tags = &tags
@@ -14398,7 +14594,7 @@ GetFirmwareRunningFirmwareList Read a 'firmware.RunningFirmware' resource.
 func (a *FirmwareApiService) GetFirmwareRunningFirmwareList(ctx _context.Context) ApiGetFirmwareRunningFirmwareListRequest {
 	return ApiGetFirmwareRunningFirmwareListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14537,13 +14733,13 @@ func (a *FirmwareApiService) GetFirmwareRunningFirmwareListExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14560,11 +14756,10 @@ func (a *FirmwareApiService) GetFirmwareRunningFirmwareListExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareSasExpanderDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareSasExpanderDescriptorByMoidRequest) Execute() (FirmwareSasExpanderDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareSasExpanderDescriptorByMoidExecute(r)
@@ -14580,8 +14775,8 @@ GetFirmwareSasExpanderDescriptorByMoid Read a 'firmware.SasExpanderDescriptor' r
 func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareSasExpanderDescriptorByMoidRequest {
 	return ApiGetFirmwareSasExpanderDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14688,13 +14883,13 @@ func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14711,19 +14906,19 @@ func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorByMoidExecute(r Api
 }
 
 type ApiGetFirmwareSasExpanderDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14731,51 +14926,61 @@ func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Top(top int32) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Skip(skip int32) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Select_(select_ string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Expand(expand string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Apply(apply string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Count(count bool) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) At(at string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareSasExpanderDescriptorListRequest) Tags(tags string) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	r.tags = &tags
@@ -14795,7 +15000,7 @@ GetFirmwareSasExpanderDescriptorList Read a 'firmware.SasExpanderDescriptor' res
 func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorList(ctx _context.Context) ApiGetFirmwareSasExpanderDescriptorListRequest {
 	return ApiGetFirmwareSasExpanderDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14934,13 +15139,13 @@ func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14957,11 +15162,10 @@ func (a *FirmwareApiService) GetFirmwareSasExpanderDescriptorListExecute(r ApiGe
 }
 
 type ApiGetFirmwareServerConfigurationUtilityDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableByMoidRequest) Execute() (FirmwareServerConfigurationUtilityDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareServerConfigurationUtilityDistributableByMoidExecute(r)
@@ -14977,8 +15181,8 @@ GetFirmwareServerConfigurationUtilityDistributableByMoid Read a 'firmware.Server
 func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableByMoid(ctx _context.Context, moid string) ApiGetFirmwareServerConfigurationUtilityDistributableByMoidRequest {
 	return ApiGetFirmwareServerConfigurationUtilityDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15085,13 +15289,13 @@ func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15108,19 +15312,19 @@ func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableB
 }
 
 type ApiGetFirmwareServerConfigurationUtilityDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15128,51 +15332,61 @@ func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Filter
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Orderby(orderby string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Top(top int32) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Skip(skip int32) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Select_(select_ string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Expand(expand string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Apply(apply string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Count(count bool) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Inlinecount(inlinecount string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) At(at string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareServerConfigurationUtilityDistributableListRequest) Tags(tags string) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	r.tags = &tags
@@ -15192,7 +15406,7 @@ GetFirmwareServerConfigurationUtilityDistributableList Read a 'firmware.ServerCo
 func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableList(ctx _context.Context) ApiGetFirmwareServerConfigurationUtilityDistributableListRequest {
 	return ApiGetFirmwareServerConfigurationUtilityDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15331,13 +15545,13 @@ func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15354,11 +15568,10 @@ func (a *FirmwareApiService) GetFirmwareServerConfigurationUtilityDistributableL
 }
 
 type ApiGetFirmwareStorageControllerDescriptorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareStorageControllerDescriptorByMoidRequest) Execute() (FirmwareStorageControllerDescriptor, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareStorageControllerDescriptorByMoidExecute(r)
@@ -15374,8 +15587,8 @@ GetFirmwareStorageControllerDescriptorByMoid Read a 'firmware.StorageControllerD
 func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorByMoid(ctx _context.Context, moid string) ApiGetFirmwareStorageControllerDescriptorByMoidRequest {
 	return ApiGetFirmwareStorageControllerDescriptorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15482,13 +15695,13 @@ func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15505,19 +15718,19 @@ func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorByMoidExecute
 }
 
 type ApiGetFirmwareStorageControllerDescriptorListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15525,51 +15738,61 @@ func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Orderby(orderby string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Top(top int32) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Skip(skip int32) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Select_(select_ string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Expand(expand string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Apply(apply string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Count(count bool) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Inlinecount(inlinecount string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) At(at string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareStorageControllerDescriptorListRequest) Tags(tags string) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	r.tags = &tags
@@ -15589,7 +15812,7 @@ GetFirmwareStorageControllerDescriptorList Read a 'firmware.StorageControllerDes
 func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorList(ctx _context.Context) ApiGetFirmwareStorageControllerDescriptorListRequest {
 	return ApiGetFirmwareStorageControllerDescriptorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15728,13 +15951,13 @@ func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15751,11 +15974,10 @@ func (a *FirmwareApiService) GetFirmwareStorageControllerDescriptorListExecute(r
 }
 
 type ApiGetFirmwareSwitchUpgradeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareSwitchUpgradeByMoidRequest) Execute() (FirmwareSwitchUpgrade, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareSwitchUpgradeByMoidExecute(r)
@@ -15771,8 +15993,8 @@ GetFirmwareSwitchUpgradeByMoid Read a 'firmware.SwitchUpgrade' resource.
 func (a *FirmwareApiService) GetFirmwareSwitchUpgradeByMoid(ctx _context.Context, moid string) ApiGetFirmwareSwitchUpgradeByMoidRequest {
 	return ApiGetFirmwareSwitchUpgradeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15879,13 +16101,13 @@ func (a *FirmwareApiService) GetFirmwareSwitchUpgradeByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15902,19 +16124,19 @@ func (a *FirmwareApiService) GetFirmwareSwitchUpgradeByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareSwitchUpgradeListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15922,51 +16144,61 @@ func (r ApiGetFirmwareSwitchUpgradeListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Orderby(orderby string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Top(top int32) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Skip(skip int32) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Select_(select_ string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Expand(expand string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Apply(apply string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Count(count bool) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Inlinecount(inlinecount string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) At(at string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareSwitchUpgradeListRequest) Tags(tags string) ApiGetFirmwareSwitchUpgradeListRequest {
 	r.tags = &tags
@@ -15986,7 +16218,7 @@ GetFirmwareSwitchUpgradeList Read a 'firmware.SwitchUpgrade' resource.
 func (a *FirmwareApiService) GetFirmwareSwitchUpgradeList(ctx _context.Context) ApiGetFirmwareSwitchUpgradeListRequest {
 	return ApiGetFirmwareSwitchUpgradeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16125,13 +16357,13 @@ func (a *FirmwareApiService) GetFirmwareSwitchUpgradeListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16148,11 +16380,10 @@ func (a *FirmwareApiService) GetFirmwareSwitchUpgradeListExecute(r ApiGetFirmwar
 }
 
 type ApiGetFirmwareUnsupportedVersionUpgradeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareUnsupportedVersionUpgradeByMoidRequest) Execute() (FirmwareUnsupportedVersionUpgrade, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareUnsupportedVersionUpgradeByMoidExecute(r)
@@ -16168,8 +16399,8 @@ GetFirmwareUnsupportedVersionUpgradeByMoid Read a 'firmware.UnsupportedVersionUp
 func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeByMoid(ctx _context.Context, moid string) ApiGetFirmwareUnsupportedVersionUpgradeByMoidRequest {
 	return ApiGetFirmwareUnsupportedVersionUpgradeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16276,13 +16507,13 @@ func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16299,19 +16530,19 @@ func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeByMoidExecute(r
 }
 
 type ApiGetFirmwareUnsupportedVersionUpgradeListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16319,51 +16550,61 @@ func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Orderby(orderby string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Top(top int32) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Skip(skip int32) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Select_(select_ string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Expand(expand string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Apply(apply string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Count(count bool) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Inlinecount(inlinecount string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) At(at string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareUnsupportedVersionUpgradeListRequest) Tags(tags string) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	r.tags = &tags
@@ -16383,7 +16624,7 @@ GetFirmwareUnsupportedVersionUpgradeList Read a 'firmware.UnsupportedVersionUpgr
 func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeList(ctx _context.Context) ApiGetFirmwareUnsupportedVersionUpgradeListRequest {
 	return ApiGetFirmwareUnsupportedVersionUpgradeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16522,13 +16763,13 @@ func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16545,11 +16786,10 @@ func (a *FirmwareApiService) GetFirmwareUnsupportedVersionUpgradeListExecute(r A
 }
 
 type ApiGetFirmwareUpgradeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareUpgradeByMoidRequest) Execute() (FirmwareUpgrade, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareUpgradeByMoidExecute(r)
@@ -16565,8 +16805,8 @@ GetFirmwareUpgradeByMoid Read a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) GetFirmwareUpgradeByMoid(ctx _context.Context, moid string) ApiGetFirmwareUpgradeByMoidRequest {
 	return ApiGetFirmwareUpgradeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16673,13 +16913,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeByMoidExecute(r ApiGetFirmwareUpg
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16696,11 +16936,10 @@ func (a *FirmwareApiService) GetFirmwareUpgradeByMoidExecute(r ApiGetFirmwareUpg
 }
 
 type ApiGetFirmwareUpgradeImpactStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareUpgradeImpactStatusByMoidRequest) Execute() (FirmwareUpgradeImpactStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareUpgradeImpactStatusByMoidExecute(r)
@@ -16716,8 +16955,8 @@ GetFirmwareUpgradeImpactStatusByMoid Read a 'firmware.UpgradeImpactStatus' resou
 func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusByMoid(ctx _context.Context, moid string) ApiGetFirmwareUpgradeImpactStatusByMoidRequest {
 	return ApiGetFirmwareUpgradeImpactStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16824,13 +17063,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16847,19 +17086,19 @@ func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusByMoidExecute(r ApiGe
 }
 
 type ApiGetFirmwareUpgradeImpactStatusListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16867,51 +17106,61 @@ func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Orderby(orderby string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Top(top int32) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Skip(skip int32) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Select_(select_ string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Expand(expand string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Apply(apply string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Count(count bool) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Inlinecount(inlinecount string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) At(at string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareUpgradeImpactStatusListRequest) Tags(tags string) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	r.tags = &tags
@@ -16931,7 +17180,7 @@ GetFirmwareUpgradeImpactStatusList Read a 'firmware.UpgradeImpactStatus' resourc
 func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusList(ctx _context.Context) ApiGetFirmwareUpgradeImpactStatusListRequest {
 	return ApiGetFirmwareUpgradeImpactStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17070,13 +17319,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusListExecute(r ApiGetF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17093,19 +17342,19 @@ func (a *FirmwareApiService) GetFirmwareUpgradeImpactStatusListExecute(r ApiGetF
 }
 
 type ApiGetFirmwareUpgradeListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17113,51 +17362,61 @@ func (r ApiGetFirmwareUpgradeListRequest) Filter(filter string) ApiGetFirmwareUp
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareUpgradeListRequest) Orderby(orderby string) ApiGetFirmwareUpgradeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareUpgradeListRequest) Top(top int32) ApiGetFirmwareUpgradeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareUpgradeListRequest) Skip(skip int32) ApiGetFirmwareUpgradeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareUpgradeListRequest) Select_(select_ string) ApiGetFirmwareUpgradeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareUpgradeListRequest) Expand(expand string) ApiGetFirmwareUpgradeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareUpgradeListRequest) Apply(apply string) ApiGetFirmwareUpgradeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareUpgradeListRequest) Count(count bool) ApiGetFirmwareUpgradeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareUpgradeListRequest) Inlinecount(inlinecount string) ApiGetFirmwareUpgradeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareUpgradeListRequest) At(at string) ApiGetFirmwareUpgradeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareUpgradeListRequest) Tags(tags string) ApiGetFirmwareUpgradeListRequest {
 	r.tags = &tags
@@ -17177,7 +17436,7 @@ GetFirmwareUpgradeList Read a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) GetFirmwareUpgradeList(ctx _context.Context) ApiGetFirmwareUpgradeListRequest {
 	return ApiGetFirmwareUpgradeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17316,13 +17575,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeListExecute(r ApiGetFirmwareUpgra
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17339,11 +17598,10 @@ func (a *FirmwareApiService) GetFirmwareUpgradeListExecute(r ApiGetFirmwareUpgra
 }
 
 type ApiGetFirmwareUpgradeStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FirmwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFirmwareUpgradeStatusByMoidRequest) Execute() (FirmwareUpgradeStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetFirmwareUpgradeStatusByMoidExecute(r)
@@ -17359,8 +17617,8 @@ GetFirmwareUpgradeStatusByMoid Read a 'firmware.UpgradeStatus' resource.
 func (a *FirmwareApiService) GetFirmwareUpgradeStatusByMoid(ctx _context.Context, moid string) ApiGetFirmwareUpgradeStatusByMoidRequest {
 	return ApiGetFirmwareUpgradeStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17467,13 +17725,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeStatusByMoidExecute(r ApiGetFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17490,19 +17748,19 @@ func (a *FirmwareApiService) GetFirmwareUpgradeStatusByMoidExecute(r ApiGetFirmw
 }
 
 type ApiGetFirmwareUpgradeStatusListRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FirmwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17510,51 +17768,61 @@ func (r ApiGetFirmwareUpgradeStatusListRequest) Filter(filter string) ApiGetFirm
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Orderby(orderby string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Top(top int32) ApiGetFirmwareUpgradeStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Skip(skip int32) ApiGetFirmwareUpgradeStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Select_(select_ string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Expand(expand string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Apply(apply string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Count(count bool) ApiGetFirmwareUpgradeStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Inlinecount(inlinecount string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFirmwareUpgradeStatusListRequest) At(at string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFirmwareUpgradeStatusListRequest) Tags(tags string) ApiGetFirmwareUpgradeStatusListRequest {
 	r.tags = &tags
@@ -17574,7 +17842,7 @@ GetFirmwareUpgradeStatusList Read a 'firmware.UpgradeStatus' resource.
 func (a *FirmwareApiService) GetFirmwareUpgradeStatusList(ctx _context.Context) ApiGetFirmwareUpgradeStatusListRequest {
 	return ApiGetFirmwareUpgradeStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17713,13 +17981,13 @@ func (a *FirmwareApiService) GetFirmwareUpgradeStatusListExecute(r ApiGetFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17736,11 +18004,11 @@ func (a *FirmwareApiService) GetFirmwareUpgradeStatusListExecute(r ApiGetFirmwar
 }
 
 type ApiPatchFirmwareBiosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareBiosDescriptor *FirmwareBiosDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.BiosDescriptor&#39; resource to update.
@@ -17748,6 +18016,7 @@ func (r ApiPatchFirmwareBiosDescriptorRequest) FirmwareBiosDescriptor(firmwareBi
 	r.firmwareBiosDescriptor = &firmwareBiosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareBiosDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareBiosDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -17768,8 +18037,8 @@ PatchFirmwareBiosDescriptor Update a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareBiosDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareBiosDescriptorRequest {
 	return ApiPatchFirmwareBiosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17884,13 +18153,13 @@ func (a *FirmwareApiService) PatchFirmwareBiosDescriptorExecute(r ApiPatchFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17907,11 +18176,11 @@ func (a *FirmwareApiService) PatchFirmwareBiosDescriptorExecute(r ApiPatchFirmwa
 }
 
 type ApiPatchFirmwareBoardControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
+	moid                              string
 	firmwareBoardControllerDescriptor *FirmwareBoardControllerDescriptor
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;firmware.BoardControllerDescriptor&#39; resource to update.
@@ -17919,6 +18188,7 @@ func (r ApiPatchFirmwareBoardControllerDescriptorRequest) FirmwareBoardControlle
 	r.firmwareBoardControllerDescriptor = &firmwareBoardControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareBoardControllerDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareBoardControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -17939,8 +18209,8 @@ PatchFirmwareBoardControllerDescriptor Update a 'firmware.BoardControllerDescrip
 func (a *FirmwareApiService) PatchFirmwareBoardControllerDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareBoardControllerDescriptorRequest {
 	return ApiPatchFirmwareBoardControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18055,13 +18325,13 @@ func (a *FirmwareApiService) PatchFirmwareBoardControllerDescriptorExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18078,11 +18348,11 @@ func (a *FirmwareApiService) PatchFirmwareBoardControllerDescriptorExecute(r Api
 }
 
 type ApiPatchFirmwareCimcDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareCimcDescriptor *FirmwareCimcDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.CimcDescriptor&#39; resource to update.
@@ -18090,6 +18360,7 @@ func (r ApiPatchFirmwareCimcDescriptorRequest) FirmwareCimcDescriptor(firmwareCi
 	r.firmwareCimcDescriptor = &firmwareCimcDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareCimcDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareCimcDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18110,8 +18381,8 @@ PatchFirmwareCimcDescriptor Update a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareCimcDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareCimcDescriptorRequest {
 	return ApiPatchFirmwareCimcDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18226,13 +18497,13 @@ func (a *FirmwareApiService) PatchFirmwareCimcDescriptorExecute(r ApiPatchFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18249,11 +18520,11 @@ func (a *FirmwareApiService) PatchFirmwareCimcDescriptorExecute(r ApiPatchFirmwa
 }
 
 type ApiPatchFirmwareDimmDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareDimmDescriptor *FirmwareDimmDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.DimmDescriptor&#39; resource to update.
@@ -18261,6 +18532,7 @@ func (r ApiPatchFirmwareDimmDescriptorRequest) FirmwareDimmDescriptor(firmwareDi
 	r.firmwareDimmDescriptor = &firmwareDimmDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareDimmDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareDimmDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18281,8 +18553,8 @@ PatchFirmwareDimmDescriptor Update a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareDimmDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareDimmDescriptorRequest {
 	return ApiPatchFirmwareDimmDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18397,13 +18669,13 @@ func (a *FirmwareApiService) PatchFirmwareDimmDescriptorExecute(r ApiPatchFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18420,11 +18692,11 @@ func (a *FirmwareApiService) PatchFirmwareDimmDescriptorExecute(r ApiPatchFirmwa
 }
 
 type ApiPatchFirmwareDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareDistributable *FirmwareDistributable
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.Distributable&#39; resource to update.
@@ -18432,6 +18704,7 @@ func (r ApiPatchFirmwareDistributableRequest) FirmwareDistributable(firmwareDist
 	r.firmwareDistributable = &firmwareDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareDistributableRequest) IfMatch(ifMatch string) ApiPatchFirmwareDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -18452,8 +18725,8 @@ PatchFirmwareDistributable Update a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) PatchFirmwareDistributable(ctx _context.Context, moid string) ApiPatchFirmwareDistributableRequest {
 	return ApiPatchFirmwareDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18568,13 +18841,13 @@ func (a *FirmwareApiService) PatchFirmwareDistributableExecute(r ApiPatchFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18591,11 +18864,11 @@ func (a *FirmwareApiService) PatchFirmwareDistributableExecute(r ApiPatchFirmwar
 }
 
 type ApiPatchFirmwareDriveDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FirmwareApiService
+	moid                    string
 	firmwareDriveDescriptor *FirmwareDriveDescriptor
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;firmware.DriveDescriptor&#39; resource to update.
@@ -18603,6 +18876,7 @@ func (r ApiPatchFirmwareDriveDescriptorRequest) FirmwareDriveDescriptor(firmware
 	r.firmwareDriveDescriptor = &firmwareDriveDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareDriveDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareDriveDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18623,8 +18897,8 @@ PatchFirmwareDriveDescriptor Update a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareDriveDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareDriveDescriptorRequest {
 	return ApiPatchFirmwareDriveDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18739,13 +19013,13 @@ func (a *FirmwareApiService) PatchFirmwareDriveDescriptorExecute(r ApiPatchFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18762,11 +19036,11 @@ func (a *FirmwareApiService) PatchFirmwareDriveDescriptorExecute(r ApiPatchFirmw
 }
 
 type ApiPatchFirmwareDriverDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FirmwareApiService
+	moid                        string
 	firmwareDriverDistributable *FirmwareDriverDistributable
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;firmware.DriverDistributable&#39; resource to update.
@@ -18774,6 +19048,7 @@ func (r ApiPatchFirmwareDriverDistributableRequest) FirmwareDriverDistributable(
 	r.firmwareDriverDistributable = &firmwareDriverDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareDriverDistributableRequest) IfMatch(ifMatch string) ApiPatchFirmwareDriverDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -18794,8 +19069,8 @@ PatchFirmwareDriverDistributable Update a 'firmware.DriverDistributable' resourc
 func (a *FirmwareApiService) PatchFirmwareDriverDistributable(ctx _context.Context, moid string) ApiPatchFirmwareDriverDistributableRequest {
 	return ApiPatchFirmwareDriverDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18910,13 +19185,13 @@ func (a *FirmwareApiService) PatchFirmwareDriverDistributableExecute(r ApiPatchF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18933,11 +19208,11 @@ func (a *FirmwareApiService) PatchFirmwareDriverDistributableExecute(r ApiPatchF
 }
 
 type ApiPatchFirmwareGpuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareGpuDescriptor *FirmwareGpuDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.GpuDescriptor&#39; resource to update.
@@ -18945,6 +19220,7 @@ func (r ApiPatchFirmwareGpuDescriptorRequest) FirmwareGpuDescriptor(firmwareGpuD
 	r.firmwareGpuDescriptor = &firmwareGpuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareGpuDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareGpuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -18965,8 +19241,8 @@ PatchFirmwareGpuDescriptor Update a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareGpuDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareGpuDescriptorRequest {
 	return ApiPatchFirmwareGpuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19081,13 +19357,13 @@ func (a *FirmwareApiService) PatchFirmwareGpuDescriptorExecute(r ApiPatchFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19104,11 +19380,11 @@ func (a *FirmwareApiService) PatchFirmwareGpuDescriptorExecute(r ApiPatchFirmwar
 }
 
 type ApiPatchFirmwareHbaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareHbaDescriptor *FirmwareHbaDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.HbaDescriptor&#39; resource to update.
@@ -19116,6 +19392,7 @@ func (r ApiPatchFirmwareHbaDescriptorRequest) FirmwareHbaDescriptor(firmwareHbaD
 	r.firmwareHbaDescriptor = &firmwareHbaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareHbaDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareHbaDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19136,8 +19413,8 @@ PatchFirmwareHbaDescriptor Update a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareHbaDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareHbaDescriptorRequest {
 	return ApiPatchFirmwareHbaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19252,13 +19529,13 @@ func (a *FirmwareApiService) PatchFirmwareHbaDescriptorExecute(r ApiPatchFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19275,11 +19552,11 @@ func (a *FirmwareApiService) PatchFirmwareHbaDescriptorExecute(r ApiPatchFirmwar
 }
 
 type ApiPatchFirmwareIomDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareIomDescriptor *FirmwareIomDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.IomDescriptor&#39; resource to update.
@@ -19287,6 +19564,7 @@ func (r ApiPatchFirmwareIomDescriptorRequest) FirmwareIomDescriptor(firmwareIomD
 	r.firmwareIomDescriptor = &firmwareIomDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareIomDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareIomDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19307,8 +19585,8 @@ PatchFirmwareIomDescriptor Update a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareIomDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareIomDescriptorRequest {
 	return ApiPatchFirmwareIomDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19423,13 +19701,13 @@ func (a *FirmwareApiService) PatchFirmwareIomDescriptorExecute(r ApiPatchFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19446,11 +19724,11 @@ func (a *FirmwareApiService) PatchFirmwareIomDescriptorExecute(r ApiPatchFirmwar
 }
 
 type ApiPatchFirmwareMswitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *FirmwareApiService
+	moid                      string
 	firmwareMswitchDescriptor *FirmwareMswitchDescriptor
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;firmware.MswitchDescriptor&#39; resource to update.
@@ -19458,6 +19736,7 @@ func (r ApiPatchFirmwareMswitchDescriptorRequest) FirmwareMswitchDescriptor(firm
 	r.firmwareMswitchDescriptor = &firmwareMswitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareMswitchDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareMswitchDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19478,8 +19757,8 @@ PatchFirmwareMswitchDescriptor Update a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareMswitchDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareMswitchDescriptorRequest {
 	return ApiPatchFirmwareMswitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19594,13 +19873,13 @@ func (a *FirmwareApiService) PatchFirmwareMswitchDescriptorExecute(r ApiPatchFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19617,11 +19896,11 @@ func (a *FirmwareApiService) PatchFirmwareMswitchDescriptorExecute(r ApiPatchFir
 }
 
 type ApiPatchFirmwareNxosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareNxosDescriptor *FirmwareNxosDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.NxosDescriptor&#39; resource to update.
@@ -19629,6 +19908,7 @@ func (r ApiPatchFirmwareNxosDescriptorRequest) FirmwareNxosDescriptor(firmwareNx
 	r.firmwareNxosDescriptor = &firmwareNxosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareNxosDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareNxosDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19649,8 +19929,8 @@ PatchFirmwareNxosDescriptor Update a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwareNxosDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareNxosDescriptorRequest {
 	return ApiPatchFirmwareNxosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19765,13 +20045,13 @@ func (a *FirmwareApiService) PatchFirmwareNxosDescriptorExecute(r ApiPatchFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19788,11 +20068,11 @@ func (a *FirmwareApiService) PatchFirmwareNxosDescriptorExecute(r ApiPatchFirmwa
 }
 
 type ApiPatchFirmwarePcieDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwarePcieDescriptor *FirmwarePcieDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.PcieDescriptor&#39; resource to update.
@@ -19800,6 +20080,7 @@ func (r ApiPatchFirmwarePcieDescriptorRequest) FirmwarePcieDescriptor(firmwarePc
 	r.firmwarePcieDescriptor = &firmwarePcieDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwarePcieDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwarePcieDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19820,8 +20101,8 @@ PatchFirmwarePcieDescriptor Update a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwarePcieDescriptor(ctx _context.Context, moid string) ApiPatchFirmwarePcieDescriptorRequest {
 	return ApiPatchFirmwarePcieDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19936,13 +20217,13 @@ func (a *FirmwareApiService) PatchFirmwarePcieDescriptorExecute(r ApiPatchFirmwa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19959,11 +20240,11 @@ func (a *FirmwareApiService) PatchFirmwarePcieDescriptorExecute(r ApiPatchFirmwa
 }
 
 type ApiPatchFirmwarePsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwarePsuDescriptor *FirmwarePsuDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.PsuDescriptor&#39; resource to update.
@@ -19971,6 +20252,7 @@ func (r ApiPatchFirmwarePsuDescriptorRequest) FirmwarePsuDescriptor(firmwarePsuD
 	r.firmwarePsuDescriptor = &firmwarePsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwarePsuDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwarePsuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -19991,8 +20273,8 @@ PatchFirmwarePsuDescriptor Update a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) PatchFirmwarePsuDescriptor(ctx _context.Context, moid string) ApiPatchFirmwarePsuDescriptorRequest {
 	return ApiPatchFirmwarePsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20107,13 +20389,13 @@ func (a *FirmwareApiService) PatchFirmwarePsuDescriptorExecute(r ApiPatchFirmwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20130,11 +20412,11 @@ func (a *FirmwareApiService) PatchFirmwarePsuDescriptorExecute(r ApiPatchFirmwar
 }
 
 type ApiPatchFirmwareRunningFirmwareRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FirmwareApiService
+	moid                    string
 	firmwareRunningFirmware *FirmwareRunningFirmware
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;firmware.RunningFirmware&#39; resource to update.
@@ -20142,6 +20424,7 @@ func (r ApiPatchFirmwareRunningFirmwareRequest) FirmwareRunningFirmware(firmware
 	r.firmwareRunningFirmware = &firmwareRunningFirmware
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareRunningFirmwareRequest) IfMatch(ifMatch string) ApiPatchFirmwareRunningFirmwareRequest {
 	r.ifMatch = &ifMatch
@@ -20162,8 +20445,8 @@ PatchFirmwareRunningFirmware Update a 'firmware.RunningFirmware' resource.
 func (a *FirmwareApiService) PatchFirmwareRunningFirmware(ctx _context.Context, moid string) ApiPatchFirmwareRunningFirmwareRequest {
 	return ApiPatchFirmwareRunningFirmwareRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20278,13 +20561,13 @@ func (a *FirmwareApiService) PatchFirmwareRunningFirmwareExecute(r ApiPatchFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20301,11 +20584,11 @@ func (a *FirmwareApiService) PatchFirmwareRunningFirmwareExecute(r ApiPatchFirmw
 }
 
 type ApiPatchFirmwareSasExpanderDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *FirmwareApiService
+	moid                          string
 	firmwareSasExpanderDescriptor *FirmwareSasExpanderDescriptor
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;firmware.SasExpanderDescriptor&#39; resource to update.
@@ -20313,6 +20596,7 @@ func (r ApiPatchFirmwareSasExpanderDescriptorRequest) FirmwareSasExpanderDescrip
 	r.firmwareSasExpanderDescriptor = &firmwareSasExpanderDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareSasExpanderDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareSasExpanderDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -20333,8 +20617,8 @@ PatchFirmwareSasExpanderDescriptor Update a 'firmware.SasExpanderDescriptor' res
 func (a *FirmwareApiService) PatchFirmwareSasExpanderDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareSasExpanderDescriptorRequest {
 	return ApiPatchFirmwareSasExpanderDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20449,13 +20733,13 @@ func (a *FirmwareApiService) PatchFirmwareSasExpanderDescriptorExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20472,11 +20756,11 @@ func (a *FirmwareApiService) PatchFirmwareSasExpanderDescriptorExecute(r ApiPatc
 }
 
 type ApiPatchFirmwareServerConfigurationUtilityDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                                             _context.Context
+	ApiService                                      *FirmwareApiService
+	moid                                            string
 	firmwareServerConfigurationUtilityDistributable *FirmwareServerConfigurationUtilityDistributable
-	ifMatch *string
+	ifMatch                                         *string
 }
 
 // The &#39;firmware.ServerConfigurationUtilityDistributable&#39; resource to update.
@@ -20484,6 +20768,7 @@ func (r ApiPatchFirmwareServerConfigurationUtilityDistributableRequest) Firmware
 	r.firmwareServerConfigurationUtilityDistributable = &firmwareServerConfigurationUtilityDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareServerConfigurationUtilityDistributableRequest) IfMatch(ifMatch string) ApiPatchFirmwareServerConfigurationUtilityDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -20504,8 +20789,8 @@ PatchFirmwareServerConfigurationUtilityDistributable Update a 'firmware.ServerCo
 func (a *FirmwareApiService) PatchFirmwareServerConfigurationUtilityDistributable(ctx _context.Context, moid string) ApiPatchFirmwareServerConfigurationUtilityDistributableRequest {
 	return ApiPatchFirmwareServerConfigurationUtilityDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20620,13 +20905,13 @@ func (a *FirmwareApiService) PatchFirmwareServerConfigurationUtilityDistributabl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20643,11 +20928,11 @@ func (a *FirmwareApiService) PatchFirmwareServerConfigurationUtilityDistributabl
 }
 
 type ApiPatchFirmwareStorageControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *FirmwareApiService
+	moid                                string
 	firmwareStorageControllerDescriptor *FirmwareStorageControllerDescriptor
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;firmware.StorageControllerDescriptor&#39; resource to update.
@@ -20655,6 +20940,7 @@ func (r ApiPatchFirmwareStorageControllerDescriptorRequest) FirmwareStorageContr
 	r.firmwareStorageControllerDescriptor = &firmwareStorageControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareStorageControllerDescriptorRequest) IfMatch(ifMatch string) ApiPatchFirmwareStorageControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -20675,8 +20961,8 @@ PatchFirmwareStorageControllerDescriptor Update a 'firmware.StorageControllerDes
 func (a *FirmwareApiService) PatchFirmwareStorageControllerDescriptor(ctx _context.Context, moid string) ApiPatchFirmwareStorageControllerDescriptorRequest {
 	return ApiPatchFirmwareStorageControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20791,13 +21077,13 @@ func (a *FirmwareApiService) PatchFirmwareStorageControllerDescriptorExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20814,11 +21100,11 @@ func (a *FirmwareApiService) PatchFirmwareStorageControllerDescriptorExecute(r A
 }
 
 type ApiPatchFirmwareUnsupportedVersionUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
+	moid                              string
 	firmwareUnsupportedVersionUpgrade *FirmwareUnsupportedVersionUpgrade
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;firmware.UnsupportedVersionUpgrade&#39; resource to update.
@@ -20826,6 +21112,7 @@ func (r ApiPatchFirmwareUnsupportedVersionUpgradeRequest) FirmwareUnsupportedVer
 	r.firmwareUnsupportedVersionUpgrade = &firmwareUnsupportedVersionUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareUnsupportedVersionUpgradeRequest) IfMatch(ifMatch string) ApiPatchFirmwareUnsupportedVersionUpgradeRequest {
 	r.ifMatch = &ifMatch
@@ -20846,8 +21133,8 @@ PatchFirmwareUnsupportedVersionUpgrade Update a 'firmware.UnsupportedVersionUpgr
 func (a *FirmwareApiService) PatchFirmwareUnsupportedVersionUpgrade(ctx _context.Context, moid string) ApiPatchFirmwareUnsupportedVersionUpgradeRequest {
 	return ApiPatchFirmwareUnsupportedVersionUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20962,13 +21249,13 @@ func (a *FirmwareApiService) PatchFirmwareUnsupportedVersionUpgradeExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20985,11 +21272,11 @@ func (a *FirmwareApiService) PatchFirmwareUnsupportedVersionUpgradeExecute(r Api
 }
 
 type ApiPatchFirmwareUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *FirmwareApiService
+	moid            string
 	firmwareUpgrade *FirmwareUpgrade
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;firmware.Upgrade&#39; resource to update.
@@ -20997,6 +21284,7 @@ func (r ApiPatchFirmwareUpgradeRequest) FirmwareUpgrade(firmwareUpgrade Firmware
 	r.firmwareUpgrade = &firmwareUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFirmwareUpgradeRequest) IfMatch(ifMatch string) ApiPatchFirmwareUpgradeRequest {
 	r.ifMatch = &ifMatch
@@ -21017,8 +21305,8 @@ PatchFirmwareUpgrade Update a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) PatchFirmwareUpgrade(ctx _context.Context, moid string) ApiPatchFirmwareUpgradeRequest {
 	return ApiPatchFirmwareUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21133,13 +21421,13 @@ func (a *FirmwareApiService) PatchFirmwareUpgradeExecute(r ApiPatchFirmwareUpgra
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21156,11 +21444,11 @@ func (a *FirmwareApiService) PatchFirmwareUpgradeExecute(r ApiPatchFirmwareUpgra
 }
 
 type ApiUpdateFirmwareBiosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareBiosDescriptor *FirmwareBiosDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.BiosDescriptor&#39; resource to update.
@@ -21168,6 +21456,7 @@ func (r ApiUpdateFirmwareBiosDescriptorRequest) FirmwareBiosDescriptor(firmwareB
 	r.firmwareBiosDescriptor = &firmwareBiosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareBiosDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareBiosDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21188,8 +21477,8 @@ UpdateFirmwareBiosDescriptor Update a 'firmware.BiosDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareBiosDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareBiosDescriptorRequest {
 	return ApiUpdateFirmwareBiosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21304,13 +21593,13 @@ func (a *FirmwareApiService) UpdateFirmwareBiosDescriptorExecute(r ApiUpdateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21327,11 +21616,11 @@ func (a *FirmwareApiService) UpdateFirmwareBiosDescriptorExecute(r ApiUpdateFirm
 }
 
 type ApiUpdateFirmwareBoardControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
+	moid                              string
 	firmwareBoardControllerDescriptor *FirmwareBoardControllerDescriptor
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;firmware.BoardControllerDescriptor&#39; resource to update.
@@ -21339,6 +21628,7 @@ func (r ApiUpdateFirmwareBoardControllerDescriptorRequest) FirmwareBoardControll
 	r.firmwareBoardControllerDescriptor = &firmwareBoardControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareBoardControllerDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareBoardControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21359,8 +21649,8 @@ UpdateFirmwareBoardControllerDescriptor Update a 'firmware.BoardControllerDescri
 func (a *FirmwareApiService) UpdateFirmwareBoardControllerDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareBoardControllerDescriptorRequest {
 	return ApiUpdateFirmwareBoardControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21475,13 +21765,13 @@ func (a *FirmwareApiService) UpdateFirmwareBoardControllerDescriptorExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21498,11 +21788,11 @@ func (a *FirmwareApiService) UpdateFirmwareBoardControllerDescriptorExecute(r Ap
 }
 
 type ApiUpdateFirmwareCimcDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareCimcDescriptor *FirmwareCimcDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.CimcDescriptor&#39; resource to update.
@@ -21510,6 +21800,7 @@ func (r ApiUpdateFirmwareCimcDescriptorRequest) FirmwareCimcDescriptor(firmwareC
 	r.firmwareCimcDescriptor = &firmwareCimcDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareCimcDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareCimcDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21530,8 +21821,8 @@ UpdateFirmwareCimcDescriptor Update a 'firmware.CimcDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareCimcDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareCimcDescriptorRequest {
 	return ApiUpdateFirmwareCimcDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21646,13 +21937,13 @@ func (a *FirmwareApiService) UpdateFirmwareCimcDescriptorExecute(r ApiUpdateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21669,11 +21960,11 @@ func (a *FirmwareApiService) UpdateFirmwareCimcDescriptorExecute(r ApiUpdateFirm
 }
 
 type ApiUpdateFirmwareDimmDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareDimmDescriptor *FirmwareDimmDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.DimmDescriptor&#39; resource to update.
@@ -21681,6 +21972,7 @@ func (r ApiUpdateFirmwareDimmDescriptorRequest) FirmwareDimmDescriptor(firmwareD
 	r.firmwareDimmDescriptor = &firmwareDimmDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareDimmDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareDimmDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -21701,8 +21993,8 @@ UpdateFirmwareDimmDescriptor Update a 'firmware.DimmDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareDimmDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareDimmDescriptorRequest {
 	return ApiUpdateFirmwareDimmDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21817,13 +22109,13 @@ func (a *FirmwareApiService) UpdateFirmwareDimmDescriptorExecute(r ApiUpdateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21840,11 +22132,11 @@ func (a *FirmwareApiService) UpdateFirmwareDimmDescriptorExecute(r ApiUpdateFirm
 }
 
 type ApiUpdateFirmwareDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareDistributable *FirmwareDistributable
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.Distributable&#39; resource to update.
@@ -21852,6 +22144,7 @@ func (r ApiUpdateFirmwareDistributableRequest) FirmwareDistributable(firmwareDis
 	r.firmwareDistributable = &firmwareDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareDistributableRequest) IfMatch(ifMatch string) ApiUpdateFirmwareDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -21872,8 +22165,8 @@ UpdateFirmwareDistributable Update a 'firmware.Distributable' resource.
 func (a *FirmwareApiService) UpdateFirmwareDistributable(ctx _context.Context, moid string) ApiUpdateFirmwareDistributableRequest {
 	return ApiUpdateFirmwareDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21988,13 +22281,13 @@ func (a *FirmwareApiService) UpdateFirmwareDistributableExecute(r ApiUpdateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22011,11 +22304,11 @@ func (a *FirmwareApiService) UpdateFirmwareDistributableExecute(r ApiUpdateFirmw
 }
 
 type ApiUpdateFirmwareDriveDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FirmwareApiService
+	moid                    string
 	firmwareDriveDescriptor *FirmwareDriveDescriptor
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;firmware.DriveDescriptor&#39; resource to update.
@@ -22023,6 +22316,7 @@ func (r ApiUpdateFirmwareDriveDescriptorRequest) FirmwareDriveDescriptor(firmwar
 	r.firmwareDriveDescriptor = &firmwareDriveDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareDriveDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareDriveDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22043,8 +22337,8 @@ UpdateFirmwareDriveDescriptor Update a 'firmware.DriveDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareDriveDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareDriveDescriptorRequest {
 	return ApiUpdateFirmwareDriveDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22159,13 +22453,13 @@ func (a *FirmwareApiService) UpdateFirmwareDriveDescriptorExecute(r ApiUpdateFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22182,11 +22476,11 @@ func (a *FirmwareApiService) UpdateFirmwareDriveDescriptorExecute(r ApiUpdateFir
 }
 
 type ApiUpdateFirmwareDriverDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *FirmwareApiService
+	moid                        string
 	firmwareDriverDistributable *FirmwareDriverDistributable
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;firmware.DriverDistributable&#39; resource to update.
@@ -22194,6 +22488,7 @@ func (r ApiUpdateFirmwareDriverDistributableRequest) FirmwareDriverDistributable
 	r.firmwareDriverDistributable = &firmwareDriverDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareDriverDistributableRequest) IfMatch(ifMatch string) ApiUpdateFirmwareDriverDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -22214,8 +22509,8 @@ UpdateFirmwareDriverDistributable Update a 'firmware.DriverDistributable' resour
 func (a *FirmwareApiService) UpdateFirmwareDriverDistributable(ctx _context.Context, moid string) ApiUpdateFirmwareDriverDistributableRequest {
 	return ApiUpdateFirmwareDriverDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22330,13 +22625,13 @@ func (a *FirmwareApiService) UpdateFirmwareDriverDistributableExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22353,11 +22648,11 @@ func (a *FirmwareApiService) UpdateFirmwareDriverDistributableExecute(r ApiUpdat
 }
 
 type ApiUpdateFirmwareGpuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareGpuDescriptor *FirmwareGpuDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.GpuDescriptor&#39; resource to update.
@@ -22365,6 +22660,7 @@ func (r ApiUpdateFirmwareGpuDescriptorRequest) FirmwareGpuDescriptor(firmwareGpu
 	r.firmwareGpuDescriptor = &firmwareGpuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareGpuDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareGpuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22385,8 +22681,8 @@ UpdateFirmwareGpuDescriptor Update a 'firmware.GpuDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareGpuDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareGpuDescriptorRequest {
 	return ApiUpdateFirmwareGpuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22501,13 +22797,13 @@ func (a *FirmwareApiService) UpdateFirmwareGpuDescriptorExecute(r ApiUpdateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22524,11 +22820,11 @@ func (a *FirmwareApiService) UpdateFirmwareGpuDescriptorExecute(r ApiUpdateFirmw
 }
 
 type ApiUpdateFirmwareHbaDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareHbaDescriptor *FirmwareHbaDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.HbaDescriptor&#39; resource to update.
@@ -22536,6 +22832,7 @@ func (r ApiUpdateFirmwareHbaDescriptorRequest) FirmwareHbaDescriptor(firmwareHba
 	r.firmwareHbaDescriptor = &firmwareHbaDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareHbaDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareHbaDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22556,8 +22853,8 @@ UpdateFirmwareHbaDescriptor Update a 'firmware.HbaDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareHbaDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareHbaDescriptorRequest {
 	return ApiUpdateFirmwareHbaDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22672,13 +22969,13 @@ func (a *FirmwareApiService) UpdateFirmwareHbaDescriptorExecute(r ApiUpdateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22695,11 +22992,11 @@ func (a *FirmwareApiService) UpdateFirmwareHbaDescriptorExecute(r ApiUpdateFirmw
 }
 
 type ApiUpdateFirmwareIomDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwareIomDescriptor *FirmwareIomDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.IomDescriptor&#39; resource to update.
@@ -22707,6 +23004,7 @@ func (r ApiUpdateFirmwareIomDescriptorRequest) FirmwareIomDescriptor(firmwareIom
 	r.firmwareIomDescriptor = &firmwareIomDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareIomDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareIomDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22727,8 +23025,8 @@ UpdateFirmwareIomDescriptor Update a 'firmware.IomDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareIomDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareIomDescriptorRequest {
 	return ApiUpdateFirmwareIomDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22843,13 +23141,13 @@ func (a *FirmwareApiService) UpdateFirmwareIomDescriptorExecute(r ApiUpdateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22866,11 +23164,11 @@ func (a *FirmwareApiService) UpdateFirmwareIomDescriptorExecute(r ApiUpdateFirmw
 }
 
 type ApiUpdateFirmwareMswitchDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *FirmwareApiService
+	moid                      string
 	firmwareMswitchDescriptor *FirmwareMswitchDescriptor
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;firmware.MswitchDescriptor&#39; resource to update.
@@ -22878,6 +23176,7 @@ func (r ApiUpdateFirmwareMswitchDescriptorRequest) FirmwareMswitchDescriptor(fir
 	r.firmwareMswitchDescriptor = &firmwareMswitchDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareMswitchDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareMswitchDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -22898,8 +23197,8 @@ UpdateFirmwareMswitchDescriptor Update a 'firmware.MswitchDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareMswitchDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareMswitchDescriptorRequest {
 	return ApiUpdateFirmwareMswitchDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23014,13 +23313,13 @@ func (a *FirmwareApiService) UpdateFirmwareMswitchDescriptorExecute(r ApiUpdateF
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23037,11 +23336,11 @@ func (a *FirmwareApiService) UpdateFirmwareMswitchDescriptorExecute(r ApiUpdateF
 }
 
 type ApiUpdateFirmwareNxosDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwareNxosDescriptor *FirmwareNxosDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.NxosDescriptor&#39; resource to update.
@@ -23049,6 +23348,7 @@ func (r ApiUpdateFirmwareNxosDescriptorRequest) FirmwareNxosDescriptor(firmwareN
 	r.firmwareNxosDescriptor = &firmwareNxosDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareNxosDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareNxosDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23069,8 +23369,8 @@ UpdateFirmwareNxosDescriptor Update a 'firmware.NxosDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwareNxosDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareNxosDescriptorRequest {
 	return ApiUpdateFirmwareNxosDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23185,13 +23485,13 @@ func (a *FirmwareApiService) UpdateFirmwareNxosDescriptorExecute(r ApiUpdateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23208,11 +23508,11 @@ func (a *FirmwareApiService) UpdateFirmwareNxosDescriptorExecute(r ApiUpdateFirm
 }
 
 type ApiUpdateFirmwarePcieDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *FirmwareApiService
+	moid                   string
 	firmwarePcieDescriptor *FirmwarePcieDescriptor
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;firmware.PcieDescriptor&#39; resource to update.
@@ -23220,6 +23520,7 @@ func (r ApiUpdateFirmwarePcieDescriptorRequest) FirmwarePcieDescriptor(firmwareP
 	r.firmwarePcieDescriptor = &firmwarePcieDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwarePcieDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwarePcieDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23240,8 +23541,8 @@ UpdateFirmwarePcieDescriptor Update a 'firmware.PcieDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwarePcieDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwarePcieDescriptorRequest {
 	return ApiUpdateFirmwarePcieDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23356,13 +23657,13 @@ func (a *FirmwareApiService) UpdateFirmwarePcieDescriptorExecute(r ApiUpdateFirm
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23379,11 +23680,11 @@ func (a *FirmwareApiService) UpdateFirmwarePcieDescriptorExecute(r ApiUpdateFirm
 }
 
 type ApiUpdateFirmwarePsuDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *FirmwareApiService
+	moid                  string
 	firmwarePsuDescriptor *FirmwarePsuDescriptor
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;firmware.PsuDescriptor&#39; resource to update.
@@ -23391,6 +23692,7 @@ func (r ApiUpdateFirmwarePsuDescriptorRequest) FirmwarePsuDescriptor(firmwarePsu
 	r.firmwarePsuDescriptor = &firmwarePsuDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwarePsuDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwarePsuDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23411,8 +23713,8 @@ UpdateFirmwarePsuDescriptor Update a 'firmware.PsuDescriptor' resource.
 func (a *FirmwareApiService) UpdateFirmwarePsuDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwarePsuDescriptorRequest {
 	return ApiUpdateFirmwarePsuDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23527,13 +23829,13 @@ func (a *FirmwareApiService) UpdateFirmwarePsuDescriptorExecute(r ApiUpdateFirmw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23550,11 +23852,11 @@ func (a *FirmwareApiService) UpdateFirmwarePsuDescriptorExecute(r ApiUpdateFirmw
 }
 
 type ApiUpdateFirmwareRunningFirmwareRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *FirmwareApiService
+	moid                    string
 	firmwareRunningFirmware *FirmwareRunningFirmware
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;firmware.RunningFirmware&#39; resource to update.
@@ -23562,6 +23864,7 @@ func (r ApiUpdateFirmwareRunningFirmwareRequest) FirmwareRunningFirmware(firmwar
 	r.firmwareRunningFirmware = &firmwareRunningFirmware
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareRunningFirmwareRequest) IfMatch(ifMatch string) ApiUpdateFirmwareRunningFirmwareRequest {
 	r.ifMatch = &ifMatch
@@ -23582,8 +23885,8 @@ UpdateFirmwareRunningFirmware Update a 'firmware.RunningFirmware' resource.
 func (a *FirmwareApiService) UpdateFirmwareRunningFirmware(ctx _context.Context, moid string) ApiUpdateFirmwareRunningFirmwareRequest {
 	return ApiUpdateFirmwareRunningFirmwareRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23698,13 +24001,13 @@ func (a *FirmwareApiService) UpdateFirmwareRunningFirmwareExecute(r ApiUpdateFir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23721,11 +24024,11 @@ func (a *FirmwareApiService) UpdateFirmwareRunningFirmwareExecute(r ApiUpdateFir
 }
 
 type ApiUpdateFirmwareSasExpanderDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *FirmwareApiService
+	moid                          string
 	firmwareSasExpanderDescriptor *FirmwareSasExpanderDescriptor
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;firmware.SasExpanderDescriptor&#39; resource to update.
@@ -23733,6 +24036,7 @@ func (r ApiUpdateFirmwareSasExpanderDescriptorRequest) FirmwareSasExpanderDescri
 	r.firmwareSasExpanderDescriptor = &firmwareSasExpanderDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareSasExpanderDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareSasExpanderDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -23753,8 +24057,8 @@ UpdateFirmwareSasExpanderDescriptor Update a 'firmware.SasExpanderDescriptor' re
 func (a *FirmwareApiService) UpdateFirmwareSasExpanderDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareSasExpanderDescriptorRequest {
 	return ApiUpdateFirmwareSasExpanderDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23869,13 +24173,13 @@ func (a *FirmwareApiService) UpdateFirmwareSasExpanderDescriptorExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23892,11 +24196,11 @@ func (a *FirmwareApiService) UpdateFirmwareSasExpanderDescriptorExecute(r ApiUpd
 }
 
 type ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                                             _context.Context
+	ApiService                                      *FirmwareApiService
+	moid                                            string
 	firmwareServerConfigurationUtilityDistributable *FirmwareServerConfigurationUtilityDistributable
-	ifMatch *string
+	ifMatch                                         *string
 }
 
 // The &#39;firmware.ServerConfigurationUtilityDistributable&#39; resource to update.
@@ -23904,6 +24208,7 @@ func (r ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest) Firmwar
 	r.firmwareServerConfigurationUtilityDistributable = &firmwareServerConfigurationUtilityDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest) IfMatch(ifMatch string) ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -23924,8 +24229,8 @@ UpdateFirmwareServerConfigurationUtilityDistributable Update a 'firmware.ServerC
 func (a *FirmwareApiService) UpdateFirmwareServerConfigurationUtilityDistributable(ctx _context.Context, moid string) ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest {
 	return ApiUpdateFirmwareServerConfigurationUtilityDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24040,13 +24345,13 @@ func (a *FirmwareApiService) UpdateFirmwareServerConfigurationUtilityDistributab
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24063,11 +24368,11 @@ func (a *FirmwareApiService) UpdateFirmwareServerConfigurationUtilityDistributab
 }
 
 type ApiUpdateFirmwareStorageControllerDescriptorRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *FirmwareApiService
+	moid                                string
 	firmwareStorageControllerDescriptor *FirmwareStorageControllerDescriptor
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;firmware.StorageControllerDescriptor&#39; resource to update.
@@ -24075,6 +24380,7 @@ func (r ApiUpdateFirmwareStorageControllerDescriptorRequest) FirmwareStorageCont
 	r.firmwareStorageControllerDescriptor = &firmwareStorageControllerDescriptor
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareStorageControllerDescriptorRequest) IfMatch(ifMatch string) ApiUpdateFirmwareStorageControllerDescriptorRequest {
 	r.ifMatch = &ifMatch
@@ -24095,8 +24401,8 @@ UpdateFirmwareStorageControllerDescriptor Update a 'firmware.StorageControllerDe
 func (a *FirmwareApiService) UpdateFirmwareStorageControllerDescriptor(ctx _context.Context, moid string) ApiUpdateFirmwareStorageControllerDescriptorRequest {
 	return ApiUpdateFirmwareStorageControllerDescriptorRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24211,13 +24517,13 @@ func (a *FirmwareApiService) UpdateFirmwareStorageControllerDescriptorExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24234,11 +24540,11 @@ func (a *FirmwareApiService) UpdateFirmwareStorageControllerDescriptorExecute(r 
 }
 
 type ApiUpdateFirmwareUnsupportedVersionUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *FirmwareApiService
+	moid                              string
 	firmwareUnsupportedVersionUpgrade *FirmwareUnsupportedVersionUpgrade
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;firmware.UnsupportedVersionUpgrade&#39; resource to update.
@@ -24246,6 +24552,7 @@ func (r ApiUpdateFirmwareUnsupportedVersionUpgradeRequest) FirmwareUnsupportedVe
 	r.firmwareUnsupportedVersionUpgrade = &firmwareUnsupportedVersionUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareUnsupportedVersionUpgradeRequest) IfMatch(ifMatch string) ApiUpdateFirmwareUnsupportedVersionUpgradeRequest {
 	r.ifMatch = &ifMatch
@@ -24266,8 +24573,8 @@ UpdateFirmwareUnsupportedVersionUpgrade Update a 'firmware.UnsupportedVersionUpg
 func (a *FirmwareApiService) UpdateFirmwareUnsupportedVersionUpgrade(ctx _context.Context, moid string) ApiUpdateFirmwareUnsupportedVersionUpgradeRequest {
 	return ApiUpdateFirmwareUnsupportedVersionUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24382,13 +24689,13 @@ func (a *FirmwareApiService) UpdateFirmwareUnsupportedVersionUpgradeExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24405,11 +24712,11 @@ func (a *FirmwareApiService) UpdateFirmwareUnsupportedVersionUpgradeExecute(r Ap
 }
 
 type ApiUpdateFirmwareUpgradeRequest struct {
-	ctx _context.Context
-	ApiService *FirmwareApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *FirmwareApiService
+	moid            string
 	firmwareUpgrade *FirmwareUpgrade
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;firmware.Upgrade&#39; resource to update.
@@ -24417,6 +24724,7 @@ func (r ApiUpdateFirmwareUpgradeRequest) FirmwareUpgrade(firmwareUpgrade Firmwar
 	r.firmwareUpgrade = &firmwareUpgrade
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFirmwareUpgradeRequest) IfMatch(ifMatch string) ApiUpdateFirmwareUpgradeRequest {
 	r.ifMatch = &ifMatch
@@ -24437,8 +24745,8 @@ UpdateFirmwareUpgrade Update a 'firmware.Upgrade' resource.
 func (a *FirmwareApiService) UpdateFirmwareUpgrade(ctx _context.Context, moid string) ApiUpdateFirmwareUpgradeRequest {
 	return ApiUpdateFirmwareUpgradeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24553,13 +24861,13 @@ func (a *FirmwareApiService) UpdateFirmwareUpgradeExecute(r ApiUpdateFirmwareUpg
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

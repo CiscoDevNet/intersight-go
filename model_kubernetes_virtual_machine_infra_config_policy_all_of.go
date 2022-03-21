@@ -20,12 +20,12 @@ type KubernetesVirtualMachineInfraConfigPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	VmConfig NullableKubernetesBaseVirtualMachineInfraConfig `json:"VmConfig,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType   string                                          `json:"ObjectType"`
+	VmConfig     NullableKubernetesBaseVirtualMachineInfraConfig `json:"VmConfig,omitempty"`
+	Organization *OrganizationOrganizationRelationship           `json:"Organization,omitempty"`
 	// An array of relationships to kubernetesVirtualMachineInfrastructureProvider resources.
-	Profiles []KubernetesVirtualMachineInfrastructureProviderRelationship `json:"Profiles,omitempty"`
-	Target *AssetDeviceRegistrationRelationship `json:"Target,omitempty"`
+	Profiles             []KubernetesVirtualMachineInfrastructureProviderRelationship `json:"Profiles,omitempty"`
+	Target               *AssetDeviceRegistrationRelationship                         `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetObjectType() string 
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetVmConfig() Kubernete
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetVmConfigOk() (*KubernetesBaseVirtualMachineInfraConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmConfig.Get(), o.VmConfig.IsSet()
@@ -134,6 +134,7 @@ func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) HasVmConfig() bool {
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) SetVmConfig(v KubernetesBaseVirtualMachineInfraConfig) {
 	o.VmConfig.Set(&v)
 }
+
 // SetVmConfigNil sets the value for VmConfig to be an explicit nil
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) SetVmConfigNil() {
 	o.VmConfig.Set(nil)
@@ -178,7 +179,7 @@ func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) SetOrganization(v Organ
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesVirtualMachineInfraConfigPolicyAllOf) GetProfiles() []KubernetesVirtualMachineInfrastructureProviderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesVirtualMachineInfrastructureProviderRelationship
 		return ret
 	}
@@ -326,5 +327,3 @@ func (v *NullableKubernetesVirtualMachineInfraConfigPolicyAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

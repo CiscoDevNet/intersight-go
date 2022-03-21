@@ -18,7 +18,7 @@ import (
 // TelemetryDruidUnionDataSourceAllOf struct for TelemetryDruidUnionDataSourceAllOf
 type TelemetryDruidUnionDataSourceAllOf struct {
 	// A list of data sources.
-	DataSources []string `json:"dataSources"`
+	DataSources          []string `json:"dataSources"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidUnionDataSourceAllOf) GetDataSources() []string {
 // GetDataSourcesOk returns a tuple with the DataSources field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidUnionDataSourceAllOf) GetDataSourcesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSources, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidUnionDataSourceAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

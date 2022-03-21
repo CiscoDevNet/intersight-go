@@ -18,32 +18,31 @@ import (
 
 // StorageNetAppLunEventResponse - The response body of a HTTP GET request for the 'storage.NetAppLunEvent' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.NetAppLunEvent' resources.
 type StorageNetAppLunEventResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 	StorageNetAppLunEventList *StorageNetAppLunEventList
 }
 
 // MoAggregateTransformAsStorageNetAppLunEventResponse is a convenience function that returns MoAggregateTransform wrapped in StorageNetAppLunEventResponse
 func MoAggregateTransformAsStorageNetAppLunEventResponse(v *MoAggregateTransform) StorageNetAppLunEventResponse {
-	return StorageNetAppLunEventResponse{ MoAggregateTransform: v}
+	return StorageNetAppLunEventResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageNetAppLunEventResponse is a convenience function that returns MoDocumentCount wrapped in StorageNetAppLunEventResponse
 func MoDocumentCountAsStorageNetAppLunEventResponse(v *MoDocumentCount) StorageNetAppLunEventResponse {
-	return StorageNetAppLunEventResponse{ MoDocumentCount: v}
+	return StorageNetAppLunEventResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageNetAppLunEventResponse is a convenience function that returns MoTagSummary wrapped in StorageNetAppLunEventResponse
 func MoTagSummaryAsStorageNetAppLunEventResponse(v *MoTagSummary) StorageNetAppLunEventResponse {
-	return StorageNetAppLunEventResponse{ MoTagSummary: v}
+	return StorageNetAppLunEventResponse{MoTagSummary: v}
 }
 
 // StorageNetAppLunEventListAsStorageNetAppLunEventResponse is a convenience function that returns StorageNetAppLunEventList wrapped in StorageNetAppLunEventResponse
 func StorageNetAppLunEventListAsStorageNetAppLunEventResponse(v *StorageNetAppLunEventList) StorageNetAppLunEventResponse {
-	return StorageNetAppLunEventResponse{ StorageNetAppLunEventList: v}
+	return StorageNetAppLunEventResponse{StorageNetAppLunEventList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppLunEventResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageNetAppLunEventResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppLunEventResponse) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppLunEventResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageNetAppLunEventResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

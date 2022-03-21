@@ -20,16 +20,16 @@ type PolicyAbstractConfigChangeDetailAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Changes []string `json:"Changes,omitempty"`
+	ObjectType          string                            `json:"ObjectType"`
+	Changes             []string                          `json:"Changes,omitempty"`
 	ConfigChangeContext NullablePolicyConfigResultContext `json:"ConfigChangeContext,omitempty"`
 	// Config change flag to differentiate Pending-changes and Config-drift. * `Pending-changes` - Config change flag represents changes are due to not deployed changes from Intersight. * `Drift-changes` - Config change flag represents changes are due to endpoint configuration changes.
-	ConfigChangeFlag *string `json:"ConfigChangeFlag,omitempty"`
-	Disruptions []string `json:"Disruptions,omitempty"`
+	ConfigChangeFlag *string  `json:"ConfigChangeFlag,omitempty"`
+	Disruptions      []string `json:"Disruptions,omitempty"`
 	// Detailed description of the config change.
 	Message *string `json:"Message,omitempty"`
 	// Modification status of the mo in this config change. * `None` - The 'none' operation/state.Indicates a configuration profile has been deployed, and the desired configuration matches the actual device configuration. * `Created` - The 'create' operation/state.Indicates a configuration profile has been created and associated with a device, but the configuration specified in the profilehas not been applied yet. For example, this could happen when the user creates a server profile and has not deployed the profile yet. * `Modified` - The 'update' operation/state.Indicates some of the desired configuration changes specified in a profile have not been been applied to the associated device.This happens when the user has made changes to a profile and has not deployed the changes yet, or when the workflow to applythe configuration changes has not completed succesfully. * `Deleted` - The 'delete' operation/state.Indicates a configuration profile has been been disassociated from a device and the user has not undeployed these changes yet.
-	ModStatus *string `json:"ModStatus,omitempty"`
+	ModStatus            *string `json:"ModStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigChangeDetailAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigChangeDetailAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) SetObjectType(v string) {
 
 // GetChanges returns the Changes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigChangeDetailAllOf) GetChanges() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) GetConfigChangeContext() PolicyC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyAbstractConfigChangeDetailAllOf) GetConfigChangeContextOk() (*PolicyConfigResultContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChangeContext.Get(), o.ConfigChangeContext.IsSet()
@@ -175,6 +175,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) HasConfigChangeContext() bool {
 func (o *PolicyAbstractConfigChangeDetailAllOf) SetConfigChangeContext(v PolicyConfigResultContext) {
 	o.ConfigChangeContext.Set(&v)
 }
+
 // SetConfigChangeContextNil sets the value for ConfigChangeContext to be an explicit nil
 func (o *PolicyAbstractConfigChangeDetailAllOf) SetConfigChangeContextNil() {
 	o.ConfigChangeContext.Set(nil)
@@ -219,7 +220,7 @@ func (o *PolicyAbstractConfigChangeDetailAllOf) SetConfigChangeFlag(v string) {
 
 // GetDisruptions returns the Disruptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigChangeDetailAllOf) GetDisruptions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -407,5 +408,3 @@ func (v *NullablePolicyAbstractConfigChangeDetailAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

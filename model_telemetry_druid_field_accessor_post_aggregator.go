@@ -24,7 +24,7 @@ type TelemetryDruidFieldAccessorPostAggregator struct {
 	// Output name for the post-aggregator.
 	Name *string `json:"name,omitempty"`
 	// Name of the metric column.
-	FieldName *string `json:"fieldName,omitempty"`
+	FieldName            *string `json:"fieldName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,7 +61,7 @@ func (o *TelemetryDruidFieldAccessorPostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFieldAccessorPostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -245,5 +245,3 @@ func (v *NullableTelemetryDruidFieldAccessorPostAggregator) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

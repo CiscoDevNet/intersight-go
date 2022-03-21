@@ -27,11 +27,11 @@ type FcpoolLease struct {
 	// Purpose of this WWN pool.
 	PoolPurpose *string `json:"PoolPurpose,omitempty"`
 	// WWN ID allocated for pool based allocation.
-	WwnId *string `json:"WwnId,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	Pool *FcpoolPoolRelationship `json:"Pool,omitempty"`
-	PoolMember *FcpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-	Universe *FcpoolUniverseRelationship `json:"Universe,omitempty"`
+	WwnId                *string                       `json:"WwnId,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship         `json:"AssignedToEntity,omitempty"`
+	Pool                 *FcpoolPoolRelationship       `json:"Pool,omitempty"`
+	PoolMember           *FcpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+	Universe             *FcpoolUniverseRelationship   `json:"Universe,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *FcpoolLease) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FcpoolLease) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *FcpoolLease) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FcpoolLease) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -353,11 +353,11 @@ func (o *FcpoolLease) UnmarshalJSON(bytes []byte) (err error) {
 		// Purpose of this WWN pool.
 		PoolPurpose *string `json:"PoolPurpose,omitempty"`
 		// WWN ID allocated for pool based allocation.
-		WwnId *string `json:"WwnId,omitempty"`
-		AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-		Pool *FcpoolPoolRelationship `json:"Pool,omitempty"`
-		PoolMember *FcpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-		Universe *FcpoolUniverseRelationship `json:"Universe,omitempty"`
+		WwnId            *string                       `json:"WwnId,omitempty"`
+		AssignedToEntity *MoBaseMoRelationship         `json:"AssignedToEntity,omitempty"`
+		Pool             *FcpoolPoolRelationship       `json:"Pool,omitempty"`
+		PoolMember       *FcpoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+		Universe         *FcpoolUniverseRelationship   `json:"Universe,omitempty"`
 	}
 
 	varFcpoolLeaseWithoutEmbeddedStruct := FcpoolLeaseWithoutEmbeddedStruct{}
@@ -458,5 +458,3 @@ func (v *NullableFcpoolLease) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

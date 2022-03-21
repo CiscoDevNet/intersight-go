@@ -23,8 +23,8 @@ type KubernetesNetworkPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	CniConfig NullableKubernetesCniConfig `json:"CniConfig,omitempty"`
+	ObjectType string                      `json:"ObjectType"`
+	CniConfig  NullableKubernetesCniConfig `json:"CniConfig,omitempty"`
 	// Supported CNI type. Currently we only support Calico. * `Calico` - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin. * `Aci` - Cisco ACI Container Network Interface plugin.
 	CniType *string `json:"CniType,omitempty"`
 	// CIDR block to allocate Pod network IP addresses from.
@@ -32,8 +32,8 @@ type KubernetesNetworkPolicy struct {
 	// CIDR block to allocate cluster service IP addresses from.
 	ServiceCidr *string `json:"ServiceCidr,omitempty"`
 	// An array of relationships to kubernetesClusterProfile resources.
-	ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *KubernetesNetworkPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *KubernetesNetworkPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -127,7 +127,7 @@ func (o *KubernetesNetworkPolicy) GetCniConfig() KubernetesCniConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesNetworkPolicy) GetCniConfigOk() (*KubernetesCniConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CniConfig.Get(), o.CniConfig.IsSet()
@@ -146,6 +146,7 @@ func (o *KubernetesNetworkPolicy) HasCniConfig() bool {
 func (o *KubernetesNetworkPolicy) SetCniConfig(v KubernetesCniConfig) {
 	o.CniConfig.Set(&v)
 }
+
 // SetCniConfigNil sets the value for CniConfig to be an explicit nil
 func (o *KubernetesNetworkPolicy) SetCniConfigNil() {
 	o.CniConfig.Set(nil)
@@ -254,7 +255,7 @@ func (o *KubernetesNetworkPolicy) SetServiceCidr(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNetworkPolicy) GetClusterProfiles() []KubernetesClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesClusterProfileRelationship
 		return ret
 	}
@@ -364,8 +365,8 @@ func (o *KubernetesNetworkPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		CniConfig NullableKubernetesCniConfig `json:"CniConfig,omitempty"`
+		ObjectType string                      `json:"ObjectType"`
+		CniConfig  NullableKubernetesCniConfig `json:"CniConfig,omitempty"`
 		// Supported CNI type. Currently we only support Calico. * `Calico` - Calico CNI plugin as described in https://github.com/projectcalico/cni-plugin. * `Aci` - Cisco ACI Container Network Interface plugin.
 		CniType *string `json:"CniType,omitempty"`
 		// CIDR block to allocate Pod network IP addresses from.
@@ -374,7 +375,7 @@ func (o *KubernetesNetworkPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		ServiceCidr *string `json:"ServiceCidr,omitempty"`
 		// An array of relationships to kubernetesClusterProfile resources.
 		ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	}
 
 	varKubernetesNetworkPolicyWithoutEmbeddedStruct := KubernetesNetworkPolicyWithoutEmbeddedStruct{}
@@ -475,5 +476,3 @@ func (v *NullableKubernetesNetworkPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

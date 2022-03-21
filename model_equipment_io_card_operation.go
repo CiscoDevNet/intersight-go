@@ -27,9 +27,9 @@ type EquipmentIoCardOperation struct {
 	// User configured power state of the iomodule. * `None` - Placeholder default value for iom power state property. * `Reboot` - IO Module reboot state property value.
 	AdminPowerState *string `json:"AdminPowerState,omitempty"`
 	// The configured state of these settings in the target chassis. The value is any one of Applied, Applying, Failed. Applied - This state denotes that the settings are applied successfully in the target chassis iomodule. Applying - This state denotes that the settings are being applied in the target chassis iomodule. Failed - This state denotes that the settings could not be applied in the target chassis iomodule. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-	ConfigState *string `json:"ConfigState,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-	IoCard *EquipmentIoCardRelationship `json:"IoCard,omitempty"`
+	ConfigState          *string                              `json:"ConfigState,omitempty"`
+	DeviceRegistration   *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
+	IoCard               *EquipmentIoCardRelationship         `json:"IoCard,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *EquipmentIoCardOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *EquipmentIoCardOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentIoCardOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -283,9 +283,9 @@ func (o *EquipmentIoCardOperation) UnmarshalJSON(bytes []byte) (err error) {
 		// User configured power state of the iomodule. * `None` - Placeholder default value for iom power state property. * `Reboot` - IO Module reboot state property value.
 		AdminPowerState *string `json:"AdminPowerState,omitempty"`
 		// The configured state of these settings in the target chassis. The value is any one of Applied, Applying, Failed. Applied - This state denotes that the settings are applied successfully in the target chassis iomodule. Applying - This state denotes that the settings are being applied in the target chassis iomodule. Failed - This state denotes that the settings could not be applied in the target chassis iomodule. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-		ConfigState *string `json:"ConfigState,omitempty"`
+		ConfigState        *string                              `json:"ConfigState,omitempty"`
 		DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-		IoCard *EquipmentIoCardRelationship `json:"IoCard,omitempty"`
+		IoCard             *EquipmentIoCardRelationship         `json:"IoCard,omitempty"`
 	}
 
 	varEquipmentIoCardOperationWithoutEmbeddedStruct := EquipmentIoCardOperationWithoutEmbeddedStruct{}
@@ -382,5 +382,3 @@ func (v *NullableEquipmentIoCardOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

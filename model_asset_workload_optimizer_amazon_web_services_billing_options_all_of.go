@@ -27,7 +27,7 @@ type AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf struct {
 	CostAndUsageReportPath *string `json:"CostAndUsageReportPath,omitempty"`
 	// Region for S3 bucket that contains the Amazon web service Cost and Usage report to get cloud service spend.
 	CostAndUsageReportRegion *string `json:"CostAndUsageReportRegion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties     map[string]interface{}
 }
 
 type _AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf
@@ -68,7 +68,7 @@ func (o *AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf) GetClassId(
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf) GetObjectTy
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableAssetWorkloadOptimizerAmazonWebServicesBillingOptionsAllOf) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

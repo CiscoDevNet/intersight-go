@@ -29,11 +29,11 @@ var (
 type StorageApiService service
 
 type ApiCreateStorageDriveGroupRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
+	ctx               _context.Context
+	ApiService        *StorageApiService
 	storageDriveGroup *StorageDriveGroup
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;storage.DriveGroup&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateStorageDriveGroupRequest) StorageDriveGroup(storageDriveGroup S
 	r.storageDriveGroup = &storageDriveGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateStorageDriveGroupRequest) IfMatch(ifMatch string) ApiCreateStorageDriveGroupRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateStorageDriveGroupRequest) IfNoneMatch(ifNoneMatch string) ApiCreateStorageDriveGroupRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateStorageDriveGroup Create a 'storage.DriveGroup' resource.
 func (a *StorageApiService) CreateStorageDriveGroup(ctx _context.Context) ApiCreateStorageDriveGroupRequest {
 	return ApiCreateStorageDriveGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *StorageApiService) CreateStorageDriveGroupExecute(r ApiCreateStorageDri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *StorageApiService) CreateStorageDriveGroupExecute(r ApiCreateStorageDri
 }
 
 type ApiCreateStorageStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
+	ctx                  _context.Context
+	ApiService           *StorageApiService
 	storageStoragePolicy *StorageStoragePolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;storage.StoragePolicy&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateStorageStoragePolicyRequest) StorageStoragePolicy(storageStorag
 	r.storageStoragePolicy = &storageStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateStorageStoragePolicyRequest) IfMatch(ifMatch string) ApiCreateStorageStoragePolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateStorageStoragePolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateStorageStoragePolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateStorageStoragePolicy Create a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) CreateStorageStoragePolicy(ctx _context.Context) ApiCreateStorageStoragePolicyRequest {
 	return ApiCreateStorageStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *StorageApiService) CreateStorageStoragePolicyExecute(r ApiCreateStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,10 @@ func (a *StorageApiService) CreateStorageStoragePolicyExecute(r ApiCreateStorage
 }
 
 type ApiDeleteStorageDriveGroupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteStorageDriveGroupRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteStorageDriveGroupExecute(r)
@@ -401,8 +404,8 @@ DeleteStorageDriveGroup Delete a 'storage.DriveGroup' resource.
 func (a *StorageApiService) DeleteStorageDriveGroup(ctx _context.Context, moid string) ApiDeleteStorageDriveGroupRequest {
 	return ApiDeleteStorageDriveGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -507,13 +510,13 @@ func (a *StorageApiService) DeleteStorageDriveGroupExecute(r ApiDeleteStorageDri
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -521,11 +524,10 @@ func (a *StorageApiService) DeleteStorageDriveGroupExecute(r ApiDeleteStorageDri
 }
 
 type ApiDeleteStorageStoragePolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteStorageStoragePolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteStorageStoragePolicyExecute(r)
@@ -541,8 +543,8 @@ DeleteStorageStoragePolicy Delete a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) DeleteStorageStoragePolicy(ctx _context.Context, moid string) ApiDeleteStorageStoragePolicyRequest {
 	return ApiDeleteStorageStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -647,13 +649,13 @@ func (a *StorageApiService) DeleteStorageStoragePolicyExecute(r ApiDeleteStorage
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -661,11 +663,10 @@ func (a *StorageApiService) DeleteStorageStoragePolicyExecute(r ApiDeleteStorage
 }
 
 type ApiGetStorageControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageControllerByMoidRequest) Execute() (StorageController, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageControllerByMoidExecute(r)
@@ -681,8 +682,8 @@ GetStorageControllerByMoid Read a 'storage.Controller' resource.
 func (a *StorageApiService) GetStorageControllerByMoid(ctx _context.Context, moid string) ApiGetStorageControllerByMoidRequest {
 	return ApiGetStorageControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -789,13 +790,13 @@ func (a *StorageApiService) GetStorageControllerByMoidExecute(r ApiGetStorageCon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -812,19 +813,19 @@ func (a *StorageApiService) GetStorageControllerByMoidExecute(r ApiGetStorageCon
 }
 
 type ApiGetStorageControllerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -832,51 +833,61 @@ func (r ApiGetStorageControllerListRequest) Filter(filter string) ApiGetStorageC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageControllerListRequest) Orderby(orderby string) ApiGetStorageControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageControllerListRequest) Top(top int32) ApiGetStorageControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageControllerListRequest) Skip(skip int32) ApiGetStorageControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageControllerListRequest) Select_(select_ string) ApiGetStorageControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageControllerListRequest) Expand(expand string) ApiGetStorageControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageControllerListRequest) Apply(apply string) ApiGetStorageControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageControllerListRequest) Count(count bool) ApiGetStorageControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageControllerListRequest) Inlinecount(inlinecount string) ApiGetStorageControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageControllerListRequest) At(at string) ApiGetStorageControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageControllerListRequest) Tags(tags string) ApiGetStorageControllerListRequest {
 	r.tags = &tags
@@ -896,7 +907,7 @@ GetStorageControllerList Read a 'storage.Controller' resource.
 func (a *StorageApiService) GetStorageControllerList(ctx _context.Context) ApiGetStorageControllerListRequest {
 	return ApiGetStorageControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1035,13 +1046,13 @@ func (a *StorageApiService) GetStorageControllerListExecute(r ApiGetStorageContr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1058,11 +1069,10 @@ func (a *StorageApiService) GetStorageControllerListExecute(r ApiGetStorageContr
 }
 
 type ApiGetStorageDiskGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageDiskGroupByMoidRequest) Execute() (StorageDiskGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageDiskGroupByMoidExecute(r)
@@ -1078,8 +1088,8 @@ GetStorageDiskGroupByMoid Read a 'storage.DiskGroup' resource.
 func (a *StorageApiService) GetStorageDiskGroupByMoid(ctx _context.Context, moid string) ApiGetStorageDiskGroupByMoidRequest {
 	return ApiGetStorageDiskGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1186,13 +1196,13 @@ func (a *StorageApiService) GetStorageDiskGroupByMoidExecute(r ApiGetStorageDisk
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1209,19 +1219,19 @@ func (a *StorageApiService) GetStorageDiskGroupByMoidExecute(r ApiGetStorageDisk
 }
 
 type ApiGetStorageDiskGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1229,51 +1239,61 @@ func (r ApiGetStorageDiskGroupListRequest) Filter(filter string) ApiGetStorageDi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageDiskGroupListRequest) Orderby(orderby string) ApiGetStorageDiskGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageDiskGroupListRequest) Top(top int32) ApiGetStorageDiskGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageDiskGroupListRequest) Skip(skip int32) ApiGetStorageDiskGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageDiskGroupListRequest) Select_(select_ string) ApiGetStorageDiskGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageDiskGroupListRequest) Expand(expand string) ApiGetStorageDiskGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageDiskGroupListRequest) Apply(apply string) ApiGetStorageDiskGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageDiskGroupListRequest) Count(count bool) ApiGetStorageDiskGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageDiskGroupListRequest) Inlinecount(inlinecount string) ApiGetStorageDiskGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageDiskGroupListRequest) At(at string) ApiGetStorageDiskGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageDiskGroupListRequest) Tags(tags string) ApiGetStorageDiskGroupListRequest {
 	r.tags = &tags
@@ -1293,7 +1313,7 @@ GetStorageDiskGroupList Read a 'storage.DiskGroup' resource.
 func (a *StorageApiService) GetStorageDiskGroupList(ctx _context.Context) ApiGetStorageDiskGroupListRequest {
 	return ApiGetStorageDiskGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1432,13 +1452,13 @@ func (a *StorageApiService) GetStorageDiskGroupListExecute(r ApiGetStorageDiskGr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1455,11 +1475,10 @@ func (a *StorageApiService) GetStorageDiskGroupListExecute(r ApiGetStorageDiskGr
 }
 
 type ApiGetStorageDiskSlotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageDiskSlotByMoidRequest) Execute() (StorageDiskSlot, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageDiskSlotByMoidExecute(r)
@@ -1475,8 +1494,8 @@ GetStorageDiskSlotByMoid Read a 'storage.DiskSlot' resource.
 func (a *StorageApiService) GetStorageDiskSlotByMoid(ctx _context.Context, moid string) ApiGetStorageDiskSlotByMoidRequest {
 	return ApiGetStorageDiskSlotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1583,13 +1602,13 @@ func (a *StorageApiService) GetStorageDiskSlotByMoidExecute(r ApiGetStorageDiskS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1606,19 +1625,19 @@ func (a *StorageApiService) GetStorageDiskSlotByMoidExecute(r ApiGetStorageDiskS
 }
 
 type ApiGetStorageDiskSlotListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1626,51 +1645,61 @@ func (r ApiGetStorageDiskSlotListRequest) Filter(filter string) ApiGetStorageDis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageDiskSlotListRequest) Orderby(orderby string) ApiGetStorageDiskSlotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageDiskSlotListRequest) Top(top int32) ApiGetStorageDiskSlotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageDiskSlotListRequest) Skip(skip int32) ApiGetStorageDiskSlotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageDiskSlotListRequest) Select_(select_ string) ApiGetStorageDiskSlotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageDiskSlotListRequest) Expand(expand string) ApiGetStorageDiskSlotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageDiskSlotListRequest) Apply(apply string) ApiGetStorageDiskSlotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageDiskSlotListRequest) Count(count bool) ApiGetStorageDiskSlotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageDiskSlotListRequest) Inlinecount(inlinecount string) ApiGetStorageDiskSlotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageDiskSlotListRequest) At(at string) ApiGetStorageDiskSlotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageDiskSlotListRequest) Tags(tags string) ApiGetStorageDiskSlotListRequest {
 	r.tags = &tags
@@ -1690,7 +1719,7 @@ GetStorageDiskSlotList Read a 'storage.DiskSlot' resource.
 func (a *StorageApiService) GetStorageDiskSlotList(ctx _context.Context) ApiGetStorageDiskSlotListRequest {
 	return ApiGetStorageDiskSlotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1829,13 +1858,13 @@ func (a *StorageApiService) GetStorageDiskSlotListExecute(r ApiGetStorageDiskSlo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1852,11 +1881,10 @@ func (a *StorageApiService) GetStorageDiskSlotListExecute(r ApiGetStorageDiskSlo
 }
 
 type ApiGetStorageDriveGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageDriveGroupByMoidRequest) Execute() (StorageDriveGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageDriveGroupByMoidExecute(r)
@@ -1872,8 +1900,8 @@ GetStorageDriveGroupByMoid Read a 'storage.DriveGroup' resource.
 func (a *StorageApiService) GetStorageDriveGroupByMoid(ctx _context.Context, moid string) ApiGetStorageDriveGroupByMoidRequest {
 	return ApiGetStorageDriveGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1980,13 +2008,13 @@ func (a *StorageApiService) GetStorageDriveGroupByMoidExecute(r ApiGetStorageDri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2003,19 +2031,19 @@ func (a *StorageApiService) GetStorageDriveGroupByMoidExecute(r ApiGetStorageDri
 }
 
 type ApiGetStorageDriveGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2023,51 +2051,61 @@ func (r ApiGetStorageDriveGroupListRequest) Filter(filter string) ApiGetStorageD
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageDriveGroupListRequest) Orderby(orderby string) ApiGetStorageDriveGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageDriveGroupListRequest) Top(top int32) ApiGetStorageDriveGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageDriveGroupListRequest) Skip(skip int32) ApiGetStorageDriveGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageDriveGroupListRequest) Select_(select_ string) ApiGetStorageDriveGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageDriveGroupListRequest) Expand(expand string) ApiGetStorageDriveGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageDriveGroupListRequest) Apply(apply string) ApiGetStorageDriveGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageDriveGroupListRequest) Count(count bool) ApiGetStorageDriveGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageDriveGroupListRequest) Inlinecount(inlinecount string) ApiGetStorageDriveGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageDriveGroupListRequest) At(at string) ApiGetStorageDriveGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageDriveGroupListRequest) Tags(tags string) ApiGetStorageDriveGroupListRequest {
 	r.tags = &tags
@@ -2087,7 +2125,7 @@ GetStorageDriveGroupList Read a 'storage.DriveGroup' resource.
 func (a *StorageApiService) GetStorageDriveGroupList(ctx _context.Context) ApiGetStorageDriveGroupListRequest {
 	return ApiGetStorageDriveGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2226,13 +2264,13 @@ func (a *StorageApiService) GetStorageDriveGroupListExecute(r ApiGetStorageDrive
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2249,11 +2287,10 @@ func (a *StorageApiService) GetStorageDriveGroupListExecute(r ApiGetStorageDrive
 }
 
 type ApiGetStorageEnclosureByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageEnclosureByMoidRequest) Execute() (StorageEnclosure, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageEnclosureByMoidExecute(r)
@@ -2269,8 +2306,8 @@ GetStorageEnclosureByMoid Read a 'storage.Enclosure' resource.
 func (a *StorageApiService) GetStorageEnclosureByMoid(ctx _context.Context, moid string) ApiGetStorageEnclosureByMoidRequest {
 	return ApiGetStorageEnclosureByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2377,13 +2414,13 @@ func (a *StorageApiService) GetStorageEnclosureByMoidExecute(r ApiGetStorageEncl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2400,11 +2437,10 @@ func (a *StorageApiService) GetStorageEnclosureByMoidExecute(r ApiGetStorageEncl
 }
 
 type ApiGetStorageEnclosureDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageEnclosureDiskByMoidRequest) Execute() (StorageEnclosureDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageEnclosureDiskByMoidExecute(r)
@@ -2420,8 +2456,8 @@ GetStorageEnclosureDiskByMoid Read a 'storage.EnclosureDisk' resource.
 func (a *StorageApiService) GetStorageEnclosureDiskByMoid(ctx _context.Context, moid string) ApiGetStorageEnclosureDiskByMoidRequest {
 	return ApiGetStorageEnclosureDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2528,13 +2564,13 @@ func (a *StorageApiService) GetStorageEnclosureDiskByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2551,19 +2587,19 @@ func (a *StorageApiService) GetStorageEnclosureDiskByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStorageEnclosureDiskListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2571,51 +2607,61 @@ func (r ApiGetStorageEnclosureDiskListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageEnclosureDiskListRequest) Orderby(orderby string) ApiGetStorageEnclosureDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageEnclosureDiskListRequest) Top(top int32) ApiGetStorageEnclosureDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageEnclosureDiskListRequest) Skip(skip int32) ApiGetStorageEnclosureDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageEnclosureDiskListRequest) Select_(select_ string) ApiGetStorageEnclosureDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageEnclosureDiskListRequest) Expand(expand string) ApiGetStorageEnclosureDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageEnclosureDiskListRequest) Apply(apply string) ApiGetStorageEnclosureDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageEnclosureDiskListRequest) Count(count bool) ApiGetStorageEnclosureDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageEnclosureDiskListRequest) Inlinecount(inlinecount string) ApiGetStorageEnclosureDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageEnclosureDiskListRequest) At(at string) ApiGetStorageEnclosureDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageEnclosureDiskListRequest) Tags(tags string) ApiGetStorageEnclosureDiskListRequest {
 	r.tags = &tags
@@ -2635,7 +2681,7 @@ GetStorageEnclosureDiskList Read a 'storage.EnclosureDisk' resource.
 func (a *StorageApiService) GetStorageEnclosureDiskList(ctx _context.Context) ApiGetStorageEnclosureDiskListRequest {
 	return ApiGetStorageEnclosureDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2774,13 +2820,13 @@ func (a *StorageApiService) GetStorageEnclosureDiskListExecute(r ApiGetStorageEn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2797,11 +2843,10 @@ func (a *StorageApiService) GetStorageEnclosureDiskListExecute(r ApiGetStorageEn
 }
 
 type ApiGetStorageEnclosureDiskSlotEpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageEnclosureDiskSlotEpByMoidRequest) Execute() (StorageEnclosureDiskSlotEp, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageEnclosureDiskSlotEpByMoidExecute(r)
@@ -2817,8 +2862,8 @@ GetStorageEnclosureDiskSlotEpByMoid Read a 'storage.EnclosureDiskSlotEp' resourc
 func (a *StorageApiService) GetStorageEnclosureDiskSlotEpByMoid(ctx _context.Context, moid string) ApiGetStorageEnclosureDiskSlotEpByMoidRequest {
 	return ApiGetStorageEnclosureDiskSlotEpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2925,13 +2970,13 @@ func (a *StorageApiService) GetStorageEnclosureDiskSlotEpByMoidExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2948,19 +2993,19 @@ func (a *StorageApiService) GetStorageEnclosureDiskSlotEpByMoidExecute(r ApiGetS
 }
 
 type ApiGetStorageEnclosureDiskSlotEpListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2968,51 +3013,61 @@ func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Orderby(orderby string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Top(top int32) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Skip(skip int32) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Select_(select_ string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Expand(expand string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Apply(apply string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Count(count bool) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Inlinecount(inlinecount string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) At(at string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageEnclosureDiskSlotEpListRequest) Tags(tags string) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	r.tags = &tags
@@ -3032,7 +3087,7 @@ GetStorageEnclosureDiskSlotEpList Read a 'storage.EnclosureDiskSlotEp' resource.
 func (a *StorageApiService) GetStorageEnclosureDiskSlotEpList(ctx _context.Context) ApiGetStorageEnclosureDiskSlotEpListRequest {
 	return ApiGetStorageEnclosureDiskSlotEpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3171,13 +3226,13 @@ func (a *StorageApiService) GetStorageEnclosureDiskSlotEpListExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3194,19 +3249,19 @@ func (a *StorageApiService) GetStorageEnclosureDiskSlotEpListExecute(r ApiGetSto
 }
 
 type ApiGetStorageEnclosureListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3214,51 +3269,61 @@ func (r ApiGetStorageEnclosureListRequest) Filter(filter string) ApiGetStorageEn
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageEnclosureListRequest) Orderby(orderby string) ApiGetStorageEnclosureListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageEnclosureListRequest) Top(top int32) ApiGetStorageEnclosureListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageEnclosureListRequest) Skip(skip int32) ApiGetStorageEnclosureListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageEnclosureListRequest) Select_(select_ string) ApiGetStorageEnclosureListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageEnclosureListRequest) Expand(expand string) ApiGetStorageEnclosureListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageEnclosureListRequest) Apply(apply string) ApiGetStorageEnclosureListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageEnclosureListRequest) Count(count bool) ApiGetStorageEnclosureListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageEnclosureListRequest) Inlinecount(inlinecount string) ApiGetStorageEnclosureListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageEnclosureListRequest) At(at string) ApiGetStorageEnclosureListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageEnclosureListRequest) Tags(tags string) ApiGetStorageEnclosureListRequest {
 	r.tags = &tags
@@ -3278,7 +3343,7 @@ GetStorageEnclosureList Read a 'storage.Enclosure' resource.
 func (a *StorageApiService) GetStorageEnclosureList(ctx _context.Context) ApiGetStorageEnclosureListRequest {
 	return ApiGetStorageEnclosureListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3417,13 +3482,13 @@ func (a *StorageApiService) GetStorageEnclosureListExecute(r ApiGetStorageEnclos
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3440,11 +3505,10 @@ func (a *StorageApiService) GetStorageEnclosureListExecute(r ApiGetStorageEnclos
 }
 
 type ApiGetStorageFlexFlashControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexFlashControllerByMoidRequest) Execute() (StorageFlexFlashController, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexFlashControllerByMoidExecute(r)
@@ -3460,8 +3524,8 @@ GetStorageFlexFlashControllerByMoid Read a 'storage.FlexFlashController' resourc
 func (a *StorageApiService) GetStorageFlexFlashControllerByMoid(ctx _context.Context, moid string) ApiGetStorageFlexFlashControllerByMoidRequest {
 	return ApiGetStorageFlexFlashControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3568,13 +3632,13 @@ func (a *StorageApiService) GetStorageFlexFlashControllerByMoidExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3591,19 +3655,19 @@ func (a *StorageApiService) GetStorageFlexFlashControllerByMoidExecute(r ApiGetS
 }
 
 type ApiGetStorageFlexFlashControllerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3611,51 +3675,61 @@ func (r ApiGetStorageFlexFlashControllerListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexFlashControllerListRequest) Orderby(orderby string) ApiGetStorageFlexFlashControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexFlashControllerListRequest) Top(top int32) ApiGetStorageFlexFlashControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexFlashControllerListRequest) Skip(skip int32) ApiGetStorageFlexFlashControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexFlashControllerListRequest) Select_(select_ string) ApiGetStorageFlexFlashControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexFlashControllerListRequest) Expand(expand string) ApiGetStorageFlexFlashControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexFlashControllerListRequest) Apply(apply string) ApiGetStorageFlexFlashControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexFlashControllerListRequest) Count(count bool) ApiGetStorageFlexFlashControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexFlashControllerListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexFlashControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexFlashControllerListRequest) At(at string) ApiGetStorageFlexFlashControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexFlashControllerListRequest) Tags(tags string) ApiGetStorageFlexFlashControllerListRequest {
 	r.tags = &tags
@@ -3675,7 +3749,7 @@ GetStorageFlexFlashControllerList Read a 'storage.FlexFlashController' resource.
 func (a *StorageApiService) GetStorageFlexFlashControllerList(ctx _context.Context) ApiGetStorageFlexFlashControllerListRequest {
 	return ApiGetStorageFlexFlashControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3814,13 +3888,13 @@ func (a *StorageApiService) GetStorageFlexFlashControllerListExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3837,11 +3911,10 @@ func (a *StorageApiService) GetStorageFlexFlashControllerListExecute(r ApiGetSto
 }
 
 type ApiGetStorageFlexFlashControllerPropsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexFlashControllerPropsByMoidRequest) Execute() (StorageFlexFlashControllerProps, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexFlashControllerPropsByMoidExecute(r)
@@ -3857,8 +3930,8 @@ GetStorageFlexFlashControllerPropsByMoid Read a 'storage.FlexFlashControllerProp
 func (a *StorageApiService) GetStorageFlexFlashControllerPropsByMoid(ctx _context.Context, moid string) ApiGetStorageFlexFlashControllerPropsByMoidRequest {
 	return ApiGetStorageFlexFlashControllerPropsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3965,13 +4038,13 @@ func (a *StorageApiService) GetStorageFlexFlashControllerPropsByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3988,19 +4061,19 @@ func (a *StorageApiService) GetStorageFlexFlashControllerPropsByMoidExecute(r Ap
 }
 
 type ApiGetStorageFlexFlashControllerPropsListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4008,51 +4081,61 @@ func (r ApiGetStorageFlexFlashControllerPropsListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Orderby(orderby string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Top(top int32) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Skip(skip int32) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Select_(select_ string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Expand(expand string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Apply(apply string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Count(count bool) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) At(at string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexFlashControllerPropsListRequest) Tags(tags string) ApiGetStorageFlexFlashControllerPropsListRequest {
 	r.tags = &tags
@@ -4072,7 +4155,7 @@ GetStorageFlexFlashControllerPropsList Read a 'storage.FlexFlashControllerProps'
 func (a *StorageApiService) GetStorageFlexFlashControllerPropsList(ctx _context.Context) ApiGetStorageFlexFlashControllerPropsListRequest {
 	return ApiGetStorageFlexFlashControllerPropsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4211,13 +4294,13 @@ func (a *StorageApiService) GetStorageFlexFlashControllerPropsListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4234,11 +4317,10 @@ func (a *StorageApiService) GetStorageFlexFlashControllerPropsListExecute(r ApiG
 }
 
 type ApiGetStorageFlexFlashPhysicalDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexFlashPhysicalDriveByMoidRequest) Execute() (StorageFlexFlashPhysicalDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexFlashPhysicalDriveByMoidExecute(r)
@@ -4254,8 +4336,8 @@ GetStorageFlexFlashPhysicalDriveByMoid Read a 'storage.FlexFlashPhysicalDrive' r
 func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveByMoid(ctx _context.Context, moid string) ApiGetStorageFlexFlashPhysicalDriveByMoidRequest {
 	return ApiGetStorageFlexFlashPhysicalDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4362,13 +4444,13 @@ func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4385,19 +4467,19 @@ func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveByMoidExecute(r ApiG
 }
 
 type ApiGetStorageFlexFlashPhysicalDriveListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4405,51 +4487,61 @@ func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Orderby(orderby string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Top(top int32) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Skip(skip int32) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Select_(select_ string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Expand(expand string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Apply(apply string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Count(count bool) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) At(at string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexFlashPhysicalDriveListRequest) Tags(tags string) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	r.tags = &tags
@@ -4469,7 +4561,7 @@ GetStorageFlexFlashPhysicalDriveList Read a 'storage.FlexFlashPhysicalDrive' res
 func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveList(ctx _context.Context) ApiGetStorageFlexFlashPhysicalDriveListRequest {
 	return ApiGetStorageFlexFlashPhysicalDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4608,13 +4700,13 @@ func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4631,11 +4723,10 @@ func (a *StorageApiService) GetStorageFlexFlashPhysicalDriveListExecute(r ApiGet
 }
 
 type ApiGetStorageFlexFlashVirtualDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexFlashVirtualDriveByMoidRequest) Execute() (StorageFlexFlashVirtualDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexFlashVirtualDriveByMoidExecute(r)
@@ -4651,8 +4742,8 @@ GetStorageFlexFlashVirtualDriveByMoid Read a 'storage.FlexFlashVirtualDrive' res
 func (a *StorageApiService) GetStorageFlexFlashVirtualDriveByMoid(ctx _context.Context, moid string) ApiGetStorageFlexFlashVirtualDriveByMoidRequest {
 	return ApiGetStorageFlexFlashVirtualDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4759,13 +4850,13 @@ func (a *StorageApiService) GetStorageFlexFlashVirtualDriveByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4782,19 +4873,19 @@ func (a *StorageApiService) GetStorageFlexFlashVirtualDriveByMoidExecute(r ApiGe
 }
 
 type ApiGetStorageFlexFlashVirtualDriveListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4802,51 +4893,61 @@ func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Orderby(orderby string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Top(top int32) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Skip(skip int32) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Select_(select_ string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Expand(expand string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Apply(apply string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Count(count bool) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) At(at string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexFlashVirtualDriveListRequest) Tags(tags string) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	r.tags = &tags
@@ -4866,7 +4967,7 @@ GetStorageFlexFlashVirtualDriveList Read a 'storage.FlexFlashVirtualDrive' resou
 func (a *StorageApiService) GetStorageFlexFlashVirtualDriveList(ctx _context.Context) ApiGetStorageFlexFlashVirtualDriveListRequest {
 	return ApiGetStorageFlexFlashVirtualDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5005,13 +5106,13 @@ func (a *StorageApiService) GetStorageFlexFlashVirtualDriveListExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5028,11 +5129,10 @@ func (a *StorageApiService) GetStorageFlexFlashVirtualDriveListExecute(r ApiGetS
 }
 
 type ApiGetStorageFlexUtilControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexUtilControllerByMoidRequest) Execute() (StorageFlexUtilController, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexUtilControllerByMoidExecute(r)
@@ -5048,8 +5148,8 @@ GetStorageFlexUtilControllerByMoid Read a 'storage.FlexUtilController' resource.
 func (a *StorageApiService) GetStorageFlexUtilControllerByMoid(ctx _context.Context, moid string) ApiGetStorageFlexUtilControllerByMoidRequest {
 	return ApiGetStorageFlexUtilControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5156,13 +5256,13 @@ func (a *StorageApiService) GetStorageFlexUtilControllerByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5179,19 +5279,19 @@ func (a *StorageApiService) GetStorageFlexUtilControllerByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStorageFlexUtilControllerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5199,51 +5299,61 @@ func (r ApiGetStorageFlexUtilControllerListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexUtilControllerListRequest) Orderby(orderby string) ApiGetStorageFlexUtilControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexUtilControllerListRequest) Top(top int32) ApiGetStorageFlexUtilControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexUtilControllerListRequest) Skip(skip int32) ApiGetStorageFlexUtilControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexUtilControllerListRequest) Select_(select_ string) ApiGetStorageFlexUtilControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexUtilControllerListRequest) Expand(expand string) ApiGetStorageFlexUtilControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexUtilControllerListRequest) Apply(apply string) ApiGetStorageFlexUtilControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexUtilControllerListRequest) Count(count bool) ApiGetStorageFlexUtilControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexUtilControllerListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexUtilControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexUtilControllerListRequest) At(at string) ApiGetStorageFlexUtilControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexUtilControllerListRequest) Tags(tags string) ApiGetStorageFlexUtilControllerListRequest {
 	r.tags = &tags
@@ -5263,7 +5373,7 @@ GetStorageFlexUtilControllerList Read a 'storage.FlexUtilController' resource.
 func (a *StorageApiService) GetStorageFlexUtilControllerList(ctx _context.Context) ApiGetStorageFlexUtilControllerListRequest {
 	return ApiGetStorageFlexUtilControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5402,13 +5512,13 @@ func (a *StorageApiService) GetStorageFlexUtilControllerListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5425,11 +5535,10 @@ func (a *StorageApiService) GetStorageFlexUtilControllerListExecute(r ApiGetStor
 }
 
 type ApiGetStorageFlexUtilPhysicalDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexUtilPhysicalDriveByMoidRequest) Execute() (StorageFlexUtilPhysicalDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexUtilPhysicalDriveByMoidExecute(r)
@@ -5445,8 +5554,8 @@ GetStorageFlexUtilPhysicalDriveByMoid Read a 'storage.FlexUtilPhysicalDrive' res
 func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveByMoid(ctx _context.Context, moid string) ApiGetStorageFlexUtilPhysicalDriveByMoidRequest {
 	return ApiGetStorageFlexUtilPhysicalDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5553,13 +5662,13 @@ func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5576,19 +5685,19 @@ func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveByMoidExecute(r ApiGe
 }
 
 type ApiGetStorageFlexUtilPhysicalDriveListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5596,51 +5705,61 @@ func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Orderby(orderby string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Top(top int32) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Skip(skip int32) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Select_(select_ string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Expand(expand string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Apply(apply string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Count(count bool) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) At(at string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexUtilPhysicalDriveListRequest) Tags(tags string) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	r.tags = &tags
@@ -5660,7 +5779,7 @@ GetStorageFlexUtilPhysicalDriveList Read a 'storage.FlexUtilPhysicalDrive' resou
 func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveList(ctx _context.Context) ApiGetStorageFlexUtilPhysicalDriveListRequest {
 	return ApiGetStorageFlexUtilPhysicalDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5799,13 +5918,13 @@ func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveListExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5822,11 +5941,10 @@ func (a *StorageApiService) GetStorageFlexUtilPhysicalDriveListExecute(r ApiGetS
 }
 
 type ApiGetStorageFlexUtilVirtualDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageFlexUtilVirtualDriveByMoidRequest) Execute() (StorageFlexUtilVirtualDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageFlexUtilVirtualDriveByMoidExecute(r)
@@ -5842,8 +5960,8 @@ GetStorageFlexUtilVirtualDriveByMoid Read a 'storage.FlexUtilVirtualDrive' resou
 func (a *StorageApiService) GetStorageFlexUtilVirtualDriveByMoid(ctx _context.Context, moid string) ApiGetStorageFlexUtilVirtualDriveByMoidRequest {
 	return ApiGetStorageFlexUtilVirtualDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5950,13 +6068,13 @@ func (a *StorageApiService) GetStorageFlexUtilVirtualDriveByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5973,19 +6091,19 @@ func (a *StorageApiService) GetStorageFlexUtilVirtualDriveByMoidExecute(r ApiGet
 }
 
 type ApiGetStorageFlexUtilVirtualDriveListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5993,51 +6111,61 @@ func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Orderby(orderby string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Top(top int32) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Skip(skip int32) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Select_(select_ string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Expand(expand string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Apply(apply string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Count(count bool) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Inlinecount(inlinecount string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) At(at string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageFlexUtilVirtualDriveListRequest) Tags(tags string) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	r.tags = &tags
@@ -6057,7 +6185,7 @@ GetStorageFlexUtilVirtualDriveList Read a 'storage.FlexUtilVirtualDrive' resourc
 func (a *StorageApiService) GetStorageFlexUtilVirtualDriveList(ctx _context.Context) ApiGetStorageFlexUtilVirtualDriveListRequest {
 	return ApiGetStorageFlexUtilVirtualDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6196,13 +6324,13 @@ func (a *StorageApiService) GetStorageFlexUtilVirtualDriveListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6219,11 +6347,10 @@ func (a *StorageApiService) GetStorageFlexUtilVirtualDriveListExecute(r ApiGetSt
 }
 
 type ApiGetStorageHitachiArrayByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiArrayByMoidRequest) Execute() (StorageHitachiArray, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiArrayByMoidExecute(r)
@@ -6239,8 +6366,8 @@ GetStorageHitachiArrayByMoid Read a 'storage.HitachiArray' resource.
 func (a *StorageApiService) GetStorageHitachiArrayByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiArrayByMoidRequest {
 	return ApiGetStorageHitachiArrayByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6347,13 +6474,13 @@ func (a *StorageApiService) GetStorageHitachiArrayByMoidExecute(r ApiGetStorageH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6370,19 +6497,19 @@ func (a *StorageApiService) GetStorageHitachiArrayByMoidExecute(r ApiGetStorageH
 }
 
 type ApiGetStorageHitachiArrayListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6390,51 +6517,61 @@ func (r ApiGetStorageHitachiArrayListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiArrayListRequest) Orderby(orderby string) ApiGetStorageHitachiArrayListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiArrayListRequest) Top(top int32) ApiGetStorageHitachiArrayListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiArrayListRequest) Skip(skip int32) ApiGetStorageHitachiArrayListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiArrayListRequest) Select_(select_ string) ApiGetStorageHitachiArrayListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiArrayListRequest) Expand(expand string) ApiGetStorageHitachiArrayListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiArrayListRequest) Apply(apply string) ApiGetStorageHitachiArrayListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiArrayListRequest) Count(count bool) ApiGetStorageHitachiArrayListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiArrayListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiArrayListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiArrayListRequest) At(at string) ApiGetStorageHitachiArrayListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiArrayListRequest) Tags(tags string) ApiGetStorageHitachiArrayListRequest {
 	r.tags = &tags
@@ -6454,7 +6591,7 @@ GetStorageHitachiArrayList Read a 'storage.HitachiArray' resource.
 func (a *StorageApiService) GetStorageHitachiArrayList(ctx _context.Context) ApiGetStorageHitachiArrayListRequest {
 	return ApiGetStorageHitachiArrayListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6593,13 +6730,13 @@ func (a *StorageApiService) GetStorageHitachiArrayListExecute(r ApiGetStorageHit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6616,11 +6753,10 @@ func (a *StorageApiService) GetStorageHitachiArrayListExecute(r ApiGetStorageHit
 }
 
 type ApiGetStorageHitachiControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiControllerByMoidRequest) Execute() (StorageHitachiController, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiControllerByMoidExecute(r)
@@ -6636,8 +6772,8 @@ GetStorageHitachiControllerByMoid Read a 'storage.HitachiController' resource.
 func (a *StorageApiService) GetStorageHitachiControllerByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiControllerByMoidRequest {
 	return ApiGetStorageHitachiControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6744,13 +6880,13 @@ func (a *StorageApiService) GetStorageHitachiControllerByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6767,19 +6903,19 @@ func (a *StorageApiService) GetStorageHitachiControllerByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStorageHitachiControllerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6787,51 +6923,61 @@ func (r ApiGetStorageHitachiControllerListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiControllerListRequest) Orderby(orderby string) ApiGetStorageHitachiControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiControllerListRequest) Top(top int32) ApiGetStorageHitachiControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiControllerListRequest) Skip(skip int32) ApiGetStorageHitachiControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiControllerListRequest) Select_(select_ string) ApiGetStorageHitachiControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiControllerListRequest) Expand(expand string) ApiGetStorageHitachiControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiControllerListRequest) Apply(apply string) ApiGetStorageHitachiControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiControllerListRequest) Count(count bool) ApiGetStorageHitachiControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiControllerListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiControllerListRequest) At(at string) ApiGetStorageHitachiControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiControllerListRequest) Tags(tags string) ApiGetStorageHitachiControllerListRequest {
 	r.tags = &tags
@@ -6851,7 +6997,7 @@ GetStorageHitachiControllerList Read a 'storage.HitachiController' resource.
 func (a *StorageApiService) GetStorageHitachiControllerList(ctx _context.Context) ApiGetStorageHitachiControllerListRequest {
 	return ApiGetStorageHitachiControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6990,13 +7136,13 @@ func (a *StorageApiService) GetStorageHitachiControllerListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7013,11 +7159,10 @@ func (a *StorageApiService) GetStorageHitachiControllerListExecute(r ApiGetStora
 }
 
 type ApiGetStorageHitachiDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiDiskByMoidRequest) Execute() (StorageHitachiDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiDiskByMoidExecute(r)
@@ -7033,8 +7178,8 @@ GetStorageHitachiDiskByMoid Read a 'storage.HitachiDisk' resource.
 func (a *StorageApiService) GetStorageHitachiDiskByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiDiskByMoidRequest {
 	return ApiGetStorageHitachiDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7141,13 +7286,13 @@ func (a *StorageApiService) GetStorageHitachiDiskByMoidExecute(r ApiGetStorageHi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7164,19 +7309,19 @@ func (a *StorageApiService) GetStorageHitachiDiskByMoidExecute(r ApiGetStorageHi
 }
 
 type ApiGetStorageHitachiDiskListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7184,51 +7329,61 @@ func (r ApiGetStorageHitachiDiskListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiDiskListRequest) Orderby(orderby string) ApiGetStorageHitachiDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiDiskListRequest) Top(top int32) ApiGetStorageHitachiDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiDiskListRequest) Skip(skip int32) ApiGetStorageHitachiDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiDiskListRequest) Select_(select_ string) ApiGetStorageHitachiDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiDiskListRequest) Expand(expand string) ApiGetStorageHitachiDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiDiskListRequest) Apply(apply string) ApiGetStorageHitachiDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiDiskListRequest) Count(count bool) ApiGetStorageHitachiDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiDiskListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiDiskListRequest) At(at string) ApiGetStorageHitachiDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiDiskListRequest) Tags(tags string) ApiGetStorageHitachiDiskListRequest {
 	r.tags = &tags
@@ -7248,7 +7403,7 @@ GetStorageHitachiDiskList Read a 'storage.HitachiDisk' resource.
 func (a *StorageApiService) GetStorageHitachiDiskList(ctx _context.Context) ApiGetStorageHitachiDiskListRequest {
 	return ApiGetStorageHitachiDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7387,13 +7542,13 @@ func (a *StorageApiService) GetStorageHitachiDiskListExecute(r ApiGetStorageHita
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7410,11 +7565,10 @@ func (a *StorageApiService) GetStorageHitachiDiskListExecute(r ApiGetStorageHita
 }
 
 type ApiGetStorageHitachiHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiHostByMoidRequest) Execute() (StorageHitachiHost, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiHostByMoidExecute(r)
@@ -7430,8 +7584,8 @@ GetStorageHitachiHostByMoid Read a 'storage.HitachiHost' resource.
 func (a *StorageApiService) GetStorageHitachiHostByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiHostByMoidRequest {
 	return ApiGetStorageHitachiHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7538,13 +7692,13 @@ func (a *StorageApiService) GetStorageHitachiHostByMoidExecute(r ApiGetStorageHi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7561,19 +7715,19 @@ func (a *StorageApiService) GetStorageHitachiHostByMoidExecute(r ApiGetStorageHi
 }
 
 type ApiGetStorageHitachiHostListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7581,51 +7735,61 @@ func (r ApiGetStorageHitachiHostListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiHostListRequest) Orderby(orderby string) ApiGetStorageHitachiHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiHostListRequest) Top(top int32) ApiGetStorageHitachiHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiHostListRequest) Skip(skip int32) ApiGetStorageHitachiHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiHostListRequest) Select_(select_ string) ApiGetStorageHitachiHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiHostListRequest) Expand(expand string) ApiGetStorageHitachiHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiHostListRequest) Apply(apply string) ApiGetStorageHitachiHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiHostListRequest) Count(count bool) ApiGetStorageHitachiHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiHostListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiHostListRequest) At(at string) ApiGetStorageHitachiHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiHostListRequest) Tags(tags string) ApiGetStorageHitachiHostListRequest {
 	r.tags = &tags
@@ -7645,7 +7809,7 @@ GetStorageHitachiHostList Read a 'storage.HitachiHost' resource.
 func (a *StorageApiService) GetStorageHitachiHostList(ctx _context.Context) ApiGetStorageHitachiHostListRequest {
 	return ApiGetStorageHitachiHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7784,13 +7948,13 @@ func (a *StorageApiService) GetStorageHitachiHostListExecute(r ApiGetStorageHita
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7807,11 +7971,10 @@ func (a *StorageApiService) GetStorageHitachiHostListExecute(r ApiGetStorageHita
 }
 
 type ApiGetStorageHitachiHostLunByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiHostLunByMoidRequest) Execute() (StorageHitachiHostLun, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiHostLunByMoidExecute(r)
@@ -7827,8 +7990,8 @@ GetStorageHitachiHostLunByMoid Read a 'storage.HitachiHostLun' resource.
 func (a *StorageApiService) GetStorageHitachiHostLunByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiHostLunByMoidRequest {
 	return ApiGetStorageHitachiHostLunByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7935,13 +8098,13 @@ func (a *StorageApiService) GetStorageHitachiHostLunByMoidExecute(r ApiGetStorag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7958,19 +8121,19 @@ func (a *StorageApiService) GetStorageHitachiHostLunByMoidExecute(r ApiGetStorag
 }
 
 type ApiGetStorageHitachiHostLunListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7978,51 +8141,61 @@ func (r ApiGetStorageHitachiHostLunListRequest) Filter(filter string) ApiGetStor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiHostLunListRequest) Orderby(orderby string) ApiGetStorageHitachiHostLunListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiHostLunListRequest) Top(top int32) ApiGetStorageHitachiHostLunListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiHostLunListRequest) Skip(skip int32) ApiGetStorageHitachiHostLunListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiHostLunListRequest) Select_(select_ string) ApiGetStorageHitachiHostLunListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiHostLunListRequest) Expand(expand string) ApiGetStorageHitachiHostLunListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiHostLunListRequest) Apply(apply string) ApiGetStorageHitachiHostLunListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiHostLunListRequest) Count(count bool) ApiGetStorageHitachiHostLunListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiHostLunListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiHostLunListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiHostLunListRequest) At(at string) ApiGetStorageHitachiHostLunListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiHostLunListRequest) Tags(tags string) ApiGetStorageHitachiHostLunListRequest {
 	r.tags = &tags
@@ -8042,7 +8215,7 @@ GetStorageHitachiHostLunList Read a 'storage.HitachiHostLun' resource.
 func (a *StorageApiService) GetStorageHitachiHostLunList(ctx _context.Context) ApiGetStorageHitachiHostLunListRequest {
 	return ApiGetStorageHitachiHostLunListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8181,13 +8354,13 @@ func (a *StorageApiService) GetStorageHitachiHostLunListExecute(r ApiGetStorageH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8204,11 +8377,10 @@ func (a *StorageApiService) GetStorageHitachiHostLunListExecute(r ApiGetStorageH
 }
 
 type ApiGetStorageHitachiParityGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiParityGroupByMoidRequest) Execute() (StorageHitachiParityGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiParityGroupByMoidExecute(r)
@@ -8224,8 +8396,8 @@ GetStorageHitachiParityGroupByMoid Read a 'storage.HitachiParityGroup' resource.
 func (a *StorageApiService) GetStorageHitachiParityGroupByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiParityGroupByMoidRequest {
 	return ApiGetStorageHitachiParityGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8332,13 +8504,13 @@ func (a *StorageApiService) GetStorageHitachiParityGroupByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8355,19 +8527,19 @@ func (a *StorageApiService) GetStorageHitachiParityGroupByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStorageHitachiParityGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8375,51 +8547,61 @@ func (r ApiGetStorageHitachiParityGroupListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiParityGroupListRequest) Orderby(orderby string) ApiGetStorageHitachiParityGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiParityGroupListRequest) Top(top int32) ApiGetStorageHitachiParityGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiParityGroupListRequest) Skip(skip int32) ApiGetStorageHitachiParityGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiParityGroupListRequest) Select_(select_ string) ApiGetStorageHitachiParityGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiParityGroupListRequest) Expand(expand string) ApiGetStorageHitachiParityGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiParityGroupListRequest) Apply(apply string) ApiGetStorageHitachiParityGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiParityGroupListRequest) Count(count bool) ApiGetStorageHitachiParityGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiParityGroupListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiParityGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiParityGroupListRequest) At(at string) ApiGetStorageHitachiParityGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiParityGroupListRequest) Tags(tags string) ApiGetStorageHitachiParityGroupListRequest {
 	r.tags = &tags
@@ -8439,7 +8621,7 @@ GetStorageHitachiParityGroupList Read a 'storage.HitachiParityGroup' resource.
 func (a *StorageApiService) GetStorageHitachiParityGroupList(ctx _context.Context) ApiGetStorageHitachiParityGroupListRequest {
 	return ApiGetStorageHitachiParityGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8578,13 +8760,13 @@ func (a *StorageApiService) GetStorageHitachiParityGroupListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8601,11 +8783,10 @@ func (a *StorageApiService) GetStorageHitachiParityGroupListExecute(r ApiGetStor
 }
 
 type ApiGetStorageHitachiPoolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiPoolByMoidRequest) Execute() (StorageHitachiPool, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiPoolByMoidExecute(r)
@@ -8621,8 +8802,8 @@ GetStorageHitachiPoolByMoid Read a 'storage.HitachiPool' resource.
 func (a *StorageApiService) GetStorageHitachiPoolByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiPoolByMoidRequest {
 	return ApiGetStorageHitachiPoolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8729,13 +8910,13 @@ func (a *StorageApiService) GetStorageHitachiPoolByMoidExecute(r ApiGetStorageHi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8752,19 +8933,19 @@ func (a *StorageApiService) GetStorageHitachiPoolByMoidExecute(r ApiGetStorageHi
 }
 
 type ApiGetStorageHitachiPoolListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8772,51 +8953,61 @@ func (r ApiGetStorageHitachiPoolListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiPoolListRequest) Orderby(orderby string) ApiGetStorageHitachiPoolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiPoolListRequest) Top(top int32) ApiGetStorageHitachiPoolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiPoolListRequest) Skip(skip int32) ApiGetStorageHitachiPoolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiPoolListRequest) Select_(select_ string) ApiGetStorageHitachiPoolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiPoolListRequest) Expand(expand string) ApiGetStorageHitachiPoolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiPoolListRequest) Apply(apply string) ApiGetStorageHitachiPoolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiPoolListRequest) Count(count bool) ApiGetStorageHitachiPoolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiPoolListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiPoolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiPoolListRequest) At(at string) ApiGetStorageHitachiPoolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiPoolListRequest) Tags(tags string) ApiGetStorageHitachiPoolListRequest {
 	r.tags = &tags
@@ -8836,7 +9027,7 @@ GetStorageHitachiPoolList Read a 'storage.HitachiPool' resource.
 func (a *StorageApiService) GetStorageHitachiPoolList(ctx _context.Context) ApiGetStorageHitachiPoolListRequest {
 	return ApiGetStorageHitachiPoolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8975,13 +9166,13 @@ func (a *StorageApiService) GetStorageHitachiPoolListExecute(r ApiGetStorageHita
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8998,11 +9189,10 @@ func (a *StorageApiService) GetStorageHitachiPoolListExecute(r ApiGetStorageHita
 }
 
 type ApiGetStorageHitachiPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiPortByMoidRequest) Execute() (StorageHitachiPort, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiPortByMoidExecute(r)
@@ -9018,8 +9208,8 @@ GetStorageHitachiPortByMoid Read a 'storage.HitachiPort' resource.
 func (a *StorageApiService) GetStorageHitachiPortByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiPortByMoidRequest {
 	return ApiGetStorageHitachiPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9126,13 +9316,13 @@ func (a *StorageApiService) GetStorageHitachiPortByMoidExecute(r ApiGetStorageHi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9149,19 +9339,19 @@ func (a *StorageApiService) GetStorageHitachiPortByMoidExecute(r ApiGetStorageHi
 }
 
 type ApiGetStorageHitachiPortListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9169,51 +9359,61 @@ func (r ApiGetStorageHitachiPortListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiPortListRequest) Orderby(orderby string) ApiGetStorageHitachiPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiPortListRequest) Top(top int32) ApiGetStorageHitachiPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiPortListRequest) Skip(skip int32) ApiGetStorageHitachiPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiPortListRequest) Select_(select_ string) ApiGetStorageHitachiPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiPortListRequest) Expand(expand string) ApiGetStorageHitachiPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiPortListRequest) Apply(apply string) ApiGetStorageHitachiPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiPortListRequest) Count(count bool) ApiGetStorageHitachiPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiPortListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiPortListRequest) At(at string) ApiGetStorageHitachiPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiPortListRequest) Tags(tags string) ApiGetStorageHitachiPortListRequest {
 	r.tags = &tags
@@ -9233,7 +9433,7 @@ GetStorageHitachiPortList Read a 'storage.HitachiPort' resource.
 func (a *StorageApiService) GetStorageHitachiPortList(ctx _context.Context) ApiGetStorageHitachiPortListRequest {
 	return ApiGetStorageHitachiPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9372,13 +9572,13 @@ func (a *StorageApiService) GetStorageHitachiPortListExecute(r ApiGetStorageHita
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9395,11 +9595,10 @@ func (a *StorageApiService) GetStorageHitachiPortListExecute(r ApiGetStorageHita
 }
 
 type ApiGetStorageHitachiVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHitachiVolumeByMoidRequest) Execute() (StorageHitachiVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHitachiVolumeByMoidExecute(r)
@@ -9415,8 +9614,8 @@ GetStorageHitachiVolumeByMoid Read a 'storage.HitachiVolume' resource.
 func (a *StorageApiService) GetStorageHitachiVolumeByMoid(ctx _context.Context, moid string) ApiGetStorageHitachiVolumeByMoidRequest {
 	return ApiGetStorageHitachiVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9523,13 +9722,13 @@ func (a *StorageApiService) GetStorageHitachiVolumeByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9546,19 +9745,19 @@ func (a *StorageApiService) GetStorageHitachiVolumeByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStorageHitachiVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9566,51 +9765,61 @@ func (r ApiGetStorageHitachiVolumeListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHitachiVolumeListRequest) Orderby(orderby string) ApiGetStorageHitachiVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHitachiVolumeListRequest) Top(top int32) ApiGetStorageHitachiVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHitachiVolumeListRequest) Skip(skip int32) ApiGetStorageHitachiVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHitachiVolumeListRequest) Select_(select_ string) ApiGetStorageHitachiVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHitachiVolumeListRequest) Expand(expand string) ApiGetStorageHitachiVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHitachiVolumeListRequest) Apply(apply string) ApiGetStorageHitachiVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHitachiVolumeListRequest) Count(count bool) ApiGetStorageHitachiVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHitachiVolumeListRequest) Inlinecount(inlinecount string) ApiGetStorageHitachiVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHitachiVolumeListRequest) At(at string) ApiGetStorageHitachiVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHitachiVolumeListRequest) Tags(tags string) ApiGetStorageHitachiVolumeListRequest {
 	r.tags = &tags
@@ -9630,7 +9839,7 @@ GetStorageHitachiVolumeList Read a 'storage.HitachiVolume' resource.
 func (a *StorageApiService) GetStorageHitachiVolumeList(ctx _context.Context) ApiGetStorageHitachiVolumeListRequest {
 	return ApiGetStorageHitachiVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9769,13 +9978,13 @@ func (a *StorageApiService) GetStorageHitachiVolumeListExecute(r ApiGetStorageHi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9792,11 +10001,10 @@ func (a *StorageApiService) GetStorageHitachiVolumeListExecute(r ApiGetStorageHi
 }
 
 type ApiGetStorageHyperFlexStorageContainerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHyperFlexStorageContainerByMoidRequest) Execute() (StorageHyperFlexStorageContainer, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHyperFlexStorageContainerByMoidExecute(r)
@@ -9812,8 +10020,8 @@ GetStorageHyperFlexStorageContainerByMoid Read a 'storage.HyperFlexStorageContai
 func (a *StorageApiService) GetStorageHyperFlexStorageContainerByMoid(ctx _context.Context, moid string) ApiGetStorageHyperFlexStorageContainerByMoidRequest {
 	return ApiGetStorageHyperFlexStorageContainerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9920,13 +10128,13 @@ func (a *StorageApiService) GetStorageHyperFlexStorageContainerByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9943,19 +10151,19 @@ func (a *StorageApiService) GetStorageHyperFlexStorageContainerByMoidExecute(r A
 }
 
 type ApiGetStorageHyperFlexStorageContainerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9963,51 +10171,61 @@ func (r ApiGetStorageHyperFlexStorageContainerListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Orderby(orderby string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Top(top int32) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Skip(skip int32) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Select_(select_ string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Expand(expand string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Apply(apply string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Count(count bool) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Inlinecount(inlinecount string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) At(at string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHyperFlexStorageContainerListRequest) Tags(tags string) ApiGetStorageHyperFlexStorageContainerListRequest {
 	r.tags = &tags
@@ -10027,7 +10245,7 @@ GetStorageHyperFlexStorageContainerList Read a 'storage.HyperFlexStorageContaine
 func (a *StorageApiService) GetStorageHyperFlexStorageContainerList(ctx _context.Context) ApiGetStorageHyperFlexStorageContainerListRequest {
 	return ApiGetStorageHyperFlexStorageContainerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10166,13 +10384,13 @@ func (a *StorageApiService) GetStorageHyperFlexStorageContainerListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10189,11 +10407,10 @@ func (a *StorageApiService) GetStorageHyperFlexStorageContainerListExecute(r Api
 }
 
 type ApiGetStorageHyperFlexVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageHyperFlexVolumeByMoidRequest) Execute() (StorageHyperFlexVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageHyperFlexVolumeByMoidExecute(r)
@@ -10209,8 +10426,8 @@ GetStorageHyperFlexVolumeByMoid Read a 'storage.HyperFlexVolume' resource.
 func (a *StorageApiService) GetStorageHyperFlexVolumeByMoid(ctx _context.Context, moid string) ApiGetStorageHyperFlexVolumeByMoidRequest {
 	return ApiGetStorageHyperFlexVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10317,13 +10534,13 @@ func (a *StorageApiService) GetStorageHyperFlexVolumeByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10340,19 +10557,19 @@ func (a *StorageApiService) GetStorageHyperFlexVolumeByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageHyperFlexVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10360,51 +10577,61 @@ func (r ApiGetStorageHyperFlexVolumeListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Orderby(orderby string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Top(top int32) ApiGetStorageHyperFlexVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Skip(skip int32) ApiGetStorageHyperFlexVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Select_(select_ string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Expand(expand string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Apply(apply string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Count(count bool) ApiGetStorageHyperFlexVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Inlinecount(inlinecount string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageHyperFlexVolumeListRequest) At(at string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageHyperFlexVolumeListRequest) Tags(tags string) ApiGetStorageHyperFlexVolumeListRequest {
 	r.tags = &tags
@@ -10424,7 +10651,7 @@ GetStorageHyperFlexVolumeList Read a 'storage.HyperFlexVolume' resource.
 func (a *StorageApiService) GetStorageHyperFlexVolumeList(ctx _context.Context) ApiGetStorageHyperFlexVolumeListRequest {
 	return ApiGetStorageHyperFlexVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10563,13 +10790,13 @@ func (a *StorageApiService) GetStorageHyperFlexVolumeListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10586,11 +10813,10 @@ func (a *StorageApiService) GetStorageHyperFlexVolumeListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageItemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageItemByMoidRequest) Execute() (StorageItem, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageItemByMoidExecute(r)
@@ -10606,8 +10832,8 @@ GetStorageItemByMoid Read a 'storage.Item' resource.
 func (a *StorageApiService) GetStorageItemByMoid(ctx _context.Context, moid string) ApiGetStorageItemByMoidRequest {
 	return ApiGetStorageItemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10714,13 +10940,13 @@ func (a *StorageApiService) GetStorageItemByMoidExecute(r ApiGetStorageItemByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10737,19 +10963,19 @@ func (a *StorageApiService) GetStorageItemByMoidExecute(r ApiGetStorageItemByMoi
 }
 
 type ApiGetStorageItemListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10757,51 +10983,61 @@ func (r ApiGetStorageItemListRequest) Filter(filter string) ApiGetStorageItemLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageItemListRequest) Orderby(orderby string) ApiGetStorageItemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageItemListRequest) Top(top int32) ApiGetStorageItemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageItemListRequest) Skip(skip int32) ApiGetStorageItemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageItemListRequest) Select_(select_ string) ApiGetStorageItemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageItemListRequest) Expand(expand string) ApiGetStorageItemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageItemListRequest) Apply(apply string) ApiGetStorageItemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageItemListRequest) Count(count bool) ApiGetStorageItemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageItemListRequest) Inlinecount(inlinecount string) ApiGetStorageItemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageItemListRequest) At(at string) ApiGetStorageItemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageItemListRequest) Tags(tags string) ApiGetStorageItemListRequest {
 	r.tags = &tags
@@ -10821,7 +11057,7 @@ GetStorageItemList Read a 'storage.Item' resource.
 func (a *StorageApiService) GetStorageItemList(ctx _context.Context) ApiGetStorageItemListRequest {
 	return ApiGetStorageItemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10960,13 +11196,13 @@ func (a *StorageApiService) GetStorageItemListExecute(r ApiGetStorageItemListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10983,11 +11219,10 @@ func (a *StorageApiService) GetStorageItemListExecute(r ApiGetStorageItemListReq
 }
 
 type ApiGetStorageNetAppAggregateByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppAggregateByMoidRequest) Execute() (StorageNetAppAggregate, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppAggregateByMoidExecute(r)
@@ -11003,8 +11238,8 @@ GetStorageNetAppAggregateByMoid Read a 'storage.NetAppAggregate' resource.
 func (a *StorageApiService) GetStorageNetAppAggregateByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppAggregateByMoidRequest {
 	return ApiGetStorageNetAppAggregateByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11111,13 +11346,13 @@ func (a *StorageApiService) GetStorageNetAppAggregateByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11134,11 +11369,10 @@ func (a *StorageApiService) GetStorageNetAppAggregateByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppAggregateEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppAggregateEventByMoidRequest) Execute() (StorageNetAppAggregateEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppAggregateEventByMoidExecute(r)
@@ -11154,8 +11388,8 @@ GetStorageNetAppAggregateEventByMoid Read a 'storage.NetAppAggregateEvent' resou
 func (a *StorageApiService) GetStorageNetAppAggregateEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppAggregateEventByMoidRequest {
 	return ApiGetStorageNetAppAggregateEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11262,13 +11496,13 @@ func (a *StorageApiService) GetStorageNetAppAggregateEventByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11285,19 +11519,19 @@ func (a *StorageApiService) GetStorageNetAppAggregateEventByMoidExecute(r ApiGet
 }
 
 type ApiGetStorageNetAppAggregateEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11305,51 +11539,61 @@ func (r ApiGetStorageNetAppAggregateEventListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Orderby(orderby string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Top(top int32) ApiGetStorageNetAppAggregateEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Skip(skip int32) ApiGetStorageNetAppAggregateEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Select_(select_ string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Expand(expand string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Apply(apply string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Count(count bool) ApiGetStorageNetAppAggregateEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppAggregateEventListRequest) At(at string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppAggregateEventListRequest) Tags(tags string) ApiGetStorageNetAppAggregateEventListRequest {
 	r.tags = &tags
@@ -11369,7 +11613,7 @@ GetStorageNetAppAggregateEventList Read a 'storage.NetAppAggregateEvent' resourc
 func (a *StorageApiService) GetStorageNetAppAggregateEventList(ctx _context.Context) ApiGetStorageNetAppAggregateEventListRequest {
 	return ApiGetStorageNetAppAggregateEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11508,13 +11752,13 @@ func (a *StorageApiService) GetStorageNetAppAggregateEventListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11531,19 +11775,19 @@ func (a *StorageApiService) GetStorageNetAppAggregateEventListExecute(r ApiGetSt
 }
 
 type ApiGetStorageNetAppAggregateListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11551,51 +11795,61 @@ func (r ApiGetStorageNetAppAggregateListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppAggregateListRequest) Orderby(orderby string) ApiGetStorageNetAppAggregateListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppAggregateListRequest) Top(top int32) ApiGetStorageNetAppAggregateListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppAggregateListRequest) Skip(skip int32) ApiGetStorageNetAppAggregateListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppAggregateListRequest) Select_(select_ string) ApiGetStorageNetAppAggregateListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppAggregateListRequest) Expand(expand string) ApiGetStorageNetAppAggregateListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppAggregateListRequest) Apply(apply string) ApiGetStorageNetAppAggregateListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppAggregateListRequest) Count(count bool) ApiGetStorageNetAppAggregateListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppAggregateListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppAggregateListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppAggregateListRequest) At(at string) ApiGetStorageNetAppAggregateListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppAggregateListRequest) Tags(tags string) ApiGetStorageNetAppAggregateListRequest {
 	r.tags = &tags
@@ -11615,7 +11869,7 @@ GetStorageNetAppAggregateList Read a 'storage.NetAppAggregate' resource.
 func (a *StorageApiService) GetStorageNetAppAggregateList(ctx _context.Context) ApiGetStorageNetAppAggregateListRequest {
 	return ApiGetStorageNetAppAggregateListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11754,13 +12008,13 @@ func (a *StorageApiService) GetStorageNetAppAggregateListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11777,11 +12031,10 @@ func (a *StorageApiService) GetStorageNetAppAggregateListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppBaseDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppBaseDiskByMoidRequest) Execute() (StorageNetAppBaseDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppBaseDiskByMoidExecute(r)
@@ -11797,8 +12050,8 @@ GetStorageNetAppBaseDiskByMoid Read a 'storage.NetAppBaseDisk' resource.
 func (a *StorageApiService) GetStorageNetAppBaseDiskByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppBaseDiskByMoidRequest {
 	return ApiGetStorageNetAppBaseDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11905,13 +12158,13 @@ func (a *StorageApiService) GetStorageNetAppBaseDiskByMoidExecute(r ApiGetStorag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11928,19 +12181,19 @@ func (a *StorageApiService) GetStorageNetAppBaseDiskByMoidExecute(r ApiGetStorag
 }
 
 type ApiGetStorageNetAppBaseDiskListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11948,51 +12201,61 @@ func (r ApiGetStorageNetAppBaseDiskListRequest) Filter(filter string) ApiGetStor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Orderby(orderby string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Top(top int32) ApiGetStorageNetAppBaseDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Skip(skip int32) ApiGetStorageNetAppBaseDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Select_(select_ string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Expand(expand string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Apply(apply string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Count(count bool) ApiGetStorageNetAppBaseDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppBaseDiskListRequest) At(at string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppBaseDiskListRequest) Tags(tags string) ApiGetStorageNetAppBaseDiskListRequest {
 	r.tags = &tags
@@ -12012,7 +12275,7 @@ GetStorageNetAppBaseDiskList Read a 'storage.NetAppBaseDisk' resource.
 func (a *StorageApiService) GetStorageNetAppBaseDiskList(ctx _context.Context) ApiGetStorageNetAppBaseDiskListRequest {
 	return ApiGetStorageNetAppBaseDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12151,13 +12414,13 @@ func (a *StorageApiService) GetStorageNetAppBaseDiskListExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12174,11 +12437,10 @@ func (a *StorageApiService) GetStorageNetAppBaseDiskListExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppClusterByMoidRequest) Execute() (StorageNetAppCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppClusterByMoidExecute(r)
@@ -12194,8 +12456,8 @@ GetStorageNetAppClusterByMoid Read a 'storage.NetAppCluster' resource.
 func (a *StorageApiService) GetStorageNetAppClusterByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppClusterByMoidRequest {
 	return ApiGetStorageNetAppClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12302,13 +12564,13 @@ func (a *StorageApiService) GetStorageNetAppClusterByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12325,11 +12587,10 @@ func (a *StorageApiService) GetStorageNetAppClusterByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppClusterEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppClusterEventByMoidRequest) Execute() (StorageNetAppClusterEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppClusterEventByMoidExecute(r)
@@ -12345,8 +12606,8 @@ GetStorageNetAppClusterEventByMoid Read a 'storage.NetAppClusterEvent' resource.
 func (a *StorageApiService) GetStorageNetAppClusterEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppClusterEventByMoidRequest {
 	return ApiGetStorageNetAppClusterEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12453,13 +12714,13 @@ func (a *StorageApiService) GetStorageNetAppClusterEventByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12476,19 +12737,19 @@ func (a *StorageApiService) GetStorageNetAppClusterEventByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStorageNetAppClusterEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12496,51 +12757,61 @@ func (r ApiGetStorageNetAppClusterEventListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppClusterEventListRequest) Orderby(orderby string) ApiGetStorageNetAppClusterEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppClusterEventListRequest) Top(top int32) ApiGetStorageNetAppClusterEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppClusterEventListRequest) Skip(skip int32) ApiGetStorageNetAppClusterEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppClusterEventListRequest) Select_(select_ string) ApiGetStorageNetAppClusterEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppClusterEventListRequest) Expand(expand string) ApiGetStorageNetAppClusterEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppClusterEventListRequest) Apply(apply string) ApiGetStorageNetAppClusterEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppClusterEventListRequest) Count(count bool) ApiGetStorageNetAppClusterEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppClusterEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppClusterEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppClusterEventListRequest) At(at string) ApiGetStorageNetAppClusterEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppClusterEventListRequest) Tags(tags string) ApiGetStorageNetAppClusterEventListRequest {
 	r.tags = &tags
@@ -12560,7 +12831,7 @@ GetStorageNetAppClusterEventList Read a 'storage.NetAppClusterEvent' resource.
 func (a *StorageApiService) GetStorageNetAppClusterEventList(ctx _context.Context) ApiGetStorageNetAppClusterEventListRequest {
 	return ApiGetStorageNetAppClusterEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12699,13 +12970,13 @@ func (a *StorageApiService) GetStorageNetAppClusterEventListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12722,19 +12993,19 @@ func (a *StorageApiService) GetStorageNetAppClusterEventListExecute(r ApiGetStor
 }
 
 type ApiGetStorageNetAppClusterListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12742,51 +13013,61 @@ func (r ApiGetStorageNetAppClusterListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppClusterListRequest) Orderby(orderby string) ApiGetStorageNetAppClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppClusterListRequest) Top(top int32) ApiGetStorageNetAppClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppClusterListRequest) Skip(skip int32) ApiGetStorageNetAppClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppClusterListRequest) Select_(select_ string) ApiGetStorageNetAppClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppClusterListRequest) Expand(expand string) ApiGetStorageNetAppClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppClusterListRequest) Apply(apply string) ApiGetStorageNetAppClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppClusterListRequest) Count(count bool) ApiGetStorageNetAppClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppClusterListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppClusterListRequest) At(at string) ApiGetStorageNetAppClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppClusterListRequest) Tags(tags string) ApiGetStorageNetAppClusterListRequest {
 	r.tags = &tags
@@ -12806,7 +13087,7 @@ GetStorageNetAppClusterList Read a 'storage.NetAppCluster' resource.
 func (a *StorageApiService) GetStorageNetAppClusterList(ctx _context.Context) ApiGetStorageNetAppClusterListRequest {
 	return ApiGetStorageNetAppClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12945,13 +13226,13 @@ func (a *StorageApiService) GetStorageNetAppClusterListExecute(r ApiGetStorageNe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12968,11 +13249,10 @@ func (a *StorageApiService) GetStorageNetAppClusterListExecute(r ApiGetStorageNe
 }
 
 type ApiGetStorageNetAppDiskEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppDiskEventByMoidRequest) Execute() (StorageNetAppDiskEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppDiskEventByMoidExecute(r)
@@ -12988,8 +13268,8 @@ GetStorageNetAppDiskEventByMoid Read a 'storage.NetAppDiskEvent' resource.
 func (a *StorageApiService) GetStorageNetAppDiskEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppDiskEventByMoidRequest {
 	return ApiGetStorageNetAppDiskEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13096,13 +13376,13 @@ func (a *StorageApiService) GetStorageNetAppDiskEventByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13119,19 +13399,19 @@ func (a *StorageApiService) GetStorageNetAppDiskEventByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppDiskEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13139,51 +13419,61 @@ func (r ApiGetStorageNetAppDiskEventListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppDiskEventListRequest) Orderby(orderby string) ApiGetStorageNetAppDiskEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppDiskEventListRequest) Top(top int32) ApiGetStorageNetAppDiskEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppDiskEventListRequest) Skip(skip int32) ApiGetStorageNetAppDiskEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppDiskEventListRequest) Select_(select_ string) ApiGetStorageNetAppDiskEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppDiskEventListRequest) Expand(expand string) ApiGetStorageNetAppDiskEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppDiskEventListRequest) Apply(apply string) ApiGetStorageNetAppDiskEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppDiskEventListRequest) Count(count bool) ApiGetStorageNetAppDiskEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppDiskEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppDiskEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppDiskEventListRequest) At(at string) ApiGetStorageNetAppDiskEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppDiskEventListRequest) Tags(tags string) ApiGetStorageNetAppDiskEventListRequest {
 	r.tags = &tags
@@ -13203,7 +13493,7 @@ GetStorageNetAppDiskEventList Read a 'storage.NetAppDiskEvent' resource.
 func (a *StorageApiService) GetStorageNetAppDiskEventList(ctx _context.Context) ApiGetStorageNetAppDiskEventListRequest {
 	return ApiGetStorageNetAppDiskEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13342,13 +13632,13 @@ func (a *StorageApiService) GetStorageNetAppDiskEventListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13365,11 +13655,10 @@ func (a *StorageApiService) GetStorageNetAppDiskEventListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppEthernetPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppEthernetPortByMoidRequest) Execute() (StorageNetAppEthernetPort, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppEthernetPortByMoidExecute(r)
@@ -13385,8 +13674,8 @@ GetStorageNetAppEthernetPortByMoid Read a 'storage.NetAppEthernetPort' resource.
 func (a *StorageApiService) GetStorageNetAppEthernetPortByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppEthernetPortByMoidRequest {
 	return ApiGetStorageNetAppEthernetPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13493,13 +13782,13 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13516,11 +13805,10 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStorageNetAppEthernetPortEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppEthernetPortEventByMoidRequest) Execute() (StorageNetAppEthernetPortEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppEthernetPortEventByMoidExecute(r)
@@ -13536,8 +13824,8 @@ GetStorageNetAppEthernetPortEventByMoid Read a 'storage.NetAppEthernetPortEvent'
 func (a *StorageApiService) GetStorageNetAppEthernetPortEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppEthernetPortEventByMoidRequest {
 	return ApiGetStorageNetAppEthernetPortEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13644,13 +13932,13 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortEventByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13667,19 +13955,19 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortEventByMoidExecute(r Api
 }
 
 type ApiGetStorageNetAppEthernetPortEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13687,51 +13975,61 @@ func (r ApiGetStorageNetAppEthernetPortEventListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Orderby(orderby string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Top(top int32) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Skip(skip int32) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Select_(select_ string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Expand(expand string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Apply(apply string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Count(count bool) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) At(at string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppEthernetPortEventListRequest) Tags(tags string) ApiGetStorageNetAppEthernetPortEventListRequest {
 	r.tags = &tags
@@ -13751,7 +14049,7 @@ GetStorageNetAppEthernetPortEventList Read a 'storage.NetAppEthernetPortEvent' r
 func (a *StorageApiService) GetStorageNetAppEthernetPortEventList(ctx _context.Context) ApiGetStorageNetAppEthernetPortEventListRequest {
 	return ApiGetStorageNetAppEthernetPortEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13890,13 +14188,13 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortEventListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13913,19 +14211,19 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortEventListExecute(r ApiGe
 }
 
 type ApiGetStorageNetAppEthernetPortListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13933,51 +14231,61 @@ func (r ApiGetStorageNetAppEthernetPortListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Orderby(orderby string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Top(top int32) ApiGetStorageNetAppEthernetPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Skip(skip int32) ApiGetStorageNetAppEthernetPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Select_(select_ string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Expand(expand string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Apply(apply string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Count(count bool) ApiGetStorageNetAppEthernetPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppEthernetPortListRequest) At(at string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppEthernetPortListRequest) Tags(tags string) ApiGetStorageNetAppEthernetPortListRequest {
 	r.tags = &tags
@@ -13997,7 +14305,7 @@ GetStorageNetAppEthernetPortList Read a 'storage.NetAppEthernetPort' resource.
 func (a *StorageApiService) GetStorageNetAppEthernetPortList(ctx _context.Context) ApiGetStorageNetAppEthernetPortListRequest {
 	return ApiGetStorageNetAppEthernetPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14136,13 +14444,13 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14159,11 +14467,10 @@ func (a *StorageApiService) GetStorageNetAppEthernetPortListExecute(r ApiGetStor
 }
 
 type ApiGetStorageNetAppExportPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppExportPolicyByMoidRequest) Execute() (StorageNetAppExportPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppExportPolicyByMoidExecute(r)
@@ -14179,8 +14486,8 @@ GetStorageNetAppExportPolicyByMoid Read a 'storage.NetAppExportPolicy' resource.
 func (a *StorageApiService) GetStorageNetAppExportPolicyByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppExportPolicyByMoidRequest {
 	return ApiGetStorageNetAppExportPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14287,13 +14594,13 @@ func (a *StorageApiService) GetStorageNetAppExportPolicyByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14310,19 +14617,19 @@ func (a *StorageApiService) GetStorageNetAppExportPolicyByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStorageNetAppExportPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14330,51 +14637,61 @@ func (r ApiGetStorageNetAppExportPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Orderby(orderby string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Top(top int32) ApiGetStorageNetAppExportPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Skip(skip int32) ApiGetStorageNetAppExportPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Select_(select_ string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Expand(expand string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Apply(apply string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Count(count bool) ApiGetStorageNetAppExportPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppExportPolicyListRequest) At(at string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppExportPolicyListRequest) Tags(tags string) ApiGetStorageNetAppExportPolicyListRequest {
 	r.tags = &tags
@@ -14394,7 +14711,7 @@ GetStorageNetAppExportPolicyList Read a 'storage.NetAppExportPolicy' resource.
 func (a *StorageApiService) GetStorageNetAppExportPolicyList(ctx _context.Context) ApiGetStorageNetAppExportPolicyListRequest {
 	return ApiGetStorageNetAppExportPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14533,13 +14850,13 @@ func (a *StorageApiService) GetStorageNetAppExportPolicyListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14556,11 +14873,10 @@ func (a *StorageApiService) GetStorageNetAppExportPolicyListExecute(r ApiGetStor
 }
 
 type ApiGetStorageNetAppFcInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppFcInterfaceByMoidRequest) Execute() (StorageNetAppFcInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppFcInterfaceByMoidExecute(r)
@@ -14576,8 +14892,8 @@ GetStorageNetAppFcInterfaceByMoid Read a 'storage.NetAppFcInterface' resource.
 func (a *StorageApiService) GetStorageNetAppFcInterfaceByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppFcInterfaceByMoidRequest {
 	return ApiGetStorageNetAppFcInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14684,13 +15000,13 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14707,11 +15023,10 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStorageNetAppFcInterfaceEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppFcInterfaceEventByMoidRequest) Execute() (StorageNetAppFcInterfaceEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppFcInterfaceEventByMoidExecute(r)
@@ -14727,8 +15042,8 @@ GetStorageNetAppFcInterfaceEventByMoid Read a 'storage.NetAppFcInterfaceEvent' r
 func (a *StorageApiService) GetStorageNetAppFcInterfaceEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppFcInterfaceEventByMoidRequest {
 	return ApiGetStorageNetAppFcInterfaceEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14835,13 +15150,13 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceEventByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14858,19 +15173,19 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceEventByMoidExecute(r ApiG
 }
 
 type ApiGetStorageNetAppFcInterfaceEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14878,51 +15193,61 @@ func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Orderby(orderby string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Top(top int32) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Skip(skip int32) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Select_(select_ string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Expand(expand string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Apply(apply string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Count(count bool) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) At(at string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppFcInterfaceEventListRequest) Tags(tags string) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	r.tags = &tags
@@ -14942,7 +15267,7 @@ GetStorageNetAppFcInterfaceEventList Read a 'storage.NetAppFcInterfaceEvent' res
 func (a *StorageApiService) GetStorageNetAppFcInterfaceEventList(ctx _context.Context) ApiGetStorageNetAppFcInterfaceEventListRequest {
 	return ApiGetStorageNetAppFcInterfaceEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15081,13 +15406,13 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceEventListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15104,19 +15429,19 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceEventListExecute(r ApiGet
 }
 
 type ApiGetStorageNetAppFcInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15124,51 +15449,61 @@ func (r ApiGetStorageNetAppFcInterfaceListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Orderby(orderby string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Top(top int32) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Skip(skip int32) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Select_(select_ string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Expand(expand string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Apply(apply string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Count(count bool) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) At(at string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppFcInterfaceListRequest) Tags(tags string) ApiGetStorageNetAppFcInterfaceListRequest {
 	r.tags = &tags
@@ -15188,7 +15523,7 @@ GetStorageNetAppFcInterfaceList Read a 'storage.NetAppFcInterface' resource.
 func (a *StorageApiService) GetStorageNetAppFcInterfaceList(ctx _context.Context) ApiGetStorageNetAppFcInterfaceListRequest {
 	return ApiGetStorageNetAppFcInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15327,13 +15662,13 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15350,11 +15685,10 @@ func (a *StorageApiService) GetStorageNetAppFcInterfaceListExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppFcPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppFcPortByMoidRequest) Execute() (StorageNetAppFcPort, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppFcPortByMoidExecute(r)
@@ -15370,8 +15704,8 @@ GetStorageNetAppFcPortByMoid Read a 'storage.NetAppFcPort' resource.
 func (a *StorageApiService) GetStorageNetAppFcPortByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppFcPortByMoidRequest {
 	return ApiGetStorageNetAppFcPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15478,13 +15812,13 @@ func (a *StorageApiService) GetStorageNetAppFcPortByMoidExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15501,11 +15835,10 @@ func (a *StorageApiService) GetStorageNetAppFcPortByMoidExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppFcPortEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppFcPortEventByMoidRequest) Execute() (StorageNetAppFcPortEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppFcPortEventByMoidExecute(r)
@@ -15521,8 +15854,8 @@ GetStorageNetAppFcPortEventByMoid Read a 'storage.NetAppFcPortEvent' resource.
 func (a *StorageApiService) GetStorageNetAppFcPortEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppFcPortEventByMoidRequest {
 	return ApiGetStorageNetAppFcPortEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15629,13 +15962,13 @@ func (a *StorageApiService) GetStorageNetAppFcPortEventByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15652,19 +15985,19 @@ func (a *StorageApiService) GetStorageNetAppFcPortEventByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStorageNetAppFcPortEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15672,51 +16005,61 @@ func (r ApiGetStorageNetAppFcPortEventListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Orderby(orderby string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Top(top int32) ApiGetStorageNetAppFcPortEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Skip(skip int32) ApiGetStorageNetAppFcPortEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Select_(select_ string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Expand(expand string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Apply(apply string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Count(count bool) ApiGetStorageNetAppFcPortEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppFcPortEventListRequest) At(at string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppFcPortEventListRequest) Tags(tags string) ApiGetStorageNetAppFcPortEventListRequest {
 	r.tags = &tags
@@ -15736,7 +16079,7 @@ GetStorageNetAppFcPortEventList Read a 'storage.NetAppFcPortEvent' resource.
 func (a *StorageApiService) GetStorageNetAppFcPortEventList(ctx _context.Context) ApiGetStorageNetAppFcPortEventListRequest {
 	return ApiGetStorageNetAppFcPortEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15875,13 +16218,13 @@ func (a *StorageApiService) GetStorageNetAppFcPortEventListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15898,19 +16241,19 @@ func (a *StorageApiService) GetStorageNetAppFcPortEventListExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppFcPortListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15918,51 +16261,61 @@ func (r ApiGetStorageNetAppFcPortListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppFcPortListRequest) Orderby(orderby string) ApiGetStorageNetAppFcPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppFcPortListRequest) Top(top int32) ApiGetStorageNetAppFcPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppFcPortListRequest) Skip(skip int32) ApiGetStorageNetAppFcPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppFcPortListRequest) Select_(select_ string) ApiGetStorageNetAppFcPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppFcPortListRequest) Expand(expand string) ApiGetStorageNetAppFcPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppFcPortListRequest) Apply(apply string) ApiGetStorageNetAppFcPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppFcPortListRequest) Count(count bool) ApiGetStorageNetAppFcPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppFcPortListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppFcPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppFcPortListRequest) At(at string) ApiGetStorageNetAppFcPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppFcPortListRequest) Tags(tags string) ApiGetStorageNetAppFcPortListRequest {
 	r.tags = &tags
@@ -15982,7 +16335,7 @@ GetStorageNetAppFcPortList Read a 'storage.NetAppFcPort' resource.
 func (a *StorageApiService) GetStorageNetAppFcPortList(ctx _context.Context) ApiGetStorageNetAppFcPortListRequest {
 	return ApiGetStorageNetAppFcPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16121,13 +16474,13 @@ func (a *StorageApiService) GetStorageNetAppFcPortListExecute(r ApiGetStorageNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16144,11 +16497,10 @@ func (a *StorageApiService) GetStorageNetAppFcPortListExecute(r ApiGetStorageNet
 }
 
 type ApiGetStorageNetAppInitiatorGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppInitiatorGroupByMoidRequest) Execute() (StorageNetAppInitiatorGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppInitiatorGroupByMoidExecute(r)
@@ -16164,8 +16516,8 @@ GetStorageNetAppInitiatorGroupByMoid Read a 'storage.NetAppInitiatorGroup' resou
 func (a *StorageApiService) GetStorageNetAppInitiatorGroupByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppInitiatorGroupByMoidRequest {
 	return ApiGetStorageNetAppInitiatorGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16272,13 +16624,13 @@ func (a *StorageApiService) GetStorageNetAppInitiatorGroupByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16295,19 +16647,19 @@ func (a *StorageApiService) GetStorageNetAppInitiatorGroupByMoidExecute(r ApiGet
 }
 
 type ApiGetStorageNetAppInitiatorGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16315,51 +16667,61 @@ func (r ApiGetStorageNetAppInitiatorGroupListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Orderby(orderby string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Top(top int32) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Skip(skip int32) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Select_(select_ string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Expand(expand string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Apply(apply string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Count(count bool) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) At(at string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppInitiatorGroupListRequest) Tags(tags string) ApiGetStorageNetAppInitiatorGroupListRequest {
 	r.tags = &tags
@@ -16379,7 +16741,7 @@ GetStorageNetAppInitiatorGroupList Read a 'storage.NetAppInitiatorGroup' resourc
 func (a *StorageApiService) GetStorageNetAppInitiatorGroupList(ctx _context.Context) ApiGetStorageNetAppInitiatorGroupListRequest {
 	return ApiGetStorageNetAppInitiatorGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16518,13 +16880,13 @@ func (a *StorageApiService) GetStorageNetAppInitiatorGroupListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16541,11 +16903,10 @@ func (a *StorageApiService) GetStorageNetAppInitiatorGroupListExecute(r ApiGetSt
 }
 
 type ApiGetStorageNetAppIpInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppIpInterfaceByMoidRequest) Execute() (StorageNetAppIpInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppIpInterfaceByMoidExecute(r)
@@ -16561,8 +16922,8 @@ GetStorageNetAppIpInterfaceByMoid Read a 'storage.NetAppIpInterface' resource.
 func (a *StorageApiService) GetStorageNetAppIpInterfaceByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppIpInterfaceByMoidRequest {
 	return ApiGetStorageNetAppIpInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16669,13 +17030,13 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16692,11 +17053,10 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStorageNetAppIpInterfaceEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppIpInterfaceEventByMoidRequest) Execute() (StorageNetAppIpInterfaceEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppIpInterfaceEventByMoidExecute(r)
@@ -16712,8 +17072,8 @@ GetStorageNetAppIpInterfaceEventByMoid Read a 'storage.NetAppIpInterfaceEvent' r
 func (a *StorageApiService) GetStorageNetAppIpInterfaceEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppIpInterfaceEventByMoidRequest {
 	return ApiGetStorageNetAppIpInterfaceEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16820,13 +17180,13 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceEventByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16843,19 +17203,19 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceEventByMoidExecute(r ApiG
 }
 
 type ApiGetStorageNetAppIpInterfaceEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16863,51 +17223,61 @@ func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Orderby(orderby string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Top(top int32) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Skip(skip int32) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Select_(select_ string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Expand(expand string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Apply(apply string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Count(count bool) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) At(at string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppIpInterfaceEventListRequest) Tags(tags string) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	r.tags = &tags
@@ -16927,7 +17297,7 @@ GetStorageNetAppIpInterfaceEventList Read a 'storage.NetAppIpInterfaceEvent' res
 func (a *StorageApiService) GetStorageNetAppIpInterfaceEventList(ctx _context.Context) ApiGetStorageNetAppIpInterfaceEventListRequest {
 	return ApiGetStorageNetAppIpInterfaceEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17066,13 +17436,13 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceEventListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17089,19 +17459,19 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceEventListExecute(r ApiGet
 }
 
 type ApiGetStorageNetAppIpInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17109,51 +17479,61 @@ func (r ApiGetStorageNetAppIpInterfaceListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Orderby(orderby string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Top(top int32) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Skip(skip int32) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Select_(select_ string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Expand(expand string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Apply(apply string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Count(count bool) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) At(at string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppIpInterfaceListRequest) Tags(tags string) ApiGetStorageNetAppIpInterfaceListRequest {
 	r.tags = &tags
@@ -17173,7 +17553,7 @@ GetStorageNetAppIpInterfaceList Read a 'storage.NetAppIpInterface' resource.
 func (a *StorageApiService) GetStorageNetAppIpInterfaceList(ctx _context.Context) ApiGetStorageNetAppIpInterfaceListRequest {
 	return ApiGetStorageNetAppIpInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17312,13 +17692,13 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17335,11 +17715,10 @@ func (a *StorageApiService) GetStorageNetAppIpInterfaceListExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppLicenseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppLicenseByMoidRequest) Execute() (StorageNetAppLicense, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppLicenseByMoidExecute(r)
@@ -17355,8 +17734,8 @@ GetStorageNetAppLicenseByMoid Read a 'storage.NetAppLicense' resource.
 func (a *StorageApiService) GetStorageNetAppLicenseByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppLicenseByMoidRequest {
 	return ApiGetStorageNetAppLicenseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17463,13 +17842,13 @@ func (a *StorageApiService) GetStorageNetAppLicenseByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17486,19 +17865,19 @@ func (a *StorageApiService) GetStorageNetAppLicenseByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppLicenseListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17506,51 +17885,61 @@ func (r ApiGetStorageNetAppLicenseListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppLicenseListRequest) Orderby(orderby string) ApiGetStorageNetAppLicenseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppLicenseListRequest) Top(top int32) ApiGetStorageNetAppLicenseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppLicenseListRequest) Skip(skip int32) ApiGetStorageNetAppLicenseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppLicenseListRequest) Select_(select_ string) ApiGetStorageNetAppLicenseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppLicenseListRequest) Expand(expand string) ApiGetStorageNetAppLicenseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppLicenseListRequest) Apply(apply string) ApiGetStorageNetAppLicenseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppLicenseListRequest) Count(count bool) ApiGetStorageNetAppLicenseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppLicenseListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppLicenseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppLicenseListRequest) At(at string) ApiGetStorageNetAppLicenseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppLicenseListRequest) Tags(tags string) ApiGetStorageNetAppLicenseListRequest {
 	r.tags = &tags
@@ -17570,7 +17959,7 @@ GetStorageNetAppLicenseList Read a 'storage.NetAppLicense' resource.
 func (a *StorageApiService) GetStorageNetAppLicenseList(ctx _context.Context) ApiGetStorageNetAppLicenseListRequest {
 	return ApiGetStorageNetAppLicenseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17709,13 +18098,13 @@ func (a *StorageApiService) GetStorageNetAppLicenseListExecute(r ApiGetStorageNe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17732,11 +18121,10 @@ func (a *StorageApiService) GetStorageNetAppLicenseListExecute(r ApiGetStorageNe
 }
 
 type ApiGetStorageNetAppLunByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppLunByMoidRequest) Execute() (StorageNetAppLun, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppLunByMoidExecute(r)
@@ -17752,8 +18140,8 @@ GetStorageNetAppLunByMoid Read a 'storage.NetAppLun' resource.
 func (a *StorageApiService) GetStorageNetAppLunByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppLunByMoidRequest {
 	return ApiGetStorageNetAppLunByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17860,13 +18248,13 @@ func (a *StorageApiService) GetStorageNetAppLunByMoidExecute(r ApiGetStorageNetA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17883,11 +18271,10 @@ func (a *StorageApiService) GetStorageNetAppLunByMoidExecute(r ApiGetStorageNetA
 }
 
 type ApiGetStorageNetAppLunEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppLunEventByMoidRequest) Execute() (StorageNetAppLunEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppLunEventByMoidExecute(r)
@@ -17903,8 +18290,8 @@ GetStorageNetAppLunEventByMoid Read a 'storage.NetAppLunEvent' resource.
 func (a *StorageApiService) GetStorageNetAppLunEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppLunEventByMoidRequest {
 	return ApiGetStorageNetAppLunEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18011,13 +18398,13 @@ func (a *StorageApiService) GetStorageNetAppLunEventByMoidExecute(r ApiGetStorag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18034,19 +18421,19 @@ func (a *StorageApiService) GetStorageNetAppLunEventByMoidExecute(r ApiGetStorag
 }
 
 type ApiGetStorageNetAppLunEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18054,51 +18441,61 @@ func (r ApiGetStorageNetAppLunEventListRequest) Filter(filter string) ApiGetStor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppLunEventListRequest) Orderby(orderby string) ApiGetStorageNetAppLunEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppLunEventListRequest) Top(top int32) ApiGetStorageNetAppLunEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppLunEventListRequest) Skip(skip int32) ApiGetStorageNetAppLunEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppLunEventListRequest) Select_(select_ string) ApiGetStorageNetAppLunEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppLunEventListRequest) Expand(expand string) ApiGetStorageNetAppLunEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppLunEventListRequest) Apply(apply string) ApiGetStorageNetAppLunEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppLunEventListRequest) Count(count bool) ApiGetStorageNetAppLunEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppLunEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppLunEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppLunEventListRequest) At(at string) ApiGetStorageNetAppLunEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppLunEventListRequest) Tags(tags string) ApiGetStorageNetAppLunEventListRequest {
 	r.tags = &tags
@@ -18118,7 +18515,7 @@ GetStorageNetAppLunEventList Read a 'storage.NetAppLunEvent' resource.
 func (a *StorageApiService) GetStorageNetAppLunEventList(ctx _context.Context) ApiGetStorageNetAppLunEventListRequest {
 	return ApiGetStorageNetAppLunEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18257,13 +18654,13 @@ func (a *StorageApiService) GetStorageNetAppLunEventListExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18280,19 +18677,19 @@ func (a *StorageApiService) GetStorageNetAppLunEventListExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppLunListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18300,51 +18697,61 @@ func (r ApiGetStorageNetAppLunListRequest) Filter(filter string) ApiGetStorageNe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppLunListRequest) Orderby(orderby string) ApiGetStorageNetAppLunListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppLunListRequest) Top(top int32) ApiGetStorageNetAppLunListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppLunListRequest) Skip(skip int32) ApiGetStorageNetAppLunListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppLunListRequest) Select_(select_ string) ApiGetStorageNetAppLunListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppLunListRequest) Expand(expand string) ApiGetStorageNetAppLunListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppLunListRequest) Apply(apply string) ApiGetStorageNetAppLunListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppLunListRequest) Count(count bool) ApiGetStorageNetAppLunListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppLunListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppLunListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppLunListRequest) At(at string) ApiGetStorageNetAppLunListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppLunListRequest) Tags(tags string) ApiGetStorageNetAppLunListRequest {
 	r.tags = &tags
@@ -18364,7 +18771,7 @@ GetStorageNetAppLunList Read a 'storage.NetAppLun' resource.
 func (a *StorageApiService) GetStorageNetAppLunList(ctx _context.Context) ApiGetStorageNetAppLunListRequest {
 	return ApiGetStorageNetAppLunListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18503,13 +18910,13 @@ func (a *StorageApiService) GetStorageNetAppLunListExecute(r ApiGetStorageNetApp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18526,11 +18933,10 @@ func (a *StorageApiService) GetStorageNetAppLunListExecute(r ApiGetStorageNetApp
 }
 
 type ApiGetStorageNetAppLunMapByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppLunMapByMoidRequest) Execute() (StorageNetAppLunMap, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppLunMapByMoidExecute(r)
@@ -18546,8 +18952,8 @@ GetStorageNetAppLunMapByMoid Read a 'storage.NetAppLunMap' resource.
 func (a *StorageApiService) GetStorageNetAppLunMapByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppLunMapByMoidRequest {
 	return ApiGetStorageNetAppLunMapByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18654,13 +19060,13 @@ func (a *StorageApiService) GetStorageNetAppLunMapByMoidExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18677,19 +19083,19 @@ func (a *StorageApiService) GetStorageNetAppLunMapByMoidExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppLunMapListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18697,51 +19103,61 @@ func (r ApiGetStorageNetAppLunMapListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppLunMapListRequest) Orderby(orderby string) ApiGetStorageNetAppLunMapListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppLunMapListRequest) Top(top int32) ApiGetStorageNetAppLunMapListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppLunMapListRequest) Skip(skip int32) ApiGetStorageNetAppLunMapListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppLunMapListRequest) Select_(select_ string) ApiGetStorageNetAppLunMapListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppLunMapListRequest) Expand(expand string) ApiGetStorageNetAppLunMapListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppLunMapListRequest) Apply(apply string) ApiGetStorageNetAppLunMapListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppLunMapListRequest) Count(count bool) ApiGetStorageNetAppLunMapListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppLunMapListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppLunMapListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppLunMapListRequest) At(at string) ApiGetStorageNetAppLunMapListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppLunMapListRequest) Tags(tags string) ApiGetStorageNetAppLunMapListRequest {
 	r.tags = &tags
@@ -18761,7 +19177,7 @@ GetStorageNetAppLunMapList Read a 'storage.NetAppLunMap' resource.
 func (a *StorageApiService) GetStorageNetAppLunMapList(ctx _context.Context) ApiGetStorageNetAppLunMapListRequest {
 	return ApiGetStorageNetAppLunMapListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18900,13 +19316,13 @@ func (a *StorageApiService) GetStorageNetAppLunMapListExecute(r ApiGetStorageNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18923,11 +19339,10 @@ func (a *StorageApiService) GetStorageNetAppLunMapListExecute(r ApiGetStorageNet
 }
 
 type ApiGetStorageNetAppNodeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppNodeByMoidRequest) Execute() (StorageNetAppNode, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppNodeByMoidExecute(r)
@@ -18943,8 +19358,8 @@ GetStorageNetAppNodeByMoid Read a 'storage.NetAppNode' resource.
 func (a *StorageApiService) GetStorageNetAppNodeByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppNodeByMoidRequest {
 	return ApiGetStorageNetAppNodeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19051,13 +19466,13 @@ func (a *StorageApiService) GetStorageNetAppNodeByMoidExecute(r ApiGetStorageNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19074,11 +19489,10 @@ func (a *StorageApiService) GetStorageNetAppNodeByMoidExecute(r ApiGetStorageNet
 }
 
 type ApiGetStorageNetAppNodeEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppNodeEventByMoidRequest) Execute() (StorageNetAppNodeEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppNodeEventByMoidExecute(r)
@@ -19094,8 +19508,8 @@ GetStorageNetAppNodeEventByMoid Read a 'storage.NetAppNodeEvent' resource.
 func (a *StorageApiService) GetStorageNetAppNodeEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppNodeEventByMoidRequest {
 	return ApiGetStorageNetAppNodeEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19202,13 +19616,13 @@ func (a *StorageApiService) GetStorageNetAppNodeEventByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19225,19 +19639,19 @@ func (a *StorageApiService) GetStorageNetAppNodeEventByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppNodeEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19245,51 +19659,61 @@ func (r ApiGetStorageNetAppNodeEventListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppNodeEventListRequest) Orderby(orderby string) ApiGetStorageNetAppNodeEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppNodeEventListRequest) Top(top int32) ApiGetStorageNetAppNodeEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppNodeEventListRequest) Skip(skip int32) ApiGetStorageNetAppNodeEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppNodeEventListRequest) Select_(select_ string) ApiGetStorageNetAppNodeEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppNodeEventListRequest) Expand(expand string) ApiGetStorageNetAppNodeEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppNodeEventListRequest) Apply(apply string) ApiGetStorageNetAppNodeEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppNodeEventListRequest) Count(count bool) ApiGetStorageNetAppNodeEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppNodeEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppNodeEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppNodeEventListRequest) At(at string) ApiGetStorageNetAppNodeEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppNodeEventListRequest) Tags(tags string) ApiGetStorageNetAppNodeEventListRequest {
 	r.tags = &tags
@@ -19309,7 +19733,7 @@ GetStorageNetAppNodeEventList Read a 'storage.NetAppNodeEvent' resource.
 func (a *StorageApiService) GetStorageNetAppNodeEventList(ctx _context.Context) ApiGetStorageNetAppNodeEventListRequest {
 	return ApiGetStorageNetAppNodeEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19448,13 +19872,13 @@ func (a *StorageApiService) GetStorageNetAppNodeEventListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19471,19 +19895,19 @@ func (a *StorageApiService) GetStorageNetAppNodeEventListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppNodeListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19491,51 +19915,61 @@ func (r ApiGetStorageNetAppNodeListRequest) Filter(filter string) ApiGetStorageN
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppNodeListRequest) Orderby(orderby string) ApiGetStorageNetAppNodeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppNodeListRequest) Top(top int32) ApiGetStorageNetAppNodeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppNodeListRequest) Skip(skip int32) ApiGetStorageNetAppNodeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppNodeListRequest) Select_(select_ string) ApiGetStorageNetAppNodeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppNodeListRequest) Expand(expand string) ApiGetStorageNetAppNodeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppNodeListRequest) Apply(apply string) ApiGetStorageNetAppNodeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppNodeListRequest) Count(count bool) ApiGetStorageNetAppNodeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppNodeListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppNodeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppNodeListRequest) At(at string) ApiGetStorageNetAppNodeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppNodeListRequest) Tags(tags string) ApiGetStorageNetAppNodeListRequest {
 	r.tags = &tags
@@ -19555,7 +19989,7 @@ GetStorageNetAppNodeList Read a 'storage.NetAppNode' resource.
 func (a *StorageApiService) GetStorageNetAppNodeList(ctx _context.Context) ApiGetStorageNetAppNodeListRequest {
 	return ApiGetStorageNetAppNodeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19694,13 +20128,13 @@ func (a *StorageApiService) GetStorageNetAppNodeListExecute(r ApiGetStorageNetAp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19717,11 +20151,10 @@ func (a *StorageApiService) GetStorageNetAppNodeListExecute(r ApiGetStorageNetAp
 }
 
 type ApiGetStorageNetAppNtpServerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppNtpServerByMoidRequest) Execute() (StorageNetAppNtpServer, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppNtpServerByMoidExecute(r)
@@ -19737,8 +20170,8 @@ GetStorageNetAppNtpServerByMoid Read a 'storage.NetAppNtpServer' resource.
 func (a *StorageApiService) GetStorageNetAppNtpServerByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppNtpServerByMoidRequest {
 	return ApiGetStorageNetAppNtpServerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19845,13 +20278,13 @@ func (a *StorageApiService) GetStorageNetAppNtpServerByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19868,19 +20301,19 @@ func (a *StorageApiService) GetStorageNetAppNtpServerByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppNtpServerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19888,51 +20321,61 @@ func (r ApiGetStorageNetAppNtpServerListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppNtpServerListRequest) Orderby(orderby string) ApiGetStorageNetAppNtpServerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppNtpServerListRequest) Top(top int32) ApiGetStorageNetAppNtpServerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppNtpServerListRequest) Skip(skip int32) ApiGetStorageNetAppNtpServerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppNtpServerListRequest) Select_(select_ string) ApiGetStorageNetAppNtpServerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppNtpServerListRequest) Expand(expand string) ApiGetStorageNetAppNtpServerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppNtpServerListRequest) Apply(apply string) ApiGetStorageNetAppNtpServerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppNtpServerListRequest) Count(count bool) ApiGetStorageNetAppNtpServerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppNtpServerListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppNtpServerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppNtpServerListRequest) At(at string) ApiGetStorageNetAppNtpServerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppNtpServerListRequest) Tags(tags string) ApiGetStorageNetAppNtpServerListRequest {
 	r.tags = &tags
@@ -19952,7 +20395,7 @@ GetStorageNetAppNtpServerList Read a 'storage.NetAppNtpServer' resource.
 func (a *StorageApiService) GetStorageNetAppNtpServerList(ctx _context.Context) ApiGetStorageNetAppNtpServerListRequest {
 	return ApiGetStorageNetAppNtpServerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20091,13 +20534,13 @@ func (a *StorageApiService) GetStorageNetAppNtpServerListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20114,11 +20557,10 @@ func (a *StorageApiService) GetStorageNetAppNtpServerListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppSensorByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppSensorByMoidRequest) Execute() (StorageNetAppSensor, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppSensorByMoidExecute(r)
@@ -20134,8 +20576,8 @@ GetStorageNetAppSensorByMoid Read a 'storage.NetAppSensor' resource.
 func (a *StorageApiService) GetStorageNetAppSensorByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppSensorByMoidRequest {
 	return ApiGetStorageNetAppSensorByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20242,13 +20684,13 @@ func (a *StorageApiService) GetStorageNetAppSensorByMoidExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20265,19 +20707,19 @@ func (a *StorageApiService) GetStorageNetAppSensorByMoidExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppSensorListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20285,51 +20727,61 @@ func (r ApiGetStorageNetAppSensorListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppSensorListRequest) Orderby(orderby string) ApiGetStorageNetAppSensorListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppSensorListRequest) Top(top int32) ApiGetStorageNetAppSensorListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppSensorListRequest) Skip(skip int32) ApiGetStorageNetAppSensorListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppSensorListRequest) Select_(select_ string) ApiGetStorageNetAppSensorListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppSensorListRequest) Expand(expand string) ApiGetStorageNetAppSensorListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppSensorListRequest) Apply(apply string) ApiGetStorageNetAppSensorListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppSensorListRequest) Count(count bool) ApiGetStorageNetAppSensorListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppSensorListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppSensorListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppSensorListRequest) At(at string) ApiGetStorageNetAppSensorListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppSensorListRequest) Tags(tags string) ApiGetStorageNetAppSensorListRequest {
 	r.tags = &tags
@@ -20349,7 +20801,7 @@ GetStorageNetAppSensorList Read a 'storage.NetAppSensor' resource.
 func (a *StorageApiService) GetStorageNetAppSensorList(ctx _context.Context) ApiGetStorageNetAppSensorListRequest {
 	return ApiGetStorageNetAppSensorListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20488,13 +20940,13 @@ func (a *StorageApiService) GetStorageNetAppSensorListExecute(r ApiGetStorageNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20511,11 +20963,10 @@ func (a *StorageApiService) GetStorageNetAppSensorListExecute(r ApiGetStorageNet
 }
 
 type ApiGetStorageNetAppStorageVmByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppStorageVmByMoidRequest) Execute() (StorageNetAppStorageVm, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppStorageVmByMoidExecute(r)
@@ -20531,8 +20982,8 @@ GetStorageNetAppStorageVmByMoid Read a 'storage.NetAppStorageVm' resource.
 func (a *StorageApiService) GetStorageNetAppStorageVmByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppStorageVmByMoidRequest {
 	return ApiGetStorageNetAppStorageVmByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20639,13 +21090,13 @@ func (a *StorageApiService) GetStorageNetAppStorageVmByMoidExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20662,19 +21113,19 @@ func (a *StorageApiService) GetStorageNetAppStorageVmByMoidExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppStorageVmListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20682,51 +21133,61 @@ func (r ApiGetStorageNetAppStorageVmListRequest) Filter(filter string) ApiGetSto
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppStorageVmListRequest) Orderby(orderby string) ApiGetStorageNetAppStorageVmListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppStorageVmListRequest) Top(top int32) ApiGetStorageNetAppStorageVmListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppStorageVmListRequest) Skip(skip int32) ApiGetStorageNetAppStorageVmListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppStorageVmListRequest) Select_(select_ string) ApiGetStorageNetAppStorageVmListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppStorageVmListRequest) Expand(expand string) ApiGetStorageNetAppStorageVmListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppStorageVmListRequest) Apply(apply string) ApiGetStorageNetAppStorageVmListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppStorageVmListRequest) Count(count bool) ApiGetStorageNetAppStorageVmListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppStorageVmListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppStorageVmListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppStorageVmListRequest) At(at string) ApiGetStorageNetAppStorageVmListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppStorageVmListRequest) Tags(tags string) ApiGetStorageNetAppStorageVmListRequest {
 	r.tags = &tags
@@ -20746,7 +21207,7 @@ GetStorageNetAppStorageVmList Read a 'storage.NetAppStorageVm' resource.
 func (a *StorageApiService) GetStorageNetAppStorageVmList(ctx _context.Context) ApiGetStorageNetAppStorageVmListRequest {
 	return ApiGetStorageNetAppStorageVmListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20885,13 +21346,13 @@ func (a *StorageApiService) GetStorageNetAppStorageVmListExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20908,11 +21369,10 @@ func (a *StorageApiService) GetStorageNetAppStorageVmListExecute(r ApiGetStorage
 }
 
 type ApiGetStorageNetAppSvmEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppSvmEventByMoidRequest) Execute() (StorageNetAppSvmEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppSvmEventByMoidExecute(r)
@@ -20928,8 +21388,8 @@ GetStorageNetAppSvmEventByMoid Read a 'storage.NetAppSvmEvent' resource.
 func (a *StorageApiService) GetStorageNetAppSvmEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppSvmEventByMoidRequest {
 	return ApiGetStorageNetAppSvmEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21036,13 +21496,13 @@ func (a *StorageApiService) GetStorageNetAppSvmEventByMoidExecute(r ApiGetStorag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21059,19 +21519,19 @@ func (a *StorageApiService) GetStorageNetAppSvmEventByMoidExecute(r ApiGetStorag
 }
 
 type ApiGetStorageNetAppSvmEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21079,51 +21539,61 @@ func (r ApiGetStorageNetAppSvmEventListRequest) Filter(filter string) ApiGetStor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppSvmEventListRequest) Orderby(orderby string) ApiGetStorageNetAppSvmEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppSvmEventListRequest) Top(top int32) ApiGetStorageNetAppSvmEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppSvmEventListRequest) Skip(skip int32) ApiGetStorageNetAppSvmEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppSvmEventListRequest) Select_(select_ string) ApiGetStorageNetAppSvmEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppSvmEventListRequest) Expand(expand string) ApiGetStorageNetAppSvmEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppSvmEventListRequest) Apply(apply string) ApiGetStorageNetAppSvmEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppSvmEventListRequest) Count(count bool) ApiGetStorageNetAppSvmEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppSvmEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppSvmEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppSvmEventListRequest) At(at string) ApiGetStorageNetAppSvmEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppSvmEventListRequest) Tags(tags string) ApiGetStorageNetAppSvmEventListRequest {
 	r.tags = &tags
@@ -21143,7 +21613,7 @@ GetStorageNetAppSvmEventList Read a 'storage.NetAppSvmEvent' resource.
 func (a *StorageApiService) GetStorageNetAppSvmEventList(ctx _context.Context) ApiGetStorageNetAppSvmEventListRequest {
 	return ApiGetStorageNetAppSvmEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21282,13 +21752,13 @@ func (a *StorageApiService) GetStorageNetAppSvmEventListExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21305,11 +21775,10 @@ func (a *StorageApiService) GetStorageNetAppSvmEventListExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppVolumeByMoidRequest) Execute() (StorageNetAppVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppVolumeByMoidExecute(r)
@@ -21325,8 +21794,8 @@ GetStorageNetAppVolumeByMoid Read a 'storage.NetAppVolume' resource.
 func (a *StorageApiService) GetStorageNetAppVolumeByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppVolumeByMoidRequest {
 	return ApiGetStorageNetAppVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21433,13 +21902,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeByMoidExecute(r ApiGetStorageN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21456,11 +21925,10 @@ func (a *StorageApiService) GetStorageNetAppVolumeByMoidExecute(r ApiGetStorageN
 }
 
 type ApiGetStorageNetAppVolumeEventByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppVolumeEventByMoidRequest) Execute() (StorageNetAppVolumeEvent, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppVolumeEventByMoidExecute(r)
@@ -21476,8 +21944,8 @@ GetStorageNetAppVolumeEventByMoid Read a 'storage.NetAppVolumeEvent' resource.
 func (a *StorageApiService) GetStorageNetAppVolumeEventByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppVolumeEventByMoidRequest {
 	return ApiGetStorageNetAppVolumeEventByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21584,13 +22052,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeEventByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21607,19 +22075,19 @@ func (a *StorageApiService) GetStorageNetAppVolumeEventByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStorageNetAppVolumeEventListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21627,51 +22095,61 @@ func (r ApiGetStorageNetAppVolumeEventListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Orderby(orderby string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Top(top int32) ApiGetStorageNetAppVolumeEventListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Skip(skip int32) ApiGetStorageNetAppVolumeEventListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Select_(select_ string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Expand(expand string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Apply(apply string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Count(count bool) ApiGetStorageNetAppVolumeEventListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppVolumeEventListRequest) At(at string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppVolumeEventListRequest) Tags(tags string) ApiGetStorageNetAppVolumeEventListRequest {
 	r.tags = &tags
@@ -21691,7 +22169,7 @@ GetStorageNetAppVolumeEventList Read a 'storage.NetAppVolumeEvent' resource.
 func (a *StorageApiService) GetStorageNetAppVolumeEventList(ctx _context.Context) ApiGetStorageNetAppVolumeEventListRequest {
 	return ApiGetStorageNetAppVolumeEventListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21830,13 +22308,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeEventListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21853,19 +22331,19 @@ func (a *StorageApiService) GetStorageNetAppVolumeEventListExecute(r ApiGetStora
 }
 
 type ApiGetStorageNetAppVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21873,51 +22351,61 @@ func (r ApiGetStorageNetAppVolumeListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppVolumeListRequest) Orderby(orderby string) ApiGetStorageNetAppVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppVolumeListRequest) Top(top int32) ApiGetStorageNetAppVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppVolumeListRequest) Skip(skip int32) ApiGetStorageNetAppVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppVolumeListRequest) Select_(select_ string) ApiGetStorageNetAppVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppVolumeListRequest) Expand(expand string) ApiGetStorageNetAppVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppVolumeListRequest) Apply(apply string) ApiGetStorageNetAppVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppVolumeListRequest) Count(count bool) ApiGetStorageNetAppVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppVolumeListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppVolumeListRequest) At(at string) ApiGetStorageNetAppVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppVolumeListRequest) Tags(tags string) ApiGetStorageNetAppVolumeListRequest {
 	r.tags = &tags
@@ -21937,7 +22425,7 @@ GetStorageNetAppVolumeList Read a 'storage.NetAppVolume' resource.
 func (a *StorageApiService) GetStorageNetAppVolumeList(ctx _context.Context) ApiGetStorageNetAppVolumeListRequest {
 	return ApiGetStorageNetAppVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22076,13 +22564,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeListExecute(r ApiGetStorageNet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22099,11 +22587,10 @@ func (a *StorageApiService) GetStorageNetAppVolumeListExecute(r ApiGetStorageNet
 }
 
 type ApiGetStorageNetAppVolumeSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageNetAppVolumeSnapshotByMoidRequest) Execute() (StorageNetAppVolumeSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageNetAppVolumeSnapshotByMoidExecute(r)
@@ -22119,8 +22606,8 @@ GetStorageNetAppVolumeSnapshotByMoid Read a 'storage.NetAppVolumeSnapshot' resou
 func (a *StorageApiService) GetStorageNetAppVolumeSnapshotByMoid(ctx _context.Context, moid string) ApiGetStorageNetAppVolumeSnapshotByMoidRequest {
 	return ApiGetStorageNetAppVolumeSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22227,13 +22714,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeSnapshotByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22250,19 +22737,19 @@ func (a *StorageApiService) GetStorageNetAppVolumeSnapshotByMoidExecute(r ApiGet
 }
 
 type ApiGetStorageNetAppVolumeSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22270,51 +22757,61 @@ func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Orderby(orderby string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Top(top int32) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Skip(skip int32) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Select_(select_ string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Expand(expand string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Apply(apply string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Count(count bool) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Inlinecount(inlinecount string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) At(at string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageNetAppVolumeSnapshotListRequest) Tags(tags string) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	r.tags = &tags
@@ -22334,7 +22831,7 @@ GetStorageNetAppVolumeSnapshotList Read a 'storage.NetAppVolumeSnapshot' resourc
 func (a *StorageApiService) GetStorageNetAppVolumeSnapshotList(ctx _context.Context) ApiGetStorageNetAppVolumeSnapshotListRequest {
 	return ApiGetStorageNetAppVolumeSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22473,13 +22970,13 @@ func (a *StorageApiService) GetStorageNetAppVolumeSnapshotListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22496,11 +22993,10 @@ func (a *StorageApiService) GetStorageNetAppVolumeSnapshotListExecute(r ApiGetSt
 }
 
 type ApiGetStoragePhysicalDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePhysicalDiskByMoidRequest) Execute() (StoragePhysicalDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePhysicalDiskByMoidExecute(r)
@@ -22516,8 +23012,8 @@ GetStoragePhysicalDiskByMoid Read a 'storage.PhysicalDisk' resource.
 func (a *StorageApiService) GetStoragePhysicalDiskByMoid(ctx _context.Context, moid string) ApiGetStoragePhysicalDiskByMoidRequest {
 	return ApiGetStoragePhysicalDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22624,13 +23120,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskByMoidExecute(r ApiGetStorageP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22647,11 +23143,10 @@ func (a *StorageApiService) GetStoragePhysicalDiskByMoidExecute(r ApiGetStorageP
 }
 
 type ApiGetStoragePhysicalDiskExtensionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePhysicalDiskExtensionByMoidRequest) Execute() (StoragePhysicalDiskExtension, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePhysicalDiskExtensionByMoidExecute(r)
@@ -22667,8 +23162,8 @@ GetStoragePhysicalDiskExtensionByMoid Read a 'storage.PhysicalDiskExtension' res
 func (a *StorageApiService) GetStoragePhysicalDiskExtensionByMoid(ctx _context.Context, moid string) ApiGetStoragePhysicalDiskExtensionByMoidRequest {
 	return ApiGetStoragePhysicalDiskExtensionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22775,13 +23270,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskExtensionByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22798,19 +23293,19 @@ func (a *StorageApiService) GetStoragePhysicalDiskExtensionByMoidExecute(r ApiGe
 }
 
 type ApiGetStoragePhysicalDiskExtensionListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22818,51 +23313,61 @@ func (r ApiGetStoragePhysicalDiskExtensionListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Orderby(orderby string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Top(top int32) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Skip(skip int32) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Select_(select_ string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Expand(expand string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Apply(apply string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Count(count bool) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Inlinecount(inlinecount string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) At(at string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePhysicalDiskExtensionListRequest) Tags(tags string) ApiGetStoragePhysicalDiskExtensionListRequest {
 	r.tags = &tags
@@ -22882,7 +23387,7 @@ GetStoragePhysicalDiskExtensionList Read a 'storage.PhysicalDiskExtension' resou
 func (a *StorageApiService) GetStoragePhysicalDiskExtensionList(ctx _context.Context) ApiGetStoragePhysicalDiskExtensionListRequest {
 	return ApiGetStoragePhysicalDiskExtensionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23021,13 +23526,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskExtensionListExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23044,19 +23549,19 @@ func (a *StorageApiService) GetStoragePhysicalDiskExtensionListExecute(r ApiGetS
 }
 
 type ApiGetStoragePhysicalDiskListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23064,51 +23569,61 @@ func (r ApiGetStoragePhysicalDiskListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePhysicalDiskListRequest) Orderby(orderby string) ApiGetStoragePhysicalDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePhysicalDiskListRequest) Top(top int32) ApiGetStoragePhysicalDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePhysicalDiskListRequest) Skip(skip int32) ApiGetStoragePhysicalDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePhysicalDiskListRequest) Select_(select_ string) ApiGetStoragePhysicalDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePhysicalDiskListRequest) Expand(expand string) ApiGetStoragePhysicalDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePhysicalDiskListRequest) Apply(apply string) ApiGetStoragePhysicalDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePhysicalDiskListRequest) Count(count bool) ApiGetStoragePhysicalDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePhysicalDiskListRequest) Inlinecount(inlinecount string) ApiGetStoragePhysicalDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePhysicalDiskListRequest) At(at string) ApiGetStoragePhysicalDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePhysicalDiskListRequest) Tags(tags string) ApiGetStoragePhysicalDiskListRequest {
 	r.tags = &tags
@@ -23128,7 +23643,7 @@ GetStoragePhysicalDiskList Read a 'storage.PhysicalDisk' resource.
 func (a *StorageApiService) GetStoragePhysicalDiskList(ctx _context.Context) ApiGetStoragePhysicalDiskListRequest {
 	return ApiGetStoragePhysicalDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23267,13 +23782,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskListExecute(r ApiGetStoragePhy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23290,11 +23805,10 @@ func (a *StorageApiService) GetStoragePhysicalDiskListExecute(r ApiGetStoragePhy
 }
 
 type ApiGetStoragePhysicalDiskUsageByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePhysicalDiskUsageByMoidRequest) Execute() (StoragePhysicalDiskUsage, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePhysicalDiskUsageByMoidExecute(r)
@@ -23310,8 +23824,8 @@ GetStoragePhysicalDiskUsageByMoid Read a 'storage.PhysicalDiskUsage' resource.
 func (a *StorageApiService) GetStoragePhysicalDiskUsageByMoid(ctx _context.Context, moid string) ApiGetStoragePhysicalDiskUsageByMoidRequest {
 	return ApiGetStoragePhysicalDiskUsageByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23418,13 +23932,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskUsageByMoidExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23441,19 +23955,19 @@ func (a *StorageApiService) GetStoragePhysicalDiskUsageByMoidExecute(r ApiGetSto
 }
 
 type ApiGetStoragePhysicalDiskUsageListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23461,51 +23975,61 @@ func (r ApiGetStoragePhysicalDiskUsageListRequest) Filter(filter string) ApiGetS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Orderby(orderby string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Top(top int32) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Skip(skip int32) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Select_(select_ string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Expand(expand string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Apply(apply string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Count(count bool) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Inlinecount(inlinecount string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) At(at string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePhysicalDiskUsageListRequest) Tags(tags string) ApiGetStoragePhysicalDiskUsageListRequest {
 	r.tags = &tags
@@ -23525,7 +24049,7 @@ GetStoragePhysicalDiskUsageList Read a 'storage.PhysicalDiskUsage' resource.
 func (a *StorageApiService) GetStoragePhysicalDiskUsageList(ctx _context.Context) ApiGetStoragePhysicalDiskUsageListRequest {
 	return ApiGetStoragePhysicalDiskUsageListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23664,13 +24188,13 @@ func (a *StorageApiService) GetStoragePhysicalDiskUsageListExecute(r ApiGetStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23687,11 +24211,10 @@ func (a *StorageApiService) GetStoragePhysicalDiskUsageListExecute(r ApiGetStora
 }
 
 type ApiGetStoragePureArrayByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureArrayByMoidRequest) Execute() (StoragePureArray, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureArrayByMoidExecute(r)
@@ -23707,8 +24230,8 @@ GetStoragePureArrayByMoid Read a 'storage.PureArray' resource.
 func (a *StorageApiService) GetStoragePureArrayByMoid(ctx _context.Context, moid string) ApiGetStoragePureArrayByMoidRequest {
 	return ApiGetStoragePureArrayByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23815,13 +24338,13 @@ func (a *StorageApiService) GetStoragePureArrayByMoidExecute(r ApiGetStoragePure
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23838,19 +24361,19 @@ func (a *StorageApiService) GetStoragePureArrayByMoidExecute(r ApiGetStoragePure
 }
 
 type ApiGetStoragePureArrayListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23858,51 +24381,61 @@ func (r ApiGetStoragePureArrayListRequest) Filter(filter string) ApiGetStoragePu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureArrayListRequest) Orderby(orderby string) ApiGetStoragePureArrayListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureArrayListRequest) Top(top int32) ApiGetStoragePureArrayListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureArrayListRequest) Skip(skip int32) ApiGetStoragePureArrayListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureArrayListRequest) Select_(select_ string) ApiGetStoragePureArrayListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureArrayListRequest) Expand(expand string) ApiGetStoragePureArrayListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureArrayListRequest) Apply(apply string) ApiGetStoragePureArrayListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureArrayListRequest) Count(count bool) ApiGetStoragePureArrayListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureArrayListRequest) Inlinecount(inlinecount string) ApiGetStoragePureArrayListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureArrayListRequest) At(at string) ApiGetStoragePureArrayListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureArrayListRequest) Tags(tags string) ApiGetStoragePureArrayListRequest {
 	r.tags = &tags
@@ -23922,7 +24455,7 @@ GetStoragePureArrayList Read a 'storage.PureArray' resource.
 func (a *StorageApiService) GetStoragePureArrayList(ctx _context.Context) ApiGetStoragePureArrayListRequest {
 	return ApiGetStoragePureArrayListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -24061,13 +24594,13 @@ func (a *StorageApiService) GetStoragePureArrayListExecute(r ApiGetStoragePureAr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24084,11 +24617,10 @@ func (a *StorageApiService) GetStoragePureArrayListExecute(r ApiGetStoragePureAr
 }
 
 type ApiGetStoragePureControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureControllerByMoidRequest) Execute() (StoragePureController, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureControllerByMoidExecute(r)
@@ -24104,8 +24636,8 @@ GetStoragePureControllerByMoid Read a 'storage.PureController' resource.
 func (a *StorageApiService) GetStoragePureControllerByMoid(ctx _context.Context, moid string) ApiGetStoragePureControllerByMoidRequest {
 	return ApiGetStoragePureControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24212,13 +24744,13 @@ func (a *StorageApiService) GetStoragePureControllerByMoidExecute(r ApiGetStorag
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24235,19 +24767,19 @@ func (a *StorageApiService) GetStoragePureControllerByMoidExecute(r ApiGetStorag
 }
 
 type ApiGetStoragePureControllerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -24255,51 +24787,61 @@ func (r ApiGetStoragePureControllerListRequest) Filter(filter string) ApiGetStor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureControllerListRequest) Orderby(orderby string) ApiGetStoragePureControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureControllerListRequest) Top(top int32) ApiGetStoragePureControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureControllerListRequest) Skip(skip int32) ApiGetStoragePureControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureControllerListRequest) Select_(select_ string) ApiGetStoragePureControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureControllerListRequest) Expand(expand string) ApiGetStoragePureControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureControllerListRequest) Apply(apply string) ApiGetStoragePureControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureControllerListRequest) Count(count bool) ApiGetStoragePureControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureControllerListRequest) Inlinecount(inlinecount string) ApiGetStoragePureControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureControllerListRequest) At(at string) ApiGetStoragePureControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureControllerListRequest) Tags(tags string) ApiGetStoragePureControllerListRequest {
 	r.tags = &tags
@@ -24319,7 +24861,7 @@ GetStoragePureControllerList Read a 'storage.PureController' resource.
 func (a *StorageApiService) GetStoragePureControllerList(ctx _context.Context) ApiGetStoragePureControllerListRequest {
 	return ApiGetStoragePureControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -24458,13 +25000,13 @@ func (a *StorageApiService) GetStoragePureControllerListExecute(r ApiGetStorageP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24481,11 +25023,10 @@ func (a *StorageApiService) GetStoragePureControllerListExecute(r ApiGetStorageP
 }
 
 type ApiGetStoragePureDiskByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureDiskByMoidRequest) Execute() (StoragePureDisk, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureDiskByMoidExecute(r)
@@ -24501,8 +25042,8 @@ GetStoragePureDiskByMoid Read a 'storage.PureDisk' resource.
 func (a *StorageApiService) GetStoragePureDiskByMoid(ctx _context.Context, moid string) ApiGetStoragePureDiskByMoidRequest {
 	return ApiGetStoragePureDiskByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24609,13 +25150,13 @@ func (a *StorageApiService) GetStoragePureDiskByMoidExecute(r ApiGetStoragePureD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24632,19 +25173,19 @@ func (a *StorageApiService) GetStoragePureDiskByMoidExecute(r ApiGetStoragePureD
 }
 
 type ApiGetStoragePureDiskListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -24652,51 +25193,61 @@ func (r ApiGetStoragePureDiskListRequest) Filter(filter string) ApiGetStoragePur
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureDiskListRequest) Orderby(orderby string) ApiGetStoragePureDiskListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureDiskListRequest) Top(top int32) ApiGetStoragePureDiskListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureDiskListRequest) Skip(skip int32) ApiGetStoragePureDiskListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureDiskListRequest) Select_(select_ string) ApiGetStoragePureDiskListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureDiskListRequest) Expand(expand string) ApiGetStoragePureDiskListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureDiskListRequest) Apply(apply string) ApiGetStoragePureDiskListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureDiskListRequest) Count(count bool) ApiGetStoragePureDiskListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureDiskListRequest) Inlinecount(inlinecount string) ApiGetStoragePureDiskListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureDiskListRequest) At(at string) ApiGetStoragePureDiskListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureDiskListRequest) Tags(tags string) ApiGetStoragePureDiskListRequest {
 	r.tags = &tags
@@ -24716,7 +25267,7 @@ GetStoragePureDiskList Read a 'storage.PureDisk' resource.
 func (a *StorageApiService) GetStoragePureDiskList(ctx _context.Context) ApiGetStoragePureDiskListRequest {
 	return ApiGetStoragePureDiskListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -24855,13 +25406,13 @@ func (a *StorageApiService) GetStoragePureDiskListExecute(r ApiGetStoragePureDis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24878,11 +25429,10 @@ func (a *StorageApiService) GetStoragePureDiskListExecute(r ApiGetStoragePureDis
 }
 
 type ApiGetStoragePureHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureHostByMoidRequest) Execute() (StoragePureHost, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureHostByMoidExecute(r)
@@ -24898,8 +25448,8 @@ GetStoragePureHostByMoid Read a 'storage.PureHost' resource.
 func (a *StorageApiService) GetStoragePureHostByMoid(ctx _context.Context, moid string) ApiGetStoragePureHostByMoidRequest {
 	return ApiGetStoragePureHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25006,13 +25556,13 @@ func (a *StorageApiService) GetStoragePureHostByMoidExecute(r ApiGetStoragePureH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25029,11 +25579,10 @@ func (a *StorageApiService) GetStoragePureHostByMoidExecute(r ApiGetStoragePureH
 }
 
 type ApiGetStoragePureHostGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureHostGroupByMoidRequest) Execute() (StoragePureHostGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureHostGroupByMoidExecute(r)
@@ -25049,8 +25598,8 @@ GetStoragePureHostGroupByMoid Read a 'storage.PureHostGroup' resource.
 func (a *StorageApiService) GetStoragePureHostGroupByMoid(ctx _context.Context, moid string) ApiGetStoragePureHostGroupByMoidRequest {
 	return ApiGetStoragePureHostGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25157,13 +25706,13 @@ func (a *StorageApiService) GetStoragePureHostGroupByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25180,19 +25729,19 @@ func (a *StorageApiService) GetStoragePureHostGroupByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStoragePureHostGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -25200,51 +25749,61 @@ func (r ApiGetStoragePureHostGroupListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureHostGroupListRequest) Orderby(orderby string) ApiGetStoragePureHostGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureHostGroupListRequest) Top(top int32) ApiGetStoragePureHostGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureHostGroupListRequest) Skip(skip int32) ApiGetStoragePureHostGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureHostGroupListRequest) Select_(select_ string) ApiGetStoragePureHostGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureHostGroupListRequest) Expand(expand string) ApiGetStoragePureHostGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureHostGroupListRequest) Apply(apply string) ApiGetStoragePureHostGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureHostGroupListRequest) Count(count bool) ApiGetStoragePureHostGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureHostGroupListRequest) Inlinecount(inlinecount string) ApiGetStoragePureHostGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureHostGroupListRequest) At(at string) ApiGetStoragePureHostGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureHostGroupListRequest) Tags(tags string) ApiGetStoragePureHostGroupListRequest {
 	r.tags = &tags
@@ -25264,7 +25823,7 @@ GetStoragePureHostGroupList Read a 'storage.PureHostGroup' resource.
 func (a *StorageApiService) GetStoragePureHostGroupList(ctx _context.Context) ApiGetStoragePureHostGroupListRequest {
 	return ApiGetStoragePureHostGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -25403,13 +25962,13 @@ func (a *StorageApiService) GetStoragePureHostGroupListExecute(r ApiGetStoragePu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25426,19 +25985,19 @@ func (a *StorageApiService) GetStoragePureHostGroupListExecute(r ApiGetStoragePu
 }
 
 type ApiGetStoragePureHostListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -25446,51 +26005,61 @@ func (r ApiGetStoragePureHostListRequest) Filter(filter string) ApiGetStoragePur
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureHostListRequest) Orderby(orderby string) ApiGetStoragePureHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureHostListRequest) Top(top int32) ApiGetStoragePureHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureHostListRequest) Skip(skip int32) ApiGetStoragePureHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureHostListRequest) Select_(select_ string) ApiGetStoragePureHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureHostListRequest) Expand(expand string) ApiGetStoragePureHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureHostListRequest) Apply(apply string) ApiGetStoragePureHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureHostListRequest) Count(count bool) ApiGetStoragePureHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureHostListRequest) Inlinecount(inlinecount string) ApiGetStoragePureHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureHostListRequest) At(at string) ApiGetStoragePureHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureHostListRequest) Tags(tags string) ApiGetStoragePureHostListRequest {
 	r.tags = &tags
@@ -25510,7 +26079,7 @@ GetStoragePureHostList Read a 'storage.PureHost' resource.
 func (a *StorageApiService) GetStoragePureHostList(ctx _context.Context) ApiGetStoragePureHostListRequest {
 	return ApiGetStoragePureHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -25649,13 +26218,13 @@ func (a *StorageApiService) GetStoragePureHostListExecute(r ApiGetStoragePureHos
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25672,11 +26241,10 @@ func (a *StorageApiService) GetStoragePureHostListExecute(r ApiGetStoragePureHos
 }
 
 type ApiGetStoragePureHostLunByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureHostLunByMoidRequest) Execute() (StoragePureHostLun, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureHostLunByMoidExecute(r)
@@ -25692,8 +26260,8 @@ GetStoragePureHostLunByMoid Read a 'storage.PureHostLun' resource.
 func (a *StorageApiService) GetStoragePureHostLunByMoid(ctx _context.Context, moid string) ApiGetStoragePureHostLunByMoidRequest {
 	return ApiGetStoragePureHostLunByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25800,13 +26368,13 @@ func (a *StorageApiService) GetStoragePureHostLunByMoidExecute(r ApiGetStoragePu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25823,19 +26391,19 @@ func (a *StorageApiService) GetStoragePureHostLunByMoidExecute(r ApiGetStoragePu
 }
 
 type ApiGetStoragePureHostLunListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -25843,51 +26411,61 @@ func (r ApiGetStoragePureHostLunListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureHostLunListRequest) Orderby(orderby string) ApiGetStoragePureHostLunListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureHostLunListRequest) Top(top int32) ApiGetStoragePureHostLunListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureHostLunListRequest) Skip(skip int32) ApiGetStoragePureHostLunListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureHostLunListRequest) Select_(select_ string) ApiGetStoragePureHostLunListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureHostLunListRequest) Expand(expand string) ApiGetStoragePureHostLunListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureHostLunListRequest) Apply(apply string) ApiGetStoragePureHostLunListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureHostLunListRequest) Count(count bool) ApiGetStoragePureHostLunListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureHostLunListRequest) Inlinecount(inlinecount string) ApiGetStoragePureHostLunListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureHostLunListRequest) At(at string) ApiGetStoragePureHostLunListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureHostLunListRequest) Tags(tags string) ApiGetStoragePureHostLunListRequest {
 	r.tags = &tags
@@ -25907,7 +26485,7 @@ GetStoragePureHostLunList Read a 'storage.PureHostLun' resource.
 func (a *StorageApiService) GetStoragePureHostLunList(ctx _context.Context) ApiGetStoragePureHostLunListRequest {
 	return ApiGetStoragePureHostLunListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -26046,13 +26624,13 @@ func (a *StorageApiService) GetStoragePureHostLunListExecute(r ApiGetStoragePure
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26069,11 +26647,10 @@ func (a *StorageApiService) GetStoragePureHostLunListExecute(r ApiGetStoragePure
 }
 
 type ApiGetStoragePurePortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePurePortByMoidRequest) Execute() (StoragePurePort, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePurePortByMoidExecute(r)
@@ -26089,8 +26666,8 @@ GetStoragePurePortByMoid Read a 'storage.PurePort' resource.
 func (a *StorageApiService) GetStoragePurePortByMoid(ctx _context.Context, moid string) ApiGetStoragePurePortByMoidRequest {
 	return ApiGetStoragePurePortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26197,13 +26774,13 @@ func (a *StorageApiService) GetStoragePurePortByMoidExecute(r ApiGetStoragePureP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26220,19 +26797,19 @@ func (a *StorageApiService) GetStoragePurePortByMoidExecute(r ApiGetStoragePureP
 }
 
 type ApiGetStoragePurePortListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -26240,51 +26817,61 @@ func (r ApiGetStoragePurePortListRequest) Filter(filter string) ApiGetStoragePur
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePurePortListRequest) Orderby(orderby string) ApiGetStoragePurePortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePurePortListRequest) Top(top int32) ApiGetStoragePurePortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePurePortListRequest) Skip(skip int32) ApiGetStoragePurePortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePurePortListRequest) Select_(select_ string) ApiGetStoragePurePortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePurePortListRequest) Expand(expand string) ApiGetStoragePurePortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePurePortListRequest) Apply(apply string) ApiGetStoragePurePortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePurePortListRequest) Count(count bool) ApiGetStoragePurePortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePurePortListRequest) Inlinecount(inlinecount string) ApiGetStoragePurePortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePurePortListRequest) At(at string) ApiGetStoragePurePortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePurePortListRequest) Tags(tags string) ApiGetStoragePurePortListRequest {
 	r.tags = &tags
@@ -26304,7 +26891,7 @@ GetStoragePurePortList Read a 'storage.PurePort' resource.
 func (a *StorageApiService) GetStoragePurePortList(ctx _context.Context) ApiGetStoragePurePortListRequest {
 	return ApiGetStoragePurePortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -26443,13 +27030,13 @@ func (a *StorageApiService) GetStoragePurePortListExecute(r ApiGetStoragePurePor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26466,11 +27053,10 @@ func (a *StorageApiService) GetStoragePurePortListExecute(r ApiGetStoragePurePor
 }
 
 type ApiGetStoragePureProtectionGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureProtectionGroupByMoidRequest) Execute() (StoragePureProtectionGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureProtectionGroupByMoidExecute(r)
@@ -26486,8 +27072,8 @@ GetStoragePureProtectionGroupByMoid Read a 'storage.PureProtectionGroup' resourc
 func (a *StorageApiService) GetStoragePureProtectionGroupByMoid(ctx _context.Context, moid string) ApiGetStoragePureProtectionGroupByMoidRequest {
 	return ApiGetStoragePureProtectionGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26594,13 +27180,13 @@ func (a *StorageApiService) GetStoragePureProtectionGroupByMoidExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26617,19 +27203,19 @@ func (a *StorageApiService) GetStoragePureProtectionGroupByMoidExecute(r ApiGetS
 }
 
 type ApiGetStoragePureProtectionGroupListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -26637,51 +27223,61 @@ func (r ApiGetStoragePureProtectionGroupListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureProtectionGroupListRequest) Orderby(orderby string) ApiGetStoragePureProtectionGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureProtectionGroupListRequest) Top(top int32) ApiGetStoragePureProtectionGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureProtectionGroupListRequest) Skip(skip int32) ApiGetStoragePureProtectionGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureProtectionGroupListRequest) Select_(select_ string) ApiGetStoragePureProtectionGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureProtectionGroupListRequest) Expand(expand string) ApiGetStoragePureProtectionGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureProtectionGroupListRequest) Apply(apply string) ApiGetStoragePureProtectionGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureProtectionGroupListRequest) Count(count bool) ApiGetStoragePureProtectionGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureProtectionGroupListRequest) Inlinecount(inlinecount string) ApiGetStoragePureProtectionGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureProtectionGroupListRequest) At(at string) ApiGetStoragePureProtectionGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureProtectionGroupListRequest) Tags(tags string) ApiGetStoragePureProtectionGroupListRequest {
 	r.tags = &tags
@@ -26701,7 +27297,7 @@ GetStoragePureProtectionGroupList Read a 'storage.PureProtectionGroup' resource.
 func (a *StorageApiService) GetStoragePureProtectionGroupList(ctx _context.Context) ApiGetStoragePureProtectionGroupListRequest {
 	return ApiGetStoragePureProtectionGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -26840,13 +27436,13 @@ func (a *StorageApiService) GetStoragePureProtectionGroupListExecute(r ApiGetSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26863,11 +27459,10 @@ func (a *StorageApiService) GetStoragePureProtectionGroupListExecute(r ApiGetSto
 }
 
 type ApiGetStoragePureProtectionGroupSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureProtectionGroupSnapshotByMoidRequest) Execute() (StoragePureProtectionGroupSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureProtectionGroupSnapshotByMoidExecute(r)
@@ -26883,8 +27478,8 @@ GetStoragePureProtectionGroupSnapshotByMoid Read a 'storage.PureProtectionGroupS
 func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotByMoid(ctx _context.Context, moid string) ApiGetStoragePureProtectionGroupSnapshotByMoidRequest {
 	return ApiGetStoragePureProtectionGroupSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26991,13 +27586,13 @@ func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27014,19 +27609,19 @@ func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotByMoidExecute(r
 }
 
 type ApiGetStoragePureProtectionGroupSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -27034,51 +27629,61 @@ func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Orderby(orderby string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Top(top int32) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Skip(skip int32) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Select_(select_ string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Expand(expand string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Apply(apply string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Count(count bool) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Inlinecount(inlinecount string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) At(at string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureProtectionGroupSnapshotListRequest) Tags(tags string) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	r.tags = &tags
@@ -27098,7 +27703,7 @@ GetStoragePureProtectionGroupSnapshotList Read a 'storage.PureProtectionGroupSna
 func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotList(ctx _context.Context) ApiGetStoragePureProtectionGroupSnapshotListRequest {
 	return ApiGetStoragePureProtectionGroupSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -27237,13 +27842,13 @@ func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27260,11 +27865,10 @@ func (a *StorageApiService) GetStoragePureProtectionGroupSnapshotListExecute(r A
 }
 
 type ApiGetStoragePureReplicationScheduleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureReplicationScheduleByMoidRequest) Execute() (StoragePureReplicationSchedule, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureReplicationScheduleByMoidExecute(r)
@@ -27280,8 +27884,8 @@ GetStoragePureReplicationScheduleByMoid Read a 'storage.PureReplicationSchedule'
 func (a *StorageApiService) GetStoragePureReplicationScheduleByMoid(ctx _context.Context, moid string) ApiGetStoragePureReplicationScheduleByMoidRequest {
 	return ApiGetStoragePureReplicationScheduleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27388,13 +27992,13 @@ func (a *StorageApiService) GetStoragePureReplicationScheduleByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27411,19 +28015,19 @@ func (a *StorageApiService) GetStoragePureReplicationScheduleByMoidExecute(r Api
 }
 
 type ApiGetStoragePureReplicationScheduleListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -27431,51 +28035,61 @@ func (r ApiGetStoragePureReplicationScheduleListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Orderby(orderby string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Top(top int32) ApiGetStoragePureReplicationScheduleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Skip(skip int32) ApiGetStoragePureReplicationScheduleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Select_(select_ string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Expand(expand string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Apply(apply string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Count(count bool) ApiGetStoragePureReplicationScheduleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Inlinecount(inlinecount string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureReplicationScheduleListRequest) At(at string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureReplicationScheduleListRequest) Tags(tags string) ApiGetStoragePureReplicationScheduleListRequest {
 	r.tags = &tags
@@ -27495,7 +28109,7 @@ GetStoragePureReplicationScheduleList Read a 'storage.PureReplicationSchedule' r
 func (a *StorageApiService) GetStoragePureReplicationScheduleList(ctx _context.Context) ApiGetStoragePureReplicationScheduleListRequest {
 	return ApiGetStoragePureReplicationScheduleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -27634,13 +28248,13 @@ func (a *StorageApiService) GetStoragePureReplicationScheduleListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27657,11 +28271,10 @@ func (a *StorageApiService) GetStoragePureReplicationScheduleListExecute(r ApiGe
 }
 
 type ApiGetStoragePureSnapshotScheduleByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureSnapshotScheduleByMoidRequest) Execute() (StoragePureSnapshotSchedule, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureSnapshotScheduleByMoidExecute(r)
@@ -27677,8 +28290,8 @@ GetStoragePureSnapshotScheduleByMoid Read a 'storage.PureSnapshotSchedule' resou
 func (a *StorageApiService) GetStoragePureSnapshotScheduleByMoid(ctx _context.Context, moid string) ApiGetStoragePureSnapshotScheduleByMoidRequest {
 	return ApiGetStoragePureSnapshotScheduleByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27785,13 +28398,13 @@ func (a *StorageApiService) GetStoragePureSnapshotScheduleByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27808,19 +28421,19 @@ func (a *StorageApiService) GetStoragePureSnapshotScheduleByMoidExecute(r ApiGet
 }
 
 type ApiGetStoragePureSnapshotScheduleListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -27828,51 +28441,61 @@ func (r ApiGetStoragePureSnapshotScheduleListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Orderby(orderby string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Top(top int32) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Skip(skip int32) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Select_(select_ string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Expand(expand string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Apply(apply string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Count(count bool) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Inlinecount(inlinecount string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) At(at string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureSnapshotScheduleListRequest) Tags(tags string) ApiGetStoragePureSnapshotScheduleListRequest {
 	r.tags = &tags
@@ -27892,7 +28515,7 @@ GetStoragePureSnapshotScheduleList Read a 'storage.PureSnapshotSchedule' resourc
 func (a *StorageApiService) GetStoragePureSnapshotScheduleList(ctx _context.Context) ApiGetStoragePureSnapshotScheduleListRequest {
 	return ApiGetStoragePureSnapshotScheduleListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -28031,13 +28654,13 @@ func (a *StorageApiService) GetStoragePureSnapshotScheduleListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28054,11 +28677,10 @@ func (a *StorageApiService) GetStoragePureSnapshotScheduleListExecute(r ApiGetSt
 }
 
 type ApiGetStoragePureVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureVolumeByMoidRequest) Execute() (StoragePureVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureVolumeByMoidExecute(r)
@@ -28074,8 +28696,8 @@ GetStoragePureVolumeByMoid Read a 'storage.PureVolume' resource.
 func (a *StorageApiService) GetStoragePureVolumeByMoid(ctx _context.Context, moid string) ApiGetStoragePureVolumeByMoidRequest {
 	return ApiGetStoragePureVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28182,13 +28804,13 @@ func (a *StorageApiService) GetStoragePureVolumeByMoidExecute(r ApiGetStoragePur
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28205,19 +28827,19 @@ func (a *StorageApiService) GetStoragePureVolumeByMoidExecute(r ApiGetStoragePur
 }
 
 type ApiGetStoragePureVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -28225,51 +28847,61 @@ func (r ApiGetStoragePureVolumeListRequest) Filter(filter string) ApiGetStorageP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureVolumeListRequest) Orderby(orderby string) ApiGetStoragePureVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureVolumeListRequest) Top(top int32) ApiGetStoragePureVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureVolumeListRequest) Skip(skip int32) ApiGetStoragePureVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureVolumeListRequest) Select_(select_ string) ApiGetStoragePureVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureVolumeListRequest) Expand(expand string) ApiGetStoragePureVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureVolumeListRequest) Apply(apply string) ApiGetStoragePureVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureVolumeListRequest) Count(count bool) ApiGetStoragePureVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureVolumeListRequest) Inlinecount(inlinecount string) ApiGetStoragePureVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureVolumeListRequest) At(at string) ApiGetStoragePureVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureVolumeListRequest) Tags(tags string) ApiGetStoragePureVolumeListRequest {
 	r.tags = &tags
@@ -28289,7 +28921,7 @@ GetStoragePureVolumeList Read a 'storage.PureVolume' resource.
 func (a *StorageApiService) GetStoragePureVolumeList(ctx _context.Context) ApiGetStoragePureVolumeListRequest {
 	return ApiGetStoragePureVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -28428,13 +29060,13 @@ func (a *StorageApiService) GetStoragePureVolumeListExecute(r ApiGetStoragePureV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28451,11 +29083,10 @@ func (a *StorageApiService) GetStoragePureVolumeListExecute(r ApiGetStoragePureV
 }
 
 type ApiGetStoragePureVolumeSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStoragePureVolumeSnapshotByMoidRequest) Execute() (StoragePureVolumeSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetStoragePureVolumeSnapshotByMoidExecute(r)
@@ -28471,8 +29102,8 @@ GetStoragePureVolumeSnapshotByMoid Read a 'storage.PureVolumeSnapshot' resource.
 func (a *StorageApiService) GetStoragePureVolumeSnapshotByMoid(ctx _context.Context, moid string) ApiGetStoragePureVolumeSnapshotByMoidRequest {
 	return ApiGetStoragePureVolumeSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28579,13 +29210,13 @@ func (a *StorageApiService) GetStoragePureVolumeSnapshotByMoidExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28602,19 +29233,19 @@ func (a *StorageApiService) GetStoragePureVolumeSnapshotByMoidExecute(r ApiGetSt
 }
 
 type ApiGetStoragePureVolumeSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -28622,51 +29253,61 @@ func (r ApiGetStoragePureVolumeSnapshotListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Orderby(orderby string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Top(top int32) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Skip(skip int32) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Select_(select_ string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Expand(expand string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Apply(apply string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Count(count bool) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Inlinecount(inlinecount string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) At(at string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStoragePureVolumeSnapshotListRequest) Tags(tags string) ApiGetStoragePureVolumeSnapshotListRequest {
 	r.tags = &tags
@@ -28686,7 +29327,7 @@ GetStoragePureVolumeSnapshotList Read a 'storage.PureVolumeSnapshot' resource.
 func (a *StorageApiService) GetStoragePureVolumeSnapshotList(ctx _context.Context) ApiGetStoragePureVolumeSnapshotListRequest {
 	return ApiGetStoragePureVolumeSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -28825,13 +29466,13 @@ func (a *StorageApiService) GetStoragePureVolumeSnapshotListExecute(r ApiGetStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28848,11 +29489,10 @@ func (a *StorageApiService) GetStoragePureVolumeSnapshotListExecute(r ApiGetStor
 }
 
 type ApiGetStorageSasExpanderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageSasExpanderByMoidRequest) Execute() (StorageSasExpander, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageSasExpanderByMoidExecute(r)
@@ -28868,8 +29508,8 @@ GetStorageSasExpanderByMoid Read a 'storage.SasExpander' resource.
 func (a *StorageApiService) GetStorageSasExpanderByMoid(ctx _context.Context, moid string) ApiGetStorageSasExpanderByMoidRequest {
 	return ApiGetStorageSasExpanderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28976,13 +29616,13 @@ func (a *StorageApiService) GetStorageSasExpanderByMoidExecute(r ApiGetStorageSa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28999,19 +29639,19 @@ func (a *StorageApiService) GetStorageSasExpanderByMoidExecute(r ApiGetStorageSa
 }
 
 type ApiGetStorageSasExpanderListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -29019,51 +29659,61 @@ func (r ApiGetStorageSasExpanderListRequest) Filter(filter string) ApiGetStorage
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageSasExpanderListRequest) Orderby(orderby string) ApiGetStorageSasExpanderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageSasExpanderListRequest) Top(top int32) ApiGetStorageSasExpanderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageSasExpanderListRequest) Skip(skip int32) ApiGetStorageSasExpanderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageSasExpanderListRequest) Select_(select_ string) ApiGetStorageSasExpanderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageSasExpanderListRequest) Expand(expand string) ApiGetStorageSasExpanderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageSasExpanderListRequest) Apply(apply string) ApiGetStorageSasExpanderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageSasExpanderListRequest) Count(count bool) ApiGetStorageSasExpanderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageSasExpanderListRequest) Inlinecount(inlinecount string) ApiGetStorageSasExpanderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageSasExpanderListRequest) At(at string) ApiGetStorageSasExpanderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageSasExpanderListRequest) Tags(tags string) ApiGetStorageSasExpanderListRequest {
 	r.tags = &tags
@@ -29083,7 +29733,7 @@ GetStorageSasExpanderList Read a 'storage.SasExpander' resource.
 func (a *StorageApiService) GetStorageSasExpanderList(ctx _context.Context) ApiGetStorageSasExpanderListRequest {
 	return ApiGetStorageSasExpanderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -29222,13 +29872,13 @@ func (a *StorageApiService) GetStorageSasExpanderListExecute(r ApiGetStorageSasE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29245,11 +29895,10 @@ func (a *StorageApiService) GetStorageSasExpanderListExecute(r ApiGetStorageSasE
 }
 
 type ApiGetStorageSasPortByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageSasPortByMoidRequest) Execute() (StorageSasPort, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageSasPortByMoidExecute(r)
@@ -29265,8 +29914,8 @@ GetStorageSasPortByMoid Read a 'storage.SasPort' resource.
 func (a *StorageApiService) GetStorageSasPortByMoid(ctx _context.Context, moid string) ApiGetStorageSasPortByMoidRequest {
 	return ApiGetStorageSasPortByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29373,13 +30022,13 @@ func (a *StorageApiService) GetStorageSasPortByMoidExecute(r ApiGetStorageSasPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29396,19 +30045,19 @@ func (a *StorageApiService) GetStorageSasPortByMoidExecute(r ApiGetStorageSasPor
 }
 
 type ApiGetStorageSasPortListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -29416,51 +30065,61 @@ func (r ApiGetStorageSasPortListRequest) Filter(filter string) ApiGetStorageSasP
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageSasPortListRequest) Orderby(orderby string) ApiGetStorageSasPortListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageSasPortListRequest) Top(top int32) ApiGetStorageSasPortListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageSasPortListRequest) Skip(skip int32) ApiGetStorageSasPortListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageSasPortListRequest) Select_(select_ string) ApiGetStorageSasPortListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageSasPortListRequest) Expand(expand string) ApiGetStorageSasPortListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageSasPortListRequest) Apply(apply string) ApiGetStorageSasPortListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageSasPortListRequest) Count(count bool) ApiGetStorageSasPortListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageSasPortListRequest) Inlinecount(inlinecount string) ApiGetStorageSasPortListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageSasPortListRequest) At(at string) ApiGetStorageSasPortListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageSasPortListRequest) Tags(tags string) ApiGetStorageSasPortListRequest {
 	r.tags = &tags
@@ -29480,7 +30139,7 @@ GetStorageSasPortList Read a 'storage.SasPort' resource.
 func (a *StorageApiService) GetStorageSasPortList(ctx _context.Context) ApiGetStorageSasPortListRequest {
 	return ApiGetStorageSasPortListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -29619,13 +30278,13 @@ func (a *StorageApiService) GetStorageSasPortListExecute(r ApiGetStorageSasPortL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29642,11 +30301,10 @@ func (a *StorageApiService) GetStorageSasPortListExecute(r ApiGetStorageSasPortL
 }
 
 type ApiGetStorageSpanByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageSpanByMoidRequest) Execute() (StorageSpan, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageSpanByMoidExecute(r)
@@ -29662,8 +30320,8 @@ GetStorageSpanByMoid Read a 'storage.Span' resource.
 func (a *StorageApiService) GetStorageSpanByMoid(ctx _context.Context, moid string) ApiGetStorageSpanByMoidRequest {
 	return ApiGetStorageSpanByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29770,13 +30428,13 @@ func (a *StorageApiService) GetStorageSpanByMoidExecute(r ApiGetStorageSpanByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29793,19 +30451,19 @@ func (a *StorageApiService) GetStorageSpanByMoidExecute(r ApiGetStorageSpanByMoi
 }
 
 type ApiGetStorageSpanListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -29813,51 +30471,61 @@ func (r ApiGetStorageSpanListRequest) Filter(filter string) ApiGetStorageSpanLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageSpanListRequest) Orderby(orderby string) ApiGetStorageSpanListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageSpanListRequest) Top(top int32) ApiGetStorageSpanListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageSpanListRequest) Skip(skip int32) ApiGetStorageSpanListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageSpanListRequest) Select_(select_ string) ApiGetStorageSpanListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageSpanListRequest) Expand(expand string) ApiGetStorageSpanListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageSpanListRequest) Apply(apply string) ApiGetStorageSpanListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageSpanListRequest) Count(count bool) ApiGetStorageSpanListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageSpanListRequest) Inlinecount(inlinecount string) ApiGetStorageSpanListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageSpanListRequest) At(at string) ApiGetStorageSpanListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageSpanListRequest) Tags(tags string) ApiGetStorageSpanListRequest {
 	r.tags = &tags
@@ -29877,7 +30545,7 @@ GetStorageSpanList Read a 'storage.Span' resource.
 func (a *StorageApiService) GetStorageSpanList(ctx _context.Context) ApiGetStorageSpanListRequest {
 	return ApiGetStorageSpanListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -30016,13 +30684,13 @@ func (a *StorageApiService) GetStorageSpanListExecute(r ApiGetStorageSpanListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30039,11 +30707,10 @@ func (a *StorageApiService) GetStorageSpanListExecute(r ApiGetStorageSpanListReq
 }
 
 type ApiGetStorageStoragePolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageStoragePolicyByMoidRequest) Execute() (StorageStoragePolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageStoragePolicyByMoidExecute(r)
@@ -30059,8 +30726,8 @@ GetStorageStoragePolicyByMoid Read a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) GetStorageStoragePolicyByMoid(ctx _context.Context, moid string) ApiGetStorageStoragePolicyByMoidRequest {
 	return ApiGetStorageStoragePolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30167,13 +30834,13 @@ func (a *StorageApiService) GetStorageStoragePolicyByMoidExecute(r ApiGetStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30190,19 +30857,19 @@ func (a *StorageApiService) GetStorageStoragePolicyByMoidExecute(r ApiGetStorage
 }
 
 type ApiGetStorageStoragePolicyListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -30210,51 +30877,61 @@ func (r ApiGetStorageStoragePolicyListRequest) Filter(filter string) ApiGetStora
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageStoragePolicyListRequest) Orderby(orderby string) ApiGetStorageStoragePolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageStoragePolicyListRequest) Top(top int32) ApiGetStorageStoragePolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageStoragePolicyListRequest) Skip(skip int32) ApiGetStorageStoragePolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageStoragePolicyListRequest) Select_(select_ string) ApiGetStorageStoragePolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageStoragePolicyListRequest) Expand(expand string) ApiGetStorageStoragePolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageStoragePolicyListRequest) Apply(apply string) ApiGetStorageStoragePolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageStoragePolicyListRequest) Count(count bool) ApiGetStorageStoragePolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageStoragePolicyListRequest) Inlinecount(inlinecount string) ApiGetStorageStoragePolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageStoragePolicyListRequest) At(at string) ApiGetStorageStoragePolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageStoragePolicyListRequest) Tags(tags string) ApiGetStorageStoragePolicyListRequest {
 	r.tags = &tags
@@ -30274,7 +30951,7 @@ GetStorageStoragePolicyList Read a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) GetStorageStoragePolicyList(ctx _context.Context) ApiGetStorageStoragePolicyListRequest {
 	return ApiGetStorageStoragePolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -30413,13 +31090,13 @@ func (a *StorageApiService) GetStorageStoragePolicyListExecute(r ApiGetStorageSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30436,11 +31113,10 @@ func (a *StorageApiService) GetStorageStoragePolicyListExecute(r ApiGetStorageSt
 }
 
 type ApiGetStorageVdMemberEpByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageVdMemberEpByMoidRequest) Execute() (StorageVdMemberEp, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageVdMemberEpByMoidExecute(r)
@@ -30456,8 +31132,8 @@ GetStorageVdMemberEpByMoid Read a 'storage.VdMemberEp' resource.
 func (a *StorageApiService) GetStorageVdMemberEpByMoid(ctx _context.Context, moid string) ApiGetStorageVdMemberEpByMoidRequest {
 	return ApiGetStorageVdMemberEpByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30564,13 +31240,13 @@ func (a *StorageApiService) GetStorageVdMemberEpByMoidExecute(r ApiGetStorageVdM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30587,19 +31263,19 @@ func (a *StorageApiService) GetStorageVdMemberEpByMoidExecute(r ApiGetStorageVdM
 }
 
 type ApiGetStorageVdMemberEpListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -30607,51 +31283,61 @@ func (r ApiGetStorageVdMemberEpListRequest) Filter(filter string) ApiGetStorageV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageVdMemberEpListRequest) Orderby(orderby string) ApiGetStorageVdMemberEpListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageVdMemberEpListRequest) Top(top int32) ApiGetStorageVdMemberEpListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageVdMemberEpListRequest) Skip(skip int32) ApiGetStorageVdMemberEpListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageVdMemberEpListRequest) Select_(select_ string) ApiGetStorageVdMemberEpListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageVdMemberEpListRequest) Expand(expand string) ApiGetStorageVdMemberEpListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageVdMemberEpListRequest) Apply(apply string) ApiGetStorageVdMemberEpListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageVdMemberEpListRequest) Count(count bool) ApiGetStorageVdMemberEpListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageVdMemberEpListRequest) Inlinecount(inlinecount string) ApiGetStorageVdMemberEpListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageVdMemberEpListRequest) At(at string) ApiGetStorageVdMemberEpListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageVdMemberEpListRequest) Tags(tags string) ApiGetStorageVdMemberEpListRequest {
 	r.tags = &tags
@@ -30671,7 +31357,7 @@ GetStorageVdMemberEpList Read a 'storage.VdMemberEp' resource.
 func (a *StorageApiService) GetStorageVdMemberEpList(ctx _context.Context) ApiGetStorageVdMemberEpListRequest {
 	return ApiGetStorageVdMemberEpListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -30810,13 +31496,13 @@ func (a *StorageApiService) GetStorageVdMemberEpListExecute(r ApiGetStorageVdMem
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30833,11 +31519,10 @@ func (a *StorageApiService) GetStorageVdMemberEpListExecute(r ApiGetStorageVdMem
 }
 
 type ApiGetStorageVirtualDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageVirtualDriveByMoidRequest) Execute() (StorageVirtualDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageVirtualDriveByMoidExecute(r)
@@ -30853,8 +31538,8 @@ GetStorageVirtualDriveByMoid Read a 'storage.VirtualDrive' resource.
 func (a *StorageApiService) GetStorageVirtualDriveByMoid(ctx _context.Context, moid string) ApiGetStorageVirtualDriveByMoidRequest {
 	return ApiGetStorageVirtualDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30961,13 +31646,13 @@ func (a *StorageApiService) GetStorageVirtualDriveByMoidExecute(r ApiGetStorageV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30984,11 +31669,10 @@ func (a *StorageApiService) GetStorageVirtualDriveByMoidExecute(r ApiGetStorageV
 }
 
 type ApiGetStorageVirtualDriveContainerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageVirtualDriveContainerByMoidRequest) Execute() (StorageVirtualDriveContainer, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageVirtualDriveContainerByMoidExecute(r)
@@ -31004,8 +31688,8 @@ GetStorageVirtualDriveContainerByMoid Read a 'storage.VirtualDriveContainer' res
 func (a *StorageApiService) GetStorageVirtualDriveContainerByMoid(ctx _context.Context, moid string) ApiGetStorageVirtualDriveContainerByMoidRequest {
 	return ApiGetStorageVirtualDriveContainerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31112,13 +31796,13 @@ func (a *StorageApiService) GetStorageVirtualDriveContainerByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31135,19 +31819,19 @@ func (a *StorageApiService) GetStorageVirtualDriveContainerByMoidExecute(r ApiGe
 }
 
 type ApiGetStorageVirtualDriveContainerListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -31155,51 +31839,61 @@ func (r ApiGetStorageVirtualDriveContainerListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Orderby(orderby string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Top(top int32) ApiGetStorageVirtualDriveContainerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Skip(skip int32) ApiGetStorageVirtualDriveContainerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Select_(select_ string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Expand(expand string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Apply(apply string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Count(count bool) ApiGetStorageVirtualDriveContainerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Inlinecount(inlinecount string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageVirtualDriveContainerListRequest) At(at string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageVirtualDriveContainerListRequest) Tags(tags string) ApiGetStorageVirtualDriveContainerListRequest {
 	r.tags = &tags
@@ -31219,7 +31913,7 @@ GetStorageVirtualDriveContainerList Read a 'storage.VirtualDriveContainer' resou
 func (a *StorageApiService) GetStorageVirtualDriveContainerList(ctx _context.Context) ApiGetStorageVirtualDriveContainerListRequest {
 	return ApiGetStorageVirtualDriveContainerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -31358,13 +32052,13 @@ func (a *StorageApiService) GetStorageVirtualDriveContainerListExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31381,11 +32075,10 @@ func (a *StorageApiService) GetStorageVirtualDriveContainerListExecute(r ApiGetS
 }
 
 type ApiGetStorageVirtualDriveExtensionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageVirtualDriveExtensionByMoidRequest) Execute() (StorageVirtualDriveExtension, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageVirtualDriveExtensionByMoidExecute(r)
@@ -31401,8 +32094,8 @@ GetStorageVirtualDriveExtensionByMoid Read a 'storage.VirtualDriveExtension' res
 func (a *StorageApiService) GetStorageVirtualDriveExtensionByMoid(ctx _context.Context, moid string) ApiGetStorageVirtualDriveExtensionByMoidRequest {
 	return ApiGetStorageVirtualDriveExtensionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31509,13 +32202,13 @@ func (a *StorageApiService) GetStorageVirtualDriveExtensionByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31532,19 +32225,19 @@ func (a *StorageApiService) GetStorageVirtualDriveExtensionByMoidExecute(r ApiGe
 }
 
 type ApiGetStorageVirtualDriveExtensionListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -31552,51 +32245,61 @@ func (r ApiGetStorageVirtualDriveExtensionListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Orderby(orderby string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Top(top int32) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Skip(skip int32) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Select_(select_ string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Expand(expand string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Apply(apply string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Count(count bool) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Inlinecount(inlinecount string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) At(at string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageVirtualDriveExtensionListRequest) Tags(tags string) ApiGetStorageVirtualDriveExtensionListRequest {
 	r.tags = &tags
@@ -31616,7 +32319,7 @@ GetStorageVirtualDriveExtensionList Read a 'storage.VirtualDriveExtension' resou
 func (a *StorageApiService) GetStorageVirtualDriveExtensionList(ctx _context.Context) ApiGetStorageVirtualDriveExtensionListRequest {
 	return ApiGetStorageVirtualDriveExtensionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -31755,13 +32458,13 @@ func (a *StorageApiService) GetStorageVirtualDriveExtensionListExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31778,11 +32481,10 @@ func (a *StorageApiService) GetStorageVirtualDriveExtensionListExecute(r ApiGetS
 }
 
 type ApiGetStorageVirtualDriveIdentityByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *StorageApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetStorageVirtualDriveIdentityByMoidRequest) Execute() (StorageVirtualDriveIdentity, *_nethttp.Response, error) {
 	return r.ApiService.GetStorageVirtualDriveIdentityByMoidExecute(r)
@@ -31798,8 +32500,8 @@ GetStorageVirtualDriveIdentityByMoid Read a 'storage.VirtualDriveIdentity' resou
 func (a *StorageApiService) GetStorageVirtualDriveIdentityByMoid(ctx _context.Context, moid string) ApiGetStorageVirtualDriveIdentityByMoidRequest {
 	return ApiGetStorageVirtualDriveIdentityByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31906,13 +32608,13 @@ func (a *StorageApiService) GetStorageVirtualDriveIdentityByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31929,19 +32631,19 @@ func (a *StorageApiService) GetStorageVirtualDriveIdentityByMoidExecute(r ApiGet
 }
 
 type ApiGetStorageVirtualDriveIdentityListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -31949,51 +32651,61 @@ func (r ApiGetStorageVirtualDriveIdentityListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Orderby(orderby string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Top(top int32) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Skip(skip int32) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Select_(select_ string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Expand(expand string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Apply(apply string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Count(count bool) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Inlinecount(inlinecount string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) At(at string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageVirtualDriveIdentityListRequest) Tags(tags string) ApiGetStorageVirtualDriveIdentityListRequest {
 	r.tags = &tags
@@ -32013,7 +32725,7 @@ GetStorageVirtualDriveIdentityList Read a 'storage.VirtualDriveIdentity' resourc
 func (a *StorageApiService) GetStorageVirtualDriveIdentityList(ctx _context.Context) ApiGetStorageVirtualDriveIdentityListRequest {
 	return ApiGetStorageVirtualDriveIdentityListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -32152,13 +32864,13 @@ func (a *StorageApiService) GetStorageVirtualDriveIdentityListExecute(r ApiGetSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32175,19 +32887,19 @@ func (a *StorageApiService) GetStorageVirtualDriveIdentityListExecute(r ApiGetSt
 }
 
 type ApiGetStorageVirtualDriveListRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -32195,51 +32907,61 @@ func (r ApiGetStorageVirtualDriveListRequest) Filter(filter string) ApiGetStorag
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetStorageVirtualDriveListRequest) Orderby(orderby string) ApiGetStorageVirtualDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetStorageVirtualDriveListRequest) Top(top int32) ApiGetStorageVirtualDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetStorageVirtualDriveListRequest) Skip(skip int32) ApiGetStorageVirtualDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetStorageVirtualDriveListRequest) Select_(select_ string) ApiGetStorageVirtualDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetStorageVirtualDriveListRequest) Expand(expand string) ApiGetStorageVirtualDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetStorageVirtualDriveListRequest) Apply(apply string) ApiGetStorageVirtualDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetStorageVirtualDriveListRequest) Count(count bool) ApiGetStorageVirtualDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetStorageVirtualDriveListRequest) Inlinecount(inlinecount string) ApiGetStorageVirtualDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetStorageVirtualDriveListRequest) At(at string) ApiGetStorageVirtualDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetStorageVirtualDriveListRequest) Tags(tags string) ApiGetStorageVirtualDriveListRequest {
 	r.tags = &tags
@@ -32259,7 +32981,7 @@ GetStorageVirtualDriveList Read a 'storage.VirtualDrive' resource.
 func (a *StorageApiService) GetStorageVirtualDriveList(ctx _context.Context) ApiGetStorageVirtualDriveListRequest {
 	return ApiGetStorageVirtualDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -32398,13 +33120,13 @@ func (a *StorageApiService) GetStorageVirtualDriveListExecute(r ApiGetStorageVir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32421,11 +33143,11 @@ func (a *StorageApiService) GetStorageVirtualDriveListExecute(r ApiGetStorageVir
 }
 
 type ApiPatchStorageControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageController *StorageController
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.Controller&#39; resource to update.
@@ -32433,6 +33155,7 @@ func (r ApiPatchStorageControllerRequest) StorageController(storageController St
 	r.storageController = &storageController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageControllerRequest) IfMatch(ifMatch string) ApiPatchStorageControllerRequest {
 	r.ifMatch = &ifMatch
@@ -32453,8 +33176,8 @@ PatchStorageController Update a 'storage.Controller' resource.
 func (a *StorageApiService) PatchStorageController(ctx _context.Context, moid string) ApiPatchStorageControllerRequest {
 	return ApiPatchStorageControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32569,13 +33292,13 @@ func (a *StorageApiService) PatchStorageControllerExecute(r ApiPatchStorageContr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32592,11 +33315,11 @@ func (a *StorageApiService) PatchStorageControllerExecute(r ApiPatchStorageContr
 }
 
 type ApiPatchStorageDiskGroupRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storageDiskGroup *StorageDiskGroup
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.DiskGroup&#39; resource to update.
@@ -32604,6 +33327,7 @@ func (r ApiPatchStorageDiskGroupRequest) StorageDiskGroup(storageDiskGroup Stora
 	r.storageDiskGroup = &storageDiskGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageDiskGroupRequest) IfMatch(ifMatch string) ApiPatchStorageDiskGroupRequest {
 	r.ifMatch = &ifMatch
@@ -32624,8 +33348,8 @@ PatchStorageDiskGroup Update a 'storage.DiskGroup' resource.
 func (a *StorageApiService) PatchStorageDiskGroup(ctx _context.Context, moid string) ApiPatchStorageDiskGroupRequest {
 	return ApiPatchStorageDiskGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32740,13 +33464,13 @@ func (a *StorageApiService) PatchStorageDiskGroupExecute(r ApiPatchStorageDiskGr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32763,11 +33487,11 @@ func (a *StorageApiService) PatchStorageDiskGroupExecute(r ApiPatchStorageDiskGr
 }
 
 type ApiPatchStorageDriveGroupRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageDriveGroup *StorageDriveGroup
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.DriveGroup&#39; resource to update.
@@ -32775,6 +33499,7 @@ func (r ApiPatchStorageDriveGroupRequest) StorageDriveGroup(storageDriveGroup St
 	r.storageDriveGroup = &storageDriveGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageDriveGroupRequest) IfMatch(ifMatch string) ApiPatchStorageDriveGroupRequest {
 	r.ifMatch = &ifMatch
@@ -32795,8 +33520,8 @@ PatchStorageDriveGroup Update a 'storage.DriveGroup' resource.
 func (a *StorageApiService) PatchStorageDriveGroup(ctx _context.Context, moid string) ApiPatchStorageDriveGroupRequest {
 	return ApiPatchStorageDriveGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32911,13 +33636,13 @@ func (a *StorageApiService) PatchStorageDriveGroupExecute(r ApiPatchStorageDrive
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32934,11 +33659,11 @@ func (a *StorageApiService) PatchStorageDriveGroupExecute(r ApiPatchStorageDrive
 }
 
 type ApiPatchStorageEnclosureRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storageEnclosure *StorageEnclosure
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.Enclosure&#39; resource to update.
@@ -32946,6 +33671,7 @@ func (r ApiPatchStorageEnclosureRequest) StorageEnclosure(storageEnclosure Stora
 	r.storageEnclosure = &storageEnclosure
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageEnclosureRequest) IfMatch(ifMatch string) ApiPatchStorageEnclosureRequest {
 	r.ifMatch = &ifMatch
@@ -32966,8 +33692,8 @@ PatchStorageEnclosure Update a 'storage.Enclosure' resource.
 func (a *StorageApiService) PatchStorageEnclosure(ctx _context.Context, moid string) ApiPatchStorageEnclosureRequest {
 	return ApiPatchStorageEnclosureRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33082,13 +33808,13 @@ func (a *StorageApiService) PatchStorageEnclosureExecute(r ApiPatchStorageEnclos
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33105,11 +33831,11 @@ func (a *StorageApiService) PatchStorageEnclosureExecute(r ApiPatchStorageEnclos
 }
 
 type ApiPatchStorageEnclosureDiskRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageEnclosureDisk *StorageEnclosureDisk
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.EnclosureDisk&#39; resource to update.
@@ -33117,6 +33843,7 @@ func (r ApiPatchStorageEnclosureDiskRequest) StorageEnclosureDisk(storageEnclosu
 	r.storageEnclosureDisk = &storageEnclosureDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageEnclosureDiskRequest) IfMatch(ifMatch string) ApiPatchStorageEnclosureDiskRequest {
 	r.ifMatch = &ifMatch
@@ -33137,8 +33864,8 @@ PatchStorageEnclosureDisk Update a 'storage.EnclosureDisk' resource.
 func (a *StorageApiService) PatchStorageEnclosureDisk(ctx _context.Context, moid string) ApiPatchStorageEnclosureDiskRequest {
 	return ApiPatchStorageEnclosureDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33253,13 +33980,13 @@ func (a *StorageApiService) PatchStorageEnclosureDiskExecute(r ApiPatchStorageEn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33276,11 +34003,11 @@ func (a *StorageApiService) PatchStorageEnclosureDiskExecute(r ApiPatchStorageEn
 }
 
 type ApiPatchStorageEnclosureDiskSlotEpRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *StorageApiService
+	moid                       string
 	storageEnclosureDiskSlotEp *StorageEnclosureDiskSlotEp
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;storage.EnclosureDiskSlotEp&#39; resource to update.
@@ -33288,6 +34015,7 @@ func (r ApiPatchStorageEnclosureDiskSlotEpRequest) StorageEnclosureDiskSlotEp(st
 	r.storageEnclosureDiskSlotEp = &storageEnclosureDiskSlotEp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageEnclosureDiskSlotEpRequest) IfMatch(ifMatch string) ApiPatchStorageEnclosureDiskSlotEpRequest {
 	r.ifMatch = &ifMatch
@@ -33308,8 +34036,8 @@ PatchStorageEnclosureDiskSlotEp Update a 'storage.EnclosureDiskSlotEp' resource.
 func (a *StorageApiService) PatchStorageEnclosureDiskSlotEp(ctx _context.Context, moid string) ApiPatchStorageEnclosureDiskSlotEpRequest {
 	return ApiPatchStorageEnclosureDiskSlotEpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33424,13 +34152,13 @@ func (a *StorageApiService) PatchStorageEnclosureDiskSlotEpExecute(r ApiPatchSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33447,11 +34175,11 @@ func (a *StorageApiService) PatchStorageEnclosureDiskSlotEpExecute(r ApiPatchSto
 }
 
 type ApiPatchStorageFlexFlashControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *StorageApiService
+	moid                       string
 	storageFlexFlashController *StorageFlexFlashController
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;storage.FlexFlashController&#39; resource to update.
@@ -33459,6 +34187,7 @@ func (r ApiPatchStorageFlexFlashControllerRequest) StorageFlexFlashController(st
 	r.storageFlexFlashController = &storageFlexFlashController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexFlashControllerRequest) IfMatch(ifMatch string) ApiPatchStorageFlexFlashControllerRequest {
 	r.ifMatch = &ifMatch
@@ -33479,8 +34208,8 @@ PatchStorageFlexFlashController Update a 'storage.FlexFlashController' resource.
 func (a *StorageApiService) PatchStorageFlexFlashController(ctx _context.Context, moid string) ApiPatchStorageFlexFlashControllerRequest {
 	return ApiPatchStorageFlexFlashControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33595,13 +34324,13 @@ func (a *StorageApiService) PatchStorageFlexFlashControllerExecute(r ApiPatchSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33618,11 +34347,11 @@ func (a *StorageApiService) PatchStorageFlexFlashControllerExecute(r ApiPatchSto
 }
 
 type ApiPatchStorageFlexFlashControllerPropsRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *StorageApiService
+	moid                            string
 	storageFlexFlashControllerProps *StorageFlexFlashControllerProps
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;storage.FlexFlashControllerProps&#39; resource to update.
@@ -33630,6 +34359,7 @@ func (r ApiPatchStorageFlexFlashControllerPropsRequest) StorageFlexFlashControll
 	r.storageFlexFlashControllerProps = &storageFlexFlashControllerProps
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexFlashControllerPropsRequest) IfMatch(ifMatch string) ApiPatchStorageFlexFlashControllerPropsRequest {
 	r.ifMatch = &ifMatch
@@ -33650,8 +34380,8 @@ PatchStorageFlexFlashControllerProps Update a 'storage.FlexFlashControllerProps'
 func (a *StorageApiService) PatchStorageFlexFlashControllerProps(ctx _context.Context, moid string) ApiPatchStorageFlexFlashControllerPropsRequest {
 	return ApiPatchStorageFlexFlashControllerPropsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33766,13 +34496,13 @@ func (a *StorageApiService) PatchStorageFlexFlashControllerPropsExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33789,11 +34519,11 @@ func (a *StorageApiService) PatchStorageFlexFlashControllerPropsExecute(r ApiPat
 }
 
 type ApiPatchStorageFlexFlashPhysicalDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *StorageApiService
+	moid                          string
 	storageFlexFlashPhysicalDrive *StorageFlexFlashPhysicalDrive
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;storage.FlexFlashPhysicalDrive&#39; resource to update.
@@ -33801,6 +34531,7 @@ func (r ApiPatchStorageFlexFlashPhysicalDriveRequest) StorageFlexFlashPhysicalDr
 	r.storageFlexFlashPhysicalDrive = &storageFlexFlashPhysicalDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexFlashPhysicalDriveRequest) IfMatch(ifMatch string) ApiPatchStorageFlexFlashPhysicalDriveRequest {
 	r.ifMatch = &ifMatch
@@ -33821,8 +34552,8 @@ PatchStorageFlexFlashPhysicalDrive Update a 'storage.FlexFlashPhysicalDrive' res
 func (a *StorageApiService) PatchStorageFlexFlashPhysicalDrive(ctx _context.Context, moid string) ApiPatchStorageFlexFlashPhysicalDriveRequest {
 	return ApiPatchStorageFlexFlashPhysicalDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33937,13 +34668,13 @@ func (a *StorageApiService) PatchStorageFlexFlashPhysicalDriveExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33960,11 +34691,11 @@ func (a *StorageApiService) PatchStorageFlexFlashPhysicalDriveExecute(r ApiPatch
 }
 
 type ApiPatchStorageFlexFlashVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageFlexFlashVirtualDrive *StorageFlexFlashVirtualDrive
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.FlexFlashVirtualDrive&#39; resource to update.
@@ -33972,6 +34703,7 @@ func (r ApiPatchStorageFlexFlashVirtualDriveRequest) StorageFlexFlashVirtualDriv
 	r.storageFlexFlashVirtualDrive = &storageFlexFlashVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexFlashVirtualDriveRequest) IfMatch(ifMatch string) ApiPatchStorageFlexFlashVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -33992,8 +34724,8 @@ PatchStorageFlexFlashVirtualDrive Update a 'storage.FlexFlashVirtualDrive' resou
 func (a *StorageApiService) PatchStorageFlexFlashVirtualDrive(ctx _context.Context, moid string) ApiPatchStorageFlexFlashVirtualDriveRequest {
 	return ApiPatchStorageFlexFlashVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34108,13 +34840,13 @@ func (a *StorageApiService) PatchStorageFlexFlashVirtualDriveExecute(r ApiPatchS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34131,11 +34863,11 @@ func (a *StorageApiService) PatchStorageFlexFlashVirtualDriveExecute(r ApiPatchS
 }
 
 type ApiPatchStorageFlexUtilControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *StorageApiService
+	moid                      string
 	storageFlexUtilController *StorageFlexUtilController
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;storage.FlexUtilController&#39; resource to update.
@@ -34143,6 +34875,7 @@ func (r ApiPatchStorageFlexUtilControllerRequest) StorageFlexUtilController(stor
 	r.storageFlexUtilController = &storageFlexUtilController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexUtilControllerRequest) IfMatch(ifMatch string) ApiPatchStorageFlexUtilControllerRequest {
 	r.ifMatch = &ifMatch
@@ -34163,8 +34896,8 @@ PatchStorageFlexUtilController Update a 'storage.FlexUtilController' resource.
 func (a *StorageApiService) PatchStorageFlexUtilController(ctx _context.Context, moid string) ApiPatchStorageFlexUtilControllerRequest {
 	return ApiPatchStorageFlexUtilControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34279,13 +35012,13 @@ func (a *StorageApiService) PatchStorageFlexUtilControllerExecute(r ApiPatchStor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34302,11 +35035,11 @@ func (a *StorageApiService) PatchStorageFlexUtilControllerExecute(r ApiPatchStor
 }
 
 type ApiPatchStorageFlexUtilPhysicalDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageFlexUtilPhysicalDrive *StorageFlexUtilPhysicalDrive
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.FlexUtilPhysicalDrive&#39; resource to update.
@@ -34314,6 +35047,7 @@ func (r ApiPatchStorageFlexUtilPhysicalDriveRequest) StorageFlexUtilPhysicalDriv
 	r.storageFlexUtilPhysicalDrive = &storageFlexUtilPhysicalDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexUtilPhysicalDriveRequest) IfMatch(ifMatch string) ApiPatchStorageFlexUtilPhysicalDriveRequest {
 	r.ifMatch = &ifMatch
@@ -34334,8 +35068,8 @@ PatchStorageFlexUtilPhysicalDrive Update a 'storage.FlexUtilPhysicalDrive' resou
 func (a *StorageApiService) PatchStorageFlexUtilPhysicalDrive(ctx _context.Context, moid string) ApiPatchStorageFlexUtilPhysicalDriveRequest {
 	return ApiPatchStorageFlexUtilPhysicalDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34450,13 +35184,13 @@ func (a *StorageApiService) PatchStorageFlexUtilPhysicalDriveExecute(r ApiPatchS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34473,11 +35207,11 @@ func (a *StorageApiService) PatchStorageFlexUtilPhysicalDriveExecute(r ApiPatchS
 }
 
 type ApiPatchStorageFlexUtilVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *StorageApiService
+	moid                        string
 	storageFlexUtilVirtualDrive *StorageFlexUtilVirtualDrive
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;storage.FlexUtilVirtualDrive&#39; resource to update.
@@ -34485,6 +35219,7 @@ func (r ApiPatchStorageFlexUtilVirtualDriveRequest) StorageFlexUtilVirtualDrive(
 	r.storageFlexUtilVirtualDrive = &storageFlexUtilVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageFlexUtilVirtualDriveRequest) IfMatch(ifMatch string) ApiPatchStorageFlexUtilVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -34505,8 +35240,8 @@ PatchStorageFlexUtilVirtualDrive Update a 'storage.FlexUtilVirtualDrive' resourc
 func (a *StorageApiService) PatchStorageFlexUtilVirtualDrive(ctx _context.Context, moid string) ApiPatchStorageFlexUtilVirtualDriveRequest {
 	return ApiPatchStorageFlexUtilVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34621,13 +35356,13 @@ func (a *StorageApiService) PatchStorageFlexUtilVirtualDriveExecute(r ApiPatchSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34644,11 +35379,11 @@ func (a *StorageApiService) PatchStorageFlexUtilVirtualDriveExecute(r ApiPatchSt
 }
 
 type ApiPatchStorageHitachiArrayRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storageHitachiArray *StorageHitachiArray
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.HitachiArray&#39; resource to update.
@@ -34656,6 +35391,7 @@ func (r ApiPatchStorageHitachiArrayRequest) StorageHitachiArray(storageHitachiAr
 	r.storageHitachiArray = &storageHitachiArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageHitachiArrayRequest) IfMatch(ifMatch string) ApiPatchStorageHitachiArrayRequest {
 	r.ifMatch = &ifMatch
@@ -34676,8 +35412,8 @@ PatchStorageHitachiArray Update a 'storage.HitachiArray' resource.
 func (a *StorageApiService) PatchStorageHitachiArray(ctx _context.Context, moid string) ApiPatchStorageHitachiArrayRequest {
 	return ApiPatchStorageHitachiArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34792,13 +35528,13 @@ func (a *StorageApiService) PatchStorageHitachiArrayExecute(r ApiPatchStorageHit
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34815,11 +35551,11 @@ func (a *StorageApiService) PatchStorageHitachiArrayExecute(r ApiPatchStorageHit
 }
 
 type ApiPatchStorageNetAppClusterRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageNetAppCluster *StorageNetAppCluster
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.NetAppCluster&#39; resource to update.
@@ -34827,6 +35563,7 @@ func (r ApiPatchStorageNetAppClusterRequest) StorageNetAppCluster(storageNetAppC
 	r.storageNetAppCluster = &storageNetAppCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageNetAppClusterRequest) IfMatch(ifMatch string) ApiPatchStorageNetAppClusterRequest {
 	r.ifMatch = &ifMatch
@@ -34847,8 +35584,8 @@ PatchStorageNetAppCluster Update a 'storage.NetAppCluster' resource.
 func (a *StorageApiService) PatchStorageNetAppCluster(ctx _context.Context, moid string) ApiPatchStorageNetAppClusterRequest {
 	return ApiPatchStorageNetAppClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34963,13 +35700,13 @@ func (a *StorageApiService) PatchStorageNetAppClusterExecute(r ApiPatchStorageNe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34986,11 +35723,11 @@ func (a *StorageApiService) PatchStorageNetAppClusterExecute(r ApiPatchStorageNe
 }
 
 type ApiPatchStoragePhysicalDiskRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storagePhysicalDisk *StoragePhysicalDisk
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.PhysicalDisk&#39; resource to update.
@@ -34998,6 +35735,7 @@ func (r ApiPatchStoragePhysicalDiskRequest) StoragePhysicalDisk(storagePhysicalD
 	r.storagePhysicalDisk = &storagePhysicalDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStoragePhysicalDiskRequest) IfMatch(ifMatch string) ApiPatchStoragePhysicalDiskRequest {
 	r.ifMatch = &ifMatch
@@ -35018,8 +35756,8 @@ PatchStoragePhysicalDisk Update a 'storage.PhysicalDisk' resource.
 func (a *StorageApiService) PatchStoragePhysicalDisk(ctx _context.Context, moid string) ApiPatchStoragePhysicalDiskRequest {
 	return ApiPatchStoragePhysicalDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35134,13 +35872,13 @@ func (a *StorageApiService) PatchStoragePhysicalDiskExecute(r ApiPatchStoragePhy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35157,11 +35895,11 @@ func (a *StorageApiService) PatchStoragePhysicalDiskExecute(r ApiPatchStoragePhy
 }
 
 type ApiPatchStoragePhysicalDiskExtensionRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storagePhysicalDiskExtension *StoragePhysicalDiskExtension
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.PhysicalDiskExtension&#39; resource to update.
@@ -35169,6 +35907,7 @@ func (r ApiPatchStoragePhysicalDiskExtensionRequest) StoragePhysicalDiskExtensio
 	r.storagePhysicalDiskExtension = &storagePhysicalDiskExtension
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStoragePhysicalDiskExtensionRequest) IfMatch(ifMatch string) ApiPatchStoragePhysicalDiskExtensionRequest {
 	r.ifMatch = &ifMatch
@@ -35189,8 +35928,8 @@ PatchStoragePhysicalDiskExtension Update a 'storage.PhysicalDiskExtension' resou
 func (a *StorageApiService) PatchStoragePhysicalDiskExtension(ctx _context.Context, moid string) ApiPatchStoragePhysicalDiskExtensionRequest {
 	return ApiPatchStoragePhysicalDiskExtensionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35305,13 +36044,13 @@ func (a *StorageApiService) PatchStoragePhysicalDiskExtensionExecute(r ApiPatchS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35328,11 +36067,11 @@ func (a *StorageApiService) PatchStoragePhysicalDiskExtensionExecute(r ApiPatchS
 }
 
 type ApiPatchStoragePhysicalDiskUsageRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *StorageApiService
+	moid                     string
 	storagePhysicalDiskUsage *StoragePhysicalDiskUsage
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;storage.PhysicalDiskUsage&#39; resource to update.
@@ -35340,6 +36079,7 @@ func (r ApiPatchStoragePhysicalDiskUsageRequest) StoragePhysicalDiskUsage(storag
 	r.storagePhysicalDiskUsage = &storagePhysicalDiskUsage
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStoragePhysicalDiskUsageRequest) IfMatch(ifMatch string) ApiPatchStoragePhysicalDiskUsageRequest {
 	r.ifMatch = &ifMatch
@@ -35360,8 +36100,8 @@ PatchStoragePhysicalDiskUsage Update a 'storage.PhysicalDiskUsage' resource.
 func (a *StorageApiService) PatchStoragePhysicalDiskUsage(ctx _context.Context, moid string) ApiPatchStoragePhysicalDiskUsageRequest {
 	return ApiPatchStoragePhysicalDiskUsageRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35476,13 +36216,13 @@ func (a *StorageApiService) PatchStoragePhysicalDiskUsageExecute(r ApiPatchStora
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35499,11 +36239,11 @@ func (a *StorageApiService) PatchStoragePhysicalDiskUsageExecute(r ApiPatchStora
 }
 
 type ApiPatchStoragePureArrayRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storagePureArray *StoragePureArray
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.PureArray&#39; resource to update.
@@ -35511,6 +36251,7 @@ func (r ApiPatchStoragePureArrayRequest) StoragePureArray(storagePureArray Stora
 	r.storagePureArray = &storagePureArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStoragePureArrayRequest) IfMatch(ifMatch string) ApiPatchStoragePureArrayRequest {
 	r.ifMatch = &ifMatch
@@ -35531,8 +36272,8 @@ PatchStoragePureArray Update a 'storage.PureArray' resource.
 func (a *StorageApiService) PatchStoragePureArray(ctx _context.Context, moid string) ApiPatchStoragePureArrayRequest {
 	return ApiPatchStoragePureArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35647,13 +36388,13 @@ func (a *StorageApiService) PatchStoragePureArrayExecute(r ApiPatchStoragePureAr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35670,11 +36411,11 @@ func (a *StorageApiService) PatchStoragePureArrayExecute(r ApiPatchStoragePureAr
 }
 
 type ApiPatchStorageSasExpanderRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *StorageApiService
+	moid               string
 	storageSasExpander *StorageSasExpander
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;storage.SasExpander&#39; resource to update.
@@ -35682,6 +36423,7 @@ func (r ApiPatchStorageSasExpanderRequest) StorageSasExpander(storageSasExpander
 	r.storageSasExpander = &storageSasExpander
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageSasExpanderRequest) IfMatch(ifMatch string) ApiPatchStorageSasExpanderRequest {
 	r.ifMatch = &ifMatch
@@ -35702,8 +36444,8 @@ PatchStorageSasExpander Update a 'storage.SasExpander' resource.
 func (a *StorageApiService) PatchStorageSasExpander(ctx _context.Context, moid string) ApiPatchStorageSasExpanderRequest {
 	return ApiPatchStorageSasExpanderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35818,13 +36560,13 @@ func (a *StorageApiService) PatchStorageSasExpanderExecute(r ApiPatchStorageSasE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35841,11 +36583,11 @@ func (a *StorageApiService) PatchStorageSasExpanderExecute(r ApiPatchStorageSasE
 }
 
 type ApiPatchStorageSasPortRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *StorageApiService
+	moid           string
 	storageSasPort *StorageSasPort
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;storage.SasPort&#39; resource to update.
@@ -35853,6 +36595,7 @@ func (r ApiPatchStorageSasPortRequest) StorageSasPort(storageSasPort StorageSasP
 	r.storageSasPort = &storageSasPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageSasPortRequest) IfMatch(ifMatch string) ApiPatchStorageSasPortRequest {
 	r.ifMatch = &ifMatch
@@ -35873,8 +36616,8 @@ PatchStorageSasPort Update a 'storage.SasPort' resource.
 func (a *StorageApiService) PatchStorageSasPort(ctx _context.Context, moid string) ApiPatchStorageSasPortRequest {
 	return ApiPatchStorageSasPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35989,13 +36732,13 @@ func (a *StorageApiService) PatchStorageSasPortExecute(r ApiPatchStorageSasPortR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36012,11 +36755,11 @@ func (a *StorageApiService) PatchStorageSasPortExecute(r ApiPatchStorageSasPortR
 }
 
 type ApiPatchStorageSpanRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	moid        string
 	storageSpan *StorageSpan
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;storage.Span&#39; resource to update.
@@ -36024,6 +36767,7 @@ func (r ApiPatchStorageSpanRequest) StorageSpan(storageSpan StorageSpan) ApiPatc
 	r.storageSpan = &storageSpan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageSpanRequest) IfMatch(ifMatch string) ApiPatchStorageSpanRequest {
 	r.ifMatch = &ifMatch
@@ -36044,8 +36788,8 @@ PatchStorageSpan Update a 'storage.Span' resource.
 func (a *StorageApiService) PatchStorageSpan(ctx _context.Context, moid string) ApiPatchStorageSpanRequest {
 	return ApiPatchStorageSpanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36160,13 +36904,13 @@ func (a *StorageApiService) PatchStorageSpanExecute(r ApiPatchStorageSpanRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36183,11 +36927,11 @@ func (a *StorageApiService) PatchStorageSpanExecute(r ApiPatchStorageSpanRequest
 }
 
 type ApiPatchStorageStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageStoragePolicy *StorageStoragePolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.StoragePolicy&#39; resource to update.
@@ -36195,6 +36939,7 @@ func (r ApiPatchStorageStoragePolicyRequest) StorageStoragePolicy(storageStorage
 	r.storageStoragePolicy = &storageStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageStoragePolicyRequest) IfMatch(ifMatch string) ApiPatchStorageStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -36215,8 +36960,8 @@ PatchStorageStoragePolicy Update a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) PatchStorageStoragePolicy(ctx _context.Context, moid string) ApiPatchStorageStoragePolicyRequest {
 	return ApiPatchStorageStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36331,13 +37076,13 @@ func (a *StorageApiService) PatchStorageStoragePolicyExecute(r ApiPatchStorageSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36354,11 +37099,11 @@ func (a *StorageApiService) PatchStorageStoragePolicyExecute(r ApiPatchStorageSt
 }
 
 type ApiPatchStorageVdMemberEpRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageVdMemberEp *StorageVdMemberEp
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.VdMemberEp&#39; resource to update.
@@ -36366,6 +37111,7 @@ func (r ApiPatchStorageVdMemberEpRequest) StorageVdMemberEp(storageVdMemberEp St
 	r.storageVdMemberEp = &storageVdMemberEp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageVdMemberEpRequest) IfMatch(ifMatch string) ApiPatchStorageVdMemberEpRequest {
 	r.ifMatch = &ifMatch
@@ -36386,8 +37132,8 @@ PatchStorageVdMemberEp Update a 'storage.VdMemberEp' resource.
 func (a *StorageApiService) PatchStorageVdMemberEp(ctx _context.Context, moid string) ApiPatchStorageVdMemberEpRequest {
 	return ApiPatchStorageVdMemberEpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36502,13 +37248,13 @@ func (a *StorageApiService) PatchStorageVdMemberEpExecute(r ApiPatchStorageVdMem
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36525,11 +37271,11 @@ func (a *StorageApiService) PatchStorageVdMemberEpExecute(r ApiPatchStorageVdMem
 }
 
 type ApiPatchStorageVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storageVirtualDrive *StorageVirtualDrive
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.VirtualDrive&#39; resource to update.
@@ -36537,6 +37283,7 @@ func (r ApiPatchStorageVirtualDriveRequest) StorageVirtualDrive(storageVirtualDr
 	r.storageVirtualDrive = &storageVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageVirtualDriveRequest) IfMatch(ifMatch string) ApiPatchStorageVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -36557,8 +37304,8 @@ PatchStorageVirtualDrive Update a 'storage.VirtualDrive' resource.
 func (a *StorageApiService) PatchStorageVirtualDrive(ctx _context.Context, moid string) ApiPatchStorageVirtualDriveRequest {
 	return ApiPatchStorageVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36673,13 +37420,13 @@ func (a *StorageApiService) PatchStorageVirtualDriveExecute(r ApiPatchStorageVir
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36696,11 +37443,11 @@ func (a *StorageApiService) PatchStorageVirtualDriveExecute(r ApiPatchStorageVir
 }
 
 type ApiPatchStorageVirtualDriveContainerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageVirtualDriveContainer *StorageVirtualDriveContainer
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.VirtualDriveContainer&#39; resource to update.
@@ -36708,6 +37455,7 @@ func (r ApiPatchStorageVirtualDriveContainerRequest) StorageVirtualDriveContaine
 	r.storageVirtualDriveContainer = &storageVirtualDriveContainer
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageVirtualDriveContainerRequest) IfMatch(ifMatch string) ApiPatchStorageVirtualDriveContainerRequest {
 	r.ifMatch = &ifMatch
@@ -36728,8 +37476,8 @@ PatchStorageVirtualDriveContainer Update a 'storage.VirtualDriveContainer' resou
 func (a *StorageApiService) PatchStorageVirtualDriveContainer(ctx _context.Context, moid string) ApiPatchStorageVirtualDriveContainerRequest {
 	return ApiPatchStorageVirtualDriveContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36844,13 +37592,13 @@ func (a *StorageApiService) PatchStorageVirtualDriveContainerExecute(r ApiPatchS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36867,11 +37615,11 @@ func (a *StorageApiService) PatchStorageVirtualDriveContainerExecute(r ApiPatchS
 }
 
 type ApiPatchStorageVirtualDriveExtensionRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageVirtualDriveExtension *StorageVirtualDriveExtension
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.VirtualDriveExtension&#39; resource to update.
@@ -36879,6 +37627,7 @@ func (r ApiPatchStorageVirtualDriveExtensionRequest) StorageVirtualDriveExtensio
 	r.storageVirtualDriveExtension = &storageVirtualDriveExtension
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchStorageVirtualDriveExtensionRequest) IfMatch(ifMatch string) ApiPatchStorageVirtualDriveExtensionRequest {
 	r.ifMatch = &ifMatch
@@ -36899,8 +37648,8 @@ PatchStorageVirtualDriveExtension Update a 'storage.VirtualDriveExtension' resou
 func (a *StorageApiService) PatchStorageVirtualDriveExtension(ctx _context.Context, moid string) ApiPatchStorageVirtualDriveExtensionRequest {
 	return ApiPatchStorageVirtualDriveExtensionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37015,13 +37764,13 @@ func (a *StorageApiService) PatchStorageVirtualDriveExtensionExecute(r ApiPatchS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37038,11 +37787,11 @@ func (a *StorageApiService) PatchStorageVirtualDriveExtensionExecute(r ApiPatchS
 }
 
 type ApiUpdateStorageControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageController *StorageController
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.Controller&#39; resource to update.
@@ -37050,6 +37799,7 @@ func (r ApiUpdateStorageControllerRequest) StorageController(storageController S
 	r.storageController = &storageController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageControllerRequest) IfMatch(ifMatch string) ApiUpdateStorageControllerRequest {
 	r.ifMatch = &ifMatch
@@ -37070,8 +37820,8 @@ UpdateStorageController Update a 'storage.Controller' resource.
 func (a *StorageApiService) UpdateStorageController(ctx _context.Context, moid string) ApiUpdateStorageControllerRequest {
 	return ApiUpdateStorageControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37186,13 +37936,13 @@ func (a *StorageApiService) UpdateStorageControllerExecute(r ApiUpdateStorageCon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37209,11 +37959,11 @@ func (a *StorageApiService) UpdateStorageControllerExecute(r ApiUpdateStorageCon
 }
 
 type ApiUpdateStorageDiskGroupRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storageDiskGroup *StorageDiskGroup
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.DiskGroup&#39; resource to update.
@@ -37221,6 +37971,7 @@ func (r ApiUpdateStorageDiskGroupRequest) StorageDiskGroup(storageDiskGroup Stor
 	r.storageDiskGroup = &storageDiskGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageDiskGroupRequest) IfMatch(ifMatch string) ApiUpdateStorageDiskGroupRequest {
 	r.ifMatch = &ifMatch
@@ -37241,8 +37992,8 @@ UpdateStorageDiskGroup Update a 'storage.DiskGroup' resource.
 func (a *StorageApiService) UpdateStorageDiskGroup(ctx _context.Context, moid string) ApiUpdateStorageDiskGroupRequest {
 	return ApiUpdateStorageDiskGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37357,13 +38108,13 @@ func (a *StorageApiService) UpdateStorageDiskGroupExecute(r ApiUpdateStorageDisk
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37380,11 +38131,11 @@ func (a *StorageApiService) UpdateStorageDiskGroupExecute(r ApiUpdateStorageDisk
 }
 
 type ApiUpdateStorageDriveGroupRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageDriveGroup *StorageDriveGroup
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.DriveGroup&#39; resource to update.
@@ -37392,6 +38143,7 @@ func (r ApiUpdateStorageDriveGroupRequest) StorageDriveGroup(storageDriveGroup S
 	r.storageDriveGroup = &storageDriveGroup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageDriveGroupRequest) IfMatch(ifMatch string) ApiUpdateStorageDriveGroupRequest {
 	r.ifMatch = &ifMatch
@@ -37412,8 +38164,8 @@ UpdateStorageDriveGroup Update a 'storage.DriveGroup' resource.
 func (a *StorageApiService) UpdateStorageDriveGroup(ctx _context.Context, moid string) ApiUpdateStorageDriveGroupRequest {
 	return ApiUpdateStorageDriveGroupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37528,13 +38280,13 @@ func (a *StorageApiService) UpdateStorageDriveGroupExecute(r ApiUpdateStorageDri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37551,11 +38303,11 @@ func (a *StorageApiService) UpdateStorageDriveGroupExecute(r ApiUpdateStorageDri
 }
 
 type ApiUpdateStorageEnclosureRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storageEnclosure *StorageEnclosure
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.Enclosure&#39; resource to update.
@@ -37563,6 +38315,7 @@ func (r ApiUpdateStorageEnclosureRequest) StorageEnclosure(storageEnclosure Stor
 	r.storageEnclosure = &storageEnclosure
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageEnclosureRequest) IfMatch(ifMatch string) ApiUpdateStorageEnclosureRequest {
 	r.ifMatch = &ifMatch
@@ -37583,8 +38336,8 @@ UpdateStorageEnclosure Update a 'storage.Enclosure' resource.
 func (a *StorageApiService) UpdateStorageEnclosure(ctx _context.Context, moid string) ApiUpdateStorageEnclosureRequest {
 	return ApiUpdateStorageEnclosureRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37699,13 +38452,13 @@ func (a *StorageApiService) UpdateStorageEnclosureExecute(r ApiUpdateStorageEncl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37722,11 +38475,11 @@ func (a *StorageApiService) UpdateStorageEnclosureExecute(r ApiUpdateStorageEncl
 }
 
 type ApiUpdateStorageEnclosureDiskRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageEnclosureDisk *StorageEnclosureDisk
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.EnclosureDisk&#39; resource to update.
@@ -37734,6 +38487,7 @@ func (r ApiUpdateStorageEnclosureDiskRequest) StorageEnclosureDisk(storageEnclos
 	r.storageEnclosureDisk = &storageEnclosureDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageEnclosureDiskRequest) IfMatch(ifMatch string) ApiUpdateStorageEnclosureDiskRequest {
 	r.ifMatch = &ifMatch
@@ -37754,8 +38508,8 @@ UpdateStorageEnclosureDisk Update a 'storage.EnclosureDisk' resource.
 func (a *StorageApiService) UpdateStorageEnclosureDisk(ctx _context.Context, moid string) ApiUpdateStorageEnclosureDiskRequest {
 	return ApiUpdateStorageEnclosureDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37870,13 +38624,13 @@ func (a *StorageApiService) UpdateStorageEnclosureDiskExecute(r ApiUpdateStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37893,11 +38647,11 @@ func (a *StorageApiService) UpdateStorageEnclosureDiskExecute(r ApiUpdateStorage
 }
 
 type ApiUpdateStorageEnclosureDiskSlotEpRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *StorageApiService
+	moid                       string
 	storageEnclosureDiskSlotEp *StorageEnclosureDiskSlotEp
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;storage.EnclosureDiskSlotEp&#39; resource to update.
@@ -37905,6 +38659,7 @@ func (r ApiUpdateStorageEnclosureDiskSlotEpRequest) StorageEnclosureDiskSlotEp(s
 	r.storageEnclosureDiskSlotEp = &storageEnclosureDiskSlotEp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageEnclosureDiskSlotEpRequest) IfMatch(ifMatch string) ApiUpdateStorageEnclosureDiskSlotEpRequest {
 	r.ifMatch = &ifMatch
@@ -37925,8 +38680,8 @@ UpdateStorageEnclosureDiskSlotEp Update a 'storage.EnclosureDiskSlotEp' resource
 func (a *StorageApiService) UpdateStorageEnclosureDiskSlotEp(ctx _context.Context, moid string) ApiUpdateStorageEnclosureDiskSlotEpRequest {
 	return ApiUpdateStorageEnclosureDiskSlotEpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38041,13 +38796,13 @@ func (a *StorageApiService) UpdateStorageEnclosureDiskSlotEpExecute(r ApiUpdateS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38064,11 +38819,11 @@ func (a *StorageApiService) UpdateStorageEnclosureDiskSlotEpExecute(r ApiUpdateS
 }
 
 type ApiUpdateStorageFlexFlashControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *StorageApiService
+	moid                       string
 	storageFlexFlashController *StorageFlexFlashController
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;storage.FlexFlashController&#39; resource to update.
@@ -38076,6 +38831,7 @@ func (r ApiUpdateStorageFlexFlashControllerRequest) StorageFlexFlashController(s
 	r.storageFlexFlashController = &storageFlexFlashController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexFlashControllerRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexFlashControllerRequest {
 	r.ifMatch = &ifMatch
@@ -38096,8 +38852,8 @@ UpdateStorageFlexFlashController Update a 'storage.FlexFlashController' resource
 func (a *StorageApiService) UpdateStorageFlexFlashController(ctx _context.Context, moid string) ApiUpdateStorageFlexFlashControllerRequest {
 	return ApiUpdateStorageFlexFlashControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38212,13 +38968,13 @@ func (a *StorageApiService) UpdateStorageFlexFlashControllerExecute(r ApiUpdateS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38235,11 +38991,11 @@ func (a *StorageApiService) UpdateStorageFlexFlashControllerExecute(r ApiUpdateS
 }
 
 type ApiUpdateStorageFlexFlashControllerPropsRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *StorageApiService
+	moid                            string
 	storageFlexFlashControllerProps *StorageFlexFlashControllerProps
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;storage.FlexFlashControllerProps&#39; resource to update.
@@ -38247,6 +39003,7 @@ func (r ApiUpdateStorageFlexFlashControllerPropsRequest) StorageFlexFlashControl
 	r.storageFlexFlashControllerProps = &storageFlexFlashControllerProps
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexFlashControllerPropsRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexFlashControllerPropsRequest {
 	r.ifMatch = &ifMatch
@@ -38267,8 +39024,8 @@ UpdateStorageFlexFlashControllerProps Update a 'storage.FlexFlashControllerProps
 func (a *StorageApiService) UpdateStorageFlexFlashControllerProps(ctx _context.Context, moid string) ApiUpdateStorageFlexFlashControllerPropsRequest {
 	return ApiUpdateStorageFlexFlashControllerPropsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38383,13 +39140,13 @@ func (a *StorageApiService) UpdateStorageFlexFlashControllerPropsExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38406,11 +39163,11 @@ func (a *StorageApiService) UpdateStorageFlexFlashControllerPropsExecute(r ApiUp
 }
 
 type ApiUpdateStorageFlexFlashPhysicalDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *StorageApiService
+	moid                          string
 	storageFlexFlashPhysicalDrive *StorageFlexFlashPhysicalDrive
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;storage.FlexFlashPhysicalDrive&#39; resource to update.
@@ -38418,6 +39175,7 @@ func (r ApiUpdateStorageFlexFlashPhysicalDriveRequest) StorageFlexFlashPhysicalD
 	r.storageFlexFlashPhysicalDrive = &storageFlexFlashPhysicalDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexFlashPhysicalDriveRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexFlashPhysicalDriveRequest {
 	r.ifMatch = &ifMatch
@@ -38438,8 +39196,8 @@ UpdateStorageFlexFlashPhysicalDrive Update a 'storage.FlexFlashPhysicalDrive' re
 func (a *StorageApiService) UpdateStorageFlexFlashPhysicalDrive(ctx _context.Context, moid string) ApiUpdateStorageFlexFlashPhysicalDriveRequest {
 	return ApiUpdateStorageFlexFlashPhysicalDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38554,13 +39312,13 @@ func (a *StorageApiService) UpdateStorageFlexFlashPhysicalDriveExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38577,11 +39335,11 @@ func (a *StorageApiService) UpdateStorageFlexFlashPhysicalDriveExecute(r ApiUpda
 }
 
 type ApiUpdateStorageFlexFlashVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageFlexFlashVirtualDrive *StorageFlexFlashVirtualDrive
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.FlexFlashVirtualDrive&#39; resource to update.
@@ -38589,6 +39347,7 @@ func (r ApiUpdateStorageFlexFlashVirtualDriveRequest) StorageFlexFlashVirtualDri
 	r.storageFlexFlashVirtualDrive = &storageFlexFlashVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexFlashVirtualDriveRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexFlashVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -38609,8 +39368,8 @@ UpdateStorageFlexFlashVirtualDrive Update a 'storage.FlexFlashVirtualDrive' reso
 func (a *StorageApiService) UpdateStorageFlexFlashVirtualDrive(ctx _context.Context, moid string) ApiUpdateStorageFlexFlashVirtualDriveRequest {
 	return ApiUpdateStorageFlexFlashVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38725,13 +39484,13 @@ func (a *StorageApiService) UpdateStorageFlexFlashVirtualDriveExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38748,11 +39507,11 @@ func (a *StorageApiService) UpdateStorageFlexFlashVirtualDriveExecute(r ApiUpdat
 }
 
 type ApiUpdateStorageFlexUtilControllerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *StorageApiService
+	moid                      string
 	storageFlexUtilController *StorageFlexUtilController
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;storage.FlexUtilController&#39; resource to update.
@@ -38760,6 +39519,7 @@ func (r ApiUpdateStorageFlexUtilControllerRequest) StorageFlexUtilController(sto
 	r.storageFlexUtilController = &storageFlexUtilController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexUtilControllerRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexUtilControllerRequest {
 	r.ifMatch = &ifMatch
@@ -38780,8 +39540,8 @@ UpdateStorageFlexUtilController Update a 'storage.FlexUtilController' resource.
 func (a *StorageApiService) UpdateStorageFlexUtilController(ctx _context.Context, moid string) ApiUpdateStorageFlexUtilControllerRequest {
 	return ApiUpdateStorageFlexUtilControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38896,13 +39656,13 @@ func (a *StorageApiService) UpdateStorageFlexUtilControllerExecute(r ApiUpdateSt
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38919,11 +39679,11 @@ func (a *StorageApiService) UpdateStorageFlexUtilControllerExecute(r ApiUpdateSt
 }
 
 type ApiUpdateStorageFlexUtilPhysicalDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageFlexUtilPhysicalDrive *StorageFlexUtilPhysicalDrive
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.FlexUtilPhysicalDrive&#39; resource to update.
@@ -38931,6 +39691,7 @@ func (r ApiUpdateStorageFlexUtilPhysicalDriveRequest) StorageFlexUtilPhysicalDri
 	r.storageFlexUtilPhysicalDrive = &storageFlexUtilPhysicalDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexUtilPhysicalDriveRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexUtilPhysicalDriveRequest {
 	r.ifMatch = &ifMatch
@@ -38951,8 +39712,8 @@ UpdateStorageFlexUtilPhysicalDrive Update a 'storage.FlexUtilPhysicalDrive' reso
 func (a *StorageApiService) UpdateStorageFlexUtilPhysicalDrive(ctx _context.Context, moid string) ApiUpdateStorageFlexUtilPhysicalDriveRequest {
 	return ApiUpdateStorageFlexUtilPhysicalDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39067,13 +39828,13 @@ func (a *StorageApiService) UpdateStorageFlexUtilPhysicalDriveExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39090,11 +39851,11 @@ func (a *StorageApiService) UpdateStorageFlexUtilPhysicalDriveExecute(r ApiUpdat
 }
 
 type ApiUpdateStorageFlexUtilVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *StorageApiService
+	moid                        string
 	storageFlexUtilVirtualDrive *StorageFlexUtilVirtualDrive
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;storage.FlexUtilVirtualDrive&#39; resource to update.
@@ -39102,6 +39863,7 @@ func (r ApiUpdateStorageFlexUtilVirtualDriveRequest) StorageFlexUtilVirtualDrive
 	r.storageFlexUtilVirtualDrive = &storageFlexUtilVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageFlexUtilVirtualDriveRequest) IfMatch(ifMatch string) ApiUpdateStorageFlexUtilVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -39122,8 +39884,8 @@ UpdateStorageFlexUtilVirtualDrive Update a 'storage.FlexUtilVirtualDrive' resour
 func (a *StorageApiService) UpdateStorageFlexUtilVirtualDrive(ctx _context.Context, moid string) ApiUpdateStorageFlexUtilVirtualDriveRequest {
 	return ApiUpdateStorageFlexUtilVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39238,13 +40000,13 @@ func (a *StorageApiService) UpdateStorageFlexUtilVirtualDriveExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39261,11 +40023,11 @@ func (a *StorageApiService) UpdateStorageFlexUtilVirtualDriveExecute(r ApiUpdate
 }
 
 type ApiUpdateStorageHitachiArrayRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storageHitachiArray *StorageHitachiArray
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.HitachiArray&#39; resource to update.
@@ -39273,6 +40035,7 @@ func (r ApiUpdateStorageHitachiArrayRequest) StorageHitachiArray(storageHitachiA
 	r.storageHitachiArray = &storageHitachiArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageHitachiArrayRequest) IfMatch(ifMatch string) ApiUpdateStorageHitachiArrayRequest {
 	r.ifMatch = &ifMatch
@@ -39293,8 +40056,8 @@ UpdateStorageHitachiArray Update a 'storage.HitachiArray' resource.
 func (a *StorageApiService) UpdateStorageHitachiArray(ctx _context.Context, moid string) ApiUpdateStorageHitachiArrayRequest {
 	return ApiUpdateStorageHitachiArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39409,13 +40172,13 @@ func (a *StorageApiService) UpdateStorageHitachiArrayExecute(r ApiUpdateStorageH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39432,11 +40195,11 @@ func (a *StorageApiService) UpdateStorageHitachiArrayExecute(r ApiUpdateStorageH
 }
 
 type ApiUpdateStorageNetAppClusterRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageNetAppCluster *StorageNetAppCluster
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.NetAppCluster&#39; resource to update.
@@ -39444,6 +40207,7 @@ func (r ApiUpdateStorageNetAppClusterRequest) StorageNetAppCluster(storageNetApp
 	r.storageNetAppCluster = &storageNetAppCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageNetAppClusterRequest) IfMatch(ifMatch string) ApiUpdateStorageNetAppClusterRequest {
 	r.ifMatch = &ifMatch
@@ -39464,8 +40228,8 @@ UpdateStorageNetAppCluster Update a 'storage.NetAppCluster' resource.
 func (a *StorageApiService) UpdateStorageNetAppCluster(ctx _context.Context, moid string) ApiUpdateStorageNetAppClusterRequest {
 	return ApiUpdateStorageNetAppClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39580,13 +40344,13 @@ func (a *StorageApiService) UpdateStorageNetAppClusterExecute(r ApiUpdateStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39603,11 +40367,11 @@ func (a *StorageApiService) UpdateStorageNetAppClusterExecute(r ApiUpdateStorage
 }
 
 type ApiUpdateStoragePhysicalDiskRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storagePhysicalDisk *StoragePhysicalDisk
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.PhysicalDisk&#39; resource to update.
@@ -39615,6 +40379,7 @@ func (r ApiUpdateStoragePhysicalDiskRequest) StoragePhysicalDisk(storagePhysical
 	r.storagePhysicalDisk = &storagePhysicalDisk
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStoragePhysicalDiskRequest) IfMatch(ifMatch string) ApiUpdateStoragePhysicalDiskRequest {
 	r.ifMatch = &ifMatch
@@ -39635,8 +40400,8 @@ UpdateStoragePhysicalDisk Update a 'storage.PhysicalDisk' resource.
 func (a *StorageApiService) UpdateStoragePhysicalDisk(ctx _context.Context, moid string) ApiUpdateStoragePhysicalDiskRequest {
 	return ApiUpdateStoragePhysicalDiskRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39751,13 +40516,13 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskExecute(r ApiUpdateStorageP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39774,11 +40539,11 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskExecute(r ApiUpdateStorageP
 }
 
 type ApiUpdateStoragePhysicalDiskExtensionRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storagePhysicalDiskExtension *StoragePhysicalDiskExtension
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.PhysicalDiskExtension&#39; resource to update.
@@ -39786,6 +40551,7 @@ func (r ApiUpdateStoragePhysicalDiskExtensionRequest) StoragePhysicalDiskExtensi
 	r.storagePhysicalDiskExtension = &storagePhysicalDiskExtension
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStoragePhysicalDiskExtensionRequest) IfMatch(ifMatch string) ApiUpdateStoragePhysicalDiskExtensionRequest {
 	r.ifMatch = &ifMatch
@@ -39806,8 +40572,8 @@ UpdateStoragePhysicalDiskExtension Update a 'storage.PhysicalDiskExtension' reso
 func (a *StorageApiService) UpdateStoragePhysicalDiskExtension(ctx _context.Context, moid string) ApiUpdateStoragePhysicalDiskExtensionRequest {
 	return ApiUpdateStoragePhysicalDiskExtensionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39922,13 +40688,13 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskExtensionExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39945,11 +40711,11 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskExtensionExecute(r ApiUpdat
 }
 
 type ApiUpdateStoragePhysicalDiskUsageRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *StorageApiService
+	moid                     string
 	storagePhysicalDiskUsage *StoragePhysicalDiskUsage
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;storage.PhysicalDiskUsage&#39; resource to update.
@@ -39957,6 +40723,7 @@ func (r ApiUpdateStoragePhysicalDiskUsageRequest) StoragePhysicalDiskUsage(stora
 	r.storagePhysicalDiskUsage = &storagePhysicalDiskUsage
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStoragePhysicalDiskUsageRequest) IfMatch(ifMatch string) ApiUpdateStoragePhysicalDiskUsageRequest {
 	r.ifMatch = &ifMatch
@@ -39977,8 +40744,8 @@ UpdateStoragePhysicalDiskUsage Update a 'storage.PhysicalDiskUsage' resource.
 func (a *StorageApiService) UpdateStoragePhysicalDiskUsage(ctx _context.Context, moid string) ApiUpdateStoragePhysicalDiskUsageRequest {
 	return ApiUpdateStoragePhysicalDiskUsageRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40093,13 +40860,13 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskUsageExecute(r ApiUpdateSto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40116,11 +40883,11 @@ func (a *StorageApiService) UpdateStoragePhysicalDiskUsageExecute(r ApiUpdateSto
 }
 
 type ApiUpdateStoragePureArrayRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *StorageApiService
+	moid             string
 	storagePureArray *StoragePureArray
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;storage.PureArray&#39; resource to update.
@@ -40128,6 +40895,7 @@ func (r ApiUpdateStoragePureArrayRequest) StoragePureArray(storagePureArray Stor
 	r.storagePureArray = &storagePureArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStoragePureArrayRequest) IfMatch(ifMatch string) ApiUpdateStoragePureArrayRequest {
 	r.ifMatch = &ifMatch
@@ -40148,8 +40916,8 @@ UpdateStoragePureArray Update a 'storage.PureArray' resource.
 func (a *StorageApiService) UpdateStoragePureArray(ctx _context.Context, moid string) ApiUpdateStoragePureArrayRequest {
 	return ApiUpdateStoragePureArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40264,13 +41032,13 @@ func (a *StorageApiService) UpdateStoragePureArrayExecute(r ApiUpdateStoragePure
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40287,11 +41055,11 @@ func (a *StorageApiService) UpdateStoragePureArrayExecute(r ApiUpdateStoragePure
 }
 
 type ApiUpdateStorageSasExpanderRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *StorageApiService
+	moid               string
 	storageSasExpander *StorageSasExpander
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;storage.SasExpander&#39; resource to update.
@@ -40299,6 +41067,7 @@ func (r ApiUpdateStorageSasExpanderRequest) StorageSasExpander(storageSasExpande
 	r.storageSasExpander = &storageSasExpander
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageSasExpanderRequest) IfMatch(ifMatch string) ApiUpdateStorageSasExpanderRequest {
 	r.ifMatch = &ifMatch
@@ -40319,8 +41088,8 @@ UpdateStorageSasExpander Update a 'storage.SasExpander' resource.
 func (a *StorageApiService) UpdateStorageSasExpander(ctx _context.Context, moid string) ApiUpdateStorageSasExpanderRequest {
 	return ApiUpdateStorageSasExpanderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40435,13 +41204,13 @@ func (a *StorageApiService) UpdateStorageSasExpanderExecute(r ApiUpdateStorageSa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40458,11 +41227,11 @@ func (a *StorageApiService) UpdateStorageSasExpanderExecute(r ApiUpdateStorageSa
 }
 
 type ApiUpdateStorageSasPortRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *StorageApiService
+	moid           string
 	storageSasPort *StorageSasPort
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;storage.SasPort&#39; resource to update.
@@ -40470,6 +41239,7 @@ func (r ApiUpdateStorageSasPortRequest) StorageSasPort(storageSasPort StorageSas
 	r.storageSasPort = &storageSasPort
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageSasPortRequest) IfMatch(ifMatch string) ApiUpdateStorageSasPortRequest {
 	r.ifMatch = &ifMatch
@@ -40490,8 +41260,8 @@ UpdateStorageSasPort Update a 'storage.SasPort' resource.
 func (a *StorageApiService) UpdateStorageSasPort(ctx _context.Context, moid string) ApiUpdateStorageSasPortRequest {
 	return ApiUpdateStorageSasPortRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40606,13 +41376,13 @@ func (a *StorageApiService) UpdateStorageSasPortExecute(r ApiUpdateStorageSasPor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40629,11 +41399,11 @@ func (a *StorageApiService) UpdateStorageSasPortExecute(r ApiUpdateStorageSasPor
 }
 
 type ApiUpdateStorageSpanRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *StorageApiService
+	moid        string
 	storageSpan *StorageSpan
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;storage.Span&#39; resource to update.
@@ -40641,6 +41411,7 @@ func (r ApiUpdateStorageSpanRequest) StorageSpan(storageSpan StorageSpan) ApiUpd
 	r.storageSpan = &storageSpan
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageSpanRequest) IfMatch(ifMatch string) ApiUpdateStorageSpanRequest {
 	r.ifMatch = &ifMatch
@@ -40661,8 +41432,8 @@ UpdateStorageSpan Update a 'storage.Span' resource.
 func (a *StorageApiService) UpdateStorageSpan(ctx _context.Context, moid string) ApiUpdateStorageSpanRequest {
 	return ApiUpdateStorageSpanRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40777,13 +41548,13 @@ func (a *StorageApiService) UpdateStorageSpanExecute(r ApiUpdateStorageSpanReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40800,11 +41571,11 @@ func (a *StorageApiService) UpdateStorageSpanExecute(r ApiUpdateStorageSpanReque
 }
 
 type ApiUpdateStorageStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *StorageApiService
+	moid                 string
 	storageStoragePolicy *StorageStoragePolicy
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;storage.StoragePolicy&#39; resource to update.
@@ -40812,6 +41583,7 @@ func (r ApiUpdateStorageStoragePolicyRequest) StorageStoragePolicy(storageStorag
 	r.storageStoragePolicy = &storageStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageStoragePolicyRequest) IfMatch(ifMatch string) ApiUpdateStorageStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -40832,8 +41604,8 @@ UpdateStorageStoragePolicy Update a 'storage.StoragePolicy' resource.
 func (a *StorageApiService) UpdateStorageStoragePolicy(ctx _context.Context, moid string) ApiUpdateStorageStoragePolicyRequest {
 	return ApiUpdateStorageStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40948,13 +41720,13 @@ func (a *StorageApiService) UpdateStorageStoragePolicyExecute(r ApiUpdateStorage
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40971,11 +41743,11 @@ func (a *StorageApiService) UpdateStorageStoragePolicyExecute(r ApiUpdateStorage
 }
 
 type ApiUpdateStorageVdMemberEpRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *StorageApiService
+	moid              string
 	storageVdMemberEp *StorageVdMemberEp
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;storage.VdMemberEp&#39; resource to update.
@@ -40983,6 +41755,7 @@ func (r ApiUpdateStorageVdMemberEpRequest) StorageVdMemberEp(storageVdMemberEp S
 	r.storageVdMemberEp = &storageVdMemberEp
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageVdMemberEpRequest) IfMatch(ifMatch string) ApiUpdateStorageVdMemberEpRequest {
 	r.ifMatch = &ifMatch
@@ -41003,8 +41776,8 @@ UpdateStorageVdMemberEp Update a 'storage.VdMemberEp' resource.
 func (a *StorageApiService) UpdateStorageVdMemberEp(ctx _context.Context, moid string) ApiUpdateStorageVdMemberEpRequest {
 	return ApiUpdateStorageVdMemberEpRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41119,13 +41892,13 @@ func (a *StorageApiService) UpdateStorageVdMemberEpExecute(r ApiUpdateStorageVdM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41142,11 +41915,11 @@ func (a *StorageApiService) UpdateStorageVdMemberEpExecute(r ApiUpdateStorageVdM
 }
 
 type ApiUpdateStorageVirtualDriveRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *StorageApiService
+	moid                string
 	storageVirtualDrive *StorageVirtualDrive
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;storage.VirtualDrive&#39; resource to update.
@@ -41154,6 +41927,7 @@ func (r ApiUpdateStorageVirtualDriveRequest) StorageVirtualDrive(storageVirtualD
 	r.storageVirtualDrive = &storageVirtualDrive
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageVirtualDriveRequest) IfMatch(ifMatch string) ApiUpdateStorageVirtualDriveRequest {
 	r.ifMatch = &ifMatch
@@ -41174,8 +41948,8 @@ UpdateStorageVirtualDrive Update a 'storage.VirtualDrive' resource.
 func (a *StorageApiService) UpdateStorageVirtualDrive(ctx _context.Context, moid string) ApiUpdateStorageVirtualDriveRequest {
 	return ApiUpdateStorageVirtualDriveRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41290,13 +42064,13 @@ func (a *StorageApiService) UpdateStorageVirtualDriveExecute(r ApiUpdateStorageV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41313,11 +42087,11 @@ func (a *StorageApiService) UpdateStorageVirtualDriveExecute(r ApiUpdateStorageV
 }
 
 type ApiUpdateStorageVirtualDriveContainerRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageVirtualDriveContainer *StorageVirtualDriveContainer
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.VirtualDriveContainer&#39; resource to update.
@@ -41325,6 +42099,7 @@ func (r ApiUpdateStorageVirtualDriveContainerRequest) StorageVirtualDriveContain
 	r.storageVirtualDriveContainer = &storageVirtualDriveContainer
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageVirtualDriveContainerRequest) IfMatch(ifMatch string) ApiUpdateStorageVirtualDriveContainerRequest {
 	r.ifMatch = &ifMatch
@@ -41345,8 +42120,8 @@ UpdateStorageVirtualDriveContainer Update a 'storage.VirtualDriveContainer' reso
 func (a *StorageApiService) UpdateStorageVirtualDriveContainer(ctx _context.Context, moid string) ApiUpdateStorageVirtualDriveContainerRequest {
 	return ApiUpdateStorageVirtualDriveContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41461,13 +42236,13 @@ func (a *StorageApiService) UpdateStorageVirtualDriveContainerExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41484,11 +42259,11 @@ func (a *StorageApiService) UpdateStorageVirtualDriveContainerExecute(r ApiUpdat
 }
 
 type ApiUpdateStorageVirtualDriveExtensionRequest struct {
-	ctx _context.Context
-	ApiService *StorageApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *StorageApiService
+	moid                         string
 	storageVirtualDriveExtension *StorageVirtualDriveExtension
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;storage.VirtualDriveExtension&#39; resource to update.
@@ -41496,6 +42271,7 @@ func (r ApiUpdateStorageVirtualDriveExtensionRequest) StorageVirtualDriveExtensi
 	r.storageVirtualDriveExtension = &storageVirtualDriveExtension
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateStorageVirtualDriveExtensionRequest) IfMatch(ifMatch string) ApiUpdateStorageVirtualDriveExtensionRequest {
 	r.ifMatch = &ifMatch
@@ -41516,8 +42292,8 @@ UpdateStorageVirtualDriveExtension Update a 'storage.VirtualDriveExtension' reso
 func (a *StorageApiService) UpdateStorageVirtualDriveExtension(ctx _context.Context, moid string) ApiUpdateStorageVirtualDriveExtensionRequest {
 	return ApiUpdateStorageVirtualDriveExtensionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41632,13 +42408,13 @@ func (a *StorageApiService) UpdateStorageVirtualDriveExtensionExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

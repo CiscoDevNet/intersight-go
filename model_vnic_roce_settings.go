@@ -35,7 +35,7 @@ type VnicRoceSettings struct {
 	// The number of resource groups per adapter. Recommended value = be an integer power of 2 greater than or equal to the number of CPU cores on the system for optimum performance.
 	ResourceGroups *int64 `json:"ResourceGroups,omitempty"`
 	// Configure RDMA over Converged Ethernet (RoCE) version on the virtual interface. Only RoCEv1 is supported on Cisco VIC 13xx series adapters and only RoCEv2 is supported on Cisco VIC 14xx series adapters. * `1` - RDMA over Converged Ethernet Protocol Version 1. * `2` - RDMA over Converged Ethernet Protocol Version 2.
-	Version *int32 `json:"Version,omitempty"`
+	Version              *int32 `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *VnicRoceSettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicRoceSettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *VnicRoceSettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicRoceSettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -484,5 +484,3 @@ func (v *NullableVnicRoceSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

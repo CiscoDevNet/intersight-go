@@ -18,20 +18,19 @@ import (
 
 // StorageFlexFlashControllerPropsRelationship - A relationship to the 'storage.FlexFlashControllerProps' resource, or the expanded 'storage.FlexFlashControllerProps' resource, or the 'null' value.
 type StorageFlexFlashControllerPropsRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                         *MoMoRef
 	StorageFlexFlashControllerProps *StorageFlexFlashControllerProps
 }
 
 // MoMoRefAsStorageFlexFlashControllerPropsRelationship is a convenience function that returns MoMoRef wrapped in StorageFlexFlashControllerPropsRelationship
 func MoMoRefAsStorageFlexFlashControllerPropsRelationship(v *MoMoRef) StorageFlexFlashControllerPropsRelationship {
-	return StorageFlexFlashControllerPropsRelationship{ MoMoRef: v}
+	return StorageFlexFlashControllerPropsRelationship{MoMoRef: v}
 }
 
 // StorageFlexFlashControllerPropsAsStorageFlexFlashControllerPropsRelationship is a convenience function that returns StorageFlexFlashControllerProps wrapped in StorageFlexFlashControllerPropsRelationship
 func StorageFlexFlashControllerPropsAsStorageFlexFlashControllerPropsRelationship(v *StorageFlexFlashControllerProps) StorageFlexFlashControllerPropsRelationship {
-	return StorageFlexFlashControllerPropsRelationship{ StorageFlexFlashControllerProps: v}
+	return StorageFlexFlashControllerPropsRelationship{StorageFlexFlashControllerProps: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexFlashControllerPropsRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageFlexFlashControllerPropsRelationship) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *StorageFlexFlashControllerPropsRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageFlexFlashControllerPropsRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageFlexFlashControllerPropsRelationship) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

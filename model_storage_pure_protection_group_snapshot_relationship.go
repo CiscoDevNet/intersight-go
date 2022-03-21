@@ -18,20 +18,19 @@ import (
 
 // StoragePureProtectionGroupSnapshotRelationship - A relationship to the 'storage.PureProtectionGroupSnapshot' resource, or the expanded 'storage.PureProtectionGroupSnapshot' resource, or the 'null' value.
 type StoragePureProtectionGroupSnapshotRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 	StoragePureProtectionGroupSnapshot *StoragePureProtectionGroupSnapshot
 }
 
 // MoMoRefAsStoragePureProtectionGroupSnapshotRelationship is a convenience function that returns MoMoRef wrapped in StoragePureProtectionGroupSnapshotRelationship
 func MoMoRefAsStoragePureProtectionGroupSnapshotRelationship(v *MoMoRef) StoragePureProtectionGroupSnapshotRelationship {
-	return StoragePureProtectionGroupSnapshotRelationship{ MoMoRef: v}
+	return StoragePureProtectionGroupSnapshotRelationship{MoMoRef: v}
 }
 
 // StoragePureProtectionGroupSnapshotAsStoragePureProtectionGroupSnapshotRelationship is a convenience function that returns StoragePureProtectionGroupSnapshot wrapped in StoragePureProtectionGroupSnapshotRelationship
 func StoragePureProtectionGroupSnapshotAsStoragePureProtectionGroupSnapshotRelationship(v *StoragePureProtectionGroupSnapshot) StoragePureProtectionGroupSnapshotRelationship {
-	return StoragePureProtectionGroupSnapshotRelationship{ StoragePureProtectionGroupSnapshot: v}
+	return StoragePureProtectionGroupSnapshotRelationship{StoragePureProtectionGroupSnapshot: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureProtectionGroupSnapshotRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePureProtectionGroupSnapshotRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *StoragePureProtectionGroupSnapshotRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePureProtectionGroupSnapshotRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePureProtectionGroupSnapshotRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

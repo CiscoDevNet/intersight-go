@@ -19,19 +19,18 @@ import (
 // AssetDeploymentRelationship - A relationship to the 'asset.Deployment' resource, or the expanded 'asset.Deployment' resource, or the 'null' value.
 type AssetDeploymentRelationship struct {
 	AssetDeployment *AssetDeployment
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // AssetDeploymentAsAssetDeploymentRelationship is a convenience function that returns AssetDeployment wrapped in AssetDeploymentRelationship
 func AssetDeploymentAsAssetDeploymentRelationship(v *AssetDeployment) AssetDeploymentRelationship {
-	return AssetDeploymentRelationship{ AssetDeployment: v}
+	return AssetDeploymentRelationship{AssetDeployment: v}
 }
 
 // MoMoRefAsAssetDeploymentRelationship is a convenience function that returns MoMoRef wrapped in AssetDeploymentRelationship
 func MoMoRefAsAssetDeploymentRelationship(v *MoMoRef) AssetDeploymentRelationship {
-	return AssetDeploymentRelationship{ MoMoRef: v}
+	return AssetDeploymentRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeploymentRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetDeploymentRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetDeploymentRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetDeploymentRelationship) GetActualInstance() interface{} {
 	if obj.AssetDeployment != nil {
 		return obj.AssetDeployment
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetDeploymentRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

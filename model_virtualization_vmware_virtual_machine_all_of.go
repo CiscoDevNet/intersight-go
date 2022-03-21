@@ -28,17 +28,17 @@ type VirtualizationVmwareVirtualMachineAllOf struct {
 	// Shows if virtual machine is connected to vCenter. Values are Connected, Disconnected, Orphaned, Inaccessible, and Invalid.
 	ConnectionState *string `json:"ConnectionState,omitempty"`
 	// Indicates if the capability to add CPUs to a running VM is enabled.
-	CpuHotAddEnabled *bool `json:"CpuHotAddEnabled,omitempty"`
-	CpuShares NullableVirtualizationVmwareVmCpuShareInfo `json:"CpuShares,omitempty"`
-	CpuSocketInfo NullableVirtualizationVmwareVmCpuSocketInfo `json:"CpuSocketInfo,omitempty"`
-	CustomAttributes []string `json:"CustomAttributes,omitempty"`
+	CpuHotAddEnabled *bool                                       `json:"CpuHotAddEnabled,omitempty"`
+	CpuShares        NullableVirtualizationVmwareVmCpuShareInfo  `json:"CpuShares,omitempty"`
+	CpuSocketInfo    NullableVirtualizationVmwareVmCpuSocketInfo `json:"CpuSocketInfo,omitempty"`
+	CustomAttributes []string                                    `json:"CustomAttributes,omitempty"`
 	// Indicates how the VM will be powered off (soft, hard etc.).
 	DefaultPowerOffType *string `json:"DefaultPowerOffType,omitempty"`
 	// Shows if DHCP is used for IP/DNS on this VM.
-	DhcpEnabled *bool `json:"DhcpEnabled,omitempty"`
+	DhcpEnabled    *bool                                        `json:"DhcpEnabled,omitempty"`
 	DiskCommitInfo NullableVirtualizationVmwareVmDiskCommitInfo `json:"DiskCommitInfo,omitempty"`
-	DnsServerList []string `json:"DnsServerList,omitempty"`
-	DnsSuffixList []string `json:"DnsSuffixList,omitempty"`
+	DnsServerList  []string                                     `json:"DnsServerList,omitempty"`
+	DnsSuffixList  []string                                     `json:"DnsSuffixList,omitempty"`
 	// Additional custom configuration settings applied to this VM. It is a set of name-value pairs stored as json.
 	ExtraConfig interface{} `json:"ExtraConfig,omitempty"`
 	// The folder name associated with this VM.
@@ -52,16 +52,16 @@ type VirtualizationVmwareVirtualMachineAllOf struct {
 	// Inventory path to the VM. Example - /DC/vm/folder/VMName.
 	InventoryPath *string `json:"InventoryPath,omitempty"`
 	// If true, indicates that the entity refers to a template of a virtual machine and not a real virtual machine.
-	IsTemplate *bool `json:"IsTemplate,omitempty"`
-	MacAddress []string `json:"MacAddress,omitempty"`
-	MemShares NullableVirtualizationVmwareVmMemoryShareInfo `json:"MemShares,omitempty"`
+	IsTemplate *bool                                         `json:"IsTemplate,omitempty"`
+	MacAddress []string                                      `json:"MacAddress,omitempty"`
+	MemShares  NullableVirtualizationVmwareVmMemoryShareInfo `json:"MemShares,omitempty"`
 	// Adding memory to a running VM.
 	MemoryHotAddEnabled *bool `json:"MemoryHotAddEnabled,omitempty"`
 	// Indicates how many networks are used by this VM.
-	NetworkCount *int64 `json:"NetworkCount,omitempty"`
-	PortGroups []string `json:"PortGroups,omitempty"`
+	NetworkCount *int64   `json:"NetworkCount,omitempty"`
+	PortGroups   []string `json:"PortGroups,omitempty"`
 	// Shows if this is a protected VM. VMs can be in protection groups.
-	ProtectedVm *bool `json:"ProtectedVm,omitempty"`
+	ProtectedVm       *bool                                         `json:"ProtectedVm,omitempty"`
 	RemoteDisplayInfo NullableVirtualizationVmwareRemoteDisplayInfo `json:"RemoteDisplayInfo,omitempty"`
 	// Shows if support for a remote VNC access is enabled.
 	RemoteDisplayVncEnabled *bool `json:"RemoteDisplayVncEnabled,omitempty"`
@@ -74,8 +74,8 @@ type VirtualizationVmwareVirtualMachineAllOf struct {
 	// Indicates if guest tools are running on this VM. Could be set to guestToolNotRunning or guestToolsRunning.
 	ToolRunningStatus *string `json:"ToolRunningStatus,omitempty"`
 	// The version of the guest tools, usually not specified.
-	ToolsVersion *string `json:"ToolsVersion,omitempty"`
-	VirtualDisks []int64 `json:"VirtualDisks,omitempty"`
+	ToolsVersion             *string `json:"ToolsVersion,omitempty"`
+	VirtualDisks             []int64 `json:"VirtualDisks,omitempty"`
 	VirtualNetworkInterfaces []int64 `json:"VirtualNetworkInterfaces,omitempty"`
 	// Shows the number of disks assigned to this VM.
 	VmDiskCount *int64 `json:"VmDiskCount,omitempty"`
@@ -88,15 +88,15 @@ type VirtualizationVmwareVirtualMachineAllOf struct {
 	// How many vnics are present.
 	VmVnicCount *int64 `json:"VmVnicCount,omitempty"`
 	// Information related to the guest info's VNIC virtual device. It is a comma-separated list.
-	VnicDeviceConfigId *string `json:"VnicDeviceConfigId,omitempty"`
-	Cluster *VirtualizationVmwareClusterRelationship `json:"Cluster,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	VnicDeviceConfigId *string                                     `json:"VnicDeviceConfigId,omitempty"`
+	Cluster            *VirtualizationVmwareClusterRelationship    `json:"Cluster,omitempty"`
+	Datacenter         *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
 	// An array of relationships to virtualizationVmwareDatastore resources.
 	Datastores []VirtualizationVmwareDatastoreRelationship `json:"Datastores,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
+	Host       *VirtualizationVmwareHostRelationship       `json:"Host,omitempty"`
 	// An array of relationships to virtualizationBaseNetwork resources.
-	Networks []VirtualizationBaseNetworkRelationship `json:"Networks,omitempty"`
-	ParentFolder *VirtualizationVmwareFolderRelationship `json:"ParentFolder,omitempty"`
+	Networks             []VirtualizationBaseNetworkRelationship `json:"Networks,omitempty"`
+	ParentFolder         *VirtualizationVmwareFolderRelationship `json:"ParentFolder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -142,7 +142,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -166,7 +166,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,7 +318,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetCpuShares() VirtualizationV
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetCpuSharesOk() (*VirtualizationVmwareVmCpuShareInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CpuShares.Get(), o.CpuShares.IsSet()
@@ -337,6 +337,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) HasCpuShares() bool {
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetCpuShares(v VirtualizationVmwareVmCpuShareInfo) {
 	o.CpuShares.Set(&v)
 }
+
 // SetCpuSharesNil sets the value for CpuShares to be an explicit nil
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetCpuSharesNil() {
 	o.CpuShares.Set(nil)
@@ -360,7 +361,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetCpuSocketInfo() Virtualizat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetCpuSocketInfoOk() (*VirtualizationVmwareVmCpuSocketInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CpuSocketInfo.Get(), o.CpuSocketInfo.IsSet()
@@ -379,6 +380,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) HasCpuSocketInfo() bool {
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetCpuSocketInfo(v VirtualizationVmwareVmCpuSocketInfo) {
 	o.CpuSocketInfo.Set(&v)
 }
+
 // SetCpuSocketInfoNil sets the value for CpuSocketInfo to be an explicit nil
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetCpuSocketInfoNil() {
 	o.CpuSocketInfo.Set(nil)
@@ -391,7 +393,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) UnsetCpuSocketInfo() {
 
 // GetCustomAttributes returns the CustomAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetCustomAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -499,7 +501,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetDiskCommitInfo() Virtualiza
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetDiskCommitInfoOk() (*VirtualizationVmwareVmDiskCommitInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DiskCommitInfo.Get(), o.DiskCommitInfo.IsSet()
@@ -518,6 +520,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) HasDiskCommitInfo() bool {
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetDiskCommitInfo(v VirtualizationVmwareVmDiskCommitInfo) {
 	o.DiskCommitInfo.Set(&v)
 }
+
 // SetDiskCommitInfoNil sets the value for DiskCommitInfo to be an explicit nil
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetDiskCommitInfoNil() {
 	o.DiskCommitInfo.Set(nil)
@@ -530,7 +533,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) UnsetDiskCommitInfo() {
 
 // GetDnsServerList returns the DnsServerList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetDnsServerList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -563,7 +566,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetDnsServerList(v []string) {
 
 // GetDnsSuffixList returns the DnsSuffixList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetDnsSuffixList() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetDnsSuffixList(v []string) {
 
 // GetExtraConfig returns the ExtraConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetExtraConfig() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -821,7 +824,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetIsTemplate(v bool) {
 
 // GetMacAddress returns the MacAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetMacAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -865,7 +868,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetMemShares() VirtualizationV
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetMemSharesOk() (*VirtualizationVmwareVmMemoryShareInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemShares.Get(), o.MemShares.IsSet()
@@ -884,6 +887,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) HasMemShares() bool {
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetMemShares(v VirtualizationVmwareVmMemoryShareInfo) {
 	o.MemShares.Set(&v)
 }
+
 // SetMemSharesNil sets the value for MemShares to be an explicit nil
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetMemSharesNil() {
 	o.MemShares.Set(nil)
@@ -960,7 +964,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetNetworkCount(v int64) {
 
 // GetPortGroups returns the PortGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetPortGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -1036,7 +1040,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) GetRemoteDisplayInfo() Virtual
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetRemoteDisplayInfoOk() (*VirtualizationVmwareRemoteDisplayInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RemoteDisplayInfo.Get(), o.RemoteDisplayInfo.IsSet()
@@ -1055,6 +1059,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) HasRemoteDisplayInfo() bool {
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetRemoteDisplayInfo(v VirtualizationVmwareRemoteDisplayInfo) {
 	o.RemoteDisplayInfo.Set(&v)
 }
+
 // SetRemoteDisplayInfoNil sets the value for RemoteDisplayInfo to be an explicit nil
 func (o *VirtualizationVmwareVirtualMachineAllOf) SetRemoteDisplayInfoNil() {
 	o.RemoteDisplayInfo.Set(nil)
@@ -1259,7 +1264,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetToolsVersion(v string) {
 
 // GetVirtualDisks returns the VirtualDisks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetVirtualDisks() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -1292,7 +1297,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetVirtualDisks(v []int64) {
 
 // GetVirtualNetworkInterfaces returns the VirtualNetworkInterfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetVirtualNetworkInterfaces() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -1581,7 +1586,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetDatacenter(v Virtualization
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetDatastores() []VirtualizationVmwareDatastoreRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDatastoreRelationship
 		return ret
 	}
@@ -1646,7 +1651,7 @@ func (o *VirtualizationVmwareVirtualMachineAllOf) SetHost(v VirtualizationVmware
 
 // GetNetworks returns the Networks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineAllOf) GetNetworks() []VirtualizationBaseNetworkRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationBaseNetworkRelationship
 		return ret
 	}
@@ -1962,5 +1967,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

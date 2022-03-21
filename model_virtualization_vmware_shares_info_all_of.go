@@ -24,7 +24,7 @@ type VirtualizationVmwareSharesInfoAllOf struct {
 	// The allocation level. The level is a simplified view of shares. Levels map to a pre-determined set of numeric values for shares. If the shares value does not map to a predefined size, then the level is set as custom.
 	Level *string `json:"Level,omitempty"`
 	// The number of shares allocated. It is used to determine resource allocation in case of resource contention. Set if level is custom. If level is not set to custom, this value is ignored. Therefore, only shares with custom values can be compared.
-	Shares *int64 `json:"Shares,omitempty"`
+	Shares               *int64 `json:"Shares,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *VirtualizationVmwareSharesInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareSharesInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *VirtualizationVmwareSharesInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareSharesInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableVirtualizationVmwareSharesInfoAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

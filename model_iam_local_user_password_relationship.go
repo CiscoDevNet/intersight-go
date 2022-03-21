@@ -19,19 +19,18 @@ import (
 // IamLocalUserPasswordRelationship - A relationship to the 'iam.LocalUserPassword' resource, or the expanded 'iam.LocalUserPassword' resource, or the 'null' value.
 type IamLocalUserPasswordRelationship struct {
 	IamLocalUserPassword *IamLocalUserPassword
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // IamLocalUserPasswordAsIamLocalUserPasswordRelationship is a convenience function that returns IamLocalUserPassword wrapped in IamLocalUserPasswordRelationship
 func IamLocalUserPasswordAsIamLocalUserPasswordRelationship(v *IamLocalUserPassword) IamLocalUserPasswordRelationship {
-	return IamLocalUserPasswordRelationship{ IamLocalUserPassword: v}
+	return IamLocalUserPasswordRelationship{IamLocalUserPassword: v}
 }
 
 // MoMoRefAsIamLocalUserPasswordRelationship is a convenience function that returns MoMoRef wrapped in IamLocalUserPasswordRelationship
 func MoMoRefAsIamLocalUserPasswordRelationship(v *MoMoRef) IamLocalUserPasswordRelationship {
-	return IamLocalUserPasswordRelationship{ MoMoRef: v}
+	return IamLocalUserPasswordRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLocalUserPasswordRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamLocalUserPasswordRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLocalUserPasswordRelationship) GetActualInstance() (interface{}) {
+func (obj *IamLocalUserPasswordRelationship) GetActualInstance() interface{} {
 	if obj.IamLocalUserPassword != nil {
 		return obj.IamLocalUserPassword
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamLocalUserPasswordRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

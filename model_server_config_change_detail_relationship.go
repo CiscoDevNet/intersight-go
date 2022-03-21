@@ -18,20 +18,19 @@ import (
 
 // ServerConfigChangeDetailRelationship - A relationship to the 'server.ConfigChangeDetail' resource, or the expanded 'server.ConfigChangeDetail' resource, or the 'null' value.
 type ServerConfigChangeDetailRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	ServerConfigChangeDetail *ServerConfigChangeDetail
 }
 
 // MoMoRefAsServerConfigChangeDetailRelationship is a convenience function that returns MoMoRef wrapped in ServerConfigChangeDetailRelationship
 func MoMoRefAsServerConfigChangeDetailRelationship(v *MoMoRef) ServerConfigChangeDetailRelationship {
-	return ServerConfigChangeDetailRelationship{ MoMoRef: v}
+	return ServerConfigChangeDetailRelationship{MoMoRef: v}
 }
 
 // ServerConfigChangeDetailAsServerConfigChangeDetailRelationship is a convenience function that returns ServerConfigChangeDetail wrapped in ServerConfigChangeDetailRelationship
 func ServerConfigChangeDetailAsServerConfigChangeDetailRelationship(v *ServerConfigChangeDetail) ServerConfigChangeDetailRelationship {
-	return ServerConfigChangeDetailRelationship{ ServerConfigChangeDetail: v}
+	return ServerConfigChangeDetailRelationship{ServerConfigChangeDetail: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServerConfigChangeDetailRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ServerConfigChangeDetailRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ServerConfigChangeDetailRelationship) GetActualInstance() (interface{}) {
+func (obj *ServerConfigChangeDetailRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableServerConfigChangeDetailRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

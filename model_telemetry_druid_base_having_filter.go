@@ -18,7 +18,7 @@ import (
 // TelemetryDruidBaseHavingFilter A having clause is a JSON object identifying which rows from a groupBy query should be returned, by specifying conditions on aggregated values. It is essentially the equivalent of the HAVING clause in SQL.
 type TelemetryDruidBaseHavingFilter struct {
 	// The having filter type.
-	Type string `json:"type"`
+	Type                 string `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidBaseHavingFilter) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidBaseHavingFilter) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidBaseHavingFilter) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

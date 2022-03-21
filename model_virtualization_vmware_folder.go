@@ -29,10 +29,10 @@ type VirtualizationVmwareFolder struct {
 	// Inventory path to the folder. Example - /DC/myFolder.
 	InventoryPath *string `json:"InventoryPath,omitempty"`
 	// Determines the type of folder. e.g. vCenter folder, VM and Templete Folder, StorageFolder, NetworkFolder, Host and Cluster Folder. * `Unknown` - The type of the folder is unknown. It may not represent that the folder does not exist but indicates that something might be wrong. * `VMTemplateFolder` - The folder contains VMs and VM templates. * `StorageFolder` - The folder contains storage devices. * `HostClusterFolder` - The folder contains hosts and clusters. * `NetworkFolder` - The folder contains network items. * `VcenterFolder` - The folder created under a vCenter or vCenter folder.
-	TypeofFolder *string `json:"TypeofFolder,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
-	HypervisorManager *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
-	VmwareFolder *VirtualizationVmwareFolderRelationship `json:"VmwareFolder,omitempty"`
+	TypeofFolder         *string                                     `json:"TypeofFolder,omitempty"`
+	Datacenter           *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	HypervisorManager    *VirtualizationVmwareVcenterRelationship    `json:"HypervisorManager,omitempty"`
+	VmwareFolder         *VirtualizationVmwareFolderRelationship     `json:"VmwareFolder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *VirtualizationVmwareFolder) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareFolder) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *VirtualizationVmwareFolder) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareFolder) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -358,10 +358,10 @@ func (o *VirtualizationVmwareFolder) UnmarshalJSON(bytes []byte) (err error) {
 		// Inventory path to the folder. Example - /DC/myFolder.
 		InventoryPath *string `json:"InventoryPath,omitempty"`
 		// Determines the type of folder. e.g. vCenter folder, VM and Templete Folder, StorageFolder, NetworkFolder, Host and Cluster Folder. * `Unknown` - The type of the folder is unknown. It may not represent that the folder does not exist but indicates that something might be wrong. * `VMTemplateFolder` - The folder contains VMs and VM templates. * `StorageFolder` - The folder contains storage devices. * `HostClusterFolder` - The folder contains hosts and clusters. * `NetworkFolder` - The folder contains network items. * `VcenterFolder` - The folder created under a vCenter or vCenter folder.
-		TypeofFolder *string `json:"TypeofFolder,omitempty"`
-		Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
-		HypervisorManager *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
-		VmwareFolder *VirtualizationVmwareFolderRelationship `json:"VmwareFolder,omitempty"`
+		TypeofFolder      *string                                     `json:"TypeofFolder,omitempty"`
+		Datacenter        *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+		HypervisorManager *VirtualizationVmwareVcenterRelationship    `json:"HypervisorManager,omitempty"`
+		VmwareFolder      *VirtualizationVmwareFolderRelationship     `json:"VmwareFolder,omitempty"`
 	}
 
 	varVirtualizationVmwareFolderWithoutEmbeddedStruct := VirtualizationVmwareFolderWithoutEmbeddedStruct{}
@@ -462,5 +462,3 @@ func (v *NullableVirtualizationVmwareFolder) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,20 +20,20 @@ type FirmwareUpgradeBaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	DirectDownload NullableFirmwareDirectDownload `json:"DirectDownload,omitempty"`
-	FileServer NullableSoftwarerepositoryFileServer `json:"FileServer,omitempty"`
-	NetworkShare NullableFirmwareNetworkShare `json:"NetworkShare,omitempty"`
+	ObjectType     string                               `json:"ObjectType"`
+	DirectDownload NullableFirmwareDirectDownload       `json:"DirectDownload,omitempty"`
+	FileServer     NullableSoftwarerepositoryFileServer `json:"FileServer,omitempty"`
+	NetworkShare   NullableFirmwareNetworkShare         `json:"NetworkShare,omitempty"`
 	// User has the option to skip the estimate impact calculation.
 	SkipEstimateImpact *bool `json:"SkipEstimateImpact,omitempty"`
 	// Status of the upgrade operation. * `NONE` - Upgrade status is not populated. * `IN_PROGRESS` - The upgrade is in progress. * `SUCCESSFUL` - The upgrade successfully completed. * `FAILED` - The upgrade shows failed status. * `TERMINATED` - The upgrade has been terminated.
 	Status *string `json:"Status,omitempty"`
 	// Desired upgrade mode to choose either direct download based upgrade or network share upgrade. * `direct_upgrade` - Upgrade mode is direct download. * `network_upgrade` - Upgrade mode is network upgrade.
-	UpgradeType *string `json:"UpgradeType,omitempty"`
-	Distributable *FirmwareDistributableRelationship `json:"Distributable,omitempty"`
-	Release *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
-	UpgradeImpact *FirmwareUpgradeImpactStatusRelationship `json:"UpgradeImpact,omitempty"`
-	UpgradeStatus *FirmwareUpgradeStatusRelationship `json:"UpgradeStatus,omitempty"`
+	UpgradeType          *string                                  `json:"UpgradeType,omitempty"`
+	Distributable        *FirmwareDistributableRelationship       `json:"Distributable,omitempty"`
+	Release              *SoftwarerepositoryReleaseRelationship   `json:"Release,omitempty"`
+	UpgradeImpact        *FirmwareUpgradeImpactStatusRelationship `json:"UpgradeImpact,omitempty"`
+	UpgradeStatus        *FirmwareUpgradeStatusRelationship       `json:"UpgradeStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *FirmwareUpgradeBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *FirmwareUpgradeBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUpgradeBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -127,7 +127,7 @@ func (o *FirmwareUpgradeBaseAllOf) GetDirectDownload() FirmwareDirectDownload {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareUpgradeBaseAllOf) GetDirectDownloadOk() (*FirmwareDirectDownload, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DirectDownload.Get(), o.DirectDownload.IsSet()
@@ -146,6 +146,7 @@ func (o *FirmwareUpgradeBaseAllOf) HasDirectDownload() bool {
 func (o *FirmwareUpgradeBaseAllOf) SetDirectDownload(v FirmwareDirectDownload) {
 	o.DirectDownload.Set(&v)
 }
+
 // SetDirectDownloadNil sets the value for DirectDownload to be an explicit nil
 func (o *FirmwareUpgradeBaseAllOf) SetDirectDownloadNil() {
 	o.DirectDownload.Set(nil)
@@ -169,7 +170,7 @@ func (o *FirmwareUpgradeBaseAllOf) GetFileServer() SoftwarerepositoryFileServer 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareUpgradeBaseAllOf) GetFileServerOk() (*SoftwarerepositoryFileServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FileServer.Get(), o.FileServer.IsSet()
@@ -188,6 +189,7 @@ func (o *FirmwareUpgradeBaseAllOf) HasFileServer() bool {
 func (o *FirmwareUpgradeBaseAllOf) SetFileServer(v SoftwarerepositoryFileServer) {
 	o.FileServer.Set(&v)
 }
+
 // SetFileServerNil sets the value for FileServer to be an explicit nil
 func (o *FirmwareUpgradeBaseAllOf) SetFileServerNil() {
 	o.FileServer.Set(nil)
@@ -211,7 +213,7 @@ func (o *FirmwareUpgradeBaseAllOf) GetNetworkShare() FirmwareNetworkShare {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareUpgradeBaseAllOf) GetNetworkShareOk() (*FirmwareNetworkShare, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetworkShare.Get(), o.NetworkShare.IsSet()
@@ -230,6 +232,7 @@ func (o *FirmwareUpgradeBaseAllOf) HasNetworkShare() bool {
 func (o *FirmwareUpgradeBaseAllOf) SetNetworkShare(v FirmwareNetworkShare) {
 	o.NetworkShare.Set(&v)
 }
+
 // SetNetworkShareNil sets the value for NetworkShare to be an explicit nil
 func (o *FirmwareUpgradeBaseAllOf) SetNetworkShareNil() {
 	o.NetworkShare.Set(nil)
@@ -573,5 +576,3 @@ func (v *NullableFirmwareUpgradeBaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

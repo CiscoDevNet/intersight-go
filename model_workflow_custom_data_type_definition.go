@@ -31,12 +31,12 @@ type WorkflowCustomDataTypeDefinition struct {
 	// A user friendly short name to identify the custom data type definition. Label can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ), single quote ('), or an underscore (_) and must be at least 2 characters.
 	Label *string `json:"Label,omitempty"`
 	// The name of custom data type definition. The valid name can contain lower case and upper case alphabetic characters, digits and special characters '-' and '_'.
-	Name *string `json:"Name,omitempty"`
-	ParameterSet []WorkflowParameterSet `json:"ParameterSet,omitempty"`
-	Properties NullableWorkflowCustomDataTypeProperties `json:"Properties,omitempty"`
-	TypeDefinition []WorkflowBaseDataType `json:"TypeDefinition,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
-	ClonedFrom *WorkflowCustomDataTypeDefinitionRelationship `json:"ClonedFrom,omitempty"`
+	Name                 *string                                       `json:"Name,omitempty"`
+	ParameterSet         []WorkflowParameterSet                        `json:"ParameterSet,omitempty"`
+	Properties           NullableWorkflowCustomDataTypeProperties      `json:"Properties,omitempty"`
+	TypeDefinition       []WorkflowBaseDataType                        `json:"TypeDefinition,omitempty"`
+	Catalog              *WorkflowCatalogRelationship                  `json:"Catalog,omitempty"`
+	ClonedFrom           *WorkflowCustomDataTypeDefinitionRelationship `json:"ClonedFrom,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *WorkflowCustomDataTypeDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypeDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *WorkflowCustomDataTypeDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypeDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -247,7 +247,7 @@ func (o *WorkflowCustomDataTypeDefinition) SetName(v string) {
 
 // GetParameterSet returns the ParameterSet field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowCustomDataTypeDefinition) GetParameterSet() []WorkflowParameterSet {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowParameterSet
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *WorkflowCustomDataTypeDefinition) GetProperties() WorkflowCustomDataTyp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowCustomDataTypeDefinition) GetPropertiesOk() (*WorkflowCustomDataTypeProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Properties.Get(), o.Properties.IsSet()
@@ -310,6 +310,7 @@ func (o *WorkflowCustomDataTypeDefinition) HasProperties() bool {
 func (o *WorkflowCustomDataTypeDefinition) SetProperties(v WorkflowCustomDataTypeProperties) {
 	o.Properties.Set(&v)
 }
+
 // SetPropertiesNil sets the value for Properties to be an explicit nil
 func (o *WorkflowCustomDataTypeDefinition) SetPropertiesNil() {
 	o.Properties.Set(nil)
@@ -322,7 +323,7 @@ func (o *WorkflowCustomDataTypeDefinition) UnsetProperties() {
 
 // GetTypeDefinition returns the TypeDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowCustomDataTypeDefinition) GetTypeDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -481,12 +482,12 @@ func (o *WorkflowCustomDataTypeDefinition) UnmarshalJSON(bytes []byte) (err erro
 		// A user friendly short name to identify the custom data type definition. Label can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ), single quote ('), or an underscore (_) and must be at least 2 characters.
 		Label *string `json:"Label,omitempty"`
 		// The name of custom data type definition. The valid name can contain lower case and upper case alphabetic characters, digits and special characters '-' and '_'.
-		Name *string `json:"Name,omitempty"`
-		ParameterSet []WorkflowParameterSet `json:"ParameterSet,omitempty"`
-		Properties NullableWorkflowCustomDataTypeProperties `json:"Properties,omitempty"`
-		TypeDefinition []WorkflowBaseDataType `json:"TypeDefinition,omitempty"`
-		Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
-		ClonedFrom *WorkflowCustomDataTypeDefinitionRelationship `json:"ClonedFrom,omitempty"`
+		Name           *string                                       `json:"Name,omitempty"`
+		ParameterSet   []WorkflowParameterSet                        `json:"ParameterSet,omitempty"`
+		Properties     NullableWorkflowCustomDataTypeProperties      `json:"Properties,omitempty"`
+		TypeDefinition []WorkflowBaseDataType                        `json:"TypeDefinition,omitempty"`
+		Catalog        *WorkflowCatalogRelationship                  `json:"Catalog,omitempty"`
+		ClonedFrom     *WorkflowCustomDataTypeDefinitionRelationship `json:"ClonedFrom,omitempty"`
 	}
 
 	varWorkflowCustomDataTypeDefinitionWithoutEmbeddedStruct := WorkflowCustomDataTypeDefinitionWithoutEmbeddedStruct{}
@@ -593,5 +594,3 @@ func (v *NullableWorkflowCustomDataTypeDefinition) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

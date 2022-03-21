@@ -20,7 +20,7 @@ type TelemetryDruidBasePostAggregator struct {
 	// The post-aggregator type.
 	Type string `json:"type"`
 	// Fields processed by post aggregator
-	Fields *[]TelemetryDruidPostAggregator `json:"fields,omitempty"`
+	Fields               *[]TelemetryDruidPostAggregator `json:"fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *TelemetryDruidBasePostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidBasePostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -169,5 +169,3 @@ func (v *NullableTelemetryDruidBasePostAggregator) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

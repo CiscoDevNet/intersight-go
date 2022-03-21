@@ -19,19 +19,18 @@ import (
 // FabricEthNetworkPolicyRelationship - A relationship to the 'fabric.EthNetworkPolicy' resource, or the expanded 'fabric.EthNetworkPolicy' resource, or the 'null' value.
 type FabricEthNetworkPolicyRelationship struct {
 	FabricEthNetworkPolicy *FabricEthNetworkPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 }
 
 // FabricEthNetworkPolicyAsFabricEthNetworkPolicyRelationship is a convenience function that returns FabricEthNetworkPolicy wrapped in FabricEthNetworkPolicyRelationship
 func FabricEthNetworkPolicyAsFabricEthNetworkPolicyRelationship(v *FabricEthNetworkPolicy) FabricEthNetworkPolicyRelationship {
-	return FabricEthNetworkPolicyRelationship{ FabricEthNetworkPolicy: v}
+	return FabricEthNetworkPolicyRelationship{FabricEthNetworkPolicy: v}
 }
 
 // MoMoRefAsFabricEthNetworkPolicyRelationship is a convenience function that returns MoMoRef wrapped in FabricEthNetworkPolicyRelationship
 func MoMoRefAsFabricEthNetworkPolicyRelationship(v *MoMoRef) FabricEthNetworkPolicyRelationship {
-	return FabricEthNetworkPolicyRelationship{ MoMoRef: v}
+	return FabricEthNetworkPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricEthNetworkPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricEthNetworkPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricEthNetworkPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricEthNetworkPolicyRelationship) GetActualInstance() interface{} {
 	if obj.FabricEthNetworkPolicy != nil {
 		return obj.FabricEthNetworkPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricEthNetworkPolicyRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

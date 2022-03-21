@@ -24,7 +24,7 @@ type VirtualizationBaseSwitchAllOf struct {
 	// The internally generated identity of this switch. This entity is not manipulated by users. It aids in uniquely identifying the switch object. For VMware, this is MOR (managed object reference).
 	Identity *string `json:"Identity,omitempty"`
 	// User-provided name to identify the switch.
-	Name *string `json:"Name,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,7 +62,7 @@ func (o *VirtualizationBaseSwitchAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseSwitchAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -86,7 +86,7 @@ func (o *VirtualizationBaseSwitchAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseSwitchAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,5 +238,3 @@ func (v *NullableVirtualizationBaseSwitchAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareDatacenterRelationship - A relationship to the 'virtualization.VmwareDatacenter' resource, or the expanded 'virtualization.VmwareDatacenter' resource, or the 'null' value.
 type VirtualizationVmwareDatacenterRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                        *MoMoRef
 	VirtualizationVmwareDatacenter *VirtualizationVmwareDatacenter
 }
 
 // MoMoRefAsVirtualizationVmwareDatacenterRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareDatacenterRelationship
 func MoMoRefAsVirtualizationVmwareDatacenterRelationship(v *MoMoRef) VirtualizationVmwareDatacenterRelationship {
-	return VirtualizationVmwareDatacenterRelationship{ MoMoRef: v}
+	return VirtualizationVmwareDatacenterRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareDatacenterAsVirtualizationVmwareDatacenterRelationship is a convenience function that returns VirtualizationVmwareDatacenter wrapped in VirtualizationVmwareDatacenterRelationship
 func VirtualizationVmwareDatacenterAsVirtualizationVmwareDatacenterRelationship(v *VirtualizationVmwareDatacenter) VirtualizationVmwareDatacenterRelationship {
-	return VirtualizationVmwareDatacenterRelationship{ VirtualizationVmwareDatacenter: v}
+	return VirtualizationVmwareDatacenterRelationship{VirtualizationVmwareDatacenter: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareDatacenterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareDatacenterRelationship) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareDatacenterRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareDatacenterRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareDatacenterRelationship) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

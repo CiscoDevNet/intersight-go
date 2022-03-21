@@ -27,8 +27,8 @@ type CloudAwsKeyPair struct {
 	// Either the SHA-1 digest of the DER encoded private key or  MD5 public key fingerprint.
 	FingerPrint *string `json:"FingerPrint,omitempty"`
 	// Used in authenticating to the virtual machine .
-	PublicKey *string `json:"PublicKey,omitempty"`
-	AwsBillingUnit *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
+	PublicKey            *string                          `json:"PublicKey,omitempty"`
+	AwsBillingUnit       *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *CloudAwsKeyPair) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsKeyPair) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *CloudAwsKeyPair) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsKeyPair) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -243,7 +243,7 @@ func (o *CloudAwsKeyPair) UnmarshalJSON(bytes []byte) (err error) {
 		// Either the SHA-1 digest of the DER encoded private key or  MD5 public key fingerprint.
 		FingerPrint *string `json:"FingerPrint,omitempty"`
 		// Used in authenticating to the virtual machine .
-		PublicKey *string `json:"PublicKey,omitempty"`
+		PublicKey      *string                          `json:"PublicKey,omitempty"`
 		AwsBillingUnit *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
 	}
 
@@ -339,5 +339,3 @@ func (v *NullableCloudAwsKeyPair) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

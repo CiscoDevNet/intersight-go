@@ -29,9 +29,9 @@ type VirtualizationVmwareCluster struct {
 	// Count of all datastores associated with this cluster.
 	DatastoreCount *int64 `json:"DatastoreCount,omitempty"`
 	// Inventory path of the cluster.
-	InventoryPath *string `json:"InventoryPath,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	InventoryPath        *string                                     `json:"InventoryPath,omitempty"`
+	Datacenter           *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *VirtualizationVmwareCluster) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareCluster) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *VirtualizationVmwareCluster) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareCluster) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -320,9 +320,9 @@ func (o *VirtualizationVmwareCluster) UnmarshalJSON(bytes []byte) (err error) {
 		// Count of all datastores associated with this cluster.
 		DatastoreCount *int64 `json:"DatastoreCount,omitempty"`
 		// Inventory path of the cluster.
-		InventoryPath *string `json:"InventoryPath,omitempty"`
-		Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		InventoryPath    *string                                     `json:"InventoryPath,omitempty"`
+		Datacenter       *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
 	}
 
 	varVirtualizationVmwareClusterWithoutEmbeddedStruct := VirtualizationVmwareClusterWithoutEmbeddedStruct{}
@@ -421,5 +421,3 @@ func (v *NullableVirtualizationVmwareCluster) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

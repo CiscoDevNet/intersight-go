@@ -32,9 +32,9 @@ type CloudTfcWorkspaceAllOf struct {
 	// The status of the last executed run in this workspace.
 	LastRunStatus *string `json:"LastRunStatus,omitempty"`
 	// The name of the workspace.
-	Name *string `json:"Name,omitempty"`
-	WorkspaceVariables []CloudTfcWorkspaceVariables `json:"WorkspaceVariables,omitempty"`
-	Organization *CloudTfcOrganizationRelationship `json:"Organization,omitempty"`
+	Name                 *string                           `json:"Name,omitempty"`
+	WorkspaceVariables   []CloudTfcWorkspaceVariables      `json:"WorkspaceVariables,omitempty"`
+	Organization         *CloudTfcOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CloudTfcWorkspaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcWorkspaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CloudTfcWorkspaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcWorkspaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -305,7 +305,7 @@ func (o *CloudTfcWorkspaceAllOf) SetName(v string) {
 
 // GetWorkspaceVariables returns the WorkspaceVariables field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudTfcWorkspaceAllOf) GetWorkspaceVariables() []CloudTfcWorkspaceVariables {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudTfcWorkspaceVariables
 		return ret
 	}
@@ -469,5 +469,3 @@ func (v *NullableCloudTfcWorkspaceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

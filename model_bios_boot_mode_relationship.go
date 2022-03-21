@@ -19,19 +19,18 @@ import (
 // BiosBootModeRelationship - A relationship to the 'bios.BootMode' resource, or the expanded 'bios.BootMode' resource, or the 'null' value.
 type BiosBootModeRelationship struct {
 	BiosBootMode *BiosBootMode
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // BiosBootModeAsBiosBootModeRelationship is a convenience function that returns BiosBootMode wrapped in BiosBootModeRelationship
 func BiosBootModeAsBiosBootModeRelationship(v *BiosBootMode) BiosBootModeRelationship {
-	return BiosBootModeRelationship{ BiosBootMode: v}
+	return BiosBootModeRelationship{BiosBootMode: v}
 }
 
 // MoMoRefAsBiosBootModeRelationship is a convenience function that returns MoMoRef wrapped in BiosBootModeRelationship
 func MoMoRefAsBiosBootModeRelationship(v *MoMoRef) BiosBootModeRelationship {
-	return BiosBootModeRelationship{ MoMoRef: v}
+	return BiosBootModeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosBootModeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BiosBootModeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosBootModeRelationship) GetActualInstance() (interface{}) {
+func (obj *BiosBootModeRelationship) GetActualInstance() interface{} {
 	if obj.BiosBootMode != nil {
 		return obj.BiosBootMode
 	}
@@ -137,5 +136,3 @@ func (v *NullableBiosBootModeRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

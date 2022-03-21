@@ -18,7 +18,7 @@ import (
 // TelemetryDruidBaseDimensionSpec A dimension spec is used in a query to operate on dimension values.
 type TelemetryDruidBaseDimensionSpec struct {
 	// the dimension spec type.
-	Type string `json:"type"`
+	Type                 string `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidBaseDimensionSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidBaseDimensionSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidBaseDimensionSpec) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

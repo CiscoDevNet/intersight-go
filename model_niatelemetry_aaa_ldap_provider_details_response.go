@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryAaaLdapProviderDetailsResponse - The response body of a HTTP GET request for the 'niatelemetry.AaaLdapProviderDetails' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.AaaLdapProviderDetails' resources.
 type NiatelemetryAaaLdapProviderDetailsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                   *MoAggregateTransform
+	MoDocumentCount                        *MoDocumentCount
+	MoTagSummary                           *MoTagSummary
 	NiatelemetryAaaLdapProviderDetailsList *NiatelemetryAaaLdapProviderDetailsList
 }
 
 // MoAggregateTransformAsNiatelemetryAaaLdapProviderDetailsResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryAaaLdapProviderDetailsResponse
 func MoAggregateTransformAsNiatelemetryAaaLdapProviderDetailsResponse(v *MoAggregateTransform) NiatelemetryAaaLdapProviderDetailsResponse {
-	return NiatelemetryAaaLdapProviderDetailsResponse{ MoAggregateTransform: v}
+	return NiatelemetryAaaLdapProviderDetailsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryAaaLdapProviderDetailsResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryAaaLdapProviderDetailsResponse
 func MoDocumentCountAsNiatelemetryAaaLdapProviderDetailsResponse(v *MoDocumentCount) NiatelemetryAaaLdapProviderDetailsResponse {
-	return NiatelemetryAaaLdapProviderDetailsResponse{ MoDocumentCount: v}
+	return NiatelemetryAaaLdapProviderDetailsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryAaaLdapProviderDetailsResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryAaaLdapProviderDetailsResponse
 func MoTagSummaryAsNiatelemetryAaaLdapProviderDetailsResponse(v *MoTagSummary) NiatelemetryAaaLdapProviderDetailsResponse {
-	return NiatelemetryAaaLdapProviderDetailsResponse{ MoTagSummary: v}
+	return NiatelemetryAaaLdapProviderDetailsResponse{MoTagSummary: v}
 }
 
 // NiatelemetryAaaLdapProviderDetailsListAsNiatelemetryAaaLdapProviderDetailsResponse is a convenience function that returns NiatelemetryAaaLdapProviderDetailsList wrapped in NiatelemetryAaaLdapProviderDetailsResponse
 func NiatelemetryAaaLdapProviderDetailsListAsNiatelemetryAaaLdapProviderDetailsResponse(v *NiatelemetryAaaLdapProviderDetailsList) NiatelemetryAaaLdapProviderDetailsResponse {
-	return NiatelemetryAaaLdapProviderDetailsResponse{ NiatelemetryAaaLdapProviderDetailsList: v}
+	return NiatelemetryAaaLdapProviderDetailsResponse{NiatelemetryAaaLdapProviderDetailsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryAaaLdapProviderDetailsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryAaaLdapProviderDetailsResponse) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *NiatelemetryAaaLdapProviderDetailsResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryAaaLdapProviderDetailsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryAaaLdapProviderDetailsResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

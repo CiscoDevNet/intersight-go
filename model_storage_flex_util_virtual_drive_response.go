@@ -18,32 +18,31 @@ import (
 
 // StorageFlexUtilVirtualDriveResponse - The response body of a HTTP GET request for the 'storage.FlexUtilVirtualDrive' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.FlexUtilVirtualDrive' resources.
 type StorageFlexUtilVirtualDriveResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	StorageFlexUtilVirtualDriveList *StorageFlexUtilVirtualDriveList
 }
 
 // MoAggregateTransformAsStorageFlexUtilVirtualDriveResponse is a convenience function that returns MoAggregateTransform wrapped in StorageFlexUtilVirtualDriveResponse
 func MoAggregateTransformAsStorageFlexUtilVirtualDriveResponse(v *MoAggregateTransform) StorageFlexUtilVirtualDriveResponse {
-	return StorageFlexUtilVirtualDriveResponse{ MoAggregateTransform: v}
+	return StorageFlexUtilVirtualDriveResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageFlexUtilVirtualDriveResponse is a convenience function that returns MoDocumentCount wrapped in StorageFlexUtilVirtualDriveResponse
 func MoDocumentCountAsStorageFlexUtilVirtualDriveResponse(v *MoDocumentCount) StorageFlexUtilVirtualDriveResponse {
-	return StorageFlexUtilVirtualDriveResponse{ MoDocumentCount: v}
+	return StorageFlexUtilVirtualDriveResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageFlexUtilVirtualDriveResponse is a convenience function that returns MoTagSummary wrapped in StorageFlexUtilVirtualDriveResponse
 func MoTagSummaryAsStorageFlexUtilVirtualDriveResponse(v *MoTagSummary) StorageFlexUtilVirtualDriveResponse {
-	return StorageFlexUtilVirtualDriveResponse{ MoTagSummary: v}
+	return StorageFlexUtilVirtualDriveResponse{MoTagSummary: v}
 }
 
 // StorageFlexUtilVirtualDriveListAsStorageFlexUtilVirtualDriveResponse is a convenience function that returns StorageFlexUtilVirtualDriveList wrapped in StorageFlexUtilVirtualDriveResponse
 func StorageFlexUtilVirtualDriveListAsStorageFlexUtilVirtualDriveResponse(v *StorageFlexUtilVirtualDriveList) StorageFlexUtilVirtualDriveResponse {
-	return StorageFlexUtilVirtualDriveResponse{ StorageFlexUtilVirtualDriveList: v}
+	return StorageFlexUtilVirtualDriveResponse{StorageFlexUtilVirtualDriveList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexUtilVirtualDriveResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageFlexUtilVirtualDriveResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageFlexUtilVirtualDriveResponse) GetActualInstance() (interface{}) {
+func (obj *StorageFlexUtilVirtualDriveResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageFlexUtilVirtualDriveResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

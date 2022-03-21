@@ -18,20 +18,19 @@ import (
 
 // StoragePhysicalDiskExtensionRelationship - A relationship to the 'storage.PhysicalDiskExtension' resource, or the expanded 'storage.PhysicalDiskExtension' resource, or the 'null' value.
 type StoragePhysicalDiskExtensionRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	StoragePhysicalDiskExtension *StoragePhysicalDiskExtension
 }
 
 // MoMoRefAsStoragePhysicalDiskExtensionRelationship is a convenience function that returns MoMoRef wrapped in StoragePhysicalDiskExtensionRelationship
 func MoMoRefAsStoragePhysicalDiskExtensionRelationship(v *MoMoRef) StoragePhysicalDiskExtensionRelationship {
-	return StoragePhysicalDiskExtensionRelationship{ MoMoRef: v}
+	return StoragePhysicalDiskExtensionRelationship{MoMoRef: v}
 }
 
 // StoragePhysicalDiskExtensionAsStoragePhysicalDiskExtensionRelationship is a convenience function that returns StoragePhysicalDiskExtension wrapped in StoragePhysicalDiskExtensionRelationship
 func StoragePhysicalDiskExtensionAsStoragePhysicalDiskExtensionRelationship(v *StoragePhysicalDiskExtension) StoragePhysicalDiskExtensionRelationship {
-	return StoragePhysicalDiskExtensionRelationship{ StoragePhysicalDiskExtension: v}
+	return StoragePhysicalDiskExtensionRelationship{StoragePhysicalDiskExtension: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePhysicalDiskExtensionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePhysicalDiskExtensionRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *StoragePhysicalDiskExtensionRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePhysicalDiskExtensionRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePhysicalDiskExtensionRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

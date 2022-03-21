@@ -29,8 +29,8 @@ type FabricFlowControlPolicy struct {
 	// Link-level Flow Control configured in the receive direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
 	ReceiveDirection *string `json:"ReceiveDirection,omitempty"`
 	// Link-level Flow Control configured in the send direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
-	SendDirection *string `json:"SendDirection,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	SendDirection        *string                               `json:"SendDirection,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *FabricFlowControlPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricFlowControlPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *FabricFlowControlPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricFlowControlPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -294,8 +294,8 @@ func (o *FabricFlowControlPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Link-level Flow Control configured in the receive direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
 		ReceiveDirection *string `json:"ReceiveDirection,omitempty"`
 		// Link-level Flow Control configured in the send direction. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
-		SendDirection *string `json:"SendDirection,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		SendDirection *string                               `json:"SendDirection,omitempty"`
+		Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varFabricFlowControlPolicyWithoutEmbeddedStruct := FabricFlowControlPolicyWithoutEmbeddedStruct{}
@@ -392,5 +392,3 @@ func (v *NullableFabricFlowControlPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

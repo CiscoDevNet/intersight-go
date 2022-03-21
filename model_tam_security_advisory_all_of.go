@@ -21,14 +21,14 @@ type TamSecurityAdvisoryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Actions []TamAction `json:"Actions,omitempty"`
+	ObjectType string      `json:"ObjectType"`
+	Actions    []TamAction `json:"Actions,omitempty"`
 	// Cisco generated identifier for the published security advisory.
-	AdvisoryId *string `json:"AdvisoryId,omitempty"`
+	AdvisoryId     *string            `json:"AdvisoryId,omitempty"`
 	ApiDataSources []TamApiDataSource `json:"ApiDataSources,omitempty"`
 	// CVSS version 3 base score for the security Advisory.
 	BaseScore *float32 `json:"BaseScore,omitempty"`
-	CveIds []string `json:"CveIds,omitempty"`
+	CveIds    []string `json:"CveIds,omitempty"`
 	// Date when the security advisory was first published by Cisco.
 	DatePublished *time.Time `json:"DatePublished,omitempty"`
 	// Date when the security advisory was last updated by Cisco.
@@ -46,8 +46,8 @@ type TamSecurityAdvisoryAllOf struct {
 	// Cisco assigned advisory version after latest revision.
 	Version *string `json:"Version,omitempty"`
 	// Workarounds available for the advisory.
-	Workaround *string `json:"Workaround,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Workaround           *string                               `json:"Workaround,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *TamSecurityAdvisoryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisoryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *TamSecurityAdvisoryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamSecurityAdvisoryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *TamSecurityAdvisoryAllOf) SetObjectType(v string) {
 
 // GetActions returns the Actions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisoryAllOf) GetActions() []TamAction {
-	if o == nil  {
+	if o == nil {
 		var ret []TamAction
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *TamSecurityAdvisoryAllOf) SetAdvisoryId(v string) {
 
 // GetApiDataSources returns the ApiDataSources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisoryAllOf) GetApiDataSources() []TamApiDataSource {
-	if o == nil  {
+	if o == nil {
 		var ret []TamApiDataSource
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *TamSecurityAdvisoryAllOf) SetBaseScore(v float32) {
 
 // GetCveIds returns the CveIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamSecurityAdvisoryAllOf) GetCveIds() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -740,5 +740,3 @@ func (v *NullableTamSecurityAdvisoryAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

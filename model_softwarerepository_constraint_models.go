@@ -29,8 +29,8 @@ type SoftwarerepositoryConstraintModels struct {
 	// Name of the contraint, used to identify constriant type.
 	Name *string `json:"Name,omitempty"`
 	// Regular expression of the image name.
-	PlatformRegex *string `json:"PlatformRegex,omitempty"`
-	SupportedModels []string `json:"SupportedModels,omitempty"`
+	PlatformRegex        *string  `json:"PlatformRegex,omitempty"`
+	SupportedModels      []string `json:"SupportedModels,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *SoftwarerepositoryConstraintModels) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryConstraintModels) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *SoftwarerepositoryConstraintModels) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryConstraintModels) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -205,7 +205,7 @@ func (o *SoftwarerepositoryConstraintModels) SetPlatformRegex(v string) {
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryConstraintModels) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *SoftwarerepositoryConstraintModels) UnmarshalJSON(bytes []byte) (err er
 		// Name of the contraint, used to identify constriant type.
 		Name *string `json:"Name,omitempty"`
 		// Regular expression of the image name.
-		PlatformRegex *string `json:"PlatformRegex,omitempty"`
+		PlatformRegex   *string  `json:"PlatformRegex,omitempty"`
 		SupportedModels []string `json:"SupportedModels,omitempty"`
 	}
 
@@ -381,5 +381,3 @@ func (v *NullableSoftwarerepositoryConstraintModels) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

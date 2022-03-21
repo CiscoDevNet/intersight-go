@@ -21,7 +21,7 @@ type TelemetryDruidDataSourceMetadataResult struct {
 	// The ISO 8601 timestamp.
 	Timestamp *time.Time `json:"timestamp,omitempty"`
 	// The metadata for the specified datasource
-	Result *map[string]interface{} `json:"result,omitempty"`
+	Result               *map[string]interface{} `json:"result,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -177,5 +177,3 @@ func (v *NullableTelemetryDruidDataSourceMetadataResult) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,11 @@ type BiosSystemBootOrder struct {
 	// The Distinguished Name for this object, used to uniquely identify this object.
 	Dn *string `json:"Dn,omitempty"`
 	// Secure boot if set to enabled, enforces that device boots using only software that is trusted by the Original Equipment Manufacturer (OEM). * `NotAvailable` - Set the state of Secure Boot to Not Available. * `Disabled` - Set the state of Secure Boot to Disabled. * `Enabled` - Set the state of Secure Boot to Enabled.
-	SecureBoot *string `json:"SecureBoot,omitempty"`
-	BiosUnit *BiosUnitRelationship `json:"BiosUnit,omitempty"`
+	SecureBoot *string               `json:"SecureBoot,omitempty"`
+	BiosUnit   *BiosUnitRelationship `json:"BiosUnit,omitempty"`
 	// An array of relationships to biosBootDevice resources.
-	BootDevices []BiosBootDeviceRelationship `json:"BootDevices,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	BootDevices          []BiosBootDeviceRelationship         `json:"BootDevices,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *BiosSystemBootOrder) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BiosSystemBootOrder) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *BiosSystemBootOrder) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BiosSystemBootOrder) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -240,7 +240,7 @@ func (o *BiosSystemBootOrder) SetBiosUnit(v BiosUnitRelationship) {
 
 // GetBootDevices returns the BootDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BiosSystemBootOrder) GetBootDevices() []BiosBootDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BiosBootDeviceRelationship
 		return ret
 	}
@@ -356,10 +356,10 @@ func (o *BiosSystemBootOrder) UnmarshalJSON(bytes []byte) (err error) {
 		// The Distinguished Name for this object, used to uniquely identify this object.
 		Dn *string `json:"Dn,omitempty"`
 		// Secure boot if set to enabled, enforces that device boots using only software that is trusted by the Original Equipment Manufacturer (OEM). * `NotAvailable` - Set the state of Secure Boot to Not Available. * `Disabled` - Set the state of Secure Boot to Disabled. * `Enabled` - Set the state of Secure Boot to Enabled.
-		SecureBoot *string `json:"SecureBoot,omitempty"`
-		BiosUnit *BiosUnitRelationship `json:"BiosUnit,omitempty"`
+		SecureBoot *string               `json:"SecureBoot,omitempty"`
+		BiosUnit   *BiosUnitRelationship `json:"BiosUnit,omitempty"`
 		// An array of relationships to biosBootDevice resources.
-		BootDevices []BiosBootDeviceRelationship `json:"BootDevices,omitempty"`
+		BootDevices      []BiosBootDeviceRelationship         `json:"BootDevices,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -461,5 +461,3 @@ func (v *NullableBiosSystemBootOrder) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,17 +20,17 @@ type KubernetesNetworkInterfaceAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Addresses []string `json:"Addresses,omitempty"`
+	ObjectType string   `json:"ObjectType"`
+	Addresses  []string `json:"Addresses,omitempty"`
 	// Deprecated. This will add a default route as long as the first default route in Routes is not different. If is different, Gateway will be replaced with that default route. If there is no default Route and this is set, then Routes will be updated with the first entry as a default with this default gateway. If there is only one default Route and this gateway becomes empty, then the default routes will all be removed. Do not set if using Ip Pools, as the gateway is configured in the pool. This will be removed in the future.
 	// Deprecated
-	Gateway *string `json:"Gateway,omitempty"`
+	Gateway     *string                `json:"Gateway,omitempty"`
 	IpV4Configs []KubernetesIpV4Config `json:"IpV4Configs,omitempty"`
 	// The MTU to assign to this Network Interface.
 	Mtu *int64 `json:"Mtu,omitempty"`
 	// Name for this network interface.
-	Name *string `json:"Name,omitempty"`
-	Routes []KubernetesRoute `json:"Routes,omitempty"`
+	Name                 *string           `json:"Name,omitempty"`
+	Routes               []KubernetesRoute `json:"Routes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *KubernetesNetworkInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *KubernetesNetworkInterfaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *KubernetesNetworkInterfaceAllOf) SetObjectType(v string) {
 
 // GetAddresses returns the Addresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNetworkInterfaceAllOf) GetAddresses() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *KubernetesNetworkInterfaceAllOf) SetGateway(v string) {
 
 // GetIpV4Configs returns the IpV4Configs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNetworkInterfaceAllOf) GetIpV4Configs() []KubernetesIpV4Config {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesIpV4Config
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *KubernetesNetworkInterfaceAllOf) SetName(v string) {
 
 // GetRoutes returns the Routes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNetworkInterfaceAllOf) GetRoutes() []KubernetesRoute {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesRoute
 		return ret
 	}
@@ -394,5 +394,3 @@ func (v *NullableKubernetesNetworkInterfaceAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

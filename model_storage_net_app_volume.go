@@ -25,7 +25,7 @@ type StorageNetAppVolume struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The autosize mode for NetApp Volume. Modes can be off or grow or grow_shrink. * `off` - The volume will not grow or shrink in size in response to the amount of used space. * `grow` - The volume will automatically grow when used space in the volume is above the grow threshold. * `grow_shrink` - The volume will grow or shrink in size in response to the amount of used space.
-	AutosizeMode *string `json:"AutosizeMode,omitempty"`
+	AutosizeMode          *string                                 `json:"AutosizeMode,omitempty"`
 	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 	// The name of the Export Policy.
 	ExportPolicyName *string `json:"ExportPolicyName,omitempty"`
@@ -44,13 +44,13 @@ type StorageNetAppVolume struct {
 	// NetApp volume type. The volume type can be Read-write, Data-protection, or Load-sharing. * `data-protection` - Prevents modification of the data on the Volume. * `read-write` - Data on the Volume can be modified. * `load-sharing` - The volume type is Load Sharing DP.
 	Type *string `json:"Type,omitempty"`
 	// Universally unique identifier of a NetApp Volume.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid  *string                           `json:"Uuid,omitempty"`
 	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	// An array of relationships to storageNetAppAggregate resources.
 	DiskPool []StorageNetAppAggregateRelationship `json:"DiskPool,omitempty"`
 	// An array of relationships to storageNetAppVolumeEvent resources.
-	Events []StorageNetAppVolumeEventRelationship `json:"Events,omitempty"`
-	Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+	Events               []StorageNetAppVolumeEventRelationship `json:"Events,omitempty"`
+	Tenant               *StorageNetAppStorageVmRelationship    `json:"Tenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *StorageNetAppVolume) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppVolume) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *StorageNetAppVolume) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppVolume) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -513,7 +513,7 @@ func (o *StorageNetAppVolume) SetArray(v StorageNetAppClusterRelationship) {
 
 // GetDiskPool returns the DiskPool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppVolume) GetDiskPool() []StorageNetAppAggregateRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppAggregateRelationship
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *StorageNetAppVolume) SetDiskPool(v []StorageNetAppAggregateRelationship
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppVolume) GetEvents() []StorageNetAppVolumeEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppVolumeEventRelationship
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *StorageNetAppVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The autosize mode for NetApp Volume. Modes can be off or grow or grow_shrink. * `off` - The volume will not grow or shrink in size in response to the amount of used space. * `grow` - The volume will automatically grow when used space in the volume is above the grow threshold. * `grow_shrink` - The volume will grow or shrink in size in response to the amount of used space.
-		AutosizeMode *string `json:"AutosizeMode,omitempty"`
+		AutosizeMode          *string                                 `json:"AutosizeMode,omitempty"`
 		AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 		// The name of the Export Policy.
 		ExportPolicyName *string `json:"ExportPolicyName,omitempty"`
@@ -704,13 +704,13 @@ func (o *StorageNetAppVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// NetApp volume type. The volume type can be Read-write, Data-protection, or Load-sharing. * `data-protection` - Prevents modification of the data on the Volume. * `read-write` - Data on the Volume can be modified. * `load-sharing` - The volume type is Load Sharing DP.
 		Type *string `json:"Type,omitempty"`
 		// Universally unique identifier of a NetApp Volume.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid  *string                           `json:"Uuid,omitempty"`
 		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 		// An array of relationships to storageNetAppAggregate resources.
 		DiskPool []StorageNetAppAggregateRelationship `json:"DiskPool,omitempty"`
 		// An array of relationships to storageNetAppVolumeEvent resources.
 		Events []StorageNetAppVolumeEventRelationship `json:"Events,omitempty"`
-		Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+		Tenant *StorageNetAppStorageVmRelationship    `json:"Tenant,omitempty"`
 	}
 
 	varStorageNetAppVolumeWithoutEmbeddedStruct := StorageNetAppVolumeWithoutEmbeddedStruct{}
@@ -829,5 +829,3 @@ func (v *NullableStorageNetAppVolume) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

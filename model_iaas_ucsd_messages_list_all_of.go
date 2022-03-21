@@ -20,7 +20,7 @@ type IaasUcsdMessagesListAllOf struct {
 	// The total number of 'iaas.UcsdMessages' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iaas.UcsdMessages' resources matching the request.
-	Results []IaasUcsdMessages `json:"Results,omitempty"`
+	Results              []IaasUcsdMessages `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IaasUcsdMessagesListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasUcsdMessagesListAllOf) GetResults() []IaasUcsdMessages {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasUcsdMessages
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableIaasUcsdMessagesListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

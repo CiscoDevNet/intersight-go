@@ -54,9 +54,9 @@ type PortMacBindingAllOf struct {
 	// Slot ID of the local Switch slot Interface.
 	SlotId *int64 `json:"SlotId,omitempty"`
 	// Switch Identifier that is local to a cluster.
-	SwitchId *int64 `json:"SwitchId,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SwitchId             *int64                               `json:"SwitchId,omitempty"`
+	NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *PortMacBindingAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PortMacBindingAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *PortMacBindingAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PortMacBindingAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -886,5 +886,3 @@ func (v *NullablePortMacBindingAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

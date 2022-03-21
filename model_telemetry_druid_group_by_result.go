@@ -23,7 +23,7 @@ type TelemetryDruidGroupByResult struct {
 	// The version of the Druid GroupBy Engine used in query
 	Version *string `json:"version,omitempty"`
 	// Grouped aggregate dimension(s) with values
-	Event *map[string]interface{} `json:"event,omitempty"`
+	Event                *map[string]interface{} `json:"event,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -215,5 +215,3 @@ func (v *NullableTelemetryDruidGroupByResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

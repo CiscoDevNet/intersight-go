@@ -19,31 +19,30 @@ import (
 // VmediaPolicyResponse - The response body of a HTTP GET request for the 'vmedia.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'vmedia.Policy' resources.
 type VmediaPolicyResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	VmediaPolicyList *VmediaPolicyList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	VmediaPolicyList     *VmediaPolicyList
 }
 
 // MoAggregateTransformAsVmediaPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in VmediaPolicyResponse
 func MoAggregateTransformAsVmediaPolicyResponse(v *MoAggregateTransform) VmediaPolicyResponse {
-	return VmediaPolicyResponse{ MoAggregateTransform: v}
+	return VmediaPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVmediaPolicyResponse is a convenience function that returns MoDocumentCount wrapped in VmediaPolicyResponse
 func MoDocumentCountAsVmediaPolicyResponse(v *MoDocumentCount) VmediaPolicyResponse {
-	return VmediaPolicyResponse{ MoDocumentCount: v}
+	return VmediaPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVmediaPolicyResponse is a convenience function that returns MoTagSummary wrapped in VmediaPolicyResponse
 func MoTagSummaryAsVmediaPolicyResponse(v *MoTagSummary) VmediaPolicyResponse {
-	return VmediaPolicyResponse{ MoTagSummary: v}
+	return VmediaPolicyResponse{MoTagSummary: v}
 }
 
 // VmediaPolicyListAsVmediaPolicyResponse is a convenience function that returns VmediaPolicyList wrapped in VmediaPolicyResponse
 func VmediaPolicyListAsVmediaPolicyResponse(v *VmediaPolicyList) VmediaPolicyResponse {
-	return VmediaPolicyResponse{ VmediaPolicyList: v}
+	return VmediaPolicyResponse{VmediaPolicyList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VmediaPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VmediaPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VmediaPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *VmediaPolicyResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVmediaPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

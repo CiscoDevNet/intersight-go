@@ -28,19 +28,19 @@ type FirmwareRunningFirmwareAllOf struct {
 	// The type of the firmware.
 	Type *string `json:"Type,omitempty"`
 	// The version of the firmware.
-	Version *string `json:"Version,omitempty"`
-	BiosUnit *BiosUnitRelationship `json:"BiosUnit,omitempty"`
-	GraphicsCard *GraphicsCardRelationship `json:"GraphicsCard,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	Version              *string                           `json:"Version,omitempty"`
+	BiosUnit             *BiosUnitRelationship             `json:"BiosUnit,omitempty"`
+	GraphicsCard         *GraphicsCardRelationship         `json:"GraphicsCard,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship  `json:"InventoryDeviceInfo,omitempty"`
 	ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
 	// An array of relationships to networkElement resources.
-	NetworkElements []NetworkElementRelationship `json:"NetworkElements,omitempty"`
-	PciSwitch *PciSwitchRelationship `json:"PciSwitch,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
+	NetworkElements            []NetworkElementRelationship            `json:"NetworkElements,omitempty"`
+	PciSwitch                  *PciSwitchRelationship                  `json:"PciSwitch,omitempty"`
+	RegisteredDevice           *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
+	StorageController          *StorageControllerRelationship          `json:"StorageController,omitempty"`
 	StorageFlexFlashController *StorageFlexFlashControllerRelationship `json:"StorageFlexFlashController,omitempty"`
-	StoragePhysicalDisk *StoragePhysicalDiskRelationship `json:"StoragePhysicalDisk,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StoragePhysicalDisk        *StoragePhysicalDiskRelationship        `json:"StoragePhysicalDisk,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _FirmwareRunningFirmwareAllOf FirmwareRunningFirmwareAllOf
@@ -81,7 +81,7 @@ func (o *FirmwareRunningFirmwareAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareRunningFirmwareAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *FirmwareRunningFirmwareAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareRunningFirmwareAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -374,7 +374,7 @@ func (o *FirmwareRunningFirmwareAllOf) SetManagementController(v ManagementContr
 
 // GetNetworkElements returns the NetworkElements field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareRunningFirmwareAllOf) GetNetworkElements() []NetworkElementRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []NetworkElementRelationship
 		return ret
 	}
@@ -690,5 +690,3 @@ func (v *NullableFirmwareRunningFirmwareAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

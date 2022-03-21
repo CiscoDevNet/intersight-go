@@ -19,19 +19,18 @@ import (
 // KubernetesVirtualMachineInfraConfigPolicyRelationship - A relationship to the 'kubernetes.VirtualMachineInfraConfigPolicy' resource, or the expanded 'kubernetes.VirtualMachineInfraConfigPolicy' resource, or the 'null' value.
 type KubernetesVirtualMachineInfraConfigPolicyRelationship struct {
 	KubernetesVirtualMachineInfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                                   *MoMoRef
 }
 
 // KubernetesVirtualMachineInfraConfigPolicyAsKubernetesVirtualMachineInfraConfigPolicyRelationship is a convenience function that returns KubernetesVirtualMachineInfraConfigPolicy wrapped in KubernetesVirtualMachineInfraConfigPolicyRelationship
 func KubernetesVirtualMachineInfraConfigPolicyAsKubernetesVirtualMachineInfraConfigPolicyRelationship(v *KubernetesVirtualMachineInfraConfigPolicy) KubernetesVirtualMachineInfraConfigPolicyRelationship {
-	return KubernetesVirtualMachineInfraConfigPolicyRelationship{ KubernetesVirtualMachineInfraConfigPolicy: v}
+	return KubernetesVirtualMachineInfraConfigPolicyRelationship{KubernetesVirtualMachineInfraConfigPolicy: v}
 }
 
 // MoMoRefAsKubernetesVirtualMachineInfraConfigPolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesVirtualMachineInfraConfigPolicyRelationship
 func MoMoRefAsKubernetesVirtualMachineInfraConfigPolicyRelationship(v *MoMoRef) KubernetesVirtualMachineInfraConfigPolicyRelationship {
-	return KubernetesVirtualMachineInfraConfigPolicyRelationship{ MoMoRef: v}
+	return KubernetesVirtualMachineInfraConfigPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVirtualMachineInfraConfigPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesVirtualMachineInfraConfigPolicyRelationship) MarshalJSON() (
 }
 
 // Get the actual instance
-func (obj *KubernetesVirtualMachineInfraConfigPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesVirtualMachineInfraConfigPolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesVirtualMachineInfraConfigPolicy != nil {
 		return obj.KubernetesVirtualMachineInfraConfigPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesVirtualMachineInfraConfigPolicyRelationship) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

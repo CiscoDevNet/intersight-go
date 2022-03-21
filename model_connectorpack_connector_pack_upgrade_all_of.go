@@ -22,9 +22,9 @@ type ConnectorpackConnectorPackUpgradeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The type of operation to be performed on UCS Director. * `Install` - Installs the requisite connector packs on UCS Director. * `Push` - Pushes the requisite connector packs to UCS Director.
-	ConnectorPackOpType *string `json:"ConnectorPackOpType,omitempty"`
-	UcsdInfo *IaasUcsdInfoRelationship `json:"UcsdInfo,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+	ConnectorPackOpType  *string                           `json:"ConnectorPackOpType,omitempty"`
+	UcsdInfo             *IaasUcsdInfoRelationship         `json:"UcsdInfo,omitempty"`
+	Workflow             *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *ConnectorpackConnectorPackUpgradeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackConnectorPackUpgradeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *ConnectorpackConnectorPackUpgradeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorpackConnectorPackUpgradeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -282,5 +282,3 @@ func (v *NullableConnectorpackConnectorPackUpgradeAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

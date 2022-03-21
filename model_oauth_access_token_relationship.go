@@ -18,20 +18,19 @@ import (
 
 // OauthAccessTokenRelationship - A relationship to the 'oauth.AccessToken' resource, or the expanded 'oauth.AccessToken' resource, or the 'null' value.
 type OauthAccessTokenRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 	OauthAccessToken *OauthAccessToken
 }
 
 // MoMoRefAsOauthAccessTokenRelationship is a convenience function that returns MoMoRef wrapped in OauthAccessTokenRelationship
 func MoMoRefAsOauthAccessTokenRelationship(v *MoMoRef) OauthAccessTokenRelationship {
-	return OauthAccessTokenRelationship{ MoMoRef: v}
+	return OauthAccessTokenRelationship{MoMoRef: v}
 }
 
 // OauthAccessTokenAsOauthAccessTokenRelationship is a convenience function that returns OauthAccessToken wrapped in OauthAccessTokenRelationship
 func OauthAccessTokenAsOauthAccessTokenRelationship(v *OauthAccessToken) OauthAccessTokenRelationship {
-	return OauthAccessTokenRelationship{ OauthAccessToken: v}
+	return OauthAccessTokenRelationship{OauthAccessToken: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OauthAccessTokenRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src OauthAccessTokenRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OauthAccessTokenRelationship) GetActualInstance() (interface{}) {
+func (obj *OauthAccessTokenRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableOauthAccessTokenRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

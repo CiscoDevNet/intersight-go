@@ -19,31 +19,30 @@ import (
 // AdapterConfigPolicyResponse - The response body of a HTTP GET request for the 'adapter.ConfigPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'adapter.ConfigPolicy' resources.
 type AdapterConfigPolicyResponse struct {
 	AdapterConfigPolicyList *AdapterConfigPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 }
 
 // AdapterConfigPolicyListAsAdapterConfigPolicyResponse is a convenience function that returns AdapterConfigPolicyList wrapped in AdapterConfigPolicyResponse
 func AdapterConfigPolicyListAsAdapterConfigPolicyResponse(v *AdapterConfigPolicyList) AdapterConfigPolicyResponse {
-	return AdapterConfigPolicyResponse{ AdapterConfigPolicyList: v}
+	return AdapterConfigPolicyResponse{AdapterConfigPolicyList: v}
 }
 
 // MoAggregateTransformAsAdapterConfigPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in AdapterConfigPolicyResponse
 func MoAggregateTransformAsAdapterConfigPolicyResponse(v *MoAggregateTransform) AdapterConfigPolicyResponse {
-	return AdapterConfigPolicyResponse{ MoAggregateTransform: v}
+	return AdapterConfigPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAdapterConfigPolicyResponse is a convenience function that returns MoDocumentCount wrapped in AdapterConfigPolicyResponse
 func MoDocumentCountAsAdapterConfigPolicyResponse(v *MoDocumentCount) AdapterConfigPolicyResponse {
-	return AdapterConfigPolicyResponse{ MoDocumentCount: v}
+	return AdapterConfigPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAdapterConfigPolicyResponse is a convenience function that returns MoTagSummary wrapped in AdapterConfigPolicyResponse
 func MoTagSummaryAsAdapterConfigPolicyResponse(v *MoTagSummary) AdapterConfigPolicyResponse {
-	return AdapterConfigPolicyResponse{ MoTagSummary: v}
+	return AdapterConfigPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterConfigPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AdapterConfigPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterConfigPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *AdapterConfigPolicyResponse) GetActualInstance() interface{} {
 	if obj.AdapterConfigPolicyList != nil {
 		return obj.AdapterConfigPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAdapterConfigPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

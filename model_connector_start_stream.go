@@ -43,7 +43,7 @@ type ConnectorStartStream struct {
 	// The version of the device connector stream protocol. Used to change behavior of the device connector stream plugin based on the version of the Intersight service. Allows for multiple versions of Intersight services to interact with the stream plugin of devices.
 	ProtocolVersion *int64 `json:"ProtocolVersion,omitempty"`
 	// The topic for the device connector to publish messages to.
-	ResponseTopic *string `json:"ResponseTopic,omitempty"`
+	ResponseTopic        *string `json:"ResponseTopic,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *ConnectorStartStream) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorStartStream) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *ConnectorStartStream) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorStartStream) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -628,5 +628,3 @@ func (v *NullableConnectorStartStream) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

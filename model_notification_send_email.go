@@ -25,7 +25,7 @@ type NotificationSendEmail struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Email of the recipient, who expects to be notified about the event that happens in Intersight.
-	Email *string `json:"Email,omitempty"`
+	Email                *string `json:"Email,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *NotificationSendEmail) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NotificationSendEmail) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *NotificationSendEmail) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NotificationSendEmail) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -259,5 +259,3 @@ func (v *NullableNotificationSendEmail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

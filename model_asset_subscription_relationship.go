@@ -19,19 +19,18 @@ import (
 // AssetSubscriptionRelationship - A relationship to the 'asset.Subscription' resource, or the expanded 'asset.Subscription' resource, or the 'null' value.
 type AssetSubscriptionRelationship struct {
 	AssetSubscription *AssetSubscription
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // AssetSubscriptionAsAssetSubscriptionRelationship is a convenience function that returns AssetSubscription wrapped in AssetSubscriptionRelationship
 func AssetSubscriptionAsAssetSubscriptionRelationship(v *AssetSubscription) AssetSubscriptionRelationship {
-	return AssetSubscriptionRelationship{ AssetSubscription: v}
+	return AssetSubscriptionRelationship{AssetSubscription: v}
 }
 
 // MoMoRefAsAssetSubscriptionRelationship is a convenience function that returns MoMoRef wrapped in AssetSubscriptionRelationship
 func MoMoRefAsAssetSubscriptionRelationship(v *MoMoRef) AssetSubscriptionRelationship {
-	return AssetSubscriptionRelationship{ MoMoRef: v}
+	return AssetSubscriptionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetSubscriptionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetSubscriptionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetSubscriptionRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetSubscriptionRelationship) GetActualInstance() interface{} {
 	if obj.AssetSubscription != nil {
 		return obj.AssetSubscription
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetSubscriptionRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

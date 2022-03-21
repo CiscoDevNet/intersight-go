@@ -18,7 +18,7 @@ import (
 // TelemetryDruidCountAggregatorAllOf struct for TelemetryDruidCountAggregatorAllOf
 type TelemetryDruidCountAggregatorAllOf struct {
 	// the output name
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,5 +138,3 @@ func (v *NullableTelemetryDruidCountAggregatorAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

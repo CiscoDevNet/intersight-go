@@ -23,14 +23,14 @@ type WorkflowConstraints struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	EnumList []WorkflowEnumEntry `json:"EnumList,omitempty"`
+	ObjectType string              `json:"ObjectType"`
+	EnumList   []WorkflowEnumEntry `json:"EnumList,omitempty"`
 	// Allowed maximum value of the parameter if parameter is integer/float or maximum length of the parameter if the parameter is string. When max and min are set to 0, then the limits are not checked. If parameter is integer/float, then maximum number supported is 1.797693134862315708145274237317043567981e+308 or (2**1023 * (2**53 - 1) / 2**52). When a number bigger than this is given as Maximum value, the constraints will not be enforced.
 	Max *float64 `json:"Max,omitempty"`
 	// Allowed minimum value of the parameter if parameter is integer/float or minimum length of the parameter if the parameter is string. When max and min are set to 0, then the limits are not checked. If parameter is integer/float, then minimum number supported is 4.940656458412465441765687928682213723651e-324 or (1 / 2 ** (1023 - 1 + 52)). When a number smaller than this is given as minimum value, the constraints will not be enforced.
 	Min *float64 `json:"Min,omitempty"`
 	// When the parameter is a string this regular expression is used to ensure the value is valid.
-	Regex *string `json:"Regex,omitempty"`
+	Regex                *string `json:"Regex,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *WorkflowConstraints) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowConstraints) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *WorkflowConstraints) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowConstraints) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -109,7 +109,7 @@ func (o *WorkflowConstraints) SetObjectType(v string) {
 
 // GetEnumList returns the EnumList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowConstraints) GetEnumList() []WorkflowEnumEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowEnumEntry
 		return ret
 	}
@@ -277,8 +277,8 @@ func (o *WorkflowConstraints) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		EnumList []WorkflowEnumEntry `json:"EnumList,omitempty"`
+		ObjectType string              `json:"ObjectType"`
+		EnumList   []WorkflowEnumEntry `json:"EnumList,omitempty"`
 		// Allowed maximum value of the parameter if parameter is integer/float or maximum length of the parameter if the parameter is string. When max and min are set to 0, then the limits are not checked. If parameter is integer/float, then maximum number supported is 1.797693134862315708145274237317043567981e+308 or (2**1023 * (2**53 - 1) / 2**52). When a number bigger than this is given as Maximum value, the constraints will not be enforced.
 		Max *float64 `json:"Max,omitempty"`
 		// Allowed minimum value of the parameter if parameter is integer/float or minimum length of the parameter if the parameter is string. When max and min are set to 0, then the limits are not checked. If parameter is integer/float, then minimum number supported is 4.940656458412465441765687928682213723651e-324 or (1 / 2 ** (1023 - 1 + 52)). When a number smaller than this is given as minimum value, the constraints will not be enforced.
@@ -381,5 +381,3 @@ func (v *NullableWorkflowConstraints) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

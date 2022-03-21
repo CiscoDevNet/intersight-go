@@ -18,32 +18,31 @@ import (
 
 // WorkflowCustomDataTypeDefinitionResponse - The response body of a HTTP GET request for the 'workflow.CustomDataTypeDefinition' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.CustomDataTypeDefinition' resources.
 type WorkflowCustomDataTypeDefinitionResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                 *MoAggregateTransform
+	MoDocumentCount                      *MoDocumentCount
+	MoTagSummary                         *MoTagSummary
 	WorkflowCustomDataTypeDefinitionList *WorkflowCustomDataTypeDefinitionList
 }
 
 // MoAggregateTransformAsWorkflowCustomDataTypeDefinitionResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowCustomDataTypeDefinitionResponse
 func MoAggregateTransformAsWorkflowCustomDataTypeDefinitionResponse(v *MoAggregateTransform) WorkflowCustomDataTypeDefinitionResponse {
-	return WorkflowCustomDataTypeDefinitionResponse{ MoAggregateTransform: v}
+	return WorkflowCustomDataTypeDefinitionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowCustomDataTypeDefinitionResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowCustomDataTypeDefinitionResponse
 func MoDocumentCountAsWorkflowCustomDataTypeDefinitionResponse(v *MoDocumentCount) WorkflowCustomDataTypeDefinitionResponse {
-	return WorkflowCustomDataTypeDefinitionResponse{ MoDocumentCount: v}
+	return WorkflowCustomDataTypeDefinitionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowCustomDataTypeDefinitionResponse is a convenience function that returns MoTagSummary wrapped in WorkflowCustomDataTypeDefinitionResponse
 func MoTagSummaryAsWorkflowCustomDataTypeDefinitionResponse(v *MoTagSummary) WorkflowCustomDataTypeDefinitionResponse {
-	return WorkflowCustomDataTypeDefinitionResponse{ MoTagSummary: v}
+	return WorkflowCustomDataTypeDefinitionResponse{MoTagSummary: v}
 }
 
 // WorkflowCustomDataTypeDefinitionListAsWorkflowCustomDataTypeDefinitionResponse is a convenience function that returns WorkflowCustomDataTypeDefinitionList wrapped in WorkflowCustomDataTypeDefinitionResponse
 func WorkflowCustomDataTypeDefinitionListAsWorkflowCustomDataTypeDefinitionResponse(v *WorkflowCustomDataTypeDefinitionList) WorkflowCustomDataTypeDefinitionResponse {
-	return WorkflowCustomDataTypeDefinitionResponse{ WorkflowCustomDataTypeDefinitionList: v}
+	return WorkflowCustomDataTypeDefinitionResponse{WorkflowCustomDataTypeDefinitionList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowCustomDataTypeDefinitionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowCustomDataTypeDefinitionResponse) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *WorkflowCustomDataTypeDefinitionResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowCustomDataTypeDefinitionResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowCustomDataTypeDefinitionResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

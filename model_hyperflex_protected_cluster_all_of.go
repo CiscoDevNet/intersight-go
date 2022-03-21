@@ -36,12 +36,12 @@ type HyperflexProtectedClusterAllOf struct {
 	// Name of the target datastore.
 	TargetDatastoreName *string `json:"TargetDatastoreName,omitempty"`
 	// Percent usage of the datastore.
-	TargetDatastoreUtilization *float32 `json:"TargetDatastoreUtilization,omitempty"`
-	BackupPolicy *HyperflexClusterBackupPolicyInventoryRelationship `json:"BackupPolicy,omitempty"`
-	DatastoreStatistic *HyperflexDatastoreStatisticRelationship `json:"DatastoreStatistic,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TargetDatastoreUtilization *float32                                           `json:"TargetDatastoreUtilization,omitempty"`
+	BackupPolicy               *HyperflexClusterBackupPolicyInventoryRelationship `json:"BackupPolicy,omitempty"`
+	DatastoreStatistic         *HyperflexDatastoreStatisticRelationship           `json:"DatastoreStatistic,omitempty"`
+	SrcCluster                 *HyperflexClusterRelationship                      `json:"SrcCluster,omitempty"`
+	TgtCluster                 *HyperflexClusterRelationship                      `json:"TgtCluster,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _HyperflexProtectedClusterAllOf HyperflexProtectedClusterAllOf
@@ -82,7 +82,7 @@ func (o *HyperflexProtectedClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectedClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *HyperflexProtectedClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexProtectedClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -618,5 +618,3 @@ func (v *NullableHyperflexProtectedClusterAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

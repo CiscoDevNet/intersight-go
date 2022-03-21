@@ -21,8 +21,8 @@ type AssetDeviceContractInformationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Contract NullableAssetContractInformation `json:"Contract,omitempty"`
+	ObjectType string                           `json:"ObjectType"`
+	Contract   NullableAssetContractInformation `json:"Contract,omitempty"`
 	// Calculated contract status that is derived based on the service line status and contract end date. It is different from serviceLineStatus property. serviceLineStatus gives us ACTIVE, OVERDUE, EXPIRED. These are transformed into Active, Expiring Soon and Not Covered. * `Unknown` - The device's contract status cannot be determined. * `Not Covered` - The Cisco device does not have a valid support contract. * `Active` - The Cisco device is covered under a active support contract. * `Expiring Soon` - The contract for this Cisco device is going to expire in the next 30 days.
 	ContractStatus *string `json:"ContractStatus,omitempty"`
 	// Reason for contract status. In case of Not Covered, reason is either Terminated or Expired. * `` - There is no reason for the specified contract status. * `Line Item Expired` - The Cisco device does not have a valid support contract, it has expired. * `Line Item Terminated` - The Cisco device does not have a valid support contract, it has been terminated.
@@ -36,9 +36,9 @@ type AssetDeviceContractInformationAllOf struct {
 	// Unique identifier of the Cisco device. This information is used to query Cisco APIx SN2INFO and CCWR databases.
 	DeviceId *string `json:"DeviceId,omitempty"`
 	// Type used to classify the device in Cisco Intersight. Currently supported values are Server and FabricInterconnect. This will be expanded to support more types in future. * `None` - A default value to catch cases where device type is not correctly detected. * `CiscoUcsServer` - A device of type server. It includes Cisco IMC and UCS Managed servers. * `CiscoUcsFI` - A device of type Fabric Interconnect. It includes the various types of Cisco Fabric Interconnects supported by Cisco Intersight. * `CiscoUcsChassis` - A device of type Chassis. It includes various UCS chassis supported by Cisco Intersight. * `CiscoNexusSwitch` - A device of type Nexus switch. It includes various Nexus switches supported by Cisco Intersight.
-	DeviceType *string `json:"DeviceType,omitempty"`
-	EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
-	EndUserGlobalUltimate NullableAssetGlobalUltimate `json:"EndUserGlobalUltimate,omitempty"`
+	DeviceType            *string                          `json:"DeviceType,omitempty"`
+	EndCustomer           NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+	EndUserGlobalUltimate NullableAssetGlobalUltimate      `json:"EndUserGlobalUltimate,omitempty"`
 	// Validates if the device is a genuine Cisco device. Validated is done using the Cisco SN2INFO APIs.
 	IsValid *bool `json:"IsValid,omitempty"`
 	// Item type of this specific Cisco device. example \"Chassis\".
@@ -48,10 +48,10 @@ type AssetDeviceContractInformationAllOf struct {
 	// Maintenance sales order number for the Cisco device.
 	MaintenanceSalesOrderNumber *string `json:"MaintenanceSalesOrderNumber,omitempty"`
 	// The platform type of the Cisco device. * `` - The device reported an empty or unrecognized platform type. * `APIC` - An Application Policy Infrastructure Controller cluster. * `DCNM` - A Data Center Network Manager instance. Data Center Network Manager (DCNM) is the network management platform for all NX-OS-enabled deployments, spanning new fabric architectures, IP Fabric for Media, and storage networking deployments for the Cisco Nexus-powered data center. * `UCSFI` - A UCS Fabric Interconnect in HA or standalone mode, which is being managed by UCS Manager (UCSM). * `UCSFIISM` - A UCS Fabric Interconnect in HA or standalone mode, managed directly by Intersight. * `IMC` - A standalone UCS Server Integrated Management Controller. * `IMCM4` - A standalone UCS M4 Server. * `IMCM5` - A standalone UCS M5 server. * `IMCRack` - A standalone UCS M6 and above server. * `UCSIOM` - An UCS Chassis IO module. * `HX` - A HyperFlex storage controller. * `HyperFlexAP` - A HyperFlex Application Platform. * `IWE` - An Intersight Workload Engine. * `UCSD` - A UCS Director virtual appliance. Cisco UCS Director automates, orchestrates, and manages Cisco and third-party hardware. * `IntersightAppliance` - A Cisco Intersight Connected Virtual Appliance. * `IntersightAssist` - A Cisco Intersight Assist. * `PureStorageFlashArray` - A Pure Storage FlashArray device. * `NexusDevice` - A generic platform type to support Nexus Network Device. This can also be extended to support all network devices later on. * `MDSDevice` - A platform type to support MDS devices. * `UCSC890` - A standalone Cisco UCSC890 server. * `NetAppOntap` - A NetApp ONTAP storage system. * `NetAppActiveIqUnifiedManager` - A NetApp Active IQ Unified Manager. * `EmcScaleIo` - An EMC ScaleIO storage system. * `EmcVmax` - An EMC VMAX storage system. * `EmcVplex` - An EMC VPLEX storage system. * `EmcXtremIo` - An EMC XtremIO storage system. * `VmwareVcenter` - A VMware vCenter device that manages Virtual Machines. * `MicrosoftHyperV` - A Microsoft Hyper-V system that manages Virtual Machines. * `AppDynamics` - An AppDynamics controller that monitors applications. * `Dynatrace` - A software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. * `NewRelic` - A software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. * `ServiceNow` - A cloud-based workflow automation platform that enables enterprise organizations to improve operational efficiencies by streamlining and automating routine work tasks. * `ReadHatOpenStack` - An OpenStack target manages Virtual Machines, Physical Machines, Datacenters and Virtual Datacenters using different OpenStack services as administrative endpoints. * `CloudFoundry` - An open source cloud platform on which developers can build, deploy, run and scale applications. * `MicrosoftAzureApplicationInsights` - A feature of Azure Monitor, is an extensible Application Performance Management service for developers and DevOps professionals to monitor their live applications. * `OpenStack` - An OpenStack target manages Virtual Machines, Physical Machines, Datacenters and Virtual Datacenters using different OpenStack services as administrative endpoints. * `MicrosoftSqlServer` - A Microsoft SQL database server. * `MySqlServer` - An instance of either Oracle MySQL Database or the open source MariaDB. * `Kubernetes` - A Kubernetes cluster that runs containerized applications. * `AmazonWebService` - A Amazon web service target that discovers and monitors different services like EC2. It discovers entities like VMs, Volumes, regions etc. and monitors attributes like Mem, CPU, cost. * `AmazonWebServiceBilling` - A Amazon web service billing target to retrieve billing information stored in S3 bucket. * `MicrosoftAzureServicePrincipal` - A Microsoft Azure Service Principal target that discovers all the associated Azure subscriptions. * `MicrosoftAzureEnterpriseAgreement` - A Microsoft Azure Enterprise Agreement target that discovers cost, billing and RIs. * `DellCompellent` - A Dell Compellent storage system. * `HPE3Par` - A HPE 3PAR storage system. * `RedHatEnterpriseVirtualization` - A Red Hat Enterprise Virtualization Hypervisor system that manages Virtual Machines. * `NutanixAcropolis` - A Nutanix Acropolis system that combines servers and storage into a distributed infrastructure platform. * `HPEOneView` - A HPE Oneview management system that manages compute, storage, and networking. * `ServiceEngine` - Cisco Application Services Engine. Cisco Application Services Engine is a platform to deploy and manage applications. * `HitachiVirtualStoragePlatform` - A Hitachi Virtual Storage Platform also referred to as Hitachi VSP. It includes various storage systems designed for data centers. * `IMCBlade` - An Intersight managed UCS Blade Server. * `TerraformCloud` - A Terraform Cloud account. * `TerraformAgent` - A Terraform Cloud Agent that Intersight will deploy in datacenter. The agent will execute Terraform plan for Terraform Cloud workspace configured to use the agent. * `CustomTarget` - An external endpoint added as Target that can be accessed through its HTTP API interface in Intersight Orchestrator automation workflow.Standard HTTP authentication scheme supported: Basic. * `AnsibleEndpoint` - An external endpoint added as Target that can be accessed through Ansible in Intersight Cloud Orchestrator automation workflow. * `HTTPEndpoint` - An external endpoint added as Target that can be accessed through its HTTP API interface in Intersight Orchestrator automation workflow.Standard HTTP authentication scheme supported: Basic, Bearer Token. * `SSHEndpoint` - An external endpoint added as Target that can be accessed through SSH in Intersight Cloud Orchestrator automation workflow. * `CiscoCatalyst` - A Cisco Catalyst networking switch device. * `PowerShellEndpoint` - A Windows machine on which PowerShell scripts can be executed remotely.
-	PlatformType *string `json:"PlatformType,omitempty"`
-	Product NullableAssetProductInformation `json:"Product,omitempty"`
+	PlatformType *string                         `json:"PlatformType,omitempty"`
+	Product      NullableAssetProductInformation `json:"Product,omitempty"`
 	// Purchase order number for the Cisco device. It is a unique number assigned for every purchase.
-	PurchaseOrderNumber *string `json:"PurchaseOrderNumber,omitempty"`
+	PurchaseOrderNumber    *string                     `json:"PurchaseOrderNumber,omitempty"`
 	ResellerGlobalUltimate NullableAssetGlobalUltimate `json:"ResellerGlobalUltimate,omitempty"`
 	// Sales order number for the Cisco device. It is a unique number assigned for every sale.
 	SalesOrderNumber *string `json:"SalesOrderNumber,omitempty"`
@@ -70,9 +70,9 @@ type AssetDeviceContractInformationAllOf struct {
 	// End date for the warranty that covers the Cisco device.
 	WarrantyEndDate *string `json:"WarrantyEndDate,omitempty"`
 	// Type of warranty that covers the Cisco device.
-	WarrantyType *string `json:"WarrantyType,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Source *MoBaseMoRelationship `json:"Source,omitempty"`
+	WarrantyType         *string                              `json:"WarrantyType,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Source               *MoBaseMoRelationship                `json:"Source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -118,7 +118,7 @@ func (o *AssetDeviceContractInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceContractInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -142,7 +142,7 @@ func (o *AssetDeviceContractInformationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceContractInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -166,7 +166,7 @@ func (o *AssetDeviceContractInformationAllOf) GetContract() AssetContractInforma
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractInformationAllOf) GetContractOk() (*AssetContractInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Contract.Get(), o.Contract.IsSet()
@@ -185,6 +185,7 @@ func (o *AssetDeviceContractInformationAllOf) HasContract() bool {
 func (o *AssetDeviceContractInformationAllOf) SetContract(v AssetContractInformation) {
 	o.Contract.Set(&v)
 }
+
 // SetContractNil sets the value for Contract to be an explicit nil
 func (o *AssetDeviceContractInformationAllOf) SetContractNil() {
 	o.Contract.Set(nil)
@@ -432,7 +433,7 @@ func (o *AssetDeviceContractInformationAllOf) GetEndCustomer() AssetCustomerInfo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractInformationAllOf) GetEndCustomerOk() (*AssetCustomerInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndCustomer.Get(), o.EndCustomer.IsSet()
@@ -451,6 +452,7 @@ func (o *AssetDeviceContractInformationAllOf) HasEndCustomer() bool {
 func (o *AssetDeviceContractInformationAllOf) SetEndCustomer(v AssetCustomerInformation) {
 	o.EndCustomer.Set(&v)
 }
+
 // SetEndCustomerNil sets the value for EndCustomer to be an explicit nil
 func (o *AssetDeviceContractInformationAllOf) SetEndCustomerNil() {
 	o.EndCustomer.Set(nil)
@@ -474,7 +476,7 @@ func (o *AssetDeviceContractInformationAllOf) GetEndUserGlobalUltimate() AssetGl
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractInformationAllOf) GetEndUserGlobalUltimateOk() (*AssetGlobalUltimate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndUserGlobalUltimate.Get(), o.EndUserGlobalUltimate.IsSet()
@@ -493,6 +495,7 @@ func (o *AssetDeviceContractInformationAllOf) HasEndUserGlobalUltimate() bool {
 func (o *AssetDeviceContractInformationAllOf) SetEndUserGlobalUltimate(v AssetGlobalUltimate) {
 	o.EndUserGlobalUltimate.Set(&v)
 }
+
 // SetEndUserGlobalUltimateNil sets the value for EndUserGlobalUltimate to be an explicit nil
 func (o *AssetDeviceContractInformationAllOf) SetEndUserGlobalUltimateNil() {
 	o.EndUserGlobalUltimate.Set(nil)
@@ -676,7 +679,7 @@ func (o *AssetDeviceContractInformationAllOf) GetProduct() AssetProductInformati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractInformationAllOf) GetProductOk() (*AssetProductInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Product.Get(), o.Product.IsSet()
@@ -695,6 +698,7 @@ func (o *AssetDeviceContractInformationAllOf) HasProduct() bool {
 func (o *AssetDeviceContractInformationAllOf) SetProduct(v AssetProductInformation) {
 	o.Product.Set(&v)
 }
+
 // SetProductNil sets the value for Product to be an explicit nil
 func (o *AssetDeviceContractInformationAllOf) SetProductNil() {
 	o.Product.Set(nil)
@@ -750,7 +754,7 @@ func (o *AssetDeviceContractInformationAllOf) GetResellerGlobalUltimate() AssetG
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceContractInformationAllOf) GetResellerGlobalUltimateOk() (*AssetGlobalUltimate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResellerGlobalUltimate.Get(), o.ResellerGlobalUltimate.IsSet()
@@ -769,6 +773,7 @@ func (o *AssetDeviceContractInformationAllOf) HasResellerGlobalUltimate() bool {
 func (o *AssetDeviceContractInformationAllOf) SetResellerGlobalUltimate(v AssetGlobalUltimate) {
 	o.ResellerGlobalUltimate.Set(&v)
 }
+
 // SetResellerGlobalUltimateNil sets the value for ResellerGlobalUltimate to be an explicit nil
 func (o *AssetDeviceContractInformationAllOf) SetResellerGlobalUltimateNil() {
 	o.ResellerGlobalUltimate.Set(nil)
@@ -1316,5 +1321,3 @@ func (v *NullableAssetDeviceContractInformationAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

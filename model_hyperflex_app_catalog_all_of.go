@@ -22,7 +22,7 @@ type HyperflexAppCatalogAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The catalog version used in HyperFlex cluster configuration service.
-	Version *string `json:"Version,omitempty"`
+	Version              *string                                    `json:"Version,omitempty"`
 	FeatureLimitExternal *HyperflexFeatureLimitExternalRelationship `json:"FeatureLimitExternal,omitempty"`
 	FeatureLimitInternal *HyperflexFeatureLimitInternalRelationship `json:"FeatureLimitInternal,omitempty"`
 	// An array of relationships to hyperflexHxdpVersion resources.
@@ -31,11 +31,11 @@ type HyperflexAppCatalogAllOf struct {
 	HyperflexCapabilityInfos []HyperflexCapabilityInfoRelationship `json:"HyperflexCapabilityInfos,omitempty"`
 	// An array of relationships to hclHyperflexSoftwareCompatibilityInfo resources.
 	HyperflexSoftwareCompatibilityInfos []HclHyperflexSoftwareCompatibilityInfoRelationship `json:"HyperflexSoftwareCompatibilityInfos,omitempty"`
-	ServerFirmwareVersion *HyperflexServerFirmwareVersionRelationship `json:"ServerFirmwareVersion,omitempty"`
-	ServerModel *HyperflexServerModelRelationship `json:"ServerModel,omitempty"`
+	ServerFirmwareVersion               *HyperflexServerFirmwareVersionRelationship         `json:"ServerFirmwareVersion,omitempty"`
+	ServerModel                         *HyperflexServerModelRelationship                   `json:"ServerModel,omitempty"`
 	// An array of relationships to hyperflexSoftwareDistributionEntry resources.
 	SoftwareDistributions []HyperflexSoftwareDistributionEntryRelationship `json:"SoftwareDistributions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexAppCatalogAllOf HyperflexAppCatalogAllOf
@@ -76,7 +76,7 @@ func (o *HyperflexAppCatalogAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAppCatalogAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexAppCatalogAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAppCatalogAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -209,7 +209,7 @@ func (o *HyperflexAppCatalogAllOf) SetFeatureLimitInternal(v HyperflexFeatureLim
 
 // GetHxdpVersions returns the HxdpVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAppCatalogAllOf) GetHxdpVersions() []HyperflexHxdpVersionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexHxdpVersionRelationship
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *HyperflexAppCatalogAllOf) SetHxdpVersions(v []HyperflexHxdpVersionRelat
 
 // GetHyperflexCapabilityInfos returns the HyperflexCapabilityInfos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAppCatalogAllOf) GetHyperflexCapabilityInfos() []HyperflexCapabilityInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexCapabilityInfoRelationship
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *HyperflexAppCatalogAllOf) SetHyperflexCapabilityInfos(v []HyperflexCapa
 
 // GetHyperflexSoftwareCompatibilityInfos returns the HyperflexSoftwareCompatibilityInfos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAppCatalogAllOf) GetHyperflexSoftwareCompatibilityInfos() []HclHyperflexSoftwareCompatibilityInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HclHyperflexSoftwareCompatibilityInfoRelationship
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *HyperflexAppCatalogAllOf) SetServerModel(v HyperflexServerModelRelation
 
 // GetSoftwareDistributions returns the SoftwareDistributions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexAppCatalogAllOf) GetSoftwareDistributions() []HyperflexSoftwareDistributionEntryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexSoftwareDistributionEntryRelationship
 		return ret
 	}
@@ -508,5 +508,3 @@ func (v *NullableHyperflexAppCatalogAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

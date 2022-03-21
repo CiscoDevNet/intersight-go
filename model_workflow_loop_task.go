@@ -28,7 +28,7 @@ type WorkflowLoopTask struct {
 	NumberOfBatches *int64 `json:"NumberOfBatches,omitempty"`
 	// This field is deprecated. Always set to true for parallel loop.
 	// Deprecated
-	Parallel *bool `json:"Parallel,omitempty"`
+	Parallel             *bool `json:"Parallel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *WorkflowLoopTask) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowLoopTask) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *WorkflowLoopTask) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowLoopTask) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -313,5 +313,3 @@ func (v *NullableWorkflowLoopTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

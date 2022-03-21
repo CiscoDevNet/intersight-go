@@ -30,8 +30,8 @@ type VirtualizationIweClusterAllOf struct {
 	// CPU oversubscription factor configured on the cluster.
 	ConfiguredCpuOverSubFactor *float64 `json:"ConfiguredCpuOverSubFactor,omitempty"`
 	// The number of converged nodes that belong to this cluster.
-	ConvergedNodeCount *int64 `json:"ConvergedNodeCount,omitempty"`
-	CpuAllocation NullableVirtualizationCpuAllocation `json:"CpuAllocation,omitempty"`
+	ConvergedNodeCount *int64                              `json:"ConvergedNodeCount,omitempty"`
+	CpuAllocation      NullableVirtualizationCpuAllocation `json:"CpuAllocation,omitempty"`
 	// Current oversubscription factor of the cluster.
 	CurrentCpuOverSubFactor *float64 `json:"CurrentCpuOverSubFactor,omitempty"`
 	// Datacenter to which the cluster belongs.
@@ -49,8 +49,8 @@ type VirtualizationIweClusterAllOf struct {
 	// The version of hypervisor running on this cluster.
 	HypervisorVersion *string `json:"HypervisorVersion,omitempty"`
 	// Management IP Address of the cluster.
-	ManagementIpAddress *string `json:"ManagementIpAddress,omitempty"`
-	MemoryAllocation NullableVirtualizationMemoryAllocation `json:"MemoryAllocation,omitempty"`
+	ManagementIpAddress *string                                `json:"ManagementIpAddress,omitempty"`
+	MemoryAllocation    NullableVirtualizationMemoryAllocation `json:"MemoryAllocation,omitempty"`
 	// The storage capacity in this cluster.
 	StorageCapacity *int64 `json:"StorageCapacity,omitempty"`
 	// The number of storage nodes that belong to this cluster.
@@ -60,11 +60,11 @@ type VirtualizationIweClusterAllOf struct {
 	// The storage utilization percentage is computed based on total capacity and current capacity utilization.
 	UtilizationPercentage *float32 `json:"UtilizationPercentage,omitempty"`
 	// The storage utilization trend percentage represents the trend in percentage computed using the first and last point from historical data.
-	UtilizationTrendPercentage *float32 `json:"UtilizationTrendPercentage,omitempty"`
-	AssociatedProfile *PolicyAbstractProfileRelationship `json:"AssociatedProfile,omitempty"`
-	HxCluster *StorageBaseClusterRelationship `json:"HxCluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UtilizationTrendPercentage *float32                             `json:"UtilizationTrendPercentage,omitempty"`
+	AssociatedProfile          *PolicyAbstractProfileRelationship   `json:"AssociatedProfile,omitempty"`
+	HxCluster                  *StorageBaseClusterRelationship      `json:"HxCluster,omitempty"`
+	RegisteredDevice           *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _VirtualizationIweClusterAllOf VirtualizationIweClusterAllOf
@@ -105,7 +105,7 @@ func (o *VirtualizationIweClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -129,7 +129,7 @@ func (o *VirtualizationIweClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -313,7 +313,7 @@ func (o *VirtualizationIweClusterAllOf) GetCpuAllocation() VirtualizationCpuAllo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweClusterAllOf) GetCpuAllocationOk() (*VirtualizationCpuAllocation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CpuAllocation.Get(), o.CpuAllocation.IsSet()
@@ -332,6 +332,7 @@ func (o *VirtualizationIweClusterAllOf) HasCpuAllocation() bool {
 func (o *VirtualizationIweClusterAllOf) SetCpuAllocation(v VirtualizationCpuAllocation) {
 	o.CpuAllocation.Set(&v)
 }
+
 // SetCpuAllocationNil sets the value for CpuAllocation to be an explicit nil
 func (o *VirtualizationIweClusterAllOf) SetCpuAllocationNil() {
 	o.CpuAllocation.Set(nil)
@@ -643,7 +644,7 @@ func (o *VirtualizationIweClusterAllOf) GetMemoryAllocation() VirtualizationMemo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweClusterAllOf) GetMemoryAllocationOk() (*VirtualizationMemoryAllocation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryAllocation.Get(), o.MemoryAllocation.IsSet()
@@ -662,6 +663,7 @@ func (o *VirtualizationIweClusterAllOf) HasMemoryAllocation() bool {
 func (o *VirtualizationIweClusterAllOf) SetMemoryAllocation(v VirtualizationMemoryAllocation) {
 	o.MemoryAllocation.Set(&v)
 }
+
 // SetMemoryAllocationNil sets the value for MemoryAllocation to be an explicit nil
 func (o *VirtualizationIweClusterAllOf) SetMemoryAllocationNil() {
 	o.MemoryAllocation.Set(nil)
@@ -1093,5 +1095,3 @@ func (v *NullableVirtualizationIweClusterAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

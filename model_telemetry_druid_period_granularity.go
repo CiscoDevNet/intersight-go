@@ -22,7 +22,7 @@ type TelemetryDruidPeriodGranularity struct {
 	// The period in ISO 8601 format. Examples are P2W, P3M, PT1H30M, PT0.750S.
 	Period string `json:"period"`
 	// An optional value specifying the time zone. Standard [IANA time zones](http://joda-time.sourceforge.net/timezones.html) are supported.
-	TimeZone *string `json:"timeZone,omitempty"`
+	TimeZone             *string `json:"timeZone,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,7 +60,7 @@ func (o *TelemetryDruidPeriodGranularity) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidPeriodGranularity) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -84,7 +84,7 @@ func (o *TelemetryDruidPeriodGranularity) GetPeriod() string {
 // GetPeriodOk returns a tuple with the Period field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidPeriodGranularity) GetPeriodOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Period, true
@@ -200,5 +200,3 @@ func (v *NullableTelemetryDruidPeriodGranularity) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type HyperflexFeatureLimitInternalList struct {
 	// The total number of 'hyperflex.FeatureLimitInternal' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.FeatureLimitInternal' resources matching the request.
-	Results []HyperflexFeatureLimitInternal `json:"Results,omitempty"`
+	Results              []HyperflexFeatureLimitInternal `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexFeatureLimitInternalList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexFeatureLimitInternalList) GetResults() []HyperflexFeatureLimitInternal {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexFeatureLimitInternal
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexFeatureLimitInternalList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

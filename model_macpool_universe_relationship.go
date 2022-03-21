@@ -19,19 +19,18 @@ import (
 // MacpoolUniverseRelationship - A relationship to the 'macpool.Universe' resource, or the expanded 'macpool.Universe' resource, or the 'null' value.
 type MacpoolUniverseRelationship struct {
 	MacpoolUniverse *MacpoolUniverse
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // MacpoolUniverseAsMacpoolUniverseRelationship is a convenience function that returns MacpoolUniverse wrapped in MacpoolUniverseRelationship
 func MacpoolUniverseAsMacpoolUniverseRelationship(v *MacpoolUniverse) MacpoolUniverseRelationship {
-	return MacpoolUniverseRelationship{ MacpoolUniverse: v}
+	return MacpoolUniverseRelationship{MacpoolUniverse: v}
 }
 
 // MoMoRefAsMacpoolUniverseRelationship is a convenience function that returns MoMoRef wrapped in MacpoolUniverseRelationship
 func MoMoRefAsMacpoolUniverseRelationship(v *MoMoRef) MacpoolUniverseRelationship {
-	return MacpoolUniverseRelationship{ MoMoRef: v}
+	return MacpoolUniverseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolUniverseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MacpoolUniverseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolUniverseRelationship) GetActualInstance() (interface{}) {
+func (obj *MacpoolUniverseRelationship) GetActualInstance() interface{} {
 	if obj.MacpoolUniverse != nil {
 		return obj.MacpoolUniverse
 	}
@@ -137,5 +136,3 @@ func (v *NullableMacpoolUniverseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

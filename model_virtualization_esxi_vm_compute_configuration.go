@@ -25,7 +25,7 @@ type VirtualizationEsxiVmComputeConfiguration struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// ResourcePool where virtual machine is deployed.
-	ResourcePool *string `json:"ResourcePool,omitempty"`
+	ResourcePool         *string `json:"ResourcePool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *VirtualizationEsxiVmComputeConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmComputeConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *VirtualizationEsxiVmComputeConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmComputeConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -259,5 +259,3 @@ func (v *NullableVirtualizationEsxiVmComputeConfiguration) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

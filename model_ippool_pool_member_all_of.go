@@ -26,11 +26,11 @@ type IppoolPoolMemberAllOf struct {
 	// IPv4 Address of this pool member.
 	IpV4Address *string `json:"IpV4Address,omitempty"`
 	// IPv6 Address of this pool member.
-	IpV6Address *string `json:"IpV6Address,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	IpBlock *IppoolShadowBlockRelationship `json:"IpBlock,omitempty"`
-	Peer *IppoolIpLeaseRelationship `json:"Peer,omitempty"`
-	Pool *IppoolShadowPoolRelationship `json:"Pool,omitempty"`
+	IpV6Address          *string                        `json:"IpV6Address,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship          `json:"AssignedToEntity,omitempty"`
+	IpBlock              *IppoolShadowBlockRelationship `json:"IpBlock,omitempty"`
+	Peer                 *IppoolIpLeaseRelationship     `json:"Peer,omitempty"`
+	Pool                 *IppoolShadowPoolRelationship  `json:"Pool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *IppoolPoolMemberAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IppoolPoolMemberAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *IppoolPoolMemberAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IppoolPoolMemberAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,5 +432,3 @@ func (v *NullableIppoolPoolMemberAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

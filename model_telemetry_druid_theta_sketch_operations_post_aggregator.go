@@ -25,7 +25,7 @@ type TelemetryDruidThetaSketchOperationsPostAggregator struct {
 	Name *string `json:"name,omitempty"`
 	Func *string `json:"func,omitempty"`
 	// must be max of size from sketches in fields input.
-	Size *int32 `json:"size,omitempty"`
+	Size                 *int32 `json:"size,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *TelemetryDruidThetaSketchOperationsPostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidThetaSketchOperationsPostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -286,5 +286,3 @@ func (v *NullableTelemetryDruidThetaSketchOperationsPostAggregator) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

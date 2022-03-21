@@ -19,19 +19,18 @@ import (
 // FcPhysicalPortRelationship - A relationship to the 'fc.PhysicalPort' resource, or the expanded 'fc.PhysicalPort' resource, or the 'null' value.
 type FcPhysicalPortRelationship struct {
 	FcPhysicalPort *FcPhysicalPort
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // FcPhysicalPortAsFcPhysicalPortRelationship is a convenience function that returns FcPhysicalPort wrapped in FcPhysicalPortRelationship
 func FcPhysicalPortAsFcPhysicalPortRelationship(v *FcPhysicalPort) FcPhysicalPortRelationship {
-	return FcPhysicalPortRelationship{ FcPhysicalPort: v}
+	return FcPhysicalPortRelationship{FcPhysicalPort: v}
 }
 
 // MoMoRefAsFcPhysicalPortRelationship is a convenience function that returns MoMoRef wrapped in FcPhysicalPortRelationship
 func MoMoRefAsFcPhysicalPortRelationship(v *MoMoRef) FcPhysicalPortRelationship {
-	return FcPhysicalPortRelationship{ MoMoRef: v}
+	return FcPhysicalPortRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FcPhysicalPortRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FcPhysicalPortRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FcPhysicalPortRelationship) GetActualInstance() (interface{}) {
+func (obj *FcPhysicalPortRelationship) GetActualInstance() interface{} {
 	if obj.FcPhysicalPort != nil {
 		return obj.FcPhysicalPort
 	}
@@ -137,5 +136,3 @@ func (v *NullableFcPhysicalPortRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

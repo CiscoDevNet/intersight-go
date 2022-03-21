@@ -24,7 +24,7 @@ type PatchDocument struct {
 	// The value to be used within the operations.
 	Value *map[string]interface{} `json:"value,omitempty"`
 	// A string containing a JSON Pointer value.
-	From *string `json:"from,omitempty"`
+	From                 *string `json:"from,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,7 +62,7 @@ func (o *PatchDocument) GetOp() string {
 // GetOpOk returns a tuple with the Op field value
 // and a boolean to check if the value has been set.
 func (o *PatchDocument) GetOpOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Op, true
@@ -86,7 +86,7 @@ func (o *PatchDocument) GetPath() string {
 // GetPathOk returns a tuple with the Path field value
 // and a boolean to check if the value has been set.
 func (o *PatchDocument) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Path, true
@@ -238,5 +238,3 @@ func (v *NullablePatchDocument) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

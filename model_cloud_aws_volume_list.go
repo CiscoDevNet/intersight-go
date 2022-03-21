@@ -23,7 +23,7 @@ type CloudAwsVolumeList struct {
 	// The total number of 'cloud.AwsVolume' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'cloud.AwsVolume' resources matching the request.
-	Results []CloudAwsVolume `json:"Results,omitempty"`
+	Results              []CloudAwsVolume `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CloudAwsVolumeList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsVolumeList) GetResults() []CloudAwsVolume {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudAwsVolume
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableCloudAwsVolumeList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

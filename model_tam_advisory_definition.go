@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // TamAdvisoryDefinition An Intersight Advisory. An advisory represents an identification of a potential issue and may also include  a recommendation for resolving the said issue. Advisories may be of different kind and severity. for e.g. It could be a security vulnerability or a performance issue or a hardware issue with different recommendations for resolving them.
@@ -24,11 +24,11 @@ type TamAdvisoryDefinition struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Actions []TamAction `json:"Actions,omitempty"`
+	ObjectType      string                         `json:"ObjectType"`
+	Actions         []TamAction                    `json:"Actions,omitempty"`
 	AdvisoryDetails NullableTamBaseAdvisoryDetails `json:"AdvisoryDetails,omitempty"`
 	// Cisco generated identifier for the published security/field-notice/end-of-life advisory.
-	AdvisoryId *string `json:"AdvisoryId,omitempty"`
+	AdvisoryId     *string            `json:"AdvisoryId,omitempty"`
 	ApiDataSources []TamApiDataSource `json:"ApiDataSources,omitempty"`
 	// Date when the security/field-notice/end-of-life advisory was first published by Cisco.
 	DatePublished *time.Time `json:"DatePublished,omitempty"`
@@ -37,15 +37,15 @@ type TamAdvisoryDefinition struct {
 	// A link to an external URL describing security Advisory in more details.
 	ExternalUrl *string `json:"ExternalUrl,omitempty"`
 	// Recommended action to resolve the security advisory.
-	Recommendation *string `json:"Recommendation,omitempty"`
-	S3DataSources []TamS3DataSource `json:"S3DataSources,omitempty"`
+	Recommendation *string           `json:"Recommendation,omitempty"`
+	S3DataSources  []TamS3DataSource `json:"S3DataSources,omitempty"`
 	// The type (field notice, security advisory, end-of-life milestone advisory etc.) of Intersight advisory. * `securityAdvisory` - Respresents the psirt alert type (https://tools.cisco.com/security/center/publicationListing.x). * `fieldNotice` - Respresents the field notice alert type (https://www.cisco.com/c/en/us/support/web/tsd-products-field-notice-summary.html). * `eolAdvisory` - Represents product End of Life (EOL) type (https://www.cisco.com/c/en/us/products/eos-eol-policy.html).
 	Type *string `json:"Type,omitempty"`
 	// Cisco assigned advisory/field-notice/end-of-life version after latest revision.
 	Version *string `json:"Version,omitempty"`
 	// Workarounds available for the advisory.
-	Workaround *string `json:"Workaround,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Workaround           *string                               `json:"Workaround,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *TamAdvisoryDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *TamAdvisoryDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *TamAdvisoryDefinition) SetObjectType(v string) {
 
 // GetActions returns the Actions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamAdvisoryDefinition) GetActions() []TamAction {
-	if o == nil  {
+	if o == nil {
 		var ret []TamAction
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *TamAdvisoryDefinition) GetAdvisoryDetails() TamBaseAdvisoryDetails {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TamAdvisoryDefinition) GetAdvisoryDetailsOk() (*TamBaseAdvisoryDetails, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AdvisoryDetails.Get(), o.AdvisoryDetails.IsSet()
@@ -193,6 +193,7 @@ func (o *TamAdvisoryDefinition) HasAdvisoryDetails() bool {
 func (o *TamAdvisoryDefinition) SetAdvisoryDetails(v TamBaseAdvisoryDetails) {
 	o.AdvisoryDetails.Set(&v)
 }
+
 // SetAdvisoryDetailsNil sets the value for AdvisoryDetails to be an explicit nil
 func (o *TamAdvisoryDefinition) SetAdvisoryDetailsNil() {
 	o.AdvisoryDetails.Set(nil)
@@ -237,7 +238,7 @@ func (o *TamAdvisoryDefinition) SetAdvisoryId(v string) {
 
 // GetApiDataSources returns the ApiDataSources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamAdvisoryDefinition) GetApiDataSources() []TamApiDataSource {
-	if o == nil  {
+	if o == nil {
 		var ret []TamApiDataSource
 		return ret
 	}
@@ -398,7 +399,7 @@ func (o *TamAdvisoryDefinition) SetRecommendation(v string) {
 
 // GetS3DataSources returns the S3DataSources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamAdvisoryDefinition) GetS3DataSources() []TamS3DataSource {
-	if o == nil  {
+	if o == nil {
 		var ret []TamS3DataSource
 		return ret
 	}
@@ -625,11 +626,11 @@ func (o *TamAdvisoryDefinition) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Actions []TamAction `json:"Actions,omitempty"`
+		ObjectType      string                         `json:"ObjectType"`
+		Actions         []TamAction                    `json:"Actions,omitempty"`
 		AdvisoryDetails NullableTamBaseAdvisoryDetails `json:"AdvisoryDetails,omitempty"`
 		// Cisco generated identifier for the published security/field-notice/end-of-life advisory.
-		AdvisoryId *string `json:"AdvisoryId,omitempty"`
+		AdvisoryId     *string            `json:"AdvisoryId,omitempty"`
 		ApiDataSources []TamApiDataSource `json:"ApiDataSources,omitempty"`
 		// Date when the security/field-notice/end-of-life advisory was first published by Cisco.
 		DatePublished *time.Time `json:"DatePublished,omitempty"`
@@ -638,14 +639,14 @@ func (o *TamAdvisoryDefinition) UnmarshalJSON(bytes []byte) (err error) {
 		// A link to an external URL describing security Advisory in more details.
 		ExternalUrl *string `json:"ExternalUrl,omitempty"`
 		// Recommended action to resolve the security advisory.
-		Recommendation *string `json:"Recommendation,omitempty"`
-		S3DataSources []TamS3DataSource `json:"S3DataSources,omitempty"`
+		Recommendation *string           `json:"Recommendation,omitempty"`
+		S3DataSources  []TamS3DataSource `json:"S3DataSources,omitempty"`
 		// The type (field notice, security advisory, end-of-life milestone advisory etc.) of Intersight advisory. * `securityAdvisory` - Respresents the psirt alert type (https://tools.cisco.com/security/center/publicationListing.x). * `fieldNotice` - Respresents the field notice alert type (https://www.cisco.com/c/en/us/support/web/tsd-products-field-notice-summary.html). * `eolAdvisory` - Represents product End of Life (EOL) type (https://www.cisco.com/c/en/us/products/eos-eol-policy.html).
 		Type *string `json:"Type,omitempty"`
 		// Cisco assigned advisory/field-notice/end-of-life version after latest revision.
 		Version *string `json:"Version,omitempty"`
 		// Workarounds available for the advisory.
-		Workaround *string `json:"Workaround,omitempty"`
+		Workaround   *string                               `json:"Workaround,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -761,5 +762,3 @@ func (v *NullableTamAdvisoryDefinition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

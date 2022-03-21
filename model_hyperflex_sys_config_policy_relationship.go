@@ -19,19 +19,18 @@ import (
 // HyperflexSysConfigPolicyRelationship - A relationship to the 'hyperflex.SysConfigPolicy' resource, or the expanded 'hyperflex.SysConfigPolicy' resource, or the 'null' value.
 type HyperflexSysConfigPolicyRelationship struct {
 	HyperflexSysConfigPolicy *HyperflexSysConfigPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 }
 
 // HyperflexSysConfigPolicyAsHyperflexSysConfigPolicyRelationship is a convenience function that returns HyperflexSysConfigPolicy wrapped in HyperflexSysConfigPolicyRelationship
 func HyperflexSysConfigPolicyAsHyperflexSysConfigPolicyRelationship(v *HyperflexSysConfigPolicy) HyperflexSysConfigPolicyRelationship {
-	return HyperflexSysConfigPolicyRelationship{ HyperflexSysConfigPolicy: v}
+	return HyperflexSysConfigPolicyRelationship{HyperflexSysConfigPolicy: v}
 }
 
 // MoMoRefAsHyperflexSysConfigPolicyRelationship is a convenience function that returns MoMoRef wrapped in HyperflexSysConfigPolicyRelationship
 func MoMoRefAsHyperflexSysConfigPolicyRelationship(v *MoMoRef) HyperflexSysConfigPolicyRelationship {
-	return HyperflexSysConfigPolicyRelationship{ MoMoRef: v}
+	return HyperflexSysConfigPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexSysConfigPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexSysConfigPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexSysConfigPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexSysConfigPolicyRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexSysConfigPolicy != nil {
 		return obj.HyperflexSysConfigPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexSysConfigPolicyRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

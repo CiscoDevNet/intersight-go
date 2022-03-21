@@ -20,15 +20,15 @@ type AssetDeviceClaimAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                          `json:"ObjectType"`
 	DeviceUpdates []AssetConnectionControlMessage `json:"DeviceUpdates,omitempty"`
 	// Obtained from the device connector management UI or API (REST endpoint '/connector/SecurityTokens').
 	SecurityToken *string `json:"SecurityToken,omitempty"`
 	// Obtained from the device connector management UI or API (REST endpoint '/connector/DeviceIdentifiers').
-	SerialNumber *string `json:"SerialNumber,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Reservation *ResourceReservationRelationship `json:"Reservation,omitempty"`
+	SerialNumber         *string                              `json:"SerialNumber,omitempty"`
+	Account              *IamAccountRelationship              `json:"Account,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	Reservation          *ResourceReservationRelationship     `json:"Reservation,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetDeviceClaimAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceClaimAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetDeviceClaimAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceClaimAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *AssetDeviceClaimAllOf) SetObjectType(v string) {
 
 // GetDeviceUpdates returns the DeviceUpdates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceClaimAllOf) GetDeviceUpdates() []AssetConnectionControlMessage {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetConnectionControlMessage
 		return ret
 	}
@@ -391,5 +391,3 @@ func (v *NullableAssetDeviceClaimAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

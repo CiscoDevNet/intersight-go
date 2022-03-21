@@ -22,8 +22,8 @@ type HyperflexSoftwareDistributionEntryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The HyperFlex Software Distribution type.
-	DistributionType *string `json:"DistributionType,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	DistributionType *string                          `json:"DistributionType,omitempty"`
+	AppCatalog       *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	// An array of relationships to hyperflexSoftwareDistributionVersion resources.
 	DistributionVersions []HyperflexSoftwareDistributionVersionRelationship `json:"DistributionVersions,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -67,7 +67,7 @@ func (o *HyperflexSoftwareDistributionEntryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionEntryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *HyperflexSoftwareDistributionEntryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSoftwareDistributionEntryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *HyperflexSoftwareDistributionEntryAllOf) SetAppCatalog(v HyperflexAppCa
 
 // GetDistributionVersions returns the DistributionVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareDistributionEntryAllOf) GetDistributionVersions() []HyperflexSoftwareDistributionVersionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexSoftwareDistributionVersionRelationship
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableHyperflexSoftwareDistributionEntryAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

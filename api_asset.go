@@ -29,11 +29,11 @@ var (
 type AssetApiService service
 
 type ApiCreateAssetDeviceClaimRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
+	ctx              _context.Context
+	ApiService       *AssetApiService
 	assetDeviceClaim *AssetDeviceClaim
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;asset.DeviceClaim&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateAssetDeviceClaimRequest) AssetDeviceClaim(assetDeviceClaim Asse
 	r.assetDeviceClaim = &assetDeviceClaim
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateAssetDeviceClaimRequest) IfMatch(ifMatch string) ApiCreateAssetDeviceClaimRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateAssetDeviceClaimRequest) IfNoneMatch(ifNoneMatch string) ApiCreateAssetDeviceClaimRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateAssetDeviceClaim Create a 'asset.DeviceClaim' resource.
 func (a *AssetApiService) CreateAssetDeviceClaim(ctx _context.Context) ApiCreateAssetDeviceClaimRequest {
 	return ApiCreateAssetDeviceClaimRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *AssetApiService) CreateAssetDeviceClaimExecute(r ApiCreateAssetDeviceCl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *AssetApiService) CreateAssetDeviceClaimExecute(r ApiCreateAssetDeviceCl
 }
 
 type ApiCreateAssetDeviceContractNotificationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
+	ctx                             _context.Context
+	ApiService                      *AssetApiService
 	assetDeviceContractNotification *AssetDeviceContractNotification
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                         *string
+	ifNoneMatch                     *string
 }
 
 // The &#39;asset.DeviceContractNotification&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateAssetDeviceContractNotificationRequest) AssetDeviceContractNoti
 	r.assetDeviceContractNotification = &assetDeviceContractNotification
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateAssetDeviceContractNotificationRequest) IfMatch(ifMatch string) ApiCreateAssetDeviceContractNotificationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateAssetDeviceContractNotificationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateAssetDeviceContractNotificationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateAssetDeviceContractNotification Create a 'asset.DeviceContractNotification
 func (a *AssetApiService) CreateAssetDeviceContractNotification(ctx _context.Context) ApiCreateAssetDeviceContractNotificationRequest {
 	return ApiCreateAssetDeviceContractNotificationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *AssetApiService) CreateAssetDeviceContractNotificationExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,10 +385,10 @@ func (a *AssetApiService) CreateAssetDeviceContractNotificationExecute(r ApiCrea
 }
 
 type ApiCreateAssetTargetRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
+	ctx         _context.Context
+	ApiService  *AssetApiService
 	assetTarget *AssetTarget
-	ifMatch *string
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -393,11 +397,13 @@ func (r ApiCreateAssetTargetRequest) AssetTarget(assetTarget AssetTarget) ApiCre
 	r.assetTarget = &assetTarget
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateAssetTargetRequest) IfMatch(ifMatch string) ApiCreateAssetTargetRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateAssetTargetRequest) IfNoneMatch(ifNoneMatch string) ApiCreateAssetTargetRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateAssetTarget Create a 'asset.Target' resource.
 func (a *AssetApiService) CreateAssetTarget(ctx _context.Context) ApiCreateAssetTargetRequest {
 	return ApiCreateAssetTargetRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *AssetApiService) CreateAssetTargetExecute(r ApiCreateAssetTargetRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,10 @@ func (a *AssetApiService) CreateAssetTargetExecute(r ApiCreateAssetTargetRequest
 }
 
 type ApiDeleteAssetDeploymentRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetDeploymentRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetDeploymentExecute(r)
@@ -577,8 +582,8 @@ DeleteAssetDeployment Delete a 'asset.Deployment' resource.
 func (a *AssetApiService) DeleteAssetDeployment(ctx _context.Context, moid string) ApiDeleteAssetDeploymentRequest {
 	return ApiDeleteAssetDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -683,13 +688,13 @@ func (a *AssetApiService) DeleteAssetDeploymentExecute(r ApiDeleteAssetDeploymen
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -697,11 +702,10 @@ func (a *AssetApiService) DeleteAssetDeploymentExecute(r ApiDeleteAssetDeploymen
 }
 
 type ApiDeleteAssetDeploymentDeviceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetDeploymentDeviceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetDeploymentDeviceExecute(r)
@@ -717,8 +721,8 @@ DeleteAssetDeploymentDevice Delete a 'asset.DeploymentDevice' resource.
 func (a *AssetApiService) DeleteAssetDeploymentDevice(ctx _context.Context, moid string) ApiDeleteAssetDeploymentDeviceRequest {
 	return ApiDeleteAssetDeploymentDeviceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -823,13 +827,13 @@ func (a *AssetApiService) DeleteAssetDeploymentDeviceExecute(r ApiDeleteAssetDep
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -837,11 +841,10 @@ func (a *AssetApiService) DeleteAssetDeploymentDeviceExecute(r ApiDeleteAssetDep
 }
 
 type ApiDeleteAssetDeviceClaimRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetDeviceClaimRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetDeviceClaimExecute(r)
@@ -857,8 +860,8 @@ DeleteAssetDeviceClaim Delete a 'asset.DeviceClaim' resource.
 func (a *AssetApiService) DeleteAssetDeviceClaim(ctx _context.Context, moid string) ApiDeleteAssetDeviceClaimRequest {
 	return ApiDeleteAssetDeviceClaimRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -963,13 +966,13 @@ func (a *AssetApiService) DeleteAssetDeviceClaimExecute(r ApiDeleteAssetDeviceCl
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -977,11 +980,10 @@ func (a *AssetApiService) DeleteAssetDeviceClaimExecute(r ApiDeleteAssetDeviceCl
 }
 
 type ApiDeleteAssetDeviceContractInformationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetDeviceContractInformationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetDeviceContractInformationExecute(r)
@@ -997,8 +999,8 @@ DeleteAssetDeviceContractInformation Delete a 'asset.DeviceContractInformation' 
 func (a *AssetApiService) DeleteAssetDeviceContractInformation(ctx _context.Context, moid string) ApiDeleteAssetDeviceContractInformationRequest {
 	return ApiDeleteAssetDeviceContractInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1103,13 +1105,13 @@ func (a *AssetApiService) DeleteAssetDeviceContractInformationExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1117,11 +1119,10 @@ func (a *AssetApiService) DeleteAssetDeviceContractInformationExecute(r ApiDelet
 }
 
 type ApiDeleteAssetDeviceRegistrationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetDeviceRegistrationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetDeviceRegistrationExecute(r)
@@ -1137,8 +1138,8 @@ DeleteAssetDeviceRegistration Deletes the resource representing the device conne
 func (a *AssetApiService) DeleteAssetDeviceRegistration(ctx _context.Context, moid string) ApiDeleteAssetDeviceRegistrationRequest {
 	return ApiDeleteAssetDeviceRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1243,13 +1244,13 @@ func (a *AssetApiService) DeleteAssetDeviceRegistrationExecute(r ApiDeleteAssetD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1257,11 +1258,10 @@ func (a *AssetApiService) DeleteAssetDeviceRegistrationExecute(r ApiDeleteAssetD
 }
 
 type ApiDeleteAssetSubscriptionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetSubscriptionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetSubscriptionExecute(r)
@@ -1277,8 +1277,8 @@ DeleteAssetSubscription Delete a 'asset.Subscription' resource.
 func (a *AssetApiService) DeleteAssetSubscription(ctx _context.Context, moid string) ApiDeleteAssetSubscriptionRequest {
 	return ApiDeleteAssetSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1383,13 +1383,13 @@ func (a *AssetApiService) DeleteAssetSubscriptionExecute(r ApiDeleteAssetSubscri
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1397,11 +1397,10 @@ func (a *AssetApiService) DeleteAssetSubscriptionExecute(r ApiDeleteAssetSubscri
 }
 
 type ApiDeleteAssetSubscriptionAccountRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetSubscriptionAccountRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetSubscriptionAccountExecute(r)
@@ -1417,8 +1416,8 @@ DeleteAssetSubscriptionAccount Delete a 'asset.SubscriptionAccount' resource.
 func (a *AssetApiService) DeleteAssetSubscriptionAccount(ctx _context.Context, moid string) ApiDeleteAssetSubscriptionAccountRequest {
 	return ApiDeleteAssetSubscriptionAccountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1523,13 +1522,13 @@ func (a *AssetApiService) DeleteAssetSubscriptionAccountExecute(r ApiDeleteAsset
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1537,11 +1536,10 @@ func (a *AssetApiService) DeleteAssetSubscriptionAccountExecute(r ApiDeleteAsset
 }
 
 type ApiDeleteAssetTargetRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteAssetTargetRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteAssetTargetExecute(r)
@@ -1557,8 +1555,8 @@ DeleteAssetTarget Delete a 'asset.Target' resource.
 func (a *AssetApiService) DeleteAssetTarget(ctx _context.Context, moid string) ApiDeleteAssetTargetRequest {
 	return ApiDeleteAssetTargetRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1663,13 +1661,13 @@ func (a *AssetApiService) DeleteAssetTargetExecute(r ApiDeleteAssetTargetRequest
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1677,11 +1675,10 @@ func (a *AssetApiService) DeleteAssetTargetExecute(r ApiDeleteAssetTargetRequest
 }
 
 type ApiGetAssetClusterMemberByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetClusterMemberByMoidRequest) Execute() (AssetClusterMember, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetClusterMemberByMoidExecute(r)
@@ -1697,8 +1694,8 @@ GetAssetClusterMemberByMoid Read a 'asset.ClusterMember' resource.
 func (a *AssetApiService) GetAssetClusterMemberByMoid(ctx _context.Context, moid string) ApiGetAssetClusterMemberByMoidRequest {
 	return ApiGetAssetClusterMemberByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1805,13 +1802,13 @@ func (a *AssetApiService) GetAssetClusterMemberByMoidExecute(r ApiGetAssetCluste
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1828,19 +1825,19 @@ func (a *AssetApiService) GetAssetClusterMemberByMoidExecute(r ApiGetAssetCluste
 }
 
 type ApiGetAssetClusterMemberListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1848,51 +1845,61 @@ func (r ApiGetAssetClusterMemberListRequest) Filter(filter string) ApiGetAssetCl
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetClusterMemberListRequest) Orderby(orderby string) ApiGetAssetClusterMemberListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetClusterMemberListRequest) Top(top int32) ApiGetAssetClusterMemberListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetClusterMemberListRequest) Skip(skip int32) ApiGetAssetClusterMemberListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetClusterMemberListRequest) Select_(select_ string) ApiGetAssetClusterMemberListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetClusterMemberListRequest) Expand(expand string) ApiGetAssetClusterMemberListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetClusterMemberListRequest) Apply(apply string) ApiGetAssetClusterMemberListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetClusterMemberListRequest) Count(count bool) ApiGetAssetClusterMemberListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetClusterMemberListRequest) Inlinecount(inlinecount string) ApiGetAssetClusterMemberListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetClusterMemberListRequest) At(at string) ApiGetAssetClusterMemberListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetClusterMemberListRequest) Tags(tags string) ApiGetAssetClusterMemberListRequest {
 	r.tags = &tags
@@ -1912,7 +1919,7 @@ GetAssetClusterMemberList Read a 'asset.ClusterMember' resource.
 func (a *AssetApiService) GetAssetClusterMemberList(ctx _context.Context) ApiGetAssetClusterMemberListRequest {
 	return ApiGetAssetClusterMemberListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2051,13 +2058,13 @@ func (a *AssetApiService) GetAssetClusterMemberListExecute(r ApiGetAssetClusterM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2074,11 +2081,10 @@ func (a *AssetApiService) GetAssetClusterMemberListExecute(r ApiGetAssetClusterM
 }
 
 type ApiGetAssetDeploymentByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeploymentByMoidRequest) Execute() (AssetDeployment, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeploymentByMoidExecute(r)
@@ -2094,8 +2100,8 @@ GetAssetDeploymentByMoid Read a 'asset.Deployment' resource.
 func (a *AssetApiService) GetAssetDeploymentByMoid(ctx _context.Context, moid string) ApiGetAssetDeploymentByMoidRequest {
 	return ApiGetAssetDeploymentByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2202,13 +2208,13 @@ func (a *AssetApiService) GetAssetDeploymentByMoidExecute(r ApiGetAssetDeploymen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2225,11 +2231,10 @@ func (a *AssetApiService) GetAssetDeploymentByMoidExecute(r ApiGetAssetDeploymen
 }
 
 type ApiGetAssetDeploymentDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeploymentDeviceByMoidRequest) Execute() (AssetDeploymentDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeploymentDeviceByMoidExecute(r)
@@ -2245,8 +2250,8 @@ GetAssetDeploymentDeviceByMoid Read a 'asset.DeploymentDevice' resource.
 func (a *AssetApiService) GetAssetDeploymentDeviceByMoid(ctx _context.Context, moid string) ApiGetAssetDeploymentDeviceByMoidRequest {
 	return ApiGetAssetDeploymentDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2353,13 +2358,13 @@ func (a *AssetApiService) GetAssetDeploymentDeviceByMoidExecute(r ApiGetAssetDep
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2376,19 +2381,19 @@ func (a *AssetApiService) GetAssetDeploymentDeviceByMoidExecute(r ApiGetAssetDep
 }
 
 type ApiGetAssetDeploymentDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2396,51 +2401,61 @@ func (r ApiGetAssetDeploymentDeviceListRequest) Filter(filter string) ApiGetAsse
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeploymentDeviceListRequest) Orderby(orderby string) ApiGetAssetDeploymentDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeploymentDeviceListRequest) Top(top int32) ApiGetAssetDeploymentDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeploymentDeviceListRequest) Skip(skip int32) ApiGetAssetDeploymentDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeploymentDeviceListRequest) Select_(select_ string) ApiGetAssetDeploymentDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeploymentDeviceListRequest) Expand(expand string) ApiGetAssetDeploymentDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeploymentDeviceListRequest) Apply(apply string) ApiGetAssetDeploymentDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeploymentDeviceListRequest) Count(count bool) ApiGetAssetDeploymentDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeploymentDeviceListRequest) Inlinecount(inlinecount string) ApiGetAssetDeploymentDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeploymentDeviceListRequest) At(at string) ApiGetAssetDeploymentDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeploymentDeviceListRequest) Tags(tags string) ApiGetAssetDeploymentDeviceListRequest {
 	r.tags = &tags
@@ -2460,7 +2475,7 @@ GetAssetDeploymentDeviceList Read a 'asset.DeploymentDevice' resource.
 func (a *AssetApiService) GetAssetDeploymentDeviceList(ctx _context.Context) ApiGetAssetDeploymentDeviceListRequest {
 	return ApiGetAssetDeploymentDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2599,13 +2614,13 @@ func (a *AssetApiService) GetAssetDeploymentDeviceListExecute(r ApiGetAssetDeplo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2622,19 +2637,19 @@ func (a *AssetApiService) GetAssetDeploymentDeviceListExecute(r ApiGetAssetDeplo
 }
 
 type ApiGetAssetDeploymentListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2642,51 +2657,61 @@ func (r ApiGetAssetDeploymentListRequest) Filter(filter string) ApiGetAssetDeplo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeploymentListRequest) Orderby(orderby string) ApiGetAssetDeploymentListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeploymentListRequest) Top(top int32) ApiGetAssetDeploymentListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeploymentListRequest) Skip(skip int32) ApiGetAssetDeploymentListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeploymentListRequest) Select_(select_ string) ApiGetAssetDeploymentListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeploymentListRequest) Expand(expand string) ApiGetAssetDeploymentListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeploymentListRequest) Apply(apply string) ApiGetAssetDeploymentListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeploymentListRequest) Count(count bool) ApiGetAssetDeploymentListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeploymentListRequest) Inlinecount(inlinecount string) ApiGetAssetDeploymentListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeploymentListRequest) At(at string) ApiGetAssetDeploymentListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeploymentListRequest) Tags(tags string) ApiGetAssetDeploymentListRequest {
 	r.tags = &tags
@@ -2706,7 +2731,7 @@ GetAssetDeploymentList Read a 'asset.Deployment' resource.
 func (a *AssetApiService) GetAssetDeploymentList(ctx _context.Context) ApiGetAssetDeploymentListRequest {
 	return ApiGetAssetDeploymentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2845,13 +2870,13 @@ func (a *AssetApiService) GetAssetDeploymentListExecute(r ApiGetAssetDeploymentL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2868,11 +2893,10 @@ func (a *AssetApiService) GetAssetDeploymentListExecute(r ApiGetAssetDeploymentL
 }
 
 type ApiGetAssetDeviceConfigurationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeviceConfigurationByMoidRequest) Execute() (AssetDeviceConfiguration, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeviceConfigurationByMoidExecute(r)
@@ -2888,8 +2912,8 @@ GetAssetDeviceConfigurationByMoid Read a 'asset.DeviceConfiguration' resource.
 func (a *AssetApiService) GetAssetDeviceConfigurationByMoid(ctx _context.Context, moid string) ApiGetAssetDeviceConfigurationByMoidRequest {
 	return ApiGetAssetDeviceConfigurationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2996,13 +3020,13 @@ func (a *AssetApiService) GetAssetDeviceConfigurationByMoidExecute(r ApiGetAsset
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3019,19 +3043,19 @@ func (a *AssetApiService) GetAssetDeviceConfigurationByMoidExecute(r ApiGetAsset
 }
 
 type ApiGetAssetDeviceConfigurationListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3039,51 +3063,61 @@ func (r ApiGetAssetDeviceConfigurationListRequest) Filter(filter string) ApiGetA
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeviceConfigurationListRequest) Orderby(orderby string) ApiGetAssetDeviceConfigurationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeviceConfigurationListRequest) Top(top int32) ApiGetAssetDeviceConfigurationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeviceConfigurationListRequest) Skip(skip int32) ApiGetAssetDeviceConfigurationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeviceConfigurationListRequest) Select_(select_ string) ApiGetAssetDeviceConfigurationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeviceConfigurationListRequest) Expand(expand string) ApiGetAssetDeviceConfigurationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeviceConfigurationListRequest) Apply(apply string) ApiGetAssetDeviceConfigurationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeviceConfigurationListRequest) Count(count bool) ApiGetAssetDeviceConfigurationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeviceConfigurationListRequest) Inlinecount(inlinecount string) ApiGetAssetDeviceConfigurationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeviceConfigurationListRequest) At(at string) ApiGetAssetDeviceConfigurationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeviceConfigurationListRequest) Tags(tags string) ApiGetAssetDeviceConfigurationListRequest {
 	r.tags = &tags
@@ -3103,7 +3137,7 @@ GetAssetDeviceConfigurationList Read a 'asset.DeviceConfiguration' resource.
 func (a *AssetApiService) GetAssetDeviceConfigurationList(ctx _context.Context) ApiGetAssetDeviceConfigurationListRequest {
 	return ApiGetAssetDeviceConfigurationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3242,13 +3276,13 @@ func (a *AssetApiService) GetAssetDeviceConfigurationListExecute(r ApiGetAssetDe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3265,11 +3299,10 @@ func (a *AssetApiService) GetAssetDeviceConfigurationListExecute(r ApiGetAssetDe
 }
 
 type ApiGetAssetDeviceConnectorManagerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeviceConnectorManagerByMoidRequest) Execute() (AssetDeviceConnectorManager, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeviceConnectorManagerByMoidExecute(r)
@@ -3285,8 +3318,8 @@ GetAssetDeviceConnectorManagerByMoid Read a 'asset.DeviceConnectorManager' resou
 func (a *AssetApiService) GetAssetDeviceConnectorManagerByMoid(ctx _context.Context, moid string) ApiGetAssetDeviceConnectorManagerByMoidRequest {
 	return ApiGetAssetDeviceConnectorManagerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3393,13 +3426,13 @@ func (a *AssetApiService) GetAssetDeviceConnectorManagerByMoidExecute(r ApiGetAs
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3416,19 +3449,19 @@ func (a *AssetApiService) GetAssetDeviceConnectorManagerByMoidExecute(r ApiGetAs
 }
 
 type ApiGetAssetDeviceConnectorManagerListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3436,51 +3469,61 @@ func (r ApiGetAssetDeviceConnectorManagerListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Orderby(orderby string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Top(top int32) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Skip(skip int32) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Select_(select_ string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Expand(expand string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Apply(apply string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Count(count bool) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Inlinecount(inlinecount string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) At(at string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeviceConnectorManagerListRequest) Tags(tags string) ApiGetAssetDeviceConnectorManagerListRequest {
 	r.tags = &tags
@@ -3500,7 +3543,7 @@ GetAssetDeviceConnectorManagerList Read a 'asset.DeviceConnectorManager' resourc
 func (a *AssetApiService) GetAssetDeviceConnectorManagerList(ctx _context.Context) ApiGetAssetDeviceConnectorManagerListRequest {
 	return ApiGetAssetDeviceConnectorManagerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3639,13 +3682,13 @@ func (a *AssetApiService) GetAssetDeviceConnectorManagerListExecute(r ApiGetAsse
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3662,11 +3705,10 @@ func (a *AssetApiService) GetAssetDeviceConnectorManagerListExecute(r ApiGetAsse
 }
 
 type ApiGetAssetDeviceContractInformationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeviceContractInformationByMoidRequest) Execute() (AssetDeviceContractInformation, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeviceContractInformationByMoidExecute(r)
@@ -3682,8 +3724,8 @@ GetAssetDeviceContractInformationByMoid Read a 'asset.DeviceContractInformation'
 func (a *AssetApiService) GetAssetDeviceContractInformationByMoid(ctx _context.Context, moid string) ApiGetAssetDeviceContractInformationByMoidRequest {
 	return ApiGetAssetDeviceContractInformationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3790,13 +3832,13 @@ func (a *AssetApiService) GetAssetDeviceContractInformationByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3813,19 +3855,19 @@ func (a *AssetApiService) GetAssetDeviceContractInformationByMoidExecute(r ApiGe
 }
 
 type ApiGetAssetDeviceContractInformationListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3833,51 +3875,61 @@ func (r ApiGetAssetDeviceContractInformationListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeviceContractInformationListRequest) Orderby(orderby string) ApiGetAssetDeviceContractInformationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeviceContractInformationListRequest) Top(top int32) ApiGetAssetDeviceContractInformationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeviceContractInformationListRequest) Skip(skip int32) ApiGetAssetDeviceContractInformationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeviceContractInformationListRequest) Select_(select_ string) ApiGetAssetDeviceContractInformationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeviceContractInformationListRequest) Expand(expand string) ApiGetAssetDeviceContractInformationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeviceContractInformationListRequest) Apply(apply string) ApiGetAssetDeviceContractInformationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeviceContractInformationListRequest) Count(count bool) ApiGetAssetDeviceContractInformationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeviceContractInformationListRequest) Inlinecount(inlinecount string) ApiGetAssetDeviceContractInformationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeviceContractInformationListRequest) At(at string) ApiGetAssetDeviceContractInformationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeviceContractInformationListRequest) Tags(tags string) ApiGetAssetDeviceContractInformationListRequest {
 	r.tags = &tags
@@ -3897,7 +3949,7 @@ GetAssetDeviceContractInformationList Read a 'asset.DeviceContractInformation' r
 func (a *AssetApiService) GetAssetDeviceContractInformationList(ctx _context.Context) ApiGetAssetDeviceContractInformationListRequest {
 	return ApiGetAssetDeviceContractInformationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4036,13 +4088,13 @@ func (a *AssetApiService) GetAssetDeviceContractInformationListExecute(r ApiGetA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4059,11 +4111,10 @@ func (a *AssetApiService) GetAssetDeviceContractInformationListExecute(r ApiGetA
 }
 
 type ApiGetAssetDeviceRegistrationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetDeviceRegistrationByMoidRequest) Execute() (AssetDeviceRegistration, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetDeviceRegistrationByMoidExecute(r)
@@ -4079,8 +4130,8 @@ GetAssetDeviceRegistrationByMoid Read a 'asset.DeviceRegistration' resource.
 func (a *AssetApiService) GetAssetDeviceRegistrationByMoid(ctx _context.Context, moid string) ApiGetAssetDeviceRegistrationByMoidRequest {
 	return ApiGetAssetDeviceRegistrationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4187,13 +4238,13 @@ func (a *AssetApiService) GetAssetDeviceRegistrationByMoidExecute(r ApiGetAssetD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4210,19 +4261,19 @@ func (a *AssetApiService) GetAssetDeviceRegistrationByMoidExecute(r ApiGetAssetD
 }
 
 type ApiGetAssetDeviceRegistrationListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4230,51 +4281,61 @@ func (r ApiGetAssetDeviceRegistrationListRequest) Filter(filter string) ApiGetAs
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetDeviceRegistrationListRequest) Orderby(orderby string) ApiGetAssetDeviceRegistrationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetDeviceRegistrationListRequest) Top(top int32) ApiGetAssetDeviceRegistrationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetDeviceRegistrationListRequest) Skip(skip int32) ApiGetAssetDeviceRegistrationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetDeviceRegistrationListRequest) Select_(select_ string) ApiGetAssetDeviceRegistrationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetDeviceRegistrationListRequest) Expand(expand string) ApiGetAssetDeviceRegistrationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetDeviceRegistrationListRequest) Apply(apply string) ApiGetAssetDeviceRegistrationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetDeviceRegistrationListRequest) Count(count bool) ApiGetAssetDeviceRegistrationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetDeviceRegistrationListRequest) Inlinecount(inlinecount string) ApiGetAssetDeviceRegistrationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetDeviceRegistrationListRequest) At(at string) ApiGetAssetDeviceRegistrationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetDeviceRegistrationListRequest) Tags(tags string) ApiGetAssetDeviceRegistrationListRequest {
 	r.tags = &tags
@@ -4294,7 +4355,7 @@ GetAssetDeviceRegistrationList Read a 'asset.DeviceRegistration' resource.
 func (a *AssetApiService) GetAssetDeviceRegistrationList(ctx _context.Context) ApiGetAssetDeviceRegistrationListRequest {
 	return ApiGetAssetDeviceRegistrationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4433,13 +4494,13 @@ func (a *AssetApiService) GetAssetDeviceRegistrationListExecute(r ApiGetAssetDev
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4456,11 +4517,10 @@ func (a *AssetApiService) GetAssetDeviceRegistrationListExecute(r ApiGetAssetDev
 }
 
 type ApiGetAssetSubscriptionAccountByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetSubscriptionAccountByMoidRequest) Execute() (AssetSubscriptionAccount, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetSubscriptionAccountByMoidExecute(r)
@@ -4476,8 +4536,8 @@ GetAssetSubscriptionAccountByMoid Read a 'asset.SubscriptionAccount' resource.
 func (a *AssetApiService) GetAssetSubscriptionAccountByMoid(ctx _context.Context, moid string) ApiGetAssetSubscriptionAccountByMoidRequest {
 	return ApiGetAssetSubscriptionAccountByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4584,13 +4644,13 @@ func (a *AssetApiService) GetAssetSubscriptionAccountByMoidExecute(r ApiGetAsset
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4607,19 +4667,19 @@ func (a *AssetApiService) GetAssetSubscriptionAccountByMoidExecute(r ApiGetAsset
 }
 
 type ApiGetAssetSubscriptionAccountListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4627,51 +4687,61 @@ func (r ApiGetAssetSubscriptionAccountListRequest) Filter(filter string) ApiGetA
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetSubscriptionAccountListRequest) Orderby(orderby string) ApiGetAssetSubscriptionAccountListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetSubscriptionAccountListRequest) Top(top int32) ApiGetAssetSubscriptionAccountListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetSubscriptionAccountListRequest) Skip(skip int32) ApiGetAssetSubscriptionAccountListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetSubscriptionAccountListRequest) Select_(select_ string) ApiGetAssetSubscriptionAccountListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetSubscriptionAccountListRequest) Expand(expand string) ApiGetAssetSubscriptionAccountListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetSubscriptionAccountListRequest) Apply(apply string) ApiGetAssetSubscriptionAccountListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetSubscriptionAccountListRequest) Count(count bool) ApiGetAssetSubscriptionAccountListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetSubscriptionAccountListRequest) Inlinecount(inlinecount string) ApiGetAssetSubscriptionAccountListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetSubscriptionAccountListRequest) At(at string) ApiGetAssetSubscriptionAccountListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetSubscriptionAccountListRequest) Tags(tags string) ApiGetAssetSubscriptionAccountListRequest {
 	r.tags = &tags
@@ -4691,7 +4761,7 @@ GetAssetSubscriptionAccountList Read a 'asset.SubscriptionAccount' resource.
 func (a *AssetApiService) GetAssetSubscriptionAccountList(ctx _context.Context) ApiGetAssetSubscriptionAccountListRequest {
 	return ApiGetAssetSubscriptionAccountListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4830,13 +4900,13 @@ func (a *AssetApiService) GetAssetSubscriptionAccountListExecute(r ApiGetAssetSu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4853,11 +4923,10 @@ func (a *AssetApiService) GetAssetSubscriptionAccountListExecute(r ApiGetAssetSu
 }
 
 type ApiGetAssetSubscriptionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetSubscriptionByMoidRequest) Execute() (AssetSubscription, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetSubscriptionByMoidExecute(r)
@@ -4873,8 +4942,8 @@ GetAssetSubscriptionByMoid Read a 'asset.Subscription' resource.
 func (a *AssetApiService) GetAssetSubscriptionByMoid(ctx _context.Context, moid string) ApiGetAssetSubscriptionByMoidRequest {
 	return ApiGetAssetSubscriptionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4981,13 +5050,13 @@ func (a *AssetApiService) GetAssetSubscriptionByMoidExecute(r ApiGetAssetSubscri
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5004,11 +5073,10 @@ func (a *AssetApiService) GetAssetSubscriptionByMoidExecute(r ApiGetAssetSubscri
 }
 
 type ApiGetAssetSubscriptionDeviceContractInformationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetSubscriptionDeviceContractInformationByMoidRequest) Execute() (AssetSubscriptionDeviceContractInformation, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetSubscriptionDeviceContractInformationByMoidExecute(r)
@@ -5024,8 +5092,8 @@ GetAssetSubscriptionDeviceContractInformationByMoid Read a 'asset.SubscriptionDe
 func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationByMoid(ctx _context.Context, moid string) ApiGetAssetSubscriptionDeviceContractInformationByMoidRequest {
 	return ApiGetAssetSubscriptionDeviceContractInformationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5132,13 +5200,13 @@ func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5155,19 +5223,19 @@ func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationByMoidExe
 }
 
 type ApiGetAssetSubscriptionDeviceContractInformationListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5175,51 +5243,61 @@ func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Filter(filt
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Orderby(orderby string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Top(top int32) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Skip(skip int32) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Select_(select_ string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Expand(expand string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Apply(apply string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Count(count bool) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Inlinecount(inlinecount string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) At(at string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetSubscriptionDeviceContractInformationListRequest) Tags(tags string) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	r.tags = &tags
@@ -5239,7 +5317,7 @@ GetAssetSubscriptionDeviceContractInformationList Read a 'asset.SubscriptionDevi
 func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationList(ctx _context.Context) ApiGetAssetSubscriptionDeviceContractInformationListRequest {
 	return ApiGetAssetSubscriptionDeviceContractInformationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5378,13 +5456,13 @@ func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5401,19 +5479,19 @@ func (a *AssetApiService) GetAssetSubscriptionDeviceContractInformationListExecu
 }
 
 type ApiGetAssetSubscriptionListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5421,51 +5499,61 @@ func (r ApiGetAssetSubscriptionListRequest) Filter(filter string) ApiGetAssetSub
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetSubscriptionListRequest) Orderby(orderby string) ApiGetAssetSubscriptionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetSubscriptionListRequest) Top(top int32) ApiGetAssetSubscriptionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetSubscriptionListRequest) Skip(skip int32) ApiGetAssetSubscriptionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetSubscriptionListRequest) Select_(select_ string) ApiGetAssetSubscriptionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetSubscriptionListRequest) Expand(expand string) ApiGetAssetSubscriptionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetSubscriptionListRequest) Apply(apply string) ApiGetAssetSubscriptionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetSubscriptionListRequest) Count(count bool) ApiGetAssetSubscriptionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetSubscriptionListRequest) Inlinecount(inlinecount string) ApiGetAssetSubscriptionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetSubscriptionListRequest) At(at string) ApiGetAssetSubscriptionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetSubscriptionListRequest) Tags(tags string) ApiGetAssetSubscriptionListRequest {
 	r.tags = &tags
@@ -5485,7 +5573,7 @@ GetAssetSubscriptionList Read a 'asset.Subscription' resource.
 func (a *AssetApiService) GetAssetSubscriptionList(ctx _context.Context) ApiGetAssetSubscriptionListRequest {
 	return ApiGetAssetSubscriptionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5624,13 +5712,13 @@ func (a *AssetApiService) GetAssetSubscriptionListExecute(r ApiGetAssetSubscript
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5647,11 +5735,10 @@ func (a *AssetApiService) GetAssetSubscriptionListExecute(r ApiGetAssetSubscript
 }
 
 type ApiGetAssetTargetByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *AssetApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetAssetTargetByMoidRequest) Execute() (AssetTarget, *_nethttp.Response, error) {
 	return r.ApiService.GetAssetTargetByMoidExecute(r)
@@ -5667,8 +5754,8 @@ GetAssetTargetByMoid Read a 'asset.Target' resource.
 func (a *AssetApiService) GetAssetTargetByMoid(ctx _context.Context, moid string) ApiGetAssetTargetByMoidRequest {
 	return ApiGetAssetTargetByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5775,13 +5862,13 @@ func (a *AssetApiService) GetAssetTargetByMoidExecute(r ApiGetAssetTargetByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5798,19 +5885,19 @@ func (a *AssetApiService) GetAssetTargetByMoidExecute(r ApiGetAssetTargetByMoidR
 }
 
 type ApiGetAssetTargetListRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5818,51 +5905,61 @@ func (r ApiGetAssetTargetListRequest) Filter(filter string) ApiGetAssetTargetLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetAssetTargetListRequest) Orderby(orderby string) ApiGetAssetTargetListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetAssetTargetListRequest) Top(top int32) ApiGetAssetTargetListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetAssetTargetListRequest) Skip(skip int32) ApiGetAssetTargetListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetAssetTargetListRequest) Select_(select_ string) ApiGetAssetTargetListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetAssetTargetListRequest) Expand(expand string) ApiGetAssetTargetListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetAssetTargetListRequest) Apply(apply string) ApiGetAssetTargetListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetAssetTargetListRequest) Count(count bool) ApiGetAssetTargetListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetAssetTargetListRequest) Inlinecount(inlinecount string) ApiGetAssetTargetListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetAssetTargetListRequest) At(at string) ApiGetAssetTargetListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetAssetTargetListRequest) Tags(tags string) ApiGetAssetTargetListRequest {
 	r.tags = &tags
@@ -5882,7 +5979,7 @@ GetAssetTargetList Read a 'asset.Target' resource.
 func (a *AssetApiService) GetAssetTargetList(ctx _context.Context) ApiGetAssetTargetListRequest {
 	return ApiGetAssetTargetListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6021,13 +6118,13 @@ func (a *AssetApiService) GetAssetTargetListExecute(r ApiGetAssetTargetListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6044,11 +6141,11 @@ func (a *AssetApiService) GetAssetTargetListExecute(r ApiGetAssetTargetListReque
 }
 
 type ApiPatchAssetDeviceConfigurationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *AssetApiService
+	moid                     string
 	assetDeviceConfiguration *AssetDeviceConfiguration
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;asset.DeviceConfiguration&#39; resource to update.
@@ -6056,6 +6153,7 @@ func (r ApiPatchAssetDeviceConfigurationRequest) AssetDeviceConfiguration(assetD
 	r.assetDeviceConfiguration = &assetDeviceConfiguration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchAssetDeviceConfigurationRequest) IfMatch(ifMatch string) ApiPatchAssetDeviceConfigurationRequest {
 	r.ifMatch = &ifMatch
@@ -6076,8 +6174,8 @@ PatchAssetDeviceConfiguration Update a 'asset.DeviceConfiguration' resource.
 func (a *AssetApiService) PatchAssetDeviceConfiguration(ctx _context.Context, moid string) ApiPatchAssetDeviceConfigurationRequest {
 	return ApiPatchAssetDeviceConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6192,13 +6290,13 @@ func (a *AssetApiService) PatchAssetDeviceConfigurationExecute(r ApiPatchAssetDe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6215,11 +6313,11 @@ func (a *AssetApiService) PatchAssetDeviceConfigurationExecute(r ApiPatchAssetDe
 }
 
 type ApiPatchAssetDeviceContractInformationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *AssetApiService
+	moid                           string
 	assetDeviceContractInformation *AssetDeviceContractInformation
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;asset.DeviceContractInformation&#39; resource to update.
@@ -6227,6 +6325,7 @@ func (r ApiPatchAssetDeviceContractInformationRequest) AssetDeviceContractInform
 	r.assetDeviceContractInformation = &assetDeviceContractInformation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchAssetDeviceContractInformationRequest) IfMatch(ifMatch string) ApiPatchAssetDeviceContractInformationRequest {
 	r.ifMatch = &ifMatch
@@ -6247,8 +6346,8 @@ PatchAssetDeviceContractInformation Update a 'asset.DeviceContractInformation' r
 func (a *AssetApiService) PatchAssetDeviceContractInformation(ctx _context.Context, moid string) ApiPatchAssetDeviceContractInformationRequest {
 	return ApiPatchAssetDeviceContractInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6363,13 +6462,13 @@ func (a *AssetApiService) PatchAssetDeviceContractInformationExecute(r ApiPatchA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6386,11 +6485,11 @@ func (a *AssetApiService) PatchAssetDeviceContractInformationExecute(r ApiPatchA
 }
 
 type ApiPatchAssetDeviceRegistrationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *AssetApiService
+	moid                    string
 	assetDeviceRegistration *AssetDeviceRegistration
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;asset.DeviceRegistration&#39; resource to update.
@@ -6398,6 +6497,7 @@ func (r ApiPatchAssetDeviceRegistrationRequest) AssetDeviceRegistration(assetDev
 	r.assetDeviceRegistration = &assetDeviceRegistration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchAssetDeviceRegistrationRequest) IfMatch(ifMatch string) ApiPatchAssetDeviceRegistrationRequest {
 	r.ifMatch = &ifMatch
@@ -6418,8 +6518,8 @@ PatchAssetDeviceRegistration Updates the resource representing the device connec
 func (a *AssetApiService) PatchAssetDeviceRegistration(ctx _context.Context, moid string) ApiPatchAssetDeviceRegistrationRequest {
 	return ApiPatchAssetDeviceRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6534,13 +6634,13 @@ func (a *AssetApiService) PatchAssetDeviceRegistrationExecute(r ApiPatchAssetDev
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6557,11 +6657,11 @@ func (a *AssetApiService) PatchAssetDeviceRegistrationExecute(r ApiPatchAssetDev
 }
 
 type ApiPatchAssetTargetRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	moid        string
 	assetTarget *AssetTarget
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;asset.Target&#39; resource to update.
@@ -6569,6 +6669,7 @@ func (r ApiPatchAssetTargetRequest) AssetTarget(assetTarget AssetTarget) ApiPatc
 	r.assetTarget = &assetTarget
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchAssetTargetRequest) IfMatch(ifMatch string) ApiPatchAssetTargetRequest {
 	r.ifMatch = &ifMatch
@@ -6589,8 +6690,8 @@ PatchAssetTarget Update a 'asset.Target' resource.
 func (a *AssetApiService) PatchAssetTarget(ctx _context.Context, moid string) ApiPatchAssetTargetRequest {
 	return ApiPatchAssetTargetRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6705,13 +6806,13 @@ func (a *AssetApiService) PatchAssetTargetExecute(r ApiPatchAssetTargetRequest) 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6728,11 +6829,11 @@ func (a *AssetApiService) PatchAssetTargetExecute(r ApiPatchAssetTargetRequest) 
 }
 
 type ApiUpdateAssetDeviceConfigurationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *AssetApiService
+	moid                     string
 	assetDeviceConfiguration *AssetDeviceConfiguration
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;asset.DeviceConfiguration&#39; resource to update.
@@ -6740,6 +6841,7 @@ func (r ApiUpdateAssetDeviceConfigurationRequest) AssetDeviceConfiguration(asset
 	r.assetDeviceConfiguration = &assetDeviceConfiguration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateAssetDeviceConfigurationRequest) IfMatch(ifMatch string) ApiUpdateAssetDeviceConfigurationRequest {
 	r.ifMatch = &ifMatch
@@ -6760,8 +6862,8 @@ UpdateAssetDeviceConfiguration Update a 'asset.DeviceConfiguration' resource.
 func (a *AssetApiService) UpdateAssetDeviceConfiguration(ctx _context.Context, moid string) ApiUpdateAssetDeviceConfigurationRequest {
 	return ApiUpdateAssetDeviceConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6876,13 +6978,13 @@ func (a *AssetApiService) UpdateAssetDeviceConfigurationExecute(r ApiUpdateAsset
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6899,11 +7001,11 @@ func (a *AssetApiService) UpdateAssetDeviceConfigurationExecute(r ApiUpdateAsset
 }
 
 type ApiUpdateAssetDeviceContractInformationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *AssetApiService
+	moid                           string
 	assetDeviceContractInformation *AssetDeviceContractInformation
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;asset.DeviceContractInformation&#39; resource to update.
@@ -6911,6 +7013,7 @@ func (r ApiUpdateAssetDeviceContractInformationRequest) AssetDeviceContractInfor
 	r.assetDeviceContractInformation = &assetDeviceContractInformation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateAssetDeviceContractInformationRequest) IfMatch(ifMatch string) ApiUpdateAssetDeviceContractInformationRequest {
 	r.ifMatch = &ifMatch
@@ -6931,8 +7034,8 @@ UpdateAssetDeviceContractInformation Update a 'asset.DeviceContractInformation' 
 func (a *AssetApiService) UpdateAssetDeviceContractInformation(ctx _context.Context, moid string) ApiUpdateAssetDeviceContractInformationRequest {
 	return ApiUpdateAssetDeviceContractInformationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7047,13 +7150,13 @@ func (a *AssetApiService) UpdateAssetDeviceContractInformationExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7070,11 +7173,11 @@ func (a *AssetApiService) UpdateAssetDeviceContractInformationExecute(r ApiUpdat
 }
 
 type ApiUpdateAssetDeviceRegistrationRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *AssetApiService
+	moid                    string
 	assetDeviceRegistration *AssetDeviceRegistration
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;asset.DeviceRegistration&#39; resource to update.
@@ -7082,6 +7185,7 @@ func (r ApiUpdateAssetDeviceRegistrationRequest) AssetDeviceRegistration(assetDe
 	r.assetDeviceRegistration = &assetDeviceRegistration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateAssetDeviceRegistrationRequest) IfMatch(ifMatch string) ApiUpdateAssetDeviceRegistrationRequest {
 	r.ifMatch = &ifMatch
@@ -7102,8 +7206,8 @@ UpdateAssetDeviceRegistration Updates the resource representing the device conne
 func (a *AssetApiService) UpdateAssetDeviceRegistration(ctx _context.Context, moid string) ApiUpdateAssetDeviceRegistrationRequest {
 	return ApiUpdateAssetDeviceRegistrationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7218,13 +7322,13 @@ func (a *AssetApiService) UpdateAssetDeviceRegistrationExecute(r ApiUpdateAssetD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7241,11 +7345,11 @@ func (a *AssetApiService) UpdateAssetDeviceRegistrationExecute(r ApiUpdateAssetD
 }
 
 type ApiUpdateAssetTargetRequest struct {
-	ctx _context.Context
-	ApiService *AssetApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *AssetApiService
+	moid        string
 	assetTarget *AssetTarget
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;asset.Target&#39; resource to update.
@@ -7253,6 +7357,7 @@ func (r ApiUpdateAssetTargetRequest) AssetTarget(assetTarget AssetTarget) ApiUpd
 	r.assetTarget = &assetTarget
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateAssetTargetRequest) IfMatch(ifMatch string) ApiUpdateAssetTargetRequest {
 	r.ifMatch = &ifMatch
@@ -7273,8 +7378,8 @@ UpdateAssetTarget Update a 'asset.Target' resource.
 func (a *AssetApiService) UpdateAssetTarget(ctx _context.Context, moid string) ApiUpdateAssetTargetRequest {
 	return ApiUpdateAssetTargetRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7389,13 +7494,13 @@ func (a *AssetApiService) UpdateAssetTargetExecute(r ApiUpdateAssetTargetRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

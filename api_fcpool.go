@@ -29,10 +29,10 @@ var (
 type FcpoolApiService service
 
 type ApiCreateFcpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	fcpoolPool *FcpoolPool
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	fcpoolPool  *FcpoolPool
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -41,11 +41,13 @@ func (r ApiCreateFcpoolPoolRequest) FcpoolPool(fcpoolPool FcpoolPool) ApiCreateF
 	r.fcpoolPool = &fcpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFcpoolPoolRequest) IfMatch(ifMatch string) ApiCreateFcpoolPoolRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFcpoolPoolRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFcpoolPoolRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateFcpoolPool Create a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) CreateFcpoolPool(ctx _context.Context) ApiCreateFcpoolPoolRequest {
 	return ApiCreateFcpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *FcpoolApiService) CreateFcpoolPoolExecute(r ApiCreateFcpoolPoolRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *FcpoolApiService) CreateFcpoolPoolExecute(r ApiCreateFcpoolPoolRequest)
 }
 
 type ApiDeleteFcpoolLeaseRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFcpoolLeaseRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFcpoolLeaseExecute(r)
@@ -225,8 +226,8 @@ DeleteFcpoolLease Delete a 'fcpool.Lease' resource.
 func (a *FcpoolApiService) DeleteFcpoolLease(ctx _context.Context, moid string) ApiDeleteFcpoolLeaseRequest {
 	return ApiDeleteFcpoolLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *FcpoolApiService) DeleteFcpoolLeaseExecute(r ApiDeleteFcpoolLeaseReques
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *FcpoolApiService) DeleteFcpoolLeaseExecute(r ApiDeleteFcpoolLeaseReques
 }
 
 type ApiDeleteFcpoolPoolRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteFcpoolPoolRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteFcpoolPoolExecute(r)
@@ -365,8 +365,8 @@ DeleteFcpoolPool Delete a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) DeleteFcpoolPool(ctx _context.Context, moid string) ApiDeleteFcpoolPoolRequest {
 	return ApiDeleteFcpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -471,13 +471,13 @@ func (a *FcpoolApiService) DeleteFcpoolPoolExecute(r ApiDeleteFcpoolPoolRequest)
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -485,11 +485,10 @@ func (a *FcpoolApiService) DeleteFcpoolPoolExecute(r ApiDeleteFcpoolPoolRequest)
 }
 
 type ApiGetFcpoolFcBlockByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFcpoolFcBlockByMoidRequest) Execute() (FcpoolFcBlock, *_nethttp.Response, error) {
 	return r.ApiService.GetFcpoolFcBlockByMoidExecute(r)
@@ -505,8 +504,8 @@ GetFcpoolFcBlockByMoid Read a 'fcpool.FcBlock' resource.
 func (a *FcpoolApiService) GetFcpoolFcBlockByMoid(ctx _context.Context, moid string) ApiGetFcpoolFcBlockByMoidRequest {
 	return ApiGetFcpoolFcBlockByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -613,13 +612,13 @@ func (a *FcpoolApiService) GetFcpoolFcBlockByMoidExecute(r ApiGetFcpoolFcBlockBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -636,19 +635,19 @@ func (a *FcpoolApiService) GetFcpoolFcBlockByMoidExecute(r ApiGetFcpoolFcBlockBy
 }
 
 type ApiGetFcpoolFcBlockListRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -656,51 +655,61 @@ func (r ApiGetFcpoolFcBlockListRequest) Filter(filter string) ApiGetFcpoolFcBloc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFcpoolFcBlockListRequest) Orderby(orderby string) ApiGetFcpoolFcBlockListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFcpoolFcBlockListRequest) Top(top int32) ApiGetFcpoolFcBlockListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFcpoolFcBlockListRequest) Skip(skip int32) ApiGetFcpoolFcBlockListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFcpoolFcBlockListRequest) Select_(select_ string) ApiGetFcpoolFcBlockListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFcpoolFcBlockListRequest) Expand(expand string) ApiGetFcpoolFcBlockListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFcpoolFcBlockListRequest) Apply(apply string) ApiGetFcpoolFcBlockListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFcpoolFcBlockListRequest) Count(count bool) ApiGetFcpoolFcBlockListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFcpoolFcBlockListRequest) Inlinecount(inlinecount string) ApiGetFcpoolFcBlockListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFcpoolFcBlockListRequest) At(at string) ApiGetFcpoolFcBlockListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFcpoolFcBlockListRequest) Tags(tags string) ApiGetFcpoolFcBlockListRequest {
 	r.tags = &tags
@@ -720,7 +729,7 @@ GetFcpoolFcBlockList Read a 'fcpool.FcBlock' resource.
 func (a *FcpoolApiService) GetFcpoolFcBlockList(ctx _context.Context) ApiGetFcpoolFcBlockListRequest {
 	return ApiGetFcpoolFcBlockListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -859,13 +868,13 @@ func (a *FcpoolApiService) GetFcpoolFcBlockListExecute(r ApiGetFcpoolFcBlockList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -882,11 +891,10 @@ func (a *FcpoolApiService) GetFcpoolFcBlockListExecute(r ApiGetFcpoolFcBlockList
 }
 
 type ApiGetFcpoolLeaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFcpoolLeaseByMoidRequest) Execute() (FcpoolLease, *_nethttp.Response, error) {
 	return r.ApiService.GetFcpoolLeaseByMoidExecute(r)
@@ -902,8 +910,8 @@ GetFcpoolLeaseByMoid Read a 'fcpool.Lease' resource.
 func (a *FcpoolApiService) GetFcpoolLeaseByMoid(ctx _context.Context, moid string) ApiGetFcpoolLeaseByMoidRequest {
 	return ApiGetFcpoolLeaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1010,13 +1018,13 @@ func (a *FcpoolApiService) GetFcpoolLeaseByMoidExecute(r ApiGetFcpoolLeaseByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1033,19 +1041,19 @@ func (a *FcpoolApiService) GetFcpoolLeaseByMoidExecute(r ApiGetFcpoolLeaseByMoid
 }
 
 type ApiGetFcpoolLeaseListRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1053,51 +1061,61 @@ func (r ApiGetFcpoolLeaseListRequest) Filter(filter string) ApiGetFcpoolLeaseLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFcpoolLeaseListRequest) Orderby(orderby string) ApiGetFcpoolLeaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFcpoolLeaseListRequest) Top(top int32) ApiGetFcpoolLeaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFcpoolLeaseListRequest) Skip(skip int32) ApiGetFcpoolLeaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFcpoolLeaseListRequest) Select_(select_ string) ApiGetFcpoolLeaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFcpoolLeaseListRequest) Expand(expand string) ApiGetFcpoolLeaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFcpoolLeaseListRequest) Apply(apply string) ApiGetFcpoolLeaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFcpoolLeaseListRequest) Count(count bool) ApiGetFcpoolLeaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFcpoolLeaseListRequest) Inlinecount(inlinecount string) ApiGetFcpoolLeaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFcpoolLeaseListRequest) At(at string) ApiGetFcpoolLeaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFcpoolLeaseListRequest) Tags(tags string) ApiGetFcpoolLeaseListRequest {
 	r.tags = &tags
@@ -1117,7 +1135,7 @@ GetFcpoolLeaseList Read a 'fcpool.Lease' resource.
 func (a *FcpoolApiService) GetFcpoolLeaseList(ctx _context.Context) ApiGetFcpoolLeaseListRequest {
 	return ApiGetFcpoolLeaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1256,13 +1274,13 @@ func (a *FcpoolApiService) GetFcpoolLeaseListExecute(r ApiGetFcpoolLeaseListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1279,11 +1297,10 @@ func (a *FcpoolApiService) GetFcpoolLeaseListExecute(r ApiGetFcpoolLeaseListRequ
 }
 
 type ApiGetFcpoolPoolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFcpoolPoolByMoidRequest) Execute() (FcpoolPool, *_nethttp.Response, error) {
 	return r.ApiService.GetFcpoolPoolByMoidExecute(r)
@@ -1299,8 +1316,8 @@ GetFcpoolPoolByMoid Read a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) GetFcpoolPoolByMoid(ctx _context.Context, moid string) ApiGetFcpoolPoolByMoidRequest {
 	return ApiGetFcpoolPoolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1407,13 +1424,13 @@ func (a *FcpoolApiService) GetFcpoolPoolByMoidExecute(r ApiGetFcpoolPoolByMoidRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1430,19 +1447,19 @@ func (a *FcpoolApiService) GetFcpoolPoolByMoidExecute(r ApiGetFcpoolPoolByMoidRe
 }
 
 type ApiGetFcpoolPoolListRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1450,51 +1467,61 @@ func (r ApiGetFcpoolPoolListRequest) Filter(filter string) ApiGetFcpoolPoolListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFcpoolPoolListRequest) Orderby(orderby string) ApiGetFcpoolPoolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFcpoolPoolListRequest) Top(top int32) ApiGetFcpoolPoolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFcpoolPoolListRequest) Skip(skip int32) ApiGetFcpoolPoolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFcpoolPoolListRequest) Select_(select_ string) ApiGetFcpoolPoolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFcpoolPoolListRequest) Expand(expand string) ApiGetFcpoolPoolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFcpoolPoolListRequest) Apply(apply string) ApiGetFcpoolPoolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFcpoolPoolListRequest) Count(count bool) ApiGetFcpoolPoolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFcpoolPoolListRequest) Inlinecount(inlinecount string) ApiGetFcpoolPoolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFcpoolPoolListRequest) At(at string) ApiGetFcpoolPoolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFcpoolPoolListRequest) Tags(tags string) ApiGetFcpoolPoolListRequest {
 	r.tags = &tags
@@ -1514,7 +1541,7 @@ GetFcpoolPoolList Read a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) GetFcpoolPoolList(ctx _context.Context) ApiGetFcpoolPoolListRequest {
 	return ApiGetFcpoolPoolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1653,13 +1680,13 @@ func (a *FcpoolApiService) GetFcpoolPoolListExecute(r ApiGetFcpoolPoolListReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1676,11 +1703,10 @@ func (a *FcpoolApiService) GetFcpoolPoolListExecute(r ApiGetFcpoolPoolListReques
 }
 
 type ApiGetFcpoolPoolMemberByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFcpoolPoolMemberByMoidRequest) Execute() (FcpoolPoolMember, *_nethttp.Response, error) {
 	return r.ApiService.GetFcpoolPoolMemberByMoidExecute(r)
@@ -1696,8 +1722,8 @@ GetFcpoolPoolMemberByMoid Read a 'fcpool.PoolMember' resource.
 func (a *FcpoolApiService) GetFcpoolPoolMemberByMoid(ctx _context.Context, moid string) ApiGetFcpoolPoolMemberByMoidRequest {
 	return ApiGetFcpoolPoolMemberByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1804,13 +1830,13 @@ func (a *FcpoolApiService) GetFcpoolPoolMemberByMoidExecute(r ApiGetFcpoolPoolMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1827,19 +1853,19 @@ func (a *FcpoolApiService) GetFcpoolPoolMemberByMoidExecute(r ApiGetFcpoolPoolMe
 }
 
 type ApiGetFcpoolPoolMemberListRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1847,51 +1873,61 @@ func (r ApiGetFcpoolPoolMemberListRequest) Filter(filter string) ApiGetFcpoolPoo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFcpoolPoolMemberListRequest) Orderby(orderby string) ApiGetFcpoolPoolMemberListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFcpoolPoolMemberListRequest) Top(top int32) ApiGetFcpoolPoolMemberListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFcpoolPoolMemberListRequest) Skip(skip int32) ApiGetFcpoolPoolMemberListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFcpoolPoolMemberListRequest) Select_(select_ string) ApiGetFcpoolPoolMemberListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFcpoolPoolMemberListRequest) Expand(expand string) ApiGetFcpoolPoolMemberListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFcpoolPoolMemberListRequest) Apply(apply string) ApiGetFcpoolPoolMemberListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFcpoolPoolMemberListRequest) Count(count bool) ApiGetFcpoolPoolMemberListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFcpoolPoolMemberListRequest) Inlinecount(inlinecount string) ApiGetFcpoolPoolMemberListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFcpoolPoolMemberListRequest) At(at string) ApiGetFcpoolPoolMemberListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFcpoolPoolMemberListRequest) Tags(tags string) ApiGetFcpoolPoolMemberListRequest {
 	r.tags = &tags
@@ -1911,7 +1947,7 @@ GetFcpoolPoolMemberList Read a 'fcpool.PoolMember' resource.
 func (a *FcpoolApiService) GetFcpoolPoolMemberList(ctx _context.Context) ApiGetFcpoolPoolMemberListRequest {
 	return ApiGetFcpoolPoolMemberListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2050,13 +2086,13 @@ func (a *FcpoolApiService) GetFcpoolPoolMemberListExecute(r ApiGetFcpoolPoolMemb
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2073,11 +2109,10 @@ func (a *FcpoolApiService) GetFcpoolPoolMemberListExecute(r ApiGetFcpoolPoolMemb
 }
 
 type ApiGetFcpoolUniverseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetFcpoolUniverseByMoidRequest) Execute() (FcpoolUniverse, *_nethttp.Response, error) {
 	return r.ApiService.GetFcpoolUniverseByMoidExecute(r)
@@ -2093,8 +2128,8 @@ GetFcpoolUniverseByMoid Read a 'fcpool.Universe' resource.
 func (a *FcpoolApiService) GetFcpoolUniverseByMoid(ctx _context.Context, moid string) ApiGetFcpoolUniverseByMoidRequest {
 	return ApiGetFcpoolUniverseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2201,13 +2236,13 @@ func (a *FcpoolApiService) GetFcpoolUniverseByMoidExecute(r ApiGetFcpoolUniverse
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2224,19 +2259,19 @@ func (a *FcpoolApiService) GetFcpoolUniverseByMoidExecute(r ApiGetFcpoolUniverse
 }
 
 type ApiGetFcpoolUniverseListRequest struct {
-	ctx _context.Context
-	ApiService *FcpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *FcpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2244,51 +2279,61 @@ func (r ApiGetFcpoolUniverseListRequest) Filter(filter string) ApiGetFcpoolUnive
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetFcpoolUniverseListRequest) Orderby(orderby string) ApiGetFcpoolUniverseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetFcpoolUniverseListRequest) Top(top int32) ApiGetFcpoolUniverseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetFcpoolUniverseListRequest) Skip(skip int32) ApiGetFcpoolUniverseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetFcpoolUniverseListRequest) Select_(select_ string) ApiGetFcpoolUniverseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetFcpoolUniverseListRequest) Expand(expand string) ApiGetFcpoolUniverseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetFcpoolUniverseListRequest) Apply(apply string) ApiGetFcpoolUniverseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetFcpoolUniverseListRequest) Count(count bool) ApiGetFcpoolUniverseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetFcpoolUniverseListRequest) Inlinecount(inlinecount string) ApiGetFcpoolUniverseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetFcpoolUniverseListRequest) At(at string) ApiGetFcpoolUniverseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetFcpoolUniverseListRequest) Tags(tags string) ApiGetFcpoolUniverseListRequest {
 	r.tags = &tags
@@ -2308,7 +2353,7 @@ GetFcpoolUniverseList Read a 'fcpool.Universe' resource.
 func (a *FcpoolApiService) GetFcpoolUniverseList(ctx _context.Context) ApiGetFcpoolUniverseListRequest {
 	return ApiGetFcpoolUniverseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2447,13 +2492,13 @@ func (a *FcpoolApiService) GetFcpoolUniverseListExecute(r ApiGetFcpoolUniverseLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2470,11 +2515,11 @@ func (a *FcpoolApiService) GetFcpoolUniverseListExecute(r ApiGetFcpoolUniverseLi
 }
 
 type ApiPatchFcpoolPoolRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 	fcpoolPool *FcpoolPool
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fcpool.Pool&#39; resource to update.
@@ -2482,6 +2527,7 @@ func (r ApiPatchFcpoolPoolRequest) FcpoolPool(fcpoolPool FcpoolPool) ApiPatchFcp
 	r.fcpoolPool = &fcpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchFcpoolPoolRequest) IfMatch(ifMatch string) ApiPatchFcpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2502,8 +2548,8 @@ PatchFcpoolPool Update a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) PatchFcpoolPool(ctx _context.Context, moid string) ApiPatchFcpoolPoolRequest {
 	return ApiPatchFcpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2618,13 +2664,13 @@ func (a *FcpoolApiService) PatchFcpoolPoolExecute(r ApiPatchFcpoolPoolRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2641,11 +2687,11 @@ func (a *FcpoolApiService) PatchFcpoolPoolExecute(r ApiPatchFcpoolPoolRequest) (
 }
 
 type ApiUpdateFcpoolPoolRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *FcpoolApiService
-	moid string
+	moid       string
 	fcpoolPool *FcpoolPool
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;fcpool.Pool&#39; resource to update.
@@ -2653,6 +2699,7 @@ func (r ApiUpdateFcpoolPoolRequest) FcpoolPool(fcpoolPool FcpoolPool) ApiUpdateF
 	r.fcpoolPool = &fcpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateFcpoolPoolRequest) IfMatch(ifMatch string) ApiUpdateFcpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2673,8 +2720,8 @@ UpdateFcpoolPool Update a 'fcpool.Pool' resource.
 func (a *FcpoolApiService) UpdateFcpoolPool(ctx _context.Context, moid string) ApiUpdateFcpoolPoolRequest {
 	return ApiUpdateFcpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2789,13 +2836,13 @@ func (a *FcpoolApiService) UpdateFcpoolPoolExecute(r ApiUpdateFcpoolPoolRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

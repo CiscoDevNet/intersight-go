@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // IamIpAccessManagement The access management based on IP address.
@@ -28,10 +28,10 @@ type IamIpAccessManagement struct {
 	// Flag stores the state of IP address based access management. Access management is enabled when it's true.
 	Enable *bool `json:"Enable,omitempty"`
 	// The access to account gets locked out if wrong IP addresses are configured. Account Administrators have privilege to unblock the account. It stores the time when the account was last recovered from lock out.
-	LastRecoveryTime *time.Time `json:"LastRecoveryTime,omitempty"`
-	Holder *IamSecurityHolderRelationship `json:"Holder,omitempty"`
+	LastRecoveryTime *time.Time                     `json:"LastRecoveryTime,omitempty"`
+	Holder           *IamSecurityHolderRelationship `json:"Holder,omitempty"`
 	// An array of relationships to iamIpAddress resources.
-	IpAddresses []IamIpAddressRelationship `json:"IpAddresses,omitempty"`
+	IpAddresses          []IamIpAddressRelationship `json:"IpAddresses,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *IamIpAccessManagement) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamIpAccessManagement) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *IamIpAccessManagement) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamIpAccessManagement) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -206,7 +206,7 @@ func (o *IamIpAccessManagement) SetHolder(v IamSecurityHolderRelationship) {
 
 // GetIpAddresses returns the IpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamIpAccessManagement) GetIpAddresses() []IamIpAddressRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamIpAddressRelationship
 		return ret
 	}
@@ -282,8 +282,8 @@ func (o *IamIpAccessManagement) UnmarshalJSON(bytes []byte) (err error) {
 		// Flag stores the state of IP address based access management. Access management is enabled when it's true.
 		Enable *bool `json:"Enable,omitempty"`
 		// The access to account gets locked out if wrong IP addresses are configured. Account Administrators have privilege to unblock the account. It stores the time when the account was last recovered from lock out.
-		LastRecoveryTime *time.Time `json:"LastRecoveryTime,omitempty"`
-		Holder *IamSecurityHolderRelationship `json:"Holder,omitempty"`
+		LastRecoveryTime *time.Time                     `json:"LastRecoveryTime,omitempty"`
+		Holder           *IamSecurityHolderRelationship `json:"Holder,omitempty"`
 		// An array of relationships to iamIpAddress resources.
 		IpAddresses []IamIpAddressRelationship `json:"IpAddresses,omitempty"`
 	}
@@ -382,5 +382,3 @@ func (v *NullableIamIpAccessManagement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

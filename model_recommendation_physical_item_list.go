@@ -23,7 +23,7 @@ type RecommendationPhysicalItemList struct {
 	// The total number of 'recommendation.PhysicalItem' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'recommendation.PhysicalItem' resources matching the request.
-	Results []RecommendationPhysicalItem `json:"Results,omitempty"`
+	Results              []RecommendationPhysicalItem `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *RecommendationPhysicalItemList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecommendationPhysicalItemList) GetResults() []RecommendationPhysicalItem {
-	if o == nil  {
+	if o == nil {
 		var ret []RecommendationPhysicalItem
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableRecommendationPhysicalItemList) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type HyperflexWitnessConfigurationList struct {
 	// The total number of 'hyperflex.WitnessConfiguration' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.WitnessConfiguration' resources matching the request.
-	Results []HyperflexWitnessConfiguration `json:"Results,omitempty"`
+	Results              []HyperflexWitnessConfiguration `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexWitnessConfigurationList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexWitnessConfigurationList) GetResults() []HyperflexWitnessConfiguration {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexWitnessConfiguration
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexWitnessConfigurationList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,11 +21,11 @@ type AssetDeploymentAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AlarmInfo NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
+	ObjectType string                           `json:"ObjectType"`
+	AlarmInfo  NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
 	// Identifies the consumption-based subscription's deployment.
-	DeploymentRefId *string `json:"DeploymentRefId,omitempty"`
-	EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+	DeploymentRefId *string                          `json:"DeploymentRefId,omitempty"`
+	EndCustomer     NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
 	// End Date for the consumption-based subscription's deployment.
 	EndDate *time.Time `json:"EndDate,omitempty"`
 	// Active license tier for the purchased Cisco device's deployment. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
@@ -35,12 +35,12 @@ type AssetDeploymentAllOf struct {
 	// Start Date for the consumption-based subscription's deployment.
 	StartDate *time.Time `json:"StartDate,omitempty"`
 	// Identifies the consumption-based subscription.
-	SubscriptionRefId *string `json:"SubscriptionRefId,omitempty"`
-	UnitOfMeasure []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
-	Workloads []string `json:"Workloads,omitempty"`
+	SubscriptionRefId *string             `json:"SubscriptionRefId,omitempty"`
+	UnitOfMeasure     []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
+	Workloads         []string            `json:"Workloads,omitempty"`
 	// An array of relationships to assetDeploymentDevice resources.
-	Devices []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
-	Subscription *AssetSubscriptionRelationship `json:"Subscription,omitempty"`
+	Devices              []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
+	Subscription         *AssetSubscriptionRelationship      `json:"Subscription,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *AssetDeploymentAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *AssetDeploymentAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *AssetDeploymentAllOf) GetAlarmInfo() AssetDeploymentAlarmInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeploymentAllOf) GetAlarmInfoOk() (*AssetDeploymentAlarmInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmInfo.Get(), o.AlarmInfo.IsSet()
@@ -149,6 +149,7 @@ func (o *AssetDeploymentAllOf) HasAlarmInfo() bool {
 func (o *AssetDeploymentAllOf) SetAlarmInfo(v AssetDeploymentAlarmInfo) {
 	o.AlarmInfo.Set(&v)
 }
+
 // SetAlarmInfoNil sets the value for AlarmInfo to be an explicit nil
 func (o *AssetDeploymentAllOf) SetAlarmInfoNil() {
 	o.AlarmInfo.Set(nil)
@@ -204,7 +205,7 @@ func (o *AssetDeploymentAllOf) GetEndCustomer() AssetCustomerInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeploymentAllOf) GetEndCustomerOk() (*AssetCustomerInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndCustomer.Get(), o.EndCustomer.IsSet()
@@ -223,6 +224,7 @@ func (o *AssetDeploymentAllOf) HasEndCustomer() bool {
 func (o *AssetDeploymentAllOf) SetEndCustomer(v AssetCustomerInformation) {
 	o.EndCustomer.Set(&v)
 }
+
 // SetEndCustomerNil sets the value for EndCustomer to be an explicit nil
 func (o *AssetDeploymentAllOf) SetEndCustomerNil() {
 	o.EndCustomer.Set(nil)
@@ -395,7 +397,7 @@ func (o *AssetDeploymentAllOf) SetSubscriptionRefId(v string) {
 
 // GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentAllOf) GetUnitOfMeasure() []AssetMeteringType {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetMeteringType
 		return ret
 	}
@@ -428,7 +430,7 @@ func (o *AssetDeploymentAllOf) SetUnitOfMeasure(v []AssetMeteringType) {
 
 // GetWorkloads returns the Workloads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentAllOf) GetWorkloads() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -461,7 +463,7 @@ func (o *AssetDeploymentAllOf) SetWorkloads(v []string) {
 
 // GetDevices returns the Devices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentAllOf) GetDevices() []AssetDeploymentDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeploymentDeviceRelationship
 		return ret
 	}
@@ -641,5 +643,3 @@ func (v *NullableAssetDeploymentAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

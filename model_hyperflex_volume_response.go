@@ -18,32 +18,31 @@ import (
 
 // HyperflexVolumeResponse - The response body of a HTTP GET request for the 'hyperflex.Volume' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.Volume' resources.
 type HyperflexVolumeResponse struct {
-	HyperflexVolumeList *HyperflexVolumeList
+	HyperflexVolumeList  *HyperflexVolumeList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // HyperflexVolumeListAsHyperflexVolumeResponse is a convenience function that returns HyperflexVolumeList wrapped in HyperflexVolumeResponse
 func HyperflexVolumeListAsHyperflexVolumeResponse(v *HyperflexVolumeList) HyperflexVolumeResponse {
-	return HyperflexVolumeResponse{ HyperflexVolumeList: v}
+	return HyperflexVolumeResponse{HyperflexVolumeList: v}
 }
 
 // MoAggregateTransformAsHyperflexVolumeResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexVolumeResponse
 func MoAggregateTransformAsHyperflexVolumeResponse(v *MoAggregateTransform) HyperflexVolumeResponse {
-	return HyperflexVolumeResponse{ MoAggregateTransform: v}
+	return HyperflexVolumeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexVolumeResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexVolumeResponse
 func MoDocumentCountAsHyperflexVolumeResponse(v *MoDocumentCount) HyperflexVolumeResponse {
-	return HyperflexVolumeResponse{ MoDocumentCount: v}
+	return HyperflexVolumeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexVolumeResponse is a convenience function that returns MoTagSummary wrapped in HyperflexVolumeResponse
 func MoTagSummaryAsHyperflexVolumeResponse(v *MoTagSummary) HyperflexVolumeResponse {
-	return HyperflexVolumeResponse{ MoTagSummary: v}
+	return HyperflexVolumeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexVolumeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexVolumeResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexVolumeResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexVolumeResponse) GetActualInstance() interface{} {
 	if obj.HyperflexVolumeList != nil {
 		return obj.HyperflexVolumeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexVolumeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

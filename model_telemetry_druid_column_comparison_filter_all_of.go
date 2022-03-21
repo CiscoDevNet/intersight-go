@@ -18,7 +18,7 @@ import (
 // TelemetryDruidColumnComparisonFilterAllOf struct for TelemetryDruidColumnComparisonFilterAllOf
 type TelemetryDruidColumnComparisonFilterAllOf struct {
 	// A list of DimensionSpecs, making it possible to apply an extraction function if needed.
-	Dimensions []TelemetryDruidDimensionSpec `json:"dimensions"`
+	Dimensions           []TelemetryDruidDimensionSpec `json:"dimensions"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidColumnComparisonFilterAllOf) GetDimensions() []TelemetryD
 // GetDimensionsOk returns a tuple with the Dimensions field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidColumnComparisonFilterAllOf) GetDimensionsOk() (*[]TelemetryDruidDimensionSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimensions, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidColumnComparisonFilterAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

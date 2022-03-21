@@ -24,8 +24,8 @@ type NetworkElementAllOf struct {
 	// Administratively configured state of Fabric Evacuation feature, for this switch.
 	AdminEvacState *string `json:"AdminEvacState,omitempty"`
 	// The administrative state of the network Element inband management interface.
-	AdminInbandInterfaceState *string `json:"AdminInbandInterfaceState,omitempty"`
-	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+	AdminInbandInterfaceState *string                     `json:"AdminInbandInterfaceState,omitempty"`
+	AlarmSummary              NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// Available memory (un-used) on this switch platform.
 	AvailableMemory *string `json:"AvailableMemory,omitempty"`
 	// The user configured Ethernet operational mode for this switch (End-Host or Switching).
@@ -84,21 +84,21 @@ type NetworkElementAllOf struct {
 	// An array of relationships to equipmentSwitchCard resources.
 	Cards []EquipmentSwitchCardRelationship `json:"Cards,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
-	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	Fanmodules           []EquipmentFanModuleRelationship  `json:"Fanmodules,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship  `json:"InventoryDeviceInfo,omitempty"`
 	ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
-	ManagementEntity *ManagementEntityRelationship `json:"ManagementEntity,omitempty"`
-	NetworkFcZoneInfo *NetworkFcZoneInfoRelationship `json:"NetworkFcZoneInfo,omitempty"`
-	NetworkVlanPortInfo *NetworkVlanPortInfoRelationship `json:"NetworkVlanPortInfo,omitempty"`
+	ManagementEntity     *ManagementEntityRelationship     `json:"ManagementEntity,omitempty"`
+	NetworkFcZoneInfo    *NetworkFcZoneInfoRelationship    `json:"NetworkFcZoneInfo,omitempty"`
+	NetworkVlanPortInfo  *NetworkVlanPortInfoRelationship  `json:"NetworkVlanPortInfo,omitempty"`
 	// An array of relationships to portMacBinding resources.
 	PortMacBindings []PortMacBindingRelationship `json:"PortMacBindings,omitempty"`
 	// An array of relationships to equipmentPsu resources.
-	Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+	Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageItem resources.
-	StorageItems []StorageItemRelationship `json:"StorageItems,omitempty"`
-	TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
-	UcsmRunningFirmware *FirmwareRunningFirmwareRelationship `json:"UcsmRunningFirmware,omitempty"`
+	StorageItems         []StorageItemRelationship            `json:"StorageItems,omitempty"`
+	TopSystem            *TopSystemRelationship               `json:"TopSystem,omitempty"`
+	UcsmRunningFirmware  *FirmwareRunningFirmwareRelationship `json:"UcsmRunningFirmware,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -148,7 +148,7 @@ func (o *NetworkElementAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -172,7 +172,7 @@ func (o *NetworkElementAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -260,7 +260,7 @@ func (o *NetworkElementAllOf) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkElementAllOf) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -279,6 +279,7 @@ func (o *NetworkElementAllOf) HasAlarmSummary() bool {
 func (o *NetworkElementAllOf) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *NetworkElementAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -1132,7 +1133,7 @@ func (o *NetworkElementAllOf) SetTotalMemory(v int64) {
 
 // GetCards returns the Cards field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElementAllOf) GetCards() []EquipmentSwitchCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentSwitchCardRelationship
 		return ret
 	}
@@ -1165,7 +1166,7 @@ func (o *NetworkElementAllOf) SetCards(v []EquipmentSwitchCardRelationship) {
 
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElementAllOf) GetFanmodules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -1358,7 +1359,7 @@ func (o *NetworkElementAllOf) SetNetworkVlanPortInfo(v NetworkVlanPortInfoRelati
 
 // GetPortMacBindings returns the PortMacBindings field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElementAllOf) GetPortMacBindings() []PortMacBindingRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PortMacBindingRelationship
 		return ret
 	}
@@ -1391,7 +1392,7 @@ func (o *NetworkElementAllOf) SetPortMacBindings(v []PortMacBindingRelationship)
 
 // GetPsus returns the Psus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElementAllOf) GetPsus() []EquipmentPsuRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentPsuRelationship
 		return ret
 	}
@@ -1456,7 +1457,7 @@ func (o *NetworkElementAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRelat
 
 // GetStorageItems returns the StorageItems field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElementAllOf) GetStorageItems() []StorageItemRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageItemRelationship
 		return ret
 	}
@@ -1788,5 +1789,3 @@ func (v *NullableNetworkElementAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

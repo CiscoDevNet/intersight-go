@@ -19,19 +19,18 @@ import (
 // HyperflexClusterStoragePolicyRelationship - A relationship to the 'hyperflex.ClusterStoragePolicy' resource, or the expanded 'hyperflex.ClusterStoragePolicy' resource, or the 'null' value.
 type HyperflexClusterStoragePolicyRelationship struct {
 	HyperflexClusterStoragePolicy *HyperflexClusterStoragePolicy
-	MoMoRef *MoMoRef
+	MoMoRef                       *MoMoRef
 }
 
 // HyperflexClusterStoragePolicyAsHyperflexClusterStoragePolicyRelationship is a convenience function that returns HyperflexClusterStoragePolicy wrapped in HyperflexClusterStoragePolicyRelationship
 func HyperflexClusterStoragePolicyAsHyperflexClusterStoragePolicyRelationship(v *HyperflexClusterStoragePolicy) HyperflexClusterStoragePolicyRelationship {
-	return HyperflexClusterStoragePolicyRelationship{ HyperflexClusterStoragePolicy: v}
+	return HyperflexClusterStoragePolicyRelationship{HyperflexClusterStoragePolicy: v}
 }
 
 // MoMoRefAsHyperflexClusterStoragePolicyRelationship is a convenience function that returns MoMoRef wrapped in HyperflexClusterStoragePolicyRelationship
 func MoMoRefAsHyperflexClusterStoragePolicyRelationship(v *MoMoRef) HyperflexClusterStoragePolicyRelationship {
-	return HyperflexClusterStoragePolicyRelationship{ MoMoRef: v}
+	return HyperflexClusterStoragePolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterStoragePolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexClusterStoragePolicyRelationship) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterStoragePolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterStoragePolicyRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexClusterStoragePolicy != nil {
 		return obj.HyperflexClusterStoragePolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexClusterStoragePolicyRelationship) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // OprsSyncTargetListMessageResponse - The response body of a HTTP GET request for the 'oprs.SyncTargetListMessage' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'oprs.SyncTargetListMessage' resources.
 type OprsSyncTargetListMessageResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	OprsSyncTargetListMessageList *OprsSyncTargetListMessageList
 }
 
 // MoAggregateTransformAsOprsSyncTargetListMessageResponse is a convenience function that returns MoAggregateTransform wrapped in OprsSyncTargetListMessageResponse
 func MoAggregateTransformAsOprsSyncTargetListMessageResponse(v *MoAggregateTransform) OprsSyncTargetListMessageResponse {
-	return OprsSyncTargetListMessageResponse{ MoAggregateTransform: v}
+	return OprsSyncTargetListMessageResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsOprsSyncTargetListMessageResponse is a convenience function that returns MoDocumentCount wrapped in OprsSyncTargetListMessageResponse
 func MoDocumentCountAsOprsSyncTargetListMessageResponse(v *MoDocumentCount) OprsSyncTargetListMessageResponse {
-	return OprsSyncTargetListMessageResponse{ MoDocumentCount: v}
+	return OprsSyncTargetListMessageResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsOprsSyncTargetListMessageResponse is a convenience function that returns MoTagSummary wrapped in OprsSyncTargetListMessageResponse
 func MoTagSummaryAsOprsSyncTargetListMessageResponse(v *MoTagSummary) OprsSyncTargetListMessageResponse {
-	return OprsSyncTargetListMessageResponse{ MoTagSummary: v}
+	return OprsSyncTargetListMessageResponse{MoTagSummary: v}
 }
 
 // OprsSyncTargetListMessageListAsOprsSyncTargetListMessageResponse is a convenience function that returns OprsSyncTargetListMessageList wrapped in OprsSyncTargetListMessageResponse
 func OprsSyncTargetListMessageListAsOprsSyncTargetListMessageResponse(v *OprsSyncTargetListMessageList) OprsSyncTargetListMessageResponse {
-	return OprsSyncTargetListMessageResponse{ OprsSyncTargetListMessageList: v}
+	return OprsSyncTargetListMessageResponse{OprsSyncTargetListMessageList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OprsSyncTargetListMessageResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src OprsSyncTargetListMessageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OprsSyncTargetListMessageResponse) GetActualInstance() (interface{}) {
+func (obj *OprsSyncTargetListMessageResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableOprsSyncTargetListMessageResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

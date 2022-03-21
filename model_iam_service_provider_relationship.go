@@ -19,19 +19,18 @@ import (
 // IamServiceProviderRelationship - A relationship to the 'iam.ServiceProvider' resource, or the expanded 'iam.ServiceProvider' resource, or the 'null' value.
 type IamServiceProviderRelationship struct {
 	IamServiceProvider *IamServiceProvider
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // IamServiceProviderAsIamServiceProviderRelationship is a convenience function that returns IamServiceProvider wrapped in IamServiceProviderRelationship
 func IamServiceProviderAsIamServiceProviderRelationship(v *IamServiceProvider) IamServiceProviderRelationship {
-	return IamServiceProviderRelationship{ IamServiceProvider: v}
+	return IamServiceProviderRelationship{IamServiceProvider: v}
 }
 
 // MoMoRefAsIamServiceProviderRelationship is a convenience function that returns MoMoRef wrapped in IamServiceProviderRelationship
 func MoMoRefAsIamServiceProviderRelationship(v *MoMoRef) IamServiceProviderRelationship {
-	return IamServiceProviderRelationship{ MoMoRef: v}
+	return IamServiceProviderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamServiceProviderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamServiceProviderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamServiceProviderRelationship) GetActualInstance() (interface{}) {
+func (obj *IamServiceProviderRelationship) GetActualInstance() interface{} {
 	if obj.IamServiceProvider != nil {
 		return obj.IamServiceProvider
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamServiceProviderRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

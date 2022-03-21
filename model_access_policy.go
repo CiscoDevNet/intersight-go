@@ -23,18 +23,18 @@ type AccessPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AddressType NullableAccessAddressType `json:"AddressType,omitempty"`
+	ObjectType        string                          `json:"ObjectType"`
+	AddressType       NullableAccessAddressType       `json:"AddressType,omitempty"`
 	ConfigurationType NullableAccessConfigurationType `json:"ConfigurationType,omitempty"`
 	// VLAN to be used for server access over Inband network.
-	InbandVlan *int64 `json:"InbandVlan,omitempty"`
-	InbandIpPool *IppoolPoolRelationship `json:"InbandIpPool,omitempty"`
-	InbandVrf *VrfVrfRelationship `json:"InbandVrf,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	OutOfBandIpPool *IppoolPoolRelationship `json:"OutOfBandIpPool,omitempty"`
-	OutOfBandVrf *VrfVrfRelationship `json:"OutOfBandVrf,omitempty"`
+	InbandVlan      *int64                                `json:"InbandVlan,omitempty"`
+	InbandIpPool    *IppoolPoolRelationship               `json:"InbandIpPool,omitempty"`
+	InbandVrf       *VrfVrfRelationship                   `json:"InbandVrf,omitempty"`
+	Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	OutOfBandIpPool *IppoolPoolRelationship               `json:"OutOfBandIpPool,omitempty"`
+	OutOfBandVrf    *VrfVrfRelationship                   `json:"OutOfBandVrf,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *AccessPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AccessPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *AccessPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AccessPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -124,7 +124,7 @@ func (o *AccessPolicy) GetAddressType() AccessAddressType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccessPolicy) GetAddressTypeOk() (*AccessAddressType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AddressType.Get(), o.AddressType.IsSet()
@@ -143,6 +143,7 @@ func (o *AccessPolicy) HasAddressType() bool {
 func (o *AccessPolicy) SetAddressType(v AccessAddressType) {
 	o.AddressType.Set(&v)
 }
+
 // SetAddressTypeNil sets the value for AddressType to be an explicit nil
 func (o *AccessPolicy) SetAddressTypeNil() {
 	o.AddressType.Set(nil)
@@ -166,7 +167,7 @@ func (o *AccessPolicy) GetConfigurationType() AccessConfigurationType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AccessPolicy) GetConfigurationTypeOk() (*AccessConfigurationType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigurationType.Get(), o.ConfigurationType.IsSet()
@@ -185,6 +186,7 @@ func (o *AccessPolicy) HasConfigurationType() bool {
 func (o *AccessPolicy) SetConfigurationType(v AccessConfigurationType) {
 	o.ConfigurationType.Set(&v)
 }
+
 // SetConfigurationTypeNil sets the value for ConfigurationType to be an explicit nil
 func (o *AccessPolicy) SetConfigurationTypeNil() {
 	o.ConfigurationType.Set(nil)
@@ -389,7 +391,7 @@ func (o *AccessPolicy) SetOutOfBandVrf(v VrfVrfRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AccessPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -476,16 +478,16 @@ func (o *AccessPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		AddressType NullableAccessAddressType `json:"AddressType,omitempty"`
+		ObjectType        string                          `json:"ObjectType"`
+		AddressType       NullableAccessAddressType       `json:"AddressType,omitempty"`
 		ConfigurationType NullableAccessConfigurationType `json:"ConfigurationType,omitempty"`
 		// VLAN to be used for server access over Inband network.
-		InbandVlan *int64 `json:"InbandVlan,omitempty"`
-		InbandIpPool *IppoolPoolRelationship `json:"InbandIpPool,omitempty"`
-		InbandVrf *VrfVrfRelationship `json:"InbandVrf,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		OutOfBandIpPool *IppoolPoolRelationship `json:"OutOfBandIpPool,omitempty"`
-		OutOfBandVrf *VrfVrfRelationship `json:"OutOfBandVrf,omitempty"`
+		InbandVlan      *int64                                `json:"InbandVlan,omitempty"`
+		InbandIpPool    *IppoolPoolRelationship               `json:"InbandIpPool,omitempty"`
+		InbandVrf       *VrfVrfRelationship                   `json:"InbandVrf,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		OutOfBandIpPool *IppoolPoolRelationship               `json:"OutOfBandIpPool,omitempty"`
+		OutOfBandVrf    *VrfVrfRelationship                   `json:"OutOfBandVrf,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -594,5 +596,3 @@ func (v *NullableAccessPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

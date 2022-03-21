@@ -23,7 +23,7 @@ type OsDistributionList struct {
 	// The total number of 'os.Distribution' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'os.Distribution' resources matching the request.
-	Results []OsDistribution `json:"Results,omitempty"`
+	Results              []OsDistribution `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *OsDistributionList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsDistributionList) GetResults() []OsDistribution {
-	if o == nil  {
+	if o == nil {
 		var ret []OsDistribution
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableOsDistributionList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

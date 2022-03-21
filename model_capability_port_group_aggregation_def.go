@@ -29,7 +29,7 @@ type CapabilityPortGroupAggregationDef struct {
 	// Indicates support for 40G port group capability.
 	Hw40GPortGroupCap *bool `json:"Hw40GPortGroupCap,omitempty"`
 	// The type of port group for which this capability is defined.
-	Pgtype *string `json:"Pgtype,omitempty"`
+	Pgtype               *string `json:"Pgtype,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CapabilityPortGroupAggregationDef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityPortGroupAggregationDef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CapabilityPortGroupAggregationDef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityPortGroupAggregationDef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableCapabilityPortGroupAggregationDef) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

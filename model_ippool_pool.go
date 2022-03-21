@@ -23,10 +23,10 @@ type IppoolPool struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	IpV4Blocks []IppoolIpV4Block `json:"IpV4Blocks,omitempty"`
+	ObjectType string                   `json:"ObjectType"`
+	IpV4Blocks []IppoolIpV4Block        `json:"IpV4Blocks,omitempty"`
 	IpV4Config NullableIppoolIpV4Config `json:"IpV4Config,omitempty"`
-	IpV6Blocks []IppoolIpV6Block `json:"IpV6Blocks,omitempty"`
+	IpV6Blocks []IppoolIpV6Block        `json:"IpV6Blocks,omitempty"`
 	IpV6Config NullableIppoolIpV6Config `json:"IpV6Config,omitempty"`
 	// Number of IPv4 addresses currently in use.
 	V4Assigned *int64 `json:"V4Assigned,omitempty"`
@@ -35,10 +35,10 @@ type IppoolPool struct {
 	// Number of IPv6 addresses currently in use.
 	V6Assigned *int64 `json:"V6Assigned,omitempty"`
 	// Number of IPv6 addresses in this pool.
-	V6Size *int64 `json:"V6Size,omitempty"`
+	V6Size       *int64                                `json:"V6Size,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to ippoolShadowPool resources.
-	ShadowPools []IppoolShadowPoolRelationship `json:"ShadowPools,omitempty"`
+	ShadowPools          []IppoolShadowPoolRelationship `json:"ShadowPools,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *IppoolPool) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IppoolPool) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *IppoolPool) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IppoolPool) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *IppoolPool) SetObjectType(v string) {
 
 // GetIpV4Blocks returns the IpV4Blocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IppoolPool) GetIpV4Blocks() []IppoolIpV4Block {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolIpV4Block
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *IppoolPool) GetIpV4Config() IppoolIpV4Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IppoolPool) GetIpV4ConfigOk() (*IppoolIpV4Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV4Config.Get(), o.IpV4Config.IsSet()
@@ -182,6 +182,7 @@ func (o *IppoolPool) HasIpV4Config() bool {
 func (o *IppoolPool) SetIpV4Config(v IppoolIpV4Config) {
 	o.IpV4Config.Set(&v)
 }
+
 // SetIpV4ConfigNil sets the value for IpV4Config to be an explicit nil
 func (o *IppoolPool) SetIpV4ConfigNil() {
 	o.IpV4Config.Set(nil)
@@ -194,7 +195,7 @@ func (o *IppoolPool) UnsetIpV4Config() {
 
 // GetIpV6Blocks returns the IpV6Blocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IppoolPool) GetIpV6Blocks() []IppoolIpV6Block {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolIpV6Block
 		return ret
 	}
@@ -238,7 +239,7 @@ func (o *IppoolPool) GetIpV6Config() IppoolIpV6Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IppoolPool) GetIpV6ConfigOk() (*IppoolIpV6Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV6Config.Get(), o.IpV6Config.IsSet()
@@ -257,6 +258,7 @@ func (o *IppoolPool) HasIpV6Config() bool {
 func (o *IppoolPool) SetIpV6Config(v IppoolIpV6Config) {
 	o.IpV6Config.Set(&v)
 }
+
 // SetIpV6ConfigNil sets the value for IpV6Config to be an explicit nil
 func (o *IppoolPool) SetIpV6ConfigNil() {
 	o.IpV6Config.Set(nil)
@@ -429,7 +431,7 @@ func (o *IppoolPool) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetShadowPools returns the ShadowPools field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IppoolPool) GetShadowPools() []IppoolShadowPoolRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolShadowPoolRelationship
 		return ret
 	}
@@ -519,10 +521,10 @@ func (o *IppoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		IpV4Blocks []IppoolIpV4Block `json:"IpV4Blocks,omitempty"`
+		ObjectType string                   `json:"ObjectType"`
+		IpV4Blocks []IppoolIpV4Block        `json:"IpV4Blocks,omitempty"`
 		IpV4Config NullableIppoolIpV4Config `json:"IpV4Config,omitempty"`
-		IpV6Blocks []IppoolIpV6Block `json:"IpV6Blocks,omitempty"`
+		IpV6Blocks []IppoolIpV6Block        `json:"IpV6Blocks,omitempty"`
 		IpV6Config NullableIppoolIpV6Config `json:"IpV6Config,omitempty"`
 		// Number of IPv4 addresses currently in use.
 		V4Assigned *int64 `json:"V4Assigned,omitempty"`
@@ -531,7 +533,7 @@ func (o *IppoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// Number of IPv6 addresses currently in use.
 		V6Assigned *int64 `json:"V6Assigned,omitempty"`
 		// Number of IPv6 addresses in this pool.
-		V6Size *int64 `json:"V6Size,omitempty"`
+		V6Size       *int64                                `json:"V6Size,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to ippoolShadowPool resources.
 		ShadowPools []IppoolShadowPoolRelationship `json:"ShadowPools,omitempty"`
@@ -643,5 +645,3 @@ func (v *NullableIppoolPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

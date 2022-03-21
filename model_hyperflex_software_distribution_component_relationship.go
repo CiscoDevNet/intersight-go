@@ -19,19 +19,18 @@ import (
 // HyperflexSoftwareDistributionComponentRelationship - A relationship to the 'hyperflex.SoftwareDistributionComponent' resource, or the expanded 'hyperflex.SoftwareDistributionComponent' resource, or the 'null' value.
 type HyperflexSoftwareDistributionComponentRelationship struct {
 	HyperflexSoftwareDistributionComponent *HyperflexSoftwareDistributionComponent
-	MoMoRef *MoMoRef
+	MoMoRef                                *MoMoRef
 }
 
 // HyperflexSoftwareDistributionComponentAsHyperflexSoftwareDistributionComponentRelationship is a convenience function that returns HyperflexSoftwareDistributionComponent wrapped in HyperflexSoftwareDistributionComponentRelationship
 func HyperflexSoftwareDistributionComponentAsHyperflexSoftwareDistributionComponentRelationship(v *HyperflexSoftwareDistributionComponent) HyperflexSoftwareDistributionComponentRelationship {
-	return HyperflexSoftwareDistributionComponentRelationship{ HyperflexSoftwareDistributionComponent: v}
+	return HyperflexSoftwareDistributionComponentRelationship{HyperflexSoftwareDistributionComponent: v}
 }
 
 // MoMoRefAsHyperflexSoftwareDistributionComponentRelationship is a convenience function that returns MoMoRef wrapped in HyperflexSoftwareDistributionComponentRelationship
 func MoMoRefAsHyperflexSoftwareDistributionComponentRelationship(v *MoMoRef) HyperflexSoftwareDistributionComponentRelationship {
-	return HyperflexSoftwareDistributionComponentRelationship{ MoMoRef: v}
+	return HyperflexSoftwareDistributionComponentRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexSoftwareDistributionComponentRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexSoftwareDistributionComponentRelationship) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *HyperflexSoftwareDistributionComponentRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexSoftwareDistributionComponentRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexSoftwareDistributionComponent != nil {
 		return obj.HyperflexSoftwareDistributionComponent
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexSoftwareDistributionComponentRelationship) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -43,8 +43,8 @@ type NiatelemetryHttpsAclFilterDetails struct {
 	// Source From Port HTTPS ACL EPGs filter MO for APIC.
 	SrcFromPort *string `json:"SrcFromPort,omitempty"`
 	// Source To Port HTTPS ACL EPGs filter MO for APIC.
-	SrcToPort *string `json:"SrcToPort,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SrcToPort            *string                              `json:"SrcToPort,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *NiatelemetryHttpsAclFilterDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclFilterDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *NiatelemetryHttpsAclFilterDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclFilterDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -555,7 +555,7 @@ func (o *NiatelemetryHttpsAclFilterDetails) UnmarshalJSON(bytes []byte) (err err
 		// Source From Port HTTPS ACL EPGs filter MO for APIC.
 		SrcFromPort *string `json:"SrcFromPort,omitempty"`
 		// Source To Port HTTPS ACL EPGs filter MO for APIC.
-		SrcToPort *string `json:"SrcToPort,omitempty"`
+		SrcToPort        *string                              `json:"SrcToPort,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -667,5 +667,3 @@ func (v *NullableNiatelemetryHttpsAclFilterDetails) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

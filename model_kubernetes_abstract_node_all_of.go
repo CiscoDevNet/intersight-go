@@ -24,8 +24,8 @@ type KubernetesAbstractNodeAllOf struct {
 	// Kubernetes metadata annotations for a Node.
 	Annotations interface{} `json:"Annotations,omitempty"`
 	// Kubernetes metadata labels for a Node.
-	Labels interface{} `json:"Labels,omitempty"`
-	Taints []KubernetesTaint `json:"Taints,omitempty"`
+	Labels               interface{}       `json:"Labels,omitempty"`
+	Taints               []KubernetesTaint `json:"Taints,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *KubernetesAbstractNodeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAbstractNodeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *KubernetesAbstractNodeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAbstractNodeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *KubernetesAbstractNodeAllOf) SetObjectType(v string) {
 
 // GetAnnotations returns the Annotations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNodeAllOf) GetAnnotations() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *KubernetesAbstractNodeAllOf) SetAnnotations(v interface{}) {
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNodeAllOf) GetLabels() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *KubernetesAbstractNodeAllOf) SetLabels(v interface{}) {
 
 // GetTaints returns the Taints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAbstractNodeAllOf) GetTaints() []KubernetesTaint {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesTaint
 		return ret
 	}
@@ -282,5 +282,3 @@ func (v *NullableKubernetesAbstractNodeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

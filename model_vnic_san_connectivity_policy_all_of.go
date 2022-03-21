@@ -30,11 +30,11 @@ type VnicSanConnectivityPolicyAllOf struct {
 	// Type of allocation selected to assign a WWNN address for the server node. * `POOL` - The user selects a pool from which the mac/wwn address will be leased for the Virtual Interface. * `STATIC` - The user assigns a static mac/wwn address for the Virtual Interface.
 	WwnnAddressType *string `json:"WwnnAddressType,omitempty"`
 	// An array of relationships to vnicFcIf resources.
-	FcIfs []VnicFcIfRelationship `json:"FcIfs,omitempty"`
+	FcIfs        []VnicFcIfRelationship                `json:"FcIfs,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
-	WwnnPool *FcpoolPoolRelationship `json:"WwnnPool,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	WwnnPool             *FcpoolPoolRelationship                   `json:"WwnnPool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *VnicSanConnectivityPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicSanConnectivityPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *VnicSanConnectivityPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicSanConnectivityPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -253,7 +253,7 @@ func (o *VnicSanConnectivityPolicyAllOf) SetWwnnAddressType(v string) {
 
 // GetFcIfs returns the FcIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicSanConnectivityPolicyAllOf) GetFcIfs() []VnicFcIfRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicFcIfRelationship
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *VnicSanConnectivityPolicyAllOf) SetOrganization(v OrganizationOrganizat
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicSanConnectivityPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -482,5 +482,3 @@ func (v *NullableVnicSanConnectivityPolicyAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

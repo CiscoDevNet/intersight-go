@@ -29,11 +29,10 @@ var (
 type MetaApiService service
 
 type ApiDeleteMetaDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MetaApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteMetaDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteMetaDefinitionExecute(r)
@@ -49,8 +48,8 @@ DeleteMetaDefinition Delete a 'meta.Definition' resource.
 func (a *MetaApiService) DeleteMetaDefinition(ctx _context.Context, moid string) ApiDeleteMetaDefinitionRequest {
 	return ApiDeleteMetaDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -155,13 +154,13 @@ func (a *MetaApiService) DeleteMetaDefinitionExecute(r ApiDeleteMetaDefinitionRe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -169,11 +168,10 @@ func (a *MetaApiService) DeleteMetaDefinitionExecute(r ApiDeleteMetaDefinitionRe
 }
 
 type ApiGetMetaDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MetaApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMetaDefinitionByMoidRequest) Execute() (MetaDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetMetaDefinitionByMoidExecute(r)
@@ -189,8 +187,8 @@ GetMetaDefinitionByMoid Read a 'meta.Definition' resource.
 func (a *MetaApiService) GetMetaDefinitionByMoid(ctx _context.Context, moid string) ApiGetMetaDefinitionByMoidRequest {
 	return ApiGetMetaDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -297,13 +295,13 @@ func (a *MetaApiService) GetMetaDefinitionByMoidExecute(r ApiGetMetaDefinitionBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -320,19 +318,19 @@ func (a *MetaApiService) GetMetaDefinitionByMoidExecute(r ApiGetMetaDefinitionBy
 }
 
 type ApiGetMetaDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *MetaApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MetaApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -340,51 +338,61 @@ func (r ApiGetMetaDefinitionListRequest) Filter(filter string) ApiGetMetaDefinit
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMetaDefinitionListRequest) Orderby(orderby string) ApiGetMetaDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMetaDefinitionListRequest) Top(top int32) ApiGetMetaDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMetaDefinitionListRequest) Skip(skip int32) ApiGetMetaDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMetaDefinitionListRequest) Select_(select_ string) ApiGetMetaDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMetaDefinitionListRequest) Expand(expand string) ApiGetMetaDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMetaDefinitionListRequest) Apply(apply string) ApiGetMetaDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMetaDefinitionListRequest) Count(count bool) ApiGetMetaDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMetaDefinitionListRequest) Inlinecount(inlinecount string) ApiGetMetaDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMetaDefinitionListRequest) At(at string) ApiGetMetaDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMetaDefinitionListRequest) Tags(tags string) ApiGetMetaDefinitionListRequest {
 	r.tags = &tags
@@ -404,7 +412,7 @@ GetMetaDefinitionList Read a 'meta.Definition' resource.
 func (a *MetaApiService) GetMetaDefinitionList(ctx _context.Context) ApiGetMetaDefinitionListRequest {
 	return ApiGetMetaDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -543,13 +551,13 @@ func (a *MetaApiService) GetMetaDefinitionListExecute(r ApiGetMetaDefinitionList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

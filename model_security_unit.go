@@ -41,10 +41,10 @@ type SecurityUnit struct {
 	// The vendor identifier of the security unit.
 	Vid *string `json:"Vid,omitempty"`
 	// The voltage state of the security unit.
-	Voltage *string `json:"Voltage,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Voltage              *string                              `json:"Voltage,omitempty"`
+	ComputeBoard         *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *SecurityUnit) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SecurityUnit) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *SecurityUnit) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SecurityUnit) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -588,10 +588,10 @@ func (o *SecurityUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// The vendor identifier of the security unit.
 		Vid *string `json:"Vid,omitempty"`
 		// The voltage state of the security unit.
-		Voltage *string `json:"Voltage,omitempty"`
-		ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Voltage             *string                              `json:"Voltage,omitempty"`
+		ComputeBoard        *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varSecurityUnitWithoutEmbeddedStruct := SecurityUnitWithoutEmbeddedStruct{}
@@ -704,5 +704,3 @@ func (v *NullableSecurityUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // KubernetesConfigResultEntryRelationship - A relationship to the 'kubernetes.ConfigResultEntry' resource, or the expanded 'kubernetes.ConfigResultEntry' resource, or the 'null' value.
 type KubernetesConfigResultEntryRelationship struct {
 	KubernetesConfigResultEntry *KubernetesConfigResultEntry
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // KubernetesConfigResultEntryAsKubernetesConfigResultEntryRelationship is a convenience function that returns KubernetesConfigResultEntry wrapped in KubernetesConfigResultEntryRelationship
 func KubernetesConfigResultEntryAsKubernetesConfigResultEntryRelationship(v *KubernetesConfigResultEntry) KubernetesConfigResultEntryRelationship {
-	return KubernetesConfigResultEntryRelationship{ KubernetesConfigResultEntry: v}
+	return KubernetesConfigResultEntryRelationship{KubernetesConfigResultEntry: v}
 }
 
 // MoMoRefAsKubernetesConfigResultEntryRelationship is a convenience function that returns MoMoRef wrapped in KubernetesConfigResultEntryRelationship
 func MoMoRefAsKubernetesConfigResultEntryRelationship(v *MoMoRef) KubernetesConfigResultEntryRelationship {
-	return KubernetesConfigResultEntryRelationship{ MoMoRef: v}
+	return KubernetesConfigResultEntryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesConfigResultEntryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesConfigResultEntryRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *KubernetesConfigResultEntryRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesConfigResultEntryRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesConfigResultEntry != nil {
 		return obj.KubernetesConfigResultEntry
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesConfigResultEntryRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

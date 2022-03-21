@@ -23,7 +23,7 @@ type HyperflexClusterReplicationNetworkPolicyList struct {
 	// The total number of 'hyperflex.ClusterReplicationNetworkPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.ClusterReplicationNetworkPolicy' resources matching the request.
-	Results []HyperflexClusterReplicationNetworkPolicy `json:"Results,omitempty"`
+	Results              []HyperflexClusterReplicationNetworkPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexClusterReplicationNetworkPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterReplicationNetworkPolicyList) GetResults() []HyperflexClusterReplicationNetworkPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterReplicationNetworkPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexClusterReplicationNetworkPolicyList) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

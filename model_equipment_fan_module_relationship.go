@@ -19,19 +19,18 @@ import (
 // EquipmentFanModuleRelationship - A relationship to the 'equipment.FanModule' resource, or the expanded 'equipment.FanModule' resource, or the 'null' value.
 type EquipmentFanModuleRelationship struct {
 	EquipmentFanModule *EquipmentFanModule
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // EquipmentFanModuleAsEquipmentFanModuleRelationship is a convenience function that returns EquipmentFanModule wrapped in EquipmentFanModuleRelationship
 func EquipmentFanModuleAsEquipmentFanModuleRelationship(v *EquipmentFanModule) EquipmentFanModuleRelationship {
-	return EquipmentFanModuleRelationship{ EquipmentFanModule: v}
+	return EquipmentFanModuleRelationship{EquipmentFanModule: v}
 }
 
 // MoMoRefAsEquipmentFanModuleRelationship is a convenience function that returns MoMoRef wrapped in EquipmentFanModuleRelationship
 func MoMoRefAsEquipmentFanModuleRelationship(v *MoMoRef) EquipmentFanModuleRelationship {
-	return EquipmentFanModuleRelationship{ MoMoRef: v}
+	return EquipmentFanModuleRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentFanModuleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentFanModuleRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentFanModuleRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentFanModuleRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentFanModule != nil {
 		return obj.EquipmentFanModule
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentFanModuleRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

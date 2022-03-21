@@ -22,7 +22,7 @@ type TelemetryDruidStringFirstLastAggregatorAllOf struct {
 	// Name of the metric column.
 	FieldName string `json:"fieldName"`
 	// null
-	MaxStringBytes *int32 `json:"maxStringBytes,omitempty"`
+	MaxStringBytes       *int32 `json:"maxStringBytes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *TelemetryDruidStringFirstLastAggregatorAllOf) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidStringFirstLastAggregatorAllOf) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -88,7 +88,7 @@ func (o *TelemetryDruidStringFirstLastAggregatorAllOf) GetFieldName() string {
 // GetFieldNameOk returns a tuple with the FieldName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidStringFirstLastAggregatorAllOf) GetFieldNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FieldName, true
@@ -204,5 +204,3 @@ func (v *NullableTelemetryDruidStringFirstLastAggregatorAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

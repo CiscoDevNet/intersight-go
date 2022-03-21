@@ -43,9 +43,9 @@ type HyperflexKeyEncryptionKey struct {
 	// Resource type on which this key will be applied. * `CLUSTER` - Encryption is per HyperFlex cluster. * `DATASTORE` - Encryption is per dataStore on the HyperFlex cluster. * `DRIVE` - Encryption is per drive on the HyperFlex cluster.
 	ResourceType *string `json:"ResourceType,omitempty"`
 	// Copy of Key encryption key, which is used for sending the key over to the remote device endpoint. It is not persisited anywhere.
-	TransitKek *string `json:"TransitKek,omitempty"`
-	ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
-	ResourceMo *MoBaseMoRelationship `json:"ResourceMo,omitempty"`
+	TransitKek           *string                              `json:"TransitKek,omitempty"`
+	ClusterProfile       *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
+	ResourceMo           *MoBaseMoRelationship                `json:"ResourceMo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *HyperflexKeyEncryptionKey) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexKeyEncryptionKey) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *HyperflexKeyEncryptionKey) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexKeyEncryptionKey) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -603,9 +603,9 @@ func (o *HyperflexKeyEncryptionKey) UnmarshalJSON(bytes []byte) (err error) {
 		// Resource type on which this key will be applied. * `CLUSTER` - Encryption is per HyperFlex cluster. * `DATASTORE` - Encryption is per dataStore on the HyperFlex cluster. * `DRIVE` - Encryption is per drive on the HyperFlex cluster.
 		ResourceType *string `json:"ResourceType,omitempty"`
 		// Copy of Key encryption key, which is used for sending the key over to the remote device endpoint. It is not persisited anywhere.
-		TransitKek *string `json:"TransitKek,omitempty"`
+		TransitKek     *string                              `json:"TransitKek,omitempty"`
 		ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
-		ResourceMo *MoBaseMoRelationship `json:"ResourceMo,omitempty"`
+		ResourceMo     *MoBaseMoRelationship                `json:"ResourceMo,omitempty"`
 	}
 
 	varHyperflexKeyEncryptionKeyWithoutEmbeddedStruct := HyperflexKeyEncryptionKeyWithoutEmbeddedStruct{}
@@ -718,5 +718,3 @@ func (v *NullableHyperflexKeyEncryptionKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

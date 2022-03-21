@@ -27,7 +27,7 @@ type IamPermission struct {
 	// The informative description about each permission.
 	Description *string `json:"Description,omitempty"`
 	// The name of the permission which has to be granted to user.
-	Name *string `json:"Name,omitempty"`
+	Name    *string                 `json:"Name,omitempty"`
 	Account *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
 	EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
@@ -36,12 +36,12 @@ type IamPermission struct {
 	// An array of relationships to iamResourceRoles resources.
 	ResourceRoles []IamResourceRolesRelationship `json:"ResourceRoles,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
+	Roles         []IamRoleRelationship         `json:"Roles,omitempty"`
 	SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
 	// An array of relationships to iamUserGroup resources.
 	UserGroups []IamUserGroupRelationship `json:"UserGroups,omitempty"`
 	// An array of relationships to iamUser resources.
-	Users []IamUserRelationship `json:"Users,omitempty"`
+	Users                []IamUserRelationship `json:"Users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *IamPermission) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamPermission) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *IamPermission) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamPermission) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -216,7 +216,7 @@ func (o *IamPermission) SetAccount(v IamAccountRelationship) {
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *IamPermission) SetEndPointRoles(v []IamEndPointRoleRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *IamPermission) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetResourceRoles returns the ResourceRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetResourceRoles() []IamResourceRolesRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamResourceRolesRelationship
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *IamPermission) SetResourceRoles(v []IamResourceRolesRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *IamPermission) SetSessionLimits(v IamSessionLimitsRelationship) {
 
 // GetUserGroups returns the UserGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetUserGroups() []IamUserGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserGroupRelationship
 		return ret
 	}
@@ -413,7 +413,7 @@ func (o *IamPermission) SetUserGroups(v []IamUserGroupRelationship) {
 
 // GetUsers returns the Users field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamPermission) GetUsers() []IamUserRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserRelationship
 		return ret
 	}
@@ -507,7 +507,7 @@ func (o *IamPermission) UnmarshalJSON(bytes []byte) (err error) {
 		// The informative description about each permission.
 		Description *string `json:"Description,omitempty"`
 		// The name of the permission which has to be granted to user.
-		Name *string `json:"Name,omitempty"`
+		Name    *string                 `json:"Name,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 		// An array of relationships to iamEndPointRole resources.
 		EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
@@ -516,7 +516,7 @@ func (o *IamPermission) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to iamResourceRoles resources.
 		ResourceRoles []IamResourceRolesRelationship `json:"ResourceRoles,omitempty"`
 		// An array of relationships to iamRole resources.
-		Roles []IamRoleRelationship `json:"Roles,omitempty"`
+		Roles         []IamRoleRelationship         `json:"Roles,omitempty"`
 		SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
 		// An array of relationships to iamUserGroup resources.
 		UserGroups []IamUserGroupRelationship `json:"UserGroups,omitempty"`
@@ -630,5 +630,3 @@ func (v *NullableIamPermission) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

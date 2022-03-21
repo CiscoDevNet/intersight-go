@@ -32,7 +32,7 @@ type BootPxeAllOf struct {
 	// The Port ID of the adapter on which the underlying virtual ethernet interface is present. If no port is specified, the default value is -1. Supported values are -1 to 255.
 	Port *int64 `json:"Port,omitempty"`
 	// The slot ID of the adapter on which the underlying virtual ethernet interface is present. Supported values are ( 1 - 255, \"MLOM\", \"L\", \"L1\", \"L2\", \"OCP\").
-	Slot *string `json:"Slot,omitempty"`
+	Slot                 *string `json:"Slot,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *BootPxeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootPxeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *BootPxeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootPxeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -406,5 +406,3 @@ func (v *NullableBootPxeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

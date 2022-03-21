@@ -55,7 +55,7 @@ type CapabilityEquipmentSlotArray struct {
 	// Vertical Start Offset information for a Switch/Fabric-Interconnect hardware.
 	VerticalStartOffset *float32 `json:"VerticalStartOffset,omitempty"`
 	// Width information for a Switch/Fabric-Interconnect hardware.
-	Width *float32 `json:"Width,omitempty"`
+	Width                *float32 `json:"Width,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *CapabilityEquipmentSlotArray) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEquipmentSlotArray) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *CapabilityEquipmentSlotArray) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEquipmentSlotArray) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -876,5 +876,3 @@ func (v *NullableCapabilityEquipmentSlotArray) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type CommIpV6Interface struct {
 	// The IPv6 Address, represented as eight groups of four hexadecimal digits, separated by colons.
 	IpAddress *string `json:"IpAddress,omitempty"`
 	// The IPv6 Prefix, represented as eight groups of four hexadecimal digits, separated by colons.
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix               *string `json:"Prefix,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CommIpV6Interface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV6Interface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CommIpV6Interface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CommIpV6Interface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableCommIpV6Interface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

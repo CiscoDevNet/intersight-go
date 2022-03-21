@@ -23,7 +23,7 @@ type StorageNetAppFcPortList struct {
 	// The total number of 'storage.NetAppFcPort' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppFcPort' resources matching the request.
-	Results []StorageNetAppFcPort `json:"Results,omitempty"`
+	Results              []StorageNetAppFcPort `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageNetAppFcPortList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppFcPortList) GetResults() []StorageNetAppFcPort {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppFcPort
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableStorageNetAppFcPortList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

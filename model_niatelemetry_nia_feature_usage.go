@@ -183,8 +183,8 @@ type NiatelemetryNiaFeatureUsage struct {
 	// The Site name represents an APIC cluster. Service Engine can onboard multiple APIC clusters / sites. There will be a feature usage object per site in Multi site scenario. In multi-site scenario the site name is available in all the requests being made.
 	SiteName *string `json:"SiteName,omitempty"`
 	// Smart callhome feature usage. This determines if this feature is being enabled or disabled.
-	SmartCallHome *string `json:"SmartCallHome,omitempty"`
-	SmartLicense NullableNiatelemetrySmartLicense `json:"SmartLicense,omitempty"`
+	SmartCallHome *string                          `json:"SmartCallHome,omitempty"`
+	SmartLicense  NullableNiatelemetrySmartLicense `json:"SmartLicense,omitempty"`
 	// Returns count of snapshots.
 	SnapshotCount *int64 `json:"SnapshotCount,omitempty"`
 	// SNMP feature usage. This determines if this feature is enabled or disabled.
@@ -242,9 +242,9 @@ type NiatelemetryNiaFeatureUsage struct {
 	// Virtual pod feature usage. This determines the total number of virtual POD configurations in the fabrics.
 	VpodCount *int64 `json:"VpodCount,omitempty"`
 	// Timeout for web token in seconds.
-	WebtokenTimeoutSeconds *int64 `json:"WebtokenTimeoutSeconds,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	WebtokenTimeoutSeconds *int64                               `json:"WebtokenTimeoutSeconds,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _NiatelemetryNiaFeatureUsage NiatelemetryNiaFeatureUsage
@@ -285,7 +285,7 @@ func (o *NiatelemetryNiaFeatureUsage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaFeatureUsage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -309,7 +309,7 @@ func (o *NiatelemetryNiaFeatureUsage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaFeatureUsage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -2893,7 +2893,7 @@ func (o *NiatelemetryNiaFeatureUsage) GetSmartLicense() NiatelemetrySmartLicense
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaFeatureUsage) GetSmartLicenseOk() (*NiatelemetrySmartLicense, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SmartLicense.Get(), o.SmartLicense.IsSet()
@@ -2912,6 +2912,7 @@ func (o *NiatelemetryNiaFeatureUsage) HasSmartLicense() bool {
 func (o *NiatelemetryNiaFeatureUsage) SetSmartLicense(v NiatelemetrySmartLicense) {
 	o.SmartLicense.Set(&v)
 }
+
 // SetSmartLicenseNil sets the value for SmartLicense to be an explicit nil
 func (o *NiatelemetryNiaFeatureUsage) SetSmartLicenseNil() {
 	o.SmartLicense.Set(nil)
@@ -4404,8 +4405,8 @@ func (o *NiatelemetryNiaFeatureUsage) UnmarshalJSON(bytes []byte) (err error) {
 		// The Site name represents an APIC cluster. Service Engine can onboard multiple APIC clusters / sites. There will be a feature usage object per site in Multi site scenario. In multi-site scenario the site name is available in all the requests being made.
 		SiteName *string `json:"SiteName,omitempty"`
 		// Smart callhome feature usage. This determines if this feature is being enabled or disabled.
-		SmartCallHome *string `json:"SmartCallHome,omitempty"`
-		SmartLicense NullableNiatelemetrySmartLicense `json:"SmartLicense,omitempty"`
+		SmartCallHome *string                          `json:"SmartCallHome,omitempty"`
+		SmartLicense  NullableNiatelemetrySmartLicense `json:"SmartLicense,omitempty"`
 		// Returns count of snapshots.
 		SnapshotCount *int64 `json:"SnapshotCount,omitempty"`
 		// SNMP feature usage. This determines if this feature is enabled or disabled.
@@ -4463,8 +4464,8 @@ func (o *NiatelemetryNiaFeatureUsage) UnmarshalJSON(bytes []byte) (err error) {
 		// Virtual pod feature usage. This determines the total number of virtual POD configurations in the fabrics.
 		VpodCount *int64 `json:"VpodCount,omitempty"`
 		// Timeout for web token in seconds.
-		WebtokenTimeoutSeconds *int64 `json:"WebtokenTimeoutSeconds,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		WebtokenTimeoutSeconds *int64                               `json:"WebtokenTimeoutSeconds,omitempty"`
+		RegisteredDevice       *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varNiatelemetryNiaFeatureUsageWithoutEmbeddedStruct := NiatelemetryNiaFeatureUsageWithoutEmbeddedStruct{}
@@ -4775,5 +4776,3 @@ func (v *NullableNiatelemetryNiaFeatureUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

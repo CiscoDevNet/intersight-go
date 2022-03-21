@@ -20,13 +20,13 @@ type VnicEthIfAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Cdn NullableVnicCdn `json:"Cdn,omitempty"`
+	ObjectType string          `json:"ObjectType"`
+	Cdn        NullableVnicCdn `json:"Cdn,omitempty"`
 	// Enabling failover ensures that traffic from the vNIC automatically fails over to the secondary Fabric Interconnect, in case the specified Fabric Interconnect path goes down. Failover applies only to Cisco VICs that are connected to a Fabric Interconnect cluster.
 	FailoverEnabled *bool `json:"FailoverEnabled,omitempty"`
 	// Static/Pool/DHCP Type of IP address allocated to the vNIC. It is derived from iSCSI boot policy IP Address type. * `None` - Type indicates that there is no IP associated to an vnic. * `DHCP` - The IP address is assigned using DHCP, if available. * `Static` - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area. * `Pool` - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool.
-	IscsiIpV4AddressAllocationType *string `json:"IscsiIpV4AddressAllocationType,omitempty"`
-	IscsiIpV4Config NullableIppoolIpV4Config `json:"IscsiIpV4Config,omitempty"`
+	IscsiIpV4AddressAllocationType *string                  `json:"IscsiIpV4AddressAllocationType,omitempty"`
+	IscsiIpV4Config                NullableIppoolIpV4Config `json:"IscsiIpV4Config,omitempty"`
 	// IP address associated to the vNIC.
 	IscsiIpv4Address *string `json:"IscsiIpv4Address,omitempty"`
 	// The MAC address that is assigned to the vNIC based on the MAC pool that has been assigned to the LAN Connectivity Policy.
@@ -36,31 +36,31 @@ type VnicEthIfAllOf struct {
 	// Name of the virtual ethernet interface.
 	Name *string `json:"Name,omitempty"`
 	// The order in which the virtual interface is brought up. The order assigned to an interface should be unique for all the Ethernet and Fibre-Channel interfaces on each PCI link on a VIC adapter. The maximum value of PCI order is limited by the number of virtual interfaces (Ethernet and Fibre-Channel) on each PCI link on a VIC adapter. All VIC adapters have a single PCI link except VIC 1385 which has two.
-	Order *int64 `json:"Order,omitempty"`
+	Order     *int64                        `json:"Order,omitempty"`
 	Placement NullableVnicPlacementSettings `json:"Placement,omitempty"`
 	// The Standby VIF Id is applicable for failover enabled vNICS. It should be the same as the channel number of the standby vethernet created on switch in order to set up the standby data path.
 	StandbyVifId *int64 `json:"StandbyVifId,omitempty"`
 	// The MAC address must be in hexadecimal format xx:xx:xx:xx:xx:xx. To ensure uniqueness of MACs in the LAN fabric, you are strongly encouraged to use the following MAC prefix 00:25:B5:xx:xx:xx.
-	StaticMacAddress *string `json:"StaticMacAddress,omitempty"`
-	UsnicSettings NullableVnicUsnicSettings `json:"UsnicSettings,omitempty"`
+	StaticMacAddress *string                   `json:"StaticMacAddress,omitempty"`
+	UsnicSettings    NullableVnicUsnicSettings `json:"UsnicSettings,omitempty"`
 	// The Vif Id should be same as the channel number of the vethernet created on switch in order to set up the data path. The property is applicable only for FI attached servers where a vethernet is created on the switch for every vNIC.
-	VifId *int64 `json:"VifId,omitempty"`
-	VmqSettings NullableVnicVmqSettings `json:"VmqSettings,omitempty"`
-	EthAdapterPolicy *VnicEthAdapterPolicyRelationship `json:"EthAdapterPolicy,omitempty"`
-	EthNetworkPolicy *VnicEthNetworkPolicyRelationship `json:"EthNetworkPolicy,omitempty"`
-	EthQosPolicy *VnicEthQosPolicyRelationship `json:"EthQosPolicy,omitempty"`
+	VifId                         *int64                                     `json:"VifId,omitempty"`
+	VmqSettings                   NullableVnicVmqSettings                    `json:"VmqSettings,omitempty"`
+	EthAdapterPolicy              *VnicEthAdapterPolicyRelationship          `json:"EthAdapterPolicy,omitempty"`
+	EthNetworkPolicy              *VnicEthNetworkPolicyRelationship          `json:"EthNetworkPolicy,omitempty"`
+	EthQosPolicy                  *VnicEthQosPolicyRelationship              `json:"EthQosPolicy,omitempty"`
 	FabricEthNetworkControlPolicy *FabricEthNetworkControlPolicyRelationship `json:"FabricEthNetworkControlPolicy,omitempty"`
 	// An array of relationships to fabricEthNetworkGroupPolicy resources.
 	FabricEthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"FabricEthNetworkGroupPolicy,omitempty"`
-	IpLease *IppoolIpLeaseRelationship `json:"IpLease,omitempty"`
-	IscsiBootPolicy *VnicIscsiBootPolicyRelationship `json:"IscsiBootPolicy,omitempty"`
-	LanConnectivityPolicy *VnicLanConnectivityPolicyRelationship `json:"LanConnectivityPolicy,omitempty"`
-	LcpVnic *VnicEthIfRelationship `json:"LcpVnic,omitempty"`
-	MacLease *MacpoolLeaseRelationship `json:"MacLease,omitempty"`
-	MacPool *MacpoolPoolRelationship `json:"MacPool,omitempty"`
-	Profile *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
+	IpLease                     *IppoolIpLeaseRelationship                `json:"IpLease,omitempty"`
+	IscsiBootPolicy             *VnicIscsiBootPolicyRelationship          `json:"IscsiBootPolicy,omitempty"`
+	LanConnectivityPolicy       *VnicLanConnectivityPolicyRelationship    `json:"LanConnectivityPolicy,omitempty"`
+	LcpVnic                     *VnicEthIfRelationship                    `json:"LcpVnic,omitempty"`
+	MacLease                    *MacpoolLeaseRelationship                 `json:"MacLease,omitempty"`
+	MacPool                     *MacpoolPoolRelationship                  `json:"MacPool,omitempty"`
+	Profile                     *PolicyAbstractConfigProfileRelationship  `json:"Profile,omitempty"`
 	// An array of relationships to vnicEthIf resources.
-	SpVnics []VnicEthIfRelationship `json:"SpVnics,omitempty"`
+	SpVnics              []VnicEthIfRelationship `json:"SpVnics,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *VnicEthIfAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthIfAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -134,7 +134,7 @@ func (o *VnicEthIfAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthIfAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -158,7 +158,7 @@ func (o *VnicEthIfAllOf) GetCdn() VnicCdn {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthIfAllOf) GetCdnOk() (*VnicCdn, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Cdn.Get(), o.Cdn.IsSet()
@@ -177,6 +177,7 @@ func (o *VnicEthIfAllOf) HasCdn() bool {
 func (o *VnicEthIfAllOf) SetCdn(v VnicCdn) {
 	o.Cdn.Set(&v)
 }
+
 // SetCdnNil sets the value for Cdn to be an explicit nil
 func (o *VnicEthIfAllOf) SetCdnNil() {
 	o.Cdn.Set(nil)
@@ -264,7 +265,7 @@ func (o *VnicEthIfAllOf) GetIscsiIpV4Config() IppoolIpV4Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthIfAllOf) GetIscsiIpV4ConfigOk() (*IppoolIpV4Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IscsiIpV4Config.Get(), o.IscsiIpV4Config.IsSet()
@@ -283,6 +284,7 @@ func (o *VnicEthIfAllOf) HasIscsiIpV4Config() bool {
 func (o *VnicEthIfAllOf) SetIscsiIpV4Config(v IppoolIpV4Config) {
 	o.IscsiIpV4Config.Set(&v)
 }
+
 // SetIscsiIpV4ConfigNil sets the value for IscsiIpV4Config to be an explicit nil
 func (o *VnicEthIfAllOf) SetIscsiIpV4ConfigNil() {
 	o.IscsiIpV4Config.Set(nil)
@@ -466,7 +468,7 @@ func (o *VnicEthIfAllOf) GetPlacement() VnicPlacementSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthIfAllOf) GetPlacementOk() (*VnicPlacementSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -485,6 +487,7 @@ func (o *VnicEthIfAllOf) HasPlacement() bool {
 func (o *VnicEthIfAllOf) SetPlacement(v VnicPlacementSettings) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *VnicEthIfAllOf) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -572,7 +575,7 @@ func (o *VnicEthIfAllOf) GetUsnicSettings() VnicUsnicSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthIfAllOf) GetUsnicSettingsOk() (*VnicUsnicSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UsnicSettings.Get(), o.UsnicSettings.IsSet()
@@ -591,6 +594,7 @@ func (o *VnicEthIfAllOf) HasUsnicSettings() bool {
 func (o *VnicEthIfAllOf) SetUsnicSettings(v VnicUsnicSettings) {
 	o.UsnicSettings.Set(&v)
 }
+
 // SetUsnicSettingsNil sets the value for UsnicSettings to be an explicit nil
 func (o *VnicEthIfAllOf) SetUsnicSettingsNil() {
 	o.UsnicSettings.Set(nil)
@@ -646,7 +650,7 @@ func (o *VnicEthIfAllOf) GetVmqSettings() VnicVmqSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthIfAllOf) GetVmqSettingsOk() (*VnicVmqSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmqSettings.Get(), o.VmqSettings.IsSet()
@@ -665,6 +669,7 @@ func (o *VnicEthIfAllOf) HasVmqSettings() bool {
 func (o *VnicEthIfAllOf) SetVmqSettings(v VnicVmqSettings) {
 	o.VmqSettings.Set(&v)
 }
+
 // SetVmqSettingsNil sets the value for VmqSettings to be an explicit nil
 func (o *VnicEthIfAllOf) SetVmqSettingsNil() {
 	o.VmqSettings.Set(nil)
@@ -805,7 +810,7 @@ func (o *VnicEthIfAllOf) SetFabricEthNetworkControlPolicy(v FabricEthNetworkCont
 
 // GetFabricEthNetworkGroupPolicy returns the FabricEthNetworkGroupPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicEthIfAllOf) GetFabricEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricEthNetworkGroupPolicyRelationship
 		return ret
 	}
@@ -1062,7 +1067,7 @@ func (o *VnicEthIfAllOf) SetProfile(v PolicyAbstractConfigProfileRelationship) {
 
 // GetSpVnics returns the SpVnics field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicEthIfAllOf) GetSpVnics() []VnicEthIfRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicEthIfRelationship
 		return ret
 	}
@@ -1274,5 +1279,3 @@ func (v *NullableVnicEthIfAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

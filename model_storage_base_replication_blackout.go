@@ -27,7 +27,7 @@ type StorageBaseReplicationBlackout struct {
 	// The end time of day for replication blackout window. Example: 17:00:01 which is 17 hours, 0 minutes, 1 seconds.
 	End *string `json:"End,omitempty"`
 	// The start time of day when replication blackout is active. When replication blackout is active, the storage array temporarily disables replication. Example: 15:04:03.123 which is 15 hours, 4 minutes, 3 seconds and 123 milliseconds. The fractional seconds are written using the standard decimal notation which can be used for setting milliseconds and microseconds.
-	Start *string `json:"Start,omitempty"`
+	Start                *string `json:"Start,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *StorageBaseReplicationBlackout) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseReplicationBlackout) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *StorageBaseReplicationBlackout) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseReplicationBlackout) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableStorageBaseReplicationBlackout) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

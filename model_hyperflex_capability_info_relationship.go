@@ -19,19 +19,18 @@ import (
 // HyperflexCapabilityInfoRelationship - A relationship to the 'hyperflex.CapabilityInfo' resource, or the expanded 'hyperflex.CapabilityInfo' resource, or the 'null' value.
 type HyperflexCapabilityInfoRelationship struct {
 	HyperflexCapabilityInfo *HyperflexCapabilityInfo
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // HyperflexCapabilityInfoAsHyperflexCapabilityInfoRelationship is a convenience function that returns HyperflexCapabilityInfo wrapped in HyperflexCapabilityInfoRelationship
 func HyperflexCapabilityInfoAsHyperflexCapabilityInfoRelationship(v *HyperflexCapabilityInfo) HyperflexCapabilityInfoRelationship {
-	return HyperflexCapabilityInfoRelationship{ HyperflexCapabilityInfo: v}
+	return HyperflexCapabilityInfoRelationship{HyperflexCapabilityInfo: v}
 }
 
 // MoMoRefAsHyperflexCapabilityInfoRelationship is a convenience function that returns MoMoRef wrapped in HyperflexCapabilityInfoRelationship
 func MoMoRefAsHyperflexCapabilityInfoRelationship(v *MoMoRef) HyperflexCapabilityInfoRelationship {
-	return HyperflexCapabilityInfoRelationship{ MoMoRef: v}
+	return HyperflexCapabilityInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexCapabilityInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexCapabilityInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexCapabilityInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexCapabilityInfoRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexCapabilityInfo != nil {
 		return obj.HyperflexCapabilityInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexCapabilityInfoRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

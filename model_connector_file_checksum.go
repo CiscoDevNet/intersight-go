@@ -27,7 +27,7 @@ type ConnectorFileChecksum struct {
 	// The calculated hash of the contents using the algorithm.
 	Hash *string `json:"Hash,omitempty"`
 	// The hash algorithm used to calculate the checksum. * `crc` - A CRC hash as definded by RFC 3385. Generated with the IEEE polynomial. * `sha256` - A SHA256 hash as defined by RFC 4634.
-	HashAlgorithm *string `json:"HashAlgorithm,omitempty"`
+	HashAlgorithm        *string `json:"HashAlgorithm,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ConnectorFileChecksum) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorFileChecksum) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ConnectorFileChecksum) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorFileChecksum) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,5 +304,3 @@ func (v *NullableConnectorFileChecksum) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

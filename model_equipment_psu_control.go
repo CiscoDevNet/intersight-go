@@ -31,17 +31,17 @@ type EquipmentPsuControl struct {
 	// This field identifies the name of psu control object.
 	Name *string `json:"Name,omitempty"`
 	// This field identifies the operational qualifier for the psu redundancy.
-	OperQualifier *string `json:"OperQualifier,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	OperQualifier *string  `json:"OperQualifier,omitempty"`
+	OperReason    []string `json:"OperReason,omitempty"`
 	// This field identifies the operational state of the psu redundancy.
 	OperState *string `json:"OperState,omitempty"`
 	// This field identifies the output power state of the psus.
 	OutputPowerState *string `json:"OutputPowerState,omitempty"`
 	// This field identifies the redundancy state of the psus.
-	Redundancy *string `json:"Redundancy,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Redundancy           *string                              `json:"Redundancy,omitempty"`
+	EquipmentChassis     *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *EquipmentPsuControl) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentPsuControl) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *EquipmentPsuControl) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentPsuControl) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -248,7 +248,7 @@ func (o *EquipmentPsuControl) SetOperQualifier(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentPsuControl) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -541,17 +541,17 @@ func (o *EquipmentPsuControl) UnmarshalJSON(bytes []byte) (err error) {
 		// This field identifies the name of psu control object.
 		Name *string `json:"Name,omitempty"`
 		// This field identifies the operational qualifier for the psu redundancy.
-		OperQualifier *string `json:"OperQualifier,omitempty"`
-		OperReason []string `json:"OperReason,omitempty"`
+		OperQualifier *string  `json:"OperQualifier,omitempty"`
+		OperReason    []string `json:"OperReason,omitempty"`
 		// This field identifies the operational state of the psu redundancy.
 		OperState *string `json:"OperState,omitempty"`
 		// This field identifies the output power state of the psus.
 		OutputPowerState *string `json:"OutputPowerState,omitempty"`
 		// This field identifies the redundancy state of the psus.
-		Redundancy *string `json:"Redundancy,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Redundancy          *string                              `json:"Redundancy,omitempty"`
+		EquipmentChassis    *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentPsuControlWithoutEmbeddedStruct := EquipmentPsuControlWithoutEmbeddedStruct{}
@@ -662,5 +662,3 @@ func (v *NullableEquipmentPsuControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

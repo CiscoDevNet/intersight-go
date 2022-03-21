@@ -25,7 +25,7 @@ type WorkflowWorkflowMeta struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The description for the workflow.
-	Description *string `json:"Description,omitempty"`
+	Description     *string  `json:"Description,omitempty"`
 	InputParameters []string `json:"InputParameters,omitempty"`
 	// The name given to the workflow.
 	Name *string `json:"Name,omitempty"`
@@ -44,8 +44,8 @@ type WorkflowWorkflowMeta struct {
 	// The version for the workflow so we can support multiple versions for the same workflow name.
 	Version *int64 `json:"Version,omitempty"`
 	// Parameter decides if workflows will wait for a duplicate to finish before starting a new one.
-	WaitOnDuplicate *bool `json:"WaitOnDuplicate,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	WaitOnDuplicate      *bool                                 `json:"WaitOnDuplicate,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *WorkflowWorkflowMeta) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMeta) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *WorkflowWorkflowMeta) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMeta) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *WorkflowWorkflowMeta) SetDescription(v string) {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMeta) GetInputParameters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *WorkflowWorkflowMeta) SetName(v string) {
 
 // GetOutputParameters returns the OutputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMeta) GetOutputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -362,7 +362,7 @@ func (o *WorkflowWorkflowMeta) SetSrc(v string) {
 
 // GetTasks returns the Tasks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMeta) GetTasks() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -588,7 +588,7 @@ func (o *WorkflowWorkflowMeta) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The description for the workflow.
-		Description *string `json:"Description,omitempty"`
+		Description     *string  `json:"Description,omitempty"`
 		InputParameters []string `json:"InputParameters,omitempty"`
 		// The name given to the workflow.
 		Name *string `json:"Name,omitempty"`
@@ -607,8 +607,8 @@ func (o *WorkflowWorkflowMeta) UnmarshalJSON(bytes []byte) (err error) {
 		// The version for the workflow so we can support multiple versions for the same workflow name.
 		Version *int64 `json:"Version,omitempty"`
 		// Parameter decides if workflows will wait for a duplicate to finish before starting a new one.
-		WaitOnDuplicate *bool `json:"WaitOnDuplicate,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		WaitOnDuplicate *bool                                 `json:"WaitOnDuplicate,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varWorkflowWorkflowMetaWithoutEmbeddedStruct := WorkflowWorkflowMetaWithoutEmbeddedStruct{}
@@ -721,5 +721,3 @@ func (v *NullableWorkflowWorkflowMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

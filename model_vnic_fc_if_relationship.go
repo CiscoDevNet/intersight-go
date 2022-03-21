@@ -18,20 +18,19 @@ import (
 
 // VnicFcIfRelationship - A relationship to the 'vnic.FcIf' resource, or the expanded 'vnic.FcIf' resource, or the 'null' value.
 type VnicFcIfRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef  *MoMoRef
 	VnicFcIf *VnicFcIf
 }
 
 // MoMoRefAsVnicFcIfRelationship is a convenience function that returns MoMoRef wrapped in VnicFcIfRelationship
 func MoMoRefAsVnicFcIfRelationship(v *MoMoRef) VnicFcIfRelationship {
-	return VnicFcIfRelationship{ MoMoRef: v}
+	return VnicFcIfRelationship{MoMoRef: v}
 }
 
 // VnicFcIfAsVnicFcIfRelationship is a convenience function that returns VnicFcIf wrapped in VnicFcIfRelationship
 func VnicFcIfAsVnicFcIfRelationship(v *VnicFcIf) VnicFcIfRelationship {
-	return VnicFcIfRelationship{ VnicFcIf: v}
+	return VnicFcIfRelationship{VnicFcIf: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicFcIfRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VnicFcIfRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicFcIfRelationship) GetActualInstance() (interface{}) {
+func (obj *VnicFcIfRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVnicFcIfRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

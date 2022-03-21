@@ -19,19 +19,18 @@ import (
 // MacpoolIdBlockRelationship - A relationship to the 'macpool.IdBlock' resource, or the expanded 'macpool.IdBlock' resource, or the 'null' value.
 type MacpoolIdBlockRelationship struct {
 	MacpoolIdBlock *MacpoolIdBlock
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // MacpoolIdBlockAsMacpoolIdBlockRelationship is a convenience function that returns MacpoolIdBlock wrapped in MacpoolIdBlockRelationship
 func MacpoolIdBlockAsMacpoolIdBlockRelationship(v *MacpoolIdBlock) MacpoolIdBlockRelationship {
-	return MacpoolIdBlockRelationship{ MacpoolIdBlock: v}
+	return MacpoolIdBlockRelationship{MacpoolIdBlock: v}
 }
 
 // MoMoRefAsMacpoolIdBlockRelationship is a convenience function that returns MoMoRef wrapped in MacpoolIdBlockRelationship
 func MoMoRefAsMacpoolIdBlockRelationship(v *MoMoRef) MacpoolIdBlockRelationship {
-	return MacpoolIdBlockRelationship{ MoMoRef: v}
+	return MacpoolIdBlockRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolIdBlockRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MacpoolIdBlockRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolIdBlockRelationship) GetActualInstance() (interface{}) {
+func (obj *MacpoolIdBlockRelationship) GetActualInstance() interface{} {
 	if obj.MacpoolIdBlock != nil {
 		return obj.MacpoolIdBlock
 	}
@@ -137,5 +136,3 @@ func (v *NullableMacpoolIdBlockRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

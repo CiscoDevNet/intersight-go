@@ -20,30 +20,29 @@ import (
 type IppoolPoolMemberResponse struct {
 	IppoolPoolMemberList *IppoolPoolMemberList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IppoolPoolMemberListAsIppoolPoolMemberResponse is a convenience function that returns IppoolPoolMemberList wrapped in IppoolPoolMemberResponse
 func IppoolPoolMemberListAsIppoolPoolMemberResponse(v *IppoolPoolMemberList) IppoolPoolMemberResponse {
-	return IppoolPoolMemberResponse{ IppoolPoolMemberList: v}
+	return IppoolPoolMemberResponse{IppoolPoolMemberList: v}
 }
 
 // MoAggregateTransformAsIppoolPoolMemberResponse is a convenience function that returns MoAggregateTransform wrapped in IppoolPoolMemberResponse
 func MoAggregateTransformAsIppoolPoolMemberResponse(v *MoAggregateTransform) IppoolPoolMemberResponse {
-	return IppoolPoolMemberResponse{ MoAggregateTransform: v}
+	return IppoolPoolMemberResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIppoolPoolMemberResponse is a convenience function that returns MoDocumentCount wrapped in IppoolPoolMemberResponse
 func MoDocumentCountAsIppoolPoolMemberResponse(v *MoDocumentCount) IppoolPoolMemberResponse {
-	return IppoolPoolMemberResponse{ MoDocumentCount: v}
+	return IppoolPoolMemberResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIppoolPoolMemberResponse is a convenience function that returns MoTagSummary wrapped in IppoolPoolMemberResponse
 func MoTagSummaryAsIppoolPoolMemberResponse(v *MoTagSummary) IppoolPoolMemberResponse {
-	return IppoolPoolMemberResponse{ MoTagSummary: v}
+	return IppoolPoolMemberResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IppoolPoolMemberResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IppoolPoolMemberResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IppoolPoolMemberResponse) GetActualInstance() (interface{}) {
+func (obj *IppoolPoolMemberResponse) GetActualInstance() interface{} {
 	if obj.IppoolPoolMemberList != nil {
 		return obj.IppoolPoolMemberList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIppoolPoolMemberResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

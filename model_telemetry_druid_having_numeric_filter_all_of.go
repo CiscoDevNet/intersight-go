@@ -20,7 +20,7 @@ type TelemetryDruidHavingNumericFilterAllOf struct {
 	// aggregate metric
 	Aggregation string `json:"aggregation"`
 	// null
-	Value float64 `json:"value"`
+	Value                float64 `json:"value"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidHavingNumericFilterAllOf) GetAggregation() string {
 // GetAggregationOk returns a tuple with the Aggregation field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingNumericFilterAllOf) GetAggregationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Aggregation, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidHavingNumericFilterAllOf) GetValue() float64 {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidHavingNumericFilterAllOf) GetValueOk() (*float64, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidHavingNumericFilterAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

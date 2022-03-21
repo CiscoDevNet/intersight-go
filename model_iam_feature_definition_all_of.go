@@ -22,7 +22,7 @@ type IamFeatureDefinitionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The beta feature that will be enabled for specific account. * `IWO` - Intersight Workflow Optimizer. * `Hitachi` - Support to claim Hitachi Storage arrays using the Intersight Orchestrator framework. * `KubernetesExtension` - Extension to the IKS and Adopted Clusters. * `NetAppIO` - Support to claim NetApp Storage arrays as IO targets. * `IvsPublicCloud` - Enables virtualization service for public clouds. * `TerraformCloud` - Enables an ability to create Terraform Cloud. * `IWE` - Enables an ability to use Intersight Workload Engine. * `WashingtonEFT` - Support for EFT customers to use Washington firmware images for upgrades. * `Solutions` - Support for managing solutions.
-	Feature *string `json:"Feature,omitempty"`
+	Feature              *string `json:"Feature,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *IamFeatureDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamFeatureDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *IamFeatureDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamFeatureDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -208,5 +208,3 @@ func (v *NullableIamFeatureDefinitionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

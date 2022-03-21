@@ -24,7 +24,7 @@ type AssetApiKeyCredentialAllOf struct {
 	// This a secret API key which can be used for authentication purposes for different targets like Azure Enterprise Agreement.
 	ApiKey *string `json:"ApiKey,omitempty"`
 	// Indicates whether the value of the 'apiKey' property has been set.
-	IsApiKeySet *bool `json:"IsApiKeySet,omitempty"`
+	IsApiKeySet          *bool `json:"IsApiKeySet,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *AssetApiKeyCredentialAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetApiKeyCredentialAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *AssetApiKeyCredentialAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetApiKeyCredentialAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableAssetApiKeyCredentialAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

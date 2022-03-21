@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // StorageBaseSnapshot Reference marker for volume. It is a point-in-time copy of the volume.
@@ -34,7 +34,7 @@ type StorageBaseSnapshot struct {
 	// Snapshot size represented in bytes.
 	Size *int64 `json:"Size,omitempty"`
 	// Source object on which the snapshot is created. It is the name of the originating volume.
-	Source *string `json:"Source,omitempty"`
+	Source               *string `json:"Source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StorageBaseSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StorageBaseSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -420,5 +420,3 @@ func (v *NullableStorageBaseSnapshot) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

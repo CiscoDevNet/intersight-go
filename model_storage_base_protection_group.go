@@ -31,7 +31,7 @@ type StorageBaseProtectionGroup struct {
 	// Flag to determine if replication is enabled. Snapshots are replicated to the target array if this flag is set.
 	ReplicationEnabled *bool `json:"ReplicationEnabled,omitempty"`
 	// Flag to determine if snapshot creation is enabled. Snapshots are created on local array if this flag is set.
-	SnapshotEnabled *bool `json:"SnapshotEnabled,omitempty"`
+	SnapshotEnabled      *bool `json:"SnapshotEnabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageBaseProtectionGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseProtectionGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageBaseProtectionGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseProtectionGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableStorageBaseProtectionGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

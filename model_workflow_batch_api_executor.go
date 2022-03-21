@@ -23,9 +23,9 @@ type WorkflowBatchApiExecutor struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType           string                                    `json:"ObjectType"`
 	ErrorResponseHandler *WorkflowErrorResponseHandlerRelationship `json:"ErrorResponseHandler,omitempty"`
-	TaskDefinition *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
+	TaskDefinition       *WorkflowTaskDefinitionRelationship       `json:"TaskDefinition,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *WorkflowBatchApiExecutor) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBatchApiExecutor) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *WorkflowBatchApiExecutor) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBatchApiExecutor) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -201,9 +201,9 @@ func (o *WorkflowBatchApiExecutor) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType           string                                    `json:"ObjectType"`
 		ErrorResponseHandler *WorkflowErrorResponseHandlerRelationship `json:"ErrorResponseHandler,omitempty"`
-		TaskDefinition *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
+		TaskDefinition       *WorkflowTaskDefinitionRelationship       `json:"TaskDefinition,omitempty"`
 	}
 
 	varWorkflowBatchApiExecutorWithoutEmbeddedStruct := WorkflowBatchApiExecutorWithoutEmbeddedStruct{}
@@ -296,5 +296,3 @@ func (v *NullableWorkflowBatchApiExecutor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

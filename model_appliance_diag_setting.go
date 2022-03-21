@@ -29,8 +29,8 @@ type ApplianceDiagSetting struct {
 	// Status message of the password change operation.
 	Message *string `json:"Message,omitempty"`
 	// Password of the Intersight Appliance's OS diagnostic user account.
-	Password *string `json:"Password,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Password             *string                 `json:"Password,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *ApplianceDiagSetting) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDiagSetting) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *ApplianceDiagSetting) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDiagSetting) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -282,8 +282,8 @@ func (o *ApplianceDiagSetting) UnmarshalJSON(bytes []byte) (err error) {
 		// Status message of the password change operation.
 		Message *string `json:"Message,omitempty"`
 		// Password of the Intersight Appliance's OS diagnostic user account.
-		Password *string `json:"Password,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Password *string                 `json:"Password,omitempty"`
+		Account  *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varApplianceDiagSettingWithoutEmbeddedStruct := ApplianceDiagSettingWithoutEmbeddedStruct{}
@@ -380,5 +380,3 @@ func (v *NullableApplianceDiagSetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

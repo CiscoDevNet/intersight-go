@@ -20,7 +20,7 @@ type HyperflexHealthCheckExecutionSnapshotListAllOf struct {
 	// The total number of 'hyperflex.HealthCheckExecutionSnapshot' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.HealthCheckExecutionSnapshot' resources matching the request.
-	Results []HyperflexHealthCheckExecutionSnapshot `json:"Results,omitempty"`
+	Results              []HyperflexHealthCheckExecutionSnapshot `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexHealthCheckExecutionSnapshotListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexHealthCheckExecutionSnapshotListAllOf) GetResults() []HyperflexHealthCheckExecutionSnapshot {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexHealthCheckExecutionSnapshot
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexHealthCheckExecutionSnapshotListAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,7 +25,7 @@ type TechsupportmanagementApplianceParam struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Specifies whether the techsupport request is from the cloud or by the appliance.
-	IsApplianceRequest *bool `json:"IsApplianceRequest,omitempty"`
+	IsApplianceRequest   *bool `json:"IsApplianceRequest,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *TechsupportmanagementApplianceParam) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementApplianceParam) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *TechsupportmanagementApplianceParam) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementApplianceParam) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -259,5 +259,3 @@ func (v *NullableTechsupportmanagementApplianceParam) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

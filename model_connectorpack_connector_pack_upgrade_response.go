@@ -19,31 +19,30 @@ import (
 // ConnectorpackConnectorPackUpgradeResponse - The response body of a HTTP GET request for the 'connectorpack.ConnectorPackUpgrade' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'connectorpack.ConnectorPackUpgrade' resources.
 type ConnectorpackConnectorPackUpgradeResponse struct {
 	ConnectorpackConnectorPackUpgradeList *ConnectorpackConnectorPackUpgradeList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 }
 
 // ConnectorpackConnectorPackUpgradeListAsConnectorpackConnectorPackUpgradeResponse is a convenience function that returns ConnectorpackConnectorPackUpgradeList wrapped in ConnectorpackConnectorPackUpgradeResponse
 func ConnectorpackConnectorPackUpgradeListAsConnectorpackConnectorPackUpgradeResponse(v *ConnectorpackConnectorPackUpgradeList) ConnectorpackConnectorPackUpgradeResponse {
-	return ConnectorpackConnectorPackUpgradeResponse{ ConnectorpackConnectorPackUpgradeList: v}
+	return ConnectorpackConnectorPackUpgradeResponse{ConnectorpackConnectorPackUpgradeList: v}
 }
 
 // MoAggregateTransformAsConnectorpackConnectorPackUpgradeResponse is a convenience function that returns MoAggregateTransform wrapped in ConnectorpackConnectorPackUpgradeResponse
 func MoAggregateTransformAsConnectorpackConnectorPackUpgradeResponse(v *MoAggregateTransform) ConnectorpackConnectorPackUpgradeResponse {
-	return ConnectorpackConnectorPackUpgradeResponse{ MoAggregateTransform: v}
+	return ConnectorpackConnectorPackUpgradeResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsConnectorpackConnectorPackUpgradeResponse is a convenience function that returns MoDocumentCount wrapped in ConnectorpackConnectorPackUpgradeResponse
 func MoDocumentCountAsConnectorpackConnectorPackUpgradeResponse(v *MoDocumentCount) ConnectorpackConnectorPackUpgradeResponse {
-	return ConnectorpackConnectorPackUpgradeResponse{ MoDocumentCount: v}
+	return ConnectorpackConnectorPackUpgradeResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsConnectorpackConnectorPackUpgradeResponse is a convenience function that returns MoTagSummary wrapped in ConnectorpackConnectorPackUpgradeResponse
 func MoTagSummaryAsConnectorpackConnectorPackUpgradeResponse(v *MoTagSummary) ConnectorpackConnectorPackUpgradeResponse {
-	return ConnectorpackConnectorPackUpgradeResponse{ MoTagSummary: v}
+	return ConnectorpackConnectorPackUpgradeResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ConnectorpackConnectorPackUpgradeResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ConnectorpackConnectorPackUpgradeResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *ConnectorpackConnectorPackUpgradeResponse) GetActualInstance() (interface{}) {
+func (obj *ConnectorpackConnectorPackUpgradeResponse) GetActualInstance() interface{} {
 	if obj.ConnectorpackConnectorPackUpgradeList != nil {
 		return obj.ConnectorpackConnectorPackUpgradeList
 	}
@@ -184,5 +183,3 @@ func (v *NullableConnectorpackConnectorPackUpgradeResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

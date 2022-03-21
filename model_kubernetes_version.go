@@ -27,13 +27,13 @@ type KubernetesVersion struct {
 	// Desired Kubernetes version.
 	KubernetesVersion *string `json:"KubernetesVersion,omitempty"`
 	// The name of this IKS kubernetes version.
-	Name *string `json:"Name,omitempty"`
-	BootIso *SoftwareSolutionDistributableRelationship `json:"BootIso,omitempty"`
-	Catalog *KubernetesCatalogRelationship `json:"Catalog,omitempty"`
-	OvaImageTemplate *SoftwareSolutionDistributableRelationship `json:"OvaImageTemplate,omitempty"`
-	Qcow2NodeTemplate *SoftwareSolutionDistributableRelationship `json:"Qcow2NodeTemplate,omitempty"`
+	Name                        *string                                    `json:"Name,omitempty"`
+	BootIso                     *SoftwareSolutionDistributableRelationship `json:"BootIso,omitempty"`
+	Catalog                     *KubernetesCatalogRelationship             `json:"Catalog,omitempty"`
+	OvaImageTemplate            *SoftwareSolutionDistributableRelationship `json:"OvaImageTemplate,omitempty"`
+	Qcow2NodeTemplate           *SoftwareSolutionDistributableRelationship `json:"Qcow2NodeTemplate,omitempty"`
 	Qcow2VirtualMachineTemplate *SoftwareSolutionDistributableRelationship `json:"Qcow2VirtualMachineTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties        map[string]interface{}
 }
 
 type _KubernetesVersion KubernetesVersion
@@ -74,7 +74,7 @@ func (o *KubernetesVersion) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVersion) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *KubernetesVersion) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesVersion) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -387,11 +387,11 @@ func (o *KubernetesVersion) UnmarshalJSON(bytes []byte) (err error) {
 		// Desired Kubernetes version.
 		KubernetesVersion *string `json:"KubernetesVersion,omitempty"`
 		// The name of this IKS kubernetes version.
-		Name *string `json:"Name,omitempty"`
-		BootIso *SoftwareSolutionDistributableRelationship `json:"BootIso,omitempty"`
-		Catalog *KubernetesCatalogRelationship `json:"Catalog,omitempty"`
-		OvaImageTemplate *SoftwareSolutionDistributableRelationship `json:"OvaImageTemplate,omitempty"`
-		Qcow2NodeTemplate *SoftwareSolutionDistributableRelationship `json:"Qcow2NodeTemplate,omitempty"`
+		Name                        *string                                    `json:"Name,omitempty"`
+		BootIso                     *SoftwareSolutionDistributableRelationship `json:"BootIso,omitempty"`
+		Catalog                     *KubernetesCatalogRelationship             `json:"Catalog,omitempty"`
+		OvaImageTemplate            *SoftwareSolutionDistributableRelationship `json:"OvaImageTemplate,omitempty"`
+		Qcow2NodeTemplate           *SoftwareSolutionDistributableRelationship `json:"Qcow2NodeTemplate,omitempty"`
 		Qcow2VirtualMachineTemplate *SoftwareSolutionDistributableRelationship `json:"Qcow2VirtualMachineTemplate,omitempty"`
 	}
 
@@ -495,5 +495,3 @@ func (v *NullableKubernetesVersion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

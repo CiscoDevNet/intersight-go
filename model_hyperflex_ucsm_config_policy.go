@@ -23,14 +23,14 @@ type HyperflexUcsmConfigPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	KvmIpRange NullableHyperflexIpAddrRange `json:"KvmIpRange,omitempty"`
+	ObjectType     string                              `json:"ObjectType"`
+	KvmIpRange     NullableHyperflexIpAddrRange        `json:"KvmIpRange,omitempty"`
 	MacPrefixRange NullableHyperflexMacAddrPrefixRange `json:"MacPrefixRange,omitempty"`
 	// The server firmware bundle version used for server components such as CIMC, adapters, BIOS, etc.
 	ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *HyperflexUcsmConfigPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexUcsmConfigPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *HyperflexUcsmConfigPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexUcsmConfigPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -120,7 +120,7 @@ func (o *HyperflexUcsmConfigPolicy) GetKvmIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexUcsmConfigPolicy) GetKvmIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KvmIpRange.Get(), o.KvmIpRange.IsSet()
@@ -139,6 +139,7 @@ func (o *HyperflexUcsmConfigPolicy) HasKvmIpRange() bool {
 func (o *HyperflexUcsmConfigPolicy) SetKvmIpRange(v HyperflexIpAddrRange) {
 	o.KvmIpRange.Set(&v)
 }
+
 // SetKvmIpRangeNil sets the value for KvmIpRange to be an explicit nil
 func (o *HyperflexUcsmConfigPolicy) SetKvmIpRangeNil() {
 	o.KvmIpRange.Set(nil)
@@ -162,7 +163,7 @@ func (o *HyperflexUcsmConfigPolicy) GetMacPrefixRange() HyperflexMacAddrPrefixRa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexUcsmConfigPolicy) GetMacPrefixRangeOk() (*HyperflexMacAddrPrefixRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MacPrefixRange.Get(), o.MacPrefixRange.IsSet()
@@ -181,6 +182,7 @@ func (o *HyperflexUcsmConfigPolicy) HasMacPrefixRange() bool {
 func (o *HyperflexUcsmConfigPolicy) SetMacPrefixRange(v HyperflexMacAddrPrefixRange) {
 	o.MacPrefixRange.Set(&v)
 }
+
 // SetMacPrefixRangeNil sets the value for MacPrefixRange to be an explicit nil
 func (o *HyperflexUcsmConfigPolicy) SetMacPrefixRangeNil() {
 	o.MacPrefixRange.Set(nil)
@@ -225,7 +227,7 @@ func (o *HyperflexUcsmConfigPolicy) SetServerFirmwareVersion(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexUcsmConfigPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -332,14 +334,14 @@ func (o *HyperflexUcsmConfigPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		KvmIpRange NullableHyperflexIpAddrRange `json:"KvmIpRange,omitempty"`
+		ObjectType     string                              `json:"ObjectType"`
+		KvmIpRange     NullableHyperflexIpAddrRange        `json:"KvmIpRange,omitempty"`
 		MacPrefixRange NullableHyperflexMacAddrPrefixRange `json:"MacPrefixRange,omitempty"`
 		// The server firmware bundle version used for server components such as CIMC, adapters, BIOS, etc.
 		ServerFirmwareVersion *string `json:"ServerFirmwareVersion,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexUcsmConfigPolicyWithoutEmbeddedStruct := HyperflexUcsmConfigPolicyWithoutEmbeddedStruct{}
@@ -438,5 +440,3 @@ func (v *NullableHyperflexUcsmConfigPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

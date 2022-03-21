@@ -18,32 +18,31 @@ import (
 
 // IamApiKeyResponse - The response body of a HTTP GET request for the 'iam.ApiKey' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.ApiKey' resources.
 type IamApiKeyResponse struct {
-	IamApiKeyList *IamApiKeyList
+	IamApiKeyList        *IamApiKeyList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamApiKeyListAsIamApiKeyResponse is a convenience function that returns IamApiKeyList wrapped in IamApiKeyResponse
 func IamApiKeyListAsIamApiKeyResponse(v *IamApiKeyList) IamApiKeyResponse {
-	return IamApiKeyResponse{ IamApiKeyList: v}
+	return IamApiKeyResponse{IamApiKeyList: v}
 }
 
 // MoAggregateTransformAsIamApiKeyResponse is a convenience function that returns MoAggregateTransform wrapped in IamApiKeyResponse
 func MoAggregateTransformAsIamApiKeyResponse(v *MoAggregateTransform) IamApiKeyResponse {
-	return IamApiKeyResponse{ MoAggregateTransform: v}
+	return IamApiKeyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamApiKeyResponse is a convenience function that returns MoDocumentCount wrapped in IamApiKeyResponse
 func MoDocumentCountAsIamApiKeyResponse(v *MoDocumentCount) IamApiKeyResponse {
-	return IamApiKeyResponse{ MoDocumentCount: v}
+	return IamApiKeyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamApiKeyResponse is a convenience function that returns MoTagSummary wrapped in IamApiKeyResponse
 func MoTagSummaryAsIamApiKeyResponse(v *MoTagSummary) IamApiKeyResponse {
-	return IamApiKeyResponse{ MoTagSummary: v}
+	return IamApiKeyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamApiKeyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamApiKeyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamApiKeyResponse) GetActualInstance() (interface{}) {
+func (obj *IamApiKeyResponse) GetActualInstance() interface{} {
 	if obj.IamApiKeyList != nil {
 		return obj.IamApiKeyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamApiKeyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

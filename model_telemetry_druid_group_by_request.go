@@ -18,14 +18,14 @@ import (
 // TelemetryDruidGroupByRequest These types of Apache Druid queries take a groupBy query object and return an array of JSON objects where each object represents a grouping asked for by the query.
 type TelemetryDruidGroupByRequest struct {
 	// null
-	QueryType string `json:"queryType"`
+	QueryType  string                   `json:"queryType"`
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// A JSON list of dimensions to do the groupBy over; or see DimensionSpec for ways to extract dimensions..
-	Dimensions []TelemetryDruidDimensionSpec `json:"dimensions"`
-	LimitSpec *TelemetryDruidDefaultLimitSpec `json:"limitSpec,omitempty"`
-	Having *TelemetryDruidHavingFilter `json:"having,omitempty"`
-	Granularity TelemetryDruidGranularity `json:"granularity"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	Dimensions  []TelemetryDruidDimensionSpec   `json:"dimensions"`
+	LimitSpec   *TelemetryDruidDefaultLimitSpec `json:"limitSpec,omitempty"`
+	Having      *TelemetryDruidHavingFilter     `json:"having,omitempty"`
+	Granularity TelemetryDruidGranularity       `json:"granularity"`
+	Filter      *TelemetryDruidFilter           `json:"filter,omitempty"`
 	// Aggregation functions are used to summarize data in buckets. Summarization functions include counting rows, calculating the min/max/sum of metrics and retrieving the first/last value of metrics for each bucket. Additional summarization functions are available with extensions. If no aggregator is provided, the results will be empty for each bucket.
 	Aggregations *[]TelemetryDruidAggregator `json:"aggregations,omitempty"`
 	// Post-aggregations are specifications of processing that should happen on aggregated values as they come out of Apache Druid. If you include a post aggregation as part of a query, make sure to include all aggregators the post-aggregator requires.
@@ -33,8 +33,8 @@ type TelemetryDruidGroupByRequest struct {
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
 	Intervals []string `json:"intervals"`
 	// A JSON array of arrays to return additional result sets for groupings of subsets of top level dimensions. The subtotals feature allows computation of multiple sub-groupings in a single query. To use this feature, add a \"subtotalsSpec\" to your query, which should be a list of subgroup dimension sets. It should contain the \"outputName\" from dimensions in your \"dimensions\" attribute, in the same order as they appear in the \"dimensions\" attribute.
-	SubtotalsSpec *map[string]interface{} `json:"subtotalsSpec,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	SubtotalsSpec        *map[string]interface{}     `json:"subtotalsSpec,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *TelemetryDruidGroupByRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGroupByRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -99,7 +99,7 @@ func (o *TelemetryDruidGroupByRequest) GetDataSource() TelemetryDruidDataSource 
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGroupByRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -123,7 +123,7 @@ func (o *TelemetryDruidGroupByRequest) GetDimensions() []TelemetryDruidDimension
 // GetDimensionsOk returns a tuple with the Dimensions field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGroupByRequest) GetDimensionsOk() (*[]TelemetryDruidDimensionSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Dimensions, true
@@ -211,7 +211,7 @@ func (o *TelemetryDruidGroupByRequest) GetGranularity() TelemetryDruidGranularit
 // GetGranularityOk returns a tuple with the Granularity field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGroupByRequest) GetGranularityOk() (*TelemetryDruidGranularity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Granularity, true
@@ -331,7 +331,7 @@ func (o *TelemetryDruidGroupByRequest) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGroupByRequest) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -515,5 +515,3 @@ func (v *NullableTelemetryDruidGroupByRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,8 +27,8 @@ type NetworkElementSummary struct {
 	// Administratively configured state of Fabric Evacuation feature, for this switch.
 	AdminEvacState *string `json:"AdminEvacState,omitempty"`
 	// The administrative state of the network Element inband management interface.
-	AdminInbandInterfaceState *string `json:"AdminInbandInterfaceState,omitempty"`
-	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+	AdminInbandInterfaceState *string                     `json:"AdminInbandInterfaceState,omitempty"`
+	AlarmSummary              NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// Available memory (un-used) on this switch platform.
 	AvailableMemory *string `json:"AvailableMemory,omitempty"`
 	// The database identifier of the registered device of an object.
@@ -123,8 +123,8 @@ type NetworkElementSummary struct {
 	// This field identifies the vendor of the given component.
 	Vendor *string `json:"Vendor,omitempty"`
 	// Version holds the firmware version related information.
-	Version *string `json:"Version,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                              `json:"Version,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -166,7 +166,7 @@ func (o *NetworkElementSummary) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementSummary) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -190,7 +190,7 @@ func (o *NetworkElementSummary) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkElementSummary) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -278,7 +278,7 @@ func (o *NetworkElementSummary) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NetworkElementSummary) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -297,6 +297,7 @@ func (o *NetworkElementSummary) HasAlarmSummary() bool {
 func (o *NetworkElementSummary) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *NetworkElementSummary) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -2003,8 +2004,8 @@ func (o *NetworkElementSummary) UnmarshalJSON(bytes []byte) (err error) {
 		// Administratively configured state of Fabric Evacuation feature, for this switch.
 		AdminEvacState *string `json:"AdminEvacState,omitempty"`
 		// The administrative state of the network Element inband management interface.
-		AdminInbandInterfaceState *string `json:"AdminInbandInterfaceState,omitempty"`
-		AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+		AdminInbandInterfaceState *string                     `json:"AdminInbandInterfaceState,omitempty"`
+		AlarmSummary              NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 		// Available memory (un-used) on this switch platform.
 		AvailableMemory *string `json:"AvailableMemory,omitempty"`
 		// The database identifier of the registered device of an object.
@@ -2099,7 +2100,7 @@ func (o *NetworkElementSummary) UnmarshalJSON(bytes []byte) (err error) {
 		// This field identifies the vendor of the given component.
 		Vendor *string `json:"Vendor,omitempty"`
 		// Version holds the firmware version related information.
-		Version *string `json:"Version,omitempty"`
+		Version          *string                              `json:"Version,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -2289,5 +2290,3 @@ func (v *NullableNetworkElementSummary) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

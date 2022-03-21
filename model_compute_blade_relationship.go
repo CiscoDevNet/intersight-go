@@ -19,19 +19,18 @@ import (
 // ComputeBladeRelationship - A relationship to the 'compute.Blade' resource, or the expanded 'compute.Blade' resource, or the 'null' value.
 type ComputeBladeRelationship struct {
 	ComputeBlade *ComputeBlade
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // ComputeBladeAsComputeBladeRelationship is a convenience function that returns ComputeBlade wrapped in ComputeBladeRelationship
 func ComputeBladeAsComputeBladeRelationship(v *ComputeBlade) ComputeBladeRelationship {
-	return ComputeBladeRelationship{ ComputeBlade: v}
+	return ComputeBladeRelationship{ComputeBlade: v}
 }
 
 // MoMoRefAsComputeBladeRelationship is a convenience function that returns MoMoRef wrapped in ComputeBladeRelationship
 func MoMoRefAsComputeBladeRelationship(v *MoMoRef) ComputeBladeRelationship {
-	return ComputeBladeRelationship{ MoMoRef: v}
+	return ComputeBladeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeBladeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeBladeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeBladeRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeBladeRelationship) GetActualInstance() interface{} {
 	if obj.ComputeBlade != nil {
 		return obj.ComputeBlade
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeBladeRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

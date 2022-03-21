@@ -23,15 +23,15 @@ type HyperflexVmSnapshotInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType       string                                   `json:"ObjectType"`
 	ClusterIdSnapMap []HyperflexMapClusterIdToStSnapshotPoint `json:"ClusterIdSnapMap,omitempty"`
 	// Combined status code from replication and snapshot status to display in the Intersight UI. * `NONE` - Snapshot replication state is none. * `SUCCESS` - Snapshot completed successfully. * `FAILED` - Snapshot failed replication status code. * `PAUSED` - Snapshot replication paused status code. * `IN_USE` - Snapshot replica in use status code. * `STARTING` - Snapshot replication starting. * `REPLICATING` - Snapshot replication in progress.
-	DisplayStatus *string `json:"DisplayStatus,omitempty"`
-	Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+	DisplayStatus *string                     `json:"DisplayStatus,omitempty"`
+	Error         NullableHyperflexErrorStack `json:"Error,omitempty"`
 	// The name of the Virtual Machine and the time stamp of the snapshot.
 	Label *string `json:"Label,omitempty"`
 	// Quiesce Mode for snapshot taken on Hyperflex cluster. * `NONE` - The snapshot quiesce mode is none. * `CRASH` - The snapshot quiesce mode is crash. * `VMTOOLS` - The snapshot quiesce mode is VMTOOLS. * `APP_CONSISTENT` - The snapshot quiesce mode is app consistent.
-	Mode *string `json:"Mode,omitempty"`
+	Mode           *string                          `json:"Mode,omitempty"`
 	ParentSnapshot NullableHyperflexEntityReference `json:"ParentSnapshot,omitempty"`
 	// Replication status of the least successful target cluster. * `NONE` - Snapshot replication state is none. * `SUCCESS` - Snapshot completed successfully. * `FAILED` - Snapshot failed replication status code. * `PAUSED` - Snapshot replication paused status code. * `IN_USE` - Snapshot replica in use status code. * `STARTING` - Snapshot replication starting. * `REPLICATING` - Snapshot replication in progress.
 	ReplicationStatus *string `json:"ReplicationStatus,omitempty"`
@@ -46,13 +46,13 @@ type HyperflexVmSnapshotInfo struct {
 	// Timestamp the snapshot was finished replicating on the target cluster.
 	TargetCompletionTimestamp *int64 `json:"TargetCompletionTimestamp,omitempty"`
 	// Name of the cluster this snapshot is replicated to.
-	TgtClusterName *string `json:"TgtClusterName,omitempty"`
-	VmEntityReference NullableHyperflexEntityReference `json:"VmEntityReference,omitempty"`
-	VmSnapshotEntityReference NullableHyperflexEntityReference `json:"VmSnapshotEntityReference,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
-	VmBackupInfo *HyperflexVmBackupInfoRelationship `json:"VmBackupInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TgtClusterName            *string                            `json:"TgtClusterName,omitempty"`
+	VmEntityReference         NullableHyperflexEntityReference   `json:"VmEntityReference,omitempty"`
+	VmSnapshotEntityReference NullableHyperflexEntityReference   `json:"VmSnapshotEntityReference,omitempty"`
+	SrcCluster                *HyperflexClusterRelationship      `json:"SrcCluster,omitempty"`
+	TgtCluster                *HyperflexClusterRelationship      `json:"TgtCluster,omitempty"`
+	VmBackupInfo              *HyperflexVmBackupInfoRelationship `json:"VmBackupInfo,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _HyperflexVmSnapshotInfo HyperflexVmSnapshotInfo
@@ -93,7 +93,7 @@ func (o *HyperflexVmSnapshotInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmSnapshotInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *HyperflexVmSnapshotInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmSnapshotInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *HyperflexVmSnapshotInfo) SetObjectType(v string) {
 
 // GetClusterIdSnapMap returns the ClusterIdSnapMap field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVmSnapshotInfo) GetClusterIdSnapMap() []HyperflexMapClusterIdToStSnapshotPoint {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexMapClusterIdToStSnapshotPoint
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *HyperflexVmSnapshotInfo) GetError() HyperflexErrorStack {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmSnapshotInfo) GetErrorOk() (*HyperflexErrorStack, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -225,6 +225,7 @@ func (o *HyperflexVmSnapshotInfo) HasError() bool {
 func (o *HyperflexVmSnapshotInfo) SetError(v HyperflexErrorStack) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *HyperflexVmSnapshotInfo) SetErrorNil() {
 	o.Error.Set(nil)
@@ -312,7 +313,7 @@ func (o *HyperflexVmSnapshotInfo) GetParentSnapshot() HyperflexEntityReference {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmSnapshotInfo) GetParentSnapshotOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ParentSnapshot.Get(), o.ParentSnapshot.IsSet()
@@ -331,6 +332,7 @@ func (o *HyperflexVmSnapshotInfo) HasParentSnapshot() bool {
 func (o *HyperflexVmSnapshotInfo) SetParentSnapshot(v HyperflexEntityReference) {
 	o.ParentSnapshot.Set(&v)
 }
+
 // SetParentSnapshotNil sets the value for ParentSnapshot to be an explicit nil
 func (o *HyperflexVmSnapshotInfo) SetParentSnapshotNil() {
 	o.ParentSnapshot.Set(nil)
@@ -578,7 +580,7 @@ func (o *HyperflexVmSnapshotInfo) GetVmEntityReference() HyperflexEntityReferenc
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmSnapshotInfo) GetVmEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmEntityReference.Get(), o.VmEntityReference.IsSet()
@@ -597,6 +599,7 @@ func (o *HyperflexVmSnapshotInfo) HasVmEntityReference() bool {
 func (o *HyperflexVmSnapshotInfo) SetVmEntityReference(v HyperflexEntityReference) {
 	o.VmEntityReference.Set(&v)
 }
+
 // SetVmEntityReferenceNil sets the value for VmEntityReference to be an explicit nil
 func (o *HyperflexVmSnapshotInfo) SetVmEntityReferenceNil() {
 	o.VmEntityReference.Set(nil)
@@ -620,7 +623,7 @@ func (o *HyperflexVmSnapshotInfo) GetVmSnapshotEntityReference() HyperflexEntity
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmSnapshotInfo) GetVmSnapshotEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmSnapshotEntityReference.Get(), o.VmSnapshotEntityReference.IsSet()
@@ -639,6 +642,7 @@ func (o *HyperflexVmSnapshotInfo) HasVmSnapshotEntityReference() bool {
 func (o *HyperflexVmSnapshotInfo) SetVmSnapshotEntityReference(v HyperflexEntityReference) {
 	o.VmSnapshotEntityReference.Set(&v)
 }
+
 // SetVmSnapshotEntityReferenceNil sets the value for VmSnapshotEntityReference to be an explicit nil
 func (o *HyperflexVmSnapshotInfo) SetVmSnapshotEntityReferenceNil() {
 	o.VmSnapshotEntityReference.Set(nil)
@@ -828,15 +832,15 @@ func (o *HyperflexVmSnapshotInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType       string                                   `json:"ObjectType"`
 		ClusterIdSnapMap []HyperflexMapClusterIdToStSnapshotPoint `json:"ClusterIdSnapMap,omitempty"`
 		// Combined status code from replication and snapshot status to display in the Intersight UI. * `NONE` - Snapshot replication state is none. * `SUCCESS` - Snapshot completed successfully. * `FAILED` - Snapshot failed replication status code. * `PAUSED` - Snapshot replication paused status code. * `IN_USE` - Snapshot replica in use status code. * `STARTING` - Snapshot replication starting. * `REPLICATING` - Snapshot replication in progress.
-		DisplayStatus *string `json:"DisplayStatus,omitempty"`
-		Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+		DisplayStatus *string                     `json:"DisplayStatus,omitempty"`
+		Error         NullableHyperflexErrorStack `json:"Error,omitempty"`
 		// The name of the Virtual Machine and the time stamp of the snapshot.
 		Label *string `json:"Label,omitempty"`
 		// Quiesce Mode for snapshot taken on Hyperflex cluster. * `NONE` - The snapshot quiesce mode is none. * `CRASH` - The snapshot quiesce mode is crash. * `VMTOOLS` - The snapshot quiesce mode is VMTOOLS. * `APP_CONSISTENT` - The snapshot quiesce mode is app consistent.
-		Mode *string `json:"Mode,omitempty"`
+		Mode           *string                          `json:"Mode,omitempty"`
 		ParentSnapshot NullableHyperflexEntityReference `json:"ParentSnapshot,omitempty"`
 		// Replication status of the least successful target cluster. * `NONE` - Snapshot replication state is none. * `SUCCESS` - Snapshot completed successfully. * `FAILED` - Snapshot failed replication status code. * `PAUSED` - Snapshot replication paused status code. * `IN_USE` - Snapshot replica in use status code. * `STARTING` - Snapshot replication starting. * `REPLICATING` - Snapshot replication in progress.
 		ReplicationStatus *string `json:"ReplicationStatus,omitempty"`
@@ -851,12 +855,12 @@ func (o *HyperflexVmSnapshotInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// Timestamp the snapshot was finished replicating on the target cluster.
 		TargetCompletionTimestamp *int64 `json:"TargetCompletionTimestamp,omitempty"`
 		// Name of the cluster this snapshot is replicated to.
-		TgtClusterName *string `json:"TgtClusterName,omitempty"`
-		VmEntityReference NullableHyperflexEntityReference `json:"VmEntityReference,omitempty"`
-		VmSnapshotEntityReference NullableHyperflexEntityReference `json:"VmSnapshotEntityReference,omitempty"`
-		SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-		TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
-		VmBackupInfo *HyperflexVmBackupInfoRelationship `json:"VmBackupInfo,omitempty"`
+		TgtClusterName            *string                            `json:"TgtClusterName,omitempty"`
+		VmEntityReference         NullableHyperflexEntityReference   `json:"VmEntityReference,omitempty"`
+		VmSnapshotEntityReference NullableHyperflexEntityReference   `json:"VmSnapshotEntityReference,omitempty"`
+		SrcCluster                *HyperflexClusterRelationship      `json:"SrcCluster,omitempty"`
+		TgtCluster                *HyperflexClusterRelationship      `json:"TgtCluster,omitempty"`
+		VmBackupInfo              *HyperflexVmBackupInfoRelationship `json:"VmBackupInfo,omitempty"`
 	}
 
 	varHyperflexVmSnapshotInfoWithoutEmbeddedStruct := HyperflexVmSnapshotInfoWithoutEmbeddedStruct{}
@@ -981,5 +985,3 @@ func (v *NullableHyperflexVmSnapshotInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

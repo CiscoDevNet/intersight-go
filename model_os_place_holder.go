@@ -25,10 +25,10 @@ type OsPlaceHolder struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Flag to indicate if value is set. Value will be used to check if any edit.
-	IsValueSet *bool `json:"IsValueSet,omitempty"`
-	Type *WorkflowPrimitiveDataType `json:"Type,omitempty"`
+	IsValueSet *bool                      `json:"IsValueSet,omitempty"`
+	Type       *WorkflowPrimitiveDataType `json:"Type,omitempty"`
 	// Value for placeholder provided by user.
-	Value interface{} `json:"Value,omitempty"`
+	Value                interface{} `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *OsPlaceHolder) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsPlaceHolder) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *OsPlaceHolder) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsPlaceHolder) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -175,7 +175,7 @@ func (o *OsPlaceHolder) SetType(v WorkflowPrimitiveDataType) {
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsPlaceHolder) GetValue() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -246,8 +246,8 @@ func (o *OsPlaceHolder) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Flag to indicate if value is set. Value will be used to check if any edit.
-		IsValueSet *bool `json:"IsValueSet,omitempty"`
-		Type *WorkflowPrimitiveDataType `json:"Type,omitempty"`
+		IsValueSet *bool                      `json:"IsValueSet,omitempty"`
+		Type       *WorkflowPrimitiveDataType `json:"Type,omitempty"`
 		// Value for placeholder provided by user.
 		Value interface{} `json:"Value,omitempty"`
 	}
@@ -344,5 +344,3 @@ func (v *NullableOsPlaceHolder) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

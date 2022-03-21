@@ -25,8 +25,8 @@ type HyperflexMapClusterIdToStSnapshotPoint struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// ClusterId of the snapshot point.
-	ClusterId *string `json:"ClusterId,omitempty"`
-	SnapshotPoint NullableHyperflexSnapshotPoint `json:"SnapshotPoint,omitempty"`
+	ClusterId            *string                        `json:"ClusterId,omitempty"`
+	SnapshotPoint        NullableHyperflexSnapshotPoint `json:"SnapshotPoint,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *HyperflexMapClusterIdToStSnapshotPoint) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapClusterIdToStSnapshotPoint) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexMapClusterIdToStSnapshotPoint) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMapClusterIdToStSnapshotPoint) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *HyperflexMapClusterIdToStSnapshotPoint) GetSnapshotPoint() HyperflexSna
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexMapClusterIdToStSnapshotPoint) GetSnapshotPointOk() (*HyperflexSnapshotPoint, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SnapshotPoint.Get(), o.SnapshotPoint.IsSet()
@@ -167,6 +167,7 @@ func (o *HyperflexMapClusterIdToStSnapshotPoint) HasSnapshotPoint() bool {
 func (o *HyperflexMapClusterIdToStSnapshotPoint) SetSnapshotPoint(v HyperflexSnapshotPoint) {
 	o.SnapshotPoint.Set(&v)
 }
+
 // SetSnapshotPointNil sets the value for SnapshotPoint to be an explicit nil
 func (o *HyperflexMapClusterIdToStSnapshotPoint) SetSnapshotPointNil() {
 	o.SnapshotPoint.Set(nil)
@@ -214,7 +215,7 @@ func (o *HyperflexMapClusterIdToStSnapshotPoint) UnmarshalJSON(bytes []byte) (er
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// ClusterId of the snapshot point.
-		ClusterId *string `json:"ClusterId,omitempty"`
+		ClusterId     *string                        `json:"ClusterId,omitempty"`
 		SnapshotPoint NullableHyperflexSnapshotPoint `json:"SnapshotPoint,omitempty"`
 	}
 
@@ -308,5 +309,3 @@ func (v *NullableHyperflexMapClusterIdToStSnapshotPoint) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

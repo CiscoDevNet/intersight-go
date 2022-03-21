@@ -55,9 +55,9 @@ type HyperflexDrive struct {
 	// The unique identifier of the Hyperflex drive.
 	Uuid *string `json:"Uuid,omitempty"`
 	// The firmware version of the Hyperflex drive.
-	Version *string `json:"Version,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-	Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+	Version              *string                          `json:"Version,omitempty"`
+	LocatorLed           *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	Node                 *HyperflexNodeRelationship       `json:"Node,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -99,7 +99,7 @@ func (o *HyperflexDrive) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDrive) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -123,7 +123,7 @@ func (o *HyperflexDrive) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDrive) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -825,9 +825,9 @@ func (o *HyperflexDrive) UnmarshalJSON(bytes []byte) (err error) {
 		// The unique identifier of the Hyperflex drive.
 		Uuid *string `json:"Uuid,omitempty"`
 		// The firmware version of the Hyperflex drive.
-		Version *string `json:"Version,omitempty"`
+		Version    *string                          `json:"Version,omitempty"`
 		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-		Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+		Node       *HyperflexNodeRelationship       `json:"Node,omitempty"`
 	}
 
 	varHyperflexDriveWithoutEmbeddedStruct := HyperflexDriveWithoutEmbeddedStruct{}
@@ -952,5 +952,3 @@ func (v *NullableHyperflexDrive) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

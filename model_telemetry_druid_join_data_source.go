@@ -26,8 +26,8 @@ type TelemetryDruidJoinDataSource struct {
 	// String prefix that will be applied to all columns from the right-hand datasource, to prevent them from colliding with columns from the left-hand datasource. Can be any string, so long as it is nonempty and is not be a prefix of the string __time. Any columns from the left-hand side that start with your rightPrefix will be shadowed. It is up to you to provide a prefix that will not shadow any important columns from the left side.
 	RightPrefix string `json:"rightPrefix"`
 	// Expression that must be an equality where one side is an expression of the left-hand side, and the other side is a simple column reference to the right-hand side. The right-hand reference must be a simple column reference.
-	Condition string `json:"condition"`
-	JoinType string `json:"joinType"`
+	Condition            string `json:"condition"`
+	JoinType             string `json:"joinType"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *TelemetryDruidJoinDataSource) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -93,7 +93,7 @@ func (o *TelemetryDruidJoinDataSource) GetLeft() string {
 // GetLeftOk returns a tuple with the Left field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetLeftOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Left, true
@@ -117,7 +117,7 @@ func (o *TelemetryDruidJoinDataSource) GetRight() string {
 // GetRightOk returns a tuple with the Right field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetRightOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Right, true
@@ -141,7 +141,7 @@ func (o *TelemetryDruidJoinDataSource) GetRightPrefix() string {
 // GetRightPrefixOk returns a tuple with the RightPrefix field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetRightPrefixOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.RightPrefix, true
@@ -165,7 +165,7 @@ func (o *TelemetryDruidJoinDataSource) GetCondition() string {
 // GetConditionOk returns a tuple with the Condition field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Condition, true
@@ -189,7 +189,7 @@ func (o *TelemetryDruidJoinDataSource) GetJoinType() string {
 // GetJoinTypeOk returns a tuple with the JoinType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidJoinDataSource) GetJoinTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.JoinType, true
@@ -285,5 +285,3 @@ func (v *NullableTelemetryDruidJoinDataSource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

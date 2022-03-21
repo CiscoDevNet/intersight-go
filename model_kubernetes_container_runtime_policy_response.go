@@ -19,31 +19,30 @@ import (
 // KubernetesContainerRuntimePolicyResponse - The response body of a HTTP GET request for the 'kubernetes.ContainerRuntimePolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.ContainerRuntimePolicy' resources.
 type KubernetesContainerRuntimePolicyResponse struct {
 	KubernetesContainerRuntimePolicyList *KubernetesContainerRuntimePolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                 *MoAggregateTransform
+	MoDocumentCount                      *MoDocumentCount
+	MoTagSummary                         *MoTagSummary
 }
 
 // KubernetesContainerRuntimePolicyListAsKubernetesContainerRuntimePolicyResponse is a convenience function that returns KubernetesContainerRuntimePolicyList wrapped in KubernetesContainerRuntimePolicyResponse
 func KubernetesContainerRuntimePolicyListAsKubernetesContainerRuntimePolicyResponse(v *KubernetesContainerRuntimePolicyList) KubernetesContainerRuntimePolicyResponse {
-	return KubernetesContainerRuntimePolicyResponse{ KubernetesContainerRuntimePolicyList: v}
+	return KubernetesContainerRuntimePolicyResponse{KubernetesContainerRuntimePolicyList: v}
 }
 
 // MoAggregateTransformAsKubernetesContainerRuntimePolicyResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesContainerRuntimePolicyResponse
 func MoAggregateTransformAsKubernetesContainerRuntimePolicyResponse(v *MoAggregateTransform) KubernetesContainerRuntimePolicyResponse {
-	return KubernetesContainerRuntimePolicyResponse{ MoAggregateTransform: v}
+	return KubernetesContainerRuntimePolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesContainerRuntimePolicyResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesContainerRuntimePolicyResponse
 func MoDocumentCountAsKubernetesContainerRuntimePolicyResponse(v *MoDocumentCount) KubernetesContainerRuntimePolicyResponse {
-	return KubernetesContainerRuntimePolicyResponse{ MoDocumentCount: v}
+	return KubernetesContainerRuntimePolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesContainerRuntimePolicyResponse is a convenience function that returns MoTagSummary wrapped in KubernetesContainerRuntimePolicyResponse
 func MoTagSummaryAsKubernetesContainerRuntimePolicyResponse(v *MoTagSummary) KubernetesContainerRuntimePolicyResponse {
-	return KubernetesContainerRuntimePolicyResponse{ MoTagSummary: v}
+	return KubernetesContainerRuntimePolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesContainerRuntimePolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesContainerRuntimePolicyResponse) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *KubernetesContainerRuntimePolicyResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesContainerRuntimePolicyResponse) GetActualInstance() interface{} {
 	if obj.KubernetesContainerRuntimePolicyList != nil {
 		return obj.KubernetesContainerRuntimePolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesContainerRuntimePolicyResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

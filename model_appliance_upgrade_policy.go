@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceUpgradePolicy UpgradePolicy stores the Intersight Appliance's software upgrade policy. UpgradePolicy is a sinlgeton managed object. A default upgrade policy is created during the Intersight Appliance setup, and it is configured with an automatic upgrade policy. Automatic upgrade policy lets the system start software upgrade after a pre-defined number of seconds set in the software manifest. Scheduled upgrade policy lets the user start software upgrade at a specified schedule. However, scheduled time cannot be beyond the time limit enforced by the upgrade grace period set in the software manifest.
@@ -38,11 +38,11 @@ type ApplianceUpgradePolicy struct {
 	// Flag to indicate software upgrade setting is synchronized with Intersight SaaS.
 	IsSynced *bool `json:"IsSynced,omitempty"`
 	// Intersight Appliance manual upgrade start time.
-	ManualInstallationStartTime *time.Time `json:"ManualInstallationStartTime,omitempty"`
-	Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
+	ManualInstallationStartTime *time.Time             `json:"ManualInstallationStartTime,omitempty"`
+	Schedule                    NullableOnpremSchedule `json:"Schedule,omitempty"`
 	// SoftwareDownloadType is used to indicate the kind of software download. * `unknown` - Indicates user setting of upgrade service to unknown. * `connected` - Indicates if the upgrade service is set to upload software to latest version automatically. * `manual` - Indicates if the upgrade service is set to upload software to user picked verison manually.
-	SoftwareDownloadType *string `json:"SoftwareDownloadType,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	SoftwareDownloadType *string                 `json:"SoftwareDownloadType,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *ApplianceUpgradePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgradePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *ApplianceUpgradePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgradePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -364,7 +364,7 @@ func (o *ApplianceUpgradePolicy) GetSchedule() OnpremSchedule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceUpgradePolicy) GetScheduleOk() (*OnpremSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -383,6 +383,7 @@ func (o *ApplianceUpgradePolicy) HasSchedule() bool {
 func (o *ApplianceUpgradePolicy) SetSchedule(v OnpremSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *ApplianceUpgradePolicy) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -530,11 +531,11 @@ func (o *ApplianceUpgradePolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Flag to indicate software upgrade setting is synchronized with Intersight SaaS.
 		IsSynced *bool `json:"IsSynced,omitempty"`
 		// Intersight Appliance manual upgrade start time.
-		ManualInstallationStartTime *time.Time `json:"ManualInstallationStartTime,omitempty"`
-		Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
+		ManualInstallationStartTime *time.Time             `json:"ManualInstallationStartTime,omitempty"`
+		Schedule                    NullableOnpremSchedule `json:"Schedule,omitempty"`
 		// SoftwareDownloadType is used to indicate the kind of software download. * `unknown` - Indicates user setting of upgrade service to unknown. * `connected` - Indicates if the upgrade service is set to upload software to latest version automatically. * `manual` - Indicates if the upgrade service is set to upload software to user picked verison manually.
-		SoftwareDownloadType *string `json:"SoftwareDownloadType,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		SoftwareDownloadType *string                 `json:"SoftwareDownloadType,omitempty"`
+		Account              *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varApplianceUpgradePolicyWithoutEmbeddedStruct := ApplianceUpgradePolicyWithoutEmbeddedStruct{}
@@ -643,5 +644,3 @@ func (v *NullableApplianceUpgradePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

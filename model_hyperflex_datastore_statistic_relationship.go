@@ -19,19 +19,18 @@ import (
 // HyperflexDatastoreStatisticRelationship - A relationship to the 'hyperflex.DatastoreStatistic' resource, or the expanded 'hyperflex.DatastoreStatistic' resource, or the 'null' value.
 type HyperflexDatastoreStatisticRelationship struct {
 	HyperflexDatastoreStatistic *HyperflexDatastoreStatistic
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // HyperflexDatastoreStatisticAsHyperflexDatastoreStatisticRelationship is a convenience function that returns HyperflexDatastoreStatistic wrapped in HyperflexDatastoreStatisticRelationship
 func HyperflexDatastoreStatisticAsHyperflexDatastoreStatisticRelationship(v *HyperflexDatastoreStatistic) HyperflexDatastoreStatisticRelationship {
-	return HyperflexDatastoreStatisticRelationship{ HyperflexDatastoreStatistic: v}
+	return HyperflexDatastoreStatisticRelationship{HyperflexDatastoreStatistic: v}
 }
 
 // MoMoRefAsHyperflexDatastoreStatisticRelationship is a convenience function that returns MoMoRef wrapped in HyperflexDatastoreStatisticRelationship
 func MoMoRefAsHyperflexDatastoreStatisticRelationship(v *MoMoRef) HyperflexDatastoreStatisticRelationship {
-	return HyperflexDatastoreStatisticRelationship{ MoMoRef: v}
+	return HyperflexDatastoreStatisticRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexDatastoreStatisticRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexDatastoreStatisticRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *HyperflexDatastoreStatisticRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexDatastoreStatisticRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexDatastoreStatistic != nil {
 		return obj.HyperflexDatastoreStatistic
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexDatastoreStatisticRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

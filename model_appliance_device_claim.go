@@ -45,9 +45,9 @@ type ApplianceDeviceClaim struct {
 	// Status of the device claim process. * `started` - Device claim operation has started. * `failed` - Device claim operation has failed. * `completed` - Device claim operation has completed.
 	Status *string `json:"Status,omitempty"`
 	// Username to log in to the endpoint device.
-	Username *string `json:"Username,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Reservation *ResourceReservationRelationship `json:"Reservation,omitempty"`
+	Username             *string                          `json:"Username,omitempty"`
+	Account              *IamAccountRelationship          `json:"Account,omitempty"`
+	Reservation          *ResourceReservationRelationship `json:"Reservation,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *ApplianceDeviceClaim) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceClaim) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *ApplianceDeviceClaim) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceClaim) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -638,8 +638,8 @@ func (o *ApplianceDeviceClaim) UnmarshalJSON(bytes []byte) (err error) {
 		// Status of the device claim process. * `started` - Device claim operation has started. * `failed` - Device claim operation has failed. * `completed` - Device claim operation has completed.
 		Status *string `json:"Status,omitempty"`
 		// Username to log in to the endpoint device.
-		Username *string `json:"Username,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Username    *string                          `json:"Username,omitempty"`
+		Account     *IamAccountRelationship          `json:"Account,omitempty"`
 		Reservation *ResourceReservationRelationship `json:"Reservation,omitempty"`
 	}
 
@@ -755,5 +755,3 @@ func (v *NullableApplianceDeviceClaim) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

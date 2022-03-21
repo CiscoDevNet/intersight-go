@@ -19,31 +19,30 @@ import (
 // KubernetesVirtualMachineInfraConfigPolicyResponse - The response body of a HTTP GET request for the 'kubernetes.VirtualMachineInfraConfigPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.VirtualMachineInfraConfigPolicy' resources.
 type KubernetesVirtualMachineInfraConfigPolicyResponse struct {
 	KubernetesVirtualMachineInfraConfigPolicyList *KubernetesVirtualMachineInfraConfigPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                          *MoAggregateTransform
+	MoDocumentCount                               *MoDocumentCount
+	MoTagSummary                                  *MoTagSummary
 }
 
 // KubernetesVirtualMachineInfraConfigPolicyListAsKubernetesVirtualMachineInfraConfigPolicyResponse is a convenience function that returns KubernetesVirtualMachineInfraConfigPolicyList wrapped in KubernetesVirtualMachineInfraConfigPolicyResponse
 func KubernetesVirtualMachineInfraConfigPolicyListAsKubernetesVirtualMachineInfraConfigPolicyResponse(v *KubernetesVirtualMachineInfraConfigPolicyList) KubernetesVirtualMachineInfraConfigPolicyResponse {
-	return KubernetesVirtualMachineInfraConfigPolicyResponse{ KubernetesVirtualMachineInfraConfigPolicyList: v}
+	return KubernetesVirtualMachineInfraConfigPolicyResponse{KubernetesVirtualMachineInfraConfigPolicyList: v}
 }
 
 // MoAggregateTransformAsKubernetesVirtualMachineInfraConfigPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesVirtualMachineInfraConfigPolicyResponse
 func MoAggregateTransformAsKubernetesVirtualMachineInfraConfigPolicyResponse(v *MoAggregateTransform) KubernetesVirtualMachineInfraConfigPolicyResponse {
-	return KubernetesVirtualMachineInfraConfigPolicyResponse{ MoAggregateTransform: v}
+	return KubernetesVirtualMachineInfraConfigPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesVirtualMachineInfraConfigPolicyResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesVirtualMachineInfraConfigPolicyResponse
 func MoDocumentCountAsKubernetesVirtualMachineInfraConfigPolicyResponse(v *MoDocumentCount) KubernetesVirtualMachineInfraConfigPolicyResponse {
-	return KubernetesVirtualMachineInfraConfigPolicyResponse{ MoDocumentCount: v}
+	return KubernetesVirtualMachineInfraConfigPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesVirtualMachineInfraConfigPolicyResponse is a convenience function that returns MoTagSummary wrapped in KubernetesVirtualMachineInfraConfigPolicyResponse
 func MoTagSummaryAsKubernetesVirtualMachineInfraConfigPolicyResponse(v *MoTagSummary) KubernetesVirtualMachineInfraConfigPolicyResponse {
-	return KubernetesVirtualMachineInfraConfigPolicyResponse{ MoTagSummary: v}
+	return KubernetesVirtualMachineInfraConfigPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVirtualMachineInfraConfigPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesVirtualMachineInfraConfigPolicyResponse) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *KubernetesVirtualMachineInfraConfigPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesVirtualMachineInfraConfigPolicyResponse) GetActualInstance() interface{} {
 	if obj.KubernetesVirtualMachineInfraConfigPolicyList != nil {
 		return obj.KubernetesVirtualMachineInfraConfigPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesVirtualMachineInfraConfigPolicyResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

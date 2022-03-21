@@ -18,20 +18,19 @@ import (
 
 // PciCoprocessorCardRelationship - A relationship to the 'pci.CoprocessorCard' resource, or the expanded 'pci.CoprocessorCard' resource, or the 'null' value.
 type PciCoprocessorCardRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 	PciCoprocessorCard *PciCoprocessorCard
 }
 
 // MoMoRefAsPciCoprocessorCardRelationship is a convenience function that returns MoMoRef wrapped in PciCoprocessorCardRelationship
 func MoMoRefAsPciCoprocessorCardRelationship(v *MoMoRef) PciCoprocessorCardRelationship {
-	return PciCoprocessorCardRelationship{ MoMoRef: v}
+	return PciCoprocessorCardRelationship{MoMoRef: v}
 }
 
 // PciCoprocessorCardAsPciCoprocessorCardRelationship is a convenience function that returns PciCoprocessorCard wrapped in PciCoprocessorCardRelationship
 func PciCoprocessorCardAsPciCoprocessorCardRelationship(v *PciCoprocessorCard) PciCoprocessorCardRelationship {
-	return PciCoprocessorCardRelationship{ PciCoprocessorCard: v}
+	return PciCoprocessorCardRelationship{PciCoprocessorCard: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PciCoprocessorCardRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PciCoprocessorCardRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PciCoprocessorCardRelationship) GetActualInstance() (interface{}) {
+func (obj *PciCoprocessorCardRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePciCoprocessorCardRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

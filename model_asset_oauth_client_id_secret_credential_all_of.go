@@ -26,7 +26,7 @@ type AssetOauthClientIdSecretCredentialAllOf struct {
 	// The client secret used to authenticate with a managed target.
 	ClientSecret *string `json:"ClientSecret,omitempty"`
 	// Indicates whether the value of the 'clientSecret' property has been set.
-	IsClientSecretSet *bool `json:"IsClientSecretSet,omitempty"`
+	IsClientSecretSet    *bool `json:"IsClientSecretSet,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *AssetOauthClientIdSecretCredentialAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetOauthClientIdSecretCredentialAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AssetOauthClientIdSecretCredentialAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetOauthClientIdSecretCredentialAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableAssetOauthClientIdSecretCredentialAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

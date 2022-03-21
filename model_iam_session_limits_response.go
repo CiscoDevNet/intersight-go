@@ -20,30 +20,29 @@ import (
 type IamSessionLimitsResponse struct {
 	IamSessionLimitsList *IamSessionLimitsList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamSessionLimitsListAsIamSessionLimitsResponse is a convenience function that returns IamSessionLimitsList wrapped in IamSessionLimitsResponse
 func IamSessionLimitsListAsIamSessionLimitsResponse(v *IamSessionLimitsList) IamSessionLimitsResponse {
-	return IamSessionLimitsResponse{ IamSessionLimitsList: v}
+	return IamSessionLimitsResponse{IamSessionLimitsList: v}
 }
 
 // MoAggregateTransformAsIamSessionLimitsResponse is a convenience function that returns MoAggregateTransform wrapped in IamSessionLimitsResponse
 func MoAggregateTransformAsIamSessionLimitsResponse(v *MoAggregateTransform) IamSessionLimitsResponse {
-	return IamSessionLimitsResponse{ MoAggregateTransform: v}
+	return IamSessionLimitsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamSessionLimitsResponse is a convenience function that returns MoDocumentCount wrapped in IamSessionLimitsResponse
 func MoDocumentCountAsIamSessionLimitsResponse(v *MoDocumentCount) IamSessionLimitsResponse {
-	return IamSessionLimitsResponse{ MoDocumentCount: v}
+	return IamSessionLimitsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamSessionLimitsResponse is a convenience function that returns MoTagSummary wrapped in IamSessionLimitsResponse
 func MoTagSummaryAsIamSessionLimitsResponse(v *MoTagSummary) IamSessionLimitsResponse {
-	return IamSessionLimitsResponse{ MoTagSummary: v}
+	return IamSessionLimitsResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamSessionLimitsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamSessionLimitsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamSessionLimitsResponse) GetActualInstance() (interface{}) {
+func (obj *IamSessionLimitsResponse) GetActualInstance() interface{} {
 	if obj.IamSessionLimitsList != nil {
 		return obj.IamSessionLimitsList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamSessionLimitsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

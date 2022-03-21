@@ -29,8 +29,8 @@ type HyperflexHypervisorVirtualMachine struct {
 	// Guest operating system state of the HyperFlex virtual machine.
 	GuestOsState *string `json:"GuestOsState,omitempty"`
 	// Host UUID of the HyperFlex virtual machine.
-	HostUuid *string `json:"HostUuid,omitempty"`
-	Ip NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
+	HostUuid *string                                `json:"HostUuid,omitempty"`
+	Ip       NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
 	// Directory path where virtual machine is stored.
 	Path *string `json:"Path,omitempty"`
 	// The instance id of platform which a virtual machine is running on.
@@ -42,9 +42,9 @@ type HyperflexHypervisorVirtualMachine struct {
 	// Flag indicating whether or not this virtual machine is a template. Apply to the ESXi platform only.
 	Template *bool `json:"Template,omitempty"`
 	// The instance UUID of a virtual machine.
-	VmInstanceUuid *string `json:"VmInstanceUuid,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-	Host *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
+	VmInstanceUuid       *string                              `json:"VmInstanceUuid,omitempty"`
+	Cluster              *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
+	Host                 *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *HyperflexHypervisorVirtualMachine) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorVirtualMachine) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *HyperflexHypervisorVirtualMachine) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHypervisorVirtualMachine) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,7 +238,7 @@ func (o *HyperflexHypervisorVirtualMachine) GetIp() NetworkHyperFlexNetworkAddre
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHypervisorVirtualMachine) GetIpOk() (*NetworkHyperFlexNetworkAddress, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ip.Get(), o.Ip.IsSet()
@@ -257,6 +257,7 @@ func (o *HyperflexHypervisorVirtualMachine) HasIp() bool {
 func (o *HyperflexHypervisorVirtualMachine) SetIp(v NetworkHyperFlexNetworkAddress) {
 	o.Ip.Set(&v)
 }
+
 // SetIpNil sets the value for Ip to be an explicit nil
 func (o *HyperflexHypervisorVirtualMachine) SetIpNil() {
 	o.Ip.Set(nil)
@@ -594,8 +595,8 @@ func (o *HyperflexHypervisorVirtualMachine) UnmarshalJSON(bytes []byte) (err err
 		// Guest operating system state of the HyperFlex virtual machine.
 		GuestOsState *string `json:"GuestOsState,omitempty"`
 		// Host UUID of the HyperFlex virtual machine.
-		HostUuid *string `json:"HostUuid,omitempty"`
-		Ip NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
+		HostUuid *string                                `json:"HostUuid,omitempty"`
+		Ip       NullableNetworkHyperFlexNetworkAddress `json:"Ip,omitempty"`
 		// Directory path where virtual machine is stored.
 		Path *string `json:"Path,omitempty"`
 		// The instance id of platform which a virtual machine is running on.
@@ -607,9 +608,9 @@ func (o *HyperflexHypervisorVirtualMachine) UnmarshalJSON(bytes []byte) (err err
 		// Flag indicating whether or not this virtual machine is a template. Apply to the ESXi platform only.
 		Template *bool `json:"Template,omitempty"`
 		// The instance UUID of a virtual machine.
-		VmInstanceUuid *string `json:"VmInstanceUuid,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
-		Host *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
+		VmInstanceUuid *string                              `json:"VmInstanceUuid,omitempty"`
+		Cluster        *HyperflexClusterRelationship        `json:"Cluster,omitempty"`
+		Host           *HyperflexHypervisorHostRelationship `json:"Host,omitempty"`
 	}
 
 	varHyperflexHypervisorVirtualMachineWithoutEmbeddedStruct := HyperflexHypervisorVirtualMachineWithoutEmbeddedStruct{}
@@ -722,5 +723,3 @@ func (v *NullableHyperflexHypervisorVirtualMachine) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

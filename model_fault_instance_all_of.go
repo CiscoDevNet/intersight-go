@@ -50,11 +50,11 @@ type FaultInstanceAllOf struct {
 	// The rule that is responsible for generation of the fault.
 	Rule *string `json:"Rule,omitempty"`
 	// Severity of the fault found.
-	Severity *string `json:"Severity,omitempty"`
-	AffectedMo *InventoryBaseRelationship `json:"AffectedMo,omitempty"`
-	AncestorMo *InventoryBaseRelationship `json:"AncestorMo,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Severity             *string                              `json:"Severity,omitempty"`
+	AffectedMo           *InventoryBaseRelationship           `json:"AffectedMo,omitempty"`
+	AncestorMo           *InventoryBaseRelationship           `json:"AncestorMo,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *FaultInstanceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FaultInstanceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *FaultInstanceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FaultInstanceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -884,5 +884,3 @@ func (v *NullableFaultInstanceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type VnicFcQosPolicyList struct {
 	// The total number of 'vnic.FcQosPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'vnic.FcQosPolicy' resources matching the request.
-	Results []VnicFcQosPolicy `json:"Results,omitempty"`
+	Results              []VnicFcQosPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VnicFcQosPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicFcQosPolicyList) GetResults() []VnicFcQosPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicFcQosPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVnicFcQosPolicyList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

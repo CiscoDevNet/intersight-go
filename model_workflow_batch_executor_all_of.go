@@ -20,8 +20,8 @@ type WorkflowBatchExecutorAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Batch []WorkflowApi `json:"Batch,omitempty"`
+	ObjectType  string                          `json:"ObjectType"`
+	Batch       []WorkflowApi                   `json:"Batch,omitempty"`
 	Constraints NullableWorkflowTaskConstraints `json:"Constraints,omitempty"`
 	// A detailed description about the batch APIs.
 	Description *string `json:"Description,omitempty"`
@@ -36,7 +36,7 @@ type WorkflowBatchExecutorAllOf struct {
 	// The skip expression, if provided, allows the batch API executor to skip the task execution when the given expression evaluates to true. The expression is given as such a golang template that has to be evaluated to a final content true/false. The expression is an optional and in case not provided, the API will always be executed.
 	SkipOnCondition *string `json:"SkipOnCondition,omitempty"`
 	// This will hold the data needed for task to be rendered in the user interface.
-	UiRenderingData interface{} `json:"UiRenderingData,omitempty"`
+	UiRenderingData      interface{} `json:"UiRenderingData,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *WorkflowBatchExecutorAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBatchExecutorAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *WorkflowBatchExecutorAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBatchExecutorAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *WorkflowBatchExecutorAllOf) SetObjectType(v string) {
 
 // GetBatch returns the Batch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBatchExecutorAllOf) GetBatch() []WorkflowApi {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowApi
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *WorkflowBatchExecutorAllOf) GetConstraints() WorkflowTaskConstraints {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowBatchExecutorAllOf) GetConstraintsOk() (*WorkflowTaskConstraints, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Constraints.Get(), o.Constraints.IsSet()
@@ -174,6 +174,7 @@ func (o *WorkflowBatchExecutorAllOf) HasConstraints() bool {
 func (o *WorkflowBatchExecutorAllOf) SetConstraints(v WorkflowTaskConstraints) {
 	o.Constraints.Set(&v)
 }
+
 // SetConstraintsNil sets the value for Constraints to be an explicit nil
 func (o *WorkflowBatchExecutorAllOf) SetConstraintsNil() {
 	o.Constraints.Set(nil)
@@ -250,7 +251,7 @@ func (o *WorkflowBatchExecutorAllOf) SetName(v string) {
 
 // GetOutcomes returns the Outcomes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBatchExecutorAllOf) GetOutcomes() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -283,7 +284,7 @@ func (o *WorkflowBatchExecutorAllOf) SetOutcomes(v interface{}) {
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBatchExecutorAllOf) GetOutput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -380,7 +381,7 @@ func (o *WorkflowBatchExecutorAllOf) SetSkipOnCondition(v string) {
 
 // GetUiRenderingData returns the UiRenderingData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBatchExecutorAllOf) GetUiRenderingData() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -516,5 +517,3 @@ func (v *NullableWorkflowBatchExecutorAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

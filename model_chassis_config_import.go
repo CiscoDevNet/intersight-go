@@ -27,13 +27,13 @@ type ChassisConfigImport struct {
 	// Description of the imported profile.
 	Description *string `json:"Description,omitempty"`
 	// Policy prefix for the policies of the imported chassis profile.
-	PolicyPrefix *string `json:"PolicyPrefix,omitempty"`
-	PolicyTypes []string `json:"PolicyTypes,omitempty"`
+	PolicyPrefix *string  `json:"PolicyPrefix,omitempty"`
+	PolicyTypes  []string `json:"PolicyTypes,omitempty"`
 	// Profile name for the imported chassis profile.
-	ProfileName *string `json:"ProfileName,omitempty"`
-	Chassis *EquipmentChassisRelationship `json:"Chassis,omitempty"`
-	ChassisProfile *ChassisProfileRelationship `json:"ChassisProfile,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ProfileName          *string                               `json:"ProfileName,omitempty"`
+	Chassis              *EquipmentChassisRelationship         `json:"Chassis,omitempty"`
+	ChassisProfile       *ChassisProfileRelationship           `json:"ChassisProfile,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *ChassisConfigImport) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ChassisConfigImport) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *ChassisConfigImport) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ChassisConfigImport) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *ChassisConfigImport) SetPolicyPrefix(v string) {
 
 // GetPolicyTypes returns the PolicyTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChassisConfigImport) GetPolicyTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -389,13 +389,13 @@ func (o *ChassisConfigImport) UnmarshalJSON(bytes []byte) (err error) {
 		// Description of the imported profile.
 		Description *string `json:"Description,omitempty"`
 		// Policy prefix for the policies of the imported chassis profile.
-		PolicyPrefix *string `json:"PolicyPrefix,omitempty"`
-		PolicyTypes []string `json:"PolicyTypes,omitempty"`
+		PolicyPrefix *string  `json:"PolicyPrefix,omitempty"`
+		PolicyTypes  []string `json:"PolicyTypes,omitempty"`
 		// Profile name for the imported chassis profile.
-		ProfileName *string `json:"ProfileName,omitempty"`
-		Chassis *EquipmentChassisRelationship `json:"Chassis,omitempty"`
-		ChassisProfile *ChassisProfileRelationship `json:"ChassisProfile,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		ProfileName    *string                               `json:"ProfileName,omitempty"`
+		Chassis        *EquipmentChassisRelationship         `json:"Chassis,omitempty"`
+		ChassisProfile *ChassisProfileRelationship           `json:"ChassisProfile,omitempty"`
+		Organization   *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varChassisConfigImportWithoutEmbeddedStruct := ChassisConfigImportWithoutEmbeddedStruct{}
@@ -498,5 +498,3 @@ func (v *NullableChassisConfigImport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

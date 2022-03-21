@@ -19,19 +19,18 @@ import (
 // ChassisIomProfileRelationship - A relationship to the 'chassis.IomProfile' resource, or the expanded 'chassis.IomProfile' resource, or the 'null' value.
 type ChassisIomProfileRelationship struct {
 	ChassisIomProfile *ChassisIomProfile
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // ChassisIomProfileAsChassisIomProfileRelationship is a convenience function that returns ChassisIomProfile wrapped in ChassisIomProfileRelationship
 func ChassisIomProfileAsChassisIomProfileRelationship(v *ChassisIomProfile) ChassisIomProfileRelationship {
-	return ChassisIomProfileRelationship{ ChassisIomProfile: v}
+	return ChassisIomProfileRelationship{ChassisIomProfile: v}
 }
 
 // MoMoRefAsChassisIomProfileRelationship is a convenience function that returns MoMoRef wrapped in ChassisIomProfileRelationship
 func MoMoRefAsChassisIomProfileRelationship(v *MoMoRef) ChassisIomProfileRelationship {
-	return ChassisIomProfileRelationship{ MoMoRef: v}
+	return ChassisIomProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChassisIomProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ChassisIomProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ChassisIomProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *ChassisIomProfileRelationship) GetActualInstance() interface{} {
 	if obj.ChassisIomProfile != nil {
 		return obj.ChassisIomProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableChassisIomProfileRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

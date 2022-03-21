@@ -18,20 +18,19 @@ import (
 
 // PowerControlStateRelationship - A relationship to the 'power.ControlState' resource, or the expanded 'power.ControlState' resource, or the 'null' value.
 type PowerControlStateRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	PowerControlState *PowerControlState
 }
 
 // MoMoRefAsPowerControlStateRelationship is a convenience function that returns MoMoRef wrapped in PowerControlStateRelationship
 func MoMoRefAsPowerControlStateRelationship(v *MoMoRef) PowerControlStateRelationship {
-	return PowerControlStateRelationship{ MoMoRef: v}
+	return PowerControlStateRelationship{MoMoRef: v}
 }
 
 // PowerControlStateAsPowerControlStateRelationship is a convenience function that returns PowerControlState wrapped in PowerControlStateRelationship
 func PowerControlStateAsPowerControlStateRelationship(v *PowerControlState) PowerControlStateRelationship {
-	return PowerControlStateRelationship{ PowerControlState: v}
+	return PowerControlStateRelationship{PowerControlState: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PowerControlStateRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PowerControlStateRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PowerControlStateRelationship) GetActualInstance() (interface{}) {
+func (obj *PowerControlStateRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePowerControlStateRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

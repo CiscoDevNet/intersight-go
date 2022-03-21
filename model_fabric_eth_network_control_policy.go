@@ -27,7 +27,7 @@ type FabricEthNetworkControlPolicy struct {
 	// Enables the CDP on an interface.
 	CdpEnabled *bool `json:"CdpEnabled,omitempty"`
 	// Determines if the MAC forging is allowed or denied on an interface. * `allow` - Allows mac forging on an interface. * `deny` - Denies mac forging on an interface.
-	ForgeMac *string `json:"ForgeMac,omitempty"`
+	ForgeMac     *string                    `json:"ForgeMac,omitempty"`
 	LldpSettings NullableFabricLldpSettings `json:"LldpSettings,omitempty"`
 	// Determines the MAC addresses that have to be registered with the switch. * `nativeVlanOnly` - Register only the MAC addresses learnt on the native VLAN. * `allVlans` - Register all the MAC addresses learnt on all the allowed VLANs.
 	MacRegistrationMode *string `json:"MacRegistrationMode,omitempty"`
@@ -35,8 +35,8 @@ type FabricEthNetworkControlPolicy struct {
 	UplinkFailAction *string `json:"UplinkFailAction,omitempty"`
 	// An array of relationships to vnicEthNetworkPolicy resources.
 	// Deprecated
-	NetworkPolicy []VnicEthNetworkPolicyRelationship `json:"NetworkPolicy,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	NetworkPolicy        []VnicEthNetworkPolicyRelationship    `json:"NetworkPolicy,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *FabricEthNetworkControlPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricEthNetworkControlPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *FabricEthNetworkControlPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricEthNetworkControlPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -206,7 +206,7 @@ func (o *FabricEthNetworkControlPolicy) GetLldpSettings() FabricLldpSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricEthNetworkControlPolicy) GetLldpSettingsOk() (*FabricLldpSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LldpSettings.Get(), o.LldpSettings.IsSet()
@@ -225,6 +225,7 @@ func (o *FabricEthNetworkControlPolicy) HasLldpSettings() bool {
 func (o *FabricEthNetworkControlPolicy) SetLldpSettings(v FabricLldpSettings) {
 	o.LldpSettings.Set(&v)
 }
+
 // SetLldpSettingsNil sets the value for LldpSettings to be an explicit nil
 func (o *FabricEthNetworkControlPolicy) SetLldpSettingsNil() {
 	o.LldpSettings.Set(nil)
@@ -302,7 +303,7 @@ func (o *FabricEthNetworkControlPolicy) SetUplinkFailAction(v string) {
 // GetNetworkPolicy returns the NetworkPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *FabricEthNetworkControlPolicy) GetNetworkPolicy() []VnicEthNetworkPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicEthNetworkPolicyRelationship
 		return ret
 	}
@@ -421,7 +422,7 @@ func (o *FabricEthNetworkControlPolicy) UnmarshalJSON(bytes []byte) (err error) 
 		// Enables the CDP on an interface.
 		CdpEnabled *bool `json:"CdpEnabled,omitempty"`
 		// Determines if the MAC forging is allowed or denied on an interface. * `allow` - Allows mac forging on an interface. * `deny` - Denies mac forging on an interface.
-		ForgeMac *string `json:"ForgeMac,omitempty"`
+		ForgeMac     *string                    `json:"ForgeMac,omitempty"`
 		LldpSettings NullableFabricLldpSettings `json:"LldpSettings,omitempty"`
 		// Determines the MAC addresses that have to be registered with the switch. * `nativeVlanOnly` - Register only the MAC addresses learnt on the native VLAN. * `allVlans` - Register all the MAC addresses learnt on all the allowed VLANs.
 		MacRegistrationMode *string `json:"MacRegistrationMode,omitempty"`
@@ -429,8 +430,8 @@ func (o *FabricEthNetworkControlPolicy) UnmarshalJSON(bytes []byte) (err error) 
 		UplinkFailAction *string `json:"UplinkFailAction,omitempty"`
 		// An array of relationships to vnicEthNetworkPolicy resources.
 		// Deprecated
-		NetworkPolicy []VnicEthNetworkPolicyRelationship `json:"NetworkPolicy,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		NetworkPolicy []VnicEthNetworkPolicyRelationship    `json:"NetworkPolicy,omitempty"`
+		Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varFabricEthNetworkControlPolicyWithoutEmbeddedStruct := FabricEthNetworkControlPolicyWithoutEmbeddedStruct{}
@@ -533,5 +534,3 @@ func (v *NullableFabricEthNetworkControlPolicy) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

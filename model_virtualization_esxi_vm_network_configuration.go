@@ -23,8 +23,8 @@ type VirtualizationEsxiVmNetworkConfiguration struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Interfaces []VirtualizationNetworkInterface `json:"Interfaces,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	Interfaces           []VirtualizationNetworkInterface `json:"Interfaces,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *VirtualizationEsxiVmNetworkConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmNetworkConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *VirtualizationEsxiVmNetworkConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmNetworkConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *VirtualizationEsxiVmNetworkConfiguration) SetObjectType(v string) {
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationEsxiVmNetworkConfiguration) GetInterfaces() []VirtualizationNetworkInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationNetworkInterface
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *VirtualizationEsxiVmNetworkConfiguration) UnmarshalJSON(bytes []byte) (
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                           `json:"ObjectType"`
 		Interfaces []VirtualizationNetworkInterface `json:"Interfaces,omitempty"`
 	}
 
@@ -258,5 +258,3 @@ func (v *NullableVirtualizationEsxiVmNetworkConfiguration) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

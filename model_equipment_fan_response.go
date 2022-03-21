@@ -18,32 +18,31 @@ import (
 
 // EquipmentFanResponse - The response body of a HTTP GET request for the 'equipment.Fan' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.Fan' resources.
 type EquipmentFanResponse struct {
-	EquipmentFanList *EquipmentFanList
+	EquipmentFanList     *EquipmentFanList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // EquipmentFanListAsEquipmentFanResponse is a convenience function that returns EquipmentFanList wrapped in EquipmentFanResponse
 func EquipmentFanListAsEquipmentFanResponse(v *EquipmentFanList) EquipmentFanResponse {
-	return EquipmentFanResponse{ EquipmentFanList: v}
+	return EquipmentFanResponse{EquipmentFanList: v}
 }
 
 // MoAggregateTransformAsEquipmentFanResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentFanResponse
 func MoAggregateTransformAsEquipmentFanResponse(v *MoAggregateTransform) EquipmentFanResponse {
-	return EquipmentFanResponse{ MoAggregateTransform: v}
+	return EquipmentFanResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentFanResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentFanResponse
 func MoDocumentCountAsEquipmentFanResponse(v *MoDocumentCount) EquipmentFanResponse {
-	return EquipmentFanResponse{ MoDocumentCount: v}
+	return EquipmentFanResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentFanResponse is a convenience function that returns MoTagSummary wrapped in EquipmentFanResponse
 func MoTagSummaryAsEquipmentFanResponse(v *MoTagSummary) EquipmentFanResponse {
-	return EquipmentFanResponse{ MoTagSummary: v}
+	return EquipmentFanResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentFanResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentFanResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentFanResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentFanResponse) GetActualInstance() interface{} {
 	if obj.EquipmentFanList != nil {
 		return obj.EquipmentFanList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentFanResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

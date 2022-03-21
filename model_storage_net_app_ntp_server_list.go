@@ -23,7 +23,7 @@ type StorageNetAppNtpServerList struct {
 	// The total number of 'storage.NetAppNtpServer' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppNtpServer' resources matching the request.
-	Results []StorageNetAppNtpServer `json:"Results,omitempty"`
+	Results              []StorageNetAppNtpServer `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageNetAppNtpServerList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppNtpServerList) GetResults() []StorageNetAppNtpServer {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppNtpServer
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableStorageNetAppNtpServerList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

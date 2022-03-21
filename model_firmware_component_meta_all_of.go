@@ -34,14 +34,14 @@ type FirmwareComponentMetaAllOf struct {
 	// If set, the component can be updated through out-of-band management, else, is updated through host service utility boot.
 	IsOobSupported *bool `json:"IsOobSupported,omitempty"`
 	// The model of the component image in the distributable.
-	Model *string `json:"Model,omitempty"`
+	Model            *string  `json:"Model,omitempty"`
 	OobManageability []string `json:"OobManageability,omitempty"`
 	// The image version of components packaged in the distributable.
 	PackedVersion *string `json:"PackedVersion,omitempty"`
 	// The redfish target for each component.
 	RedfishUrl *string `json:"RedfishUrl,omitempty"`
 	// The version of component image in the distributable.
-	Vendor *string `json:"Vendor,omitempty"`
+	Vendor               *string `json:"Vendor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *FirmwareComponentMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareComponentMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *FirmwareComponentMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareComponentMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -352,7 +352,7 @@ func (o *FirmwareComponentMetaAllOf) SetModel(v string) {
 
 // GetOobManageability returns the OobManageability field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareComponentMetaAllOf) GetOobManageability() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -592,5 +592,3 @@ func (v *NullableFirmwareComponentMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

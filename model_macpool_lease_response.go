@@ -18,32 +18,31 @@ import (
 
 // MacpoolLeaseResponse - The response body of a HTTP GET request for the 'macpool.Lease' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'macpool.Lease' resources.
 type MacpoolLeaseResponse struct {
-	MacpoolLeaseList *MacpoolLeaseList
+	MacpoolLeaseList     *MacpoolLeaseList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // MacpoolLeaseListAsMacpoolLeaseResponse is a convenience function that returns MacpoolLeaseList wrapped in MacpoolLeaseResponse
 func MacpoolLeaseListAsMacpoolLeaseResponse(v *MacpoolLeaseList) MacpoolLeaseResponse {
-	return MacpoolLeaseResponse{ MacpoolLeaseList: v}
+	return MacpoolLeaseResponse{MacpoolLeaseList: v}
 }
 
 // MoAggregateTransformAsMacpoolLeaseResponse is a convenience function that returns MoAggregateTransform wrapped in MacpoolLeaseResponse
 func MoAggregateTransformAsMacpoolLeaseResponse(v *MoAggregateTransform) MacpoolLeaseResponse {
-	return MacpoolLeaseResponse{ MoAggregateTransform: v}
+	return MacpoolLeaseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsMacpoolLeaseResponse is a convenience function that returns MoDocumentCount wrapped in MacpoolLeaseResponse
 func MoDocumentCountAsMacpoolLeaseResponse(v *MoDocumentCount) MacpoolLeaseResponse {
-	return MacpoolLeaseResponse{ MoDocumentCount: v}
+	return MacpoolLeaseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsMacpoolLeaseResponse is a convenience function that returns MoTagSummary wrapped in MacpoolLeaseResponse
 func MoTagSummaryAsMacpoolLeaseResponse(v *MoTagSummary) MacpoolLeaseResponse {
-	return MacpoolLeaseResponse{ MoTagSummary: v}
+	return MacpoolLeaseResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolLeaseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src MacpoolLeaseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolLeaseResponse) GetActualInstance() (interface{}) {
+func (obj *MacpoolLeaseResponse) GetActualInstance() interface{} {
 	if obj.MacpoolLeaseList != nil {
 		return obj.MacpoolLeaseList
 	}
@@ -184,5 +183,3 @@ func (v *NullableMacpoolLeaseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

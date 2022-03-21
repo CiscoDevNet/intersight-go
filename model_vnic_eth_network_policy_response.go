@@ -18,32 +18,31 @@ import (
 
 // VnicEthNetworkPolicyResponse - The response body of a HTTP GET request for the 'vnic.EthNetworkPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'vnic.EthNetworkPolicy' resources.
 type VnicEthNetworkPolicyResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 	VnicEthNetworkPolicyList *VnicEthNetworkPolicyList
 }
 
 // MoAggregateTransformAsVnicEthNetworkPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in VnicEthNetworkPolicyResponse
 func MoAggregateTransformAsVnicEthNetworkPolicyResponse(v *MoAggregateTransform) VnicEthNetworkPolicyResponse {
-	return VnicEthNetworkPolicyResponse{ MoAggregateTransform: v}
+	return VnicEthNetworkPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVnicEthNetworkPolicyResponse is a convenience function that returns MoDocumentCount wrapped in VnicEthNetworkPolicyResponse
 func MoDocumentCountAsVnicEthNetworkPolicyResponse(v *MoDocumentCount) VnicEthNetworkPolicyResponse {
-	return VnicEthNetworkPolicyResponse{ MoDocumentCount: v}
+	return VnicEthNetworkPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVnicEthNetworkPolicyResponse is a convenience function that returns MoTagSummary wrapped in VnicEthNetworkPolicyResponse
 func MoTagSummaryAsVnicEthNetworkPolicyResponse(v *MoTagSummary) VnicEthNetworkPolicyResponse {
-	return VnicEthNetworkPolicyResponse{ MoTagSummary: v}
+	return VnicEthNetworkPolicyResponse{MoTagSummary: v}
 }
 
 // VnicEthNetworkPolicyListAsVnicEthNetworkPolicyResponse is a convenience function that returns VnicEthNetworkPolicyList wrapped in VnicEthNetworkPolicyResponse
 func VnicEthNetworkPolicyListAsVnicEthNetworkPolicyResponse(v *VnicEthNetworkPolicyList) VnicEthNetworkPolicyResponse {
-	return VnicEthNetworkPolicyResponse{ VnicEthNetworkPolicyList: v}
+	return VnicEthNetworkPolicyResponse{VnicEthNetworkPolicyList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicEthNetworkPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VnicEthNetworkPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicEthNetworkPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *VnicEthNetworkPolicyResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVnicEthNetworkPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

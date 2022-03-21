@@ -29,15 +29,15 @@ type EquipmentFex struct {
 	// Discovery state of IO card or fabric extender.
 	DiscoveryState *string `json:"DiscoveryState,omitempty"`
 	// An array of relationships to equipmentFan resources.
-	Fans []EquipmentFanRelationship `json:"Fans,omitempty"`
+	Fans                []EquipmentFanRelationship       `json:"Fans,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to equipmentIoCard resources.
-	Ioms []EquipmentIoCardRelationship `json:"Ioms,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+	Ioms           []EquipmentIoCardRelationship    `json:"Ioms,omitempty"`
+	LocatorLed     *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	NetworkElement *NetworkElementRelationship      `json:"NetworkElement,omitempty"`
 	// An array of relationships to equipmentPsu resources.
-	Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Psus                 []EquipmentPsuRelationship           `json:"Psus,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *EquipmentFex) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFex) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *EquipmentFex) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFex) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -180,7 +180,7 @@ func (o *EquipmentFex) SetDiscoveryState(v string) {
 
 // GetFans returns the Fans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFex) GetFans() []EquipmentFanRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanRelationship
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *EquipmentFex) SetInventoryDeviceInfo(v InventoryDeviceInfoRelationship)
 
 // GetIoms returns the Ioms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFex) GetIoms() []EquipmentIoCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoCardRelationship
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *EquipmentFex) SetNetworkElement(v NetworkElementRelationship) {
 
 // GetPsus returns the Psus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFex) GetPsus() []EquipmentPsuRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentPsuRelationship
 		return ret
 	}
@@ -467,14 +467,14 @@ func (o *EquipmentFex) UnmarshalJSON(bytes []byte) (err error) {
 		// Discovery state of IO card or fabric extender.
 		DiscoveryState *string `json:"DiscoveryState,omitempty"`
 		// An array of relationships to equipmentFan resources.
-		Fans []EquipmentFanRelationship `json:"Fans,omitempty"`
+		Fans                []EquipmentFanRelationship       `json:"Fans,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to equipmentIoCard resources.
-		Ioms []EquipmentIoCardRelationship `json:"Ioms,omitempty"`
-		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+		Ioms           []EquipmentIoCardRelationship    `json:"Ioms,omitempty"`
+		LocatorLed     *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+		NetworkElement *NetworkElementRelationship      `json:"NetworkElement,omitempty"`
 		// An array of relationships to equipmentPsu resources.
-		Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+		Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -582,5 +582,3 @@ func (v *NullableEquipmentFex) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,7 +22,7 @@ type FeedbackFeedbackDataAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Account name of the feedback sender. Copied in order to be persisted in case of account removal.
-	AccountName *string `json:"AccountName,omitempty"`
+	AccountName               *string  `json:"AccountName,omitempty"`
 	AlternativeFollowUpEmails []string `json:"AlternativeFollowUpEmails,omitempty"`
 	// Text of the feedback as provided by the user, if it is a bug or a comment.
 	Comment *string `json:"Comment,omitempty"`
@@ -35,7 +35,7 @@ type FeedbackFeedbackDataAllOf struct {
 	// Bunch of last traceId for reproducing user last activity.
 	TraceIds interface{} `json:"TraceIds,omitempty"`
 	// Type of the feedback from user. * `Evaluation` - User's feedback classified as an evaluation. * `Bug` - User's feedback classified as a bug.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *FeedbackFeedbackDataAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackDataAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *FeedbackFeedbackDataAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackDataAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -154,7 +154,7 @@ func (o *FeedbackFeedbackDataAllOf) SetAccountName(v string) {
 
 // GetAlternativeFollowUpEmails returns the AlternativeFollowUpEmails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FeedbackFeedbackDataAllOf) GetAlternativeFollowUpEmails() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *FeedbackFeedbackDataAllOf) SetFollowUp(v bool) {
 
 // GetTraceIds returns the TraceIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FeedbackFeedbackDataAllOf) GetTraceIds() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -479,5 +479,3 @@ func (v *NullableFeedbackFeedbackDataAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

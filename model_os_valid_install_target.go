@@ -25,16 +25,16 @@ type OsValidInstallTarget struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Error message if any errors are encountered while fetching and validating Install targets for the server.
-	Error *string `json:"Error,omitempty"`
-	InstallTargets []OsInstallTargetResponse `json:"InstallTargets,omitempty"`
-	M2Jbod []OsPhysicalDiskResponse `json:"M2Jbod,omitempty"`
-	M2VirtualDrives []OsVirtualDriveResponse `json:"M2VirtualDrives,omitempty"`
-	MraidJbod []OsPhysicalDiskResponse `json:"MraidJbod,omitempty"`
-	MraidVirtualDrives []OsVirtualDriveResponse `json:"MraidVirtualDrives,omitempty"`
+	Error              *string                   `json:"Error,omitempty"`
+	InstallTargets     []OsInstallTargetResponse `json:"InstallTargets,omitempty"`
+	M2Jbod             []OsPhysicalDiskResponse  `json:"M2Jbod,omitempty"`
+	M2VirtualDrives    []OsVirtualDriveResponse  `json:"M2VirtualDrives,omitempty"`
+	MraidJbod          []OsPhysicalDiskResponse  `json:"MraidJbod,omitempty"`
+	MraidVirtualDrives []OsVirtualDriveResponse  `json:"MraidVirtualDrives,omitempty"`
 	// Flag to denote the source of the request. If the call is from Orchestration UI, only the flat list of Install targets can be sent as response.
 	Src *string `json:"Src,omitempty"`
 	// An array of relationships to computePhysical resources.
-	Servers []ComputePhysicalRelationship `json:"Servers,omitempty"`
+	Servers              []ComputePhysicalRelationship `json:"Servers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *OsValidInstallTarget) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsValidInstallTarget) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *OsValidInstallTarget) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsValidInstallTarget) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -145,7 +145,7 @@ func (o *OsValidInstallTarget) SetError(v string) {
 
 // GetInstallTargets returns the InstallTargets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetInstallTargets() []OsInstallTargetResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []OsInstallTargetResponse
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *OsValidInstallTarget) SetInstallTargets(v []OsInstallTargetResponse) {
 
 // GetM2Jbod returns the M2Jbod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetM2Jbod() []OsPhysicalDiskResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []OsPhysicalDiskResponse
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *OsValidInstallTarget) SetM2Jbod(v []OsPhysicalDiskResponse) {
 
 // GetM2VirtualDrives returns the M2VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetM2VirtualDrives() []OsVirtualDriveResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []OsVirtualDriveResponse
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *OsValidInstallTarget) SetM2VirtualDrives(v []OsVirtualDriveResponse) {
 
 // GetMraidJbod returns the MraidJbod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetMraidJbod() []OsPhysicalDiskResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []OsPhysicalDiskResponse
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *OsValidInstallTarget) SetMraidJbod(v []OsPhysicalDiskResponse) {
 
 // GetMraidVirtualDrives returns the MraidVirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetMraidVirtualDrives() []OsVirtualDriveResponse {
-	if o == nil  {
+	if o == nil {
 		var ret []OsVirtualDriveResponse
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *OsValidInstallTarget) SetSrc(v string) {
 
 // GetServers returns the Servers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsValidInstallTarget) GetServers() []ComputePhysicalRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputePhysicalRelationship
 		return ret
 	}
@@ -428,12 +428,12 @@ func (o *OsValidInstallTarget) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Error message if any errors are encountered while fetching and validating Install targets for the server.
-		Error *string `json:"Error,omitempty"`
-		InstallTargets []OsInstallTargetResponse `json:"InstallTargets,omitempty"`
-		M2Jbod []OsPhysicalDiskResponse `json:"M2Jbod,omitempty"`
-		M2VirtualDrives []OsVirtualDriveResponse `json:"M2VirtualDrives,omitempty"`
-		MraidJbod []OsPhysicalDiskResponse `json:"MraidJbod,omitempty"`
-		MraidVirtualDrives []OsVirtualDriveResponse `json:"MraidVirtualDrives,omitempty"`
+		Error              *string                   `json:"Error,omitempty"`
+		InstallTargets     []OsInstallTargetResponse `json:"InstallTargets,omitempty"`
+		M2Jbod             []OsPhysicalDiskResponse  `json:"M2Jbod,omitempty"`
+		M2VirtualDrives    []OsVirtualDriveResponse  `json:"M2VirtualDrives,omitempty"`
+		MraidJbod          []OsPhysicalDiskResponse  `json:"MraidJbod,omitempty"`
+		MraidVirtualDrives []OsVirtualDriveResponse  `json:"MraidVirtualDrives,omitempty"`
 		// Flag to denote the source of the request. If the call is from Orchestration UI, only the flat list of Install targets can be sent as response.
 		Src *string `json:"Src,omitempty"`
 		// An array of relationships to computePhysical resources.
@@ -542,5 +542,3 @@ func (v *NullableOsValidInstallTarget) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type ApplianceReleaseNoteAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Notes []OnpremUpgradeNote `json:"Notes,omitempty"`
+	ObjectType string              `json:"ObjectType"`
+	Notes      []OnpremUpgradeNote `json:"Notes,omitempty"`
 	// Version number of the pending upgrade.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *ApplianceReleaseNoteAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceReleaseNoteAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *ApplianceReleaseNoteAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceReleaseNoteAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -102,7 +102,7 @@ func (o *ApplianceReleaseNoteAllOf) SetObjectType(v string) {
 
 // GetNotes returns the Notes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceReleaseNoteAllOf) GetNotes() []OnpremUpgradeNote {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremUpgradeNote
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableApplianceReleaseNoteAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

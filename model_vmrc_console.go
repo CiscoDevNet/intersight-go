@@ -23,9 +23,9 @@ type VmrcConsole struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Vcenter *VirtualizationVmwareVcenterRelationship `json:"Vcenter,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	ObjectType           string                                          `json:"ObjectType"`
+	Vcenter              *VirtualizationVmwareVcenterRelationship        `json:"Vcenter,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *VmrcConsole) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VmrcConsole) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *VmrcConsole) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VmrcConsole) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -203,8 +203,8 @@ func (o *VmrcConsole) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Vcenter *VirtualizationVmwareVcenterRelationship `json:"Vcenter,omitempty"`
+		ObjectType     string                                          `json:"ObjectType"`
+		Vcenter        *VirtualizationVmwareVcenterRelationship        `json:"Vcenter,omitempty"`
 		VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
@@ -298,5 +298,3 @@ func (v *NullableVmrcConsole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

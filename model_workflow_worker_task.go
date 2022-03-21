@@ -31,7 +31,7 @@ type WorkflowWorkerTask struct {
 	// The qualified name of task that should be executed.
 	TaskDefinitionName *string `json:"TaskDefinitionName,omitempty"`
 	// The task definition version to use in this workflow. When no version is specified then the default version of the task at the time of creating or updating this workflow is used.
-	Version *int64 `json:"Version,omitempty"`
+	Version              *int64 `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *WorkflowWorkerTask) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkerTask) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *WorkflowWorkerTask) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkerTask) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -386,5 +386,3 @@ func (v *NullableWorkflowWorkerTask) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

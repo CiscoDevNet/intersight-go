@@ -27,9 +27,9 @@ type SoftwarerepositoryCatalog struct {
 	// The status of the image catalog synchronization operation.
 	IsImagePullFailure *bool `json:"IsImagePullFailure,omitempty"`
 	// The name of the catalog. The names are populated and predefined during MO creation.
-	Name *string `json:"Name,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	Name                 *string                               `json:"Name,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	System               *IamSystemRelationship                `json:"System,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *SoftwarerepositoryCatalog) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCatalog) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *SoftwarerepositoryCatalog) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCatalog) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -279,9 +279,9 @@ func (o *SoftwarerepositoryCatalog) UnmarshalJSON(bytes []byte) (err error) {
 		// The status of the image catalog synchronization operation.
 		IsImagePullFailure *bool `json:"IsImagePullFailure,omitempty"`
 		// The name of the catalog. The names are populated and predefined during MO creation.
-		Name *string `json:"Name,omitempty"`
+		Name         *string                               `json:"Name,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		System *IamSystemRelationship `json:"System,omitempty"`
+		System       *IamSystemRelationship                `json:"System,omitempty"`
 	}
 
 	varSoftwarerepositoryCatalogWithoutEmbeddedStruct := SoftwarerepositoryCatalogWithoutEmbeddedStruct{}
@@ -378,5 +378,3 @@ func (v *NullableSoftwarerepositoryCatalog) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

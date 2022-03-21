@@ -19,31 +19,30 @@ import (
 // FabricFcUplinkRoleResponse - The response body of a HTTP GET request for the 'fabric.FcUplinkRole' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fabric.FcUplinkRole' resources.
 type FabricFcUplinkRoleResponse struct {
 	FabricFcUplinkRoleList *FabricFcUplinkRoleList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 }
 
 // FabricFcUplinkRoleListAsFabricFcUplinkRoleResponse is a convenience function that returns FabricFcUplinkRoleList wrapped in FabricFcUplinkRoleResponse
 func FabricFcUplinkRoleListAsFabricFcUplinkRoleResponse(v *FabricFcUplinkRoleList) FabricFcUplinkRoleResponse {
-	return FabricFcUplinkRoleResponse{ FabricFcUplinkRoleList: v}
+	return FabricFcUplinkRoleResponse{FabricFcUplinkRoleList: v}
 }
 
 // MoAggregateTransformAsFabricFcUplinkRoleResponse is a convenience function that returns MoAggregateTransform wrapped in FabricFcUplinkRoleResponse
 func MoAggregateTransformAsFabricFcUplinkRoleResponse(v *MoAggregateTransform) FabricFcUplinkRoleResponse {
-	return FabricFcUplinkRoleResponse{ MoAggregateTransform: v}
+	return FabricFcUplinkRoleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricFcUplinkRoleResponse is a convenience function that returns MoDocumentCount wrapped in FabricFcUplinkRoleResponse
 func MoDocumentCountAsFabricFcUplinkRoleResponse(v *MoDocumentCount) FabricFcUplinkRoleResponse {
-	return FabricFcUplinkRoleResponse{ MoDocumentCount: v}
+	return FabricFcUplinkRoleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricFcUplinkRoleResponse is a convenience function that returns MoTagSummary wrapped in FabricFcUplinkRoleResponse
 func MoTagSummaryAsFabricFcUplinkRoleResponse(v *MoTagSummary) FabricFcUplinkRoleResponse {
-	return FabricFcUplinkRoleResponse{ MoTagSummary: v}
+	return FabricFcUplinkRoleResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricFcUplinkRoleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricFcUplinkRoleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricFcUplinkRoleResponse) GetActualInstance() (interface{}) {
+func (obj *FabricFcUplinkRoleResponse) GetActualInstance() interface{} {
 	if obj.FabricFcUplinkRoleList != nil {
 		return obj.FabricFcUplinkRoleList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricFcUplinkRoleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

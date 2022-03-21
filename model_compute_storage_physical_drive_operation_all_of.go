@@ -24,8 +24,8 @@ type ComputeStoragePhysicalDriveOperationAllOf struct {
 	// Administrative actions that can be performed on the Storage Physical Drives. * `None` - No action on the selected Storage Physical Drives. * `SetJbod` - Set Jbod action state on the selected Storage Physical Drives. * `SetUnconfiguredGood` - Set Unconfigured Good action state on the selected Storage Physical Drives.
 	AdminAction *string `json:"AdminAction,omitempty"`
 	// Storage Controller Id of the storage Physical Drives of the server.
-	ControllerId *string `json:"ControllerId,omitempty"`
-	PhysicalDrives []ComputeStoragePhysicalDrive `json:"PhysicalDrives,omitempty"`
+	ControllerId         *string                       `json:"ControllerId,omitempty"`
+	PhysicalDrives       []ComputeStoragePhysicalDrive `json:"PhysicalDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *ComputeStoragePhysicalDriveOperationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStoragePhysicalDriveOperationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *ComputeStoragePhysicalDriveOperationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStoragePhysicalDriveOperationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *ComputeStoragePhysicalDriveOperationAllOf) SetControllerId(v string) {
 
 // GetPhysicalDrives returns the PhysicalDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeStoragePhysicalDriveOperationAllOf) GetPhysicalDrives() []ComputeStoragePhysicalDrive {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeStoragePhysicalDrive
 		return ret
 	}
@@ -284,5 +284,3 @@ func (v *NullableComputeStoragePhysicalDriveOperationAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

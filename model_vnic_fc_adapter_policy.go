@@ -25,24 +25,24 @@ type VnicFcAdapterPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred.
-	ErrorDetectionTimeout *int64 `json:"ErrorDetectionTimeout,omitempty"`
+	ErrorDetectionTimeout *int64                              `json:"ErrorDetectionTimeout,omitempty"`
 	ErrorRecoverySettings NullableVnicFcErrorRecoverySettings `json:"ErrorRecoverySettings,omitempty"`
-	FlogiSettings NullableVnicFlogiSettings `json:"FlogiSettings,omitempty"`
-	InterruptSettings NullableVnicFcInterruptSettings `json:"InterruptSettings,omitempty"`
+	FlogiSettings         NullableVnicFlogiSettings           `json:"FlogiSettings,omitempty"`
+	InterruptSettings     NullableVnicFcInterruptSettings     `json:"InterruptSettings,omitempty"`
 	// The maximum number of data or control I/O operations that can be pending for the virtual interface at one time. If this value is exceeded, the additional I/O operations wait in the queue until the number of pending I/O operations decreases and the additional operations can be processed.
 	IoThrottleCount *int64 `json:"IoThrottleCount,omitempty"`
 	// The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.
 	LunCount *int64 `json:"LunCount,omitempty"`
 	// The number of commands that the HBA can send and receive in a single transmission per LUN.
-	LunQueueDepth *int64 `json:"LunQueueDepth,omitempty"`
+	LunQueueDepth *int64                    `json:"LunQueueDepth,omitempty"`
 	PlogiSettings NullableVnicPlogiSettings `json:"PlogiSettings,omitempty"`
 	// Resource Allocation Timeout, also referred to as RATOV, is the number of milliseconds to wait before the system assumes that a resource cannot be properly allocated.
-	ResourceAllocationTimeout *int64 `json:"ResourceAllocationTimeout,omitempty"`
-	RxQueueSettings NullableVnicFcQueueSettings `json:"RxQueueSettings,omitempty"`
-	ScsiQueueSettings NullableVnicScsiQueueSettings `json:"ScsiQueueSettings,omitempty"`
-	TxQueueSettings NullableVnicFcQueueSettings `json:"TxQueueSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourceAllocationTimeout *int64                                `json:"ResourceAllocationTimeout,omitempty"`
+	RxQueueSettings           NullableVnicFcQueueSettings           `json:"RxQueueSettings,omitempty"`
+	ScsiQueueSettings         NullableVnicScsiQueueSettings         `json:"ScsiQueueSettings,omitempty"`
+	TxQueueSettings           NullableVnicFcQueueSettings           `json:"TxQueueSettings,omitempty"`
+	Organization              *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _VnicFcAdapterPolicy VnicFcAdapterPolicy
@@ -103,7 +103,7 @@ func (o *VnicFcAdapterPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcAdapterPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -127,7 +127,7 @@ func (o *VnicFcAdapterPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcAdapterPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -183,7 +183,7 @@ func (o *VnicFcAdapterPolicy) GetErrorRecoverySettings() VnicFcErrorRecoverySett
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetErrorRecoverySettingsOk() (*VnicFcErrorRecoverySettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ErrorRecoverySettings.Get(), o.ErrorRecoverySettings.IsSet()
@@ -202,6 +202,7 @@ func (o *VnicFcAdapterPolicy) HasErrorRecoverySettings() bool {
 func (o *VnicFcAdapterPolicy) SetErrorRecoverySettings(v VnicFcErrorRecoverySettings) {
 	o.ErrorRecoverySettings.Set(&v)
 }
+
 // SetErrorRecoverySettingsNil sets the value for ErrorRecoverySettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetErrorRecoverySettingsNil() {
 	o.ErrorRecoverySettings.Set(nil)
@@ -225,7 +226,7 @@ func (o *VnicFcAdapterPolicy) GetFlogiSettings() VnicFlogiSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetFlogiSettingsOk() (*VnicFlogiSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FlogiSettings.Get(), o.FlogiSettings.IsSet()
@@ -244,6 +245,7 @@ func (o *VnicFcAdapterPolicy) HasFlogiSettings() bool {
 func (o *VnicFcAdapterPolicy) SetFlogiSettings(v VnicFlogiSettings) {
 	o.FlogiSettings.Set(&v)
 }
+
 // SetFlogiSettingsNil sets the value for FlogiSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetFlogiSettingsNil() {
 	o.FlogiSettings.Set(nil)
@@ -267,7 +269,7 @@ func (o *VnicFcAdapterPolicy) GetInterruptSettings() VnicFcInterruptSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetInterruptSettingsOk() (*VnicFcInterruptSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InterruptSettings.Get(), o.InterruptSettings.IsSet()
@@ -286,6 +288,7 @@ func (o *VnicFcAdapterPolicy) HasInterruptSettings() bool {
 func (o *VnicFcAdapterPolicy) SetInterruptSettings(v VnicFcInterruptSettings) {
 	o.InterruptSettings.Set(&v)
 }
+
 // SetInterruptSettingsNil sets the value for InterruptSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetInterruptSettingsNil() {
 	o.InterruptSettings.Set(nil)
@@ -405,7 +408,7 @@ func (o *VnicFcAdapterPolicy) GetPlogiSettings() VnicPlogiSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetPlogiSettingsOk() (*VnicPlogiSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PlogiSettings.Get(), o.PlogiSettings.IsSet()
@@ -424,6 +427,7 @@ func (o *VnicFcAdapterPolicy) HasPlogiSettings() bool {
 func (o *VnicFcAdapterPolicy) SetPlogiSettings(v VnicPlogiSettings) {
 	o.PlogiSettings.Set(&v)
 }
+
 // SetPlogiSettingsNil sets the value for PlogiSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetPlogiSettingsNil() {
 	o.PlogiSettings.Set(nil)
@@ -479,7 +483,7 @@ func (o *VnicFcAdapterPolicy) GetRxQueueSettings() VnicFcQueueSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetRxQueueSettingsOk() (*VnicFcQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RxQueueSettings.Get(), o.RxQueueSettings.IsSet()
@@ -498,6 +502,7 @@ func (o *VnicFcAdapterPolicy) HasRxQueueSettings() bool {
 func (o *VnicFcAdapterPolicy) SetRxQueueSettings(v VnicFcQueueSettings) {
 	o.RxQueueSettings.Set(&v)
 }
+
 // SetRxQueueSettingsNil sets the value for RxQueueSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetRxQueueSettingsNil() {
 	o.RxQueueSettings.Set(nil)
@@ -521,7 +526,7 @@ func (o *VnicFcAdapterPolicy) GetScsiQueueSettings() VnicScsiQueueSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetScsiQueueSettingsOk() (*VnicScsiQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ScsiQueueSettings.Get(), o.ScsiQueueSettings.IsSet()
@@ -540,6 +545,7 @@ func (o *VnicFcAdapterPolicy) HasScsiQueueSettings() bool {
 func (o *VnicFcAdapterPolicy) SetScsiQueueSettings(v VnicScsiQueueSettings) {
 	o.ScsiQueueSettings.Set(&v)
 }
+
 // SetScsiQueueSettingsNil sets the value for ScsiQueueSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetScsiQueueSettingsNil() {
 	o.ScsiQueueSettings.Set(nil)
@@ -563,7 +569,7 @@ func (o *VnicFcAdapterPolicy) GetTxQueueSettings() VnicFcQueueSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcAdapterPolicy) GetTxQueueSettingsOk() (*VnicFcQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TxQueueSettings.Get(), o.TxQueueSettings.IsSet()
@@ -582,6 +588,7 @@ func (o *VnicFcAdapterPolicy) HasTxQueueSettings() bool {
 func (o *VnicFcAdapterPolicy) SetTxQueueSettings(v VnicFcQueueSettings) {
 	o.TxQueueSettings.Set(&v)
 }
+
 // SetTxQueueSettingsNil sets the value for TxQueueSettings to be an explicit nil
 func (o *VnicFcAdapterPolicy) SetTxQueueSettingsNil() {
 	o.TxQueueSettings.Set(nil)
@@ -694,23 +701,23 @@ func (o *VnicFcAdapterPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Error Detection Timeout, also referred to as EDTOV, is the number of milliseconds to wait before the system assumes that an error has occurred.
-		ErrorDetectionTimeout *int64 `json:"ErrorDetectionTimeout,omitempty"`
+		ErrorDetectionTimeout *int64                              `json:"ErrorDetectionTimeout,omitempty"`
 		ErrorRecoverySettings NullableVnicFcErrorRecoverySettings `json:"ErrorRecoverySettings,omitempty"`
-		FlogiSettings NullableVnicFlogiSettings `json:"FlogiSettings,omitempty"`
-		InterruptSettings NullableVnicFcInterruptSettings `json:"InterruptSettings,omitempty"`
+		FlogiSettings         NullableVnicFlogiSettings           `json:"FlogiSettings,omitempty"`
+		InterruptSettings     NullableVnicFcInterruptSettings     `json:"InterruptSettings,omitempty"`
 		// The maximum number of data or control I/O operations that can be pending for the virtual interface at one time. If this value is exceeded, the additional I/O operations wait in the queue until the number of pending I/O operations decreases and the additional operations can be processed.
 		IoThrottleCount *int64 `json:"IoThrottleCount,omitempty"`
 		// The maximum number of LUNs that the Fibre Channel driver will export or show. The maximum number of LUNs is usually controlled by the operating system running on the server.
 		LunCount *int64 `json:"LunCount,omitempty"`
 		// The number of commands that the HBA can send and receive in a single transmission per LUN.
-		LunQueueDepth *int64 `json:"LunQueueDepth,omitempty"`
+		LunQueueDepth *int64                    `json:"LunQueueDepth,omitempty"`
 		PlogiSettings NullableVnicPlogiSettings `json:"PlogiSettings,omitempty"`
 		// Resource Allocation Timeout, also referred to as RATOV, is the number of milliseconds to wait before the system assumes that a resource cannot be properly allocated.
-		ResourceAllocationTimeout *int64 `json:"ResourceAllocationTimeout,omitempty"`
-		RxQueueSettings NullableVnicFcQueueSettings `json:"RxQueueSettings,omitempty"`
-		ScsiQueueSettings NullableVnicScsiQueueSettings `json:"ScsiQueueSettings,omitempty"`
-		TxQueueSettings NullableVnicFcQueueSettings `json:"TxQueueSettings,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		ResourceAllocationTimeout *int64                                `json:"ResourceAllocationTimeout,omitempty"`
+		RxQueueSettings           NullableVnicFcQueueSettings           `json:"RxQueueSettings,omitempty"`
+		ScsiQueueSettings         NullableVnicScsiQueueSettings         `json:"ScsiQueueSettings,omitempty"`
+		TxQueueSettings           NullableVnicFcQueueSettings           `json:"TxQueueSettings,omitempty"`
+		Organization              *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varVnicFcAdapterPolicyWithoutEmbeddedStruct := VnicFcAdapterPolicyWithoutEmbeddedStruct{}
@@ -825,5 +832,3 @@ func (v *NullableVnicFcAdapterPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

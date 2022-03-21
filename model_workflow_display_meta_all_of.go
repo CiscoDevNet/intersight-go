@@ -24,7 +24,7 @@ type WorkflowDisplayMetaAllOf struct {
 	// Inventory selector specified for primitive data property should be used in Intersight User Interface.
 	InventorySelector *bool `json:"InventorySelector,omitempty"`
 	// Specify the widget type for data display. * `None` - Display none of the widget types. * `Radio` - Display the widget as a radio button. * `Dropdown` - Display the widget as a dropdown. * `GridSelector` - Display the widget as a selector. * `DrawerSelector` - Display the widget as a selector.
-	WidgetType *string `json:"WidgetType,omitempty"`
+	WidgetType           *string `json:"WidgetType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *WorkflowDisplayMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDisplayMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *WorkflowDisplayMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDisplayMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -250,5 +250,3 @@ func (v *NullableWorkflowDisplayMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

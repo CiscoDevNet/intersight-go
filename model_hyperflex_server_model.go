@@ -23,9 +23,9 @@ type HyperflexServerModel struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ServerModelEntries []HyperflexServerModelEntry `json:"ServerModelEntries,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	ServerModelEntries   []HyperflexServerModelEntry      `json:"ServerModelEntries,omitempty"`
+	AppCatalog           *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *HyperflexServerModel) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModel) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *HyperflexServerModel) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModel) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *HyperflexServerModel) SetObjectType(v string) {
 
 // GetServerModelEntries returns the ServerModelEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexServerModel) GetServerModelEntries() []HyperflexServerModelEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerModelEntry
 		return ret
 	}
@@ -202,9 +202,9 @@ func (o *HyperflexServerModel) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ServerModelEntries []HyperflexServerModelEntry `json:"ServerModelEntries,omitempty"`
-		AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+		ObjectType         string                           `json:"ObjectType"`
+		ServerModelEntries []HyperflexServerModelEntry      `json:"ServerModelEntries,omitempty"`
+		AppCatalog         *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	}
 
 	varHyperflexServerModelWithoutEmbeddedStruct := HyperflexServerModelWithoutEmbeddedStruct{}
@@ -297,5 +297,3 @@ func (v *NullableHyperflexServerModel) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,11 +25,11 @@ type UuidpoolPool struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The UUID prefix must be in hexadecimal format xxxxxxxx-xxxx-xxxx.
-	Prefix *string `json:"Prefix,omitempty"`
+	Prefix           *string             `json:"Prefix,omitempty"`
 	UuidSuffixBlocks []UuidpoolUuidBlock `json:"UuidSuffixBlocks,omitempty"`
 	// An array of relationships to uuidpoolBlock resources.
-	BlockHeads []UuidpoolBlockRelationship `json:"BlockHeads,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BlockHeads           []UuidpoolBlockRelationship           `json:"BlockHeads,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *UuidpoolPool) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *UuidpoolPool) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *UuidpoolPool) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *UuidpoolPool) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -142,7 +142,7 @@ func (o *UuidpoolPool) SetPrefix(v string) {
 
 // GetUuidSuffixBlocks returns the UuidSuffixBlocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UuidpoolPool) GetUuidSuffixBlocks() []UuidpoolUuidBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []UuidpoolUuidBlock
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *UuidpoolPool) SetUuidSuffixBlocks(v []UuidpoolUuidBlock) {
 
 // GetBlockHeads returns the BlockHeads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UuidpoolPool) GetBlockHeads() []UuidpoolBlockRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []UuidpoolBlockRelationship
 		return ret
 	}
@@ -281,10 +281,10 @@ func (o *UuidpoolPool) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The UUID prefix must be in hexadecimal format xxxxxxxx-xxxx-xxxx.
-		Prefix *string `json:"Prefix,omitempty"`
+		Prefix           *string             `json:"Prefix,omitempty"`
 		UuidSuffixBlocks []UuidpoolUuidBlock `json:"UuidSuffixBlocks,omitempty"`
 		// An array of relationships to uuidpoolBlock resources.
-		BlockHeads []UuidpoolBlockRelationship `json:"BlockHeads,omitempty"`
+		BlockHeads   []UuidpoolBlockRelationship           `json:"BlockHeads,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -382,5 +382,3 @@ func (v *NullableUuidpoolPool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

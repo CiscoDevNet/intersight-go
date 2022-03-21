@@ -19,19 +19,18 @@ import (
 // KvmSessionRelationship - A relationship to the 'kvm.Session' resource, or the expanded 'kvm.Session' resource, or the 'null' value.
 type KvmSessionRelationship struct {
 	KvmSession *KvmSession
-	MoMoRef *MoMoRef
+	MoMoRef    *MoMoRef
 }
 
 // KvmSessionAsKvmSessionRelationship is a convenience function that returns KvmSession wrapped in KvmSessionRelationship
 func KvmSessionAsKvmSessionRelationship(v *KvmSession) KvmSessionRelationship {
-	return KvmSessionRelationship{ KvmSession: v}
+	return KvmSessionRelationship{KvmSession: v}
 }
 
 // MoMoRefAsKvmSessionRelationship is a convenience function that returns MoMoRef wrapped in KvmSessionRelationship
 func MoMoRefAsKvmSessionRelationship(v *MoMoRef) KvmSessionRelationship {
-	return KvmSessionRelationship{ MoMoRef: v}
+	return KvmSessionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KvmSessionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KvmSessionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KvmSessionRelationship) GetActualInstance() (interface{}) {
+func (obj *KvmSessionRelationship) GetActualInstance() interface{} {
 	if obj.KvmSession != nil {
 		return obj.KvmSession
 	}
@@ -137,5 +136,3 @@ func (v *NullableKvmSessionRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

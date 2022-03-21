@@ -24,11 +24,11 @@ type ApplianceNodeInfoAllOf struct {
 	// Cluster node's FQDN or IP address.
 	Hostname *string `json:"Hostname,omitempty"`
 	// System assigned unique ID of the Intersight Appliance node. The system incrementally assigns identifiers to each node in the Intersight Appliance cluster starting with a value of 1.
-	NodeId *int64 `json:"NodeId,omitempty"`
+	NodeId         *int64                    `json:"NodeId,omitempty"`
 	NodeIpV4Config NullableCommIpV4Interface `json:"NodeIpV4Config,omitempty"`
 	NodeIpV6Config NullableCommIpV6Interface `json:"NodeIpV6Config,omitempty"`
 	// Operational status of the Intersight Appliance node. * `Unknown` - Operational status of the Intersight Appliance entity is Unknown. * `Operational` - Operational status of the Intersight Appliance entity is Operational. * `Impaired` - Operational status of the Intersight Appliance entity is Impaired. * `AttentionNeeded` - Operational status of the Intersight Appliance entity is AttentionNeeded.
-	OperationalStatus *string `json:"OperationalStatus,omitempty"`
+	OperationalStatus    *string `json:"OperationalStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *ApplianceNodeInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceNodeInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *ApplianceNodeInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceNodeInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -182,7 +182,7 @@ func (o *ApplianceNodeInfoAllOf) GetNodeIpV4Config() CommIpV4Interface {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceNodeInfoAllOf) GetNodeIpV4ConfigOk() (*CommIpV4Interface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NodeIpV4Config.Get(), o.NodeIpV4Config.IsSet()
@@ -201,6 +201,7 @@ func (o *ApplianceNodeInfoAllOf) HasNodeIpV4Config() bool {
 func (o *ApplianceNodeInfoAllOf) SetNodeIpV4Config(v CommIpV4Interface) {
 	o.NodeIpV4Config.Set(&v)
 }
+
 // SetNodeIpV4ConfigNil sets the value for NodeIpV4Config to be an explicit nil
 func (o *ApplianceNodeInfoAllOf) SetNodeIpV4ConfigNil() {
 	o.NodeIpV4Config.Set(nil)
@@ -224,7 +225,7 @@ func (o *ApplianceNodeInfoAllOf) GetNodeIpV6Config() CommIpV6Interface {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceNodeInfoAllOf) GetNodeIpV6ConfigOk() (*CommIpV6Interface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NodeIpV6Config.Get(), o.NodeIpV6Config.IsSet()
@@ -243,6 +244,7 @@ func (o *ApplianceNodeInfoAllOf) HasNodeIpV6Config() bool {
 func (o *ApplianceNodeInfoAllOf) SetNodeIpV6Config(v CommIpV6Interface) {
 	o.NodeIpV6Config.Set(&v)
 }
+
 // SetNodeIpV6ConfigNil sets the value for NodeIpV6Config to be an explicit nil
 func (o *ApplianceNodeInfoAllOf) SetNodeIpV6ConfigNil() {
 	o.NodeIpV6Config.Set(nil)
@@ -374,5 +376,3 @@ func (v *NullableApplianceNodeInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

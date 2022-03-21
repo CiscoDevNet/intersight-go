@@ -29,12 +29,12 @@ type HyperflexVmRestoreOperation struct {
 	// Power on the Virtual Machine after recovery.
 	PowerOn *bool `json:"PowerOn,omitempty"`
 	// Start time for the replication.
-	StartTime *int64 `json:"StartTime,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	RestoreEdgeClusterMoid *HyperflexClusterRelationship `json:"RestoreEdgeClusterMoid,omitempty"`
-	VmBackupInfoMoid *HyperflexVmBackupInfoRelationship `json:"VmBackupInfoMoid,omitempty"`
-	VmSnapshotInfoMoid *HyperflexVmSnapshotInfoRelationship `json:"VmSnapshotInfoMoid,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StartTime              *int64                                `json:"StartTime,omitempty"`
+	Organization           *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	RestoreEdgeClusterMoid *HyperflexClusterRelationship         `json:"RestoreEdgeClusterMoid,omitempty"`
+	VmBackupInfoMoid       *HyperflexVmBackupInfoRelationship    `json:"VmBackupInfoMoid,omitempty"`
+	VmSnapshotInfoMoid     *HyperflexVmSnapshotInfoRelationship  `json:"VmSnapshotInfoMoid,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _HyperflexVmRestoreOperation HyperflexVmRestoreOperation
@@ -79,7 +79,7 @@ func (o *HyperflexVmRestoreOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmRestoreOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *HyperflexVmRestoreOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmRestoreOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -394,11 +394,11 @@ func (o *HyperflexVmRestoreOperation) UnmarshalJSON(bytes []byte) (err error) {
 		// Power on the Virtual Machine after recovery.
 		PowerOn *bool `json:"PowerOn,omitempty"`
 		// Start time for the replication.
-		StartTime *int64 `json:"StartTime,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		RestoreEdgeClusterMoid *HyperflexClusterRelationship `json:"RestoreEdgeClusterMoid,omitempty"`
-		VmBackupInfoMoid *HyperflexVmBackupInfoRelationship `json:"VmBackupInfoMoid,omitempty"`
-		VmSnapshotInfoMoid *HyperflexVmSnapshotInfoRelationship `json:"VmSnapshotInfoMoid,omitempty"`
+		StartTime              *int64                                `json:"StartTime,omitempty"`
+		Organization           *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		RestoreEdgeClusterMoid *HyperflexClusterRelationship         `json:"RestoreEdgeClusterMoid,omitempty"`
+		VmBackupInfoMoid       *HyperflexVmBackupInfoRelationship    `json:"VmBackupInfoMoid,omitempty"`
+		VmSnapshotInfoMoid     *HyperflexVmSnapshotInfoRelationship  `json:"VmSnapshotInfoMoid,omitempty"`
 	}
 
 	varHyperflexVmRestoreOperationWithoutEmbeddedStruct := HyperflexVmRestoreOperationWithoutEmbeddedStruct{}
@@ -501,5 +501,3 @@ func (v *NullableHyperflexVmRestoreOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

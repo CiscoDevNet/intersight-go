@@ -18,32 +18,31 @@ import (
 
 // BulkExportResponse - The response body of a HTTP GET request for the 'bulk.Export' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'bulk.Export' resources.
 type BulkExportResponse struct {
-	BulkExportList *BulkExportList
+	BulkExportList       *BulkExportList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BulkExportListAsBulkExportResponse is a convenience function that returns BulkExportList wrapped in BulkExportResponse
 func BulkExportListAsBulkExportResponse(v *BulkExportList) BulkExportResponse {
-	return BulkExportResponse{ BulkExportList: v}
+	return BulkExportResponse{BulkExportList: v}
 }
 
 // MoAggregateTransformAsBulkExportResponse is a convenience function that returns MoAggregateTransform wrapped in BulkExportResponse
 func MoAggregateTransformAsBulkExportResponse(v *MoAggregateTransform) BulkExportResponse {
-	return BulkExportResponse{ MoAggregateTransform: v}
+	return BulkExportResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBulkExportResponse is a convenience function that returns MoDocumentCount wrapped in BulkExportResponse
 func MoDocumentCountAsBulkExportResponse(v *MoDocumentCount) BulkExportResponse {
-	return BulkExportResponse{ MoDocumentCount: v}
+	return BulkExportResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBulkExportResponse is a convenience function that returns MoTagSummary wrapped in BulkExportResponse
 func MoTagSummaryAsBulkExportResponse(v *MoTagSummary) BulkExportResponse {
-	return BulkExportResponse{ MoTagSummary: v}
+	return BulkExportResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkExportResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BulkExportResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkExportResponse) GetActualInstance() (interface{}) {
+func (obj *BulkExportResponse) GetActualInstance() interface{} {
 	if obj.BulkExportList != nil {
 		return obj.BulkExportList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBulkExportResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type OsPhysicalDiskResponseAllOf struct {
 	SerialNumber *string `json:"SerialNumber,omitempty"`
 	// The Storage Controller associated to the physical disk.
 	StorageControllerSlotId *string `json:"StorageControllerSlotId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties    map[string]interface{}
 }
 
 type _OsPhysicalDiskResponseAllOf OsPhysicalDiskResponseAllOf
@@ -70,7 +70,7 @@ func (o *OsPhysicalDiskResponseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsPhysicalDiskResponseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *OsPhysicalDiskResponseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsPhysicalDiskResponseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableOsPhysicalDiskResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

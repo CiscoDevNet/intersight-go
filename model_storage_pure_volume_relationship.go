@@ -18,20 +18,19 @@ import (
 
 // StoragePureVolumeRelationship - A relationship to the 'storage.PureVolume' resource, or the expanded 'storage.PureVolume' resource, or the 'null' value.
 type StoragePureVolumeRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 	StoragePureVolume *StoragePureVolume
 }
 
 // MoMoRefAsStoragePureVolumeRelationship is a convenience function that returns MoMoRef wrapped in StoragePureVolumeRelationship
 func MoMoRefAsStoragePureVolumeRelationship(v *MoMoRef) StoragePureVolumeRelationship {
-	return StoragePureVolumeRelationship{ MoMoRef: v}
+	return StoragePureVolumeRelationship{MoMoRef: v}
 }
 
 // StoragePureVolumeAsStoragePureVolumeRelationship is a convenience function that returns StoragePureVolume wrapped in StoragePureVolumeRelationship
 func StoragePureVolumeAsStoragePureVolumeRelationship(v *StoragePureVolume) StoragePureVolumeRelationship {
-	return StoragePureVolumeRelationship{ StoragePureVolume: v}
+	return StoragePureVolumeRelationship{StoragePureVolume: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureVolumeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePureVolumeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureVolumeRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePureVolumeRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePureVolumeRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

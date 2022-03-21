@@ -19,19 +19,18 @@ import (
 // ApplianceSystemInfoRelationship - A relationship to the 'appliance.SystemInfo' resource, or the expanded 'appliance.SystemInfo' resource, or the 'null' value.
 type ApplianceSystemInfoRelationship struct {
 	ApplianceSystemInfo *ApplianceSystemInfo
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // ApplianceSystemInfoAsApplianceSystemInfoRelationship is a convenience function that returns ApplianceSystemInfo wrapped in ApplianceSystemInfoRelationship
 func ApplianceSystemInfoAsApplianceSystemInfoRelationship(v *ApplianceSystemInfo) ApplianceSystemInfoRelationship {
-	return ApplianceSystemInfoRelationship{ ApplianceSystemInfo: v}
+	return ApplianceSystemInfoRelationship{ApplianceSystemInfo: v}
 }
 
 // MoMoRefAsApplianceSystemInfoRelationship is a convenience function that returns MoMoRef wrapped in ApplianceSystemInfoRelationship
 func MoMoRefAsApplianceSystemInfoRelationship(v *MoMoRef) ApplianceSystemInfoRelationship {
-	return ApplianceSystemInfoRelationship{ MoMoRef: v}
+	return ApplianceSystemInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceSystemInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ApplianceSystemInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceSystemInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *ApplianceSystemInfoRelationship) GetActualInstance() interface{} {
 	if obj.ApplianceSystemInfo != nil {
 		return obj.ApplianceSystemInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableApplianceSystemInfoRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

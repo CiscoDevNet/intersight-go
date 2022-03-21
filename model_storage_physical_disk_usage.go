@@ -35,10 +35,10 @@ type StoragePhysicalDiskUsage struct {
 	// The current state of the physical disk usage.
 	State *string `json:"State,omitempty"`
 	// The virtual drive corresponding to the physical disk.
-	VirtualDrive *string `json:"VirtualDrive,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageVirtualDrive *StorageVirtualDriveRelationship `json:"StorageVirtualDrive,omitempty"`
+	VirtualDrive         *string                              `json:"VirtualDrive,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StorageVirtualDrive  *StorageVirtualDriveRelationship     `json:"StorageVirtualDrive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *StoragePhysicalDiskUsage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDiskUsage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *StoragePhysicalDiskUsage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDiskUsage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -471,10 +471,10 @@ func (o *StoragePhysicalDiskUsage) UnmarshalJSON(bytes []byte) (err error) {
 		// The current state of the physical disk usage.
 		State *string `json:"State,omitempty"`
 		// The virtual drive corresponding to the physical disk.
-		VirtualDrive *string `json:"VirtualDrive,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		StorageVirtualDrive *StorageVirtualDriveRelationship `json:"StorageVirtualDrive,omitempty"`
+		VirtualDrive        *string                              `json:"VirtualDrive,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		StorageVirtualDrive *StorageVirtualDriveRelationship     `json:"StorageVirtualDrive,omitempty"`
 	}
 
 	varStoragePhysicalDiskUsageWithoutEmbeddedStruct := StoragePhysicalDiskUsageWithoutEmbeddedStruct{}
@@ -581,5 +581,3 @@ func (v *NullableStoragePhysicalDiskUsage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

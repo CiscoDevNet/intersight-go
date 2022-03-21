@@ -24,7 +24,7 @@ type VnicFcQueueSettingsAllOf struct {
 	// The number of queue resources to allocate.
 	Count *int64 `json:"Count,omitempty"`
 	// The number of descriptors in each queue.
-	RingSize *int64 `json:"RingSize,omitempty"`
+	RingSize             *int64 `json:"RingSize,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VnicFcQueueSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcQueueSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VnicFcQueueSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcQueueSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableVnicFcQueueSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

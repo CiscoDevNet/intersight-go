@@ -31,7 +31,7 @@ type WorkflowTaskLoopInfo struct {
 	// Name of the loop task inside which this task is executed.
 	LoopTaskName *string `json:"LoopTaskName,omitempty"`
 	// This specifies the type of loop, Serial or Parallel. * `Serial` - The enum specifies the option as Serial where the loop task type is parallel loop. * `Parallel` - The enum specifies the option as Parallel where the loop task type is parallel loop.
-	LoopType *string `json:"LoopType,omitempty"`
+	LoopType             *string `json:"LoopType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *WorkflowTaskLoopInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskLoopInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *WorkflowTaskLoopInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskLoopInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -386,5 +386,3 @@ func (v *NullableWorkflowTaskLoopInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

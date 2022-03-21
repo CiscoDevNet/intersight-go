@@ -35,7 +35,7 @@ type IamSamlSpConnection struct {
 	// Decoded Certificate from IdP Metatdata.
 	IdpCertificateStore interface{} `json:"IdpCertificateStore,omitempty"`
 	// WantAuthnRequestsSigned from IdP Metadata.
-	SignAuthnRequests *bool `json:"SignAuthnRequests,omitempty"`
+	SignAuthnRequests    *bool `json:"SignAuthnRequests,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IamSamlSpConnection) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSamlSpConnection) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *IamSamlSpConnection) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSamlSpConnection) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,7 +242,7 @@ func (o *IamSamlSpConnection) SetIdentityProviderSsoUrl(v string) {
 
 // GetIdpCertificateStore returns the IdpCertificateStore field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSamlSpConnection) GetIdpCertificateStore() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -465,5 +465,3 @@ func (v *NullableIamSamlSpConnection) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

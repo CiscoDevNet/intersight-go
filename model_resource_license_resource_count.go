@@ -27,10 +27,10 @@ type ResourceLicenseResourceCount struct {
 	// Type of licensing defined for this resource group. Used for licensing group. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
 	LicenseType *string `json:"LicenseType,omitempty"`
 	// The number of resource belongs to this licensing tier.
-	ResourceCount *int64 `json:"ResourceCount,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	ResourceCount *int64                  `json:"ResourceCount,omitempty"`
+	Account       *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to resourceGroup resources.
-	LicenseGroups []ResourceGroupRelationship `json:"LicenseGroups,omitempty"`
+	LicenseGroups        []ResourceGroupRelationship `json:"LicenseGroups,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *ResourceLicenseResourceCount) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourceLicenseResourceCount) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *ResourceLicenseResourceCount) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourceLicenseResourceCount) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -205,7 +205,7 @@ func (o *ResourceLicenseResourceCount) SetAccount(v IamAccountRelationship) {
 
 // GetLicenseGroups returns the LicenseGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceLicenseResourceCount) GetLicenseGroups() []ResourceGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceGroupRelationship
 		return ret
 	}
@@ -281,8 +281,8 @@ func (o *ResourceLicenseResourceCount) UnmarshalJSON(bytes []byte) (err error) {
 		// Type of licensing defined for this resource group. Used for licensing group. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
 		LicenseType *string `json:"LicenseType,omitempty"`
 		// The number of resource belongs to this licensing tier.
-		ResourceCount *int64 `json:"ResourceCount,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		ResourceCount *int64                  `json:"ResourceCount,omitempty"`
+		Account       *IamAccountRelationship `json:"Account,omitempty"`
 		// An array of relationships to resourceGroup resources.
 		LicenseGroups []ResourceGroupRelationship `json:"LicenseGroups,omitempty"`
 	}
@@ -381,5 +381,3 @@ func (v *NullableResourceLicenseResourceCount) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

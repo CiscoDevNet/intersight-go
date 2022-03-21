@@ -32,8 +32,8 @@ type NiatelemetryDcnmTransceiverDetailsAllOf struct {
 	// Serial number of the transceiver in the fabric inventory.
 	SerialNumber *string `json:"SerialNumber,omitempty"`
 	// Vendor Id of the transceiver in the fabric inventory.
-	VendorId *string `json:"VendorId,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VendorId             *string                              `json:"VendorId,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *NiatelemetryDcnmTransceiverDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDcnmTransceiverDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *NiatelemetryDcnmTransceiverDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDcnmTransceiverDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -431,5 +431,3 @@ func (v *NullableNiatelemetryDcnmTransceiverDetailsAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

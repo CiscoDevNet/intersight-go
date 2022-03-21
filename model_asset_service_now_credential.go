@@ -23,10 +23,10 @@ type AssetServiceNowCredential struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType                    string                              `json:"ObjectType"`
 	OauthAuthenticationCredential *AssetOauthClientIdSecretCredential `json:"OauthAuthenticationCredential,omitempty"`
-	UserPasswordCredential *AssetUsernamePasswordCredential `json:"UserPasswordCredential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UserPasswordCredential        *AssetUsernamePasswordCredential    `json:"UserPasswordCredential,omitempty"`
+	AdditionalProperties          map[string]interface{}
 }
 
 type _AssetServiceNowCredential AssetServiceNowCredential
@@ -67,7 +67,7 @@ func (o *AssetServiceNowCredential) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetServiceNowCredential) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *AssetServiceNowCredential) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetServiceNowCredential) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -201,9 +201,9 @@ func (o *AssetServiceNowCredential) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType                    string                              `json:"ObjectType"`
 		OauthAuthenticationCredential *AssetOauthClientIdSecretCredential `json:"OauthAuthenticationCredential,omitempty"`
-		UserPasswordCredential *AssetUsernamePasswordCredential `json:"UserPasswordCredential,omitempty"`
+		UserPasswordCredential        *AssetUsernamePasswordCredential    `json:"UserPasswordCredential,omitempty"`
 	}
 
 	varAssetServiceNowCredentialWithoutEmbeddedStruct := AssetServiceNowCredentialWithoutEmbeddedStruct{}
@@ -296,5 +296,3 @@ func (v *NullableAssetServiceNowCredential) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

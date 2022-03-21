@@ -27,7 +27,7 @@ type FabricUdldGlobalSettings struct {
 	// Configures the time between UDLD probe messages on ports that are in advertisement mode and are currently determined to be bidirectional. Valid values are from 7 to 90 seconds.
 	MessageInterval *int64 `json:"MessageInterval,omitempty"`
 	// UDLD recovery when enabled, attempts to bring an UDLD error-disabled port out of reset. * `none` - The standard 4th generation UCS Fabric Interconnect with 54 ports. * `reset` - The expanded 4th generation UCS Fabric Interconnect with 108 ports.
-	RecoveryAction *string `json:"RecoveryAction,omitempty"`
+	RecoveryAction       *string `json:"RecoveryAction,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FabricUdldGlobalSettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricUdldGlobalSettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *FabricUdldGlobalSettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricUdldGlobalSettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableFabricUdldGlobalSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

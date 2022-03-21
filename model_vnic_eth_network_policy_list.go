@@ -23,7 +23,7 @@ type VnicEthNetworkPolicyList struct {
 	// The total number of 'vnic.EthNetworkPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'vnic.EthNetworkPolicy' resources matching the request.
-	Results []VnicEthNetworkPolicy `json:"Results,omitempty"`
+	Results              []VnicEthNetworkPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VnicEthNetworkPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicEthNetworkPolicyList) GetResults() []VnicEthNetworkPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicEthNetworkPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVnicEthNetworkPolicyList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

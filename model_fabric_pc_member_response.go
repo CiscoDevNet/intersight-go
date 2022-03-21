@@ -18,32 +18,31 @@ import (
 
 // FabricPcMemberResponse - The response body of a HTTP GET request for the 'fabric.PcMember' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fabric.PcMember' resources.
 type FabricPcMemberResponse struct {
-	FabricPcMemberList *FabricPcMemberList
+	FabricPcMemberList   *FabricPcMemberList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // FabricPcMemberListAsFabricPcMemberResponse is a convenience function that returns FabricPcMemberList wrapped in FabricPcMemberResponse
 func FabricPcMemberListAsFabricPcMemberResponse(v *FabricPcMemberList) FabricPcMemberResponse {
-	return FabricPcMemberResponse{ FabricPcMemberList: v}
+	return FabricPcMemberResponse{FabricPcMemberList: v}
 }
 
 // MoAggregateTransformAsFabricPcMemberResponse is a convenience function that returns MoAggregateTransform wrapped in FabricPcMemberResponse
 func MoAggregateTransformAsFabricPcMemberResponse(v *MoAggregateTransform) FabricPcMemberResponse {
-	return FabricPcMemberResponse{ MoAggregateTransform: v}
+	return FabricPcMemberResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricPcMemberResponse is a convenience function that returns MoDocumentCount wrapped in FabricPcMemberResponse
 func MoDocumentCountAsFabricPcMemberResponse(v *MoDocumentCount) FabricPcMemberResponse {
-	return FabricPcMemberResponse{ MoDocumentCount: v}
+	return FabricPcMemberResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricPcMemberResponse is a convenience function that returns MoTagSummary wrapped in FabricPcMemberResponse
 func MoTagSummaryAsFabricPcMemberResponse(v *MoTagSummary) FabricPcMemberResponse {
-	return FabricPcMemberResponse{ MoTagSummary: v}
+	return FabricPcMemberResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricPcMemberResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricPcMemberResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricPcMemberResponse) GetActualInstance() (interface{}) {
+func (obj *FabricPcMemberResponse) GetActualInstance() interface{} {
 	if obj.FabricPcMemberList != nil {
 		return obj.FabricPcMemberList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricPcMemberResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

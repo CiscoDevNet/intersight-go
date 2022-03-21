@@ -28,10 +28,10 @@ type FabricUplinkPcRole struct {
 	AdminSpeed *string `json:"AdminSpeed,omitempty"`
 	// An array of relationships to fabricEthNetworkGroupPolicy resources.
 	EthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-	FlowControlPolicy *FabricFlowControlPolicyRelationship `json:"FlowControlPolicy,omitempty"`
-	LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship `json:"LinkAggregationPolicy,omitempty"`
-	LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FlowControlPolicy     *FabricFlowControlPolicyRelationship      `json:"FlowControlPolicy,omitempty"`
+	LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship  `json:"LinkAggregationPolicy,omitempty"`
+	LinkControlPolicy     *FabricLinkControlPolicyRelationship      `json:"LinkControlPolicy,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _FabricUplinkPcRole FabricUplinkPcRole
@@ -76,7 +76,7 @@ func (o *FabricUplinkPcRole) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkPcRole) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *FabricUplinkPcRole) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkPcRole) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -145,7 +145,7 @@ func (o *FabricUplinkPcRole) SetAdminSpeed(v string) {
 
 // GetEthNetworkGroupPolicy returns the EthNetworkGroupPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricUplinkPcRole) GetEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricEthNetworkGroupPolicyRelationship
 		return ret
 	}
@@ -321,9 +321,9 @@ func (o *FabricUplinkPcRole) UnmarshalJSON(bytes []byte) (err error) {
 		AdminSpeed *string `json:"AdminSpeed,omitempty"`
 		// An array of relationships to fabricEthNetworkGroupPolicy resources.
 		EthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-		FlowControlPolicy *FabricFlowControlPolicyRelationship `json:"FlowControlPolicy,omitempty"`
-		LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship `json:"LinkAggregationPolicy,omitempty"`
-		LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
+		FlowControlPolicy     *FabricFlowControlPolicyRelationship      `json:"FlowControlPolicy,omitempty"`
+		LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship  `json:"LinkAggregationPolicy,omitempty"`
+		LinkControlPolicy     *FabricLinkControlPolicyRelationship      `json:"LinkControlPolicy,omitempty"`
 	}
 
 	varFabricUplinkPcRoleWithoutEmbeddedStruct := FabricUplinkPcRoleWithoutEmbeddedStruct{}
@@ -422,5 +422,3 @@ func (v *NullableFabricUplinkPcRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

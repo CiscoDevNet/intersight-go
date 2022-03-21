@@ -19,19 +19,18 @@ import (
 // BulkRequestRelationship - A relationship to the 'bulk.Request' resource, or the expanded 'bulk.Request' resource, or the 'null' value.
 type BulkRequestRelationship struct {
 	BulkRequest *BulkRequest
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 }
 
 // BulkRequestAsBulkRequestRelationship is a convenience function that returns BulkRequest wrapped in BulkRequestRelationship
 func BulkRequestAsBulkRequestRelationship(v *BulkRequest) BulkRequestRelationship {
-	return BulkRequestRelationship{ BulkRequest: v}
+	return BulkRequestRelationship{BulkRequest: v}
 }
 
 // MoMoRefAsBulkRequestRelationship is a convenience function that returns MoMoRef wrapped in BulkRequestRelationship
 func MoMoRefAsBulkRequestRelationship(v *MoMoRef) BulkRequestRelationship {
-	return BulkRequestRelationship{ MoMoRef: v}
+	return BulkRequestRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkRequestRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BulkRequestRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkRequestRelationship) GetActualInstance() (interface{}) {
+func (obj *BulkRequestRelationship) GetActualInstance() interface{} {
 	if obj.BulkRequest != nil {
 		return obj.BulkRequest
 	}
@@ -137,5 +136,3 @@ func (v *NullableBulkRequestRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

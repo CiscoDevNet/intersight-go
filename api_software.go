@@ -29,11 +29,11 @@ var (
 type SoftwareApiService service
 
 type ApiCreateSoftwareApplianceDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
 	softwareApplianceDistributable *SoftwareApplianceDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;software.ApplianceDistributable&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateSoftwareApplianceDistributableRequest) SoftwareApplianceDistrib
 	r.softwareApplianceDistributable = &softwareApplianceDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareApplianceDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareApplianceDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareApplianceDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareApplianceDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateSoftwareApplianceDistributable Create a 'software.ApplianceDistributable' 
 func (a *SoftwareApiService) CreateSoftwareApplianceDistributable(ctx _context.Context) ApiCreateSoftwareApplianceDistributableRequest {
 	return ApiCreateSoftwareApplianceDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *SoftwareApiService) CreateSoftwareApplianceDistributableExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *SoftwareApiService) CreateSoftwareApplianceDistributableExecute(r ApiCr
 }
 
 type ApiCreateSoftwareHclMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx             _context.Context
+	ApiService      *SoftwareApiService
 	softwareHclMeta *SoftwareHclMeta
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;software.HclMeta&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateSoftwareHclMetaRequest) SoftwareHclMeta(softwareHclMeta Softwar
 	r.softwareHclMeta = &softwareHclMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareHclMetaRequest) IfMatch(ifMatch string) ApiCreateSoftwareHclMetaRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareHclMetaRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareHclMetaRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateSoftwareHclMeta Create a 'software.HclMeta' resource.
 func (a *SoftwareApiService) CreateSoftwareHclMeta(ctx _context.Context) ApiCreateSoftwareHclMetaRequest {
 	return ApiCreateSoftwareHclMetaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *SoftwareApiService) CreateSoftwareHclMetaExecute(r ApiCreateSoftwareHcl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *SoftwareApiService) CreateSoftwareHclMetaExecute(r ApiCreateSoftwareHcl
 }
 
 type ApiCreateSoftwareHyperflexBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                                  _context.Context
+	ApiService                           *SoftwareApiService
 	softwareHyperflexBundleDistributable *SoftwareHyperflexBundleDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                              *string
+	ifNoneMatch                          *string
 }
 
 // The &#39;software.HyperflexBundleDistributable&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateSoftwareHyperflexBundleDistributableRequest) SoftwareHyperflexB
 	r.softwareHyperflexBundleDistributable = &softwareHyperflexBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareHyperflexBundleDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareHyperflexBundleDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareHyperflexBundleDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareHyperflexBundleDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateSoftwareHyperflexBundleDistributable Create a 'software.HyperflexBundleDis
 func (a *SoftwareApiService) CreateSoftwareHyperflexBundleDistributable(ctx _context.Context) ApiCreateSoftwareHyperflexBundleDistributableRequest {
 	return ApiCreateSoftwareHyperflexBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *SoftwareApiService) CreateSoftwareHyperflexBundleDistributableExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *SoftwareApiService) CreateSoftwareHyperflexBundleDistributableExecute(r
 }
 
 type ApiCreateSoftwareHyperflexDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
 	softwareHyperflexDistributable *SoftwareHyperflexDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;software.HyperflexDistributable&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateSoftwareHyperflexDistributableRequest) SoftwareHyperflexDistrib
 	r.softwareHyperflexDistributable = &softwareHyperflexDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareHyperflexDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareHyperflexDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareHyperflexDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareHyperflexDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateSoftwareHyperflexDistributable Create a 'software.HyperflexDistributable' 
 func (a *SoftwareApiService) CreateSoftwareHyperflexDistributable(ctx _context.Context) ApiCreateSoftwareHyperflexDistributableRequest {
 	return ApiCreateSoftwareHyperflexDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *SoftwareApiService) CreateSoftwareHyperflexDistributableExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *SoftwareApiService) CreateSoftwareHyperflexDistributableExecute(r ApiCr
 }
 
 type ApiCreateSoftwareReleaseMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                 _context.Context
+	ApiService          *SoftwareApiService
 	softwareReleaseMeta *SoftwareReleaseMeta
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;software.ReleaseMeta&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateSoftwareReleaseMetaRequest) SoftwareReleaseMeta(softwareRelease
 	r.softwareReleaseMeta = &softwareReleaseMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareReleaseMetaRequest) IfMatch(ifMatch string) ApiCreateSoftwareReleaseMetaRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareReleaseMetaRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareReleaseMetaRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateSoftwareReleaseMeta Create a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) CreateSoftwareReleaseMeta(ctx _context.Context) ApiCreateSoftwareReleaseMetaRequest {
 	return ApiCreateSoftwareReleaseMetaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *SoftwareApiService) CreateSoftwareReleaseMetaExecute(r ApiCreateSoftwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *SoftwareApiService) CreateSoftwareReleaseMetaExecute(r ApiCreateSoftwar
 }
 
 type ApiCreateSoftwareSolutionDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                           _context.Context
+	ApiService                    *SoftwareApiService
 	softwareSolutionDistributable *SoftwareSolutionDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;software.SolutionDistributable&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateSoftwareSolutionDistributableRequest) SoftwareSolutionDistribut
 	r.softwareSolutionDistributable = &softwareSolutionDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareSolutionDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareSolutionDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareSolutionDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareSolutionDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateSoftwareSolutionDistributable Create a 'software.SolutionDistributable' re
 func (a *SoftwareApiService) CreateSoftwareSolutionDistributable(ctx _context.Context) ApiCreateSoftwareSolutionDistributableRequest {
 	return ApiCreateSoftwareSolutionDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *SoftwareApiService) CreateSoftwareSolutionDistributableExecute(r ApiCre
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *SoftwareApiService) CreateSoftwareSolutionDistributableExecute(r ApiCre
 }
 
 type ApiCreateSoftwareUcsdBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                             _context.Context
+	ApiService                      *SoftwareApiService
 	softwareUcsdBundleDistributable *SoftwareUcsdBundleDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                         *string
+	ifNoneMatch                     *string
 }
 
 // The &#39;software.UcsdBundleDistributable&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateSoftwareUcsdBundleDistributableRequest) SoftwareUcsdBundleDistr
 	r.softwareUcsdBundleDistributable = &softwareUcsdBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareUcsdBundleDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareUcsdBundleDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareUcsdBundleDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareUcsdBundleDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateSoftwareUcsdBundleDistributable Create a 'software.UcsdBundleDistributable
 func (a *SoftwareApiService) CreateSoftwareUcsdBundleDistributable(ctx _context.Context) ApiCreateSoftwareUcsdBundleDistributableRequest {
 	return ApiCreateSoftwareUcsdBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *SoftwareApiService) CreateSoftwareUcsdBundleDistributableExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *SoftwareApiService) CreateSoftwareUcsdBundleDistributableExecute(r ApiC
 }
 
 type ApiCreateSoftwareUcsdDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
+	ctx                       _context.Context
+	ApiService                *SoftwareApiService
 	softwareUcsdDistributable *SoftwareUcsdDistributable
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;software.UcsdDistributable&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateSoftwareUcsdDistributableRequest) SoftwareUcsdDistributable(sof
 	r.softwareUcsdDistributable = &softwareUcsdDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateSoftwareUcsdDistributableRequest) IfMatch(ifMatch string) ApiCreateSoftwareUcsdDistributableRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateSoftwareUcsdDistributableRequest) IfNoneMatch(ifNoneMatch string) ApiCreateSoftwareUcsdDistributableRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateSoftwareUcsdDistributable Create a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) CreateSoftwareUcsdDistributable(ctx _context.Context) ApiCreateSoftwareUcsdDistributableRequest {
 	return ApiCreateSoftwareUcsdDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *SoftwareApiService) CreateSoftwareUcsdDistributableExecute(r ApiCreateS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,10 @@ func (a *SoftwareApiService) CreateSoftwareUcsdDistributableExecute(r ApiCreateS
 }
 
 type ApiDeleteSoftwareApplianceDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareApplianceDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareApplianceDistributableExecute(r)
@@ -1457,8 +1472,8 @@ DeleteSoftwareApplianceDistributable Delete a 'software.ApplianceDistributable' 
 func (a *SoftwareApiService) DeleteSoftwareApplianceDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareApplianceDistributableRequest {
 	return ApiDeleteSoftwareApplianceDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1563,13 +1578,13 @@ func (a *SoftwareApiService) DeleteSoftwareApplianceDistributableExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1577,11 +1592,10 @@ func (a *SoftwareApiService) DeleteSoftwareApplianceDistributableExecute(r ApiDe
 }
 
 type ApiDeleteSoftwareHclMetaRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareHclMetaRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareHclMetaExecute(r)
@@ -1597,8 +1611,8 @@ DeleteSoftwareHclMeta Delete a 'software.HclMeta' resource.
 func (a *SoftwareApiService) DeleteSoftwareHclMeta(ctx _context.Context, moid string) ApiDeleteSoftwareHclMetaRequest {
 	return ApiDeleteSoftwareHclMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1703,13 +1717,13 @@ func (a *SoftwareApiService) DeleteSoftwareHclMetaExecute(r ApiDeleteSoftwareHcl
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1717,11 +1731,10 @@ func (a *SoftwareApiService) DeleteSoftwareHclMetaExecute(r ApiDeleteSoftwareHcl
 }
 
 type ApiDeleteSoftwareHyperflexBundleDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareHyperflexBundleDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareHyperflexBundleDistributableExecute(r)
@@ -1737,8 +1750,8 @@ DeleteSoftwareHyperflexBundleDistributable Delete a 'software.HyperflexBundleDis
 func (a *SoftwareApiService) DeleteSoftwareHyperflexBundleDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareHyperflexBundleDistributableRequest {
 	return ApiDeleteSoftwareHyperflexBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1843,13 +1856,13 @@ func (a *SoftwareApiService) DeleteSoftwareHyperflexBundleDistributableExecute(r
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1857,11 +1870,10 @@ func (a *SoftwareApiService) DeleteSoftwareHyperflexBundleDistributableExecute(r
 }
 
 type ApiDeleteSoftwareHyperflexDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareHyperflexDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareHyperflexDistributableExecute(r)
@@ -1877,8 +1889,8 @@ DeleteSoftwareHyperflexDistributable Delete a 'software.HyperflexDistributable' 
 func (a *SoftwareApiService) DeleteSoftwareHyperflexDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareHyperflexDistributableRequest {
 	return ApiDeleteSoftwareHyperflexDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1983,13 +1995,13 @@ func (a *SoftwareApiService) DeleteSoftwareHyperflexDistributableExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1997,11 +2009,10 @@ func (a *SoftwareApiService) DeleteSoftwareHyperflexDistributableExecute(r ApiDe
 }
 
 type ApiDeleteSoftwareReleaseMetaRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareReleaseMetaRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareReleaseMetaExecute(r)
@@ -2017,8 +2028,8 @@ DeleteSoftwareReleaseMeta Delete a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) DeleteSoftwareReleaseMeta(ctx _context.Context, moid string) ApiDeleteSoftwareReleaseMetaRequest {
 	return ApiDeleteSoftwareReleaseMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2123,13 +2134,13 @@ func (a *SoftwareApiService) DeleteSoftwareReleaseMetaExecute(r ApiDeleteSoftwar
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2137,11 +2148,10 @@ func (a *SoftwareApiService) DeleteSoftwareReleaseMetaExecute(r ApiDeleteSoftwar
 }
 
 type ApiDeleteSoftwareSolutionDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareSolutionDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareSolutionDistributableExecute(r)
@@ -2157,8 +2167,8 @@ DeleteSoftwareSolutionDistributable Delete a 'software.SolutionDistributable' re
 func (a *SoftwareApiService) DeleteSoftwareSolutionDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareSolutionDistributableRequest {
 	return ApiDeleteSoftwareSolutionDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2263,13 +2273,13 @@ func (a *SoftwareApiService) DeleteSoftwareSolutionDistributableExecute(r ApiDel
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2277,11 +2287,10 @@ func (a *SoftwareApiService) DeleteSoftwareSolutionDistributableExecute(r ApiDel
 }
 
 type ApiDeleteSoftwareUcsdBundleDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareUcsdBundleDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareUcsdBundleDistributableExecute(r)
@@ -2297,8 +2306,8 @@ DeleteSoftwareUcsdBundleDistributable Delete a 'software.UcsdBundleDistributable
 func (a *SoftwareApiService) DeleteSoftwareUcsdBundleDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareUcsdBundleDistributableRequest {
 	return ApiDeleteSoftwareUcsdBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2403,13 +2412,13 @@ func (a *SoftwareApiService) DeleteSoftwareUcsdBundleDistributableExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2417,11 +2426,10 @@ func (a *SoftwareApiService) DeleteSoftwareUcsdBundleDistributableExecute(r ApiD
 }
 
 type ApiDeleteSoftwareUcsdDistributableRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteSoftwareUcsdDistributableRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteSoftwareUcsdDistributableExecute(r)
@@ -2437,8 +2445,8 @@ DeleteSoftwareUcsdDistributable Delete a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) DeleteSoftwareUcsdDistributable(ctx _context.Context, moid string) ApiDeleteSoftwareUcsdDistributableRequest {
 	return ApiDeleteSoftwareUcsdDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2543,13 +2551,13 @@ func (a *SoftwareApiService) DeleteSoftwareUcsdDistributableExecute(r ApiDeleteS
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -2557,11 +2565,10 @@ func (a *SoftwareApiService) DeleteSoftwareUcsdDistributableExecute(r ApiDeleteS
 }
 
 type ApiGetSoftwareApplianceDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareApplianceDistributableByMoidRequest) Execute() (SoftwareApplianceDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareApplianceDistributableByMoidExecute(r)
@@ -2577,8 +2584,8 @@ GetSoftwareApplianceDistributableByMoid Read a 'software.ApplianceDistributable'
 func (a *SoftwareApiService) GetSoftwareApplianceDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareApplianceDistributableByMoidRequest {
 	return ApiGetSoftwareApplianceDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2685,13 +2692,13 @@ func (a *SoftwareApiService) GetSoftwareApplianceDistributableByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2708,19 +2715,19 @@ func (a *SoftwareApiService) GetSoftwareApplianceDistributableByMoidExecute(r Ap
 }
 
 type ApiGetSoftwareApplianceDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2728,51 +2735,61 @@ func (r ApiGetSoftwareApplianceDistributableListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Orderby(orderby string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Top(top int32) ApiGetSoftwareApplianceDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Skip(skip int32) ApiGetSoftwareApplianceDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Select_(select_ string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Expand(expand string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Apply(apply string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Count(count bool) ApiGetSoftwareApplianceDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareApplianceDistributableListRequest) At(at string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareApplianceDistributableListRequest) Tags(tags string) ApiGetSoftwareApplianceDistributableListRequest {
 	r.tags = &tags
@@ -2792,7 +2809,7 @@ GetSoftwareApplianceDistributableList Read a 'software.ApplianceDistributable' r
 func (a *SoftwareApiService) GetSoftwareApplianceDistributableList(ctx _context.Context) ApiGetSoftwareApplianceDistributableListRequest {
 	return ApiGetSoftwareApplianceDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2931,13 +2948,13 @@ func (a *SoftwareApiService) GetSoftwareApplianceDistributableListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2954,11 +2971,10 @@ func (a *SoftwareApiService) GetSoftwareApplianceDistributableListExecute(r ApiG
 }
 
 type ApiGetSoftwareDownloadHistoryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareDownloadHistoryByMoidRequest) Execute() (SoftwareDownloadHistory, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareDownloadHistoryByMoidExecute(r)
@@ -2974,8 +2990,8 @@ GetSoftwareDownloadHistoryByMoid Read a 'software.DownloadHistory' resource.
 func (a *SoftwareApiService) GetSoftwareDownloadHistoryByMoid(ctx _context.Context, moid string) ApiGetSoftwareDownloadHistoryByMoidRequest {
 	return ApiGetSoftwareDownloadHistoryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3082,13 +3098,13 @@ func (a *SoftwareApiService) GetSoftwareDownloadHistoryByMoidExecute(r ApiGetSof
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3105,19 +3121,19 @@ func (a *SoftwareApiService) GetSoftwareDownloadHistoryByMoidExecute(r ApiGetSof
 }
 
 type ApiGetSoftwareDownloadHistoryListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3125,51 +3141,61 @@ func (r ApiGetSoftwareDownloadHistoryListRequest) Filter(filter string) ApiGetSo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Orderby(orderby string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Top(top int32) ApiGetSoftwareDownloadHistoryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Skip(skip int32) ApiGetSoftwareDownloadHistoryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Select_(select_ string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Expand(expand string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Apply(apply string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Count(count bool) ApiGetSoftwareDownloadHistoryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Inlinecount(inlinecount string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareDownloadHistoryListRequest) At(at string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareDownloadHistoryListRequest) Tags(tags string) ApiGetSoftwareDownloadHistoryListRequest {
 	r.tags = &tags
@@ -3189,7 +3215,7 @@ GetSoftwareDownloadHistoryList Read a 'software.DownloadHistory' resource.
 func (a *SoftwareApiService) GetSoftwareDownloadHistoryList(ctx _context.Context) ApiGetSoftwareDownloadHistoryListRequest {
 	return ApiGetSoftwareDownloadHistoryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3328,13 +3354,13 @@ func (a *SoftwareApiService) GetSoftwareDownloadHistoryListExecute(r ApiGetSoftw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3351,11 +3377,10 @@ func (a *SoftwareApiService) GetSoftwareDownloadHistoryListExecute(r ApiGetSoftw
 }
 
 type ApiGetSoftwareHclMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareHclMetaByMoidRequest) Execute() (SoftwareHclMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareHclMetaByMoidExecute(r)
@@ -3371,8 +3396,8 @@ GetSoftwareHclMetaByMoid Read a 'software.HclMeta' resource.
 func (a *SoftwareApiService) GetSoftwareHclMetaByMoid(ctx _context.Context, moid string) ApiGetSoftwareHclMetaByMoidRequest {
 	return ApiGetSoftwareHclMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3479,13 +3504,13 @@ func (a *SoftwareApiService) GetSoftwareHclMetaByMoidExecute(r ApiGetSoftwareHcl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3502,19 +3527,19 @@ func (a *SoftwareApiService) GetSoftwareHclMetaByMoidExecute(r ApiGetSoftwareHcl
 }
 
 type ApiGetSoftwareHclMetaListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3522,51 +3547,61 @@ func (r ApiGetSoftwareHclMetaListRequest) Filter(filter string) ApiGetSoftwareHc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareHclMetaListRequest) Orderby(orderby string) ApiGetSoftwareHclMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareHclMetaListRequest) Top(top int32) ApiGetSoftwareHclMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareHclMetaListRequest) Skip(skip int32) ApiGetSoftwareHclMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareHclMetaListRequest) Select_(select_ string) ApiGetSoftwareHclMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareHclMetaListRequest) Expand(expand string) ApiGetSoftwareHclMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareHclMetaListRequest) Apply(apply string) ApiGetSoftwareHclMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareHclMetaListRequest) Count(count bool) ApiGetSoftwareHclMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareHclMetaListRequest) Inlinecount(inlinecount string) ApiGetSoftwareHclMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareHclMetaListRequest) At(at string) ApiGetSoftwareHclMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareHclMetaListRequest) Tags(tags string) ApiGetSoftwareHclMetaListRequest {
 	r.tags = &tags
@@ -3586,7 +3621,7 @@ GetSoftwareHclMetaList Read a 'software.HclMeta' resource.
 func (a *SoftwareApiService) GetSoftwareHclMetaList(ctx _context.Context) ApiGetSoftwareHclMetaListRequest {
 	return ApiGetSoftwareHclMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3725,13 +3760,13 @@ func (a *SoftwareApiService) GetSoftwareHclMetaListExecute(r ApiGetSoftwareHclMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3748,11 +3783,10 @@ func (a *SoftwareApiService) GetSoftwareHclMetaListExecute(r ApiGetSoftwareHclMe
 }
 
 type ApiGetSoftwareHyperflexBundleDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareHyperflexBundleDistributableByMoidRequest) Execute() (SoftwareHyperflexBundleDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareHyperflexBundleDistributableByMoidExecute(r)
@@ -3768,8 +3802,8 @@ GetSoftwareHyperflexBundleDistributableByMoid Read a 'software.HyperflexBundleDi
 func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareHyperflexBundleDistributableByMoidRequest {
 	return ApiGetSoftwareHyperflexBundleDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3876,13 +3910,13 @@ func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3899,19 +3933,19 @@ func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableByMoidExecut
 }
 
 type ApiGetSoftwareHyperflexBundleDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3919,51 +3953,61 @@ func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Orderby(orderby string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Top(top int32) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Skip(skip int32) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Select_(select_ string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Expand(expand string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Apply(apply string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Count(count bool) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) At(at string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareHyperflexBundleDistributableListRequest) Tags(tags string) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	r.tags = &tags
@@ -3983,7 +4027,7 @@ GetSoftwareHyperflexBundleDistributableList Read a 'software.HyperflexBundleDist
 func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableList(ctx _context.Context) ApiGetSoftwareHyperflexBundleDistributableListRequest {
 	return ApiGetSoftwareHyperflexBundleDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4122,13 +4166,13 @@ func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4145,11 +4189,10 @@ func (a *SoftwareApiService) GetSoftwareHyperflexBundleDistributableListExecute(
 }
 
 type ApiGetSoftwareHyperflexDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareHyperflexDistributableByMoidRequest) Execute() (SoftwareHyperflexDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareHyperflexDistributableByMoidExecute(r)
@@ -4165,8 +4208,8 @@ GetSoftwareHyperflexDistributableByMoid Read a 'software.HyperflexDistributable'
 func (a *SoftwareApiService) GetSoftwareHyperflexDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareHyperflexDistributableByMoidRequest {
 	return ApiGetSoftwareHyperflexDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4273,13 +4316,13 @@ func (a *SoftwareApiService) GetSoftwareHyperflexDistributableByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4296,19 +4339,19 @@ func (a *SoftwareApiService) GetSoftwareHyperflexDistributableByMoidExecute(r Ap
 }
 
 type ApiGetSoftwareHyperflexDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4316,51 +4359,61 @@ func (r ApiGetSoftwareHyperflexDistributableListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Orderby(orderby string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Top(top int32) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Skip(skip int32) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Select_(select_ string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Expand(expand string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Apply(apply string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Count(count bool) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) At(at string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareHyperflexDistributableListRequest) Tags(tags string) ApiGetSoftwareHyperflexDistributableListRequest {
 	r.tags = &tags
@@ -4380,7 +4433,7 @@ GetSoftwareHyperflexDistributableList Read a 'software.HyperflexDistributable' r
 func (a *SoftwareApiService) GetSoftwareHyperflexDistributableList(ctx _context.Context) ApiGetSoftwareHyperflexDistributableListRequest {
 	return ApiGetSoftwareHyperflexDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4519,13 +4572,13 @@ func (a *SoftwareApiService) GetSoftwareHyperflexDistributableListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4542,11 +4595,10 @@ func (a *SoftwareApiService) GetSoftwareHyperflexDistributableListExecute(r ApiG
 }
 
 type ApiGetSoftwareReleaseMetaByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareReleaseMetaByMoidRequest) Execute() (SoftwareReleaseMeta, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareReleaseMetaByMoidExecute(r)
@@ -4562,8 +4614,8 @@ GetSoftwareReleaseMetaByMoid Read a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) GetSoftwareReleaseMetaByMoid(ctx _context.Context, moid string) ApiGetSoftwareReleaseMetaByMoidRequest {
 	return ApiGetSoftwareReleaseMetaByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4670,13 +4722,13 @@ func (a *SoftwareApiService) GetSoftwareReleaseMetaByMoidExecute(r ApiGetSoftwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4693,19 +4745,19 @@ func (a *SoftwareApiService) GetSoftwareReleaseMetaByMoidExecute(r ApiGetSoftwar
 }
 
 type ApiGetSoftwareReleaseMetaListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4713,51 +4765,61 @@ func (r ApiGetSoftwareReleaseMetaListRequest) Filter(filter string) ApiGetSoftwa
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareReleaseMetaListRequest) Orderby(orderby string) ApiGetSoftwareReleaseMetaListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareReleaseMetaListRequest) Top(top int32) ApiGetSoftwareReleaseMetaListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareReleaseMetaListRequest) Skip(skip int32) ApiGetSoftwareReleaseMetaListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareReleaseMetaListRequest) Select_(select_ string) ApiGetSoftwareReleaseMetaListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareReleaseMetaListRequest) Expand(expand string) ApiGetSoftwareReleaseMetaListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareReleaseMetaListRequest) Apply(apply string) ApiGetSoftwareReleaseMetaListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareReleaseMetaListRequest) Count(count bool) ApiGetSoftwareReleaseMetaListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareReleaseMetaListRequest) Inlinecount(inlinecount string) ApiGetSoftwareReleaseMetaListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareReleaseMetaListRequest) At(at string) ApiGetSoftwareReleaseMetaListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareReleaseMetaListRequest) Tags(tags string) ApiGetSoftwareReleaseMetaListRequest {
 	r.tags = &tags
@@ -4777,7 +4839,7 @@ GetSoftwareReleaseMetaList Read a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) GetSoftwareReleaseMetaList(ctx _context.Context) ApiGetSoftwareReleaseMetaListRequest {
 	return ApiGetSoftwareReleaseMetaListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4916,13 +4978,13 @@ func (a *SoftwareApiService) GetSoftwareReleaseMetaListExecute(r ApiGetSoftwareR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4939,11 +5001,10 @@ func (a *SoftwareApiService) GetSoftwareReleaseMetaListExecute(r ApiGetSoftwareR
 }
 
 type ApiGetSoftwareSolutionDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareSolutionDistributableByMoidRequest) Execute() (SoftwareSolutionDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareSolutionDistributableByMoidExecute(r)
@@ -4959,8 +5020,8 @@ GetSoftwareSolutionDistributableByMoid Read a 'software.SolutionDistributable' r
 func (a *SoftwareApiService) GetSoftwareSolutionDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareSolutionDistributableByMoidRequest {
 	return ApiGetSoftwareSolutionDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5067,13 +5128,13 @@ func (a *SoftwareApiService) GetSoftwareSolutionDistributableByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5090,19 +5151,19 @@ func (a *SoftwareApiService) GetSoftwareSolutionDistributableByMoidExecute(r Api
 }
 
 type ApiGetSoftwareSolutionDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5110,51 +5171,61 @@ func (r ApiGetSoftwareSolutionDistributableListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Orderby(orderby string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Top(top int32) ApiGetSoftwareSolutionDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Skip(skip int32) ApiGetSoftwareSolutionDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Select_(select_ string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Expand(expand string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Apply(apply string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Count(count bool) ApiGetSoftwareSolutionDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareSolutionDistributableListRequest) At(at string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareSolutionDistributableListRequest) Tags(tags string) ApiGetSoftwareSolutionDistributableListRequest {
 	r.tags = &tags
@@ -5174,7 +5245,7 @@ GetSoftwareSolutionDistributableList Read a 'software.SolutionDistributable' res
 func (a *SoftwareApiService) GetSoftwareSolutionDistributableList(ctx _context.Context) ApiGetSoftwareSolutionDistributableListRequest {
 	return ApiGetSoftwareSolutionDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5313,13 +5384,13 @@ func (a *SoftwareApiService) GetSoftwareSolutionDistributableListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5336,11 +5407,10 @@ func (a *SoftwareApiService) GetSoftwareSolutionDistributableListExecute(r ApiGe
 }
 
 type ApiGetSoftwareUcsdBundleDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareUcsdBundleDistributableByMoidRequest) Execute() (SoftwareUcsdBundleDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareUcsdBundleDistributableByMoidExecute(r)
@@ -5356,8 +5426,8 @@ GetSoftwareUcsdBundleDistributableByMoid Read a 'software.UcsdBundleDistributabl
 func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareUcsdBundleDistributableByMoidRequest {
 	return ApiGetSoftwareUcsdBundleDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5464,13 +5534,13 @@ func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5487,19 +5557,19 @@ func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableByMoidExecute(r A
 }
 
 type ApiGetSoftwareUcsdBundleDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5507,51 +5577,61 @@ func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Orderby(orderby string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Top(top int32) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Skip(skip int32) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Select_(select_ string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Expand(expand string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Apply(apply string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Count(count bool) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) At(at string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareUcsdBundleDistributableListRequest) Tags(tags string) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	r.tags = &tags
@@ -5571,7 +5651,7 @@ GetSoftwareUcsdBundleDistributableList Read a 'software.UcsdBundleDistributable'
 func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableList(ctx _context.Context) ApiGetSoftwareUcsdBundleDistributableListRequest {
 	return ApiGetSoftwareUcsdBundleDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5710,13 +5790,13 @@ func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5733,11 +5813,10 @@ func (a *SoftwareApiService) GetSoftwareUcsdBundleDistributableListExecute(r Api
 }
 
 type ApiGetSoftwareUcsdDistributableByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *SoftwareApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetSoftwareUcsdDistributableByMoidRequest) Execute() (SoftwareUcsdDistributable, *_nethttp.Response, error) {
 	return r.ApiService.GetSoftwareUcsdDistributableByMoidExecute(r)
@@ -5753,8 +5832,8 @@ GetSoftwareUcsdDistributableByMoid Read a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) GetSoftwareUcsdDistributableByMoid(ctx _context.Context, moid string) ApiGetSoftwareUcsdDistributableByMoidRequest {
 	return ApiGetSoftwareUcsdDistributableByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5861,13 +5940,13 @@ func (a *SoftwareApiService) GetSoftwareUcsdDistributableByMoidExecute(r ApiGetS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5884,19 +5963,19 @@ func (a *SoftwareApiService) GetSoftwareUcsdDistributableByMoidExecute(r ApiGetS
 }
 
 type ApiGetSoftwareUcsdDistributableListRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *SoftwareApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5904,51 +5983,61 @@ func (r ApiGetSoftwareUcsdDistributableListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Orderby(orderby string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Top(top int32) ApiGetSoftwareUcsdDistributableListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Skip(skip int32) ApiGetSoftwareUcsdDistributableListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Select_(select_ string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Expand(expand string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Apply(apply string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Count(count bool) ApiGetSoftwareUcsdDistributableListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Inlinecount(inlinecount string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetSoftwareUcsdDistributableListRequest) At(at string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetSoftwareUcsdDistributableListRequest) Tags(tags string) ApiGetSoftwareUcsdDistributableListRequest {
 	r.tags = &tags
@@ -5968,7 +6057,7 @@ GetSoftwareUcsdDistributableList Read a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) GetSoftwareUcsdDistributableList(ctx _context.Context) ApiGetSoftwareUcsdDistributableListRequest {
 	return ApiGetSoftwareUcsdDistributableListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6107,13 +6196,13 @@ func (a *SoftwareApiService) GetSoftwareUcsdDistributableListExecute(r ApiGetSof
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6130,11 +6219,11 @@ func (a *SoftwareApiService) GetSoftwareUcsdDistributableListExecute(r ApiGetSof
 }
 
 type ApiPatchSoftwareApplianceDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
+	moid                           string
 	softwareApplianceDistributable *SoftwareApplianceDistributable
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;software.ApplianceDistributable&#39; resource to update.
@@ -6142,6 +6231,7 @@ func (r ApiPatchSoftwareApplianceDistributableRequest) SoftwareApplianceDistribu
 	r.softwareApplianceDistributable = &softwareApplianceDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareApplianceDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareApplianceDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -6162,8 +6252,8 @@ PatchSoftwareApplianceDistributable Update a 'software.ApplianceDistributable' r
 func (a *SoftwareApiService) PatchSoftwareApplianceDistributable(ctx _context.Context, moid string) ApiPatchSoftwareApplianceDistributableRequest {
 	return ApiPatchSoftwareApplianceDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6278,13 +6368,13 @@ func (a *SoftwareApiService) PatchSoftwareApplianceDistributableExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6301,11 +6391,11 @@ func (a *SoftwareApiService) PatchSoftwareApplianceDistributableExecute(r ApiPat
 }
 
 type ApiPatchSoftwareHclMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *SoftwareApiService
+	moid            string
 	softwareHclMeta *SoftwareHclMeta
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;software.HclMeta&#39; resource to update.
@@ -6313,6 +6403,7 @@ func (r ApiPatchSoftwareHclMetaRequest) SoftwareHclMeta(softwareHclMeta Software
 	r.softwareHclMeta = &softwareHclMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareHclMetaRequest) IfMatch(ifMatch string) ApiPatchSoftwareHclMetaRequest {
 	r.ifMatch = &ifMatch
@@ -6333,8 +6424,8 @@ PatchSoftwareHclMeta Update a 'software.HclMeta' resource.
 func (a *SoftwareApiService) PatchSoftwareHclMeta(ctx _context.Context, moid string) ApiPatchSoftwareHclMetaRequest {
 	return ApiPatchSoftwareHclMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6449,13 +6540,13 @@ func (a *SoftwareApiService) PatchSoftwareHclMetaExecute(r ApiPatchSoftwareHclMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6472,11 +6563,11 @@ func (a *SoftwareApiService) PatchSoftwareHclMetaExecute(r ApiPatchSoftwareHclMe
 }
 
 type ApiPatchSoftwareHyperflexBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *SoftwareApiService
+	moid                                 string
 	softwareHyperflexBundleDistributable *SoftwareHyperflexBundleDistributable
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;software.HyperflexBundleDistributable&#39; resource to update.
@@ -6484,6 +6575,7 @@ func (r ApiPatchSoftwareHyperflexBundleDistributableRequest) SoftwareHyperflexBu
 	r.softwareHyperflexBundleDistributable = &softwareHyperflexBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareHyperflexBundleDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareHyperflexBundleDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -6504,8 +6596,8 @@ PatchSoftwareHyperflexBundleDistributable Update a 'software.HyperflexBundleDist
 func (a *SoftwareApiService) PatchSoftwareHyperflexBundleDistributable(ctx _context.Context, moid string) ApiPatchSoftwareHyperflexBundleDistributableRequest {
 	return ApiPatchSoftwareHyperflexBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6620,13 +6712,13 @@ func (a *SoftwareApiService) PatchSoftwareHyperflexBundleDistributableExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6643,11 +6735,11 @@ func (a *SoftwareApiService) PatchSoftwareHyperflexBundleDistributableExecute(r 
 }
 
 type ApiPatchSoftwareHyperflexDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
+	moid                           string
 	softwareHyperflexDistributable *SoftwareHyperflexDistributable
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;software.HyperflexDistributable&#39; resource to update.
@@ -6655,6 +6747,7 @@ func (r ApiPatchSoftwareHyperflexDistributableRequest) SoftwareHyperflexDistribu
 	r.softwareHyperflexDistributable = &softwareHyperflexDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareHyperflexDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareHyperflexDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -6675,8 +6768,8 @@ PatchSoftwareHyperflexDistributable Update a 'software.HyperflexDistributable' r
 func (a *SoftwareApiService) PatchSoftwareHyperflexDistributable(ctx _context.Context, moid string) ApiPatchSoftwareHyperflexDistributableRequest {
 	return ApiPatchSoftwareHyperflexDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6791,13 +6884,13 @@ func (a *SoftwareApiService) PatchSoftwareHyperflexDistributableExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6814,11 +6907,11 @@ func (a *SoftwareApiService) PatchSoftwareHyperflexDistributableExecute(r ApiPat
 }
 
 type ApiPatchSoftwareReleaseMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *SoftwareApiService
+	moid                string
 	softwareReleaseMeta *SoftwareReleaseMeta
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;software.ReleaseMeta&#39; resource to update.
@@ -6826,6 +6919,7 @@ func (r ApiPatchSoftwareReleaseMetaRequest) SoftwareReleaseMeta(softwareReleaseM
 	r.softwareReleaseMeta = &softwareReleaseMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareReleaseMetaRequest) IfMatch(ifMatch string) ApiPatchSoftwareReleaseMetaRequest {
 	r.ifMatch = &ifMatch
@@ -6846,8 +6940,8 @@ PatchSoftwareReleaseMeta Update a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) PatchSoftwareReleaseMeta(ctx _context.Context, moid string) ApiPatchSoftwareReleaseMetaRequest {
 	return ApiPatchSoftwareReleaseMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6962,13 +7056,13 @@ func (a *SoftwareApiService) PatchSoftwareReleaseMetaExecute(r ApiPatchSoftwareR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6985,11 +7079,11 @@ func (a *SoftwareApiService) PatchSoftwareReleaseMetaExecute(r ApiPatchSoftwareR
 }
 
 type ApiPatchSoftwareSolutionDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *SoftwareApiService
+	moid                          string
 	softwareSolutionDistributable *SoftwareSolutionDistributable
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;software.SolutionDistributable&#39; resource to update.
@@ -6997,6 +7091,7 @@ func (r ApiPatchSoftwareSolutionDistributableRequest) SoftwareSolutionDistributa
 	r.softwareSolutionDistributable = &softwareSolutionDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareSolutionDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareSolutionDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -7017,8 +7112,8 @@ PatchSoftwareSolutionDistributable Update a 'software.SolutionDistributable' res
 func (a *SoftwareApiService) PatchSoftwareSolutionDistributable(ctx _context.Context, moid string) ApiPatchSoftwareSolutionDistributableRequest {
 	return ApiPatchSoftwareSolutionDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7133,13 +7228,13 @@ func (a *SoftwareApiService) PatchSoftwareSolutionDistributableExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7156,11 +7251,11 @@ func (a *SoftwareApiService) PatchSoftwareSolutionDistributableExecute(r ApiPatc
 }
 
 type ApiPatchSoftwareUcsdBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *SoftwareApiService
+	moid                            string
 	softwareUcsdBundleDistributable *SoftwareUcsdBundleDistributable
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;software.UcsdBundleDistributable&#39; resource to update.
@@ -7168,6 +7263,7 @@ func (r ApiPatchSoftwareUcsdBundleDistributableRequest) SoftwareUcsdBundleDistri
 	r.softwareUcsdBundleDistributable = &softwareUcsdBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareUcsdBundleDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareUcsdBundleDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -7188,8 +7284,8 @@ PatchSoftwareUcsdBundleDistributable Update a 'software.UcsdBundleDistributable'
 func (a *SoftwareApiService) PatchSoftwareUcsdBundleDistributable(ctx _context.Context, moid string) ApiPatchSoftwareUcsdBundleDistributableRequest {
 	return ApiPatchSoftwareUcsdBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7304,13 +7400,13 @@ func (a *SoftwareApiService) PatchSoftwareUcsdBundleDistributableExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7327,11 +7423,11 @@ func (a *SoftwareApiService) PatchSoftwareUcsdBundleDistributableExecute(r ApiPa
 }
 
 type ApiPatchSoftwareUcsdDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *SoftwareApiService
+	moid                      string
 	softwareUcsdDistributable *SoftwareUcsdDistributable
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;software.UcsdDistributable&#39; resource to update.
@@ -7339,6 +7435,7 @@ func (r ApiPatchSoftwareUcsdDistributableRequest) SoftwareUcsdDistributable(soft
 	r.softwareUcsdDistributable = &softwareUcsdDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchSoftwareUcsdDistributableRequest) IfMatch(ifMatch string) ApiPatchSoftwareUcsdDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -7359,8 +7456,8 @@ PatchSoftwareUcsdDistributable Update a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) PatchSoftwareUcsdDistributable(ctx _context.Context, moid string) ApiPatchSoftwareUcsdDistributableRequest {
 	return ApiPatchSoftwareUcsdDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7475,13 +7572,13 @@ func (a *SoftwareApiService) PatchSoftwareUcsdDistributableExecute(r ApiPatchSof
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7498,11 +7595,11 @@ func (a *SoftwareApiService) PatchSoftwareUcsdDistributableExecute(r ApiPatchSof
 }
 
 type ApiUpdateSoftwareApplianceDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
+	moid                           string
 	softwareApplianceDistributable *SoftwareApplianceDistributable
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;software.ApplianceDistributable&#39; resource to update.
@@ -7510,6 +7607,7 @@ func (r ApiUpdateSoftwareApplianceDistributableRequest) SoftwareApplianceDistrib
 	r.softwareApplianceDistributable = &softwareApplianceDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareApplianceDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareApplianceDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -7530,8 +7628,8 @@ UpdateSoftwareApplianceDistributable Update a 'software.ApplianceDistributable' 
 func (a *SoftwareApiService) UpdateSoftwareApplianceDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareApplianceDistributableRequest {
 	return ApiUpdateSoftwareApplianceDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7646,13 +7744,13 @@ func (a *SoftwareApiService) UpdateSoftwareApplianceDistributableExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7669,11 +7767,11 @@ func (a *SoftwareApiService) UpdateSoftwareApplianceDistributableExecute(r ApiUp
 }
 
 type ApiUpdateSoftwareHclMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *SoftwareApiService
+	moid            string
 	softwareHclMeta *SoftwareHclMeta
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;software.HclMeta&#39; resource to update.
@@ -7681,6 +7779,7 @@ func (r ApiUpdateSoftwareHclMetaRequest) SoftwareHclMeta(softwareHclMeta Softwar
 	r.softwareHclMeta = &softwareHclMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareHclMetaRequest) IfMatch(ifMatch string) ApiUpdateSoftwareHclMetaRequest {
 	r.ifMatch = &ifMatch
@@ -7701,8 +7800,8 @@ UpdateSoftwareHclMeta Update a 'software.HclMeta' resource.
 func (a *SoftwareApiService) UpdateSoftwareHclMeta(ctx _context.Context, moid string) ApiUpdateSoftwareHclMetaRequest {
 	return ApiUpdateSoftwareHclMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7817,13 +7916,13 @@ func (a *SoftwareApiService) UpdateSoftwareHclMetaExecute(r ApiUpdateSoftwareHcl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7840,11 +7939,11 @@ func (a *SoftwareApiService) UpdateSoftwareHclMetaExecute(r ApiUpdateSoftwareHcl
 }
 
 type ApiUpdateSoftwareHyperflexBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *SoftwareApiService
+	moid                                 string
 	softwareHyperflexBundleDistributable *SoftwareHyperflexBundleDistributable
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;software.HyperflexBundleDistributable&#39; resource to update.
@@ -7852,6 +7951,7 @@ func (r ApiUpdateSoftwareHyperflexBundleDistributableRequest) SoftwareHyperflexB
 	r.softwareHyperflexBundleDistributable = &softwareHyperflexBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareHyperflexBundleDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareHyperflexBundleDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -7872,8 +7972,8 @@ UpdateSoftwareHyperflexBundleDistributable Update a 'software.HyperflexBundleDis
 func (a *SoftwareApiService) UpdateSoftwareHyperflexBundleDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareHyperflexBundleDistributableRequest {
 	return ApiUpdateSoftwareHyperflexBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7988,13 +8088,13 @@ func (a *SoftwareApiService) UpdateSoftwareHyperflexBundleDistributableExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8011,11 +8111,11 @@ func (a *SoftwareApiService) UpdateSoftwareHyperflexBundleDistributableExecute(r
 }
 
 type ApiUpdateSoftwareHyperflexDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *SoftwareApiService
+	moid                           string
 	softwareHyperflexDistributable *SoftwareHyperflexDistributable
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;software.HyperflexDistributable&#39; resource to update.
@@ -8023,6 +8123,7 @@ func (r ApiUpdateSoftwareHyperflexDistributableRequest) SoftwareHyperflexDistrib
 	r.softwareHyperflexDistributable = &softwareHyperflexDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareHyperflexDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareHyperflexDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -8043,8 +8144,8 @@ UpdateSoftwareHyperflexDistributable Update a 'software.HyperflexDistributable' 
 func (a *SoftwareApiService) UpdateSoftwareHyperflexDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareHyperflexDistributableRequest {
 	return ApiUpdateSoftwareHyperflexDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8159,13 +8260,13 @@ func (a *SoftwareApiService) UpdateSoftwareHyperflexDistributableExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8182,11 +8283,11 @@ func (a *SoftwareApiService) UpdateSoftwareHyperflexDistributableExecute(r ApiUp
 }
 
 type ApiUpdateSoftwareReleaseMetaRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *SoftwareApiService
+	moid                string
 	softwareReleaseMeta *SoftwareReleaseMeta
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;software.ReleaseMeta&#39; resource to update.
@@ -8194,6 +8295,7 @@ func (r ApiUpdateSoftwareReleaseMetaRequest) SoftwareReleaseMeta(softwareRelease
 	r.softwareReleaseMeta = &softwareReleaseMeta
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareReleaseMetaRequest) IfMatch(ifMatch string) ApiUpdateSoftwareReleaseMetaRequest {
 	r.ifMatch = &ifMatch
@@ -8214,8 +8316,8 @@ UpdateSoftwareReleaseMeta Update a 'software.ReleaseMeta' resource.
 func (a *SoftwareApiService) UpdateSoftwareReleaseMeta(ctx _context.Context, moid string) ApiUpdateSoftwareReleaseMetaRequest {
 	return ApiUpdateSoftwareReleaseMetaRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8330,13 +8432,13 @@ func (a *SoftwareApiService) UpdateSoftwareReleaseMetaExecute(r ApiUpdateSoftwar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8353,11 +8455,11 @@ func (a *SoftwareApiService) UpdateSoftwareReleaseMetaExecute(r ApiUpdateSoftwar
 }
 
 type ApiUpdateSoftwareSolutionDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *SoftwareApiService
+	moid                          string
 	softwareSolutionDistributable *SoftwareSolutionDistributable
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;software.SolutionDistributable&#39; resource to update.
@@ -8365,6 +8467,7 @@ func (r ApiUpdateSoftwareSolutionDistributableRequest) SoftwareSolutionDistribut
 	r.softwareSolutionDistributable = &softwareSolutionDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareSolutionDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareSolutionDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -8385,8 +8488,8 @@ UpdateSoftwareSolutionDistributable Update a 'software.SolutionDistributable' re
 func (a *SoftwareApiService) UpdateSoftwareSolutionDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareSolutionDistributableRequest {
 	return ApiUpdateSoftwareSolutionDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8501,13 +8604,13 @@ func (a *SoftwareApiService) UpdateSoftwareSolutionDistributableExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8524,11 +8627,11 @@ func (a *SoftwareApiService) UpdateSoftwareSolutionDistributableExecute(r ApiUpd
 }
 
 type ApiUpdateSoftwareUcsdBundleDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *SoftwareApiService
+	moid                            string
 	softwareUcsdBundleDistributable *SoftwareUcsdBundleDistributable
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;software.UcsdBundleDistributable&#39; resource to update.
@@ -8536,6 +8639,7 @@ func (r ApiUpdateSoftwareUcsdBundleDistributableRequest) SoftwareUcsdBundleDistr
 	r.softwareUcsdBundleDistributable = &softwareUcsdBundleDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareUcsdBundleDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareUcsdBundleDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -8556,8 +8660,8 @@ UpdateSoftwareUcsdBundleDistributable Update a 'software.UcsdBundleDistributable
 func (a *SoftwareApiService) UpdateSoftwareUcsdBundleDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareUcsdBundleDistributableRequest {
 	return ApiUpdateSoftwareUcsdBundleDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8672,13 +8776,13 @@ func (a *SoftwareApiService) UpdateSoftwareUcsdBundleDistributableExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8695,11 +8799,11 @@ func (a *SoftwareApiService) UpdateSoftwareUcsdBundleDistributableExecute(r ApiU
 }
 
 type ApiUpdateSoftwareUcsdDistributableRequest struct {
-	ctx _context.Context
-	ApiService *SoftwareApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *SoftwareApiService
+	moid                      string
 	softwareUcsdDistributable *SoftwareUcsdDistributable
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;software.UcsdDistributable&#39; resource to update.
@@ -8707,6 +8811,7 @@ func (r ApiUpdateSoftwareUcsdDistributableRequest) SoftwareUcsdDistributable(sof
 	r.softwareUcsdDistributable = &softwareUcsdDistributable
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateSoftwareUcsdDistributableRequest) IfMatch(ifMatch string) ApiUpdateSoftwareUcsdDistributableRequest {
 	r.ifMatch = &ifMatch
@@ -8727,8 +8832,8 @@ UpdateSoftwareUcsdDistributable Update a 'software.UcsdDistributable' resource.
 func (a *SoftwareApiService) UpdateSoftwareUcsdDistributable(ctx _context.Context, moid string) ApiUpdateSoftwareUcsdDistributableRequest {
 	return ApiUpdateSoftwareUcsdDistributableRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8843,13 +8948,13 @@ func (a *SoftwareApiService) UpdateSoftwareUcsdDistributableExecute(r ApiUpdateS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

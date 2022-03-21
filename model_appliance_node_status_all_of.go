@@ -30,12 +30,12 @@ type ApplianceNodeStatusAllOf struct {
 	// State of the node in terms of its readiness to host Kubernetes pods. * `Down` - The node is yet to come up and join as a member of theKubernetes cluster. * `Preparing` - The node has come up and joined the Kubernetes cluster,preparing to host Kubernetes pods. * `Ready` - The node is ready to host Kubernetes pods.
 	NodeState *string `json:"NodeState,omitempty"`
 	// Operational status of the Intersight Appliance node. Operational status is based on the result of the status checks. If result of any check is Critical, then its value is Impaired. Otherwise, if result of any check is Warning, then its value is AttentionNeeded. If all checks are OK, then its value is Operational. * `Unknown` - Operational status of the Intersight Appliance entity is Unknown. * `Operational` - Operational status of the Intersight Appliance entity is Operational. * `Impaired` - Operational status of the Intersight Appliance entity is Impaired. * `AttentionNeeded` - Operational status of the Intersight Appliance entity is AttentionNeeded.
-	OperationalStatus *string `json:"OperationalStatus,omitempty"`
-	StatusChecks []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
+	OperationalStatus *string                `json:"OperationalStatus,omitempty"`
+	StatusChecks      []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
 	// An array of relationships to applianceFileSystemStatus resources.
-	FileSystemStatuses []ApplianceFileSystemStatusRelationship `json:"FileSystemStatuses,omitempty"`
-	NodeInfo *ApplianceNodeInfoRelationship `json:"NodeInfo,omitempty"`
-	SystemStatus *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
+	FileSystemStatuses   []ApplianceFileSystemStatusRelationship `json:"FileSystemStatuses,omitempty"`
+	NodeInfo             *ApplianceNodeInfoRelationship          `json:"NodeInfo,omitempty"`
+	SystemStatus         *ApplianceSystemStatusRelationship      `json:"SystemStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *ApplianceNodeStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceNodeStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *ApplianceNodeStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceNodeStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -274,7 +274,7 @@ func (o *ApplianceNodeStatusAllOf) SetOperationalStatus(v string) {
 
 // GetStatusChecks returns the StatusChecks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceNodeStatusAllOf) GetStatusChecks() []ApplianceStatusCheck {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceStatusCheck
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *ApplianceNodeStatusAllOf) SetStatusChecks(v []ApplianceStatusCheck) {
 
 // GetFileSystemStatuses returns the FileSystemStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceNodeStatusAllOf) GetFileSystemStatuses() []ApplianceFileSystemStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceFileSystemStatusRelationship
 		return ret
 	}
@@ -507,5 +507,3 @@ func (v *NullableApplianceNodeStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

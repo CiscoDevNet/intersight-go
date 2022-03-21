@@ -18,32 +18,31 @@ import (
 
 // StorageDriveGroupResponse - The response body of a HTTP GET request for the 'storage.DriveGroup' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.DriveGroup' resources.
 type StorageDriveGroupResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 	StorageDriveGroupList *StorageDriveGroupList
 }
 
 // MoAggregateTransformAsStorageDriveGroupResponse is a convenience function that returns MoAggregateTransform wrapped in StorageDriveGroupResponse
 func MoAggregateTransformAsStorageDriveGroupResponse(v *MoAggregateTransform) StorageDriveGroupResponse {
-	return StorageDriveGroupResponse{ MoAggregateTransform: v}
+	return StorageDriveGroupResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageDriveGroupResponse is a convenience function that returns MoDocumentCount wrapped in StorageDriveGroupResponse
 func MoDocumentCountAsStorageDriveGroupResponse(v *MoDocumentCount) StorageDriveGroupResponse {
-	return StorageDriveGroupResponse{ MoDocumentCount: v}
+	return StorageDriveGroupResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageDriveGroupResponse is a convenience function that returns MoTagSummary wrapped in StorageDriveGroupResponse
 func MoTagSummaryAsStorageDriveGroupResponse(v *MoTagSummary) StorageDriveGroupResponse {
-	return StorageDriveGroupResponse{ MoTagSummary: v}
+	return StorageDriveGroupResponse{MoTagSummary: v}
 }
 
 // StorageDriveGroupListAsStorageDriveGroupResponse is a convenience function that returns StorageDriveGroupList wrapped in StorageDriveGroupResponse
 func StorageDriveGroupListAsStorageDriveGroupResponse(v *StorageDriveGroupList) StorageDriveGroupResponse {
-	return StorageDriveGroupResponse{ StorageDriveGroupList: v}
+	return StorageDriveGroupResponse{StorageDriveGroupList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageDriveGroupResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageDriveGroupResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageDriveGroupResponse) GetActualInstance() (interface{}) {
+func (obj *StorageDriveGroupResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageDriveGroupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // FabricSwitchProfileRelationship - A relationship to the 'fabric.SwitchProfile' resource, or the expanded 'fabric.SwitchProfile' resource, or the 'null' value.
 type FabricSwitchProfileRelationship struct {
 	FabricSwitchProfile *FabricSwitchProfile
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // FabricSwitchProfileAsFabricSwitchProfileRelationship is a convenience function that returns FabricSwitchProfile wrapped in FabricSwitchProfileRelationship
 func FabricSwitchProfileAsFabricSwitchProfileRelationship(v *FabricSwitchProfile) FabricSwitchProfileRelationship {
-	return FabricSwitchProfileRelationship{ FabricSwitchProfile: v}
+	return FabricSwitchProfileRelationship{FabricSwitchProfile: v}
 }
 
 // MoMoRefAsFabricSwitchProfileRelationship is a convenience function that returns MoMoRef wrapped in FabricSwitchProfileRelationship
 func MoMoRefAsFabricSwitchProfileRelationship(v *MoMoRef) FabricSwitchProfileRelationship {
-	return FabricSwitchProfileRelationship{ MoMoRef: v}
+	return FabricSwitchProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricSwitchProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricSwitchProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricSwitchProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricSwitchProfileRelationship) GetActualInstance() interface{} {
 	if obj.FabricSwitchProfile != nil {
 		return obj.FabricSwitchProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricSwitchProfileRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

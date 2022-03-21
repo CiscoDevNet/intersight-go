@@ -17,8 +17,8 @@ import (
 
 // TelemetryDruidDataSourceMetadataRequestAllOf struct for TelemetryDruidDataSourceMetadataRequestAllOf
 type TelemetryDruidDataSourceMetadataRequestAllOf struct {
-	DataSource TelemetryDruidDataSource `json:"dataSource"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	DataSource           TelemetryDruidDataSource    `json:"dataSource"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidDataSourceMetadataRequestAllOf) GetDataSource() Telemetry
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDataSourceMetadataRequestAllOf) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -167,5 +167,3 @@ func (v *NullableTelemetryDruidDataSourceMetadataRequestAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -33,7 +33,7 @@ type VirtualizationCpuInfo struct {
 	// Speed of the CPUs in Hertz. For example, 2593749663.
 	Speed *int64 `json:"Speed,omitempty"`
 	// Manufacturer of the CPU . For example, Intel.
-	Vendor *string `json:"Vendor,omitempty"`
+	Vendor               *string `json:"Vendor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *VirtualizationCpuInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCpuInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *VirtualizationCpuInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationCpuInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -423,5 +423,3 @@ func (v *NullableVirtualizationCpuInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

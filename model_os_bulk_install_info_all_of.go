@@ -22,22 +22,22 @@ type OsBulkInstallInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The content of the entire CSV file is stored as value. The content can hold complete OS install parameters in two sections. The first section holds generic information about the OS Install like OS Image, SCU Image etc. The second section holds parameters which are specific to each server level data.
-	FileContent *string `json:"FileContent,omitempty"`
+	FileContent  *string                `json:"FileContent,omitempty"`
 	GlobalConfig NullableOsGlobalConfig `json:"GlobalConfig,omitempty"`
 	// Indicates whether the value of the 'fileContent' property has been set.
 	IsFileContentSet *bool `json:"IsFileContentSet,omitempty"`
 	// The name of the CSV file, which holds the OS install parameters.
 	Name *string `json:"Name,omitempty"`
 	// Denotes if the operating is pending, in_progress, completed_ok, completed_error. * `Pending` - The initial value of the OperStatus. * `InProgress` - The OperStatus value will be InProgress during execution. * `CompletedOk` - The API is successful with operation then OperStatus will be marked as CompletedOk. * `CompletedError` - The API is failed with operation then OperStatus will be marked as CompletedError. * `CompletedWarning` - The API is completed with some warning then OperStatus will be CompletedWarning.
-	OperState *string `json:"OperState,omitempty"`
-	ServerConfigs []OsServerConfig `json:"ServerConfigs,omitempty"`
-	ValidationInfos []OsValidationInformation `json:"ValidationInfos,omitempty"`
-	ConfigurationFile *OsConfigurationFileRelationship `json:"ConfigurationFile,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	OsImage *SoftwarerepositoryOperatingSystemFileRelationship `json:"OsImage,omitempty"`
-	ScuImage *FirmwareServerConfigurationUtilityDistributableRelationship `json:"ScuImage,omitempty"`
+	OperState         *string                                                      `json:"OperState,omitempty"`
+	ServerConfigs     []OsServerConfig                                             `json:"ServerConfigs,omitempty"`
+	ValidationInfos   []OsValidationInformation                                    `json:"ValidationInfos,omitempty"`
+	ConfigurationFile *OsConfigurationFileRelationship                             `json:"ConfigurationFile,omitempty"`
+	Organization      *OrganizationOrganizationRelationship                        `json:"Organization,omitempty"`
+	OsImage           *SoftwarerepositoryOperatingSystemFileRelationship           `json:"OsImage,omitempty"`
+	ScuImage          *FirmwareServerConfigurationUtilityDistributableRelationship `json:"ScuImage,omitempty"`
 	// An array of relationships to computePhysical resources.
-	Servers []ComputePhysicalRelationship `json:"Servers,omitempty"`
+	Servers              []ComputePhysicalRelationship `json:"Servers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *OsBulkInstallInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsBulkInstallInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *OsBulkInstallInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsBulkInstallInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -159,7 +159,7 @@ func (o *OsBulkInstallInfoAllOf) GetGlobalConfig() OsGlobalConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsBulkInstallInfoAllOf) GetGlobalConfigOk() (*OsGlobalConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.GlobalConfig.Get(), o.GlobalConfig.IsSet()
@@ -178,6 +178,7 @@ func (o *OsBulkInstallInfoAllOf) HasGlobalConfig() bool {
 func (o *OsBulkInstallInfoAllOf) SetGlobalConfig(v OsGlobalConfig) {
 	o.GlobalConfig.Set(&v)
 }
+
 // SetGlobalConfigNil sets the value for GlobalConfig to be an explicit nil
 func (o *OsBulkInstallInfoAllOf) SetGlobalConfigNil() {
 	o.GlobalConfig.Set(nil)
@@ -286,7 +287,7 @@ func (o *OsBulkInstallInfoAllOf) SetOperState(v string) {
 
 // GetServerConfigs returns the ServerConfigs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsBulkInstallInfoAllOf) GetServerConfigs() []OsServerConfig {
-	if o == nil  {
+	if o == nil {
 		var ret []OsServerConfig
 		return ret
 	}
@@ -319,7 +320,7 @@ func (o *OsBulkInstallInfoAllOf) SetServerConfigs(v []OsServerConfig) {
 
 // GetValidationInfos returns the ValidationInfos field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsBulkInstallInfoAllOf) GetValidationInfos() []OsValidationInformation {
-	if o == nil  {
+	if o == nil {
 		var ret []OsValidationInformation
 		return ret
 	}
@@ -480,7 +481,7 @@ func (o *OsBulkInstallInfoAllOf) SetScuImage(v FirmwareServerConfigurationUtilit
 
 // GetServers returns the Servers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsBulkInstallInfoAllOf) GetServers() []ComputePhysicalRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputePhysicalRelationship
 		return ret
 	}
@@ -628,5 +629,3 @@ func (v *NullableOsBulkInstallInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

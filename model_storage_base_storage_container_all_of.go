@@ -25,8 +25,8 @@ type StorageBaseStorageContainerAllOf struct {
 	// Storage container's creation time.
 	CreatedTime *time.Time `json:"CreatedTime,omitempty"`
 	// Name of the storage container.
-	Name *string `json:"Name,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	Name                 *string                     `json:"Name,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *StorageBaseStorageContainerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseStorageContainerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *StorageBaseStorageContainerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseStorageContainerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *StorageBaseStorageContainerAllOf) GetStorageUtilization() StorageBaseCa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseStorageContainerAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -195,6 +195,7 @@ func (o *StorageBaseStorageContainerAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseStorageContainerAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseStorageContainerAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -286,5 +287,3 @@ func (v *NullableStorageBaseStorageContainerAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

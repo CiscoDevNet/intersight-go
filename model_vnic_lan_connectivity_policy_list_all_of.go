@@ -20,7 +20,7 @@ type VnicLanConnectivityPolicyListAllOf struct {
 	// The total number of 'vnic.LanConnectivityPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'vnic.LanConnectivityPolicy' resources matching the request.
-	Results []VnicLanConnectivityPolicy `json:"Results,omitempty"`
+	Results              []VnicLanConnectivityPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VnicLanConnectivityPolicyListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicLanConnectivityPolicyListAllOf) GetResults() []VnicLanConnectivityPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicLanConnectivityPolicy
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableVnicLanConnectivityPolicyListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

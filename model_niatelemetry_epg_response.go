@@ -19,31 +19,30 @@ import (
 // NiatelemetryEpgResponse - The response body of a HTTP GET request for the 'niatelemetry.Epg' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.Epg' resources.
 type NiatelemetryEpgResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	NiatelemetryEpgList *NiatelemetryEpgList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	NiatelemetryEpgList  *NiatelemetryEpgList
 }
 
 // MoAggregateTransformAsNiatelemetryEpgResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryEpgResponse
 func MoAggregateTransformAsNiatelemetryEpgResponse(v *MoAggregateTransform) NiatelemetryEpgResponse {
-	return NiatelemetryEpgResponse{ MoAggregateTransform: v}
+	return NiatelemetryEpgResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryEpgResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryEpgResponse
 func MoDocumentCountAsNiatelemetryEpgResponse(v *MoDocumentCount) NiatelemetryEpgResponse {
-	return NiatelemetryEpgResponse{ MoDocumentCount: v}
+	return NiatelemetryEpgResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryEpgResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryEpgResponse
 func MoTagSummaryAsNiatelemetryEpgResponse(v *MoTagSummary) NiatelemetryEpgResponse {
-	return NiatelemetryEpgResponse{ MoTagSummary: v}
+	return NiatelemetryEpgResponse{MoTagSummary: v}
 }
 
 // NiatelemetryEpgListAsNiatelemetryEpgResponse is a convenience function that returns NiatelemetryEpgList wrapped in NiatelemetryEpgResponse
 func NiatelemetryEpgListAsNiatelemetryEpgResponse(v *NiatelemetryEpgList) NiatelemetryEpgResponse {
-	return NiatelemetryEpgResponse{ NiatelemetryEpgList: v}
+	return NiatelemetryEpgResponse{NiatelemetryEpgList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryEpgResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryEpgResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryEpgResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryEpgResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryEpgResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

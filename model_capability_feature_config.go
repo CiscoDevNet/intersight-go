@@ -27,11 +27,11 @@ type CapabilityFeatureConfig struct {
 	// Name of the feature that identifies the specific adapter configuration. * `RoCEv2` - Capability indicator of the RDMA over Converged Ethernet (RoCE) feature version 2. * `RoCEv1` - Capability indicator of the RDMA over Converged Ethernet (RoCE) feature version 1. * `VMQ` - Capability indicator of the Virtual Machine Queue (VMQ) feature. * `VMMQ` - Capability indicator of the Virtual Machine Multi-Queue (VMMQ) feature. * `VMQInterrupts` - Capability indicator of the Virtual Machine Queue (VMQ) Interrupts feature. * `NVGRE` - Capability indicator of the Network Virtualization using Generic Routing Encapsulation (NVGRE) feature. * `ARFS` - Capability indicator of the Accelerated Receive Flow Steering (ARFS) feature. * `VXLAN` - Capability indicator of the Virtual Extensible LAN (VXLAN) feature.
 	FeatureName *string `json:"FeatureName,omitempty"`
 	// Firmware version from which support for this feature is available.
-	MinFwVersion *string `json:"MinFwVersion,omitempty"`
-	SupportedFwVersions []string `json:"SupportedFwVersions,omitempty"`
-	SupportedInAdapters []string `json:"SupportedInAdapters,omitempty"`
-	SupportedInGenerations []int32 `json:"SupportedInGenerations,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MinFwVersion           *string  `json:"MinFwVersion,omitempty"`
+	SupportedFwVersions    []string `json:"SupportedFwVersions,omitempty"`
+	SupportedInAdapters    []string `json:"SupportedInAdapters,omitempty"`
+	SupportedInGenerations []int32  `json:"SupportedInGenerations,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _CapabilityFeatureConfig CapabilityFeatureConfig
@@ -76,7 +76,7 @@ func (o *CapabilityFeatureConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityFeatureConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CapabilityFeatureConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityFeatureConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *CapabilityFeatureConfig) SetMinFwVersion(v string) {
 
 // GetSupportedFwVersions returns the SupportedFwVersions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityFeatureConfig) GetSupportedFwVersions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *CapabilityFeatureConfig) SetSupportedFwVersions(v []string) {
 
 // GetSupportedInAdapters returns the SupportedInAdapters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityFeatureConfig) GetSupportedInAdapters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *CapabilityFeatureConfig) SetSupportedInAdapters(v []string) {
 
 // GetSupportedInGenerations returns the SupportedInGenerations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityFeatureConfig) GetSupportedInGenerations() []int32 {
-	if o == nil  {
+	if o == nil {
 		var ret []int32
 		return ret
 	}
@@ -322,10 +322,10 @@ func (o *CapabilityFeatureConfig) UnmarshalJSON(bytes []byte) (err error) {
 		// Name of the feature that identifies the specific adapter configuration. * `RoCEv2` - Capability indicator of the RDMA over Converged Ethernet (RoCE) feature version 2. * `RoCEv1` - Capability indicator of the RDMA over Converged Ethernet (RoCE) feature version 1. * `VMQ` - Capability indicator of the Virtual Machine Queue (VMQ) feature. * `VMMQ` - Capability indicator of the Virtual Machine Multi-Queue (VMMQ) feature. * `VMQInterrupts` - Capability indicator of the Virtual Machine Queue (VMQ) Interrupts feature. * `NVGRE` - Capability indicator of the Network Virtualization using Generic Routing Encapsulation (NVGRE) feature. * `ARFS` - Capability indicator of the Accelerated Receive Flow Steering (ARFS) feature. * `VXLAN` - Capability indicator of the Virtual Extensible LAN (VXLAN) feature.
 		FeatureName *string `json:"FeatureName,omitempty"`
 		// Firmware version from which support for this feature is available.
-		MinFwVersion *string `json:"MinFwVersion,omitempty"`
-		SupportedFwVersions []string `json:"SupportedFwVersions,omitempty"`
-		SupportedInAdapters []string `json:"SupportedInAdapters,omitempty"`
-		SupportedInGenerations []int32 `json:"SupportedInGenerations,omitempty"`
+		MinFwVersion           *string  `json:"MinFwVersion,omitempty"`
+		SupportedFwVersions    []string `json:"SupportedFwVersions,omitempty"`
+		SupportedInAdapters    []string `json:"SupportedInAdapters,omitempty"`
+		SupportedInGenerations []int32  `json:"SupportedInGenerations,omitempty"`
 	}
 
 	varCapabilityFeatureConfigWithoutEmbeddedStruct := CapabilityFeatureConfigWithoutEmbeddedStruct{}
@@ -424,5 +424,3 @@ func (v *NullableCapabilityFeatureConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

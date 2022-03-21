@@ -26,9 +26,9 @@ type KubernetesAciCniApicAllOf struct {
 	// The number of ACI CNI profiles configured for this APIC.
 	NumAciCniProfiles *int64 `json:"NumAciCniProfiles,omitempty"`
 	// An array of relationships to kubernetesAciCniProfile resources.
-	AciCniProfiles []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AciCniProfiles       []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship  `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesAciCniApicAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniApicAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesAciCniApicAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniApicAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *KubernetesAciCniApicAllOf) SetNumAciCniProfiles(v int64) {
 
 // GetAciCniProfiles returns the AciCniProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAciCniApicAllOf) GetAciCniProfiles() []KubernetesAciCniProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesAciCniProfileRelationship
 		return ret
 	}
@@ -355,5 +355,3 @@ func (v *NullableKubernetesAciCniApicAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

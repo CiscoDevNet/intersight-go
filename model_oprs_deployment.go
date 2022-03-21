@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // OprsDeployment Monitors the status of operator deployed in the assist.
@@ -30,7 +30,7 @@ type OprsDeployment struct {
 	// The expected number of replicas.
 	DesiredReplicas *int64 `json:"DesiredReplicas,omitempty"`
 	// The type of event which was triggered.
-	Event *string `json:"Event,omitempty"`
+	Event  *string      `json:"Event,omitempty"`
 	Labels []OprsKvpair `json:"Labels,omitempty"`
 	// Agent name for which the event is triggered.
 	Name *string `json:"Name,omitempty"`
@@ -41,8 +41,8 @@ type OprsDeployment struct {
 	// The time at which the event was generated. Date is accurate to Intersights clock. This time will be used to identify order of events.
 	TimeStamp *time.Time `json:"TimeStamp,omitempty"`
 	// Number of replicas Unavailable.
-	UnavailableReplicas *int64 `json:"UnavailableReplicas,omitempty"`
-	Assist *AssetDeviceRegistrationRelationship `json:"Assist,omitempty"`
+	UnavailableReplicas  *int64                               `json:"UnavailableReplicas,omitempty"`
+	Assist               *AssetDeviceRegistrationRelationship `json:"Assist,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *OprsDeployment) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OprsDeployment) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *OprsDeployment) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OprsDeployment) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -221,7 +221,7 @@ func (o *OprsDeployment) SetEvent(v string) {
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OprsDeployment) GetLabels() []OprsKvpair {
-	if o == nil  {
+	if o == nil {
 		var ret []OprsKvpair
 		return ret
 	}
@@ -509,7 +509,7 @@ func (o *OprsDeployment) UnmarshalJSON(bytes []byte) (err error) {
 		// The expected number of replicas.
 		DesiredReplicas *int64 `json:"DesiredReplicas,omitempty"`
 		// The type of event which was triggered.
-		Event *string `json:"Event,omitempty"`
+		Event  *string      `json:"Event,omitempty"`
 		Labels []OprsKvpair `json:"Labels,omitempty"`
 		// Agent name for which the event is triggered.
 		Name *string `json:"Name,omitempty"`
@@ -520,8 +520,8 @@ func (o *OprsDeployment) UnmarshalJSON(bytes []byte) (err error) {
 		// The time at which the event was generated. Date is accurate to Intersights clock. This time will be used to identify order of events.
 		TimeStamp *time.Time `json:"TimeStamp,omitempty"`
 		// Number of replicas Unavailable.
-		UnavailableReplicas *int64 `json:"UnavailableReplicas,omitempty"`
-		Assist *AssetDeviceRegistrationRelationship `json:"Assist,omitempty"`
+		UnavailableReplicas *int64                               `json:"UnavailableReplicas,omitempty"`
+		Assist              *AssetDeviceRegistrationRelationship `json:"Assist,omitempty"`
 	}
 
 	varOprsDeploymentWithoutEmbeddedStruct := OprsDeploymentWithoutEmbeddedStruct{}
@@ -630,5 +630,3 @@ func (v *NullableOprsDeployment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

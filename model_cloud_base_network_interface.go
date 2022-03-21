@@ -23,16 +23,16 @@ type CloudBaseNetworkInterface struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                   `json:"ObjectType"`
 	BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
 	// CIDR scheme for defining an IP block.
 	Cidr *string `json:"Cidr,omitempty"`
 	// User friendly description of network interface.
 	Description *string `json:"Description,omitempty"`
 	// Internally generated identity of this network interface.
-	Identity *string `json:"Identity,omitempty"`
-	RegionInfo NullableCloudCloudRegion `json:"RegionInfo,omitempty"`
-	ZoneInfo NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
+	Identity             *string                       `json:"Identity,omitempty"`
+	RegionInfo           NullableCloudCloudRegion      `json:"RegionInfo,omitempty"`
+	ZoneInfo             NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CloudBaseNetworkInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseNetworkInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CloudBaseNetworkInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseNetworkInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -124,7 +124,7 @@ func (o *CloudBaseNetworkInterface) GetBillingUnit() CloudBillingUnit {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseNetworkInterface) GetBillingUnitOk() (*CloudBillingUnit, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingUnit.Get(), o.BillingUnit.IsSet()
@@ -143,6 +143,7 @@ func (o *CloudBaseNetworkInterface) HasBillingUnit() bool {
 func (o *CloudBaseNetworkInterface) SetBillingUnit(v CloudBillingUnit) {
 	o.BillingUnit.Set(&v)
 }
+
 // SetBillingUnitNil sets the value for BillingUnit to be an explicit nil
 func (o *CloudBaseNetworkInterface) SetBillingUnitNil() {
 	o.BillingUnit.Set(nil)
@@ -262,7 +263,7 @@ func (o *CloudBaseNetworkInterface) GetRegionInfo() CloudCloudRegion {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseNetworkInterface) GetRegionInfoOk() (*CloudCloudRegion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RegionInfo.Get(), o.RegionInfo.IsSet()
@@ -281,6 +282,7 @@ func (o *CloudBaseNetworkInterface) HasRegionInfo() bool {
 func (o *CloudBaseNetworkInterface) SetRegionInfo(v CloudCloudRegion) {
 	o.RegionInfo.Set(&v)
 }
+
 // SetRegionInfoNil sets the value for RegionInfo to be an explicit nil
 func (o *CloudBaseNetworkInterface) SetRegionInfoNil() {
 	o.RegionInfo.Set(nil)
@@ -304,7 +306,7 @@ func (o *CloudBaseNetworkInterface) GetZoneInfo() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseNetworkInterface) GetZoneInfoOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ZoneInfo.Get(), o.ZoneInfo.IsSet()
@@ -323,6 +325,7 @@ func (o *CloudBaseNetworkInterface) HasZoneInfo() bool {
 func (o *CloudBaseNetworkInterface) SetZoneInfo(v CloudAvailabilityZone) {
 	o.ZoneInfo.Set(&v)
 }
+
 // SetZoneInfoNil sets the value for ZoneInfo to be an explicit nil
 func (o *CloudBaseNetworkInterface) SetZoneInfoNil() {
 	o.ZoneInfo.Set(nil)
@@ -380,16 +383,16 @@ func (o *CloudBaseNetworkInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string                   `json:"ObjectType"`
 		BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
 		// CIDR scheme for defining an IP block.
 		Cidr *string `json:"Cidr,omitempty"`
 		// User friendly description of network interface.
 		Description *string `json:"Description,omitempty"`
 		// Internally generated identity of this network interface.
-		Identity *string `json:"Identity,omitempty"`
-		RegionInfo NullableCloudCloudRegion `json:"RegionInfo,omitempty"`
-		ZoneInfo NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
+		Identity   *string                       `json:"Identity,omitempty"`
+		RegionInfo NullableCloudCloudRegion      `json:"RegionInfo,omitempty"`
+		ZoneInfo   NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
 	}
 
 	varCloudBaseNetworkInterfaceWithoutEmbeddedStruct := CloudBaseNetworkInterfaceWithoutEmbeddedStruct{}
@@ -490,5 +493,3 @@ func (v *NullableCloudBaseNetworkInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,8 +27,8 @@ type VrfVrf struct {
 	// Description to help identify or describe this VRF.
 	Description *string `json:"Description,omitempty"`
 	// Name of the Virtual Routing and Forwarding Instance.
-	Name *string `json:"Name,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Name                 *string                 `json:"Name,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VrfVrf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VrfVrf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VrfVrf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VrfVrf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -243,7 +243,7 @@ func (o *VrfVrf) UnmarshalJSON(bytes []byte) (err error) {
 		// Description to help identify or describe this VRF.
 		Description *string `json:"Description,omitempty"`
 		// Name of the Virtual Routing and Forwarding Instance.
-		Name *string `json:"Name,omitempty"`
+		Name    *string                 `json:"Name,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -339,5 +339,3 @@ func (v *NullableVrfVrf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

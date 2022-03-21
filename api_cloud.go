@@ -29,11 +29,11 @@ var (
 type CloudApiService service
 
 type ApiCreateCloudCollectInventoryRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
+	ctx                   _context.Context
+	ApiService            *CloudApiService
 	cloudCollectInventory *CloudCollectInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;cloud.CollectInventory&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateCloudCollectInventoryRequest) CloudCollectInventory(cloudCollec
 	r.cloudCollectInventory = &cloudCollectInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateCloudCollectInventoryRequest) IfMatch(ifMatch string) ApiCreateCloudCollectInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateCloudCollectInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateCloudCollectInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateCloudCollectInventory Create a 'cloud.CollectInventory' resource.
 func (a *CloudApiService) CreateCloudCollectInventory(ctx _context.Context) ApiCreateCloudCollectInventoryRequest {
 	return ApiCreateCloudCollectInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *CloudApiService) CreateCloudCollectInventoryExecute(r ApiCreateCloudCol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *CloudApiService) CreateCloudCollectInventoryExecute(r ApiCreateCloudCol
 }
 
 type ApiGetCloudAwsBillingUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsBillingUnitByMoidRequest) Execute() (CloudAwsBillingUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsBillingUnitByMoidExecute(r)
@@ -225,8 +226,8 @@ GetCloudAwsBillingUnitByMoid Read a 'cloud.AwsBillingUnit' resource.
 func (a *CloudApiService) GetCloudAwsBillingUnitByMoid(ctx _context.Context, moid string) ApiGetCloudAwsBillingUnitByMoidRequest {
 	return ApiGetCloudAwsBillingUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -333,13 +334,13 @@ func (a *CloudApiService) GetCloudAwsBillingUnitByMoidExecute(r ApiGetCloudAwsBi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -356,19 +357,19 @@ func (a *CloudApiService) GetCloudAwsBillingUnitByMoidExecute(r ApiGetCloudAwsBi
 }
 
 type ApiGetCloudAwsBillingUnitListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -376,51 +377,61 @@ func (r ApiGetCloudAwsBillingUnitListRequest) Filter(filter string) ApiGetCloudA
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsBillingUnitListRequest) Orderby(orderby string) ApiGetCloudAwsBillingUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsBillingUnitListRequest) Top(top int32) ApiGetCloudAwsBillingUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsBillingUnitListRequest) Skip(skip int32) ApiGetCloudAwsBillingUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsBillingUnitListRequest) Select_(select_ string) ApiGetCloudAwsBillingUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsBillingUnitListRequest) Expand(expand string) ApiGetCloudAwsBillingUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsBillingUnitListRequest) Apply(apply string) ApiGetCloudAwsBillingUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsBillingUnitListRequest) Count(count bool) ApiGetCloudAwsBillingUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsBillingUnitListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsBillingUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsBillingUnitListRequest) At(at string) ApiGetCloudAwsBillingUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsBillingUnitListRequest) Tags(tags string) ApiGetCloudAwsBillingUnitListRequest {
 	r.tags = &tags
@@ -440,7 +451,7 @@ GetCloudAwsBillingUnitList Read a 'cloud.AwsBillingUnit' resource.
 func (a *CloudApiService) GetCloudAwsBillingUnitList(ctx _context.Context) ApiGetCloudAwsBillingUnitListRequest {
 	return ApiGetCloudAwsBillingUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -579,13 +590,13 @@ func (a *CloudApiService) GetCloudAwsBillingUnitListExecute(r ApiGetCloudAwsBill
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -602,11 +613,10 @@ func (a *CloudApiService) GetCloudAwsBillingUnitListExecute(r ApiGetCloudAwsBill
 }
 
 type ApiGetCloudAwsKeyPairByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsKeyPairByMoidRequest) Execute() (CloudAwsKeyPair, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsKeyPairByMoidExecute(r)
@@ -622,8 +632,8 @@ GetCloudAwsKeyPairByMoid Read a 'cloud.AwsKeyPair' resource.
 func (a *CloudApiService) GetCloudAwsKeyPairByMoid(ctx _context.Context, moid string) ApiGetCloudAwsKeyPairByMoidRequest {
 	return ApiGetCloudAwsKeyPairByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -730,13 +740,13 @@ func (a *CloudApiService) GetCloudAwsKeyPairByMoidExecute(r ApiGetCloudAwsKeyPai
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -753,19 +763,19 @@ func (a *CloudApiService) GetCloudAwsKeyPairByMoidExecute(r ApiGetCloudAwsKeyPai
 }
 
 type ApiGetCloudAwsKeyPairListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -773,51 +783,61 @@ func (r ApiGetCloudAwsKeyPairListRequest) Filter(filter string) ApiGetCloudAwsKe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsKeyPairListRequest) Orderby(orderby string) ApiGetCloudAwsKeyPairListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsKeyPairListRequest) Top(top int32) ApiGetCloudAwsKeyPairListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsKeyPairListRequest) Skip(skip int32) ApiGetCloudAwsKeyPairListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsKeyPairListRequest) Select_(select_ string) ApiGetCloudAwsKeyPairListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsKeyPairListRequest) Expand(expand string) ApiGetCloudAwsKeyPairListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsKeyPairListRequest) Apply(apply string) ApiGetCloudAwsKeyPairListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsKeyPairListRequest) Count(count bool) ApiGetCloudAwsKeyPairListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsKeyPairListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsKeyPairListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsKeyPairListRequest) At(at string) ApiGetCloudAwsKeyPairListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsKeyPairListRequest) Tags(tags string) ApiGetCloudAwsKeyPairListRequest {
 	r.tags = &tags
@@ -837,7 +857,7 @@ GetCloudAwsKeyPairList Read a 'cloud.AwsKeyPair' resource.
 func (a *CloudApiService) GetCloudAwsKeyPairList(ctx _context.Context) ApiGetCloudAwsKeyPairListRequest {
 	return ApiGetCloudAwsKeyPairListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -976,13 +996,13 @@ func (a *CloudApiService) GetCloudAwsKeyPairListExecute(r ApiGetCloudAwsKeyPairL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -999,11 +1019,10 @@ func (a *CloudApiService) GetCloudAwsKeyPairListExecute(r ApiGetCloudAwsKeyPairL
 }
 
 type ApiGetCloudAwsNetworkInterfaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsNetworkInterfaceByMoidRequest) Execute() (CloudAwsNetworkInterface, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsNetworkInterfaceByMoidExecute(r)
@@ -1019,8 +1038,8 @@ GetCloudAwsNetworkInterfaceByMoid Read a 'cloud.AwsNetworkInterface' resource.
 func (a *CloudApiService) GetCloudAwsNetworkInterfaceByMoid(ctx _context.Context, moid string) ApiGetCloudAwsNetworkInterfaceByMoidRequest {
 	return ApiGetCloudAwsNetworkInterfaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1127,13 +1146,13 @@ func (a *CloudApiService) GetCloudAwsNetworkInterfaceByMoidExecute(r ApiGetCloud
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1150,19 +1169,19 @@ func (a *CloudApiService) GetCloudAwsNetworkInterfaceByMoidExecute(r ApiGetCloud
 }
 
 type ApiGetCloudAwsNetworkInterfaceListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1170,51 +1189,61 @@ func (r ApiGetCloudAwsNetworkInterfaceListRequest) Filter(filter string) ApiGetC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Orderby(orderby string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Top(top int32) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Skip(skip int32) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Select_(select_ string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Expand(expand string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Apply(apply string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Count(count bool) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) At(at string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsNetworkInterfaceListRequest) Tags(tags string) ApiGetCloudAwsNetworkInterfaceListRequest {
 	r.tags = &tags
@@ -1234,7 +1263,7 @@ GetCloudAwsNetworkInterfaceList Read a 'cloud.AwsNetworkInterface' resource.
 func (a *CloudApiService) GetCloudAwsNetworkInterfaceList(ctx _context.Context) ApiGetCloudAwsNetworkInterfaceListRequest {
 	return ApiGetCloudAwsNetworkInterfaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1373,13 +1402,13 @@ func (a *CloudApiService) GetCloudAwsNetworkInterfaceListExecute(r ApiGetCloudAw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1396,11 +1425,10 @@ func (a *CloudApiService) GetCloudAwsNetworkInterfaceListExecute(r ApiGetCloudAw
 }
 
 type ApiGetCloudAwsOrganizationalUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsOrganizationalUnitByMoidRequest) Execute() (CloudAwsOrganizationalUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsOrganizationalUnitByMoidExecute(r)
@@ -1416,8 +1444,8 @@ GetCloudAwsOrganizationalUnitByMoid Read a 'cloud.AwsOrganizationalUnit' resourc
 func (a *CloudApiService) GetCloudAwsOrganizationalUnitByMoid(ctx _context.Context, moid string) ApiGetCloudAwsOrganizationalUnitByMoidRequest {
 	return ApiGetCloudAwsOrganizationalUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1524,13 +1552,13 @@ func (a *CloudApiService) GetCloudAwsOrganizationalUnitByMoidExecute(r ApiGetClo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1547,19 +1575,19 @@ func (a *CloudApiService) GetCloudAwsOrganizationalUnitByMoidExecute(r ApiGetClo
 }
 
 type ApiGetCloudAwsOrganizationalUnitListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1567,51 +1595,61 @@ func (r ApiGetCloudAwsOrganizationalUnitListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Orderby(orderby string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Top(top int32) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Skip(skip int32) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Select_(select_ string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Expand(expand string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Apply(apply string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Count(count bool) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) At(at string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsOrganizationalUnitListRequest) Tags(tags string) ApiGetCloudAwsOrganizationalUnitListRequest {
 	r.tags = &tags
@@ -1631,7 +1669,7 @@ GetCloudAwsOrganizationalUnitList Read a 'cloud.AwsOrganizationalUnit' resource.
 func (a *CloudApiService) GetCloudAwsOrganizationalUnitList(ctx _context.Context) ApiGetCloudAwsOrganizationalUnitListRequest {
 	return ApiGetCloudAwsOrganizationalUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1770,13 +1808,13 @@ func (a *CloudApiService) GetCloudAwsOrganizationalUnitListExecute(r ApiGetCloud
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1793,11 +1831,10 @@ func (a *CloudApiService) GetCloudAwsOrganizationalUnitListExecute(r ApiGetCloud
 }
 
 type ApiGetCloudAwsSecurityGroupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsSecurityGroupByMoidRequest) Execute() (CloudAwsSecurityGroup, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsSecurityGroupByMoidExecute(r)
@@ -1813,8 +1850,8 @@ GetCloudAwsSecurityGroupByMoid Read a 'cloud.AwsSecurityGroup' resource.
 func (a *CloudApiService) GetCloudAwsSecurityGroupByMoid(ctx _context.Context, moid string) ApiGetCloudAwsSecurityGroupByMoidRequest {
 	return ApiGetCloudAwsSecurityGroupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1921,13 +1958,13 @@ func (a *CloudApiService) GetCloudAwsSecurityGroupByMoidExecute(r ApiGetCloudAws
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1944,19 +1981,19 @@ func (a *CloudApiService) GetCloudAwsSecurityGroupByMoidExecute(r ApiGetCloudAws
 }
 
 type ApiGetCloudAwsSecurityGroupListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1964,51 +2001,61 @@ func (r ApiGetCloudAwsSecurityGroupListRequest) Filter(filter string) ApiGetClou
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Orderby(orderby string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Top(top int32) ApiGetCloudAwsSecurityGroupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Skip(skip int32) ApiGetCloudAwsSecurityGroupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Select_(select_ string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Expand(expand string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Apply(apply string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Count(count bool) ApiGetCloudAwsSecurityGroupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsSecurityGroupListRequest) At(at string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsSecurityGroupListRequest) Tags(tags string) ApiGetCloudAwsSecurityGroupListRequest {
 	r.tags = &tags
@@ -2028,7 +2075,7 @@ GetCloudAwsSecurityGroupList Read a 'cloud.AwsSecurityGroup' resource.
 func (a *CloudApiService) GetCloudAwsSecurityGroupList(ctx _context.Context) ApiGetCloudAwsSecurityGroupListRequest {
 	return ApiGetCloudAwsSecurityGroupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2167,13 +2214,13 @@ func (a *CloudApiService) GetCloudAwsSecurityGroupListExecute(r ApiGetCloudAwsSe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2190,11 +2237,10 @@ func (a *CloudApiService) GetCloudAwsSecurityGroupListExecute(r ApiGetCloudAwsSe
 }
 
 type ApiGetCloudAwsSubnetByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsSubnetByMoidRequest) Execute() (CloudAwsSubnet, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsSubnetByMoidExecute(r)
@@ -2210,8 +2256,8 @@ GetCloudAwsSubnetByMoid Read a 'cloud.AwsSubnet' resource.
 func (a *CloudApiService) GetCloudAwsSubnetByMoid(ctx _context.Context, moid string) ApiGetCloudAwsSubnetByMoidRequest {
 	return ApiGetCloudAwsSubnetByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2318,13 +2364,13 @@ func (a *CloudApiService) GetCloudAwsSubnetByMoidExecute(r ApiGetCloudAwsSubnetB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2341,19 +2387,19 @@ func (a *CloudApiService) GetCloudAwsSubnetByMoidExecute(r ApiGetCloudAwsSubnetB
 }
 
 type ApiGetCloudAwsSubnetListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2361,51 +2407,61 @@ func (r ApiGetCloudAwsSubnetListRequest) Filter(filter string) ApiGetCloudAwsSub
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsSubnetListRequest) Orderby(orderby string) ApiGetCloudAwsSubnetListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsSubnetListRequest) Top(top int32) ApiGetCloudAwsSubnetListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsSubnetListRequest) Skip(skip int32) ApiGetCloudAwsSubnetListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsSubnetListRequest) Select_(select_ string) ApiGetCloudAwsSubnetListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsSubnetListRequest) Expand(expand string) ApiGetCloudAwsSubnetListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsSubnetListRequest) Apply(apply string) ApiGetCloudAwsSubnetListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsSubnetListRequest) Count(count bool) ApiGetCloudAwsSubnetListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsSubnetListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsSubnetListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsSubnetListRequest) At(at string) ApiGetCloudAwsSubnetListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsSubnetListRequest) Tags(tags string) ApiGetCloudAwsSubnetListRequest {
 	r.tags = &tags
@@ -2425,7 +2481,7 @@ GetCloudAwsSubnetList Read a 'cloud.AwsSubnet' resource.
 func (a *CloudApiService) GetCloudAwsSubnetList(ctx _context.Context) ApiGetCloudAwsSubnetListRequest {
 	return ApiGetCloudAwsSubnetListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2564,13 +2620,13 @@ func (a *CloudApiService) GetCloudAwsSubnetListExecute(r ApiGetCloudAwsSubnetLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2587,11 +2643,10 @@ func (a *CloudApiService) GetCloudAwsSubnetListExecute(r ApiGetCloudAwsSubnetLis
 }
 
 type ApiGetCloudAwsVirtualMachineByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsVirtualMachineByMoidRequest) Execute() (CloudAwsVirtualMachine, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsVirtualMachineByMoidExecute(r)
@@ -2607,8 +2662,8 @@ GetCloudAwsVirtualMachineByMoid Read a 'cloud.AwsVirtualMachine' resource.
 func (a *CloudApiService) GetCloudAwsVirtualMachineByMoid(ctx _context.Context, moid string) ApiGetCloudAwsVirtualMachineByMoidRequest {
 	return ApiGetCloudAwsVirtualMachineByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2715,13 +2770,13 @@ func (a *CloudApiService) GetCloudAwsVirtualMachineByMoidExecute(r ApiGetCloudAw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2738,19 +2793,19 @@ func (a *CloudApiService) GetCloudAwsVirtualMachineByMoidExecute(r ApiGetCloudAw
 }
 
 type ApiGetCloudAwsVirtualMachineListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2758,51 +2813,61 @@ func (r ApiGetCloudAwsVirtualMachineListRequest) Filter(filter string) ApiGetClo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Orderby(orderby string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Top(top int32) ApiGetCloudAwsVirtualMachineListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Skip(skip int32) ApiGetCloudAwsVirtualMachineListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Select_(select_ string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Expand(expand string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Apply(apply string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Count(count bool) ApiGetCloudAwsVirtualMachineListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsVirtualMachineListRequest) At(at string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsVirtualMachineListRequest) Tags(tags string) ApiGetCloudAwsVirtualMachineListRequest {
 	r.tags = &tags
@@ -2822,7 +2887,7 @@ GetCloudAwsVirtualMachineList Read a 'cloud.AwsVirtualMachine' resource.
 func (a *CloudApiService) GetCloudAwsVirtualMachineList(ctx _context.Context) ApiGetCloudAwsVirtualMachineListRequest {
 	return ApiGetCloudAwsVirtualMachineListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2961,13 +3026,13 @@ func (a *CloudApiService) GetCloudAwsVirtualMachineListExecute(r ApiGetCloudAwsV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2984,11 +3049,10 @@ func (a *CloudApiService) GetCloudAwsVirtualMachineListExecute(r ApiGetCloudAwsV
 }
 
 type ApiGetCloudAwsVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsVolumeByMoidRequest) Execute() (CloudAwsVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsVolumeByMoidExecute(r)
@@ -3004,8 +3068,8 @@ GetCloudAwsVolumeByMoid Read a 'cloud.AwsVolume' resource.
 func (a *CloudApiService) GetCloudAwsVolumeByMoid(ctx _context.Context, moid string) ApiGetCloudAwsVolumeByMoidRequest {
 	return ApiGetCloudAwsVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3112,13 +3176,13 @@ func (a *CloudApiService) GetCloudAwsVolumeByMoidExecute(r ApiGetCloudAwsVolumeB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3135,19 +3199,19 @@ func (a *CloudApiService) GetCloudAwsVolumeByMoidExecute(r ApiGetCloudAwsVolumeB
 }
 
 type ApiGetCloudAwsVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3155,51 +3219,61 @@ func (r ApiGetCloudAwsVolumeListRequest) Filter(filter string) ApiGetCloudAwsVol
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsVolumeListRequest) Orderby(orderby string) ApiGetCloudAwsVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsVolumeListRequest) Top(top int32) ApiGetCloudAwsVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsVolumeListRequest) Skip(skip int32) ApiGetCloudAwsVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsVolumeListRequest) Select_(select_ string) ApiGetCloudAwsVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsVolumeListRequest) Expand(expand string) ApiGetCloudAwsVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsVolumeListRequest) Apply(apply string) ApiGetCloudAwsVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsVolumeListRequest) Count(count bool) ApiGetCloudAwsVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsVolumeListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsVolumeListRequest) At(at string) ApiGetCloudAwsVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsVolumeListRequest) Tags(tags string) ApiGetCloudAwsVolumeListRequest {
 	r.tags = &tags
@@ -3219,7 +3293,7 @@ GetCloudAwsVolumeList Read a 'cloud.AwsVolume' resource.
 func (a *CloudApiService) GetCloudAwsVolumeList(ctx _context.Context) ApiGetCloudAwsVolumeListRequest {
 	return ApiGetCloudAwsVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3358,13 +3432,13 @@ func (a *CloudApiService) GetCloudAwsVolumeListExecute(r ApiGetCloudAwsVolumeLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3381,11 +3455,10 @@ func (a *CloudApiService) GetCloudAwsVolumeListExecute(r ApiGetCloudAwsVolumeLis
 }
 
 type ApiGetCloudAwsVpcByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudAwsVpcByMoidRequest) Execute() (CloudAwsVpc, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudAwsVpcByMoidExecute(r)
@@ -3401,8 +3474,8 @@ GetCloudAwsVpcByMoid Read a 'cloud.AwsVpc' resource.
 func (a *CloudApiService) GetCloudAwsVpcByMoid(ctx _context.Context, moid string) ApiGetCloudAwsVpcByMoidRequest {
 	return ApiGetCloudAwsVpcByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3509,13 +3582,13 @@ func (a *CloudApiService) GetCloudAwsVpcByMoidExecute(r ApiGetCloudAwsVpcByMoidR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3532,19 +3605,19 @@ func (a *CloudApiService) GetCloudAwsVpcByMoidExecute(r ApiGetCloudAwsVpcByMoidR
 }
 
 type ApiGetCloudAwsVpcListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3552,51 +3625,61 @@ func (r ApiGetCloudAwsVpcListRequest) Filter(filter string) ApiGetCloudAwsVpcLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudAwsVpcListRequest) Orderby(orderby string) ApiGetCloudAwsVpcListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudAwsVpcListRequest) Top(top int32) ApiGetCloudAwsVpcListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudAwsVpcListRequest) Skip(skip int32) ApiGetCloudAwsVpcListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudAwsVpcListRequest) Select_(select_ string) ApiGetCloudAwsVpcListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudAwsVpcListRequest) Expand(expand string) ApiGetCloudAwsVpcListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudAwsVpcListRequest) Apply(apply string) ApiGetCloudAwsVpcListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudAwsVpcListRequest) Count(count bool) ApiGetCloudAwsVpcListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudAwsVpcListRequest) Inlinecount(inlinecount string) ApiGetCloudAwsVpcListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudAwsVpcListRequest) At(at string) ApiGetCloudAwsVpcListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudAwsVpcListRequest) Tags(tags string) ApiGetCloudAwsVpcListRequest {
 	r.tags = &tags
@@ -3616,7 +3699,7 @@ GetCloudAwsVpcList Read a 'cloud.AwsVpc' resource.
 func (a *CloudApiService) GetCloudAwsVpcList(ctx _context.Context) ApiGetCloudAwsVpcListRequest {
 	return ApiGetCloudAwsVpcListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3755,13 +3838,13 @@ func (a *CloudApiService) GetCloudAwsVpcListExecute(r ApiGetCloudAwsVpcListReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3778,11 +3861,10 @@ func (a *CloudApiService) GetCloudAwsVpcListExecute(r ApiGetCloudAwsVpcListReque
 }
 
 type ApiGetCloudRegionsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudRegionsByMoidRequest) Execute() (CloudRegions, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudRegionsByMoidExecute(r)
@@ -3798,8 +3880,8 @@ GetCloudRegionsByMoid Read a 'cloud.Regions' resource.
 func (a *CloudApiService) GetCloudRegionsByMoid(ctx _context.Context, moid string) ApiGetCloudRegionsByMoidRequest {
 	return ApiGetCloudRegionsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3906,13 +3988,13 @@ func (a *CloudApiService) GetCloudRegionsByMoidExecute(r ApiGetCloudRegionsByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3929,19 +4011,19 @@ func (a *CloudApiService) GetCloudRegionsByMoidExecute(r ApiGetCloudRegionsByMoi
 }
 
 type ApiGetCloudRegionsListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3949,51 +4031,61 @@ func (r ApiGetCloudRegionsListRequest) Filter(filter string) ApiGetCloudRegionsL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudRegionsListRequest) Orderby(orderby string) ApiGetCloudRegionsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudRegionsListRequest) Top(top int32) ApiGetCloudRegionsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudRegionsListRequest) Skip(skip int32) ApiGetCloudRegionsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudRegionsListRequest) Select_(select_ string) ApiGetCloudRegionsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudRegionsListRequest) Expand(expand string) ApiGetCloudRegionsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudRegionsListRequest) Apply(apply string) ApiGetCloudRegionsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudRegionsListRequest) Count(count bool) ApiGetCloudRegionsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudRegionsListRequest) Inlinecount(inlinecount string) ApiGetCloudRegionsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudRegionsListRequest) At(at string) ApiGetCloudRegionsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudRegionsListRequest) Tags(tags string) ApiGetCloudRegionsListRequest {
 	r.tags = &tags
@@ -4013,7 +4105,7 @@ GetCloudRegionsList Read a 'cloud.Regions' resource.
 func (a *CloudApiService) GetCloudRegionsList(ctx _context.Context) ApiGetCloudRegionsListRequest {
 	return ApiGetCloudRegionsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4152,13 +4244,13 @@ func (a *CloudApiService) GetCloudRegionsListExecute(r ApiGetCloudRegionsListReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4175,11 +4267,10 @@ func (a *CloudApiService) GetCloudRegionsListExecute(r ApiGetCloudRegionsListReq
 }
 
 type ApiGetCloudSkuContainerTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuContainerTypeByMoidRequest) Execute() (CloudSkuContainerType, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuContainerTypeByMoidExecute(r)
@@ -4195,8 +4286,8 @@ GetCloudSkuContainerTypeByMoid Read a 'cloud.SkuContainerType' resource.
 func (a *CloudApiService) GetCloudSkuContainerTypeByMoid(ctx _context.Context, moid string) ApiGetCloudSkuContainerTypeByMoidRequest {
 	return ApiGetCloudSkuContainerTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4303,13 +4394,13 @@ func (a *CloudApiService) GetCloudSkuContainerTypeByMoidExecute(r ApiGetCloudSku
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4326,19 +4417,19 @@ func (a *CloudApiService) GetCloudSkuContainerTypeByMoidExecute(r ApiGetCloudSku
 }
 
 type ApiGetCloudSkuContainerTypeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4346,51 +4437,61 @@ func (r ApiGetCloudSkuContainerTypeListRequest) Filter(filter string) ApiGetClou
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuContainerTypeListRequest) Orderby(orderby string) ApiGetCloudSkuContainerTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuContainerTypeListRequest) Top(top int32) ApiGetCloudSkuContainerTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuContainerTypeListRequest) Skip(skip int32) ApiGetCloudSkuContainerTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuContainerTypeListRequest) Select_(select_ string) ApiGetCloudSkuContainerTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuContainerTypeListRequest) Expand(expand string) ApiGetCloudSkuContainerTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuContainerTypeListRequest) Apply(apply string) ApiGetCloudSkuContainerTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuContainerTypeListRequest) Count(count bool) ApiGetCloudSkuContainerTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuContainerTypeListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuContainerTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuContainerTypeListRequest) At(at string) ApiGetCloudSkuContainerTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuContainerTypeListRequest) Tags(tags string) ApiGetCloudSkuContainerTypeListRequest {
 	r.tags = &tags
@@ -4410,7 +4511,7 @@ GetCloudSkuContainerTypeList Read a 'cloud.SkuContainerType' resource.
 func (a *CloudApiService) GetCloudSkuContainerTypeList(ctx _context.Context) ApiGetCloudSkuContainerTypeListRequest {
 	return ApiGetCloudSkuContainerTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4549,13 +4650,13 @@ func (a *CloudApiService) GetCloudSkuContainerTypeListExecute(r ApiGetCloudSkuCo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4572,11 +4673,10 @@ func (a *CloudApiService) GetCloudSkuContainerTypeListExecute(r ApiGetCloudSkuCo
 }
 
 type ApiGetCloudSkuDatabaseTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuDatabaseTypeByMoidRequest) Execute() (CloudSkuDatabaseType, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuDatabaseTypeByMoidExecute(r)
@@ -4592,8 +4692,8 @@ GetCloudSkuDatabaseTypeByMoid Read a 'cloud.SkuDatabaseType' resource.
 func (a *CloudApiService) GetCloudSkuDatabaseTypeByMoid(ctx _context.Context, moid string) ApiGetCloudSkuDatabaseTypeByMoidRequest {
 	return ApiGetCloudSkuDatabaseTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4700,13 +4800,13 @@ func (a *CloudApiService) GetCloudSkuDatabaseTypeByMoidExecute(r ApiGetCloudSkuD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4723,19 +4823,19 @@ func (a *CloudApiService) GetCloudSkuDatabaseTypeByMoidExecute(r ApiGetCloudSkuD
 }
 
 type ApiGetCloudSkuDatabaseTypeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4743,51 +4843,61 @@ func (r ApiGetCloudSkuDatabaseTypeListRequest) Filter(filter string) ApiGetCloud
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Orderby(orderby string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Top(top int32) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Skip(skip int32) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Select_(select_ string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Expand(expand string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Apply(apply string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Count(count bool) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) At(at string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuDatabaseTypeListRequest) Tags(tags string) ApiGetCloudSkuDatabaseTypeListRequest {
 	r.tags = &tags
@@ -4807,7 +4917,7 @@ GetCloudSkuDatabaseTypeList Read a 'cloud.SkuDatabaseType' resource.
 func (a *CloudApiService) GetCloudSkuDatabaseTypeList(ctx _context.Context) ApiGetCloudSkuDatabaseTypeListRequest {
 	return ApiGetCloudSkuDatabaseTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4946,13 +5056,13 @@ func (a *CloudApiService) GetCloudSkuDatabaseTypeListExecute(r ApiGetCloudSkuDat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4969,11 +5079,10 @@ func (a *CloudApiService) GetCloudSkuDatabaseTypeListExecute(r ApiGetCloudSkuDat
 }
 
 type ApiGetCloudSkuInstanceTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuInstanceTypeByMoidRequest) Execute() (CloudSkuInstanceType, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuInstanceTypeByMoidExecute(r)
@@ -4989,8 +5098,8 @@ GetCloudSkuInstanceTypeByMoid Read a 'cloud.SkuInstanceType' resource.
 func (a *CloudApiService) GetCloudSkuInstanceTypeByMoid(ctx _context.Context, moid string) ApiGetCloudSkuInstanceTypeByMoidRequest {
 	return ApiGetCloudSkuInstanceTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5097,13 +5206,13 @@ func (a *CloudApiService) GetCloudSkuInstanceTypeByMoidExecute(r ApiGetCloudSkuI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5120,19 +5229,19 @@ func (a *CloudApiService) GetCloudSkuInstanceTypeByMoidExecute(r ApiGetCloudSkuI
 }
 
 type ApiGetCloudSkuInstanceTypeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5140,51 +5249,61 @@ func (r ApiGetCloudSkuInstanceTypeListRequest) Filter(filter string) ApiGetCloud
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Orderby(orderby string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Top(top int32) ApiGetCloudSkuInstanceTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Skip(skip int32) ApiGetCloudSkuInstanceTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Select_(select_ string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Expand(expand string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Apply(apply string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Count(count bool) ApiGetCloudSkuInstanceTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuInstanceTypeListRequest) At(at string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuInstanceTypeListRequest) Tags(tags string) ApiGetCloudSkuInstanceTypeListRequest {
 	r.tags = &tags
@@ -5204,7 +5323,7 @@ GetCloudSkuInstanceTypeList Read a 'cloud.SkuInstanceType' resource.
 func (a *CloudApiService) GetCloudSkuInstanceTypeList(ctx _context.Context) ApiGetCloudSkuInstanceTypeListRequest {
 	return ApiGetCloudSkuInstanceTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5343,13 +5462,13 @@ func (a *CloudApiService) GetCloudSkuInstanceTypeListExecute(r ApiGetCloudSkuIns
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5366,11 +5485,10 @@ func (a *CloudApiService) GetCloudSkuInstanceTypeListExecute(r ApiGetCloudSkuIns
 }
 
 type ApiGetCloudSkuNetworkTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuNetworkTypeByMoidRequest) Execute() (CloudSkuNetworkType, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuNetworkTypeByMoidExecute(r)
@@ -5386,8 +5504,8 @@ GetCloudSkuNetworkTypeByMoid Read a 'cloud.SkuNetworkType' resource.
 func (a *CloudApiService) GetCloudSkuNetworkTypeByMoid(ctx _context.Context, moid string) ApiGetCloudSkuNetworkTypeByMoidRequest {
 	return ApiGetCloudSkuNetworkTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5494,13 +5612,13 @@ func (a *CloudApiService) GetCloudSkuNetworkTypeByMoidExecute(r ApiGetCloudSkuNe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5517,19 +5635,19 @@ func (a *CloudApiService) GetCloudSkuNetworkTypeByMoidExecute(r ApiGetCloudSkuNe
 }
 
 type ApiGetCloudSkuNetworkTypeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5537,51 +5655,61 @@ func (r ApiGetCloudSkuNetworkTypeListRequest) Filter(filter string) ApiGetCloudS
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Orderby(orderby string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Top(top int32) ApiGetCloudSkuNetworkTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Skip(skip int32) ApiGetCloudSkuNetworkTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Select_(select_ string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Expand(expand string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Apply(apply string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Count(count bool) ApiGetCloudSkuNetworkTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuNetworkTypeListRequest) At(at string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuNetworkTypeListRequest) Tags(tags string) ApiGetCloudSkuNetworkTypeListRequest {
 	r.tags = &tags
@@ -5601,7 +5729,7 @@ GetCloudSkuNetworkTypeList Read a 'cloud.SkuNetworkType' resource.
 func (a *CloudApiService) GetCloudSkuNetworkTypeList(ctx _context.Context) ApiGetCloudSkuNetworkTypeListRequest {
 	return ApiGetCloudSkuNetworkTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5740,13 +5868,13 @@ func (a *CloudApiService) GetCloudSkuNetworkTypeListExecute(r ApiGetCloudSkuNetw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5763,11 +5891,10 @@ func (a *CloudApiService) GetCloudSkuNetworkTypeListExecute(r ApiGetCloudSkuNetw
 }
 
 type ApiGetCloudSkuRegionRateCardsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuRegionRateCardsByMoidRequest) Execute() (CloudSkuRegionRateCards, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuRegionRateCardsByMoidExecute(r)
@@ -5783,8 +5910,8 @@ GetCloudSkuRegionRateCardsByMoid Read a 'cloud.SkuRegionRateCards' resource.
 func (a *CloudApiService) GetCloudSkuRegionRateCardsByMoid(ctx _context.Context, moid string) ApiGetCloudSkuRegionRateCardsByMoidRequest {
 	return ApiGetCloudSkuRegionRateCardsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5891,13 +6018,13 @@ func (a *CloudApiService) GetCloudSkuRegionRateCardsByMoidExecute(r ApiGetCloudS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5914,19 +6041,19 @@ func (a *CloudApiService) GetCloudSkuRegionRateCardsByMoidExecute(r ApiGetCloudS
 }
 
 type ApiGetCloudSkuRegionRateCardsListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -5934,51 +6061,61 @@ func (r ApiGetCloudSkuRegionRateCardsListRequest) Filter(filter string) ApiGetCl
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Orderby(orderby string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Top(top int32) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Skip(skip int32) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Select_(select_ string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Expand(expand string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Apply(apply string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Count(count bool) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) At(at string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuRegionRateCardsListRequest) Tags(tags string) ApiGetCloudSkuRegionRateCardsListRequest {
 	r.tags = &tags
@@ -5998,7 +6135,7 @@ GetCloudSkuRegionRateCardsList Read a 'cloud.SkuRegionRateCards' resource.
 func (a *CloudApiService) GetCloudSkuRegionRateCardsList(ctx _context.Context) ApiGetCloudSkuRegionRateCardsListRequest {
 	return ApiGetCloudSkuRegionRateCardsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6137,13 +6274,13 @@ func (a *CloudApiService) GetCloudSkuRegionRateCardsListExecute(r ApiGetCloudSku
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6160,11 +6297,10 @@ func (a *CloudApiService) GetCloudSkuRegionRateCardsListExecute(r ApiGetCloudSku
 }
 
 type ApiGetCloudSkuVolumeTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudSkuVolumeTypeByMoidRequest) Execute() (CloudSkuVolumeType, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudSkuVolumeTypeByMoidExecute(r)
@@ -6180,8 +6316,8 @@ GetCloudSkuVolumeTypeByMoid Read a 'cloud.SkuVolumeType' resource.
 func (a *CloudApiService) GetCloudSkuVolumeTypeByMoid(ctx _context.Context, moid string) ApiGetCloudSkuVolumeTypeByMoidRequest {
 	return ApiGetCloudSkuVolumeTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6288,13 +6424,13 @@ func (a *CloudApiService) GetCloudSkuVolumeTypeByMoidExecute(r ApiGetCloudSkuVol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6311,19 +6447,19 @@ func (a *CloudApiService) GetCloudSkuVolumeTypeByMoidExecute(r ApiGetCloudSkuVol
 }
 
 type ApiGetCloudSkuVolumeTypeListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6331,51 +6467,61 @@ func (r ApiGetCloudSkuVolumeTypeListRequest) Filter(filter string) ApiGetCloudSk
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Orderby(orderby string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Top(top int32) ApiGetCloudSkuVolumeTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Skip(skip int32) ApiGetCloudSkuVolumeTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Select_(select_ string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Expand(expand string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Apply(apply string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Count(count bool) ApiGetCloudSkuVolumeTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Inlinecount(inlinecount string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudSkuVolumeTypeListRequest) At(at string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudSkuVolumeTypeListRequest) Tags(tags string) ApiGetCloudSkuVolumeTypeListRequest {
 	r.tags = &tags
@@ -6395,7 +6541,7 @@ GetCloudSkuVolumeTypeList Read a 'cloud.SkuVolumeType' resource.
 func (a *CloudApiService) GetCloudSkuVolumeTypeList(ctx _context.Context) ApiGetCloudSkuVolumeTypeListRequest {
 	return ApiGetCloudSkuVolumeTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6534,13 +6680,13 @@ func (a *CloudApiService) GetCloudSkuVolumeTypeListExecute(r ApiGetCloudSkuVolum
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6557,11 +6703,10 @@ func (a *CloudApiService) GetCloudSkuVolumeTypeListExecute(r ApiGetCloudSkuVolum
 }
 
 type ApiGetCloudTfcAgentpoolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudTfcAgentpoolByMoidRequest) Execute() (CloudTfcAgentpool, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudTfcAgentpoolByMoidExecute(r)
@@ -6577,8 +6722,8 @@ GetCloudTfcAgentpoolByMoid Read a 'cloud.TfcAgentpool' resource.
 func (a *CloudApiService) GetCloudTfcAgentpoolByMoid(ctx _context.Context, moid string) ApiGetCloudTfcAgentpoolByMoidRequest {
 	return ApiGetCloudTfcAgentpoolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6685,13 +6830,13 @@ func (a *CloudApiService) GetCloudTfcAgentpoolByMoidExecute(r ApiGetCloudTfcAgen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6708,19 +6853,19 @@ func (a *CloudApiService) GetCloudTfcAgentpoolByMoidExecute(r ApiGetCloudTfcAgen
 }
 
 type ApiGetCloudTfcAgentpoolListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -6728,51 +6873,61 @@ func (r ApiGetCloudTfcAgentpoolListRequest) Filter(filter string) ApiGetCloudTfc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudTfcAgentpoolListRequest) Orderby(orderby string) ApiGetCloudTfcAgentpoolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudTfcAgentpoolListRequest) Top(top int32) ApiGetCloudTfcAgentpoolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudTfcAgentpoolListRequest) Skip(skip int32) ApiGetCloudTfcAgentpoolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudTfcAgentpoolListRequest) Select_(select_ string) ApiGetCloudTfcAgentpoolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudTfcAgentpoolListRequest) Expand(expand string) ApiGetCloudTfcAgentpoolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudTfcAgentpoolListRequest) Apply(apply string) ApiGetCloudTfcAgentpoolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudTfcAgentpoolListRequest) Count(count bool) ApiGetCloudTfcAgentpoolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudTfcAgentpoolListRequest) Inlinecount(inlinecount string) ApiGetCloudTfcAgentpoolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudTfcAgentpoolListRequest) At(at string) ApiGetCloudTfcAgentpoolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudTfcAgentpoolListRequest) Tags(tags string) ApiGetCloudTfcAgentpoolListRequest {
 	r.tags = &tags
@@ -6792,7 +6947,7 @@ GetCloudTfcAgentpoolList Read a 'cloud.TfcAgentpool' resource.
 func (a *CloudApiService) GetCloudTfcAgentpoolList(ctx _context.Context) ApiGetCloudTfcAgentpoolListRequest {
 	return ApiGetCloudTfcAgentpoolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6931,13 +7086,13 @@ func (a *CloudApiService) GetCloudTfcAgentpoolListExecute(r ApiGetCloudTfcAgentp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6954,11 +7109,10 @@ func (a *CloudApiService) GetCloudTfcAgentpoolListExecute(r ApiGetCloudTfcAgentp
 }
 
 type ApiGetCloudTfcOrganizationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudTfcOrganizationByMoidRequest) Execute() (CloudTfcOrganization, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudTfcOrganizationByMoidExecute(r)
@@ -6974,8 +7128,8 @@ GetCloudTfcOrganizationByMoid Read a 'cloud.TfcOrganization' resource.
 func (a *CloudApiService) GetCloudTfcOrganizationByMoid(ctx _context.Context, moid string) ApiGetCloudTfcOrganizationByMoidRequest {
 	return ApiGetCloudTfcOrganizationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7082,13 +7236,13 @@ func (a *CloudApiService) GetCloudTfcOrganizationByMoidExecute(r ApiGetCloudTfcO
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7105,19 +7259,19 @@ func (a *CloudApiService) GetCloudTfcOrganizationByMoidExecute(r ApiGetCloudTfcO
 }
 
 type ApiGetCloudTfcOrganizationListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7125,51 +7279,61 @@ func (r ApiGetCloudTfcOrganizationListRequest) Filter(filter string) ApiGetCloud
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudTfcOrganizationListRequest) Orderby(orderby string) ApiGetCloudTfcOrganizationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudTfcOrganizationListRequest) Top(top int32) ApiGetCloudTfcOrganizationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudTfcOrganizationListRequest) Skip(skip int32) ApiGetCloudTfcOrganizationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudTfcOrganizationListRequest) Select_(select_ string) ApiGetCloudTfcOrganizationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudTfcOrganizationListRequest) Expand(expand string) ApiGetCloudTfcOrganizationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudTfcOrganizationListRequest) Apply(apply string) ApiGetCloudTfcOrganizationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudTfcOrganizationListRequest) Count(count bool) ApiGetCloudTfcOrganizationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudTfcOrganizationListRequest) Inlinecount(inlinecount string) ApiGetCloudTfcOrganizationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudTfcOrganizationListRequest) At(at string) ApiGetCloudTfcOrganizationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudTfcOrganizationListRequest) Tags(tags string) ApiGetCloudTfcOrganizationListRequest {
 	r.tags = &tags
@@ -7189,7 +7353,7 @@ GetCloudTfcOrganizationList Read a 'cloud.TfcOrganization' resource.
 func (a *CloudApiService) GetCloudTfcOrganizationList(ctx _context.Context) ApiGetCloudTfcOrganizationListRequest {
 	return ApiGetCloudTfcOrganizationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7328,13 +7492,13 @@ func (a *CloudApiService) GetCloudTfcOrganizationListExecute(r ApiGetCloudTfcOrg
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7351,11 +7515,10 @@ func (a *CloudApiService) GetCloudTfcOrganizationListExecute(r ApiGetCloudTfcOrg
 }
 
 type ApiGetCloudTfcWorkspaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CloudApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCloudTfcWorkspaceByMoidRequest) Execute() (CloudTfcWorkspace, *_nethttp.Response, error) {
 	return r.ApiService.GetCloudTfcWorkspaceByMoidExecute(r)
@@ -7371,8 +7534,8 @@ GetCloudTfcWorkspaceByMoid Read a 'cloud.TfcWorkspace' resource.
 func (a *CloudApiService) GetCloudTfcWorkspaceByMoid(ctx _context.Context, moid string) ApiGetCloudTfcWorkspaceByMoidRequest {
 	return ApiGetCloudTfcWorkspaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7479,13 +7642,13 @@ func (a *CloudApiService) GetCloudTfcWorkspaceByMoidExecute(r ApiGetCloudTfcWork
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7502,19 +7665,19 @@ func (a *CloudApiService) GetCloudTfcWorkspaceByMoidExecute(r ApiGetCloudTfcWork
 }
 
 type ApiGetCloudTfcWorkspaceListRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CloudApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7522,51 +7685,61 @@ func (r ApiGetCloudTfcWorkspaceListRequest) Filter(filter string) ApiGetCloudTfc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCloudTfcWorkspaceListRequest) Orderby(orderby string) ApiGetCloudTfcWorkspaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCloudTfcWorkspaceListRequest) Top(top int32) ApiGetCloudTfcWorkspaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCloudTfcWorkspaceListRequest) Skip(skip int32) ApiGetCloudTfcWorkspaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCloudTfcWorkspaceListRequest) Select_(select_ string) ApiGetCloudTfcWorkspaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCloudTfcWorkspaceListRequest) Expand(expand string) ApiGetCloudTfcWorkspaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCloudTfcWorkspaceListRequest) Apply(apply string) ApiGetCloudTfcWorkspaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCloudTfcWorkspaceListRequest) Count(count bool) ApiGetCloudTfcWorkspaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCloudTfcWorkspaceListRequest) Inlinecount(inlinecount string) ApiGetCloudTfcWorkspaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCloudTfcWorkspaceListRequest) At(at string) ApiGetCloudTfcWorkspaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCloudTfcWorkspaceListRequest) Tags(tags string) ApiGetCloudTfcWorkspaceListRequest {
 	r.tags = &tags
@@ -7586,7 +7759,7 @@ GetCloudTfcWorkspaceList Read a 'cloud.TfcWorkspace' resource.
 func (a *CloudApiService) GetCloudTfcWorkspaceList(ctx _context.Context) ApiGetCloudTfcWorkspaceListRequest {
 	return ApiGetCloudTfcWorkspaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7725,13 +7898,13 @@ func (a *CloudApiService) GetCloudTfcWorkspaceListExecute(r ApiGetCloudTfcWorksp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7748,11 +7921,11 @@ func (a *CloudApiService) GetCloudTfcWorkspaceListExecute(r ApiGetCloudTfcWorksp
 }
 
 type ApiPatchCloudAwsVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *CloudApiService
+	moid                   string
 	cloudAwsVirtualMachine *CloudAwsVirtualMachine
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;cloud.AwsVirtualMachine&#39; resource to update.
@@ -7760,6 +7933,7 @@ func (r ApiPatchCloudAwsVirtualMachineRequest) CloudAwsVirtualMachine(cloudAwsVi
 	r.cloudAwsVirtualMachine = &cloudAwsVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCloudAwsVirtualMachineRequest) IfMatch(ifMatch string) ApiPatchCloudAwsVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -7780,8 +7954,8 @@ PatchCloudAwsVirtualMachine Update a 'cloud.AwsVirtualMachine' resource.
 func (a *CloudApiService) PatchCloudAwsVirtualMachine(ctx _context.Context, moid string) ApiPatchCloudAwsVirtualMachineRequest {
 	return ApiPatchCloudAwsVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7896,13 +8070,13 @@ func (a *CloudApiService) PatchCloudAwsVirtualMachineExecute(r ApiPatchCloudAwsV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7919,11 +8093,11 @@ func (a *CloudApiService) PatchCloudAwsVirtualMachineExecute(r ApiPatchCloudAwsV
 }
 
 type ApiPatchCloudRegionsRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *CloudApiService
+	moid         string
 	cloudRegions *CloudRegions
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;cloud.Regions&#39; resource to update.
@@ -7931,6 +8105,7 @@ func (r ApiPatchCloudRegionsRequest) CloudRegions(cloudRegions CloudRegions) Api
 	r.cloudRegions = &cloudRegions
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCloudRegionsRequest) IfMatch(ifMatch string) ApiPatchCloudRegionsRequest {
 	r.ifMatch = &ifMatch
@@ -7951,8 +8126,8 @@ PatchCloudRegions Update a 'cloud.Regions' resource.
 func (a *CloudApiService) PatchCloudRegions(ctx _context.Context, moid string) ApiPatchCloudRegionsRequest {
 	return ApiPatchCloudRegionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8067,13 +8242,13 @@ func (a *CloudApiService) PatchCloudRegionsExecute(r ApiPatchCloudRegionsRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8090,11 +8265,11 @@ func (a *CloudApiService) PatchCloudRegionsExecute(r ApiPatchCloudRegionsRequest
 }
 
 type ApiUpdateCloudAwsVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *CloudApiService
+	moid                   string
 	cloudAwsVirtualMachine *CloudAwsVirtualMachine
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;cloud.AwsVirtualMachine&#39; resource to update.
@@ -8102,6 +8277,7 @@ func (r ApiUpdateCloudAwsVirtualMachineRequest) CloudAwsVirtualMachine(cloudAwsV
 	r.cloudAwsVirtualMachine = &cloudAwsVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCloudAwsVirtualMachineRequest) IfMatch(ifMatch string) ApiUpdateCloudAwsVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -8122,8 +8298,8 @@ UpdateCloudAwsVirtualMachine Update a 'cloud.AwsVirtualMachine' resource.
 func (a *CloudApiService) UpdateCloudAwsVirtualMachine(ctx _context.Context, moid string) ApiUpdateCloudAwsVirtualMachineRequest {
 	return ApiUpdateCloudAwsVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8238,13 +8414,13 @@ func (a *CloudApiService) UpdateCloudAwsVirtualMachineExecute(r ApiUpdateCloudAw
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8261,11 +8437,11 @@ func (a *CloudApiService) UpdateCloudAwsVirtualMachineExecute(r ApiUpdateCloudAw
 }
 
 type ApiUpdateCloudRegionsRequest struct {
-	ctx _context.Context
-	ApiService *CloudApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *CloudApiService
+	moid         string
 	cloudRegions *CloudRegions
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;cloud.Regions&#39; resource to update.
@@ -8273,6 +8449,7 @@ func (r ApiUpdateCloudRegionsRequest) CloudRegions(cloudRegions CloudRegions) Ap
 	r.cloudRegions = &cloudRegions
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCloudRegionsRequest) IfMatch(ifMatch string) ApiUpdateCloudRegionsRequest {
 	r.ifMatch = &ifMatch
@@ -8293,8 +8470,8 @@ UpdateCloudRegions Update a 'cloud.Regions' resource.
 func (a *CloudApiService) UpdateCloudRegions(ctx _context.Context, moid string) ApiUpdateCloudRegionsRequest {
 	return ApiUpdateCloudRegionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8409,13 +8586,13 @@ func (a *CloudApiService) UpdateCloudRegionsExecute(r ApiUpdateCloudRegionsReque
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

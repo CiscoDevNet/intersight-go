@@ -18,20 +18,19 @@ import (
 
 // PolicyAbstractPolicyRelationship - A relationship to the 'policy.AbstractPolicy' resource, or the expanded 'policy.AbstractPolicy' resource, or the 'null' value.
 type PolicyAbstractPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 	PolicyAbstractPolicy *PolicyAbstractPolicy
 }
 
 // MoMoRefAsPolicyAbstractPolicyRelationship is a convenience function that returns MoMoRef wrapped in PolicyAbstractPolicyRelationship
 func MoMoRefAsPolicyAbstractPolicyRelationship(v *MoMoRef) PolicyAbstractPolicyRelationship {
-	return PolicyAbstractPolicyRelationship{ MoMoRef: v}
+	return PolicyAbstractPolicyRelationship{MoMoRef: v}
 }
 
 // PolicyAbstractPolicyAsPolicyAbstractPolicyRelationship is a convenience function that returns PolicyAbstractPolicy wrapped in PolicyAbstractPolicyRelationship
 func PolicyAbstractPolicyAsPolicyAbstractPolicyRelationship(v *PolicyAbstractPolicy) PolicyAbstractPolicyRelationship {
-	return PolicyAbstractPolicyRelationship{ PolicyAbstractPolicy: v}
+	return PolicyAbstractPolicyRelationship{PolicyAbstractPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PolicyAbstractPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PolicyAbstractPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PolicyAbstractPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *PolicyAbstractPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePolicyAbstractPolicyRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

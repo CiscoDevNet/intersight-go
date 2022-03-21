@@ -31,8 +31,8 @@ type FirmwareDriverDistributable struct {
 	// The operating system name to which this driver is compatible.
 	Osname *string `json:"Osname,omitempty"`
 	// OS Version. It is populated as part of the image import operation.
-	Osversion *string `json:"Osversion,omitempty"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	Osversion            *string                                `json:"Osversion,omitempty"`
+	Catalog              *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *FirmwareDriverDistributable) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDriverDistributable) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *FirmwareDriverDistributable) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDriverDistributable) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -325,8 +325,8 @@ func (o *FirmwareDriverDistributable) UnmarshalJSON(bytes []byte) (err error) {
 		// The operating system name to which this driver is compatible.
 		Osname *string `json:"Osname,omitempty"`
 		// OS Version. It is populated as part of the image import operation.
-		Osversion *string `json:"Osversion,omitempty"`
-		Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+		Osversion *string                                `json:"Osversion,omitempty"`
+		Catalog   *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	}
 
 	varFirmwareDriverDistributableWithoutEmbeddedStruct := FirmwareDriverDistributableWithoutEmbeddedStruct{}
@@ -425,5 +425,3 @@ func (v *NullableFirmwareDriverDistributable) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

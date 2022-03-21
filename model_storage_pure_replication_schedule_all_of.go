@@ -22,13 +22,13 @@ type StoragePureReplicationScheduleAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Total number of snapshots per day to be available on target above and over the specified retention time. PureStorage FlashArray maintains all created snapshot until retention period. Daily limit is applied only on the snapshots once retention time is expired. In case of, daily limit is less than the number of snapshot available on source, system select snapshots evenly spaced out throughout the day.
-	DailyLimit *int64 `json:"DailyLimit,omitempty"`
+	DailyLimit                   *int64                           `json:"DailyLimit,omitempty"`
 	ReplicationBlackoutIntervals []StoragePureReplicationBlackout `json:"ReplicationBlackoutIntervals,omitempty"`
 	// Duration to keep the daily limit snapshots on target array. StorageArray deletes the snapshots permanently from the targets beyond this period.
-	SnapshotExpiryTime *string `json:"SnapshotExpiryTime,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SnapshotExpiryTime   *string                                 `json:"SnapshotExpiryTime,omitempty"`
+	Array                *StoragePureArrayRelationship           `json:"Array,omitempty"`
+	ProtectionGroup      *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *StoragePureReplicationScheduleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureReplicationScheduleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *StoragePureReplicationScheduleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureReplicationScheduleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *StoragePureReplicationScheduleAllOf) SetDailyLimit(v int64) {
 
 // GetReplicationBlackoutIntervals returns the ReplicationBlackoutIntervals field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureReplicationScheduleAllOf) GetReplicationBlackoutIntervals() []StoragePureReplicationBlackout {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureReplicationBlackout
 		return ret
 	}
@@ -391,5 +391,3 @@ func (v *NullableStoragePureReplicationScheduleAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

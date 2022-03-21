@@ -23,12 +23,12 @@ type StorageNetAppStorageVm struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Aggregates []string `json:"Aggregates,omitempty"`
+	ObjectType            string                                  `json:"ObjectType"`
+	Aggregates            []string                                `json:"Aggregates,omitempty"`
 	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 	// Status for Common Internet File System protocol ( CIFS ) allowed to run on Vservers.
-	CifsEnabled *bool `json:"CifsEnabled,omitempty"`
-	DnsDomains []string `json:"DnsDomains,omitempty"`
+	CifsEnabled *bool    `json:"CifsEnabled,omitempty"`
+	DnsDomains  []string `json:"DnsDomains,omitempty"`
 	// Status for Fibre Channel Protocol ( FCP ) allowed to run on Vservers.
 	FcpEnabled *bool `json:"FcpEnabled,omitempty"`
 	// IPspace name. IPspaces are distinct IP address spaces in which storage virtual machines (SVMs) reside.
@@ -36,7 +36,7 @@ type StorageNetAppStorageVm struct {
 	// Status for iSCSI protocol allowed to run on Vservers.
 	IscsiEnabled *bool `json:"IscsiEnabled,omitempty"`
 	// Unique identifier of VServer across data center.
-	Key *string `json:"Key,omitempty"`
+	Key         *string  `json:"Key,omitempty"`
 	NameServers []string `json:"NameServers,omitempty"`
 	// Status for Network File System Protocol ( NFS ) allowed to run on  Vservers.
 	NfsEnabled *bool `json:"NfsEnabled,omitempty"`
@@ -49,12 +49,12 @@ type StorageNetAppStorageVm struct {
 	// Status for NVME protocol allowed to run on Vservers.
 	NvmeEnabled *bool `json:"NvmeEnabled,omitempty"`
 	// SVM subtype (default, dp_destination, sync_source, or sync_destination). The SVM subtype sync_destination is created automatically when an SVM of subtype sync_source is created on the source MetroCluster cluster.
-	Subtype *string `json:"Subtype,omitempty"`
-	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+	Subtype *string                           `json:"Subtype,omitempty"`
+	Array   *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	// An array of relationships to storageNetAppAggregate resources.
 	DiskPool []StorageNetAppAggregateRelationship `json:"DiskPool,omitempty"`
 	// An array of relationships to storageNetAppSvmEvent resources.
-	Events []StorageNetAppSvmEventRelationship `json:"Events,omitempty"`
+	Events               []StorageNetAppSvmEventRelationship `json:"Events,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *StorageNetAppStorageVm) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageVm) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *StorageNetAppStorageVm) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageVm) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -133,7 +133,7 @@ func (o *StorageNetAppStorageVm) SetObjectType(v string) {
 
 // GetAggregates returns the Aggregates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppStorageVm) GetAggregates() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *StorageNetAppStorageVm) SetCifsEnabled(v bool) {
 
 // GetDnsDomains returns the DnsDomains field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppStorageVm) GetDnsDomains() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *StorageNetAppStorageVm) SetKey(v string) {
 
 // GetNameServers returns the NameServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppStorageVm) GetNameServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *StorageNetAppStorageVm) SetArray(v StorageNetAppClusterRelationship) {
 
 // GetDiskPool returns the DiskPool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppStorageVm) GetDiskPool() []StorageNetAppAggregateRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppAggregateRelationship
 		return ret
 	}
@@ -681,7 +681,7 @@ func (o *StorageNetAppStorageVm) SetDiskPool(v []StorageNetAppAggregateRelations
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppStorageVm) GetEvents() []StorageNetAppSvmEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppSvmEventRelationship
 		return ret
 	}
@@ -795,12 +795,12 @@ func (o *StorageNetAppStorageVm) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Aggregates []string `json:"Aggregates,omitempty"`
+		ObjectType            string                                  `json:"ObjectType"`
+		Aggregates            []string                                `json:"Aggregates,omitempty"`
 		AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 		// Status for Common Internet File System protocol ( CIFS ) allowed to run on Vservers.
-		CifsEnabled *bool `json:"CifsEnabled,omitempty"`
-		DnsDomains []string `json:"DnsDomains,omitempty"`
+		CifsEnabled *bool    `json:"CifsEnabled,omitempty"`
+		DnsDomains  []string `json:"DnsDomains,omitempty"`
 		// Status for Fibre Channel Protocol ( FCP ) allowed to run on Vservers.
 		FcpEnabled *bool `json:"FcpEnabled,omitempty"`
 		// IPspace name. IPspaces are distinct IP address spaces in which storage virtual machines (SVMs) reside.
@@ -808,7 +808,7 @@ func (o *StorageNetAppStorageVm) UnmarshalJSON(bytes []byte) (err error) {
 		// Status for iSCSI protocol allowed to run on Vservers.
 		IscsiEnabled *bool `json:"IscsiEnabled,omitempty"`
 		// Unique identifier of VServer across data center.
-		Key *string `json:"Key,omitempty"`
+		Key         *string  `json:"Key,omitempty"`
 		NameServers []string `json:"NameServers,omitempty"`
 		// Status for Network File System Protocol ( NFS ) allowed to run on  Vservers.
 		NfsEnabled *bool `json:"NfsEnabled,omitempty"`
@@ -821,8 +821,8 @@ func (o *StorageNetAppStorageVm) UnmarshalJSON(bytes []byte) (err error) {
 		// Status for NVME protocol allowed to run on Vservers.
 		NvmeEnabled *bool `json:"NvmeEnabled,omitempty"`
 		// SVM subtype (default, dp_destination, sync_source, or sync_destination). The SVM subtype sync_destination is created automatically when an SVM of subtype sync_source is created on the source MetroCluster cluster.
-		Subtype *string `json:"Subtype,omitempty"`
-		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
+		Subtype *string                           `json:"Subtype,omitempty"`
+		Array   *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 		// An array of relationships to storageNetAppAggregate resources.
 		DiskPool []StorageNetAppAggregateRelationship `json:"DiskPool,omitempty"`
 		// An array of relationships to storageNetAppSvmEvent resources.
@@ -951,5 +951,3 @@ func (v *NullableStorageNetAppStorageVm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

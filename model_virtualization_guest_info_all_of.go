@@ -28,7 +28,7 @@ type VirtualizationGuestInfoAllOf struct {
 	// The name of the guest running on this VM. This may not be the same as the hostname.
 	Name *string `json:"Name,omitempty"`
 	// The name of the guest OS running on this VM (Cent OS 4/5/6/7).
-	OperatingSystem *string `json:"OperatingSystem,omitempty"`
+	OperatingSystem      *string `json:"OperatingSystem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VirtualizationGuestInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationGuestInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VirtualizationGuestInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationGuestInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableVirtualizationGuestInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

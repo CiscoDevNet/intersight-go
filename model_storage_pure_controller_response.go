@@ -18,32 +18,31 @@ import (
 
 // StoragePureControllerResponse - The response body of a HTTP GET request for the 'storage.PureController' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PureController' resources.
 type StoragePureControllerResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 	StoragePureControllerList *StoragePureControllerList
 }
 
 // MoAggregateTransformAsStoragePureControllerResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePureControllerResponse
 func MoAggregateTransformAsStoragePureControllerResponse(v *MoAggregateTransform) StoragePureControllerResponse {
-	return StoragePureControllerResponse{ MoAggregateTransform: v}
+	return StoragePureControllerResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePureControllerResponse is a convenience function that returns MoDocumentCount wrapped in StoragePureControllerResponse
 func MoDocumentCountAsStoragePureControllerResponse(v *MoDocumentCount) StoragePureControllerResponse {
-	return StoragePureControllerResponse{ MoDocumentCount: v}
+	return StoragePureControllerResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePureControllerResponse is a convenience function that returns MoTagSummary wrapped in StoragePureControllerResponse
 func MoTagSummaryAsStoragePureControllerResponse(v *MoTagSummary) StoragePureControllerResponse {
-	return StoragePureControllerResponse{ MoTagSummary: v}
+	return StoragePureControllerResponse{MoTagSummary: v}
 }
 
 // StoragePureControllerListAsStoragePureControllerResponse is a convenience function that returns StoragePureControllerList wrapped in StoragePureControllerResponse
 func StoragePureControllerListAsStoragePureControllerResponse(v *StoragePureControllerList) StoragePureControllerResponse {
-	return StoragePureControllerResponse{ StoragePureControllerList: v}
+	return StoragePureControllerResponse{StoragePureControllerList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureControllerResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePureControllerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureControllerResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePureControllerResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePureControllerResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

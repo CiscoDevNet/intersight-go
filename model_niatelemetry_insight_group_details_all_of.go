@@ -42,9 +42,9 @@ type NiatelemetryInsightGroupDetailsAllOf struct {
 	// Prechange analysis count of the Insight group.
 	PrechangeAnalysisCount *int64 `json:"PrechangeAnalysisCount,omitempty"`
 	// TAC collection config count of the Insight group.
-	TacCollectionConfigCount *int64 `json:"TacCollectionConfigCount,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TacCollectionConfigCount *int64                               `json:"TacCollectionConfigCount,omitempty"`
+	RegisteredDevice         *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _NiatelemetryInsightGroupDetailsAllOf NiatelemetryInsightGroupDetailsAllOf
@@ -85,7 +85,7 @@ func (o *NiatelemetryInsightGroupDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInsightGroupDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *NiatelemetryInsightGroupDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInsightGroupDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -621,5 +621,3 @@ func (v *NullableNiatelemetryInsightGroupDetailsAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

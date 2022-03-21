@@ -24,21 +24,21 @@ type WorkflowPendingDynamicWorkflowInfoAllOf struct {
 	// The inputs of the workflow.
 	Input interface{} `json:"Input,omitempty"`
 	// A name for the pending dynamic workflow.
-	Name *string `json:"Name,omitempty"`
+	Name            *string  `json:"Name,omitempty"`
 	PendingServices []string `json:"PendingServices,omitempty"`
 	// The src is workflow owner service.
 	Src *string `json:"Src,omitempty"`
 	// The current status of the PendingDynamicWorkflowInfo. * `GatheringTasks` - Dynamic workflow is gathering tasks before workflow can start execution. * `Waiting` - Dynamic workflow is in waiting state and not yet started execution. * `RateLimit` - Dynamic workflow is rate limited and hasn't started execution.
 	Status *string `json:"Status,omitempty"`
 	// When set to true workflow engine will wait for a duplicate to finish before starting a new one.
-	WaitOnDuplicate *bool `json:"WaitOnDuplicate,omitempty"`
+	WaitOnDuplicate         *bool                                   `json:"WaitOnDuplicate,omitempty"`
 	WorkflowActionTaskLists []WorkflowDynamicWorkflowActionTaskList `json:"WorkflowActionTaskLists,omitempty"`
-	WorkflowCtx NullableWorkflowWorkflowCtx `json:"WorkflowCtx,omitempty"`
+	WorkflowCtx             NullableWorkflowWorkflowCtx             `json:"WorkflowCtx,omitempty"`
 	// This key contains workflow, initiator and target name. Workflow engine uses the key to do workflow dedup.
 	WorkflowKey *string `json:"WorkflowKey,omitempty"`
 	// The metadata of the workflow.
-	WorkflowMeta interface{} `json:"WorkflowMeta,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	WorkflowMeta         interface{}                       `json:"WorkflowMeta,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetObjectType(v string) {
 
 // GetInput returns the Input field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetInput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetName(v string) {
 
 // GetPendingServices returns the PendingServices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetPendingServices() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetWaitOnDuplicate(v bool) {
 
 // GetWorkflowActionTaskLists returns the WorkflowActionTaskLists field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetWorkflowActionTaskLists() []WorkflowDynamicWorkflowActionTaskList {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowDynamicWorkflowActionTaskList
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetWorkflowCtx() WorkflowWorkf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetWorkflowCtxOk() (*WorkflowWorkflowCtx, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.WorkflowCtx.Get(), o.WorkflowCtx.IsSet()
@@ -378,6 +378,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) HasWorkflowCtx() bool {
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetWorkflowCtx(v WorkflowWorkflowCtx) {
 	o.WorkflowCtx.Set(&v)
 }
+
 // SetWorkflowCtxNil sets the value for WorkflowCtx to be an explicit nil
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetWorkflowCtxNil() {
 	o.WorkflowCtx.Set(nil)
@@ -422,7 +423,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoAllOf) SetWorkflowKey(v string) {
 
 // GetWorkflowMeta returns the WorkflowMeta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPendingDynamicWorkflowInfoAllOf) GetWorkflowMeta() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -598,5 +599,3 @@ func (v *NullableWorkflowPendingDynamicWorkflowInfoAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

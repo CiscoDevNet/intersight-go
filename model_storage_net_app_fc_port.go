@@ -29,10 +29,10 @@ type StorageNetAppFcPort struct {
 	// State of the port available in storage array. * `Unknown` - Default unknown port state. * `StartUp` - The port in the storage array is booting up. * `LinkNotConnected` - The port has finished initialization, but a link with the fabric is not established. * `Online` - The port is initialized and a link with the fabric has been established. * `LinkDisconnected` - The link on this port is currently not established. * `OfflineUser` - The port is administratively disabled. * `OfflineSystem` - The port is set to offline by the system. This happens when the port encounters too many errors. * `NodeOffline` - The state information for the port cannot be retrieved. The node is offline or inaccessible.
 	State *string `json:"State,omitempty"`
 	// Universally unique identifier of the FC port.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid            *string                        `json:"Uuid,omitempty"`
 	ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 	// An array of relationships to storageNetAppFcPortEvent resources.
-	Events []StorageNetAppFcPortEventRelationship `json:"Events,omitempty"`
+	Events               []StorageNetAppFcPortEventRelationship `json:"Events,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StorageNetAppFcPort) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppFcPort) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StorageNetAppFcPort) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppFcPort) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -239,7 +239,7 @@ func (o *StorageNetAppFcPort) SetArrayController(v StorageNetAppNodeRelationship
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppFcPort) GetEvents() []StorageNetAppFcPortEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppFcPortEventRelationship
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *StorageNetAppFcPort) UnmarshalJSON(bytes []byte) (err error) {
 		// State of the port available in storage array. * `Unknown` - Default unknown port state. * `StartUp` - The port in the storage array is booting up. * `LinkNotConnected` - The port has finished initialization, but a link with the fabric is not established. * `Online` - The port is initialized and a link with the fabric has been established. * `LinkDisconnected` - The link on this port is currently not established. * `OfflineUser` - The port is administratively disabled. * `OfflineSystem` - The port is set to offline by the system. This happens when the port encounters too many errors. * `NodeOffline` - The state information for the port cannot be retrieved. The node is offline or inaccessible.
 		State *string `json:"State,omitempty"`
 		// Universally unique identifier of the FC port.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid            *string                        `json:"Uuid,omitempty"`
 		ArrayController *StorageNetAppNodeRelationship `json:"ArrayController,omitempty"`
 		// An array of relationships to storageNetAppFcPortEvent resources.
 		Events []StorageNetAppFcPortEventRelationship `json:"Events,omitempty"`
@@ -422,5 +422,3 @@ func (v *NullableStorageNetAppFcPort) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

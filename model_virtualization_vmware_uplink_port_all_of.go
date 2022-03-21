@@ -26,11 +26,11 @@ type VirtualizationVmwareUplinkPortAllOf struct {
 	// The internally assigned key of this uplink port object. This entity is not manipulated by users.
 	Key *string `json:"Key,omitempty"`
 	// User-provided name to identify the uplink port object.
-	Name *string `json:"Name,omitempty"`
-	DistributedNetwork *VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetwork,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
+	Name                     *string                                                   `json:"Name,omitempty"`
+	DistributedNetwork       *VirtualizationVmwareDistributedNetworkRelationship       `json:"DistributedNetwork,omitempty"`
+	Host                     *VirtualizationVmwareHostRelationship                     `json:"Host,omitempty"`
 	PhysicalNetworkInterface *VirtualizationVmwarePhysicalNetworkInterfaceRelationship `json:"PhysicalNetworkInterface,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties     map[string]interface{}
 }
 
 type _VirtualizationVmwareUplinkPortAllOf VirtualizationVmwareUplinkPortAllOf
@@ -71,7 +71,7 @@ func (o *VirtualizationVmwareUplinkPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareUplinkPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationVmwareUplinkPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareUplinkPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -391,5 +391,3 @@ func (v *NullableVirtualizationVmwareUplinkPortAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,10 @@ var (
 type NetworkApiService service
 
 type ApiGetNetworkElementByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NetworkApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNetworkElementByMoidRequest) Execute() (NetworkElement, *_nethttp.Response, error) {
 	return r.ApiService.GetNetworkElementByMoidExecute(r)
@@ -49,8 +48,8 @@ GetNetworkElementByMoid Read a 'network.Element' resource.
 func (a *NetworkApiService) GetNetworkElementByMoid(ctx _context.Context, moid string) ApiGetNetworkElementByMoidRequest {
 	return ApiGetNetworkElementByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *NetworkApiService) GetNetworkElementByMoidExecute(r ApiGetNetworkElemen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *NetworkApiService) GetNetworkElementByMoidExecute(r ApiGetNetworkElemen
 }
 
 type ApiGetNetworkElementListRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NetworkApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetNetworkElementListRequest) Filter(filter string) ApiGetNetworkElem
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNetworkElementListRequest) Orderby(orderby string) ApiGetNetworkElementListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNetworkElementListRequest) Top(top int32) ApiGetNetworkElementListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNetworkElementListRequest) Skip(skip int32) ApiGetNetworkElementListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNetworkElementListRequest) Select_(select_ string) ApiGetNetworkElementListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNetworkElementListRequest) Expand(expand string) ApiGetNetworkElementListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNetworkElementListRequest) Apply(apply string) ApiGetNetworkElementListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNetworkElementListRequest) Count(count bool) ApiGetNetworkElementListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNetworkElementListRequest) Inlinecount(inlinecount string) ApiGetNetworkElementListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNetworkElementListRequest) At(at string) ApiGetNetworkElementListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNetworkElementListRequest) Tags(tags string) ApiGetNetworkElementListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetNetworkElementList Read a 'network.Element' resource.
 func (a *NetworkApiService) GetNetworkElementList(ctx _context.Context) ApiGetNetworkElementListRequest {
 	return ApiGetNetworkElementListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *NetworkApiService) GetNetworkElementListExecute(r ApiGetNetworkElementL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *NetworkApiService) GetNetworkElementListExecute(r ApiGetNetworkElementL
 }
 
 type ApiGetNetworkElementSummaryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NetworkApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNetworkElementSummaryByMoidRequest) Execute() (NetworkElementSummary, *_nethttp.Response, error) {
 	return r.ApiService.GetNetworkElementSummaryByMoidExecute(r)
@@ -446,8 +454,8 @@ GetNetworkElementSummaryByMoid Read a 'network.ElementSummary' resource.
 func (a *NetworkApiService) GetNetworkElementSummaryByMoid(ctx _context.Context, moid string) ApiGetNetworkElementSummaryByMoidRequest {
 	return ApiGetNetworkElementSummaryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *NetworkApiService) GetNetworkElementSummaryByMoidExecute(r ApiGetNetwor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *NetworkApiService) GetNetworkElementSummaryByMoidExecute(r ApiGetNetwor
 }
 
 type ApiGetNetworkElementSummaryListRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NetworkApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetNetworkElementSummaryListRequest) Filter(filter string) ApiGetNetw
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNetworkElementSummaryListRequest) Orderby(orderby string) ApiGetNetworkElementSummaryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNetworkElementSummaryListRequest) Top(top int32) ApiGetNetworkElementSummaryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNetworkElementSummaryListRequest) Skip(skip int32) ApiGetNetworkElementSummaryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNetworkElementSummaryListRequest) Select_(select_ string) ApiGetNetworkElementSummaryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNetworkElementSummaryListRequest) Expand(expand string) ApiGetNetworkElementSummaryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNetworkElementSummaryListRequest) Apply(apply string) ApiGetNetworkElementSummaryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNetworkElementSummaryListRequest) Count(count bool) ApiGetNetworkElementSummaryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNetworkElementSummaryListRequest) Inlinecount(inlinecount string) ApiGetNetworkElementSummaryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNetworkElementSummaryListRequest) At(at string) ApiGetNetworkElementSummaryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNetworkElementSummaryListRequest) Tags(tags string) ApiGetNetworkElementSummaryListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetNetworkElementSummaryList Read a 'network.ElementSummary' resource.
 func (a *NetworkApiService) GetNetworkElementSummaryList(ctx _context.Context) ApiGetNetworkElementSummaryListRequest {
 	return ApiGetNetworkElementSummaryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *NetworkApiService) GetNetworkElementSummaryListExecute(r ApiGetNetworkE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *NetworkApiService) GetNetworkElementSummaryListExecute(r ApiGetNetworkE
 }
 
 type ApiGetNetworkFcZoneInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NetworkApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNetworkFcZoneInfoByMoidRequest) Execute() (NetworkFcZoneInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetNetworkFcZoneInfoByMoidExecute(r)
@@ -843,8 +860,8 @@ GetNetworkFcZoneInfoByMoid Read a 'network.FcZoneInfo' resource.
 func (a *NetworkApiService) GetNetworkFcZoneInfoByMoid(ctx _context.Context, moid string) ApiGetNetworkFcZoneInfoByMoidRequest {
 	return ApiGetNetworkFcZoneInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *NetworkApiService) GetNetworkFcZoneInfoByMoidExecute(r ApiGetNetworkFcZ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,19 +991,19 @@ func (a *NetworkApiService) GetNetworkFcZoneInfoByMoidExecute(r ApiGetNetworkFcZ
 }
 
 type ApiGetNetworkFcZoneInfoListRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NetworkApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -994,51 +1011,61 @@ func (r ApiGetNetworkFcZoneInfoListRequest) Filter(filter string) ApiGetNetworkF
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNetworkFcZoneInfoListRequest) Orderby(orderby string) ApiGetNetworkFcZoneInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNetworkFcZoneInfoListRequest) Top(top int32) ApiGetNetworkFcZoneInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNetworkFcZoneInfoListRequest) Skip(skip int32) ApiGetNetworkFcZoneInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNetworkFcZoneInfoListRequest) Select_(select_ string) ApiGetNetworkFcZoneInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNetworkFcZoneInfoListRequest) Expand(expand string) ApiGetNetworkFcZoneInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNetworkFcZoneInfoListRequest) Apply(apply string) ApiGetNetworkFcZoneInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNetworkFcZoneInfoListRequest) Count(count bool) ApiGetNetworkFcZoneInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNetworkFcZoneInfoListRequest) Inlinecount(inlinecount string) ApiGetNetworkFcZoneInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNetworkFcZoneInfoListRequest) At(at string) ApiGetNetworkFcZoneInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNetworkFcZoneInfoListRequest) Tags(tags string) ApiGetNetworkFcZoneInfoListRequest {
 	r.tags = &tags
@@ -1058,7 +1085,7 @@ GetNetworkFcZoneInfoList Read a 'network.FcZoneInfo' resource.
 func (a *NetworkApiService) GetNetworkFcZoneInfoList(ctx _context.Context) ApiGetNetworkFcZoneInfoListRequest {
 	return ApiGetNetworkFcZoneInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1197,13 +1224,13 @@ func (a *NetworkApiService) GetNetworkFcZoneInfoListExecute(r ApiGetNetworkFcZon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1220,11 +1247,10 @@ func (a *NetworkApiService) GetNetworkFcZoneInfoListExecute(r ApiGetNetworkFcZon
 }
 
 type ApiGetNetworkVlanPortInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *NetworkApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetNetworkVlanPortInfoByMoidRequest) Execute() (NetworkVlanPortInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetNetworkVlanPortInfoByMoidExecute(r)
@@ -1240,8 +1266,8 @@ GetNetworkVlanPortInfoByMoid Read a 'network.VlanPortInfo' resource.
 func (a *NetworkApiService) GetNetworkVlanPortInfoByMoid(ctx _context.Context, moid string) ApiGetNetworkVlanPortInfoByMoidRequest {
 	return ApiGetNetworkVlanPortInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *NetworkApiService) GetNetworkVlanPortInfoByMoidExecute(r ApiGetNetworkV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,19 +1397,19 @@ func (a *NetworkApiService) GetNetworkVlanPortInfoByMoidExecute(r ApiGetNetworkV
 }
 
 type ApiGetNetworkVlanPortInfoListRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *NetworkApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1391,51 +1417,61 @@ func (r ApiGetNetworkVlanPortInfoListRequest) Filter(filter string) ApiGetNetwor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetNetworkVlanPortInfoListRequest) Orderby(orderby string) ApiGetNetworkVlanPortInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetNetworkVlanPortInfoListRequest) Top(top int32) ApiGetNetworkVlanPortInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetNetworkVlanPortInfoListRequest) Skip(skip int32) ApiGetNetworkVlanPortInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetNetworkVlanPortInfoListRequest) Select_(select_ string) ApiGetNetworkVlanPortInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetNetworkVlanPortInfoListRequest) Expand(expand string) ApiGetNetworkVlanPortInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetNetworkVlanPortInfoListRequest) Apply(apply string) ApiGetNetworkVlanPortInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetNetworkVlanPortInfoListRequest) Count(count bool) ApiGetNetworkVlanPortInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetNetworkVlanPortInfoListRequest) Inlinecount(inlinecount string) ApiGetNetworkVlanPortInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetNetworkVlanPortInfoListRequest) At(at string) ApiGetNetworkVlanPortInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetNetworkVlanPortInfoListRequest) Tags(tags string) ApiGetNetworkVlanPortInfoListRequest {
 	r.tags = &tags
@@ -1455,7 +1491,7 @@ GetNetworkVlanPortInfoList Read a 'network.VlanPortInfo' resource.
 func (a *NetworkApiService) GetNetworkVlanPortInfoList(ctx _context.Context) ApiGetNetworkVlanPortInfoListRequest {
 	return ApiGetNetworkVlanPortInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1594,13 +1630,13 @@ func (a *NetworkApiService) GetNetworkVlanPortInfoListExecute(r ApiGetNetworkVla
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,11 +1653,11 @@ func (a *NetworkApiService) GetNetworkVlanPortInfoListExecute(r ApiGetNetworkVla
 }
 
 type ApiPatchNetworkElementRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *NetworkApiService
+	moid           string
 	networkElement *NetworkElement
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;network.Element&#39; resource to update.
@@ -1629,6 +1665,7 @@ func (r ApiPatchNetworkElementRequest) NetworkElement(networkElement NetworkElem
 	r.networkElement = &networkElement
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchNetworkElementRequest) IfMatch(ifMatch string) ApiPatchNetworkElementRequest {
 	r.ifMatch = &ifMatch
@@ -1649,8 +1686,8 @@ PatchNetworkElement Update a 'network.Element' resource.
 func (a *NetworkApiService) PatchNetworkElement(ctx _context.Context, moid string) ApiPatchNetworkElementRequest {
 	return ApiPatchNetworkElementRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1765,13 +1802,13 @@ func (a *NetworkApiService) PatchNetworkElementExecute(r ApiPatchNetworkElementR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1788,11 +1825,11 @@ func (a *NetworkApiService) PatchNetworkElementExecute(r ApiPatchNetworkElementR
 }
 
 type ApiPatchNetworkFcZoneInfoRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *NetworkApiService
+	moid              string
 	networkFcZoneInfo *NetworkFcZoneInfo
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;network.FcZoneInfo&#39; resource to update.
@@ -1800,6 +1837,7 @@ func (r ApiPatchNetworkFcZoneInfoRequest) NetworkFcZoneInfo(networkFcZoneInfo Ne
 	r.networkFcZoneInfo = &networkFcZoneInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchNetworkFcZoneInfoRequest) IfMatch(ifMatch string) ApiPatchNetworkFcZoneInfoRequest {
 	r.ifMatch = &ifMatch
@@ -1820,8 +1858,8 @@ PatchNetworkFcZoneInfo Update a 'network.FcZoneInfo' resource.
 func (a *NetworkApiService) PatchNetworkFcZoneInfo(ctx _context.Context, moid string) ApiPatchNetworkFcZoneInfoRequest {
 	return ApiPatchNetworkFcZoneInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1936,13 +1974,13 @@ func (a *NetworkApiService) PatchNetworkFcZoneInfoExecute(r ApiPatchNetworkFcZon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1959,11 +1997,11 @@ func (a *NetworkApiService) PatchNetworkFcZoneInfoExecute(r ApiPatchNetworkFcZon
 }
 
 type ApiPatchNetworkVlanPortInfoRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *NetworkApiService
+	moid                string
 	networkVlanPortInfo *NetworkVlanPortInfo
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;network.VlanPortInfo&#39; resource to update.
@@ -1971,6 +2009,7 @@ func (r ApiPatchNetworkVlanPortInfoRequest) NetworkVlanPortInfo(networkVlanPortI
 	r.networkVlanPortInfo = &networkVlanPortInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchNetworkVlanPortInfoRequest) IfMatch(ifMatch string) ApiPatchNetworkVlanPortInfoRequest {
 	r.ifMatch = &ifMatch
@@ -1991,8 +2030,8 @@ PatchNetworkVlanPortInfo Update a 'network.VlanPortInfo' resource.
 func (a *NetworkApiService) PatchNetworkVlanPortInfo(ctx _context.Context, moid string) ApiPatchNetworkVlanPortInfoRequest {
 	return ApiPatchNetworkVlanPortInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2107,13 +2146,13 @@ func (a *NetworkApiService) PatchNetworkVlanPortInfoExecute(r ApiPatchNetworkVla
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2130,11 +2169,11 @@ func (a *NetworkApiService) PatchNetworkVlanPortInfoExecute(r ApiPatchNetworkVla
 }
 
 type ApiUpdateNetworkElementRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *NetworkApiService
+	moid           string
 	networkElement *NetworkElement
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;network.Element&#39; resource to update.
@@ -2142,6 +2181,7 @@ func (r ApiUpdateNetworkElementRequest) NetworkElement(networkElement NetworkEle
 	r.networkElement = &networkElement
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateNetworkElementRequest) IfMatch(ifMatch string) ApiUpdateNetworkElementRequest {
 	r.ifMatch = &ifMatch
@@ -2162,8 +2202,8 @@ UpdateNetworkElement Update a 'network.Element' resource.
 func (a *NetworkApiService) UpdateNetworkElement(ctx _context.Context, moid string) ApiUpdateNetworkElementRequest {
 	return ApiUpdateNetworkElementRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2278,13 +2318,13 @@ func (a *NetworkApiService) UpdateNetworkElementExecute(r ApiUpdateNetworkElemen
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2301,11 +2341,11 @@ func (a *NetworkApiService) UpdateNetworkElementExecute(r ApiUpdateNetworkElemen
 }
 
 type ApiUpdateNetworkFcZoneInfoRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *NetworkApiService
+	moid              string
 	networkFcZoneInfo *NetworkFcZoneInfo
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;network.FcZoneInfo&#39; resource to update.
@@ -2313,6 +2353,7 @@ func (r ApiUpdateNetworkFcZoneInfoRequest) NetworkFcZoneInfo(networkFcZoneInfo N
 	r.networkFcZoneInfo = &networkFcZoneInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateNetworkFcZoneInfoRequest) IfMatch(ifMatch string) ApiUpdateNetworkFcZoneInfoRequest {
 	r.ifMatch = &ifMatch
@@ -2333,8 +2374,8 @@ UpdateNetworkFcZoneInfo Update a 'network.FcZoneInfo' resource.
 func (a *NetworkApiService) UpdateNetworkFcZoneInfo(ctx _context.Context, moid string) ApiUpdateNetworkFcZoneInfoRequest {
 	return ApiUpdateNetworkFcZoneInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2449,13 +2490,13 @@ func (a *NetworkApiService) UpdateNetworkFcZoneInfoExecute(r ApiUpdateNetworkFcZ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2472,11 +2513,11 @@ func (a *NetworkApiService) UpdateNetworkFcZoneInfoExecute(r ApiUpdateNetworkFcZ
 }
 
 type ApiUpdateNetworkVlanPortInfoRequest struct {
-	ctx _context.Context
-	ApiService *NetworkApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *NetworkApiService
+	moid                string
 	networkVlanPortInfo *NetworkVlanPortInfo
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;network.VlanPortInfo&#39; resource to update.
@@ -2484,6 +2525,7 @@ func (r ApiUpdateNetworkVlanPortInfoRequest) NetworkVlanPortInfo(networkVlanPort
 	r.networkVlanPortInfo = &networkVlanPortInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateNetworkVlanPortInfoRequest) IfMatch(ifMatch string) ApiUpdateNetworkVlanPortInfoRequest {
 	r.ifMatch = &ifMatch
@@ -2504,8 +2546,8 @@ UpdateNetworkVlanPortInfo Update a 'network.VlanPortInfo' resource.
 func (a *NetworkApiService) UpdateNetworkVlanPortInfo(ctx _context.Context, moid string) ApiUpdateNetworkVlanPortInfoRequest {
 	return ApiUpdateNetworkVlanPortInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2620,13 +2662,13 @@ func (a *NetworkApiService) UpdateNetworkVlanPortInfoExecute(r ApiUpdateNetworkV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

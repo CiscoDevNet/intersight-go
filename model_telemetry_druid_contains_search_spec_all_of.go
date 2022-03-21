@@ -20,7 +20,7 @@ type TelemetryDruidContainsSearchSpecAllOf struct {
 	// The value to match.  If any part of a dimension value contains the value specified in this search query spec, regardless of case, a \"match\" occurs.
 	Value string `json:"value"`
 	// Whether or not search is case sensitive
-	CaseSensitive *bool `json:"case_sensitive,omitempty"`
+	CaseSensitive        *bool `json:"case_sensitive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *TelemetryDruidContainsSearchSpecAllOf) GetValue() string {
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidContainsSearchSpecAllOf) GetValueOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Value, true
@@ -169,5 +169,3 @@ func (v *NullableTelemetryDruidContainsSearchSpecAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

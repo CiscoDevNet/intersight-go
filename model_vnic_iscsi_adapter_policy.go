@@ -29,8 +29,8 @@ type VnicIscsiAdapterPolicy struct {
 	// The number of seconds to wait before the initiator assumes that the DHCP server is unavailable.
 	DhcpTimeout *int64 `json:"DhcpTimeout,omitempty"`
 	// The number of times to retry the connection in case of a failure during iSCSI LUN discovery.
-	LunBusyRetryCount *int64 `json:"LunBusyRetryCount,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	LunBusyRetryCount    *int64                                `json:"LunBusyRetryCount,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *VnicIscsiAdapterPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiAdapterPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *VnicIscsiAdapterPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiAdapterPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -282,8 +282,8 @@ func (o *VnicIscsiAdapterPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The number of seconds to wait before the initiator assumes that the DHCP server is unavailable.
 		DhcpTimeout *int64 `json:"DhcpTimeout,omitempty"`
 		// The number of times to retry the connection in case of a failure during iSCSI LUN discovery.
-		LunBusyRetryCount *int64 `json:"LunBusyRetryCount,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		LunBusyRetryCount *int64                                `json:"LunBusyRetryCount,omitempty"`
+		Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varVnicIscsiAdapterPolicyWithoutEmbeddedStruct := VnicIscsiAdapterPolicyWithoutEmbeddedStruct{}
@@ -380,5 +380,3 @@ func (v *NullableVnicIscsiAdapterPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

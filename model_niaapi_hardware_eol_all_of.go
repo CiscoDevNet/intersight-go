@@ -69,7 +69,7 @@ type NiaapiHardwareEolAllOf struct {
 	// Epoch time of last ship Date.
 	LastShipDateEpoch *int64 `json:"LastShipDateEpoch,omitempty"`
 	// The URL of this migration notice.
-	MigrationUrl *string `json:"MigrationUrl,omitempty"`
+	MigrationUrl         *string `json:"MigrationUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -107,7 +107,7 @@ func (o *NiaapiHardwareEolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiHardwareEolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -131,7 +131,7 @@ func (o *NiaapiHardwareEolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiHardwareEolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1075,5 +1075,3 @@ func (v *NullableNiaapiHardwareEolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

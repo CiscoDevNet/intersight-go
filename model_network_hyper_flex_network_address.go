@@ -29,7 +29,7 @@ type NetworkHyperFlexNetworkAddress struct {
 	// The fully qualified domain name of the HyperFlex appliance.
 	Fqdn *string `json:"Fqdn,omitempty"`
 	// The IP address of the HyperFlex appliance.
-	Ip *string `json:"Ip,omitempty"`
+	Ip                   *string `json:"Ip,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *NetworkHyperFlexNetworkAddress) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkHyperFlexNetworkAddress) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *NetworkHyperFlexNetworkAddress) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkHyperFlexNetworkAddress) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableNetworkHyperFlexNetworkAddress) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

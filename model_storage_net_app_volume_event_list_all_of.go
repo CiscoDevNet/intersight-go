@@ -20,7 +20,7 @@ type StorageNetAppVolumeEventListAllOf struct {
 	// The total number of 'storage.NetAppVolumeEvent' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppVolumeEvent' resources matching the request.
-	Results []StorageNetAppVolumeEvent `json:"Results,omitempty"`
+	Results              []StorageNetAppVolumeEvent `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageNetAppVolumeEventListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppVolumeEventListAllOf) GetResults() []StorageNetAppVolumeEvent {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppVolumeEvent
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageNetAppVolumeEventListAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

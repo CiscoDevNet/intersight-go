@@ -24,7 +24,7 @@ type VirtualizationEsxiCloneCustomSpecAllOf struct {
 	// Specify the Extra Config specification which can be configured on virtual machine.
 	ExtraConfig interface{} `json:"ExtraConfig,omitempty"`
 	// Specify the OVA Environment specification which can be configured on virtual machine.
-	OvaEnvSpec interface{} `json:"OvaEnvSpec,omitempty"`
+	OvaEnvSpec           interface{} `json:"OvaEnvSpec,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *VirtualizationEsxiCloneCustomSpecAllOf) SetObjectType(v string) {
 
 // GetExtraConfig returns the ExtraConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetExtraConfig() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *VirtualizationEsxiCloneCustomSpecAllOf) SetExtraConfig(v interface{}) {
 
 // GetOvaEnvSpec returns the OvaEnvSpec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationEsxiCloneCustomSpecAllOf) GetOvaEnvSpec() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -244,5 +244,3 @@ func (v *NullableVirtualizationEsxiCloneCustomSpecAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

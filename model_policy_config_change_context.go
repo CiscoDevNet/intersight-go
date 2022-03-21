@@ -27,7 +27,7 @@ type PolicyConfigChangeContext struct {
 	// Indicates reason for failure state of configChangeState.
 	ConfigChangeError *string `json:"ConfigChangeError,omitempty"`
 	// Indicates a profile's configuration change state. Used for tracking pending-changes and out-of-synch states. * `Ok` - Config change state represents Validation for change/drift is successful or is not applicable. * `Validating-change` - Config change state represents policy changes are being validated. This state starts when policy is changed and becomes different from deployed changes (Pending-changes). * `Validating-drift` - Config change state represents endpoint configuration changes are being validated. This state starts when endpoint is changed and endpoint configuration becomes different from policy configured changes (Out-of-sync). * `Change-failed` - Config change state represents there is internal error in calculating policy change. * `Drift-failed` - Config change state represents there is internal error in calculating endpoint configuraion drift.
-	ConfigChangeState *string `json:"ConfigChangeState,omitempty"`
+	ConfigChangeState    *string                     `json:"ConfigChangeState,omitempty"`
 	InitialConfigContext NullablePolicyConfigContext `json:"InitialConfigContext,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -70,7 +70,7 @@ func (o *PolicyConfigChangeContext) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyConfigChangeContext) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *PolicyConfigChangeContext) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyConfigChangeContext) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -182,7 +182,7 @@ func (o *PolicyConfigChangeContext) GetInitialConfigContext() PolicyConfigContex
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyConfigChangeContext) GetInitialConfigContextOk() (*PolicyConfigContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InitialConfigContext.Get(), o.InitialConfigContext.IsSet()
@@ -201,6 +201,7 @@ func (o *PolicyConfigChangeContext) HasInitialConfigContext() bool {
 func (o *PolicyConfigChangeContext) SetInitialConfigContext(v PolicyConfigContext) {
 	o.InitialConfigContext.Set(&v)
 }
+
 // SetInitialConfigContextNil sets the value for InitialConfigContext to be an explicit nil
 func (o *PolicyConfigChangeContext) SetInitialConfigContextNil() {
 	o.InitialConfigContext.Set(nil)
@@ -253,7 +254,7 @@ func (o *PolicyConfigChangeContext) UnmarshalJSON(bytes []byte) (err error) {
 		// Indicates reason for failure state of configChangeState.
 		ConfigChangeError *string `json:"ConfigChangeError,omitempty"`
 		// Indicates a profile's configuration change state. Used for tracking pending-changes and out-of-synch states. * `Ok` - Config change state represents Validation for change/drift is successful or is not applicable. * `Validating-change` - Config change state represents policy changes are being validated. This state starts when policy is changed and becomes different from deployed changes (Pending-changes). * `Validating-drift` - Config change state represents endpoint configuration changes are being validated. This state starts when endpoint is changed and endpoint configuration becomes different from policy configured changes (Out-of-sync). * `Change-failed` - Config change state represents there is internal error in calculating policy change. * `Drift-failed` - Config change state represents there is internal error in calculating endpoint configuraion drift.
-		ConfigChangeState *string `json:"ConfigChangeState,omitempty"`
+		ConfigChangeState    *string                     `json:"ConfigChangeState,omitempty"`
 		InitialConfigContext NullablePolicyConfigContext `json:"InitialConfigContext,omitempty"`
 	}
 
@@ -349,5 +350,3 @@ func (v *NullablePolicyConfigChangeContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

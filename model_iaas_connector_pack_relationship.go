@@ -19,19 +19,18 @@ import (
 // IaasConnectorPackRelationship - A relationship to the 'iaas.ConnectorPack' resource, or the expanded 'iaas.ConnectorPack' resource, or the 'null' value.
 type IaasConnectorPackRelationship struct {
 	IaasConnectorPack *IaasConnectorPack
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // IaasConnectorPackAsIaasConnectorPackRelationship is a convenience function that returns IaasConnectorPack wrapped in IaasConnectorPackRelationship
 func IaasConnectorPackAsIaasConnectorPackRelationship(v *IaasConnectorPack) IaasConnectorPackRelationship {
-	return IaasConnectorPackRelationship{ IaasConnectorPack: v}
+	return IaasConnectorPackRelationship{IaasConnectorPack: v}
 }
 
 // MoMoRefAsIaasConnectorPackRelationship is a convenience function that returns MoMoRef wrapped in IaasConnectorPackRelationship
 func MoMoRefAsIaasConnectorPackRelationship(v *MoMoRef) IaasConnectorPackRelationship {
-	return IaasConnectorPackRelationship{ MoMoRef: v}
+	return IaasConnectorPackRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasConnectorPackRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasConnectorPackRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasConnectorPackRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasConnectorPackRelationship) GetActualInstance() interface{} {
 	if obj.IaasConnectorPack != nil {
 		return obj.IaasConnectorPack
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasConnectorPackRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

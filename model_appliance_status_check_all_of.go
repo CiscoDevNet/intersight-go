@@ -24,7 +24,7 @@ type ApplianceStatusCheckAllOf struct {
 	// Unique identifier of the status check.
 	Code *string `json:"Code,omitempty"`
 	// Result of this status check. * `OK` - Result of the check is OK. * `Warning` - Result of the check is Warning. * `Critical` - Result of the check is Critical. * `Info` - Result of the check is low.
-	Result *string `json:"Result,omitempty"`
+	Result               *string `json:"Result,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *ApplianceStatusCheckAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceStatusCheckAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *ApplianceStatusCheckAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceStatusCheckAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableApplianceStatusCheckAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

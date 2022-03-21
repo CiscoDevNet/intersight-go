@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // AssetDeployment Contains information about Deployments associated with consumption-based subscriptions. We listen to messages sent by Cisco Install Base and create/update an instance of this object.
@@ -24,11 +24,11 @@ type AssetDeployment struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AlarmInfo NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
+	ObjectType string                           `json:"ObjectType"`
+	AlarmInfo  NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
 	// Identifies the consumption-based subscription's deployment.
-	DeploymentRefId *string `json:"DeploymentRefId,omitempty"`
-	EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+	DeploymentRefId *string                          `json:"DeploymentRefId,omitempty"`
+	EndCustomer     NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
 	// End Date for the consumption-based subscription's deployment.
 	EndDate *time.Time `json:"EndDate,omitempty"`
 	// Active license tier for the purchased Cisco device's deployment. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
@@ -38,12 +38,12 @@ type AssetDeployment struct {
 	// Start Date for the consumption-based subscription's deployment.
 	StartDate *time.Time `json:"StartDate,omitempty"`
 	// Identifies the consumption-based subscription.
-	SubscriptionRefId *string `json:"SubscriptionRefId,omitempty"`
-	UnitOfMeasure []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
-	Workloads []string `json:"Workloads,omitempty"`
+	SubscriptionRefId *string             `json:"SubscriptionRefId,omitempty"`
+	UnitOfMeasure     []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
+	Workloads         []string            `json:"Workloads,omitempty"`
 	// An array of relationships to assetDeploymentDevice resources.
-	Devices []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
-	Subscription *AssetSubscriptionRelationship `json:"Subscription,omitempty"`
+	Devices              []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
+	Subscription         *AssetSubscriptionRelationship      `json:"Subscription,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *AssetDeployment) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeployment) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *AssetDeployment) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeployment) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -133,7 +133,7 @@ func (o *AssetDeployment) GetAlarmInfo() AssetDeploymentAlarmInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeployment) GetAlarmInfoOk() (*AssetDeploymentAlarmInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmInfo.Get(), o.AlarmInfo.IsSet()
@@ -152,6 +152,7 @@ func (o *AssetDeployment) HasAlarmInfo() bool {
 func (o *AssetDeployment) SetAlarmInfo(v AssetDeploymentAlarmInfo) {
 	o.AlarmInfo.Set(&v)
 }
+
 // SetAlarmInfoNil sets the value for AlarmInfo to be an explicit nil
 func (o *AssetDeployment) SetAlarmInfoNil() {
 	o.AlarmInfo.Set(nil)
@@ -207,7 +208,7 @@ func (o *AssetDeployment) GetEndCustomer() AssetCustomerInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeployment) GetEndCustomerOk() (*AssetCustomerInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndCustomer.Get(), o.EndCustomer.IsSet()
@@ -226,6 +227,7 @@ func (o *AssetDeployment) HasEndCustomer() bool {
 func (o *AssetDeployment) SetEndCustomer(v AssetCustomerInformation) {
 	o.EndCustomer.Set(&v)
 }
+
 // SetEndCustomerNil sets the value for EndCustomer to be an explicit nil
 func (o *AssetDeployment) SetEndCustomerNil() {
 	o.EndCustomer.Set(nil)
@@ -398,7 +400,7 @@ func (o *AssetDeployment) SetSubscriptionRefId(v string) {
 
 // GetUnitOfMeasure returns the UnitOfMeasure field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeployment) GetUnitOfMeasure() []AssetMeteringType {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetMeteringType
 		return ret
 	}
@@ -431,7 +433,7 @@ func (o *AssetDeployment) SetUnitOfMeasure(v []AssetMeteringType) {
 
 // GetWorkloads returns the Workloads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeployment) GetWorkloads() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -464,7 +466,7 @@ func (o *AssetDeployment) SetWorkloads(v []string) {
 
 // GetDevices returns the Devices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeployment) GetDevices() []AssetDeploymentDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeploymentDeviceRelationship
 		return ret
 	}
@@ -592,11 +594,11 @@ func (o *AssetDeployment) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		AlarmInfo NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
+		ObjectType string                           `json:"ObjectType"`
+		AlarmInfo  NullableAssetDeploymentAlarmInfo `json:"AlarmInfo,omitempty"`
 		// Identifies the consumption-based subscription's deployment.
-		DeploymentRefId *string `json:"DeploymentRefId,omitempty"`
-		EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+		DeploymentRefId *string                          `json:"DeploymentRefId,omitempty"`
+		EndCustomer     NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
 		// End Date for the consumption-based subscription's deployment.
 		EndDate *time.Time `json:"EndDate,omitempty"`
 		// Active license tier for the purchased Cisco device's deployment. * `Base` - Base as a License type. It is default license type. * `Essential` - Essential as a License type. * `Standard` - Standard as a License type. * `Advantage` - Advantage as a License type. * `Premier` - Premier as a License type. * `IWO-Essential` - IWO-Essential as a License type. * `IWO-Advantage` - IWO-Advantage as a License type. * `IWO-Premier` - IWO-Premier as a License type. * `IKS-Advantage` - IKS-Advantage as a License type.
@@ -606,12 +608,12 @@ func (o *AssetDeployment) UnmarshalJSON(bytes []byte) (err error) {
 		// Start Date for the consumption-based subscription's deployment.
 		StartDate *time.Time `json:"StartDate,omitempty"`
 		// Identifies the consumption-based subscription.
-		SubscriptionRefId *string `json:"SubscriptionRefId,omitempty"`
-		UnitOfMeasure []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
-		Workloads []string `json:"Workloads,omitempty"`
+		SubscriptionRefId *string             `json:"SubscriptionRefId,omitempty"`
+		UnitOfMeasure     []AssetMeteringType `json:"UnitOfMeasure,omitempty"`
+		Workloads         []string            `json:"Workloads,omitempty"`
 		// An array of relationships to assetDeploymentDevice resources.
-		Devices []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
-		Subscription *AssetSubscriptionRelationship `json:"Subscription,omitempty"`
+		Devices      []AssetDeploymentDeviceRelationship `json:"Devices,omitempty"`
+		Subscription *AssetSubscriptionRelationship      `json:"Subscription,omitempty"`
 	}
 
 	varAssetDeploymentWithoutEmbeddedStruct := AssetDeploymentWithoutEmbeddedStruct{}
@@ -724,5 +726,3 @@ func (v *NullableAssetDeployment) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

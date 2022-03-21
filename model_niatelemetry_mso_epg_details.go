@@ -37,8 +37,8 @@ type NiatelemetryMsoEpgDetails struct {
 	// Schema name in Multi-Site Orchestrator.
 	SchemaName *string `json:"SchemaName,omitempty"`
 	// Template name in Multi-Site Orchestrator.
-	TemplateName *string `json:"TemplateName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TemplateName         *string                              `json:"TemplateName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *NiatelemetryMsoEpgDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoEpgDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *NiatelemetryMsoEpgDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoEpgDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *NiatelemetryMsoEpgDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// Schema name in Multi-Site Orchestrator.
 		SchemaName *string `json:"SchemaName,omitempty"`
 		// Template name in Multi-Site Orchestrator.
-		TemplateName *string `json:"TemplateName,omitempty"`
+		TemplateName     *string                              `json:"TemplateName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableNiatelemetryMsoEpgDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

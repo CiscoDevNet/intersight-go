@@ -18,20 +18,19 @@ import (
 
 // SoftwareUcsdDistributableRelationship - A relationship to the 'software.UcsdDistributable' resource, or the expanded 'software.UcsdDistributable' resource, or the 'null' value.
 type SoftwareUcsdDistributableRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	SoftwareUcsdDistributable *SoftwareUcsdDistributable
 }
 
 // MoMoRefAsSoftwareUcsdDistributableRelationship is a convenience function that returns MoMoRef wrapped in SoftwareUcsdDistributableRelationship
 func MoMoRefAsSoftwareUcsdDistributableRelationship(v *MoMoRef) SoftwareUcsdDistributableRelationship {
-	return SoftwareUcsdDistributableRelationship{ MoMoRef: v}
+	return SoftwareUcsdDistributableRelationship{MoMoRef: v}
 }
 
 // SoftwareUcsdDistributableAsSoftwareUcsdDistributableRelationship is a convenience function that returns SoftwareUcsdDistributable wrapped in SoftwareUcsdDistributableRelationship
 func SoftwareUcsdDistributableAsSoftwareUcsdDistributableRelationship(v *SoftwareUcsdDistributable) SoftwareUcsdDistributableRelationship {
-	return SoftwareUcsdDistributableRelationship{ SoftwareUcsdDistributable: v}
+	return SoftwareUcsdDistributableRelationship{SoftwareUcsdDistributable: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwareUcsdDistributableRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SoftwareUcsdDistributableRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SoftwareUcsdDistributableRelationship) GetActualInstance() (interface{}) {
+func (obj *SoftwareUcsdDistributableRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSoftwareUcsdDistributableRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

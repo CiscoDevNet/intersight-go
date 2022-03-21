@@ -20,7 +20,7 @@ type HyperflexServerFirmwareVersionListAllOf struct {
 	// The total number of 'hyperflex.ServerFirmwareVersion' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.ServerFirmwareVersion' resources matching the request.
-	Results []HyperflexServerFirmwareVersion `json:"Results,omitempty"`
+	Results              []HyperflexServerFirmwareVersion `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexServerFirmwareVersionListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexServerFirmwareVersionListAllOf) GetResults() []HyperflexServerFirmwareVersion {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexServerFirmwareVersion
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexServerFirmwareVersionListAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

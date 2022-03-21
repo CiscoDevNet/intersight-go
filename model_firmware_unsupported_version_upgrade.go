@@ -25,10 +25,10 @@ type FirmwareUnsupportedVersionUpgrade struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Workflow status of firmware upgrade. * `None` - Upgrade status is none when upgrade is in progress. * `Completed` - Upgrade completed successfully. * `Failed` - Upgrade status is failed when upgrade has failed.
-	UpgradeStatus *string `json:"UpgradeStatus,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Distributable *FirmwareDistributableRelationship `json:"Distributable,omitempty"`
-	PhysicalIdentity *EquipmentPhysicalIdentityRelationship `json:"PhysicalIdentity,omitempty"`
+	UpgradeStatus        *string                                `json:"UpgradeStatus,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship   `json:"Device,omitempty"`
+	Distributable        *FirmwareDistributableRelationship     `json:"Distributable,omitempty"`
+	PhysicalIdentity     *EquipmentPhysicalIdentityRelationship `json:"PhysicalIdentity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *FirmwareUnsupportedVersionUpgrade) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUnsupportedVersionUpgrade) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *FirmwareUnsupportedVersionUpgrade) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareUnsupportedVersionUpgrade) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,9 +280,9 @@ func (o *FirmwareUnsupportedVersionUpgrade) UnmarshalJSON(bytes []byte) (err err
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Workflow status of firmware upgrade. * `None` - Upgrade status is none when upgrade is in progress. * `Completed` - Upgrade completed successfully. * `Failed` - Upgrade status is failed when upgrade has failed.
-		UpgradeStatus *string `json:"UpgradeStatus,omitempty"`
-		Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-		Distributable *FirmwareDistributableRelationship `json:"Distributable,omitempty"`
+		UpgradeStatus    *string                                `json:"UpgradeStatus,omitempty"`
+		Device           *AssetDeviceRegistrationRelationship   `json:"Device,omitempty"`
+		Distributable    *FirmwareDistributableRelationship     `json:"Distributable,omitempty"`
 		PhysicalIdentity *EquipmentPhysicalIdentityRelationship `json:"PhysicalIdentity,omitempty"`
 	}
 
@@ -380,5 +380,3 @@ func (v *NullableFirmwareUnsupportedVersionUpgrade) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

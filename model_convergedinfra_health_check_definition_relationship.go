@@ -19,19 +19,18 @@ import (
 // ConvergedinfraHealthCheckDefinitionRelationship - A relationship to the 'convergedinfra.HealthCheckDefinition' resource, or the expanded 'convergedinfra.HealthCheckDefinition' resource, or the 'null' value.
 type ConvergedinfraHealthCheckDefinitionRelationship struct {
 	ConvergedinfraHealthCheckDefinition *ConvergedinfraHealthCheckDefinition
-	MoMoRef *MoMoRef
+	MoMoRef                             *MoMoRef
 }
 
 // ConvergedinfraHealthCheckDefinitionAsConvergedinfraHealthCheckDefinitionRelationship is a convenience function that returns ConvergedinfraHealthCheckDefinition wrapped in ConvergedinfraHealthCheckDefinitionRelationship
 func ConvergedinfraHealthCheckDefinitionAsConvergedinfraHealthCheckDefinitionRelationship(v *ConvergedinfraHealthCheckDefinition) ConvergedinfraHealthCheckDefinitionRelationship {
-	return ConvergedinfraHealthCheckDefinitionRelationship{ ConvergedinfraHealthCheckDefinition: v}
+	return ConvergedinfraHealthCheckDefinitionRelationship{ConvergedinfraHealthCheckDefinition: v}
 }
 
 // MoMoRefAsConvergedinfraHealthCheckDefinitionRelationship is a convenience function that returns MoMoRef wrapped in ConvergedinfraHealthCheckDefinitionRelationship
 func MoMoRefAsConvergedinfraHealthCheckDefinitionRelationship(v *MoMoRef) ConvergedinfraHealthCheckDefinitionRelationship {
-	return ConvergedinfraHealthCheckDefinitionRelationship{ MoMoRef: v}
+	return ConvergedinfraHealthCheckDefinitionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ConvergedinfraHealthCheckDefinitionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ConvergedinfraHealthCheckDefinitionRelationship) MarshalJSON() ([]byte
 }
 
 // Get the actual instance
-func (obj *ConvergedinfraHealthCheckDefinitionRelationship) GetActualInstance() (interface{}) {
+func (obj *ConvergedinfraHealthCheckDefinitionRelationship) GetActualInstance() interface{} {
 	if obj.ConvergedinfraHealthCheckDefinition != nil {
 		return obj.ConvergedinfraHealthCheckDefinition
 	}
@@ -137,5 +136,3 @@ func (v *NullableConvergedinfraHealthCheckDefinitionRelationship) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

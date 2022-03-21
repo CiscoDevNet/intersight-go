@@ -32,12 +32,12 @@ type NiaapiFieldNoticeAllOf struct {
 	// The headline of this field notice.
 	Headline *string `json:"Headline,omitempty"`
 	// Hardware PID for affected models.
-	Hwpid *string `json:"Hwpid,omitempty"`
+	Hwpid        *string              `json:"Hwpid,omitempty"`
 	RevisionInfo []NiaapiRevisionInfo `json:"RevisionInfo,omitempty"`
 	// Software Release number for affected versions.
 	SwRelease *string `json:"SwRelease,omitempty"`
 	// URL of workaround of this notice.
-	WorkaroundUrl *string `json:"WorkaroundUrl,omitempty"`
+	WorkaroundUrl        *string `json:"WorkaroundUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *NiaapiFieldNoticeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiFieldNoticeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *NiaapiFieldNoticeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiFieldNoticeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,7 +304,7 @@ func (o *NiaapiFieldNoticeAllOf) SetHwpid(v string) {
 
 // GetRevisionInfo returns the RevisionInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiaapiFieldNoticeAllOf) GetRevisionInfo() []NiaapiRevisionInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []NiaapiRevisionInfo
 		return ret
 	}
@@ -504,5 +504,3 @@ func (v *NullableNiaapiFieldNoticeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

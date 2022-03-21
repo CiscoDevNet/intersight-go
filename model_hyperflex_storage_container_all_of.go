@@ -25,7 +25,7 @@ type HyperflexStorageContainerAllOf struct {
 	// Storage container accessibility summary. * `NOT_APPLICABLE` - The HyperFlex storage container accessibility summary is not applicable. * `ACCESSIBLE` - The HyperFlex storage container is accessible. * `NOT_ACCESSIBLE` - The HyperFlex storage container is not accessible. * `PARTIALLY_ACCESSIBLE` - The HyperFlex storage container is partially accessible.
 	AccessibilitySummary *string `json:"AccessibilitySummary,omitempty"`
 	// Storage container data block size in bytes.
-	DataBlockSize *int64 `json:"DataBlockSize,omitempty"`
+	DataBlockSize   *int64                                   `json:"DataBlockSize,omitempty"`
 	HostMountStatus []StorageStorageContainerHostMountStatus `json:"HostMountStatus,omitempty"`
 	// Indicates whether the storage container has volumes.
 	InUse *bool `json:"InUse,omitempty"`
@@ -50,10 +50,10 @@ type HyperflexStorageContainerAllOf struct {
 	// UUID of the datastore/storage container.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Number of volumes associated with the storage container.
-	VolumeCount *int64 `json:"VolumeCount,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	VolumeCount *int64                        `json:"VolumeCount,omitempty"`
+	Cluster     *HyperflexClusterRelationship `json:"Cluster,omitempty"`
 	// An array of relationships to hyperflexVolume resources.
-	Volumes []HyperflexVolumeRelationship `json:"Volumes,omitempty"`
+	Volumes              []HyperflexVolumeRelationship `json:"Volumes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *HyperflexStorageContainerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStorageContainerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *HyperflexStorageContainerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStorageContainerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -196,7 +196,7 @@ func (o *HyperflexStorageContainerAllOf) SetDataBlockSize(v int64) {
 
 // GetHostMountStatus returns the HostMountStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStorageContainerAllOf) GetHostMountStatus() []StorageStorageContainerHostMountStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageStorageContainerHostMountStatus
 		return ret
 	}
@@ -645,7 +645,7 @@ func (o *HyperflexStorageContainerAllOf) SetCluster(v HyperflexClusterRelationsh
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStorageContainerAllOf) GetVolumes() []HyperflexVolumeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexVolumeRelationship
 		return ret
 	}
@@ -813,5 +813,3 @@ func (v *NullableHyperflexStorageContainerAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

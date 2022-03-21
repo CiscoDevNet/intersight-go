@@ -26,12 +26,12 @@ type ComputeVmediaAllOf struct {
 	// If enabled, allows encryption of all Virtual Media communications.
 	Encryption *bool `json:"Encryption,omitempty"`
 	// If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host.
-	LowPowerUsb *bool `json:"LowPowerUsb,omitempty"`
-	ComputePhysicalUnit *ComputePhysicalRelationship `json:"ComputePhysicalUnit,omitempty"`
+	LowPowerUsb         *bool                            `json:"LowPowerUsb,omitempty"`
+	ComputePhysicalUnit *ComputePhysicalRelationship     `json:"ComputePhysicalUnit,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to computeMapping resources.
-	Mappings []ComputeMappingRelationship `json:"Mappings,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Mappings             []ComputeMappingRelationship         `json:"Mappings,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ComputeVmediaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeVmediaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ComputeVmediaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeVmediaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -270,7 +270,7 @@ func (o *ComputeVmediaAllOf) SetInventoryDeviceInfo(v InventoryDeviceInfoRelatio
 
 // GetMappings returns the Mappings field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeVmediaAllOf) GetMappings() []ComputeMappingRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeMappingRelationship
 		return ret
 	}
@@ -430,5 +430,3 @@ func (v *NullableComputeVmediaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,7 +26,7 @@ type PolicyAbstractConfigResultAllOf struct {
 	// Indicates overall configuration state for applying the configuration to the end point. Values  -- Ok, Ok-with-warning, Errored.
 	ConfigState *string `json:"ConfigState,omitempty"`
 	// Indicates overall state for logical model validation. Values  -- Ok, Ok-with-warning, Errored.
-	ValidationState *string `json:"ValidationState,omitempty"`
+	ValidationState      *string `json:"ValidationState,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *PolicyAbstractConfigResultAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigResultAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *PolicyAbstractConfigResultAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigResultAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -276,5 +276,3 @@ func (v *NullablePolicyAbstractConfigResultAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

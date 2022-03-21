@@ -18,7 +18,7 @@ import (
 // MoBaseResponse The base response schema.
 type MoBaseResponse struct {
 	// A discriminator value to disambiguate the schema of a HTTP GET response body.
-	ObjectType string `json:"ObjectType"`
+	ObjectType           string `json:"ObjectType"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *MoBaseResponse) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MoBaseResponse) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -131,5 +131,3 @@ func (v *NullableMoBaseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

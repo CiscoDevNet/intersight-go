@@ -19,19 +19,18 @@ import (
 // KubernetesSysConfigPolicyRelationship - A relationship to the 'kubernetes.SysConfigPolicy' resource, or the expanded 'kubernetes.SysConfigPolicy' resource, or the 'null' value.
 type KubernetesSysConfigPolicyRelationship struct {
 	KubernetesSysConfigPolicy *KubernetesSysConfigPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // KubernetesSysConfigPolicyAsKubernetesSysConfigPolicyRelationship is a convenience function that returns KubernetesSysConfigPolicy wrapped in KubernetesSysConfigPolicyRelationship
 func KubernetesSysConfigPolicyAsKubernetesSysConfigPolicyRelationship(v *KubernetesSysConfigPolicy) KubernetesSysConfigPolicyRelationship {
-	return KubernetesSysConfigPolicyRelationship{ KubernetesSysConfigPolicy: v}
+	return KubernetesSysConfigPolicyRelationship{KubernetesSysConfigPolicy: v}
 }
 
 // MoMoRefAsKubernetesSysConfigPolicyRelationship is a convenience function that returns MoMoRef wrapped in KubernetesSysConfigPolicyRelationship
 func MoMoRefAsKubernetesSysConfigPolicyRelationship(v *MoMoRef) KubernetesSysConfigPolicyRelationship {
-	return KubernetesSysConfigPolicyRelationship{ MoMoRef: v}
+	return KubernetesSysConfigPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesSysConfigPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesSysConfigPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesSysConfigPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesSysConfigPolicyRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesSysConfigPolicy != nil {
 		return obj.KubernetesSysConfigPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesSysConfigPolicyRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

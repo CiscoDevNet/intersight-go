@@ -27,7 +27,7 @@ type AssetWorkloadOptimizerVmwareVcenterOptions struct {
 	// DatastoreBrowsingEnabled controls whether Workload Optimizer scans vCenter datastores to identify files which are not used and can be deleted to reclaim space and improve actual disk utilization. For example orphaned VMDK files.
 	DatastoreBrowsingEnabled *bool `json:"DatastoreBrowsingEnabled,omitempty"`
 	// Enable retrieval of advanced memory metrics. Only supported on vCenter Server version 6.5U3 or later. Guest VMs must run VMWare Tools 10.3.2 Build 10338 or later.
-	GuestMetricsEnabled *bool `json:"GuestMetricsEnabled,omitempty"`
+	GuestMetricsEnabled  *bool `json:"GuestMetricsEnabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *AssetWorkloadOptimizerVmwareVcenterOptions) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerVmwareVcenterOptions) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *AssetWorkloadOptimizerVmwareVcenterOptions) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerVmwareVcenterOptions) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableAssetWorkloadOptimizerVmwareVcenterOptions) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

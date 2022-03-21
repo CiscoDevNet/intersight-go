@@ -30,11 +30,11 @@ type EtherPhysicalPortAllOf struct {
 	// The number of days this port's license has been in Grace Period for.
 	LicenseGrace *string `json:"LicenseGrace,omitempty"`
 	// The state of the port's licensing.
-	LicenseState *string `json:"LicenseState,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	PortGroup *PortGroupRelationship `json:"PortGroup,omitempty"`
-	PortSubGroup *PortSubGroupRelationship `json:"PortSubGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	LicenseState         *string                              `json:"LicenseState,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	PortGroup            *PortGroupRelationship               `json:"PortGroup,omitempty"`
+	PortSubGroup         *PortSubGroupRelationship            `json:"PortSubGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *EtherPhysicalPortAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EtherPhysicalPortAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *EtherPhysicalPortAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EtherPhysicalPortAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -504,5 +504,3 @@ func (v *NullableEtherPhysicalPortAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

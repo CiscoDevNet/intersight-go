@@ -32,7 +32,7 @@ type NiatelemetryNxosVtpAllOf struct {
 	// Returns the status of v2 mode of vtp.
 	V2Mode *string `json:"V2Mode,omitempty"`
 	// Returns version of vtp running.
-	Version *int64 `json:"Version,omitempty"`
+	Version              *int64 `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *NiatelemetryNxosVtpAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNxosVtpAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *NiatelemetryNxosVtpAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNxosVtpAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -394,5 +394,3 @@ func (v *NullableNiatelemetryNxosVtpAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

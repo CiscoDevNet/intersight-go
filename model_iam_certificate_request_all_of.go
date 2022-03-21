@@ -28,12 +28,12 @@ type IamCertificateRequestAllOf struct {
 	// Generated certificate signing request (CSR) in PEM format.
 	Request *string `json:"Request,omitempty"`
 	// Whether the user wants the generated CSR to be self-signed by the appliance.
-	SelfSigned *bool `json:"SelfSigned,omitempty"`
-	Subject NullablePkixDistinguishedName `json:"Subject,omitempty"`
+	SelfSigned           *bool                            `json:"SelfSigned,omitempty"`
+	Subject              NullablePkixDistinguishedName    `json:"Subject,omitempty"`
 	SubjectAlternateName NullablePkixSubjectAlternateName `json:"SubjectAlternateName,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Certificate *IamCertificateRelationship `json:"Certificate,omitempty"`
-	PrivateKeySpec *IamPrivateKeySpecRelationship `json:"PrivateKeySpec,omitempty"`
+	Account              *IamAccountRelationship          `json:"Account,omitempty"`
+	Certificate          *IamCertificateRelationship      `json:"Certificate,omitempty"`
+	PrivateKeySpec       *IamPrivateKeySpecRelationship   `json:"PrivateKeySpec,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *IamCertificateRequestAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificateRequestAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *IamCertificateRequestAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamCertificateRequestAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,7 +251,7 @@ func (o *IamCertificateRequestAllOf) GetSubject() PkixDistinguishedName {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamCertificateRequestAllOf) GetSubjectOk() (*PkixDistinguishedName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subject.Get(), o.Subject.IsSet()
@@ -270,6 +270,7 @@ func (o *IamCertificateRequestAllOf) HasSubject() bool {
 func (o *IamCertificateRequestAllOf) SetSubject(v PkixDistinguishedName) {
 	o.Subject.Set(&v)
 }
+
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *IamCertificateRequestAllOf) SetSubjectNil() {
 	o.Subject.Set(nil)
@@ -293,7 +294,7 @@ func (o *IamCertificateRequestAllOf) GetSubjectAlternateName() PkixSubjectAltern
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamCertificateRequestAllOf) GetSubjectAlternateNameOk() (*PkixSubjectAlternateName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SubjectAlternateName.Get(), o.SubjectAlternateName.IsSet()
@@ -312,6 +313,7 @@ func (o *IamCertificateRequestAllOf) HasSubjectAlternateName() bool {
 func (o *IamCertificateRequestAllOf) SetSubjectAlternateName(v PkixSubjectAlternateName) {
 	o.SubjectAlternateName.Set(&v)
 }
+
 // SetSubjectAlternateNameNil sets the value for SubjectAlternateName to be an explicit nil
 func (o *IamCertificateRequestAllOf) SetSubjectAlternateNameNil() {
 	o.SubjectAlternateName.Set(nil)
@@ -523,5 +525,3 @@ func (v *NullableIamCertificateRequestAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

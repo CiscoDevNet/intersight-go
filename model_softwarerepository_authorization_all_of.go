@@ -30,8 +30,8 @@ type SoftwarerepositoryAuthorizationAllOf struct {
 	// The external repository for which this authorization has been provided. The only supported repository today is cisco.com. * `Cisco` - External repository hosted on cisco.com. * `IntersightCloud` - Repository hosted by the Intersight Cloud. * `LocalMachine` - The file is available on the local client machine. Used as an upload source type. * `NetworkShare` - External repository in the customer datacenter. This will typically be a file server.
 	RepositoryType *string `json:"RepositoryType,omitempty"`
 	// The username that will be used by Intersight to create OAuth2 tokens for interacting with the external repository, on the user account's behalf.
-	UserId *string `json:"UserId,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	UserId               *string                 `json:"UserId,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *SoftwarerepositoryAuthorizationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryAuthorizationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *SoftwarerepositoryAuthorizationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryAuthorizationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -397,5 +397,3 @@ func (v *NullableSoftwarerepositoryAuthorizationAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

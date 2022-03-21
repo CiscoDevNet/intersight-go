@@ -45,8 +45,8 @@ type IaasUcsdManagedInfra struct {
 	// Total virtual datacenters in UCSD.
 	VdcCount *int64 `json:"VdcCount,omitempty"`
 	// Total Virtual machines in UCSD.
-	VmCount *int64 `json:"VmCount,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+	VmCount              *int64                    `json:"VmCount,omitempty"`
+	Guid                 *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *IaasUcsdManagedInfra) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdManagedInfra) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *IaasUcsdManagedInfra) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasUcsdManagedInfra) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -594,8 +594,8 @@ func (o *IaasUcsdManagedInfra) UnmarshalJSON(bytes []byte) (err error) {
 		// Total virtual datacenters in UCSD.
 		VdcCount *int64 `json:"VdcCount,omitempty"`
 		// Total Virtual machines in UCSD.
-		VmCount *int64 `json:"VmCount,omitempty"`
-		Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+		VmCount *int64                    `json:"VmCount,omitempty"`
+		Guid    *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	}
 
 	varIaasUcsdManagedInfraWithoutEmbeddedStruct := IaasUcsdManagedInfraWithoutEmbeddedStruct{}
@@ -708,5 +708,3 @@ func (v *NullableIaasUcsdManagedInfra) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // ApplianceDataExportPolicyResponse - The response body of a HTTP GET request for the 'appliance.DataExportPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'appliance.DataExportPolicy' resources.
 type ApplianceDataExportPolicyResponse struct {
 	ApplianceDataExportPolicyList *ApplianceDataExportPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 }
 
 // ApplianceDataExportPolicyListAsApplianceDataExportPolicyResponse is a convenience function that returns ApplianceDataExportPolicyList wrapped in ApplianceDataExportPolicyResponse
 func ApplianceDataExportPolicyListAsApplianceDataExportPolicyResponse(v *ApplianceDataExportPolicyList) ApplianceDataExportPolicyResponse {
-	return ApplianceDataExportPolicyResponse{ ApplianceDataExportPolicyList: v}
+	return ApplianceDataExportPolicyResponse{ApplianceDataExportPolicyList: v}
 }
 
 // MoAggregateTransformAsApplianceDataExportPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in ApplianceDataExportPolicyResponse
 func MoAggregateTransformAsApplianceDataExportPolicyResponse(v *MoAggregateTransform) ApplianceDataExportPolicyResponse {
-	return ApplianceDataExportPolicyResponse{ MoAggregateTransform: v}
+	return ApplianceDataExportPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsApplianceDataExportPolicyResponse is a convenience function that returns MoDocumentCount wrapped in ApplianceDataExportPolicyResponse
 func MoDocumentCountAsApplianceDataExportPolicyResponse(v *MoDocumentCount) ApplianceDataExportPolicyResponse {
-	return ApplianceDataExportPolicyResponse{ MoDocumentCount: v}
+	return ApplianceDataExportPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsApplianceDataExportPolicyResponse is a convenience function that returns MoTagSummary wrapped in ApplianceDataExportPolicyResponse
 func MoTagSummaryAsApplianceDataExportPolicyResponse(v *MoTagSummary) ApplianceDataExportPolicyResponse {
-	return ApplianceDataExportPolicyResponse{ MoTagSummary: v}
+	return ApplianceDataExportPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceDataExportPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ApplianceDataExportPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceDataExportPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *ApplianceDataExportPolicyResponse) GetActualInstance() interface{} {
 	if obj.ApplianceDataExportPolicyList != nil {
 		return obj.ApplianceDataExportPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableApplianceDataExportPolicyResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

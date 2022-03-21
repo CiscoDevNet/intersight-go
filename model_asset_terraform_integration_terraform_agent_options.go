@@ -23,13 +23,13 @@ type AssetTerraformIntegrationTerraformAgentOptions struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string   `json:"ObjectType"`
 	ManagedHosts []string `json:"ManagedHosts,omitempty"`
 	// Agent pool name for Terraform Agent platform type.
 	TerraformAgentPoolName *string `json:"TerraformAgentPoolName,omitempty"`
 	// Organization for Terraform Agent platform type.
 	TerraformOrganization *string `json:"TerraformOrganization,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _AssetTerraformIntegrationTerraformAgentOptions AssetTerraformIntegrationTerraformAgentOptions
@@ -70,7 +70,7 @@ func (o *AssetTerraformIntegrationTerraformAgentOptions) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetTerraformIntegrationTerraformAgentOptions) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetTerraformIntegrationTerraformAgentOptions) GetObjectType() string 
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetTerraformIntegrationTerraformAgentOptions) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *AssetTerraformIntegrationTerraformAgentOptions) SetObjectType(v string)
 
 // GetManagedHosts returns the ManagedHosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetTerraformIntegrationTerraformAgentOptions) GetManagedHosts() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *AssetTerraformIntegrationTerraformAgentOptions) UnmarshalJSON(bytes []b
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType   string   `json:"ObjectType"`
 		ManagedHosts []string `json:"ManagedHosts,omitempty"`
 		// Agent pool name for Terraform Agent platform type.
 		TerraformAgentPoolName *string `json:"TerraformAgentPoolName,omitempty"`
@@ -340,5 +340,3 @@ func (v *NullableAssetTerraformIntegrationTerraformAgentOptions) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

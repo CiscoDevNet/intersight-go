@@ -19,19 +19,18 @@ import (
 // IaasLicenseInfoRelationship - A relationship to the 'iaas.LicenseInfo' resource, or the expanded 'iaas.LicenseInfo' resource, or the 'null' value.
 type IaasLicenseInfoRelationship struct {
 	IaasLicenseInfo *IaasLicenseInfo
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // IaasLicenseInfoAsIaasLicenseInfoRelationship is a convenience function that returns IaasLicenseInfo wrapped in IaasLicenseInfoRelationship
 func IaasLicenseInfoAsIaasLicenseInfoRelationship(v *IaasLicenseInfo) IaasLicenseInfoRelationship {
-	return IaasLicenseInfoRelationship{ IaasLicenseInfo: v}
+	return IaasLicenseInfoRelationship{IaasLicenseInfo: v}
 }
 
 // MoMoRefAsIaasLicenseInfoRelationship is a convenience function that returns MoMoRef wrapped in IaasLicenseInfoRelationship
 func MoMoRefAsIaasLicenseInfoRelationship(v *MoMoRef) IaasLicenseInfoRelationship {
-	return IaasLicenseInfoRelationship{ MoMoRef: v}
+	return IaasLicenseInfoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasLicenseInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasLicenseInfoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasLicenseInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasLicenseInfoRelationship) GetActualInstance() interface{} {
 	if obj.IaasLicenseInfo != nil {
 		return obj.IaasLicenseInfo
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasLicenseInfoRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

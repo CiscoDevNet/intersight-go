@@ -25,8 +25,8 @@ type AaaRetentionPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The time period in months for audit log retention. Audit logs beyond this period will be automatically deleted.
-	RetentionPeriod *int64 `json:"RetentionPeriod,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	RetentionPeriod      *int64                  `json:"RetentionPeriod,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *AaaRetentionPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AaaRetentionPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AaaRetentionPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AaaRetentionPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -204,8 +204,8 @@ func (o *AaaRetentionPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The time period in months for audit log retention. Audit logs beyond this period will be automatically deleted.
-		RetentionPeriod *int64 `json:"RetentionPeriod,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		RetentionPeriod *int64                  `json:"RetentionPeriod,omitempty"`
+		Account         *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varAaaRetentionPolicyWithoutEmbeddedStruct := AaaRetentionPolicyWithoutEmbeddedStruct{}
@@ -298,5 +298,3 @@ func (v *NullableAaaRetentionPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

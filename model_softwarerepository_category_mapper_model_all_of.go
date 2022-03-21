@@ -30,8 +30,8 @@ type SoftwarerepositoryCategoryMapperModelAllOf struct {
 	// The regex that all images of this model follow.
 	RegexPattern *string `json:"RegexPattern,omitempty"`
 	// Cisco hardware model series.
-	SeriesId *string `json:"SeriesId,omitempty"`
-	SupportedModels []string `json:"SupportedModels,omitempty"`
+	SeriesId             *string  `json:"SeriesId,omitempty"`
+	SupportedModels      []string `json:"SupportedModels,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *SoftwarerepositoryCategoryMapperModelAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategoryMapperModelAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *SoftwarerepositoryCategoryMapperModelAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategoryMapperModelAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -270,7 +270,7 @@ func (o *SoftwarerepositoryCategoryMapperModelAllOf) SetSeriesId(v string) {
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategoryMapperModelAllOf) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -394,5 +394,3 @@ func (v *NullableSoftwarerepositoryCategoryMapperModelAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

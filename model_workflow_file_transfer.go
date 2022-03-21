@@ -29,7 +29,7 @@ type WorkflowFileTransfer struct {
 	// File permission to set on the transferred file.
 	FileMode *int64 `json:"FileMode,omitempty"`
 	// Source file path on the Intersight connected device.
-	SourceFilePath *string `json:"SourceFilePath,omitempty"`
+	SourceFilePath       *string `json:"SourceFilePath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *WorkflowFileTransfer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileTransfer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *WorkflowFileTransfer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileTransfer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableWorkflowFileTransfer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

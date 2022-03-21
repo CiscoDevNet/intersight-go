@@ -27,7 +27,7 @@ type CapabilitySwitchDescriptor struct {
 	// The total expected memory for this hardware.
 	ExpectedMemory *int64 `json:"ExpectedMemory,omitempty"`
 	// Revision for the fabric interconnect.
-	Revision *string `json:"Revision,omitempty"`
+	Revision             *string `json:"Revision,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *CapabilitySwitchDescriptor) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchDescriptor) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *CapabilitySwitchDescriptor) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySwitchDescriptor) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableCapabilitySwitchDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

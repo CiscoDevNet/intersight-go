@@ -22,34 +22,34 @@ type KubernetesClusterProfileAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Deprecated
-	ActionInfo NullableKubernetesActionInfo `json:"ActionInfo,omitempty"`
-	CertConfig NullableKubernetesClusterCertificateConfiguration `json:"CertConfig,omitempty"`
-	EssentialAddons []KubernetesEssentialAddon `json:"EssentialAddons,omitempty"`
-	KubeConfig NullableKubernetesConfiguration `json:"KubeConfig,omitempty"`
+	ActionInfo      NullableKubernetesActionInfo                      `json:"ActionInfo,omitempty"`
+	CertConfig      NullableKubernetesClusterCertificateConfiguration `json:"CertConfig,omitempty"`
+	EssentialAddons []KubernetesEssentialAddon                        `json:"EssentialAddons,omitempty"`
+	KubeConfig      NullableKubernetesConfiguration                   `json:"KubeConfig,omitempty"`
 	// Management mode for the cluster. In some cases Intersight kubernetes service is not required to provision and manage the management entities and endpoints (for e.g. EKS). In most other cases it will be required to provision and manage these entities and endpoints. * `Provided` - Cluster management entities and endpoints are provided by the infrastructure platform. * `Managed` - Cluster management entities and endpoints are provisioned and managed by Intersight kubernetes service.
-	ManagedMode *string `json:"ManagedMode,omitempty"`
+	ManagedMode      *string                                   `json:"ManagedMode,omitempty"`
 	ManagementConfig NullableKubernetesClusterManagementConfig `json:"ManagementConfig,omitempty"`
 	// Status of the Kubernetes cluster and its nodes. * `Undeployed` - The cluster is undeployed. * `Configuring` - The cluster is being configured. * `Deploying` - The cluster is being deployed. * `Undeploying` - The cluster is being undeployed. * `DeployFailedTerminal` - The cluster deployment failed terminally and can not be recovered. * `DeployFailed` - The cluster deployment failed. * `Upgrading` - The cluster is being upgraded. * `Deleting` - The cluster is being deleted. * `DeleteFailed` - The cluster delete failed. * `Ready` - The cluster is ready for use. * `Active` - The cluster is being active. * `Shutdown` - All the nodes in the cluster are powered off. * `Terminated` - The cluster is terminated. * `Deployed` - The cluster is deployed. The cluster may not yet be ready for use. * `UndeployFailed` - The cluster undeploy action failed. * `NotReady` - The cluster is created and some nodes are not ready.
-	Status *string `json:"Status,omitempty"`
-	AciCniProfile *KubernetesAciCniProfileRelationship `json:"AciCniProfile,omitempty"`
-	AssociatedCluster *KubernetesClusterRelationship `json:"AssociatedCluster,omitempty"`
+	Status            *string                              `json:"Status,omitempty"`
+	AciCniProfile     *KubernetesAciCniProfileRelationship `json:"AciCniProfile,omitempty"`
+	AssociatedCluster *KubernetesClusterRelationship       `json:"AssociatedCluster,omitempty"`
 	// An array of relationships to ippoolPool resources.
-	ClusterIpPools []IppoolPoolRelationship `json:"ClusterIpPools,omitempty"`
+	ClusterIpPools         []IppoolPoolRelationship                      `json:"ClusterIpPools,omitempty"`
 	ContainerRuntimeConfig *KubernetesContainerRuntimePolicyRelationship `json:"ContainerRuntimeConfig,omitempty"`
 	// An array of relationships to ippoolBlockLease resources.
 	LoadbalancerBlockIpLeases []IppoolBlockLeaseRelationship `json:"LoadbalancerBlockIpLeases,omitempty"`
 	// An array of relationships to ippoolIpLease resources.
-	LoadbalancerIpLeases []IppoolIpLeaseRelationship `json:"LoadbalancerIpLeases,omitempty"`
-	MasterVipLease *IppoolIpLeaseRelationship `json:"MasterVipLease,omitempty"`
-	NetConfig *KubernetesNetworkPolicyRelationship `json:"NetConfig,omitempty"`
+	LoadbalancerIpLeases []IppoolIpLeaseRelationship          `json:"LoadbalancerIpLeases,omitempty"`
+	MasterVipLease       *IppoolIpLeaseRelationship           `json:"MasterVipLease,omitempty"`
+	NetConfig            *KubernetesNetworkPolicyRelationship `json:"NetConfig,omitempty"`
 	// An array of relationships to kubernetesNodeGroupProfile resources.
-	NodeGroups []KubernetesNodeGroupProfileRelationship `json:"NodeGroups,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	ParentSolutionProfile *MoBaseMoRelationship `json:"ParentSolutionProfile,omitempty"`
-	SysConfig *KubernetesSysConfigPolicyRelationship `json:"SysConfig,omitempty"`
-	TrustedRegistries *KubernetesTrustedRegistriesPolicyRelationship `json:"TrustedRegistries,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	NodeGroups            []KubernetesNodeGroupProfileRelationship       `json:"NodeGroups,omitempty"`
+	Organization          *OrganizationOrganizationRelationship          `json:"Organization,omitempty"`
+	ParentSolutionProfile *MoBaseMoRelationship                          `json:"ParentSolutionProfile,omitempty"`
+	SysConfig             *KubernetesSysConfigPolicyRelationship         `json:"SysConfig,omitempty"`
+	TrustedRegistries     *KubernetesTrustedRegistriesPolicyRelationship `json:"TrustedRegistries,omitempty"`
+	WorkflowInfo          *WorkflowWorkflowInfoRelationship              `json:"WorkflowInfo,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _KubernetesClusterProfileAllOf KubernetesClusterProfileAllOf
@@ -98,7 +98,7 @@ func (o *KubernetesClusterProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *KubernetesClusterProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *KubernetesClusterProfileAllOf) GetActionInfo() KubernetesActionInfo {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 // Deprecated
 func (o *KubernetesClusterProfileAllOf) GetActionInfoOk() (*KubernetesActionInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ActionInfo.Get(), o.ActionInfo.IsSet()
@@ -168,6 +168,7 @@ func (o *KubernetesClusterProfileAllOf) HasActionInfo() bool {
 func (o *KubernetesClusterProfileAllOf) SetActionInfo(v KubernetesActionInfo) {
 	o.ActionInfo.Set(&v)
 }
+
 // SetActionInfoNil sets the value for ActionInfo to be an explicit nil
 func (o *KubernetesClusterProfileAllOf) SetActionInfoNil() {
 	o.ActionInfo.Set(nil)
@@ -191,7 +192,7 @@ func (o *KubernetesClusterProfileAllOf) GetCertConfig() KubernetesClusterCertifi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesClusterProfileAllOf) GetCertConfigOk() (*KubernetesClusterCertificateConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CertConfig.Get(), o.CertConfig.IsSet()
@@ -210,6 +211,7 @@ func (o *KubernetesClusterProfileAllOf) HasCertConfig() bool {
 func (o *KubernetesClusterProfileAllOf) SetCertConfig(v KubernetesClusterCertificateConfiguration) {
 	o.CertConfig.Set(&v)
 }
+
 // SetCertConfigNil sets the value for CertConfig to be an explicit nil
 func (o *KubernetesClusterProfileAllOf) SetCertConfigNil() {
 	o.CertConfig.Set(nil)
@@ -222,7 +224,7 @@ func (o *KubernetesClusterProfileAllOf) UnsetCertConfig() {
 
 // GetEssentialAddons returns the EssentialAddons field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterProfileAllOf) GetEssentialAddons() []KubernetesEssentialAddon {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesEssentialAddon
 		return ret
 	}
@@ -266,7 +268,7 @@ func (o *KubernetesClusterProfileAllOf) GetKubeConfig() KubernetesConfiguration 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesClusterProfileAllOf) GetKubeConfigOk() (*KubernetesConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KubeConfig.Get(), o.KubeConfig.IsSet()
@@ -285,6 +287,7 @@ func (o *KubernetesClusterProfileAllOf) HasKubeConfig() bool {
 func (o *KubernetesClusterProfileAllOf) SetKubeConfig(v KubernetesConfiguration) {
 	o.KubeConfig.Set(&v)
 }
+
 // SetKubeConfigNil sets the value for KubeConfig to be an explicit nil
 func (o *KubernetesClusterProfileAllOf) SetKubeConfigNil() {
 	o.KubeConfig.Set(nil)
@@ -340,7 +343,7 @@ func (o *KubernetesClusterProfileAllOf) GetManagementConfig() KubernetesClusterM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesClusterProfileAllOf) GetManagementConfigOk() (*KubernetesClusterManagementConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ManagementConfig.Get(), o.ManagementConfig.IsSet()
@@ -359,6 +362,7 @@ func (o *KubernetesClusterProfileAllOf) HasManagementConfig() bool {
 func (o *KubernetesClusterProfileAllOf) SetManagementConfig(v KubernetesClusterManagementConfig) {
 	o.ManagementConfig.Set(&v)
 }
+
 // SetManagementConfigNil sets the value for ManagementConfig to be an explicit nil
 func (o *KubernetesClusterProfileAllOf) SetManagementConfigNil() {
 	o.ManagementConfig.Set(nil)
@@ -467,7 +471,7 @@ func (o *KubernetesClusterProfileAllOf) SetAssociatedCluster(v KubernetesCluster
 
 // GetClusterIpPools returns the ClusterIpPools field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterProfileAllOf) GetClusterIpPools() []IppoolPoolRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolPoolRelationship
 		return ret
 	}
@@ -532,7 +536,7 @@ func (o *KubernetesClusterProfileAllOf) SetContainerRuntimeConfig(v KubernetesCo
 
 // GetLoadbalancerBlockIpLeases returns the LoadbalancerBlockIpLeases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterProfileAllOf) GetLoadbalancerBlockIpLeases() []IppoolBlockLeaseRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolBlockLeaseRelationship
 		return ret
 	}
@@ -565,7 +569,7 @@ func (o *KubernetesClusterProfileAllOf) SetLoadbalancerBlockIpLeases(v []IppoolB
 
 // GetLoadbalancerIpLeases returns the LoadbalancerIpLeases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterProfileAllOf) GetLoadbalancerIpLeases() []IppoolIpLeaseRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolIpLeaseRelationship
 		return ret
 	}
@@ -662,7 +666,7 @@ func (o *KubernetesClusterProfileAllOf) SetNetConfig(v KubernetesNetworkPolicyRe
 
 // GetNodeGroups returns the NodeGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterProfileAllOf) GetNodeGroups() []KubernetesNodeGroupProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeGroupProfileRelationship
 		return ret
 	}
@@ -1006,5 +1010,3 @@ func (v *NullableKubernetesClusterProfileAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

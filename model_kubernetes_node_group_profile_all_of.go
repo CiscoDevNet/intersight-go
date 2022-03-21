@@ -24,23 +24,23 @@ type KubernetesNodeGroupProfileAllOf struct {
 	// Current number of nodes in this node group at any given point in time.
 	Currentsize *int64 `json:"Currentsize,omitempty"`
 	// Desired number of nodes in this node group, same as minsize initially and is updated by the auto-scaler.
-	Desiredsize *int64 `json:"Desiredsize,omitempty"`
-	Labels []KubernetesNodeGroupLabel `json:"Labels,omitempty"`
+	Desiredsize *int64                     `json:"Desiredsize,omitempty"`
+	Labels      []KubernetesNodeGroupLabel `json:"Labels,omitempty"`
 	// Maximum number of nodes this node group can scale up to during repair, replacement or upgrade operations.
 	Maxsize *int64 `json:"Maxsize,omitempty"`
 	// Minimum number of available nodes this node group can scale down to during repair, replacement or upgrade operations.
 	Minsize *int64 `json:"Minsize,omitempty"`
 	// The node type ControlPlane, Worker or ControlPlaneWorker. * `Worker` - Node will be marked as a worker node. * `ControlPlane` - Node will be marked as a control plane node. * `ControlPlaneWorker` - Node will be both a controle plane and a worker.
-	NodeType *string `json:"NodeType,omitempty"`
-	Taints []KubernetesNodeGroupTaint `json:"Taints,omitempty"`
-	ClusterProfile *KubernetesClusterProfileRelationship `json:"ClusterProfile,omitempty"`
-	InfraProvider *KubernetesBaseInfrastructureProviderRelationship `json:"InfraProvider,omitempty"`
+	NodeType       *string                                           `json:"NodeType,omitempty"`
+	Taints         []KubernetesNodeGroupTaint                        `json:"Taints,omitempty"`
+	ClusterProfile *KubernetesClusterProfileRelationship             `json:"ClusterProfile,omitempty"`
+	InfraProvider  *KubernetesBaseInfrastructureProviderRelationship `json:"InfraProvider,omitempty"`
 	// An array of relationships to ippoolPool resources.
 	// Deprecated
-	IpPools []IppoolPoolRelationship `json:"IpPools,omitempty"`
+	IpPools           []IppoolPoolRelationship             `json:"IpPools,omitempty"`
 	KubernetesVersion *KubernetesVersionPolicyRelationship `json:"KubernetesVersion,omitempty"`
 	// An array of relationships to kubernetesNodeProfile resources.
-	Nodes []KubernetesNodeProfileRelationship `json:"Nodes,omitempty"`
+	Nodes                []KubernetesNodeProfileRelationship `json:"Nodes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *KubernetesNodeGroupProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *KubernetesNodeGroupProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeGroupProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -191,7 +191,7 @@ func (o *KubernetesNodeGroupProfileAllOf) SetDesiredsize(v int64) {
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNodeGroupProfileAllOf) GetLabels() []KubernetesNodeGroupLabel {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeGroupLabel
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *KubernetesNodeGroupProfileAllOf) SetNodeType(v string) {
 
 // GetTaints returns the Taints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNodeGroupProfileAllOf) GetTaints() []KubernetesNodeGroupTaint {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeGroupTaint
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *KubernetesNodeGroupProfileAllOf) SetInfraProvider(v KubernetesBaseInfra
 // GetIpPools returns the IpPools field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *KubernetesNodeGroupProfileAllOf) GetIpPools() []IppoolPoolRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IppoolPoolRelationship
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *KubernetesNodeGroupProfileAllOf) SetKubernetesVersion(v KubernetesVersi
 
 // GetNodes returns the Nodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNodeGroupProfileAllOf) GetNodes() []KubernetesNodeProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeProfileRelationship
 		return ret
 	}
@@ -633,5 +633,3 @@ func (v *NullableKubernetesNodeGroupProfileAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

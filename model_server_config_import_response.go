@@ -18,32 +18,31 @@ import (
 
 // ServerConfigImportResponse - The response body of a HTTP GET request for the 'server.ConfigImport' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'server.ConfigImport' resources.
 type ServerConfigImportResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 	ServerConfigImportList *ServerConfigImportList
 }
 
 // MoAggregateTransformAsServerConfigImportResponse is a convenience function that returns MoAggregateTransform wrapped in ServerConfigImportResponse
 func MoAggregateTransformAsServerConfigImportResponse(v *MoAggregateTransform) ServerConfigImportResponse {
-	return ServerConfigImportResponse{ MoAggregateTransform: v}
+	return ServerConfigImportResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsServerConfigImportResponse is a convenience function that returns MoDocumentCount wrapped in ServerConfigImportResponse
 func MoDocumentCountAsServerConfigImportResponse(v *MoDocumentCount) ServerConfigImportResponse {
-	return ServerConfigImportResponse{ MoDocumentCount: v}
+	return ServerConfigImportResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsServerConfigImportResponse is a convenience function that returns MoTagSummary wrapped in ServerConfigImportResponse
 func MoTagSummaryAsServerConfigImportResponse(v *MoTagSummary) ServerConfigImportResponse {
-	return ServerConfigImportResponse{ MoTagSummary: v}
+	return ServerConfigImportResponse{MoTagSummary: v}
 }
 
 // ServerConfigImportListAsServerConfigImportResponse is a convenience function that returns ServerConfigImportList wrapped in ServerConfigImportResponse
 func ServerConfigImportListAsServerConfigImportResponse(v *ServerConfigImportList) ServerConfigImportResponse {
-	return ServerConfigImportResponse{ ServerConfigImportList: v}
+	return ServerConfigImportResponse{ServerConfigImportList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServerConfigImportResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ServerConfigImportResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ServerConfigImportResponse) GetActualInstance() (interface{}) {
+func (obj *ServerConfigImportResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableServerConfigImportResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

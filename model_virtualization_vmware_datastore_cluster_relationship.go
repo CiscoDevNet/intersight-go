@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareDatastoreClusterRelationship - A relationship to the 'virtualization.VmwareDatastoreCluster' resource, or the expanded 'virtualization.VmwareDatastoreCluster' resource, or the 'null' value.
 type VirtualizationVmwareDatastoreClusterRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                              *MoMoRef
 	VirtualizationVmwareDatastoreCluster *VirtualizationVmwareDatastoreCluster
 }
 
 // MoMoRefAsVirtualizationVmwareDatastoreClusterRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareDatastoreClusterRelationship
 func MoMoRefAsVirtualizationVmwareDatastoreClusterRelationship(v *MoMoRef) VirtualizationVmwareDatastoreClusterRelationship {
-	return VirtualizationVmwareDatastoreClusterRelationship{ MoMoRef: v}
+	return VirtualizationVmwareDatastoreClusterRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareDatastoreClusterAsVirtualizationVmwareDatastoreClusterRelationship is a convenience function that returns VirtualizationVmwareDatastoreCluster wrapped in VirtualizationVmwareDatastoreClusterRelationship
 func VirtualizationVmwareDatastoreClusterAsVirtualizationVmwareDatastoreClusterRelationship(v *VirtualizationVmwareDatastoreCluster) VirtualizationVmwareDatastoreClusterRelationship {
-	return VirtualizationVmwareDatastoreClusterRelationship{ VirtualizationVmwareDatastoreCluster: v}
+	return VirtualizationVmwareDatastoreClusterRelationship{VirtualizationVmwareDatastoreCluster: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareDatastoreClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareDatastoreClusterRelationship) MarshalJSON() ([]byt
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareDatastoreClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareDatastoreClusterRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareDatastoreClusterRelationship) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

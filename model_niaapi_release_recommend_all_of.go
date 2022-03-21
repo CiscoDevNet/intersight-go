@@ -28,7 +28,7 @@ type NiaapiReleaseRecommendAllOf struct {
 	// Hardware model identificator.
 	Pid *string `json:"Pid,omitempty"`
 	// Upcoming long-lived release.
-	Ull *string `json:"Ull,omitempty"`
+	Ull                  *string `json:"Ull,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *NiaapiReleaseRecommendAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiReleaseRecommendAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *NiaapiReleaseRecommendAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiReleaseRecommendAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -314,5 +314,3 @@ func (v *NullableNiaapiReleaseRecommendAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

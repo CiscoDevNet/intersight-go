@@ -28,11 +28,11 @@ var (
 type TaskApiService service
 
 type ApiCreateTaskHitachiScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                        _context.Context
+	ApiService                 *TaskApiService
 	taskHitachiScopedInventory *TaskHitachiScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;task.HitachiScopedInventory&#39; resource to create.
@@ -40,11 +40,13 @@ func (r ApiCreateTaskHitachiScopedInventoryRequest) TaskHitachiScopedInventory(t
 	r.taskHitachiScopedInventory = &taskHitachiScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskHitachiScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskHitachiScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskHitachiScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskHitachiScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -64,7 +66,7 @@ CreateTaskHitachiScopedInventory Create a 'task.HitachiScopedInventory' resource
 func (a *TaskApiService) CreateTaskHitachiScopedInventory(ctx _context.Context) ApiCreateTaskHitachiScopedInventoryRequest {
 	return ApiCreateTaskHitachiScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -181,13 +183,13 @@ func (a *TaskApiService) CreateTaskHitachiScopedInventoryExecute(r ApiCreateTask
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -204,11 +206,11 @@ func (a *TaskApiService) CreateTaskHitachiScopedInventoryExecute(r ApiCreateTask
 }
 
 type ApiCreateTaskHyperFlexManagementScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                                    _context.Context
+	ApiService                             *TaskApiService
 	taskHyperFlexManagementScopedInventory *TaskHyperFlexManagementScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                *string
+	ifNoneMatch                            *string
 }
 
 // The &#39;task.HyperFlexManagementScopedInventory&#39; resource to create.
@@ -216,11 +218,13 @@ func (r ApiCreateTaskHyperFlexManagementScopedInventoryRequest) TaskHyperFlexMan
 	r.taskHyperFlexManagementScopedInventory = &taskHyperFlexManagementScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskHyperFlexManagementScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskHyperFlexManagementScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskHyperFlexManagementScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskHyperFlexManagementScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -240,7 +244,7 @@ CreateTaskHyperFlexManagementScopedInventory Create a 'task.HyperFlexManagementS
 func (a *TaskApiService) CreateTaskHyperFlexManagementScopedInventory(ctx _context.Context) ApiCreateTaskHyperFlexManagementScopedInventoryRequest {
 	return ApiCreateTaskHyperFlexManagementScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -357,13 +361,13 @@ func (a *TaskApiService) CreateTaskHyperFlexManagementScopedInventoryExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -380,11 +384,11 @@ func (a *TaskApiService) CreateTaskHyperFlexManagementScopedInventoryExecute(r A
 }
 
 type ApiCreateTaskHyperflexScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                          _context.Context
+	ApiService                   *TaskApiService
 	taskHyperflexScopedInventory *TaskHyperflexScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;task.HyperflexScopedInventory&#39; resource to create.
@@ -392,11 +396,13 @@ func (r ApiCreateTaskHyperflexScopedInventoryRequest) TaskHyperflexScopedInvento
 	r.taskHyperflexScopedInventory = &taskHyperflexScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskHyperflexScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskHyperflexScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskHyperflexScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskHyperflexScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -416,7 +422,7 @@ CreateTaskHyperflexScopedInventory Create a 'task.HyperflexScopedInventory' reso
 func (a *TaskApiService) CreateTaskHyperflexScopedInventory(ctx _context.Context) ApiCreateTaskHyperflexScopedInventoryRequest {
 	return ApiCreateTaskHyperflexScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -533,13 +539,13 @@ func (a *TaskApiService) CreateTaskHyperflexScopedInventoryExecute(r ApiCreateTa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -556,11 +562,11 @@ func (a *TaskApiService) CreateTaskHyperflexScopedInventoryExecute(r ApiCreateTa
 }
 
 type ApiCreateTaskIweScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                    _context.Context
+	ApiService             *TaskApiService
 	taskIweScopedInventory *TaskIweScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;task.IweScopedInventory&#39; resource to create.
@@ -568,11 +574,13 @@ func (r ApiCreateTaskIweScopedInventoryRequest) TaskIweScopedInventory(taskIweSc
 	r.taskIweScopedInventory = &taskIweScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskIweScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskIweScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskIweScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskIweScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -592,7 +600,7 @@ CreateTaskIweScopedInventory Create a 'task.IweScopedInventory' resource.
 func (a *TaskApiService) CreateTaskIweScopedInventory(ctx _context.Context) ApiCreateTaskIweScopedInventoryRequest {
 	return ApiCreateTaskIweScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -709,13 +717,13 @@ func (a *TaskApiService) CreateTaskIweScopedInventoryExecute(r ApiCreateTaskIweS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -732,11 +740,11 @@ func (a *TaskApiService) CreateTaskIweScopedInventoryExecute(r ApiCreateTaskIweS
 }
 
 type ApiCreateTaskNetAppScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                       _context.Context
+	ApiService                *TaskApiService
 	taskNetAppScopedInventory *TaskNetAppScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;task.NetAppScopedInventory&#39; resource to create.
@@ -744,11 +752,13 @@ func (r ApiCreateTaskNetAppScopedInventoryRequest) TaskNetAppScopedInventory(tas
 	r.taskNetAppScopedInventory = &taskNetAppScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskNetAppScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskNetAppScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskNetAppScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskNetAppScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -768,7 +778,7 @@ CreateTaskNetAppScopedInventory Create a 'task.NetAppScopedInventory' resource.
 func (a *TaskApiService) CreateTaskNetAppScopedInventory(ctx _context.Context) ApiCreateTaskNetAppScopedInventoryRequest {
 	return ApiCreateTaskNetAppScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -885,13 +895,13 @@ func (a *TaskApiService) CreateTaskNetAppScopedInventoryExecute(r ApiCreateTaskN
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -908,11 +918,11 @@ func (a *TaskApiService) CreateTaskNetAppScopedInventoryExecute(r ApiCreateTaskN
 }
 
 type ApiCreateTaskPublicCloudScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                            _context.Context
+	ApiService                     *TaskApiService
 	taskPublicCloudScopedInventory *TaskPublicCloudScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;task.PublicCloudScopedInventory&#39; resource to create.
@@ -920,11 +930,13 @@ func (r ApiCreateTaskPublicCloudScopedInventoryRequest) TaskPublicCloudScopedInv
 	r.taskPublicCloudScopedInventory = &taskPublicCloudScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskPublicCloudScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskPublicCloudScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskPublicCloudScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskPublicCloudScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -944,7 +956,7 @@ CreateTaskPublicCloudScopedInventory Create a 'task.PublicCloudScopedInventory' 
 func (a *TaskApiService) CreateTaskPublicCloudScopedInventory(ctx _context.Context) ApiCreateTaskPublicCloudScopedInventoryRequest {
 	return ApiCreateTaskPublicCloudScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1061,13 +1073,13 @@ func (a *TaskApiService) CreateTaskPublicCloudScopedInventoryExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1084,11 +1096,11 @@ func (a *TaskApiService) CreateTaskPublicCloudScopedInventoryExecute(r ApiCreate
 }
 
 type ApiCreateTaskPureScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                     _context.Context
+	ApiService              *TaskApiService
 	taskPureScopedInventory *TaskPureScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;task.PureScopedInventory&#39; resource to create.
@@ -1096,11 +1108,13 @@ func (r ApiCreateTaskPureScopedInventoryRequest) TaskPureScopedInventory(taskPur
 	r.taskPureScopedInventory = &taskPureScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskPureScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskPureScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskPureScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskPureScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1120,7 +1134,7 @@ CreateTaskPureScopedInventory Create a 'task.PureScopedInventory' resource.
 func (a *TaskApiService) CreateTaskPureScopedInventory(ctx _context.Context) ApiCreateTaskPureScopedInventoryRequest {
 	return ApiCreateTaskPureScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1237,13 +1251,13 @@ func (a *TaskApiService) CreateTaskPureScopedInventoryExecute(r ApiCreateTaskPur
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1260,11 +1274,11 @@ func (a *TaskApiService) CreateTaskPureScopedInventoryExecute(r ApiCreateTaskPur
 }
 
 type ApiCreateTaskServerScopedInventoryRequest struct {
-	ctx _context.Context
-	ApiService *TaskApiService
+	ctx                       _context.Context
+	ApiService                *TaskApiService
 	taskServerScopedInventory *TaskServerScopedInventory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;task.ServerScopedInventory&#39; resource to create.
@@ -1272,11 +1286,13 @@ func (r ApiCreateTaskServerScopedInventoryRequest) TaskServerScopedInventory(tas
 	r.taskServerScopedInventory = &taskServerScopedInventory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTaskServerScopedInventoryRequest) IfMatch(ifMatch string) ApiCreateTaskServerScopedInventoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTaskServerScopedInventoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTaskServerScopedInventoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1296,7 +1312,7 @@ CreateTaskServerScopedInventory Create a 'task.ServerScopedInventory' resource.
 func (a *TaskApiService) CreateTaskServerScopedInventory(ctx _context.Context) ApiCreateTaskServerScopedInventoryRequest {
 	return ApiCreateTaskServerScopedInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1413,13 +1429,13 @@ func (a *TaskApiService) CreateTaskServerScopedInventoryExecute(r ApiCreateTaskS
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

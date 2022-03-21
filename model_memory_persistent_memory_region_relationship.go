@@ -19,19 +19,18 @@ import (
 // MemoryPersistentMemoryRegionRelationship - A relationship to the 'memory.PersistentMemoryRegion' resource, or the expanded 'memory.PersistentMemoryRegion' resource, or the 'null' value.
 type MemoryPersistentMemoryRegionRelationship struct {
 	MemoryPersistentMemoryRegion *MemoryPersistentMemoryRegion
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 }
 
 // MemoryPersistentMemoryRegionAsMemoryPersistentMemoryRegionRelationship is a convenience function that returns MemoryPersistentMemoryRegion wrapped in MemoryPersistentMemoryRegionRelationship
 func MemoryPersistentMemoryRegionAsMemoryPersistentMemoryRegionRelationship(v *MemoryPersistentMemoryRegion) MemoryPersistentMemoryRegionRelationship {
-	return MemoryPersistentMemoryRegionRelationship{ MemoryPersistentMemoryRegion: v}
+	return MemoryPersistentMemoryRegionRelationship{MemoryPersistentMemoryRegion: v}
 }
 
 // MoMoRefAsMemoryPersistentMemoryRegionRelationship is a convenience function that returns MoMoRef wrapped in MemoryPersistentMemoryRegionRelationship
 func MoMoRefAsMemoryPersistentMemoryRegionRelationship(v *MoMoRef) MemoryPersistentMemoryRegionRelationship {
-	return MemoryPersistentMemoryRegionRelationship{ MoMoRef: v}
+	return MemoryPersistentMemoryRegionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryPersistentMemoryRegionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryPersistentMemoryRegionRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *MemoryPersistentMemoryRegionRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryPersistentMemoryRegionRelationship) GetActualInstance() interface{} {
 	if obj.MemoryPersistentMemoryRegion != nil {
 		return obj.MemoryPersistentMemoryRegion
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryPersistentMemoryRegionRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

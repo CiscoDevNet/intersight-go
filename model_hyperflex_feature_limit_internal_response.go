@@ -19,31 +19,30 @@ import (
 // HyperflexFeatureLimitInternalResponse - The response body of a HTTP GET request for the 'hyperflex.FeatureLimitInternal' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.FeatureLimitInternal' resources.
 type HyperflexFeatureLimitInternalResponse struct {
 	HyperflexFeatureLimitInternalList *HyperflexFeatureLimitInternalList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform              *MoAggregateTransform
+	MoDocumentCount                   *MoDocumentCount
+	MoTagSummary                      *MoTagSummary
 }
 
 // HyperflexFeatureLimitInternalListAsHyperflexFeatureLimitInternalResponse is a convenience function that returns HyperflexFeatureLimitInternalList wrapped in HyperflexFeatureLimitInternalResponse
 func HyperflexFeatureLimitInternalListAsHyperflexFeatureLimitInternalResponse(v *HyperflexFeatureLimitInternalList) HyperflexFeatureLimitInternalResponse {
-	return HyperflexFeatureLimitInternalResponse{ HyperflexFeatureLimitInternalList: v}
+	return HyperflexFeatureLimitInternalResponse{HyperflexFeatureLimitInternalList: v}
 }
 
 // MoAggregateTransformAsHyperflexFeatureLimitInternalResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexFeatureLimitInternalResponse
 func MoAggregateTransformAsHyperflexFeatureLimitInternalResponse(v *MoAggregateTransform) HyperflexFeatureLimitInternalResponse {
-	return HyperflexFeatureLimitInternalResponse{ MoAggregateTransform: v}
+	return HyperflexFeatureLimitInternalResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexFeatureLimitInternalResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexFeatureLimitInternalResponse
 func MoDocumentCountAsHyperflexFeatureLimitInternalResponse(v *MoDocumentCount) HyperflexFeatureLimitInternalResponse {
-	return HyperflexFeatureLimitInternalResponse{ MoDocumentCount: v}
+	return HyperflexFeatureLimitInternalResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexFeatureLimitInternalResponse is a convenience function that returns MoTagSummary wrapped in HyperflexFeatureLimitInternalResponse
 func MoTagSummaryAsHyperflexFeatureLimitInternalResponse(v *MoTagSummary) HyperflexFeatureLimitInternalResponse {
-	return HyperflexFeatureLimitInternalResponse{ MoTagSummary: v}
+	return HyperflexFeatureLimitInternalResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexFeatureLimitInternalResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexFeatureLimitInternalResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexFeatureLimitInternalResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexFeatureLimitInternalResponse) GetActualInstance() interface{} {
 	if obj.HyperflexFeatureLimitInternalList != nil {
 		return obj.HyperflexFeatureLimitInternalList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexFeatureLimitInternalResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

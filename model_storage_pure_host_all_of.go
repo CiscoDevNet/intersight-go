@@ -22,11 +22,11 @@ type StoragePureHostAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Name of host group where the host belongs to. Empty if host is not part of any HostGroup.
-	HostGroupName *string `json:"HostGroupName,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
-	HostGroup *StoragePureHostGroupRelationship `json:"HostGroup,omitempty"`
-	ProtectionGroup *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	HostGroupName        *string                                 `json:"HostGroupName,omitempty"`
+	Array                *StoragePureArrayRelationship           `json:"Array,omitempty"`
+	HostGroup            *StoragePureHostGroupRelationship       `json:"HostGroup,omitempty"`
+	ProtectionGroup      *StoragePureProtectionGroupRelationship `json:"ProtectionGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *StoragePureHostAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureHostAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *StoragePureHostAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureHostAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -352,5 +352,3 @@ func (v *NullableStoragePureHostAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

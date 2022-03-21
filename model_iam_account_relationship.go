@@ -19,19 +19,18 @@ import (
 // IamAccountRelationship - A relationship to the 'iam.Account' resource, or the expanded 'iam.Account' resource, or the 'null' value.
 type IamAccountRelationship struct {
 	IamAccount *IamAccount
-	MoMoRef *MoMoRef
+	MoMoRef    *MoMoRef
 }
 
 // IamAccountAsIamAccountRelationship is a convenience function that returns IamAccount wrapped in IamAccountRelationship
 func IamAccountAsIamAccountRelationship(v *IamAccount) IamAccountRelationship {
-	return IamAccountRelationship{ IamAccount: v}
+	return IamAccountRelationship{IamAccount: v}
 }
 
 // MoMoRefAsIamAccountRelationship is a convenience function that returns MoMoRef wrapped in IamAccountRelationship
 func MoMoRefAsIamAccountRelationship(v *MoMoRef) IamAccountRelationship {
-	return IamAccountRelationship{ MoMoRef: v}
+	return IamAccountRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamAccountRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamAccountRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamAccountRelationship) GetActualInstance() (interface{}) {
+func (obj *IamAccountRelationship) GetActualInstance() interface{} {
 	if obj.IamAccount != nil {
 		return obj.IamAccount
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamAccountRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

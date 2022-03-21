@@ -27,11 +27,11 @@ type KubernetesNetworkInterfaceSpec struct {
 	// The MTU for this Network Interface.  If left blank a default value will apply by the Operating System.
 	Mtu *int64 `json:"Mtu,omitempty"`
 	// NetworkInterfaceSpec is the specification for network interfaces - including configuration of IP Pools and VRF to determine IP configuration, the operating system device settings, and virtual adapter network settings. It can be left empty when used with VirtualMachineInfraConfigPolicy - it will be filled out based on the hypervisor platform type and will match the naming and order of interfaces provided by the hypervisor.
-	Name *string `json:"Name,omitempty"`
+	Name  *string   `json:"Name,omitempty"`
 	Pools []MoMoRef `json:"Pools,omitempty"`
 	// In other words, to which named network from the Instructure Provider will the port be connected.
-	ProviderName *string `json:"ProviderName,omitempty"`
-	Vrf *MoMoRef `json:"Vrf,omitempty"`
+	ProviderName         *string  `json:"ProviderName,omitempty"`
+	Vrf                  *MoMoRef `json:"Vrf,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *KubernetesNetworkInterfaceSpec) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkInterfaceSpec) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *KubernetesNetworkInterfaceSpec) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNetworkInterfaceSpec) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -174,7 +174,7 @@ func (o *KubernetesNetworkInterfaceSpec) SetName(v string) {
 
 // GetPools returns the Pools field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNetworkInterfaceSpec) GetPools() []MoMoRef {
-	if o == nil  {
+	if o == nil {
 		var ret []MoMoRef
 		return ret
 	}
@@ -317,11 +317,11 @@ func (o *KubernetesNetworkInterfaceSpec) UnmarshalJSON(bytes []byte) (err error)
 		// The MTU for this Network Interface.  If left blank a default value will apply by the Operating System.
 		Mtu *int64 `json:"Mtu,omitempty"`
 		// NetworkInterfaceSpec is the specification for network interfaces - including configuration of IP Pools and VRF to determine IP configuration, the operating system device settings, and virtual adapter network settings. It can be left empty when used with VirtualMachineInfraConfigPolicy - it will be filled out based on the hypervisor platform type and will match the naming and order of interfaces provided by the hypervisor.
-		Name *string `json:"Name,omitempty"`
+		Name  *string   `json:"Name,omitempty"`
 		Pools []MoMoRef `json:"Pools,omitempty"`
 		// In other words, to which named network from the Instructure Provider will the port be connected.
-		ProviderName *string `json:"ProviderName,omitempty"`
-		Vrf *MoMoRef `json:"Vrf,omitempty"`
+		ProviderName *string  `json:"ProviderName,omitempty"`
+		Vrf          *MoMoRef `json:"Vrf,omitempty"`
 	}
 
 	varKubernetesNetworkInterfaceSpecWithoutEmbeddedStruct := KubernetesNetworkInterfaceSpecWithoutEmbeddedStruct{}
@@ -420,5 +420,3 @@ func (v *NullableKubernetesNetworkInterfaceSpec) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

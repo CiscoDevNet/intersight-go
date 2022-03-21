@@ -19,19 +19,18 @@ import (
 // KubernetesClusterProfileRelationship - A relationship to the 'kubernetes.ClusterProfile' resource, or the expanded 'kubernetes.ClusterProfile' resource, or the 'null' value.
 type KubernetesClusterProfileRelationship struct {
 	KubernetesClusterProfile *KubernetesClusterProfile
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 }
 
 // KubernetesClusterProfileAsKubernetesClusterProfileRelationship is a convenience function that returns KubernetesClusterProfile wrapped in KubernetesClusterProfileRelationship
 func KubernetesClusterProfileAsKubernetesClusterProfileRelationship(v *KubernetesClusterProfile) KubernetesClusterProfileRelationship {
-	return KubernetesClusterProfileRelationship{ KubernetesClusterProfile: v}
+	return KubernetesClusterProfileRelationship{KubernetesClusterProfile: v}
 }
 
 // MoMoRefAsKubernetesClusterProfileRelationship is a convenience function that returns MoMoRef wrapped in KubernetesClusterProfileRelationship
 func MoMoRefAsKubernetesClusterProfileRelationship(v *MoMoRef) KubernetesClusterProfileRelationship {
-	return KubernetesClusterProfileRelationship{ MoMoRef: v}
+	return KubernetesClusterProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesClusterProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesClusterProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesClusterProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesClusterProfileRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesClusterProfile != nil {
 		return obj.KubernetesClusterProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesClusterProfileRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

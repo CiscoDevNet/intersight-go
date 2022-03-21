@@ -22,8 +22,8 @@ type VirtualizationEsxiVmStorageConfigurationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Datastore where virtual machine is deployed.
-	Datastore *string `json:"Datastore,omitempty"`
-	Disks []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
+	Datastore            *string                    `json:"Datastore,omitempty"`
+	Disks                []VirtualizationVmEsxiDisk `json:"Disks,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *VirtualizationEsxiVmStorageConfigurationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmStorageConfigurationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *VirtualizationEsxiVmStorageConfigurationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmStorageConfigurationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *VirtualizationEsxiVmStorageConfigurationAllOf) SetDatastore(v string) {
 
 // GetDisks returns the Disks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationEsxiVmStorageConfigurationAllOf) GetDisks() []VirtualizationVmEsxiDisk {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmEsxiDisk
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableVirtualizationEsxiVmStorageConfigurationAllOf) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

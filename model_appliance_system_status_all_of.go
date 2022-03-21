@@ -22,14 +22,14 @@ type ApplianceSystemStatusAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Operational status of the Intersight Appliance. Operational status is based on the result of the status checks. If result of any check is Critical, then its value is Impaired. Otherwise, if result of any check is Warning, then its value is AttentionNeeded. If all checks are OK, then its value is Operational. * `Unknown` - Operational status of the Intersight Appliance entity is Unknown. * `Operational` - Operational status of the Intersight Appliance entity is Operational. * `Impaired` - Operational status of the Intersight Appliance entity is Impaired. * `AttentionNeeded` - Operational status of the Intersight Appliance entity is AttentionNeeded.
-	OperationalStatus *string `json:"OperationalStatus,omitempty"`
-	StatusChecks []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
+	OperationalStatus *string                `json:"OperationalStatus,omitempty"`
+	StatusChecks      []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
 	// An array of relationships to applianceAppStatus resources.
 	AppStatuses []ApplianceAppStatusRelationship `json:"AppStatuses,omitempty"`
 	// An array of relationships to applianceGroupStatus resources.
-	GroupStatuses []ApplianceGroupStatusRelationship `json:"GroupStatuses,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	SystemInfo *ApplianceSystemInfoRelationship `json:"SystemInfo,omitempty"`
+	GroupStatuses        []ApplianceGroupStatusRelationship   `json:"GroupStatuses,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SystemInfo           *ApplianceSystemInfoRelationship     `json:"SystemInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *ApplianceSystemStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceSystemStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *ApplianceSystemStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceSystemStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -140,7 +140,7 @@ func (o *ApplianceSystemStatusAllOf) SetOperationalStatus(v string) {
 
 // GetStatusChecks returns the StatusChecks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSystemStatusAllOf) GetStatusChecks() []ApplianceStatusCheck {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceStatusCheck
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *ApplianceSystemStatusAllOf) SetStatusChecks(v []ApplianceStatusCheck) {
 
 // GetAppStatuses returns the AppStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSystemStatusAllOf) GetAppStatuses() []ApplianceAppStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceAppStatusRelationship
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *ApplianceSystemStatusAllOf) SetAppStatuses(v []ApplianceAppStatusRelati
 
 // GetGroupStatuses returns the GroupStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSystemStatusAllOf) GetGroupStatuses() []ApplianceGroupStatusRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceGroupStatusRelationship
 		return ret
 	}
@@ -394,5 +394,3 @@ func (v *NullableApplianceSystemStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

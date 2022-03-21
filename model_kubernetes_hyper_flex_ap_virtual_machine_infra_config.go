@@ -25,7 +25,7 @@ type KubernetesHyperFlexApVirtualMachineInfraConfig struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Disk mode to use for volumes. * `Block` - It is a Block virtual disk. * `Filesystem` - It is a File system virtual disk. * `` - Disk mode is either unknown or not supported.
-	DiskMode *string `json:"DiskMode,omitempty"`
+	DiskMode             *string `json:"DiskMode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *KubernetesHyperFlexApVirtualMachineInfraConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesHyperFlexApVirtualMachineInfraConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *KubernetesHyperFlexApVirtualMachineInfraConfig) GetObjectType() string 
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesHyperFlexApVirtualMachineInfraConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -263,5 +263,3 @@ func (v *NullableKubernetesHyperFlexApVirtualMachineInfraConfig) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

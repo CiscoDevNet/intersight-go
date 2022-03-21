@@ -20,7 +20,7 @@ type StoragePureHostGroupListAllOf struct {
 	// The total number of 'storage.PureHostGroup' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.PureHostGroup' resources matching the request.
-	Results []StoragePureHostGroup `json:"Results,omitempty"`
+	Results              []StoragePureHostGroup `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StoragePureHostGroupListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePureHostGroupListAllOf) GetResults() []StoragePureHostGroup {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePureHostGroup
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStoragePureHostGroupListAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

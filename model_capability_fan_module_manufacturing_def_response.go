@@ -19,31 +19,30 @@ import (
 // CapabilityFanModuleManufacturingDefResponse - The response body of a HTTP GET request for the 'capability.FanModuleManufacturingDef' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.FanModuleManufacturingDef' resources.
 type CapabilityFanModuleManufacturingDefResponse struct {
 	CapabilityFanModuleManufacturingDefList *CapabilityFanModuleManufacturingDefList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                    *MoAggregateTransform
+	MoDocumentCount                         *MoDocumentCount
+	MoTagSummary                            *MoTagSummary
 }
 
 // CapabilityFanModuleManufacturingDefListAsCapabilityFanModuleManufacturingDefResponse is a convenience function that returns CapabilityFanModuleManufacturingDefList wrapped in CapabilityFanModuleManufacturingDefResponse
 func CapabilityFanModuleManufacturingDefListAsCapabilityFanModuleManufacturingDefResponse(v *CapabilityFanModuleManufacturingDefList) CapabilityFanModuleManufacturingDefResponse {
-	return CapabilityFanModuleManufacturingDefResponse{ CapabilityFanModuleManufacturingDefList: v}
+	return CapabilityFanModuleManufacturingDefResponse{CapabilityFanModuleManufacturingDefList: v}
 }
 
 // MoAggregateTransformAsCapabilityFanModuleManufacturingDefResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilityFanModuleManufacturingDefResponse
 func MoAggregateTransformAsCapabilityFanModuleManufacturingDefResponse(v *MoAggregateTransform) CapabilityFanModuleManufacturingDefResponse {
-	return CapabilityFanModuleManufacturingDefResponse{ MoAggregateTransform: v}
+	return CapabilityFanModuleManufacturingDefResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilityFanModuleManufacturingDefResponse is a convenience function that returns MoDocumentCount wrapped in CapabilityFanModuleManufacturingDefResponse
 func MoDocumentCountAsCapabilityFanModuleManufacturingDefResponse(v *MoDocumentCount) CapabilityFanModuleManufacturingDefResponse {
-	return CapabilityFanModuleManufacturingDefResponse{ MoDocumentCount: v}
+	return CapabilityFanModuleManufacturingDefResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilityFanModuleManufacturingDefResponse is a convenience function that returns MoTagSummary wrapped in CapabilityFanModuleManufacturingDefResponse
 func MoTagSummaryAsCapabilityFanModuleManufacturingDefResponse(v *MoTagSummary) CapabilityFanModuleManufacturingDefResponse {
-	return CapabilityFanModuleManufacturingDefResponse{ MoTagSummary: v}
+	return CapabilityFanModuleManufacturingDefResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilityFanModuleManufacturingDefResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilityFanModuleManufacturingDefResponse) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *CapabilityFanModuleManufacturingDefResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilityFanModuleManufacturingDefResponse) GetActualInstance() interface{} {
 	if obj.CapabilityFanModuleManufacturingDefList != nil {
 		return obj.CapabilityFanModuleManufacturingDefList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilityFanModuleManufacturingDefResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

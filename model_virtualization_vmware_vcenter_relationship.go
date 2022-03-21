@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwareVcenterRelationship - A relationship to the 'virtualization.VmwareVcenter' resource, or the expanded 'virtualization.VmwareVcenter' resource, or the 'null' value.
 type VirtualizationVmwareVcenterRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 	VirtualizationVmwareVcenter *VirtualizationVmwareVcenter
 }
 
 // MoMoRefAsVirtualizationVmwareVcenterRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwareVcenterRelationship
 func MoMoRefAsVirtualizationVmwareVcenterRelationship(v *MoMoRef) VirtualizationVmwareVcenterRelationship {
-	return VirtualizationVmwareVcenterRelationship{ MoMoRef: v}
+	return VirtualizationVmwareVcenterRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwareVcenterAsVirtualizationVmwareVcenterRelationship is a convenience function that returns VirtualizationVmwareVcenter wrapped in VirtualizationVmwareVcenterRelationship
 func VirtualizationVmwareVcenterAsVirtualizationVmwareVcenterRelationship(v *VirtualizationVmwareVcenter) VirtualizationVmwareVcenterRelationship {
-	return VirtualizationVmwareVcenterRelationship{ VirtualizationVmwareVcenter: v}
+	return VirtualizationVmwareVcenterRelationship{VirtualizationVmwareVcenter: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareVcenterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwareVcenterRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareVcenterRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareVcenterRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwareVcenterRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // HyperflexEncryptionRelationship - A relationship to the 'hyperflex.Encryption' resource, or the expanded 'hyperflex.Encryption' resource, or the 'null' value.
 type HyperflexEncryptionRelationship struct {
 	HyperflexEncryption *HyperflexEncryption
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // HyperflexEncryptionAsHyperflexEncryptionRelationship is a convenience function that returns HyperflexEncryption wrapped in HyperflexEncryptionRelationship
 func HyperflexEncryptionAsHyperflexEncryptionRelationship(v *HyperflexEncryption) HyperflexEncryptionRelationship {
-	return HyperflexEncryptionRelationship{ HyperflexEncryption: v}
+	return HyperflexEncryptionRelationship{HyperflexEncryption: v}
 }
 
 // MoMoRefAsHyperflexEncryptionRelationship is a convenience function that returns MoMoRef wrapped in HyperflexEncryptionRelationship
 func MoMoRefAsHyperflexEncryptionRelationship(v *MoMoRef) HyperflexEncryptionRelationship {
-	return HyperflexEncryptionRelationship{ MoMoRef: v}
+	return HyperflexEncryptionRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexEncryptionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexEncryptionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexEncryptionRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexEncryptionRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexEncryption != nil {
 		return obj.HyperflexEncryption
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexEncryptionRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

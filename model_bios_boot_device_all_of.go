@@ -24,9 +24,9 @@ type BiosBootDeviceAllOf struct {
 	// Name of the Configured Boot Device.
 	DeviceName *string `json:"DeviceName,omitempty"`
 	// Type of the Configured Boot Device.
-	DeviceType *string `json:"DeviceType,omitempty"`
-	BiosSystemBootOrder *BiosSystemBootOrderRelationship `json:"BiosSystemBootOrder,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	DeviceType           *string                              `json:"DeviceType,omitempty"`
+	BiosSystemBootOrder  *BiosSystemBootOrderRelationship     `json:"BiosSystemBootOrder,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *BiosBootDeviceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BiosBootDeviceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *BiosBootDeviceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BiosBootDeviceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -316,5 +316,3 @@ func (v *NullableBiosBootDeviceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

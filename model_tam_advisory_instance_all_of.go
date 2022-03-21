@@ -31,10 +31,10 @@ type TamAdvisoryInstanceAllOf struct {
 	// Timestamp when this advisory was last evaluated.
 	LastVerifiedTime *time.Time `json:"LastVerifiedTime,omitempty"`
 	// Current state of the advisory instance (Active/Cleared/Unknown etc.). * `unknown` - Intersight is unable to determine if the Advisory instance is applicable for the affected managed object. * `active` - Advisory instance is currently active and applicable for the affected managed object. * `cleared` - Advisory instance is no longer applicable for the affected managed object.
-	State *string `json:"State,omitempty"`
-	Advisory *TamBaseAdvisoryRelationship `json:"Advisory,omitempty"`
-	AffectedObject *MoBaseMoRelationship `json:"AffectedObject,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
+	State                *string                              `json:"State,omitempty"`
+	Advisory             *TamBaseAdvisoryRelationship         `json:"Advisory,omitempty"`
+	AffectedObject       *MoBaseMoRelationship                `json:"AffectedObject,omitempty"`
+	DeviceRegistration   *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *TamAdvisoryInstanceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryInstanceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *TamAdvisoryInstanceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamAdvisoryInstanceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -472,5 +472,3 @@ func (v *NullableTamAdvisoryInstanceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

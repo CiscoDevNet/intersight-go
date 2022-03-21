@@ -23,23 +23,23 @@ type IamLdapPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType     string                        `json:"ObjectType"`
 	BaseProperties NullableIamLdapBaseProperties `json:"BaseProperties,omitempty"`
-	DnsParameters NullableIamLdapDnsParameters `json:"DnsParameters,omitempty"`
+	DnsParameters  NullableIamLdapDnsParameters  `json:"DnsParameters,omitempty"`
 	// Enables DNS to access LDAP servers.
 	EnableDns *bool `json:"EnableDns,omitempty"`
 	// LDAP server performs authentication.
 	Enabled *bool `json:"Enabled,omitempty"`
 	// Search precedence between local user database and LDAP user database. * `LocalUserDb` - Precedence is given to local user database while searching. * `LDAPUserDb` - Precedence is given to LADP user database while searching.
-	UserSearchPrecedence *string `json:"UserSearchPrecedence,omitempty"`
-	ApplianceAccount *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
+	UserSearchPrecedence *string                 `json:"UserSearchPrecedence,omitempty"`
+	ApplianceAccount     *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
 	// An array of relationships to iamLdapGroup resources.
-	Groups []IamLdapGroupRelationship `json:"Groups,omitempty"`
+	Groups       []IamLdapGroupRelationship            `json:"Groups,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
 	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	// An array of relationships to iamLdapProvider resources.
-	Providers []IamLdapProviderRelationship `json:"Providers,omitempty"`
+	Providers            []IamLdapProviderRelationship `json:"Providers,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *IamLdapPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *IamLdapPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *IamLdapPolicy) GetBaseProperties() IamLdapBaseProperties {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamLdapPolicy) GetBasePropertiesOk() (*IamLdapBaseProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BaseProperties.Get(), o.BaseProperties.IsSet()
@@ -156,6 +156,7 @@ func (o *IamLdapPolicy) HasBaseProperties() bool {
 func (o *IamLdapPolicy) SetBaseProperties(v IamLdapBaseProperties) {
 	o.BaseProperties.Set(&v)
 }
+
 // SetBasePropertiesNil sets the value for BaseProperties to be an explicit nil
 func (o *IamLdapPolicy) SetBasePropertiesNil() {
 	o.BaseProperties.Set(nil)
@@ -179,7 +180,7 @@ func (o *IamLdapPolicy) GetDnsParameters() IamLdapDnsParameters {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamLdapPolicy) GetDnsParametersOk() (*IamLdapDnsParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DnsParameters.Get(), o.DnsParameters.IsSet()
@@ -198,6 +199,7 @@ func (o *IamLdapPolicy) HasDnsParameters() bool {
 func (o *IamLdapPolicy) SetDnsParameters(v IamLdapDnsParameters) {
 	o.DnsParameters.Set(&v)
 }
+
 // SetDnsParametersNil sets the value for DnsParameters to be an explicit nil
 func (o *IamLdapPolicy) SetDnsParametersNil() {
 	o.DnsParameters.Set(nil)
@@ -338,7 +340,7 @@ func (o *IamLdapPolicy) SetApplianceAccount(v IamAccountRelationship) {
 
 // GetGroups returns the Groups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamLdapPolicy) GetGroups() []IamLdapGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamLdapGroupRelationship
 		return ret
 	}
@@ -403,7 +405,7 @@ func (o *IamLdapPolicy) SetOrganization(v OrganizationOrganizationRelationship) 
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamLdapPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -436,7 +438,7 @@ func (o *IamLdapPolicy) SetProfiles(v []PolicyAbstractConfigProfileRelationship)
 
 // GetProviders returns the Providers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamLdapPolicy) GetProviders() []IamLdapProviderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamLdapProviderRelationship
 		return ret
 	}
@@ -526,18 +528,18 @@ func (o *IamLdapPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType     string                        `json:"ObjectType"`
 		BaseProperties NullableIamLdapBaseProperties `json:"BaseProperties,omitempty"`
-		DnsParameters NullableIamLdapDnsParameters `json:"DnsParameters,omitempty"`
+		DnsParameters  NullableIamLdapDnsParameters  `json:"DnsParameters,omitempty"`
 		// Enables DNS to access LDAP servers.
 		EnableDns *bool `json:"EnableDns,omitempty"`
 		// LDAP server performs authentication.
 		Enabled *bool `json:"Enabled,omitempty"`
 		// Search precedence between local user database and LDAP user database. * `LocalUserDb` - Precedence is given to local user database while searching. * `LDAPUserDb` - Precedence is given to LADP user database while searching.
-		UserSearchPrecedence *string `json:"UserSearchPrecedence,omitempty"`
-		ApplianceAccount *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
+		UserSearchPrecedence *string                 `json:"UserSearchPrecedence,omitempty"`
+		ApplianceAccount     *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
 		// An array of relationships to iamLdapGroup resources.
-		Groups []IamLdapGroupRelationship `json:"Groups,omitempty"`
+		Groups       []IamLdapGroupRelationship            `json:"Groups,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -651,5 +653,3 @@ func (v *NullableIamLdapPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

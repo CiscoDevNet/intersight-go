@@ -26,9 +26,9 @@ type FabricElementIdentityAllOf struct {
 	// Replacement type specifies whether it is single FI or domain replacement. * `None` - The default action is none. * `Individual` - Replacement of single network element. * `Domain` - Domain indicates the replacement of Fabric Interconnect domain.
 	ReplacementType *string `json:"ReplacementType,omitempty"`
 	// Switch Identifier that uniquely represents the fabric object. * `A` - Switch Identifier of Fabric Interconnect A. * `B` - Switch Identifier of Fabric Interconnect B.
-	SwitchId *string `json:"SwitchId,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	ReplacementTarget *NetworkElementRelationship `json:"ReplacementTarget,omitempty"`
+	SwitchId             *string                     `json:"SwitchId,omitempty"`
+	NetworkElement       *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+	ReplacementTarget    *NetworkElementRelationship `json:"ReplacementTarget,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *FabricElementIdentityAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricElementIdentityAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *FabricElementIdentityAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricElementIdentityAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -358,5 +358,3 @@ func (v *NullableFabricElementIdentityAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

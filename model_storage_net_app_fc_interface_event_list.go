@@ -23,7 +23,7 @@ type StorageNetAppFcInterfaceEventList struct {
 	// The total number of 'storage.NetAppFcInterfaceEvent' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppFcInterfaceEvent' resources matching the request.
-	Results []StorageNetAppFcInterfaceEvent `json:"Results,omitempty"`
+	Results              []StorageNetAppFcInterfaceEvent `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageNetAppFcInterfaceEventList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppFcInterfaceEventList) GetResults() []StorageNetAppFcInterfaceEvent {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppFcInterfaceEvent
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableStorageNetAppFcInterfaceEventList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

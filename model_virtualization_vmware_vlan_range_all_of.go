@@ -24,7 +24,7 @@ type VirtualizationVmwareVlanRangeAllOf struct {
 	// End value of VLAN range for the trunk port. The valid range is from 0 to 4094.
 	VlanRangeEnd *int64 `json:"VlanRangeEnd,omitempty"`
 	// Start value of VLAN range for the trunk port. The valid range is from 0 to 4094.
-	VlanRangeStart *int64 `json:"VlanRangeStart,omitempty"`
+	VlanRangeStart       *int64 `json:"VlanRangeStart,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *VirtualizationVmwareVlanRangeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVlanRangeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *VirtualizationVmwareVlanRangeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVlanRangeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableVirtualizationVmwareVlanRangeAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

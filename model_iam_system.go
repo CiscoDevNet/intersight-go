@@ -28,14 +28,14 @@ type IamSystem struct {
 	EndPointPrivileges []IamEndPointPrivilegeRelationship `json:"EndPointPrivileges,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
 	EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
+	Idp           *IamIdpRelationship           `json:"Idp,omitempty"`
 	// An array of relationships to iamPrivilegeSet resources.
 	PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
 	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
-	ServiceProvider *IamServiceProviderRelationship `json:"ServiceProvider,omitempty"`
+	Roles                []IamRoleRelationship           `json:"Roles,omitempty"`
+	ServiceProvider      *IamServiceProviderRelationship `json:"ServiceProvider,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IamSystem) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSystem) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *IamSystem) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSystem) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -114,7 +114,7 @@ func (o *IamSystem) SetObjectType(v string) {
 
 // GetEndPointPrivileges returns the EndPointPrivileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystem) GetEndPointPrivileges() []IamEndPointPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointPrivilegeRelationship
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *IamSystem) SetEndPointPrivileges(v []IamEndPointPrivilegeRelationship) 
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystem) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *IamSystem) SetIdp(v IamIdpRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystem) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *IamSystem) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystem) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *IamSystem) SetPrivileges(v []IamPrivilegeRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystem) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -396,13 +396,13 @@ func (o *IamSystem) UnmarshalJSON(bytes []byte) (err error) {
 		EndPointPrivileges []IamEndPointPrivilegeRelationship `json:"EndPointPrivileges,omitempty"`
 		// An array of relationships to iamEndPointRole resources.
 		EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
-		Idp *IamIdpRelationship `json:"Idp,omitempty"`
+		Idp           *IamIdpRelationship           `json:"Idp,omitempty"`
 		// An array of relationships to iamPrivilegeSet resources.
 		PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 		// An array of relationships to iamPrivilege resources.
 		Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
 		// An array of relationships to iamRole resources.
-		Roles []IamRoleRelationship `json:"Roles,omitempty"`
+		Roles           []IamRoleRelationship           `json:"Roles,omitempty"`
 		ServiceProvider *IamServiceProviderRelationship `json:"ServiceProvider,omitempty"`
 	}
 
@@ -506,5 +506,3 @@ func (v *NullableIamSystem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,11 @@ var (
 type TamApiService service
 
 type ApiCreateTamAdvisoryCountRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
+	ctx              _context.Context
+	ApiService       *TamApiService
 	tamAdvisoryCount *TamAdvisoryCount
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch          *string
+	ifNoneMatch      *string
 }
 
 // The &#39;tam.AdvisoryCount&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateTamAdvisoryCountRequest) TamAdvisoryCount(tamAdvisoryCount TamA
 	r.tamAdvisoryCount = &tamAdvisoryCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTamAdvisoryCountRequest) IfMatch(ifMatch string) ApiCreateTamAdvisoryCountRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTamAdvisoryCountRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTamAdvisoryCountRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateTamAdvisoryCount Create a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) CreateTamAdvisoryCount(ctx _context.Context) ApiCreateTamAdvisoryCountRequest {
 	return ApiCreateTamAdvisoryCountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *TamApiService) CreateTamAdvisoryCountExecute(r ApiCreateTamAdvisoryCoun
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *TamApiService) CreateTamAdvisoryCountExecute(r ApiCreateTamAdvisoryCoun
 }
 
 type ApiCreateTamAdvisoryDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
+	ctx                   _context.Context
+	ApiService            *TamApiService
 	tamAdvisoryDefinition *TamAdvisoryDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;tam.AdvisoryDefinition&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateTamAdvisoryDefinitionRequest) TamAdvisoryDefinition(tamAdvisory
 	r.tamAdvisoryDefinition = &tamAdvisoryDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTamAdvisoryDefinitionRequest) IfMatch(ifMatch string) ApiCreateTamAdvisoryDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTamAdvisoryDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTamAdvisoryDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateTamAdvisoryDefinition Create a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) CreateTamAdvisoryDefinition(ctx _context.Context) ApiCreateTamAdvisoryDefinitionRequest {
 	return ApiCreateTamAdvisoryDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *TamApiService) CreateTamAdvisoryDefinitionExecute(r ApiCreateTamAdvisor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *TamApiService) CreateTamAdvisoryDefinitionExecute(r ApiCreateTamAdvisor
 }
 
 type ApiCreateTamAdvisoryInfoRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
+	ctx             _context.Context
+	ApiService      *TamApiService
 	tamAdvisoryInfo *TamAdvisoryInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;tam.AdvisoryInfo&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateTamAdvisoryInfoRequest) TamAdvisoryInfo(tamAdvisoryInfo TamAdvi
 	r.tamAdvisoryInfo = &tamAdvisoryInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTamAdvisoryInfoRequest) IfMatch(ifMatch string) ApiCreateTamAdvisoryInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTamAdvisoryInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTamAdvisoryInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateTamAdvisoryInfo Create a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) CreateTamAdvisoryInfo(ctx _context.Context) ApiCreateTamAdvisoryInfoRequest {
 	return ApiCreateTamAdvisoryInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *TamApiService) CreateTamAdvisoryInfoExecute(r ApiCreateTamAdvisoryInfoR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *TamApiService) CreateTamAdvisoryInfoExecute(r ApiCreateTamAdvisoryInfoR
 }
 
 type ApiCreateTamAdvisoryInstanceRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
+	ctx                 _context.Context
+	ApiService          *TamApiService
 	tamAdvisoryInstance *TamAdvisoryInstance
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;tam.AdvisoryInstance&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateTamAdvisoryInstanceRequest) TamAdvisoryInstance(tamAdvisoryInst
 	r.tamAdvisoryInstance = &tamAdvisoryInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTamAdvisoryInstanceRequest) IfMatch(ifMatch string) ApiCreateTamAdvisoryInstanceRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTamAdvisoryInstanceRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTamAdvisoryInstanceRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateTamAdvisoryInstance Create a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) CreateTamAdvisoryInstance(ctx _context.Context) ApiCreateTamAdvisoryInstanceRequest {
 	return ApiCreateTamAdvisoryInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *TamApiService) CreateTamAdvisoryInstanceExecute(r ApiCreateTamAdvisoryI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *TamApiService) CreateTamAdvisoryInstanceExecute(r ApiCreateTamAdvisoryI
 }
 
 type ApiCreateTamSecurityAdvisoryRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
+	ctx                 _context.Context
+	ApiService          *TamApiService
 	tamSecurityAdvisory *TamSecurityAdvisory
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;tam.SecurityAdvisory&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateTamSecurityAdvisoryRequest) TamSecurityAdvisory(tamSecurityAdvi
 	r.tamSecurityAdvisory = &tamSecurityAdvisory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateTamSecurityAdvisoryRequest) IfMatch(ifMatch string) ApiCreateTamSecurityAdvisoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateTamSecurityAdvisoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateTamSecurityAdvisoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateTamSecurityAdvisory Create a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) CreateTamSecurityAdvisory(ctx _context.Context) ApiCreateTamSecurityAdvisoryRequest {
 	return ApiCreateTamSecurityAdvisoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *TamApiService) CreateTamSecurityAdvisoryExecute(r ApiCreateTamSecurityA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,10 @@ func (a *TamApiService) CreateTamSecurityAdvisoryExecute(r ApiCreateTamSecurityA
 }
 
 type ApiDeleteTamAdvisoryCountRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteTamAdvisoryCountRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteTamAdvisoryCountExecute(r)
@@ -929,8 +938,8 @@ DeleteTamAdvisoryCount Delete a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) DeleteTamAdvisoryCount(ctx _context.Context, moid string) ApiDeleteTamAdvisoryCountRequest {
 	return ApiDeleteTamAdvisoryCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1035,13 +1044,13 @@ func (a *TamApiService) DeleteTamAdvisoryCountExecute(r ApiDeleteTamAdvisoryCoun
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1049,11 +1058,10 @@ func (a *TamApiService) DeleteTamAdvisoryCountExecute(r ApiDeleteTamAdvisoryCoun
 }
 
 type ApiDeleteTamAdvisoryDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteTamAdvisoryDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteTamAdvisoryDefinitionExecute(r)
@@ -1069,8 +1077,8 @@ DeleteTamAdvisoryDefinition Delete a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) DeleteTamAdvisoryDefinition(ctx _context.Context, moid string) ApiDeleteTamAdvisoryDefinitionRequest {
 	return ApiDeleteTamAdvisoryDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1175,13 +1183,13 @@ func (a *TamApiService) DeleteTamAdvisoryDefinitionExecute(r ApiDeleteTamAdvisor
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1189,11 +1197,10 @@ func (a *TamApiService) DeleteTamAdvisoryDefinitionExecute(r ApiDeleteTamAdvisor
 }
 
 type ApiDeleteTamAdvisoryInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteTamAdvisoryInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteTamAdvisoryInfoExecute(r)
@@ -1209,8 +1216,8 @@ DeleteTamAdvisoryInfo Delete a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) DeleteTamAdvisoryInfo(ctx _context.Context, moid string) ApiDeleteTamAdvisoryInfoRequest {
 	return ApiDeleteTamAdvisoryInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1315,13 +1322,13 @@ func (a *TamApiService) DeleteTamAdvisoryInfoExecute(r ApiDeleteTamAdvisoryInfoR
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1329,11 +1336,10 @@ func (a *TamApiService) DeleteTamAdvisoryInfoExecute(r ApiDeleteTamAdvisoryInfoR
 }
 
 type ApiDeleteTamAdvisoryInstanceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteTamAdvisoryInstanceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteTamAdvisoryInstanceExecute(r)
@@ -1349,8 +1355,8 @@ DeleteTamAdvisoryInstance Delete a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) DeleteTamAdvisoryInstance(ctx _context.Context, moid string) ApiDeleteTamAdvisoryInstanceRequest {
 	return ApiDeleteTamAdvisoryInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1455,13 +1461,13 @@ func (a *TamApiService) DeleteTamAdvisoryInstanceExecute(r ApiDeleteTamAdvisoryI
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1469,11 +1475,10 @@ func (a *TamApiService) DeleteTamAdvisoryInstanceExecute(r ApiDeleteTamAdvisoryI
 }
 
 type ApiDeleteTamSecurityAdvisoryRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteTamSecurityAdvisoryRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteTamSecurityAdvisoryExecute(r)
@@ -1489,8 +1494,8 @@ DeleteTamSecurityAdvisory Delete a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) DeleteTamSecurityAdvisory(ctx _context.Context, moid string) ApiDeleteTamSecurityAdvisoryRequest {
 	return ApiDeleteTamSecurityAdvisoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1595,13 +1600,13 @@ func (a *TamApiService) DeleteTamSecurityAdvisoryExecute(r ApiDeleteTamSecurityA
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1609,11 +1614,10 @@ func (a *TamApiService) DeleteTamSecurityAdvisoryExecute(r ApiDeleteTamSecurityA
 }
 
 type ApiGetTamAdvisoryCountByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTamAdvisoryCountByMoidRequest) Execute() (TamAdvisoryCount, *_nethttp.Response, error) {
 	return r.ApiService.GetTamAdvisoryCountByMoidExecute(r)
@@ -1629,8 +1633,8 @@ GetTamAdvisoryCountByMoid Read a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) GetTamAdvisoryCountByMoid(ctx _context.Context, moid string) ApiGetTamAdvisoryCountByMoidRequest {
 	return ApiGetTamAdvisoryCountByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1737,13 +1741,13 @@ func (a *TamApiService) GetTamAdvisoryCountByMoidExecute(r ApiGetTamAdvisoryCoun
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1760,19 +1764,19 @@ func (a *TamApiService) GetTamAdvisoryCountByMoidExecute(r ApiGetTamAdvisoryCoun
 }
 
 type ApiGetTamAdvisoryCountListRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1780,51 +1784,61 @@ func (r ApiGetTamAdvisoryCountListRequest) Filter(filter string) ApiGetTamAdviso
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTamAdvisoryCountListRequest) Orderby(orderby string) ApiGetTamAdvisoryCountListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTamAdvisoryCountListRequest) Top(top int32) ApiGetTamAdvisoryCountListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTamAdvisoryCountListRequest) Skip(skip int32) ApiGetTamAdvisoryCountListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTamAdvisoryCountListRequest) Select_(select_ string) ApiGetTamAdvisoryCountListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTamAdvisoryCountListRequest) Expand(expand string) ApiGetTamAdvisoryCountListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTamAdvisoryCountListRequest) Apply(apply string) ApiGetTamAdvisoryCountListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTamAdvisoryCountListRequest) Count(count bool) ApiGetTamAdvisoryCountListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTamAdvisoryCountListRequest) Inlinecount(inlinecount string) ApiGetTamAdvisoryCountListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTamAdvisoryCountListRequest) At(at string) ApiGetTamAdvisoryCountListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTamAdvisoryCountListRequest) Tags(tags string) ApiGetTamAdvisoryCountListRequest {
 	r.tags = &tags
@@ -1844,7 +1858,7 @@ GetTamAdvisoryCountList Read a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) GetTamAdvisoryCountList(ctx _context.Context) ApiGetTamAdvisoryCountListRequest {
 	return ApiGetTamAdvisoryCountListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1983,13 +1997,13 @@ func (a *TamApiService) GetTamAdvisoryCountListExecute(r ApiGetTamAdvisoryCountL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2006,11 +2020,10 @@ func (a *TamApiService) GetTamAdvisoryCountListExecute(r ApiGetTamAdvisoryCountL
 }
 
 type ApiGetTamAdvisoryDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTamAdvisoryDefinitionByMoidRequest) Execute() (TamAdvisoryDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetTamAdvisoryDefinitionByMoidExecute(r)
@@ -2026,8 +2039,8 @@ GetTamAdvisoryDefinitionByMoid Read a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) GetTamAdvisoryDefinitionByMoid(ctx _context.Context, moid string) ApiGetTamAdvisoryDefinitionByMoidRequest {
 	return ApiGetTamAdvisoryDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2134,13 +2147,13 @@ func (a *TamApiService) GetTamAdvisoryDefinitionByMoidExecute(r ApiGetTamAdvisor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2157,19 +2170,19 @@ func (a *TamApiService) GetTamAdvisoryDefinitionByMoidExecute(r ApiGetTamAdvisor
 }
 
 type ApiGetTamAdvisoryDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2177,51 +2190,61 @@ func (r ApiGetTamAdvisoryDefinitionListRequest) Filter(filter string) ApiGetTamA
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Orderby(orderby string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Top(top int32) ApiGetTamAdvisoryDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Skip(skip int32) ApiGetTamAdvisoryDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Select_(select_ string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Expand(expand string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Apply(apply string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Count(count bool) ApiGetTamAdvisoryDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Inlinecount(inlinecount string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTamAdvisoryDefinitionListRequest) At(at string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTamAdvisoryDefinitionListRequest) Tags(tags string) ApiGetTamAdvisoryDefinitionListRequest {
 	r.tags = &tags
@@ -2241,7 +2264,7 @@ GetTamAdvisoryDefinitionList Read a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) GetTamAdvisoryDefinitionList(ctx _context.Context) ApiGetTamAdvisoryDefinitionListRequest {
 	return ApiGetTamAdvisoryDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2380,13 +2403,13 @@ func (a *TamApiService) GetTamAdvisoryDefinitionListExecute(r ApiGetTamAdvisoryD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2403,11 +2426,10 @@ func (a *TamApiService) GetTamAdvisoryDefinitionListExecute(r ApiGetTamAdvisoryD
 }
 
 type ApiGetTamAdvisoryInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTamAdvisoryInfoByMoidRequest) Execute() (TamAdvisoryInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetTamAdvisoryInfoByMoidExecute(r)
@@ -2423,8 +2445,8 @@ GetTamAdvisoryInfoByMoid Read a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) GetTamAdvisoryInfoByMoid(ctx _context.Context, moid string) ApiGetTamAdvisoryInfoByMoidRequest {
 	return ApiGetTamAdvisoryInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2531,13 +2553,13 @@ func (a *TamApiService) GetTamAdvisoryInfoByMoidExecute(r ApiGetTamAdvisoryInfoB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2554,19 +2576,19 @@ func (a *TamApiService) GetTamAdvisoryInfoByMoidExecute(r ApiGetTamAdvisoryInfoB
 }
 
 type ApiGetTamAdvisoryInfoListRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2574,51 +2596,61 @@ func (r ApiGetTamAdvisoryInfoListRequest) Filter(filter string) ApiGetTamAdvisor
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTamAdvisoryInfoListRequest) Orderby(orderby string) ApiGetTamAdvisoryInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTamAdvisoryInfoListRequest) Top(top int32) ApiGetTamAdvisoryInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTamAdvisoryInfoListRequest) Skip(skip int32) ApiGetTamAdvisoryInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTamAdvisoryInfoListRequest) Select_(select_ string) ApiGetTamAdvisoryInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTamAdvisoryInfoListRequest) Expand(expand string) ApiGetTamAdvisoryInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTamAdvisoryInfoListRequest) Apply(apply string) ApiGetTamAdvisoryInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTamAdvisoryInfoListRequest) Count(count bool) ApiGetTamAdvisoryInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTamAdvisoryInfoListRequest) Inlinecount(inlinecount string) ApiGetTamAdvisoryInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTamAdvisoryInfoListRequest) At(at string) ApiGetTamAdvisoryInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTamAdvisoryInfoListRequest) Tags(tags string) ApiGetTamAdvisoryInfoListRequest {
 	r.tags = &tags
@@ -2638,7 +2670,7 @@ GetTamAdvisoryInfoList Read a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) GetTamAdvisoryInfoList(ctx _context.Context) ApiGetTamAdvisoryInfoListRequest {
 	return ApiGetTamAdvisoryInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2777,13 +2809,13 @@ func (a *TamApiService) GetTamAdvisoryInfoListExecute(r ApiGetTamAdvisoryInfoLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2800,11 +2832,10 @@ func (a *TamApiService) GetTamAdvisoryInfoListExecute(r ApiGetTamAdvisoryInfoLis
 }
 
 type ApiGetTamAdvisoryInstanceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTamAdvisoryInstanceByMoidRequest) Execute() (TamAdvisoryInstance, *_nethttp.Response, error) {
 	return r.ApiService.GetTamAdvisoryInstanceByMoidExecute(r)
@@ -2820,8 +2851,8 @@ GetTamAdvisoryInstanceByMoid Read a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) GetTamAdvisoryInstanceByMoid(ctx _context.Context, moid string) ApiGetTamAdvisoryInstanceByMoidRequest {
 	return ApiGetTamAdvisoryInstanceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2928,13 +2959,13 @@ func (a *TamApiService) GetTamAdvisoryInstanceByMoidExecute(r ApiGetTamAdvisoryI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2951,19 +2982,19 @@ func (a *TamApiService) GetTamAdvisoryInstanceByMoidExecute(r ApiGetTamAdvisoryI
 }
 
 type ApiGetTamAdvisoryInstanceListRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2971,51 +3002,61 @@ func (r ApiGetTamAdvisoryInstanceListRequest) Filter(filter string) ApiGetTamAdv
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTamAdvisoryInstanceListRequest) Orderby(orderby string) ApiGetTamAdvisoryInstanceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTamAdvisoryInstanceListRequest) Top(top int32) ApiGetTamAdvisoryInstanceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTamAdvisoryInstanceListRequest) Skip(skip int32) ApiGetTamAdvisoryInstanceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTamAdvisoryInstanceListRequest) Select_(select_ string) ApiGetTamAdvisoryInstanceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTamAdvisoryInstanceListRequest) Expand(expand string) ApiGetTamAdvisoryInstanceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTamAdvisoryInstanceListRequest) Apply(apply string) ApiGetTamAdvisoryInstanceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTamAdvisoryInstanceListRequest) Count(count bool) ApiGetTamAdvisoryInstanceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTamAdvisoryInstanceListRequest) Inlinecount(inlinecount string) ApiGetTamAdvisoryInstanceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTamAdvisoryInstanceListRequest) At(at string) ApiGetTamAdvisoryInstanceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTamAdvisoryInstanceListRequest) Tags(tags string) ApiGetTamAdvisoryInstanceListRequest {
 	r.tags = &tags
@@ -3035,7 +3076,7 @@ GetTamAdvisoryInstanceList Read a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) GetTamAdvisoryInstanceList(ctx _context.Context) ApiGetTamAdvisoryInstanceListRequest {
 	return ApiGetTamAdvisoryInstanceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3215,13 @@ func (a *TamApiService) GetTamAdvisoryInstanceListExecute(r ApiGetTamAdvisoryIns
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3238,10 @@ func (a *TamApiService) GetTamAdvisoryInstanceListExecute(r ApiGetTamAdvisoryIns
 }
 
 type ApiGetTamSecurityAdvisoryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TamApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTamSecurityAdvisoryByMoidRequest) Execute() (TamSecurityAdvisory, *_nethttp.Response, error) {
 	return r.ApiService.GetTamSecurityAdvisoryByMoidExecute(r)
@@ -3217,8 +3257,8 @@ GetTamSecurityAdvisoryByMoid Read a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) GetTamSecurityAdvisoryByMoid(ctx _context.Context, moid string) ApiGetTamSecurityAdvisoryByMoidRequest {
 	return ApiGetTamSecurityAdvisoryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3325,13 +3365,13 @@ func (a *TamApiService) GetTamSecurityAdvisoryByMoidExecute(r ApiGetTamSecurityA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3348,19 +3388,19 @@ func (a *TamApiService) GetTamSecurityAdvisoryByMoidExecute(r ApiGetTamSecurityA
 }
 
 type ApiGetTamSecurityAdvisoryListRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TamApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3368,51 +3408,61 @@ func (r ApiGetTamSecurityAdvisoryListRequest) Filter(filter string) ApiGetTamSec
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTamSecurityAdvisoryListRequest) Orderby(orderby string) ApiGetTamSecurityAdvisoryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTamSecurityAdvisoryListRequest) Top(top int32) ApiGetTamSecurityAdvisoryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTamSecurityAdvisoryListRequest) Skip(skip int32) ApiGetTamSecurityAdvisoryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTamSecurityAdvisoryListRequest) Select_(select_ string) ApiGetTamSecurityAdvisoryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTamSecurityAdvisoryListRequest) Expand(expand string) ApiGetTamSecurityAdvisoryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTamSecurityAdvisoryListRequest) Apply(apply string) ApiGetTamSecurityAdvisoryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTamSecurityAdvisoryListRequest) Count(count bool) ApiGetTamSecurityAdvisoryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTamSecurityAdvisoryListRequest) Inlinecount(inlinecount string) ApiGetTamSecurityAdvisoryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTamSecurityAdvisoryListRequest) At(at string) ApiGetTamSecurityAdvisoryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTamSecurityAdvisoryListRequest) Tags(tags string) ApiGetTamSecurityAdvisoryListRequest {
 	r.tags = &tags
@@ -3432,7 +3482,7 @@ GetTamSecurityAdvisoryList Read a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) GetTamSecurityAdvisoryList(ctx _context.Context) ApiGetTamSecurityAdvisoryListRequest {
 	return ApiGetTamSecurityAdvisoryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3571,13 +3621,13 @@ func (a *TamApiService) GetTamSecurityAdvisoryListExecute(r ApiGetTamSecurityAdv
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3594,11 +3644,11 @@ func (a *TamApiService) GetTamSecurityAdvisoryListExecute(r ApiGetTamSecurityAdv
 }
 
 type ApiPatchTamAdvisoryCountRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *TamApiService
+	moid             string
 	tamAdvisoryCount *TamAdvisoryCount
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;tam.AdvisoryCount&#39; resource to update.
@@ -3606,6 +3656,7 @@ func (r ApiPatchTamAdvisoryCountRequest) TamAdvisoryCount(tamAdvisoryCount TamAd
 	r.tamAdvisoryCount = &tamAdvisoryCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTamAdvisoryCountRequest) IfMatch(ifMatch string) ApiPatchTamAdvisoryCountRequest {
 	r.ifMatch = &ifMatch
@@ -3626,8 +3677,8 @@ PatchTamAdvisoryCount Update a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) PatchTamAdvisoryCount(ctx _context.Context, moid string) ApiPatchTamAdvisoryCountRequest {
 	return ApiPatchTamAdvisoryCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3742,13 +3793,13 @@ func (a *TamApiService) PatchTamAdvisoryCountExecute(r ApiPatchTamAdvisoryCountR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3765,11 +3816,11 @@ func (a *TamApiService) PatchTamAdvisoryCountExecute(r ApiPatchTamAdvisoryCountR
 }
 
 type ApiPatchTamAdvisoryDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *TamApiService
+	moid                  string
 	tamAdvisoryDefinition *TamAdvisoryDefinition
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;tam.AdvisoryDefinition&#39; resource to update.
@@ -3777,6 +3828,7 @@ func (r ApiPatchTamAdvisoryDefinitionRequest) TamAdvisoryDefinition(tamAdvisoryD
 	r.tamAdvisoryDefinition = &tamAdvisoryDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTamAdvisoryDefinitionRequest) IfMatch(ifMatch string) ApiPatchTamAdvisoryDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -3797,8 +3849,8 @@ PatchTamAdvisoryDefinition Update a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) PatchTamAdvisoryDefinition(ctx _context.Context, moid string) ApiPatchTamAdvisoryDefinitionRequest {
 	return ApiPatchTamAdvisoryDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3913,13 +3965,13 @@ func (a *TamApiService) PatchTamAdvisoryDefinitionExecute(r ApiPatchTamAdvisoryD
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3936,11 +3988,11 @@ func (a *TamApiService) PatchTamAdvisoryDefinitionExecute(r ApiPatchTamAdvisoryD
 }
 
 type ApiPatchTamAdvisoryInfoRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *TamApiService
+	moid            string
 	tamAdvisoryInfo *TamAdvisoryInfo
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;tam.AdvisoryInfo&#39; resource to update.
@@ -3948,6 +4000,7 @@ func (r ApiPatchTamAdvisoryInfoRequest) TamAdvisoryInfo(tamAdvisoryInfo TamAdvis
 	r.tamAdvisoryInfo = &tamAdvisoryInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTamAdvisoryInfoRequest) IfMatch(ifMatch string) ApiPatchTamAdvisoryInfoRequest {
 	r.ifMatch = &ifMatch
@@ -3968,8 +4021,8 @@ PatchTamAdvisoryInfo Update a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) PatchTamAdvisoryInfo(ctx _context.Context, moid string) ApiPatchTamAdvisoryInfoRequest {
 	return ApiPatchTamAdvisoryInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4084,13 +4137,13 @@ func (a *TamApiService) PatchTamAdvisoryInfoExecute(r ApiPatchTamAdvisoryInfoReq
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4107,11 +4160,11 @@ func (a *TamApiService) PatchTamAdvisoryInfoExecute(r ApiPatchTamAdvisoryInfoReq
 }
 
 type ApiPatchTamAdvisoryInstanceRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *TamApiService
+	moid                string
 	tamAdvisoryInstance *TamAdvisoryInstance
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;tam.AdvisoryInstance&#39; resource to update.
@@ -4119,6 +4172,7 @@ func (r ApiPatchTamAdvisoryInstanceRequest) TamAdvisoryInstance(tamAdvisoryInsta
 	r.tamAdvisoryInstance = &tamAdvisoryInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTamAdvisoryInstanceRequest) IfMatch(ifMatch string) ApiPatchTamAdvisoryInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -4139,8 +4193,8 @@ PatchTamAdvisoryInstance Update a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) PatchTamAdvisoryInstance(ctx _context.Context, moid string) ApiPatchTamAdvisoryInstanceRequest {
 	return ApiPatchTamAdvisoryInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4255,13 +4309,13 @@ func (a *TamApiService) PatchTamAdvisoryInstanceExecute(r ApiPatchTamAdvisoryIns
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4278,11 +4332,11 @@ func (a *TamApiService) PatchTamAdvisoryInstanceExecute(r ApiPatchTamAdvisoryIns
 }
 
 type ApiPatchTamSecurityAdvisoryRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *TamApiService
+	moid                string
 	tamSecurityAdvisory *TamSecurityAdvisory
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;tam.SecurityAdvisory&#39; resource to update.
@@ -4290,6 +4344,7 @@ func (r ApiPatchTamSecurityAdvisoryRequest) TamSecurityAdvisory(tamSecurityAdvis
 	r.tamSecurityAdvisory = &tamSecurityAdvisory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTamSecurityAdvisoryRequest) IfMatch(ifMatch string) ApiPatchTamSecurityAdvisoryRequest {
 	r.ifMatch = &ifMatch
@@ -4310,8 +4365,8 @@ PatchTamSecurityAdvisory Update a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) PatchTamSecurityAdvisory(ctx _context.Context, moid string) ApiPatchTamSecurityAdvisoryRequest {
 	return ApiPatchTamSecurityAdvisoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4426,13 +4481,13 @@ func (a *TamApiService) PatchTamSecurityAdvisoryExecute(r ApiPatchTamSecurityAdv
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4449,11 +4504,11 @@ func (a *TamApiService) PatchTamSecurityAdvisoryExecute(r ApiPatchTamSecurityAdv
 }
 
 type ApiUpdateTamAdvisoryCountRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *TamApiService
+	moid             string
 	tamAdvisoryCount *TamAdvisoryCount
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;tam.AdvisoryCount&#39; resource to update.
@@ -4461,6 +4516,7 @@ func (r ApiUpdateTamAdvisoryCountRequest) TamAdvisoryCount(tamAdvisoryCount TamA
 	r.tamAdvisoryCount = &tamAdvisoryCount
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTamAdvisoryCountRequest) IfMatch(ifMatch string) ApiUpdateTamAdvisoryCountRequest {
 	r.ifMatch = &ifMatch
@@ -4481,8 +4537,8 @@ UpdateTamAdvisoryCount Update a 'tam.AdvisoryCount' resource.
 func (a *TamApiService) UpdateTamAdvisoryCount(ctx _context.Context, moid string) ApiUpdateTamAdvisoryCountRequest {
 	return ApiUpdateTamAdvisoryCountRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4597,13 +4653,13 @@ func (a *TamApiService) UpdateTamAdvisoryCountExecute(r ApiUpdateTamAdvisoryCoun
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4620,11 +4676,11 @@ func (a *TamApiService) UpdateTamAdvisoryCountExecute(r ApiUpdateTamAdvisoryCoun
 }
 
 type ApiUpdateTamAdvisoryDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *TamApiService
+	moid                  string
 	tamAdvisoryDefinition *TamAdvisoryDefinition
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;tam.AdvisoryDefinition&#39; resource to update.
@@ -4632,6 +4688,7 @@ func (r ApiUpdateTamAdvisoryDefinitionRequest) TamAdvisoryDefinition(tamAdvisory
 	r.tamAdvisoryDefinition = &tamAdvisoryDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTamAdvisoryDefinitionRequest) IfMatch(ifMatch string) ApiUpdateTamAdvisoryDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -4652,8 +4709,8 @@ UpdateTamAdvisoryDefinition Update a 'tam.AdvisoryDefinition' resource.
 func (a *TamApiService) UpdateTamAdvisoryDefinition(ctx _context.Context, moid string) ApiUpdateTamAdvisoryDefinitionRequest {
 	return ApiUpdateTamAdvisoryDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4768,13 +4825,13 @@ func (a *TamApiService) UpdateTamAdvisoryDefinitionExecute(r ApiUpdateTamAdvisor
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4791,11 +4848,11 @@ func (a *TamApiService) UpdateTamAdvisoryDefinitionExecute(r ApiUpdateTamAdvisor
 }
 
 type ApiUpdateTamAdvisoryInfoRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *TamApiService
+	moid            string
 	tamAdvisoryInfo *TamAdvisoryInfo
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;tam.AdvisoryInfo&#39; resource to update.
@@ -4803,6 +4860,7 @@ func (r ApiUpdateTamAdvisoryInfoRequest) TamAdvisoryInfo(tamAdvisoryInfo TamAdvi
 	r.tamAdvisoryInfo = &tamAdvisoryInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTamAdvisoryInfoRequest) IfMatch(ifMatch string) ApiUpdateTamAdvisoryInfoRequest {
 	r.ifMatch = &ifMatch
@@ -4823,8 +4881,8 @@ UpdateTamAdvisoryInfo Update a 'tam.AdvisoryInfo' resource.
 func (a *TamApiService) UpdateTamAdvisoryInfo(ctx _context.Context, moid string) ApiUpdateTamAdvisoryInfoRequest {
 	return ApiUpdateTamAdvisoryInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4939,13 +4997,13 @@ func (a *TamApiService) UpdateTamAdvisoryInfoExecute(r ApiUpdateTamAdvisoryInfoR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4962,11 +5020,11 @@ func (a *TamApiService) UpdateTamAdvisoryInfoExecute(r ApiUpdateTamAdvisoryInfoR
 }
 
 type ApiUpdateTamAdvisoryInstanceRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *TamApiService
+	moid                string
 	tamAdvisoryInstance *TamAdvisoryInstance
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;tam.AdvisoryInstance&#39; resource to update.
@@ -4974,6 +5032,7 @@ func (r ApiUpdateTamAdvisoryInstanceRequest) TamAdvisoryInstance(tamAdvisoryInst
 	r.tamAdvisoryInstance = &tamAdvisoryInstance
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTamAdvisoryInstanceRequest) IfMatch(ifMatch string) ApiUpdateTamAdvisoryInstanceRequest {
 	r.ifMatch = &ifMatch
@@ -4994,8 +5053,8 @@ UpdateTamAdvisoryInstance Update a 'tam.AdvisoryInstance' resource.
 func (a *TamApiService) UpdateTamAdvisoryInstance(ctx _context.Context, moid string) ApiUpdateTamAdvisoryInstanceRequest {
 	return ApiUpdateTamAdvisoryInstanceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5110,13 +5169,13 @@ func (a *TamApiService) UpdateTamAdvisoryInstanceExecute(r ApiUpdateTamAdvisoryI
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5133,11 +5192,11 @@ func (a *TamApiService) UpdateTamAdvisoryInstanceExecute(r ApiUpdateTamAdvisoryI
 }
 
 type ApiUpdateTamSecurityAdvisoryRequest struct {
-	ctx _context.Context
-	ApiService *TamApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *TamApiService
+	moid                string
 	tamSecurityAdvisory *TamSecurityAdvisory
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;tam.SecurityAdvisory&#39; resource to update.
@@ -5145,6 +5204,7 @@ func (r ApiUpdateTamSecurityAdvisoryRequest) TamSecurityAdvisory(tamSecurityAdvi
 	r.tamSecurityAdvisory = &tamSecurityAdvisory
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTamSecurityAdvisoryRequest) IfMatch(ifMatch string) ApiUpdateTamSecurityAdvisoryRequest {
 	r.ifMatch = &ifMatch
@@ -5165,8 +5225,8 @@ UpdateTamSecurityAdvisory Update a 'tam.SecurityAdvisory' resource.
 func (a *TamApiService) UpdateTamSecurityAdvisory(ctx _context.Context, moid string) ApiUpdateTamSecurityAdvisoryRequest {
 	return ApiUpdateTamSecurityAdvisoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5281,13 +5341,13 @@ func (a *TamApiService) UpdateTamSecurityAdvisoryExecute(r ApiUpdateTamSecurityA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

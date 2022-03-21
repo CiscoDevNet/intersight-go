@@ -18,7 +18,7 @@ import (
 // TelemetryDruidBaseTopNMetricSpec A Druid TopN metric spec.
 type TelemetryDruidBaseTopNMetricSpec struct {
 	// The dimension spec type.
-	Type string `json:"type"`
+	Type                 string `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidBaseTopNMetricSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidBaseTopNMetricSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidBaseTopNMetricSpec) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

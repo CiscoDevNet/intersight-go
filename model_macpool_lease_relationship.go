@@ -19,19 +19,18 @@ import (
 // MacpoolLeaseRelationship - A relationship to the 'macpool.Lease' resource, or the expanded 'macpool.Lease' resource, or the 'null' value.
 type MacpoolLeaseRelationship struct {
 	MacpoolLease *MacpoolLease
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // MacpoolLeaseAsMacpoolLeaseRelationship is a convenience function that returns MacpoolLease wrapped in MacpoolLeaseRelationship
 func MacpoolLeaseAsMacpoolLeaseRelationship(v *MacpoolLease) MacpoolLeaseRelationship {
-	return MacpoolLeaseRelationship{ MacpoolLease: v}
+	return MacpoolLeaseRelationship{MacpoolLease: v}
 }
 
 // MoMoRefAsMacpoolLeaseRelationship is a convenience function that returns MoMoRef wrapped in MacpoolLeaseRelationship
 func MoMoRefAsMacpoolLeaseRelationship(v *MoMoRef) MacpoolLeaseRelationship {
-	return MacpoolLeaseRelationship{ MoMoRef: v}
+	return MacpoolLeaseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolLeaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MacpoolLeaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolLeaseRelationship) GetActualInstance() (interface{}) {
+func (obj *MacpoolLeaseRelationship) GetActualInstance() interface{} {
 	if obj.MacpoolLease != nil {
 		return obj.MacpoolLease
 	}
@@ -137,5 +136,3 @@ func (v *NullableMacpoolLeaseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // NetworkElementRelationship - A relationship to the 'network.Element' resource, or the expanded 'network.Element' resource, or the 'null' value.
 type NetworkElementRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 	NetworkElement *NetworkElement
 }
 
 // MoMoRefAsNetworkElementRelationship is a convenience function that returns MoMoRef wrapped in NetworkElementRelationship
 func MoMoRefAsNetworkElementRelationship(v *MoMoRef) NetworkElementRelationship {
-	return NetworkElementRelationship{ MoMoRef: v}
+	return NetworkElementRelationship{MoMoRef: v}
 }
 
 // NetworkElementAsNetworkElementRelationship is a convenience function that returns NetworkElement wrapped in NetworkElementRelationship
 func NetworkElementAsNetworkElementRelationship(v *NetworkElement) NetworkElementRelationship {
-	return NetworkElementRelationship{ NetworkElement: v}
+	return NetworkElementRelationship{NetworkElement: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NetworkElementRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NetworkElementRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NetworkElementRelationship) GetActualInstance() (interface{}) {
+func (obj *NetworkElementRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNetworkElementRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

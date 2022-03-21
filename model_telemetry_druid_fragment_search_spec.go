@@ -22,7 +22,7 @@ type TelemetryDruidFragmentSearchSpec struct {
 	// The value to match.  If any part of a dimension value contains all of the values specified in this search query spec a \"match\" occurs.
 	Values []string `json:"values"`
 	// Whether or not search is case sensitive
-	CaseSensitive *bool `json:"case_sensitive,omitempty"`
+	CaseSensitive        *bool `json:"case_sensitive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,7 +60,7 @@ func (o *TelemetryDruidFragmentSearchSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFragmentSearchSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -84,7 +84,7 @@ func (o *TelemetryDruidFragmentSearchSpec) GetValues() []string {
 // GetValuesOk returns a tuple with the Values field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFragmentSearchSpec) GetValuesOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Values, true
@@ -200,5 +200,3 @@ func (v *NullableTelemetryDruidFragmentSearchSpec) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

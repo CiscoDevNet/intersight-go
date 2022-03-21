@@ -29,7 +29,7 @@ type MemoryPersistentMemoryGoal struct {
 	// Type of the Persistent Memory configuration where the Persistent Memory Modules are combined in an interleaved set or not. * `app-direct` - The App Direct interleaved Persistent Memory type. * `app-direct-non-interleaved` - The App Direct non-interleaved Persistent Memory type.
 	PersistentMemoryType *string `json:"PersistentMemoryType,omitempty"`
 	// CPU Socket ID to which this goal will be applied. * `All Sockets` - All the CPU socket IDs in a server.
-	SocketId *string `json:"SocketId,omitempty"`
+	SocketId             *string `json:"SocketId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *MemoryPersistentMemoryGoal) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryGoal) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *MemoryPersistentMemoryGoal) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryGoal) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -349,5 +349,3 @@ func (v *NullableMemoryPersistentMemoryGoal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

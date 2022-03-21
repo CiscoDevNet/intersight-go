@@ -32,7 +32,7 @@ type CapabilitySiocModuleManufacturingDefAllOf struct {
 	// SKU information for a chassis SIOC module.
 	Sku *string `json:"Sku,omitempty"`
 	// VID information for a chassis SIOC module.
-	Vid *string `json:"Vid,omitempty"`
+	Vid                  *string `json:"Vid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *CapabilitySiocModuleManufacturingDefAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySiocModuleManufacturingDefAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *CapabilitySiocModuleManufacturingDefAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilitySiocModuleManufacturingDefAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -394,5 +394,3 @@ func (v *NullableCapabilitySiocModuleManufacturingDefAllOf) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

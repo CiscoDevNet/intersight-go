@@ -19,31 +19,30 @@ import (
 // KubernetesAciCniTenantClusterAllocationResponse - The response body of a HTTP GET request for the 'kubernetes.AciCniTenantClusterAllocation' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.AciCniTenantClusterAllocation' resources.
 type KubernetesAciCniTenantClusterAllocationResponse struct {
 	KubernetesAciCniTenantClusterAllocationList *KubernetesAciCniTenantClusterAllocationList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                        *MoAggregateTransform
+	MoDocumentCount                             *MoDocumentCount
+	MoTagSummary                                *MoTagSummary
 }
 
 // KubernetesAciCniTenantClusterAllocationListAsKubernetesAciCniTenantClusterAllocationResponse is a convenience function that returns KubernetesAciCniTenantClusterAllocationList wrapped in KubernetesAciCniTenantClusterAllocationResponse
 func KubernetesAciCniTenantClusterAllocationListAsKubernetesAciCniTenantClusterAllocationResponse(v *KubernetesAciCniTenantClusterAllocationList) KubernetesAciCniTenantClusterAllocationResponse {
-	return KubernetesAciCniTenantClusterAllocationResponse{ KubernetesAciCniTenantClusterAllocationList: v}
+	return KubernetesAciCniTenantClusterAllocationResponse{KubernetesAciCniTenantClusterAllocationList: v}
 }
 
 // MoAggregateTransformAsKubernetesAciCniTenantClusterAllocationResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesAciCniTenantClusterAllocationResponse
 func MoAggregateTransformAsKubernetesAciCniTenantClusterAllocationResponse(v *MoAggregateTransform) KubernetesAciCniTenantClusterAllocationResponse {
-	return KubernetesAciCniTenantClusterAllocationResponse{ MoAggregateTransform: v}
+	return KubernetesAciCniTenantClusterAllocationResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesAciCniTenantClusterAllocationResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesAciCniTenantClusterAllocationResponse
 func MoDocumentCountAsKubernetesAciCniTenantClusterAllocationResponse(v *MoDocumentCount) KubernetesAciCniTenantClusterAllocationResponse {
-	return KubernetesAciCniTenantClusterAllocationResponse{ MoDocumentCount: v}
+	return KubernetesAciCniTenantClusterAllocationResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesAciCniTenantClusterAllocationResponse is a convenience function that returns MoTagSummary wrapped in KubernetesAciCniTenantClusterAllocationResponse
 func MoTagSummaryAsKubernetesAciCniTenantClusterAllocationResponse(v *MoTagSummary) KubernetesAciCniTenantClusterAllocationResponse {
-	return KubernetesAciCniTenantClusterAllocationResponse{ MoTagSummary: v}
+	return KubernetesAciCniTenantClusterAllocationResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesAciCniTenantClusterAllocationResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesAciCniTenantClusterAllocationResponse) MarshalJSON() ([]byte
 }
 
 // Get the actual instance
-func (obj *KubernetesAciCniTenantClusterAllocationResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesAciCniTenantClusterAllocationResponse) GetActualInstance() interface{} {
 	if obj.KubernetesAciCniTenantClusterAllocationList != nil {
 		return obj.KubernetesAciCniTenantClusterAllocationList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesAciCniTenantClusterAllocationResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

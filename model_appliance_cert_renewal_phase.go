@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceCertRenewalPhase CertRenewalPhase represents a phase of the Intersight Appliance certificate renewal process.
@@ -34,7 +34,7 @@ type ApplianceCertRenewalPhase struct {
 	// Name of the cert renewal phase phase. * `Init` - New certificate detected, cleanup the old process if any running. * `ScheduleCertificateAddOperation` - Certificate Add Operation Schedulled. * `WaitForCertCollectionByEndpoint` - Monitor cert collection by endpoint. * `Success` - Certificate Renewal Task Success. * `Fail` - Certificate Renewal Task Fail. * `Cancel` - Certificate Renewal Task Cancel.
 	Name *string `json:"Name,omitempty"`
 	// Start date of the cert renewal phase.
-	StartTime *time.Time `json:"StartTime,omitempty"`
+	StartTime            *time.Time `json:"StartTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *ApplianceCertRenewalPhase) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceCertRenewalPhase) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *ApplianceCertRenewalPhase) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceCertRenewalPhase) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -424,5 +424,3 @@ func (v *NullableApplianceCertRenewalPhase) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // SoftwareHyperflexDistributableRelationship - A relationship to the 'software.HyperflexDistributable' resource, or the expanded 'software.HyperflexDistributable' resource, or the 'null' value.
 type SoftwareHyperflexDistributableRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                        *MoMoRef
 	SoftwareHyperflexDistributable *SoftwareHyperflexDistributable
 }
 
 // MoMoRefAsSoftwareHyperflexDistributableRelationship is a convenience function that returns MoMoRef wrapped in SoftwareHyperflexDistributableRelationship
 func MoMoRefAsSoftwareHyperflexDistributableRelationship(v *MoMoRef) SoftwareHyperflexDistributableRelationship {
-	return SoftwareHyperflexDistributableRelationship{ MoMoRef: v}
+	return SoftwareHyperflexDistributableRelationship{MoMoRef: v}
 }
 
 // SoftwareHyperflexDistributableAsSoftwareHyperflexDistributableRelationship is a convenience function that returns SoftwareHyperflexDistributable wrapped in SoftwareHyperflexDistributableRelationship
 func SoftwareHyperflexDistributableAsSoftwareHyperflexDistributableRelationship(v *SoftwareHyperflexDistributable) SoftwareHyperflexDistributableRelationship {
-	return SoftwareHyperflexDistributableRelationship{ SoftwareHyperflexDistributable: v}
+	return SoftwareHyperflexDistributableRelationship{SoftwareHyperflexDistributable: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwareHyperflexDistributableRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SoftwareHyperflexDistributableRelationship) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *SoftwareHyperflexDistributableRelationship) GetActualInstance() (interface{}) {
+func (obj *SoftwareHyperflexDistributableRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSoftwareHyperflexDistributableRelationship) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

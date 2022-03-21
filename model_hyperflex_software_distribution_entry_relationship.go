@@ -19,19 +19,18 @@ import (
 // HyperflexSoftwareDistributionEntryRelationship - A relationship to the 'hyperflex.SoftwareDistributionEntry' resource, or the expanded 'hyperflex.SoftwareDistributionEntry' resource, or the 'null' value.
 type HyperflexSoftwareDistributionEntryRelationship struct {
 	HyperflexSoftwareDistributionEntry *HyperflexSoftwareDistributionEntry
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 }
 
 // HyperflexSoftwareDistributionEntryAsHyperflexSoftwareDistributionEntryRelationship is a convenience function that returns HyperflexSoftwareDistributionEntry wrapped in HyperflexSoftwareDistributionEntryRelationship
 func HyperflexSoftwareDistributionEntryAsHyperflexSoftwareDistributionEntryRelationship(v *HyperflexSoftwareDistributionEntry) HyperflexSoftwareDistributionEntryRelationship {
-	return HyperflexSoftwareDistributionEntryRelationship{ HyperflexSoftwareDistributionEntry: v}
+	return HyperflexSoftwareDistributionEntryRelationship{HyperflexSoftwareDistributionEntry: v}
 }
 
 // MoMoRefAsHyperflexSoftwareDistributionEntryRelationship is a convenience function that returns MoMoRef wrapped in HyperflexSoftwareDistributionEntryRelationship
 func MoMoRefAsHyperflexSoftwareDistributionEntryRelationship(v *MoMoRef) HyperflexSoftwareDistributionEntryRelationship {
-	return HyperflexSoftwareDistributionEntryRelationship{ MoMoRef: v}
+	return HyperflexSoftwareDistributionEntryRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexSoftwareDistributionEntryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexSoftwareDistributionEntryRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *HyperflexSoftwareDistributionEntryRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexSoftwareDistributionEntryRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexSoftwareDistributionEntry != nil {
 		return obj.HyperflexSoftwareDistributionEntry
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexSoftwareDistributionEntryRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

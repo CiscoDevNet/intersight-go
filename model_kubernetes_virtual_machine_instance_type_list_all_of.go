@@ -20,7 +20,7 @@ type KubernetesVirtualMachineInstanceTypeListAllOf struct {
 	// The total number of 'kubernetes.VirtualMachineInstanceType' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'kubernetes.VirtualMachineInstanceType' resources matching the request.
-	Results []KubernetesVirtualMachineInstanceType `json:"Results,omitempty"`
+	Results              []KubernetesVirtualMachineInstanceType `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *KubernetesVirtualMachineInstanceTypeListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesVirtualMachineInstanceTypeListAllOf) GetResults() []KubernetesVirtualMachineInstanceType {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesVirtualMachineInstanceType
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableKubernetesVirtualMachineInstanceTypeListAllOf) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

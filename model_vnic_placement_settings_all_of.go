@@ -28,7 +28,7 @@ type VnicPlacementSettingsAllOf struct {
 	// The fabric port to which the vNICs will be associated. * `None` - Fabric Id is not set to either A or B for the standalone case where the server is not connected to Fabric Interconnects. The value 'None' should be used. * `A` - Fabric A of the FI cluster. * `B` - Fabric B of the FI cluster.
 	SwitchId *string `json:"SwitchId,omitempty"`
 	// Adapter port on which the virtual interface will be created.
-	Uplink *int64 `json:"Uplink,omitempty"`
+	Uplink               *int64 `json:"Uplink,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *VnicPlacementSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicPlacementSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *VnicPlacementSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicPlacementSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -326,5 +326,3 @@ func (v *NullableVnicPlacementSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

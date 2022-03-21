@@ -18,20 +18,19 @@ import (
 
 // ResourceReservationRelationship - A relationship to the 'resource.Reservation' resource, or the expanded 'resource.Reservation' resource, or the 'null' value.
 type ResourceReservationRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	ResourceReservation *ResourceReservation
 }
 
 // MoMoRefAsResourceReservationRelationship is a convenience function that returns MoMoRef wrapped in ResourceReservationRelationship
 func MoMoRefAsResourceReservationRelationship(v *MoMoRef) ResourceReservationRelationship {
-	return ResourceReservationRelationship{ MoMoRef: v}
+	return ResourceReservationRelationship{MoMoRef: v}
 }
 
 // ResourceReservationAsResourceReservationRelationship is a convenience function that returns ResourceReservation wrapped in ResourceReservationRelationship
 func ResourceReservationAsResourceReservationRelationship(v *ResourceReservation) ResourceReservationRelationship {
-	return ResourceReservationRelationship{ ResourceReservation: v}
+	return ResourceReservationRelationship{ResourceReservation: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourceReservationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ResourceReservationRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourceReservationRelationship) GetActualInstance() (interface{}) {
+func (obj *ResourceReservationRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableResourceReservationRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

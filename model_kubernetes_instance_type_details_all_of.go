@@ -26,7 +26,7 @@ type KubernetesInstanceTypeDetailsAllOf struct {
 	// Ephemeral disk capacity to be provided with units example - 10Gi.
 	DiskSize *int64 `json:"DiskSize,omitempty"`
 	// Virtual machine memory defined in mebibytes (MiB).
-	Memory *int64 `json:"Memory,omitempty"`
+	Memory               *int64 `json:"Memory,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *KubernetesInstanceTypeDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesInstanceTypeDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *KubernetesInstanceTypeDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesInstanceTypeDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableKubernetesInstanceTypeDetailsAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

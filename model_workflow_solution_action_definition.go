@@ -25,11 +25,11 @@ type WorkflowSolutionActionDefinition struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Type of actionDefinition which decides on how to trigger the action. * `External` - External actions definition can be triggered by enduser to perform actions on the solution. Once action is completed successfully (eg. create/deploy), user cannot re-trigger that action again. * `Internal` - Internal action definition is used to trigger periodic actions on the solution instance. * `Repetitive` - Repetitive action definition is an external action that can be triggered by enduser to perform repetitive actions (eg. Edit/Update/Perform health check) on the created solution.
-	ActionType *string `json:"ActionType,omitempty"`
-	AllowedInstanceStates []string `json:"AllowedInstanceStates,omitempty"`
-	CoreWorkflows []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
+	ActionType            *string                            `json:"ActionType,omitempty"`
+	AllowedInstanceStates []string                           `json:"AllowedInstanceStates,omitempty"`
+	CoreWorkflows         []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
 	// The description for this action which provides information on what are the pre-requisites to use this action on the solution and what features are supported by this action.
-	Description *string `json:"Description,omitempty"`
+	Description     *string                `json:"Description,omitempty"`
 	InputDefinition []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
 	// A user friendly short name to identify the action. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ) or an underscore (_).
 	Label *string `json:"Label,omitempty"`
@@ -38,15 +38,15 @@ type WorkflowSolutionActionDefinition struct {
 	// The output mappings from workflows in the action definition to the solution output definition. Any output from core or post-core workflow can be mapped to solution output definition. The output can be referred using the name of the workflow definition and the output name in the following format '${<ActionWorkflowDefinition.Name>.output.<outputName>'.
 	OutputParameters interface{} `json:"OutputParameters,omitempty"`
 	// Value in seconds to specify the periodicity of the workflows. A zero value indicate the workflow will not execute periodically. A non-zero value indicate, the workflow will be executed periodically with this periodicity.
-	Periodicity *int64 `json:"Periodicity,omitempty"`
-	PostCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PostCoreWorkflows,omitempty"`
-	PreCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PreCoreWorkflows,omitempty"`
-	StopWorkflows []WorkflowActionWorkflowDefinition `json:"StopWorkflows,omitempty"`
-	ValidationInformation NullableWorkflowValidationInformation `json:"ValidationInformation,omitempty"`
-	ValidationWorkflows []WorkflowActionWorkflowDefinition `json:"ValidationWorkflows,omitempty"`
-	SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
-	WorkflowDefinition *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Periodicity           *int64                                  `json:"Periodicity,omitempty"`
+	PostCoreWorkflows     []WorkflowActionWorkflowDefinition      `json:"PostCoreWorkflows,omitempty"`
+	PreCoreWorkflows      []WorkflowActionWorkflowDefinition      `json:"PreCoreWorkflows,omitempty"`
+	StopWorkflows         []WorkflowActionWorkflowDefinition      `json:"StopWorkflows,omitempty"`
+	ValidationInformation NullableWorkflowValidationInformation   `json:"ValidationInformation,omitempty"`
+	ValidationWorkflows   []WorkflowActionWorkflowDefinition      `json:"ValidationWorkflows,omitempty"`
+	SolutionDefinition    *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
+	WorkflowDefinition    *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _WorkflowSolutionActionDefinition WorkflowSolutionActionDefinition
@@ -91,7 +91,7 @@ func (o *WorkflowSolutionActionDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *WorkflowSolutionActionDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSolutionActionDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -160,7 +160,7 @@ func (o *WorkflowSolutionActionDefinition) SetActionType(v string) {
 
 // GetAllowedInstanceStates returns the AllowedInstanceStates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetAllowedInstanceStates() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *WorkflowSolutionActionDefinition) SetAllowedInstanceStates(v []string) 
 
 // GetCoreWorkflows returns the CoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *WorkflowSolutionActionDefinition) SetDescription(v string) {
 
 // GetInputDefinition returns the InputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetInputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *WorkflowSolutionActionDefinition) SetName(v string) {
 
 // GetOutputParameters returns the OutputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetOutputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *WorkflowSolutionActionDefinition) SetPeriodicity(v int64) {
 
 // GetPostCoreWorkflows returns the PostCoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetPostCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *WorkflowSolutionActionDefinition) SetPostCoreWorkflows(v []WorkflowActi
 
 // GetPreCoreWorkflows returns the PreCoreWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetPreCoreWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -486,7 +486,7 @@ func (o *WorkflowSolutionActionDefinition) SetPreCoreWorkflows(v []WorkflowActio
 
 // GetStopWorkflows returns the StopWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetStopWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -530,7 +530,7 @@ func (o *WorkflowSolutionActionDefinition) GetValidationInformation() WorkflowVa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowSolutionActionDefinition) GetValidationInformationOk() (*WorkflowValidationInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ValidationInformation.Get(), o.ValidationInformation.IsSet()
@@ -549,6 +549,7 @@ func (o *WorkflowSolutionActionDefinition) HasValidationInformation() bool {
 func (o *WorkflowSolutionActionDefinition) SetValidationInformation(v WorkflowValidationInformation) {
 	o.ValidationInformation.Set(&v)
 }
+
 // SetValidationInformationNil sets the value for ValidationInformation to be an explicit nil
 func (o *WorkflowSolutionActionDefinition) SetValidationInformationNil() {
 	o.ValidationInformation.Set(nil)
@@ -561,7 +562,7 @@ func (o *WorkflowSolutionActionDefinition) UnsetValidationInformation() {
 
 // GetValidationWorkflows returns the ValidationWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSolutionActionDefinition) GetValidationWorkflows() []WorkflowActionWorkflowDefinition {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowActionWorkflowDefinition
 		return ret
 	}
@@ -735,11 +736,11 @@ func (o *WorkflowSolutionActionDefinition) UnmarshalJSON(bytes []byte) (err erro
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Type of actionDefinition which decides on how to trigger the action. * `External` - External actions definition can be triggered by enduser to perform actions on the solution. Once action is completed successfully (eg. create/deploy), user cannot re-trigger that action again. * `Internal` - Internal action definition is used to trigger periodic actions on the solution instance. * `Repetitive` - Repetitive action definition is an external action that can be triggered by enduser to perform repetitive actions (eg. Edit/Update/Perform health check) on the created solution.
-		ActionType *string `json:"ActionType,omitempty"`
-		AllowedInstanceStates []string `json:"AllowedInstanceStates,omitempty"`
-		CoreWorkflows []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
+		ActionType            *string                            `json:"ActionType,omitempty"`
+		AllowedInstanceStates []string                           `json:"AllowedInstanceStates,omitempty"`
+		CoreWorkflows         []WorkflowActionWorkflowDefinition `json:"CoreWorkflows,omitempty"`
 		// The description for this action which provides information on what are the pre-requisites to use this action on the solution and what features are supported by this action.
-		Description *string `json:"Description,omitempty"`
+		Description     *string                `json:"Description,omitempty"`
 		InputDefinition []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
 		// A user friendly short name to identify the action. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.), colon (:), space ( ) or an underscore (_).
 		Label *string `json:"Label,omitempty"`
@@ -748,14 +749,14 @@ func (o *WorkflowSolutionActionDefinition) UnmarshalJSON(bytes []byte) (err erro
 		// The output mappings from workflows in the action definition to the solution output definition. Any output from core or post-core workflow can be mapped to solution output definition. The output can be referred using the name of the workflow definition and the output name in the following format '${<ActionWorkflowDefinition.Name>.output.<outputName>'.
 		OutputParameters interface{} `json:"OutputParameters,omitempty"`
 		// Value in seconds to specify the periodicity of the workflows. A zero value indicate the workflow will not execute periodically. A non-zero value indicate, the workflow will be executed periodically with this periodicity.
-		Periodicity *int64 `json:"Periodicity,omitempty"`
-		PostCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PostCoreWorkflows,omitempty"`
-		PreCoreWorkflows []WorkflowActionWorkflowDefinition `json:"PreCoreWorkflows,omitempty"`
-		StopWorkflows []WorkflowActionWorkflowDefinition `json:"StopWorkflows,omitempty"`
-		ValidationInformation NullableWorkflowValidationInformation `json:"ValidationInformation,omitempty"`
-		ValidationWorkflows []WorkflowActionWorkflowDefinition `json:"ValidationWorkflows,omitempty"`
-		SolutionDefinition *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
-		WorkflowDefinition *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
+		Periodicity           *int64                                  `json:"Periodicity,omitempty"`
+		PostCoreWorkflows     []WorkflowActionWorkflowDefinition      `json:"PostCoreWorkflows,omitempty"`
+		PreCoreWorkflows      []WorkflowActionWorkflowDefinition      `json:"PreCoreWorkflows,omitempty"`
+		StopWorkflows         []WorkflowActionWorkflowDefinition      `json:"StopWorkflows,omitempty"`
+		ValidationInformation NullableWorkflowValidationInformation   `json:"ValidationInformation,omitempty"`
+		ValidationWorkflows   []WorkflowActionWorkflowDefinition      `json:"ValidationWorkflows,omitempty"`
+		SolutionDefinition    *WorkflowSolutionDefinitionRelationship `json:"SolutionDefinition,omitempty"`
+		WorkflowDefinition    *WorkflowWorkflowDefinitionRelationship `json:"WorkflowDefinition,omitempty"`
 	}
 
 	varWorkflowSolutionActionDefinitionWithoutEmbeddedStruct := WorkflowSolutionActionDefinitionWithoutEmbeddedStruct{}
@@ -876,5 +877,3 @@ func (v *NullableWorkflowSolutionActionDefinition) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

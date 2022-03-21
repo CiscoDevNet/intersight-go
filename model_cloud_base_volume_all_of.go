@@ -21,15 +21,15 @@ type CloudBaseVolumeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                   `json:"ObjectType"`
 	BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
 	// Encryption state of this volume.For example ENCRYPTED, NOT ENCRYPTED, etc. * `Automatic` - Volume encryption state is automatic.Cloud provider takes the decision of when to encrypt the data. * `Encrypted` - Volume data is encrypted. Can be decrypted only by authorized users. * `Not_Encrypted` - Volume data is not encrypted.
 	EncryptionState *string `json:"EncryptionState,omitempty"`
 	// The internally generated identity of this VM. It aids in uniquely identifying the volume object.
-	Identity *string `json:"Identity,omitempty"`
+	Identity            *string                         `json:"Identity,omitempty"`
 	InstanceAttachments []CloudVolumeInstanceAttachment `json:"InstanceAttachments,omitempty"`
-	IopsInfo NullableCloudVolumeIopsInfo `json:"IopsInfo,omitempty"`
-	RegionInfo NullableCloudCloudRegion `json:"RegionInfo,omitempty"`
+	IopsInfo            NullableCloudVolumeIopsInfo     `json:"IopsInfo,omitempty"`
+	RegionInfo          NullableCloudCloudRegion        `json:"RegionInfo,omitempty"`
 	// Source Image Id used for the volume.
 	SourceImageId *string `json:"SourceImageId,omitempty"`
 	// The volume state.For example AVAILABLE, IN_USE, DELETED, etc. * `UnRecognized` - Volume is in unrecognized state. * `Pending` - Volume is  in pending state, due to errors encountered during volume creation. * `Bound` - Volume is in bound state. * `Available` - Volume is in available state. * `Error` - Volume is in error state. * `Released` - Volume is in released state. * `in-use` - Volume is in in-use state. * `Creating` - Volume is in creating state. * `Deleting` - Volume is in deleting state. * `Deleted` - Volume is in deleted state.
@@ -37,10 +37,10 @@ type CloudBaseVolumeAllOf struct {
 	// UUID (Universally Unique IDentifier) is a 128-bit value used for unique identification of Volume.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Time when this volume is created.
-	VolumeCreateTime *time.Time `json:"VolumeCreateTime,omitempty"`
-	VolumeTags []CloudCloudTag `json:"VolumeTags,omitempty"`
-	VolumeType NullableCloudVolumeType `json:"VolumeType,omitempty"`
-	ZoneInfo NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
+	VolumeCreateTime     *time.Time                    `json:"VolumeCreateTime,omitempty"`
+	VolumeTags           []CloudCloudTag               `json:"VolumeTags,omitempty"`
+	VolumeType           NullableCloudVolumeType       `json:"VolumeType,omitempty"`
+	ZoneInfo             NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *CloudBaseVolumeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseVolumeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *CloudBaseVolumeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseVolumeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -130,7 +130,7 @@ func (o *CloudBaseVolumeAllOf) GetBillingUnit() CloudBillingUnit {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVolumeAllOf) GetBillingUnitOk() (*CloudBillingUnit, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingUnit.Get(), o.BillingUnit.IsSet()
@@ -149,6 +149,7 @@ func (o *CloudBaseVolumeAllOf) HasBillingUnit() bool {
 func (o *CloudBaseVolumeAllOf) SetBillingUnit(v CloudBillingUnit) {
 	o.BillingUnit.Set(&v)
 }
+
 // SetBillingUnitNil sets the value for BillingUnit to be an explicit nil
 func (o *CloudBaseVolumeAllOf) SetBillingUnitNil() {
 	o.BillingUnit.Set(nil)
@@ -225,7 +226,7 @@ func (o *CloudBaseVolumeAllOf) SetIdentity(v string) {
 
 // GetInstanceAttachments returns the InstanceAttachments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseVolumeAllOf) GetInstanceAttachments() []CloudVolumeInstanceAttachment {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudVolumeInstanceAttachment
 		return ret
 	}
@@ -269,7 +270,7 @@ func (o *CloudBaseVolumeAllOf) GetIopsInfo() CloudVolumeIopsInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVolumeAllOf) GetIopsInfoOk() (*CloudVolumeIopsInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IopsInfo.Get(), o.IopsInfo.IsSet()
@@ -288,6 +289,7 @@ func (o *CloudBaseVolumeAllOf) HasIopsInfo() bool {
 func (o *CloudBaseVolumeAllOf) SetIopsInfo(v CloudVolumeIopsInfo) {
 	o.IopsInfo.Set(&v)
 }
+
 // SetIopsInfoNil sets the value for IopsInfo to be an explicit nil
 func (o *CloudBaseVolumeAllOf) SetIopsInfoNil() {
 	o.IopsInfo.Set(nil)
@@ -311,7 +313,7 @@ func (o *CloudBaseVolumeAllOf) GetRegionInfo() CloudCloudRegion {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVolumeAllOf) GetRegionInfoOk() (*CloudCloudRegion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RegionInfo.Get(), o.RegionInfo.IsSet()
@@ -330,6 +332,7 @@ func (o *CloudBaseVolumeAllOf) HasRegionInfo() bool {
 func (o *CloudBaseVolumeAllOf) SetRegionInfo(v CloudCloudRegion) {
 	o.RegionInfo.Set(&v)
 }
+
 // SetRegionInfoNil sets the value for RegionInfo to be an explicit nil
 func (o *CloudBaseVolumeAllOf) SetRegionInfoNil() {
 	o.RegionInfo.Set(nil)
@@ -470,7 +473,7 @@ func (o *CloudBaseVolumeAllOf) SetVolumeCreateTime(v time.Time) {
 
 // GetVolumeTags returns the VolumeTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseVolumeAllOf) GetVolumeTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -514,7 +517,7 @@ func (o *CloudBaseVolumeAllOf) GetVolumeType() CloudVolumeType {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVolumeAllOf) GetVolumeTypeOk() (*CloudVolumeType, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VolumeType.Get(), o.VolumeType.IsSet()
@@ -533,6 +536,7 @@ func (o *CloudBaseVolumeAllOf) HasVolumeType() bool {
 func (o *CloudBaseVolumeAllOf) SetVolumeType(v CloudVolumeType) {
 	o.VolumeType.Set(&v)
 }
+
 // SetVolumeTypeNil sets the value for VolumeType to be an explicit nil
 func (o *CloudBaseVolumeAllOf) SetVolumeTypeNil() {
 	o.VolumeType.Set(nil)
@@ -556,7 +560,7 @@ func (o *CloudBaseVolumeAllOf) GetZoneInfo() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseVolumeAllOf) GetZoneInfoOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ZoneInfo.Get(), o.ZoneInfo.IsSet()
@@ -575,6 +579,7 @@ func (o *CloudBaseVolumeAllOf) HasZoneInfo() bool {
 func (o *CloudBaseVolumeAllOf) SetZoneInfo(v CloudAvailabilityZone) {
 	o.ZoneInfo.Set(&v)
 }
+
 // SetZoneInfoNil sets the value for ZoneInfo to be an explicit nil
 func (o *CloudBaseVolumeAllOf) SetZoneInfoNil() {
 	o.ZoneInfo.Set(nil)
@@ -706,5 +711,3 @@ func (v *NullableCloudBaseVolumeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

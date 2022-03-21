@@ -21,8 +21,8 @@ type TelemetryDruidScanRequestAllOf struct {
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
 	Intervals []string `json:"intervals"`
 	// How the results are represented, list, compactedList or valueVector. Currently only list is supported.
-	ResultFormat *string `json:"resultFormat,omitempty"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	ResultFormat *string               `json:"resultFormat,omitempty"`
+	Filter       *TelemetryDruidFilter `json:"filter,omitempty"`
 	// A String array of dimensions and metrics to scan. If left empty, all dimensions and metrics are returned.
 	Columns *[]string `json:"columns,omitempty"`
 	// The maximum number of rows buffered before being returned to the client.
@@ -32,8 +32,8 @@ type TelemetryDruidScanRequestAllOf struct {
 	// The ordering of returned rows based on timestamp. \"ascending\", \"descending\", and \"none\" (default) are supported. Currently, \"ascending\" and \"descending\" are only supported for queries where the __time column is included in the columns field and the requirements outlined in the time ordering section are met.
 	Order *string `json:"order,omitempty"`
 	// Return results consistent with the legacy \"scan-query\" contrib extension. Defaults to the value set by druid.query.scan.legacy, which in turn defaults to false.
-	Legacy *bool `json:"legacy,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Legacy               *bool                       `json:"legacy,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *TelemetryDruidScanRequestAllOf) GetDataSource() TelemetryDruidDataSourc
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidScanRequestAllOf) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -111,7 +111,7 @@ func (o *TelemetryDruidScanRequestAllOf) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidScanRequestAllOf) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -479,5 +479,3 @@ func (v *NullableTelemetryDruidScanRequestAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

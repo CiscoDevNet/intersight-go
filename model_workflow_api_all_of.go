@@ -44,7 +44,7 @@ type WorkflowApiAllOf struct {
 	// The delay in seconds after which the API needs to be executed. By default, the given API is executed immediately. Specifying a start delay adds to the delay to execution. Start Delay is not supported for the first API in the Batch and cumulative delay of all the APIs in the Batch should not exceed the task time out.
 	StartDelay *int64 `json:"StartDelay,omitempty"`
 	// The duration in seconds by which the API response is expected from the API target. If the end point does not respond for the API request within this timeout duration, the task will be marked as failed.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout              *int64 `json:"Timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *WorkflowApiAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowApiAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *WorkflowApiAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowApiAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -343,7 +343,7 @@ func (o *WorkflowApiAllOf) SetName(v string) {
 
 // GetOutcomes returns the Outcomes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowApiAllOf) GetOutcomes() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *WorkflowApiAllOf) SetOutcomes(v interface{}) {
 
 // GetResponseSpec returns the ResponseSpec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowApiAllOf) GetResponseSpec() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -620,5 +620,3 @@ func (v *NullableWorkflowApiAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

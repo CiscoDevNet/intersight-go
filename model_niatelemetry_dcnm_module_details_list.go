@@ -23,7 +23,7 @@ type NiatelemetryDcnmModuleDetailsList struct {
 	// The total number of 'niatelemetry.DcnmModuleDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.DcnmModuleDetails' resources matching the request.
-	Results []NiatelemetryDcnmModuleDetails `json:"Results,omitempty"`
+	Results              []NiatelemetryDcnmModuleDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetryDcnmModuleDetailsList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryDcnmModuleDetailsList) GetResults() []NiatelemetryDcnmModuleDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryDcnmModuleDetails
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNiatelemetryDcnmModuleDetailsList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,12 +22,12 @@ type PkixDistinguishedNameAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A required component that identifies a person or an object.
-	CommonName *string `json:"CommonName,omitempty"`
-	Country []string `json:"Country,omitempty"`
-	Locality []string `json:"Locality,omitempty"`
-	Organization []string `json:"Organization,omitempty"`
-	OrganizationalUnit []string `json:"OrganizationalUnit,omitempty"`
-	State []string `json:"State,omitempty"`
+	CommonName           *string  `json:"CommonName,omitempty"`
+	Country              []string `json:"Country,omitempty"`
+	Locality             []string `json:"Locality,omitempty"`
+	Organization         []string `json:"Organization,omitempty"`
+	OrganizationalUnit   []string `json:"OrganizationalUnit,omitempty"`
+	State                []string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *PkixDistinguishedNameAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PkixDistinguishedNameAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *PkixDistinguishedNameAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PkixDistinguishedNameAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -138,7 +138,7 @@ func (o *PkixDistinguishedNameAllOf) SetCommonName(v string) {
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedNameAllOf) GetCountry() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *PkixDistinguishedNameAllOf) SetCountry(v []string) {
 
 // GetLocality returns the Locality field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedNameAllOf) GetLocality() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *PkixDistinguishedNameAllOf) SetLocality(v []string) {
 
 // GetOrganization returns the Organization field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedNameAllOf) GetOrganization() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *PkixDistinguishedNameAllOf) SetOrganization(v []string) {
 
 // GetOrganizationalUnit returns the OrganizationalUnit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedNameAllOf) GetOrganizationalUnit() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *PkixDistinguishedNameAllOf) SetOrganizationalUnit(v []string) {
 
 // GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedNameAllOf) GetState() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -394,5 +394,3 @@ func (v *NullablePkixDistinguishedNameAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ type WorkflowMoReferenceArrayItemAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Properties []WorkflowMoReferenceProperty `json:"Properties,omitempty"`
+	ObjectType           string                        `json:"ObjectType"`
+	Properties           []WorkflowMoReferenceProperty `json:"Properties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *WorkflowMoReferenceArrayItemAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMoReferenceArrayItemAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *WorkflowMoReferenceArrayItemAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowMoReferenceArrayItemAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -100,7 +100,7 @@ func (o *WorkflowMoReferenceArrayItemAllOf) SetObjectType(v string) {
 
 // GetProperties returns the Properties field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowMoReferenceArrayItemAllOf) GetProperties() []WorkflowMoReferenceProperty {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowMoReferenceProperty
 		return ret
 	}
@@ -204,5 +204,3 @@ func (v *NullableWorkflowMoReferenceArrayItemAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

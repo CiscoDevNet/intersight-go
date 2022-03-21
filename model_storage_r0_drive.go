@@ -29,8 +29,8 @@ type StorageR0Drive struct {
 	// The list of drive slots where RAID0 virtual drives must be created (comma seperated).
 	DriveSlotsList *string `json:"DriveSlotsList,omitempty"`
 	// If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
-	Enable *bool `json:"Enable,omitempty"`
-	VirtualDrivePolicy NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
+	Enable               *bool                             `json:"Enable,omitempty"`
+	VirtualDrivePolicy   NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *StorageR0Drive) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageR0Drive) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *StorageR0Drive) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageR0Drive) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -220,7 +220,7 @@ func (o *StorageR0Drive) GetVirtualDrivePolicy() StorageVirtualDrivePolicy {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageR0Drive) GetVirtualDrivePolicyOk() (*StorageVirtualDrivePolicy, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VirtualDrivePolicy.Get(), o.VirtualDrivePolicy.IsSet()
@@ -239,6 +239,7 @@ func (o *StorageR0Drive) HasVirtualDrivePolicy() bool {
 func (o *StorageR0Drive) SetVirtualDrivePolicy(v StorageVirtualDrivePolicy) {
 	o.VirtualDrivePolicy.Set(&v)
 }
+
 // SetVirtualDrivePolicyNil sets the value for VirtualDrivePolicy to be an explicit nil
 func (o *StorageR0Drive) SetVirtualDrivePolicyNil() {
 	o.VirtualDrivePolicy.Set(nil)
@@ -296,7 +297,7 @@ func (o *StorageR0Drive) UnmarshalJSON(bytes []byte) (err error) {
 		// The list of drive slots where RAID0 virtual drives must be created (comma seperated).
 		DriveSlotsList *string `json:"DriveSlotsList,omitempty"`
 		// If enabled, this will create a RAID0 virtual drive per disk and encompassing the whole disk.
-		Enable *bool `json:"Enable,omitempty"`
+		Enable             *bool                             `json:"Enable,omitempty"`
 		VirtualDrivePolicy NullableStorageVirtualDrivePolicy `json:"VirtualDrivePolicy,omitempty"`
 	}
 
@@ -394,5 +395,3 @@ func (v *NullableStorageR0Drive) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,10 +25,10 @@ type IppoolShadowBlock struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Type of this IP addresses blocks. * `IPv4` - IP V4 address type requested. * `IPv6` - IP V6 address type requested.
-	IpType *string `json:"IpType,omitempty"`
-	IpV4Block *IppoolIpV4Block `json:"IpV4Block,omitempty"`
-	IpV6Block *IppoolIpV6Block `json:"IpV6Block,omitempty"`
-	Pool *IppoolShadowPoolRelationship `json:"Pool,omitempty"`
+	IpType               *string                       `json:"IpType,omitempty"`
+	IpV4Block            *IppoolIpV4Block              `json:"IpV4Block,omitempty"`
+	IpV6Block            *IppoolIpV6Block              `json:"IpV6Block,omitempty"`
+	Pool                 *IppoolShadowPoolRelationship `json:"Pool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IppoolShadowBlock) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IppoolShadowBlock) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IppoolShadowBlock) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IppoolShadowBlock) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,10 +280,10 @@ func (o *IppoolShadowBlock) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Type of this IP addresses blocks. * `IPv4` - IP V4 address type requested. * `IPv6` - IP V6 address type requested.
-		IpType *string `json:"IpType,omitempty"`
-		IpV4Block *IppoolIpV4Block `json:"IpV4Block,omitempty"`
-		IpV6Block *IppoolIpV6Block `json:"IpV6Block,omitempty"`
-		Pool *IppoolShadowPoolRelationship `json:"Pool,omitempty"`
+		IpType    *string                       `json:"IpType,omitempty"`
+		IpV4Block *IppoolIpV4Block              `json:"IpV4Block,omitempty"`
+		IpV6Block *IppoolIpV6Block              `json:"IpV6Block,omitempty"`
+		Pool      *IppoolShadowPoolRelationship `json:"Pool,omitempty"`
 	}
 
 	varIppoolShadowBlockWithoutEmbeddedStruct := IppoolShadowBlockWithoutEmbeddedStruct{}
@@ -380,5 +380,3 @@ func (v *NullableIppoolShadowBlock) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

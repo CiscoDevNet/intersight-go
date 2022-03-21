@@ -21,8 +21,8 @@ import (
 type MoTagSummary struct {
 	MoBaseResponse
 	// A discriminator value to disambiguate the schema of a HTTP GET response body.
-	ObjectType string `json:"ObjectType"`
-	Results []MoTagKeySummary `json:"Results,omitempty"`
+	ObjectType           string            `json:"ObjectType"`
+	Results              []MoTagKeySummary `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *MoTagSummary) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MoTagSummary) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -72,7 +72,7 @@ func (o *MoTagSummary) SetObjectType(v string) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoTagSummary) GetResults() []MoTagKeySummary {
-	if o == nil  {
+	if o == nil {
 		var ret []MoTagKeySummary
 		return ret
 	}
@@ -130,8 +130,8 @@ func (o MoTagSummary) MarshalJSON() ([]byte, error) {
 func (o *MoTagSummary) UnmarshalJSON(bytes []byte) (err error) {
 	type MoTagSummaryWithoutEmbeddedStruct struct {
 		// A discriminator value to disambiguate the schema of a HTTP GET response body.
-		ObjectType string `json:"ObjectType"`
-		Results []MoTagKeySummary `json:"Results,omitempty"`
+		ObjectType string            `json:"ObjectType"`
+		Results    []MoTagKeySummary `json:"Results,omitempty"`
 	}
 
 	varMoTagSummaryWithoutEmbeddedStruct := MoTagSummaryWithoutEmbeddedStruct{}
@@ -220,5 +220,3 @@ func (v *NullableMoTagSummary) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

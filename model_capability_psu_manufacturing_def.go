@@ -35,7 +35,7 @@ type CapabilityPsuManufacturingDef struct {
 	// SKU information for a power supply unit.
 	Sku *string `json:"Sku,omitempty"`
 	// VID information for a power supply unit.
-	Vid *string `json:"Vid,omitempty"`
+	Vid                  *string `json:"Vid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *CapabilityPsuManufacturingDef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityPsuManufacturingDef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *CapabilityPsuManufacturingDef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityPsuManufacturingDef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -464,5 +464,3 @@ func (v *NullableCapabilityPsuManufacturingDef) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

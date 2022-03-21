@@ -25,8 +25,8 @@ type ComputePhysical struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// The desired power state of the server.
-	AdminPowerState *string `json:"AdminPowerState,omitempty"`
-	AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+	AdminPowerState *string                     `json:"AdminPowerState,omitempty"`
+	AlarmSummary    NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 	// The user defined asset tag assigned to the server.
 	AssetTag *string `json:"AssetTag,omitempty"`
 	// The amount of memory available on the server.
@@ -37,7 +37,7 @@ type ComputePhysical struct {
 	// Deprecated
 	FaultSummary *int64 `json:"FaultSummary,omitempty"`
 	// The universally unique hardware identity of the server provided by the manufacturer.
-	HardwareUuid *string `json:"HardwareUuid,omitempty"`
+	HardwareUuid   *string            `json:"HardwareUuid,omitempty"`
 	KvmIpAddresses []ComputeIpAddress `json:"KvmIpAddresses,omitempty"`
 	// The management mode of the server. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 	ManagementMode *string `json:"ManagementMode,omitempty"`
@@ -62,8 +62,8 @@ type ComputePhysical struct {
 	// The total number of threads the server is capable of handling.
 	NumThreads *int64 `json:"NumThreads,omitempty"`
 	// The actual power state of the server.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	OperPowerState *string  `json:"OperPowerState,omitempty"`
+	OperReason     []string `json:"OperReason,omitempty"`
 	// The operational state of the server.
 	OperState *string `json:"OperState,omitempty"`
 	// The operability of the server.
@@ -81,7 +81,7 @@ type ComputePhysical struct {
 	// The universally unique identity of the server.
 	Uuid *string `json:"Uuid,omitempty"`
 	// An array of relationships to bootCddDevice resources.
-	BootCddDevices []BootCddDeviceRelationship `json:"BootCddDevices,omitempty"`
+	BootCddDevices         []BootCddDeviceRelationship         `json:"BootCddDevices,omitempty"`
 	BootDeviceBootSecurity *BootDeviceBootSecurityRelationship `json:"BootDeviceBootSecurity,omitempty"`
 	// An array of relationships to bootHddDevice resources.
 	BootHddDevices []BootHddDeviceRelationship `json:"BootHddDevices,omitempty"`
@@ -102,9 +102,9 @@ type ComputePhysical struct {
 	// An array of relationships to bootUsbDevice resources.
 	BootUsbDevices []BootUsbDeviceRelationship `json:"BootUsbDevices,omitempty"`
 	// An array of relationships to bootVmediaDevice resources.
-	BootVmediaDevices []BootVmediaDeviceRelationship `json:"BootVmediaDevices,omitempty"`
-	MgmtIdentity *EquipmentPhysicalIdentityRelationship `json:"MgmtIdentity,omitempty"`
-	Vmedia *ComputeVmediaRelationship `json:"Vmedia,omitempty"`
+	BootVmediaDevices    []BootVmediaDeviceRelationship         `json:"BootVmediaDevices,omitempty"`
+	MgmtIdentity         *EquipmentPhysicalIdentityRelationship `json:"MgmtIdentity,omitempty"`
+	Vmedia               *ComputeVmediaRelationship             `json:"Vmedia,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -146,7 +146,7 @@ func (o *ComputePhysical) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputePhysical) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -170,7 +170,7 @@ func (o *ComputePhysical) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputePhysical) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -226,7 +226,7 @@ func (o *ComputePhysical) GetAlarmSummary() ComputeAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ComputePhysical) GetAlarmSummaryOk() (*ComputeAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -245,6 +245,7 @@ func (o *ComputePhysical) HasAlarmSummary() bool {
 func (o *ComputePhysical) SetAlarmSummary(v ComputeAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *ComputePhysical) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -420,7 +421,7 @@ func (o *ComputePhysical) SetHardwareUuid(v string) {
 
 // GetKvmIpAddresses returns the KvmIpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetKvmIpAddresses() []ComputeIpAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeIpAddress
 		return ret
 	}
@@ -837,7 +838,7 @@ func (o *ComputePhysical) SetOperPowerState(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -1126,7 +1127,7 @@ func (o *ComputePhysical) SetUuid(v string) {
 
 // GetBootCddDevices returns the BootCddDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootCddDevices() []BootCddDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootCddDeviceRelationship
 		return ret
 	}
@@ -1191,7 +1192,7 @@ func (o *ComputePhysical) SetBootDeviceBootSecurity(v BootDeviceBootSecurityRela
 
 // GetBootHddDevices returns the BootHddDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootHddDevices() []BootHddDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootHddDeviceRelationship
 		return ret
 	}
@@ -1224,7 +1225,7 @@ func (o *ComputePhysical) SetBootHddDevices(v []BootHddDeviceRelationship) {
 
 // GetBootIscsiDevices returns the BootIscsiDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootIscsiDevices() []BootIscsiDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootIscsiDeviceRelationship
 		return ret
 	}
@@ -1257,7 +1258,7 @@ func (o *ComputePhysical) SetBootIscsiDevices(v []BootIscsiDeviceRelationship) {
 
 // GetBootNvmeDevices returns the BootNvmeDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootNvmeDevices() []BootNvmeDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootNvmeDeviceRelationship
 		return ret
 	}
@@ -1290,7 +1291,7 @@ func (o *ComputePhysical) SetBootNvmeDevices(v []BootNvmeDeviceRelationship) {
 
 // GetBootPchStorageDevices returns the BootPchStorageDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootPchStorageDevices() []BootPchStorageDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootPchStorageDeviceRelationship
 		return ret
 	}
@@ -1323,7 +1324,7 @@ func (o *ComputePhysical) SetBootPchStorageDevices(v []BootPchStorageDeviceRelat
 
 // GetBootPxeDevices returns the BootPxeDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootPxeDevices() []BootPxeDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootPxeDeviceRelationship
 		return ret
 	}
@@ -1356,7 +1357,7 @@ func (o *ComputePhysical) SetBootPxeDevices(v []BootPxeDeviceRelationship) {
 
 // GetBootSanDevices returns the BootSanDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootSanDevices() []BootSanDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootSanDeviceRelationship
 		return ret
 	}
@@ -1389,7 +1390,7 @@ func (o *ComputePhysical) SetBootSanDevices(v []BootSanDeviceRelationship) {
 
 // GetBootSdDevices returns the BootSdDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootSdDevices() []BootSdDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootSdDeviceRelationship
 		return ret
 	}
@@ -1422,7 +1423,7 @@ func (o *ComputePhysical) SetBootSdDevices(v []BootSdDeviceRelationship) {
 
 // GetBootUefiShellDevices returns the BootUefiShellDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootUefiShellDevices() []BootUefiShellDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootUefiShellDeviceRelationship
 		return ret
 	}
@@ -1455,7 +1456,7 @@ func (o *ComputePhysical) SetBootUefiShellDevices(v []BootUefiShellDeviceRelatio
 
 // GetBootUsbDevices returns the BootUsbDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootUsbDevices() []BootUsbDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootUsbDeviceRelationship
 		return ret
 	}
@@ -1488,7 +1489,7 @@ func (o *ComputePhysical) SetBootUsbDevices(v []BootUsbDeviceRelationship) {
 
 // GetBootVmediaDevices returns the BootVmediaDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputePhysical) GetBootVmediaDevices() []BootVmediaDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BootVmediaDeviceRelationship
 		return ret
 	}
@@ -1743,8 +1744,8 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// The desired power state of the server.
-		AdminPowerState *string `json:"AdminPowerState,omitempty"`
-		AlarmSummary NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
+		AdminPowerState *string                     `json:"AdminPowerState,omitempty"`
+		AlarmSummary    NullableComputeAlarmSummary `json:"AlarmSummary,omitempty"`
 		// The user defined asset tag assigned to the server.
 		AssetTag *string `json:"AssetTag,omitempty"`
 		// The amount of memory available on the server.
@@ -1755,7 +1756,7 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		// Deprecated
 		FaultSummary *int64 `json:"FaultSummary,omitempty"`
 		// The universally unique hardware identity of the server provided by the manufacturer.
-		HardwareUuid *string `json:"HardwareUuid,omitempty"`
+		HardwareUuid   *string            `json:"HardwareUuid,omitempty"`
 		KvmIpAddresses []ComputeIpAddress `json:"KvmIpAddresses,omitempty"`
 		// The management mode of the server. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 		ManagementMode *string `json:"ManagementMode,omitempty"`
@@ -1780,8 +1781,8 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		// The total number of threads the server is capable of handling.
 		NumThreads *int64 `json:"NumThreads,omitempty"`
 		// The actual power state of the server.
-		OperPowerState *string `json:"OperPowerState,omitempty"`
-		OperReason []string `json:"OperReason,omitempty"`
+		OperPowerState *string  `json:"OperPowerState,omitempty"`
+		OperReason     []string `json:"OperReason,omitempty"`
 		// The operational state of the server.
 		OperState *string `json:"OperState,omitempty"`
 		// The operability of the server.
@@ -1799,7 +1800,7 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		// The universally unique identity of the server.
 		Uuid *string `json:"Uuid,omitempty"`
 		// An array of relationships to bootCddDevice resources.
-		BootCddDevices []BootCddDeviceRelationship `json:"BootCddDevices,omitempty"`
+		BootCddDevices         []BootCddDeviceRelationship         `json:"BootCddDevices,omitempty"`
 		BootDeviceBootSecurity *BootDeviceBootSecurityRelationship `json:"BootDeviceBootSecurity,omitempty"`
 		// An array of relationships to bootHddDevice resources.
 		BootHddDevices []BootHddDeviceRelationship `json:"BootHddDevices,omitempty"`
@@ -1820,9 +1821,9 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to bootUsbDevice resources.
 		BootUsbDevices []BootUsbDeviceRelationship `json:"BootUsbDevices,omitempty"`
 		// An array of relationships to bootVmediaDevice resources.
-		BootVmediaDevices []BootVmediaDeviceRelationship `json:"BootVmediaDevices,omitempty"`
-		MgmtIdentity *EquipmentPhysicalIdentityRelationship `json:"MgmtIdentity,omitempty"`
-		Vmedia *ComputeVmediaRelationship `json:"Vmedia,omitempty"`
+		BootVmediaDevices []BootVmediaDeviceRelationship         `json:"BootVmediaDevices,omitempty"`
+		MgmtIdentity      *EquipmentPhysicalIdentityRelationship `json:"MgmtIdentity,omitempty"`
+		Vmedia            *ComputeVmediaRelationship             `json:"Vmedia,omitempty"`
 	}
 
 	varComputePhysicalWithoutEmbeddedStruct := ComputePhysicalWithoutEmbeddedStruct{}
@@ -1997,5 +1998,3 @@ func (v *NullableComputePhysical) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

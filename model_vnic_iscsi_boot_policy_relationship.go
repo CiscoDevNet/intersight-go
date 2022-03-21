@@ -18,20 +18,19 @@ import (
 
 // VnicIscsiBootPolicyRelationship - A relationship to the 'vnic.IscsiBootPolicy' resource, or the expanded 'vnic.IscsiBootPolicy' resource, or the 'null' value.
 type VnicIscsiBootPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	VnicIscsiBootPolicy *VnicIscsiBootPolicy
 }
 
 // MoMoRefAsVnicIscsiBootPolicyRelationship is a convenience function that returns MoMoRef wrapped in VnicIscsiBootPolicyRelationship
 func MoMoRefAsVnicIscsiBootPolicyRelationship(v *MoMoRef) VnicIscsiBootPolicyRelationship {
-	return VnicIscsiBootPolicyRelationship{ MoMoRef: v}
+	return VnicIscsiBootPolicyRelationship{MoMoRef: v}
 }
 
 // VnicIscsiBootPolicyAsVnicIscsiBootPolicyRelationship is a convenience function that returns VnicIscsiBootPolicy wrapped in VnicIscsiBootPolicyRelationship
 func VnicIscsiBootPolicyAsVnicIscsiBootPolicyRelationship(v *VnicIscsiBootPolicy) VnicIscsiBootPolicyRelationship {
-	return VnicIscsiBootPolicyRelationship{ VnicIscsiBootPolicy: v}
+	return VnicIscsiBootPolicyRelationship{VnicIscsiBootPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicIscsiBootPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VnicIscsiBootPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicIscsiBootPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *VnicIscsiBootPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVnicIscsiBootPolicyRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

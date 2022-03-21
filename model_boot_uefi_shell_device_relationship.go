@@ -19,19 +19,18 @@ import (
 // BootUefiShellDeviceRelationship - A relationship to the 'boot.UefiShellDevice' resource, or the expanded 'boot.UefiShellDevice' resource, or the 'null' value.
 type BootUefiShellDeviceRelationship struct {
 	BootUefiShellDevice *BootUefiShellDevice
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // BootUefiShellDeviceAsBootUefiShellDeviceRelationship is a convenience function that returns BootUefiShellDevice wrapped in BootUefiShellDeviceRelationship
 func BootUefiShellDeviceAsBootUefiShellDeviceRelationship(v *BootUefiShellDevice) BootUefiShellDeviceRelationship {
-	return BootUefiShellDeviceRelationship{ BootUefiShellDevice: v}
+	return BootUefiShellDeviceRelationship{BootUefiShellDevice: v}
 }
 
 // MoMoRefAsBootUefiShellDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootUefiShellDeviceRelationship
 func MoMoRefAsBootUefiShellDeviceRelationship(v *MoMoRef) BootUefiShellDeviceRelationship {
-	return BootUefiShellDeviceRelationship{ MoMoRef: v}
+	return BootUefiShellDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootUefiShellDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootUefiShellDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootUefiShellDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootUefiShellDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootUefiShellDevice != nil {
 		return obj.BootUefiShellDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootUefiShellDeviceRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

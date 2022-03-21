@@ -23,11 +23,11 @@ type IamTrustPoint struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string            `json:"ObjectType"`
 	Certificates []X509Certificate `json:"Certificates,omitempty"`
 	// The certificate information for this trusted point. The certificate must be in Base64 encoded X.509 (CER) format.
-	Chain *string `json:"Chain,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Chain                *string                 `json:"Chain,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *IamTrustPoint) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamTrustPoint) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *IamTrustPoint) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamTrustPoint) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -106,7 +106,7 @@ func (o *IamTrustPoint) SetObjectType(v string) {
 
 // GetCertificates returns the Certificates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamTrustPoint) GetCertificates() []X509Certificate {
-	if o == nil  {
+	if o == nil {
 		var ret []X509Certificate
 		return ret
 	}
@@ -239,10 +239,10 @@ func (o *IamTrustPoint) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType   string            `json:"ObjectType"`
 		Certificates []X509Certificate `json:"Certificates,omitempty"`
 		// The certificate information for this trusted point. The certificate must be in Base64 encoded X.509 (CER) format.
-		Chain *string `json:"Chain,omitempty"`
+		Chain   *string                 `json:"Chain,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -338,5 +338,3 @@ func (v *NullableIamTrustPoint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

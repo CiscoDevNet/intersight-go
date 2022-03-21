@@ -20,7 +20,7 @@ type MemoryPersistentMemoryNamespaceListAllOf struct {
 	// The total number of 'memory.PersistentMemoryNamespace' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'memory.PersistentMemoryNamespace' resources matching the request.
-	Results []MemoryPersistentMemoryNamespace `json:"Results,omitempty"`
+	Results              []MemoryPersistentMemoryNamespace `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *MemoryPersistentMemoryNamespaceListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryNamespaceListAllOf) GetResults() []MemoryPersistentMemoryNamespace {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryNamespace
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableMemoryPersistentMemoryNamespaceListAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

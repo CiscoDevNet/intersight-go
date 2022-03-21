@@ -23,12 +23,12 @@ type CloudAwsSecurityGroup struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	EgressRules []CloudSecurityGroupRule `json:"EgressRules,omitempty"`
-	IngressRules []CloudSecurityGroupRule `json:"IngressRules,omitempty"`
-	SecurityGroupTags []CloudCloudTag `json:"SecurityGroupTags,omitempty"`
-	AwsBillingUnit *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
-	Location *CloudAwsVpcRelationship `json:"Location,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	EgressRules          []CloudSecurityGroupRule         `json:"EgressRules,omitempty"`
+	IngressRules         []CloudSecurityGroupRule         `json:"IngressRules,omitempty"`
+	SecurityGroupTags    []CloudCloudTag                  `json:"SecurityGroupTags,omitempty"`
+	AwsBillingUnit       *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
+	Location             *CloudAwsVpcRelationship         `json:"Location,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *CloudAwsSecurityGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSecurityGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *CloudAwsSecurityGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSecurityGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *CloudAwsSecurityGroup) SetObjectType(v string) {
 
 // GetEgressRules returns the EgressRules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSecurityGroup) GetEgressRules() []CloudSecurityGroupRule {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudSecurityGroupRule
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *CloudAwsSecurityGroup) SetEgressRules(v []CloudSecurityGroupRule) {
 
 // GetIngressRules returns the IngressRules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSecurityGroup) GetIngressRules() []CloudSecurityGroupRule {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudSecurityGroupRule
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *CloudAwsSecurityGroup) SetIngressRules(v []CloudSecurityGroupRule) {
 
 // GetSecurityGroupTags returns the SecurityGroupTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSecurityGroup) GetSecurityGroupTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -312,12 +312,12 @@ func (o *CloudAwsSecurityGroup) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		EgressRules []CloudSecurityGroupRule `json:"EgressRules,omitempty"`
-		IngressRules []CloudSecurityGroupRule `json:"IngressRules,omitempty"`
-		SecurityGroupTags []CloudCloudTag `json:"SecurityGroupTags,omitempty"`
-		AwsBillingUnit *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
-		Location *CloudAwsVpcRelationship `json:"Location,omitempty"`
+		ObjectType        string                           `json:"ObjectType"`
+		EgressRules       []CloudSecurityGroupRule         `json:"EgressRules,omitempty"`
+		IngressRules      []CloudSecurityGroupRule         `json:"IngressRules,omitempty"`
+		SecurityGroupTags []CloudCloudTag                  `json:"SecurityGroupTags,omitempty"`
+		AwsBillingUnit    *CloudAwsBillingUnitRelationship `json:"AwsBillingUnit,omitempty"`
+		Location          *CloudAwsVpcRelationship         `json:"Location,omitempty"`
 	}
 
 	varCloudAwsSecurityGroupWithoutEmbeddedStruct := CloudAwsSecurityGroupWithoutEmbeddedStruct{}
@@ -416,5 +416,3 @@ func (v *NullableCloudAwsSecurityGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

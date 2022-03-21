@@ -24,12 +24,12 @@ type WorkflowParameterSetAllOf struct {
 	// The condition to be evaluated. * `eq` - Checks if the values of the two parameters are equal. * `ne` - Checks if the values of the two parameters are not equal. * `contains` - Checks if the second parameter string value is a substring of the first parameter string value. * `matchesPattern` - Checks if a string matches a regular expression.
 	Condition *string `json:"Condition,omitempty"`
 	// Name of the controlling entity, whose value will be used for evaluating the parameter set.
-	ControlParameter *string `json:"ControlParameter,omitempty"`
+	ControlParameter *string  `json:"ControlParameter,omitempty"`
 	EnableParameters []string `json:"EnableParameters,omitempty"`
 	// Name for the parameter set.  Limited to 64 alphanumeric characters (upper and lower case), and special characters '-' and '_'.
 	Name *string `json:"Name,omitempty"`
 	// The controlling parameter will be evaluated against this 'value'.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *WorkflowParameterSetAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowParameterSetAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *WorkflowParameterSetAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowParameterSetAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *WorkflowParameterSetAllOf) SetControlParameter(v string) {
 
 // GetEnableParameters returns the EnableParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowParameterSetAllOf) GetEnableParameters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -360,5 +360,3 @@ func (v *NullableWorkflowParameterSetAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

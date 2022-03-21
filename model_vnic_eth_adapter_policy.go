@@ -25,28 +25,28 @@ type VnicEthAdapterPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enables advanced filtering on the interface.
-	AdvancedFilter *bool `json:"AdvancedFilter,omitempty"`
-	ArfsSettings NullableVnicArfsSettings `json:"ArfsSettings,omitempty"`
+	AdvancedFilter          *bool                               `json:"AdvancedFilter,omitempty"`
+	ArfsSettings            NullableVnicArfsSettings            `json:"ArfsSettings,omitempty"`
 	CompletionQueueSettings NullableVnicCompletionQueueSettings `json:"CompletionQueueSettings,omitempty"`
 	// GENEVE offload protocol allows you to create logical networks that span physical network boundaries by allowing any information to be encoded in a packet and passed between tunnel endpoints.
 	GeneveEnabled *bool `json:"GeneveEnabled,omitempty"`
 	// Enables Interrupt Scaling on the interface.
-	InterruptScaling *bool `json:"InterruptScaling,omitempty"`
+	InterruptScaling  *bool                            `json:"InterruptScaling,omitempty"`
 	InterruptSettings NullableVnicEthInterruptSettings `json:"InterruptSettings,omitempty"`
-	NvgreSettings NullableVnicNvgreSettings `json:"NvgreSettings,omitempty"`
-	PtpSettings NullableVnicPtpSettings `json:"PtpSettings,omitempty"`
-	RoceSettings NullableVnicRoceSettings `json:"RoceSettings,omitempty"`
-	RssHashSettings NullableVnicRssHashSettings `json:"RssHashSettings,omitempty"`
+	NvgreSettings     NullableVnicNvgreSettings        `json:"NvgreSettings,omitempty"`
+	PtpSettings       NullableVnicPtpSettings          `json:"PtpSettings,omitempty"`
+	RoceSettings      NullableVnicRoceSettings         `json:"RoceSettings,omitempty"`
+	RssHashSettings   NullableVnicRssHashSettings      `json:"RssHashSettings,omitempty"`
 	// Receive Side Scaling allows the incoming traffic to be spread across multiple CPU cores.
-	RssSettings *bool `json:"RssSettings,omitempty"`
-	RxQueueSettings NullableVnicEthRxQueueSettings `json:"RxQueueSettings,omitempty"`
+	RssSettings        *bool                          `json:"RssSettings,omitempty"`
+	RxQueueSettings    NullableVnicEthRxQueueSettings `json:"RxQueueSettings,omitempty"`
 	TcpOffloadSettings NullableVnicTcpOffloadSettings `json:"TcpOffloadSettings,omitempty"`
-	TxQueueSettings NullableVnicEthTxQueueSettings `json:"TxQueueSettings,omitempty"`
+	TxQueueSettings    NullableVnicEthTxQueueSettings `json:"TxQueueSettings,omitempty"`
 	// Uplink Failback Timeout in seconds when uplink failover is enabled for a vNIC. After a vNIC has started using its secondary interface, this setting controls how long the primary interface must be available before the system resumes using the primary interface for the vNIC.
-	UplinkFailbackTimeout *int64 `json:"UplinkFailbackTimeout,omitempty"`
-	VxlanSettings NullableVnicVxlanSettings `json:"VxlanSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UplinkFailbackTimeout *int64                                `json:"UplinkFailbackTimeout,omitempty"`
+	VxlanSettings         NullableVnicVxlanSettings             `json:"VxlanSettings,omitempty"`
+	Organization          *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _VnicEthAdapterPolicy VnicEthAdapterPolicy
@@ -107,7 +107,7 @@ func (o *VnicEthAdapterPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthAdapterPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -131,7 +131,7 @@ func (o *VnicEthAdapterPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthAdapterPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -187,7 +187,7 @@ func (o *VnicEthAdapterPolicy) GetArfsSettings() VnicArfsSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetArfsSettingsOk() (*VnicArfsSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ArfsSettings.Get(), o.ArfsSettings.IsSet()
@@ -206,6 +206,7 @@ func (o *VnicEthAdapterPolicy) HasArfsSettings() bool {
 func (o *VnicEthAdapterPolicy) SetArfsSettings(v VnicArfsSettings) {
 	o.ArfsSettings.Set(&v)
 }
+
 // SetArfsSettingsNil sets the value for ArfsSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetArfsSettingsNil() {
 	o.ArfsSettings.Set(nil)
@@ -229,7 +230,7 @@ func (o *VnicEthAdapterPolicy) GetCompletionQueueSettings() VnicCompletionQueueS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetCompletionQueueSettingsOk() (*VnicCompletionQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CompletionQueueSettings.Get(), o.CompletionQueueSettings.IsSet()
@@ -248,6 +249,7 @@ func (o *VnicEthAdapterPolicy) HasCompletionQueueSettings() bool {
 func (o *VnicEthAdapterPolicy) SetCompletionQueueSettings(v VnicCompletionQueueSettings) {
 	o.CompletionQueueSettings.Set(&v)
 }
+
 // SetCompletionQueueSettingsNil sets the value for CompletionQueueSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetCompletionQueueSettingsNil() {
 	o.CompletionQueueSettings.Set(nil)
@@ -335,7 +337,7 @@ func (o *VnicEthAdapterPolicy) GetInterruptSettings() VnicEthInterruptSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetInterruptSettingsOk() (*VnicEthInterruptSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InterruptSettings.Get(), o.InterruptSettings.IsSet()
@@ -354,6 +356,7 @@ func (o *VnicEthAdapterPolicy) HasInterruptSettings() bool {
 func (o *VnicEthAdapterPolicy) SetInterruptSettings(v VnicEthInterruptSettings) {
 	o.InterruptSettings.Set(&v)
 }
+
 // SetInterruptSettingsNil sets the value for InterruptSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetInterruptSettingsNil() {
 	o.InterruptSettings.Set(nil)
@@ -377,7 +380,7 @@ func (o *VnicEthAdapterPolicy) GetNvgreSettings() VnicNvgreSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetNvgreSettingsOk() (*VnicNvgreSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NvgreSettings.Get(), o.NvgreSettings.IsSet()
@@ -396,6 +399,7 @@ func (o *VnicEthAdapterPolicy) HasNvgreSettings() bool {
 func (o *VnicEthAdapterPolicy) SetNvgreSettings(v VnicNvgreSettings) {
 	o.NvgreSettings.Set(&v)
 }
+
 // SetNvgreSettingsNil sets the value for NvgreSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetNvgreSettingsNil() {
 	o.NvgreSettings.Set(nil)
@@ -419,7 +423,7 @@ func (o *VnicEthAdapterPolicy) GetPtpSettings() VnicPtpSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetPtpSettingsOk() (*VnicPtpSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PtpSettings.Get(), o.PtpSettings.IsSet()
@@ -438,6 +442,7 @@ func (o *VnicEthAdapterPolicy) HasPtpSettings() bool {
 func (o *VnicEthAdapterPolicy) SetPtpSettings(v VnicPtpSettings) {
 	o.PtpSettings.Set(&v)
 }
+
 // SetPtpSettingsNil sets the value for PtpSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetPtpSettingsNil() {
 	o.PtpSettings.Set(nil)
@@ -461,7 +466,7 @@ func (o *VnicEthAdapterPolicy) GetRoceSettings() VnicRoceSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetRoceSettingsOk() (*VnicRoceSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RoceSettings.Get(), o.RoceSettings.IsSet()
@@ -480,6 +485,7 @@ func (o *VnicEthAdapterPolicy) HasRoceSettings() bool {
 func (o *VnicEthAdapterPolicy) SetRoceSettings(v VnicRoceSettings) {
 	o.RoceSettings.Set(&v)
 }
+
 // SetRoceSettingsNil sets the value for RoceSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetRoceSettingsNil() {
 	o.RoceSettings.Set(nil)
@@ -503,7 +509,7 @@ func (o *VnicEthAdapterPolicy) GetRssHashSettings() VnicRssHashSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetRssHashSettingsOk() (*VnicRssHashSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RssHashSettings.Get(), o.RssHashSettings.IsSet()
@@ -522,6 +528,7 @@ func (o *VnicEthAdapterPolicy) HasRssHashSettings() bool {
 func (o *VnicEthAdapterPolicy) SetRssHashSettings(v VnicRssHashSettings) {
 	o.RssHashSettings.Set(&v)
 }
+
 // SetRssHashSettingsNil sets the value for RssHashSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetRssHashSettingsNil() {
 	o.RssHashSettings.Set(nil)
@@ -577,7 +584,7 @@ func (o *VnicEthAdapterPolicy) GetRxQueueSettings() VnicEthRxQueueSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetRxQueueSettingsOk() (*VnicEthRxQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RxQueueSettings.Get(), o.RxQueueSettings.IsSet()
@@ -596,6 +603,7 @@ func (o *VnicEthAdapterPolicy) HasRxQueueSettings() bool {
 func (o *VnicEthAdapterPolicy) SetRxQueueSettings(v VnicEthRxQueueSettings) {
 	o.RxQueueSettings.Set(&v)
 }
+
 // SetRxQueueSettingsNil sets the value for RxQueueSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetRxQueueSettingsNil() {
 	o.RxQueueSettings.Set(nil)
@@ -619,7 +627,7 @@ func (o *VnicEthAdapterPolicy) GetTcpOffloadSettings() VnicTcpOffloadSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetTcpOffloadSettingsOk() (*VnicTcpOffloadSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TcpOffloadSettings.Get(), o.TcpOffloadSettings.IsSet()
@@ -638,6 +646,7 @@ func (o *VnicEthAdapterPolicy) HasTcpOffloadSettings() bool {
 func (o *VnicEthAdapterPolicy) SetTcpOffloadSettings(v VnicTcpOffloadSettings) {
 	o.TcpOffloadSettings.Set(&v)
 }
+
 // SetTcpOffloadSettingsNil sets the value for TcpOffloadSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetTcpOffloadSettingsNil() {
 	o.TcpOffloadSettings.Set(nil)
@@ -661,7 +670,7 @@ func (o *VnicEthAdapterPolicy) GetTxQueueSettings() VnicEthTxQueueSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetTxQueueSettingsOk() (*VnicEthTxQueueSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TxQueueSettings.Get(), o.TxQueueSettings.IsSet()
@@ -680,6 +689,7 @@ func (o *VnicEthAdapterPolicy) HasTxQueueSettings() bool {
 func (o *VnicEthAdapterPolicy) SetTxQueueSettings(v VnicEthTxQueueSettings) {
 	o.TxQueueSettings.Set(&v)
 }
+
 // SetTxQueueSettingsNil sets the value for TxQueueSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetTxQueueSettingsNil() {
 	o.TxQueueSettings.Set(nil)
@@ -735,7 +745,7 @@ func (o *VnicEthAdapterPolicy) GetVxlanSettings() VnicVxlanSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicEthAdapterPolicy) GetVxlanSettingsOk() (*VnicVxlanSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VxlanSettings.Get(), o.VxlanSettings.IsSet()
@@ -754,6 +764,7 @@ func (o *VnicEthAdapterPolicy) HasVxlanSettings() bool {
 func (o *VnicEthAdapterPolicy) SetVxlanSettings(v VnicVxlanSettings) {
 	o.VxlanSettings.Set(&v)
 }
+
 // SetVxlanSettingsNil sets the value for VxlanSettings to be an explicit nil
 func (o *VnicEthAdapterPolicy) SetVxlanSettingsNil() {
 	o.VxlanSettings.Set(nil)
@@ -878,27 +889,27 @@ func (o *VnicEthAdapterPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Enables advanced filtering on the interface.
-		AdvancedFilter *bool `json:"AdvancedFilter,omitempty"`
-		ArfsSettings NullableVnicArfsSettings `json:"ArfsSettings,omitempty"`
+		AdvancedFilter          *bool                               `json:"AdvancedFilter,omitempty"`
+		ArfsSettings            NullableVnicArfsSettings            `json:"ArfsSettings,omitempty"`
 		CompletionQueueSettings NullableVnicCompletionQueueSettings `json:"CompletionQueueSettings,omitempty"`
 		// GENEVE offload protocol allows you to create logical networks that span physical network boundaries by allowing any information to be encoded in a packet and passed between tunnel endpoints.
 		GeneveEnabled *bool `json:"GeneveEnabled,omitempty"`
 		// Enables Interrupt Scaling on the interface.
-		InterruptScaling *bool `json:"InterruptScaling,omitempty"`
+		InterruptScaling  *bool                            `json:"InterruptScaling,omitempty"`
 		InterruptSettings NullableVnicEthInterruptSettings `json:"InterruptSettings,omitempty"`
-		NvgreSettings NullableVnicNvgreSettings `json:"NvgreSettings,omitempty"`
-		PtpSettings NullableVnicPtpSettings `json:"PtpSettings,omitempty"`
-		RoceSettings NullableVnicRoceSettings `json:"RoceSettings,omitempty"`
-		RssHashSettings NullableVnicRssHashSettings `json:"RssHashSettings,omitempty"`
+		NvgreSettings     NullableVnicNvgreSettings        `json:"NvgreSettings,omitempty"`
+		PtpSettings       NullableVnicPtpSettings          `json:"PtpSettings,omitempty"`
+		RoceSettings      NullableVnicRoceSettings         `json:"RoceSettings,omitempty"`
+		RssHashSettings   NullableVnicRssHashSettings      `json:"RssHashSettings,omitempty"`
 		// Receive Side Scaling allows the incoming traffic to be spread across multiple CPU cores.
-		RssSettings *bool `json:"RssSettings,omitempty"`
-		RxQueueSettings NullableVnicEthRxQueueSettings `json:"RxQueueSettings,omitempty"`
+		RssSettings        *bool                          `json:"RssSettings,omitempty"`
+		RxQueueSettings    NullableVnicEthRxQueueSettings `json:"RxQueueSettings,omitempty"`
 		TcpOffloadSettings NullableVnicTcpOffloadSettings `json:"TcpOffloadSettings,omitempty"`
-		TxQueueSettings NullableVnicEthTxQueueSettings `json:"TxQueueSettings,omitempty"`
+		TxQueueSettings    NullableVnicEthTxQueueSettings `json:"TxQueueSettings,omitempty"`
 		// Uplink Failback Timeout in seconds when uplink failover is enabled for a vNIC. After a vNIC has started using its secondary interface, this setting controls how long the primary interface must be available before the system resumes using the primary interface for the vNIC.
-		UplinkFailbackTimeout *int64 `json:"UplinkFailbackTimeout,omitempty"`
-		VxlanSettings NullableVnicVxlanSettings `json:"VxlanSettings,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		UplinkFailbackTimeout *int64                                `json:"UplinkFailbackTimeout,omitempty"`
+		VxlanSettings         NullableVnicVxlanSettings             `json:"VxlanSettings,omitempty"`
+		Organization          *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varVnicEthAdapterPolicyWithoutEmbeddedStruct := VnicEthAdapterPolicyWithoutEmbeddedStruct{}
@@ -1021,5 +1032,3 @@ func (v *NullableVnicEthAdapterPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

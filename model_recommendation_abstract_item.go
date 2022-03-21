@@ -27,7 +27,7 @@ type RecommendationAbstractItem struct {
 	// The name of the physical device recommended.
 	Name *string `json:"Name,omitempty"`
 	// The type of physical device recommended. * `Disk` - The Enum value Disk represents that the item type recommended is a Physical Disk. * `Node` - The Enum value Node represents that the item type recommended is a Storage Node. * `Cluster` - The Enum value Cluster represents that the item type recommended is a HyperFlex Cluster.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *RecommendationAbstractItem) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecommendationAbstractItem) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *RecommendationAbstractItem) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecommendationAbstractItem) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableRecommendationAbstractItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

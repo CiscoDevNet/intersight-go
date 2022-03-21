@@ -39,8 +39,8 @@ type VirtualizationVmwareVirtualMachineSnapshotAllOf struct {
 	// Internally assigned MOR reference value.
 	RefValue *string `json:"RefValue,omitempty"`
 	// Size of the snapshot file created of the virtual machine, stored in bytes.
-	SnapshotSize *int64 `json:"SnapshotSize,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	SnapshotSize         *int64                                          `json:"SnapshotSize,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshotAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineSnapshotAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshotAllOf) GetObjectType() string
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualMachineSnapshotAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -546,5 +546,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineSnapshotAllOf) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // PciLinkResponse - The response body of a HTTP GET request for the 'pci.Link' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'pci.Link' resources.
 type PciLinkResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	PciLinkList *PciLinkList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	PciLinkList          *PciLinkList
 }
 
 // MoAggregateTransformAsPciLinkResponse is a convenience function that returns MoAggregateTransform wrapped in PciLinkResponse
 func MoAggregateTransformAsPciLinkResponse(v *MoAggregateTransform) PciLinkResponse {
-	return PciLinkResponse{ MoAggregateTransform: v}
+	return PciLinkResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsPciLinkResponse is a convenience function that returns MoDocumentCount wrapped in PciLinkResponse
 func MoDocumentCountAsPciLinkResponse(v *MoDocumentCount) PciLinkResponse {
-	return PciLinkResponse{ MoDocumentCount: v}
+	return PciLinkResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsPciLinkResponse is a convenience function that returns MoTagSummary wrapped in PciLinkResponse
 func MoTagSummaryAsPciLinkResponse(v *MoTagSummary) PciLinkResponse {
-	return PciLinkResponse{ MoTagSummary: v}
+	return PciLinkResponse{MoTagSummary: v}
 }
 
 // PciLinkListAsPciLinkResponse is a convenience function that returns PciLinkList wrapped in PciLinkResponse
 func PciLinkListAsPciLinkResponse(v *PciLinkList) PciLinkResponse {
-	return PciLinkResponse{ PciLinkList: v}
+	return PciLinkResponse{PciLinkList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PciLinkResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src PciLinkResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PciLinkResponse) GetActualInstance() (interface{}) {
+func (obj *PciLinkResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullablePciLinkResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

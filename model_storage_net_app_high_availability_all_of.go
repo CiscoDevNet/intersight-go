@@ -30,7 +30,7 @@ type StorageNetAppHighAvailabilityAllOf struct {
 	// The partner node uuid in this node's High Availability (HA) group.
 	PartnerUuid *string `json:"PartnerUuid,omitempty"`
 	// The state of the node that is taking over storage from its HA partner. * `unknown` - Default unknown takeover state. * `not_possible` - It is not possible for the node to take over storage from its HA partner. * `not_attempted` - The node has not attempted to take over storage from its HA partner. * `in_takeover` - The node has taken over storage from its HA partner. * `in_progress` - The node is in progress of taking over storage from its HA partner. * `failed` - The node has failed to take over storage from its HA partner.
-	TakeoverState *string `json:"TakeoverState,omitempty"`
+	TakeoverState        *string `json:"TakeoverState,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *StorageNetAppHighAvailabilityAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppHighAvailabilityAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *StorageNetAppHighAvailabilityAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppHighAvailabilityAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -356,5 +356,3 @@ func (v *NullableStorageNetAppHighAvailabilityAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

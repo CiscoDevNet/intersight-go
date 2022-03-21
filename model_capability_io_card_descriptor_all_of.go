@@ -26,7 +26,7 @@ type CapabilityIoCardDescriptorAllOf struct {
 	// Revision for the iocard module.
 	Revision *string `json:"Revision,omitempty"`
 	// Connectivity information between UIF Uplink ports and IOM ports. * `inline` - UIF uplink ports and IOM ports are connected inline. * `cross-connected` - UIF uplink ports and IOM ports are cross-connected, a case in washington chassis.
-	UifConnectivity *string `json:"UifConnectivity,omitempty"`
+	UifConnectivity      *string `json:"UifConnectivity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *CapabilityIoCardDescriptorAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityIoCardDescriptorAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *CapabilityIoCardDescriptorAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityIoCardDescriptorAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -284,5 +284,3 @@ func (v *NullableCapabilityIoCardDescriptorAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

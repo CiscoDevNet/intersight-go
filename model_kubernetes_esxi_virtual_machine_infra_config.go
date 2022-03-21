@@ -33,7 +33,7 @@ type KubernetesEsxiVirtualMachineInfraConfig struct {
 	// Passphrase for the vcenter user.
 	Passphrase *string `json:"Passphrase,omitempty"`
 	// Name of the vSphere resource pool on which the virtual machines are created.
-	ResourcePool *string `json:"ResourcePool,omitempty"`
+	ResourcePool         *string `json:"ResourcePool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KubernetesEsxiVirtualMachineInfraConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEsxiVirtualMachineInfraConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KubernetesEsxiVirtualMachineInfraConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEsxiVirtualMachineInfraConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -423,5 +423,3 @@ func (v *NullableKubernetesEsxiVirtualMachineInfraConfig) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type NiatelemetryDiskinfo struct {
 	// The total disk capacity, it should be the sum of free and used, currently the type of this field is set to integer. This determines the total memory for this partition.
 	Total *int64 `json:"Total,omitempty"`
 	// The used disk capacity, currently the type of this field is set to integer. This determines how much memory is used in Bytes.
-	Used *int64 `json:"Used,omitempty"`
+	Used                 *int64 `json:"Used,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *NiatelemetryDiskinfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDiskinfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *NiatelemetryDiskinfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryDiskinfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableNiatelemetryDiskinfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

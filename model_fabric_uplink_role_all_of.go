@@ -23,9 +23,9 @@ type FabricUplinkRoleAllOf struct {
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to fabricEthNetworkGroupPolicy resources.
 	EthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-	FlowControlPolicy *FabricFlowControlPolicyRelationship `json:"FlowControlPolicy,omitempty"`
-	LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FlowControlPolicy     *FabricFlowControlPolicyRelationship      `json:"FlowControlPolicy,omitempty"`
+	LinkControlPolicy     *FabricLinkControlPolicyRelationship      `json:"LinkControlPolicy,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _FabricUplinkRoleAllOf FabricUplinkRoleAllOf
@@ -66,7 +66,7 @@ func (o *FabricUplinkRoleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkRoleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *FabricUplinkRoleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkRoleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *FabricUplinkRoleAllOf) SetObjectType(v string) {
 
 // GetEthNetworkGroupPolicy returns the EthNetworkGroupPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricUplinkRoleAllOf) GetEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricEthNetworkGroupPolicyRelationship
 		return ret
 	}
@@ -279,5 +279,3 @@ func (v *NullableFabricUplinkRoleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

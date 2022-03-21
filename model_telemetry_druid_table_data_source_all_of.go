@@ -18,7 +18,7 @@ import (
 // TelemetryDruidTableDataSourceAllOf struct for TelemetryDruidTableDataSourceAllOf
 type TelemetryDruidTableDataSourceAllOf struct {
 	// The name of a data source.
-	Name string `json:"name"`
+	Name                 string `json:"name"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidTableDataSourceAllOf) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidTableDataSourceAllOf) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidTableDataSourceAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -35,8 +35,8 @@ type IamDomainGroup struct {
 	// Partition key used for producing messages to Kafka partitions. By default Domain-group id will be used as partition key. For Domain-groups belonging to Early adopters domain-group id will be prefixed with 'H' and used as partition key, such partition key will be treated differently and messages will always be produced to partition 0.
 	PartitionKey *string `json:"PartitionKey,omitempty"`
 	// The number of devices in the domain-group. Device registration notifications are processed to update the usage of the domain-group. The on-boarding account will have multiple domain-groups, and during the device registration least used domain-group will be selected for the device.
-	Usage *int64 `json:"Usage,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Usage                *int64                  `json:"Usage,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *IamDomainGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamDomainGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *IamDomainGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamDomainGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -399,7 +399,7 @@ func (o *IamDomainGroup) UnmarshalJSON(bytes []byte) (err error) {
 		// Partition key used for producing messages to Kafka partitions. By default Domain-group id will be used as partition key. For Domain-groups belonging to Early adopters domain-group id will be prefixed with 'H' and used as partition key, such partition key will be treated differently and messages will always be produced to partition 0.
 		PartitionKey *string `json:"PartitionKey,omitempty"`
 		// The number of devices in the domain-group. Device registration notifications are processed to update the usage of the domain-group. The on-boarding account will have multiple domain-groups, and during the device registration least used domain-group will be selected for the device.
-		Usage *int64 `json:"Usage,omitempty"`
+		Usage   *int64                  `json:"Usage,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -503,5 +503,3 @@ func (v *NullableIamDomainGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

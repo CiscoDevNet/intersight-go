@@ -23,7 +23,7 @@ type CapabilitySwitchManufacturingDefList struct {
 	// The total number of 'capability.SwitchManufacturingDef' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'capability.SwitchManufacturingDef' resources matching the request.
-	Results []CapabilitySwitchManufacturingDef `json:"Results,omitempty"`
+	Results              []CapabilitySwitchManufacturingDef `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CapabilitySwitchManufacturingDefList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilitySwitchManufacturingDefList) GetResults() []CapabilitySwitchManufacturingDef {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilitySwitchManufacturingDef
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableCapabilitySwitchManufacturingDefList) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

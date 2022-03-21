@@ -30,10 +30,10 @@ type KvmSessionAllOf struct {
 	// Indicates if vKVM SSO is supported on the server.
 	SsoSupported *bool `json:"SsoSupported,omitempty"`
 	// Username used for vKVM access.
-	Username *string `json:"Username,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-	Tunnel *KvmTunnelRelationship `json:"Tunnel,omitempty"`
+	Username             *string                              `json:"Username,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	Server               *ComputePhysicalRelationship         `json:"Server,omitempty"`
+	Tunnel               *KvmTunnelRelationship               `json:"Tunnel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KvmSessionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KvmSessionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KvmSessionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KvmSessionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -467,5 +467,3 @@ func (v *NullableKvmSessionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

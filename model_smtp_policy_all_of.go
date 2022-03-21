@@ -36,17 +36,17 @@ type SmtpPolicyAllOf struct {
 	// The email address entered here will be displayed as the from address (mail received from address) of all the SMTP mail alerts that are received. If not configured, the hostname of the server is used in the from address field.
 	SenderEmail *string `json:"SenderEmail,omitempty"`
 	// Port number used by the SMTP server for outgoing SMTP communication.
-	SmtpPort *int64 `json:"SmtpPort,omitempty"`
+	SmtpPort       *int64   `json:"SmtpPort,omitempty"`
 	SmtpRecipients []string `json:"SmtpRecipients,omitempty"`
 	// IP address or hostname of the SMTP server. The SMTP server is used by the managed device to send email notifications.
 	SmtpServer *string `json:"SmtpServer,omitempty"`
 	// SMTP username from which email notification is sent.
-	UserName *string `json:"UserName,omitempty"`
-	ApplianceAccount *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
-	Certificate *IamTrustPointRelationship `json:"Certificate,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	UserName         *string                               `json:"UserName,omitempty"`
+	ApplianceAccount *IamAccountRelationship               `json:"ApplianceAccount,omitempty"`
+	Certificate      *IamTrustPointRelationship            `json:"Certificate,omitempty"`
+	Organization     *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *SmtpPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SmtpPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -132,7 +132,7 @@ func (o *SmtpPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SmtpPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -401,7 +401,7 @@ func (o *SmtpPolicyAllOf) SetSmtpPort(v int64) {
 
 // GetSmtpRecipients returns the SmtpRecipients field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmtpPolicyAllOf) GetSmtpRecipients() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -594,7 +594,7 @@ func (o *SmtpPolicyAllOf) SetOrganization(v OrganizationOrganizationRelationship
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmtpPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -754,5 +754,3 @@ func (v *NullableSmtpPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

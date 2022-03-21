@@ -19,19 +19,18 @@ import (
 // KubernetesClusterAddonProfileRelationship - A relationship to the 'kubernetes.ClusterAddonProfile' resource, or the expanded 'kubernetes.ClusterAddonProfile' resource, or the 'null' value.
 type KubernetesClusterAddonProfileRelationship struct {
 	KubernetesClusterAddonProfile *KubernetesClusterAddonProfile
-	MoMoRef *MoMoRef
+	MoMoRef                       *MoMoRef
 }
 
 // KubernetesClusterAddonProfileAsKubernetesClusterAddonProfileRelationship is a convenience function that returns KubernetesClusterAddonProfile wrapped in KubernetesClusterAddonProfileRelationship
 func KubernetesClusterAddonProfileAsKubernetesClusterAddonProfileRelationship(v *KubernetesClusterAddonProfile) KubernetesClusterAddonProfileRelationship {
-	return KubernetesClusterAddonProfileRelationship{ KubernetesClusterAddonProfile: v}
+	return KubernetesClusterAddonProfileRelationship{KubernetesClusterAddonProfile: v}
 }
 
 // MoMoRefAsKubernetesClusterAddonProfileRelationship is a convenience function that returns MoMoRef wrapped in KubernetesClusterAddonProfileRelationship
 func MoMoRefAsKubernetesClusterAddonProfileRelationship(v *MoMoRef) KubernetesClusterAddonProfileRelationship {
-	return KubernetesClusterAddonProfileRelationship{ MoMoRef: v}
+	return KubernetesClusterAddonProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesClusterAddonProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesClusterAddonProfileRelationship) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *KubernetesClusterAddonProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesClusterAddonProfileRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesClusterAddonProfile != nil {
 		return obj.KubernetesClusterAddonProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesClusterAddonProfileRelationship) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

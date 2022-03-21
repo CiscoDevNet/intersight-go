@@ -27,7 +27,7 @@ type FabricUdldSettings struct {
 	// Admin configured UDLD State for this port. * `Disabled` - Admin configured Disabled State. * `Enabled` - Admin configured Enabled State.
 	AdminState *string `json:"AdminState,omitempty"`
 	// Admin configured UDLD Mode for this port. * `normal` - Admin configured 'normal' UDLD mode. * `aggressive` - Admin configured 'aggressive' UDLD mode.
-	Mode *string `json:"Mode,omitempty"`
+	Mode                 *string `json:"Mode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FabricUdldSettings) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricUdldSettings) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *FabricUdldSettings) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricUdldSettings) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableFabricUdldSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

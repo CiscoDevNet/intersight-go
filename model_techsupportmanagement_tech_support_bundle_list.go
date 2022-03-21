@@ -23,7 +23,7 @@ type TechsupportmanagementTechSupportBundleList struct {
 	// The total number of 'techsupportmanagement.TechSupportBundle' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'techsupportmanagement.TechSupportBundle' resources matching the request.
-	Results []TechsupportmanagementTechSupportBundle `json:"Results,omitempty"`
+	Results              []TechsupportmanagementTechSupportBundle `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *TechsupportmanagementTechSupportBundleList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementTechSupportBundleList) GetResults() []TechsupportmanagementTechSupportBundle {
-	if o == nil  {
+	if o == nil {
 		var ret []TechsupportmanagementTechSupportBundle
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableTechsupportmanagementTechSupportBundleList) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

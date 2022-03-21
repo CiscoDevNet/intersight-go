@@ -31,36 +31,36 @@ type ComputeBlade struct {
 	// The slot number in the chassis that the blade is discovered in.
 	SlotId *int64 `json:"SlotId,omitempty"`
 	// An array of relationships to adapterUnit resources.
-	Adapters []AdapterUnitRelationship `json:"Adapters,omitempty"`
-	BiosBootmode *BiosBootModeRelationship `json:"BiosBootmode,omitempty"`
+	Adapters          []AdapterUnitRelationship      `json:"Adapters,omitempty"`
+	BiosBootmode      *BiosBootModeRelationship      `json:"BiosBootmode,omitempty"`
 	BiosTokenSettings *BiosTokenSettingsRelationship `json:"BiosTokenSettings,omitempty"`
 	// An array of relationships to biosUnit resources.
-	BiosUnits []BiosUnitRelationship `json:"BiosUnits,omitempty"`
+	BiosUnits                          []BiosUnitRelationship                          `json:"BiosUnits,omitempty"`
 	BiosVfSelectMemoryRasConfiguration *BiosVfSelectMemoryRasConfigurationRelationship `json:"BiosVfSelectMemoryRasConfiguration,omitempty"`
-	Bmc *ManagementControllerRelationship `json:"Bmc,omitempty"`
-	Board *ComputeBoardRelationship `json:"Board,omitempty"`
-	BootDeviceBootmode *BootDeviceBootModeRelationship `json:"BootDeviceBootmode,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
+	Bmc                                *ManagementControllerRelationship               `json:"Bmc,omitempty"`
+	Board                              *ComputeBoardRelationship                       `json:"Board,omitempty"`
+	BootDeviceBootmode                 *BootDeviceBootModeRelationship                 `json:"BootDeviceBootmode,omitempty"`
+	EquipmentChassis                   *EquipmentChassisRelationship                   `json:"EquipmentChassis,omitempty"`
 	// An array of relationships to equipmentIoExpander resources.
 	EquipmentIoExpanders []EquipmentIoExpanderRelationship `json:"EquipmentIoExpanders,omitempty"`
 	// An array of relationships to inventoryGenericInventoryHolder resources.
 	GenericInventoryHolders []InventoryGenericInventoryHolderRelationship `json:"GenericInventoryHolders,omitempty"`
 	// An array of relationships to graphicsCard resources.
-	GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+	GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 	// An array of relationships to memoryArray resources.
 	MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 	// An array of relationships to pciDevice resources.
 	PciDevices []PciDeviceRelationship `json:"PciDevices,omitempty"`
 	// An array of relationships to processorUnit resources.
-	Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
+	Processors       []ProcessorUnitRelationship          `json:"Processors,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageController resources.
 	StorageControllers []StorageControllerRelationship `json:"StorageControllers,omitempty"`
 	// An array of relationships to storageEnclosure resources.
-	StorageEnclosures []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
-	TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+	StorageEnclosures    []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
+	TopSystem            *TopSystemRelationship         `json:"TopSystem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,7 +104,7 @@ func (o *ComputeBlade) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBlade) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -128,7 +128,7 @@ func (o *ComputeBlade) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBlade) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -237,7 +237,7 @@ func (o *ComputeBlade) SetSlotId(v int64) {
 
 // GetAdapters returns the Adapters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetAdapters() []AdapterUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterUnitRelationship
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *ComputeBlade) SetBiosTokenSettings(v BiosTokenSettingsRelationship) {
 
 // GetBiosUnits returns the BiosUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetBiosUnits() []BiosUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BiosUnitRelationship
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *ComputeBlade) SetEquipmentChassis(v EquipmentChassisRelationship) {
 
 // GetEquipmentIoExpanders returns the EquipmentIoExpanders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetEquipmentIoExpanders() []EquipmentIoExpanderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoExpanderRelationship
 		return ret
 	}
@@ -560,7 +560,7 @@ func (o *ComputeBlade) SetEquipmentIoExpanders(v []EquipmentIoExpanderRelationsh
 
 // GetGenericInventoryHolders returns the GenericInventoryHolders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetGenericInventoryHolders() []InventoryGenericInventoryHolderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []InventoryGenericInventoryHolderRelationship
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *ComputeBlade) SetGenericInventoryHolders(v []InventoryGenericInventoryH
 
 // GetGraphicsCards returns the GraphicsCards field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetGraphicsCards() []GraphicsCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []GraphicsCardRelationship
 		return ret
 	}
@@ -690,7 +690,7 @@ func (o *ComputeBlade) SetLocatorLed(v EquipmentLocatorLedRelationship) {
 
 // GetMemoryArrays returns the MemoryArrays field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetMemoryArrays() []MemoryArrayRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryArrayRelationship
 		return ret
 	}
@@ -723,7 +723,7 @@ func (o *ComputeBlade) SetMemoryArrays(v []MemoryArrayRelationship) {
 
 // GetPciDevices returns the PciDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetPciDevices() []PciDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PciDeviceRelationship
 		return ret
 	}
@@ -756,7 +756,7 @@ func (o *ComputeBlade) SetPciDevices(v []PciDeviceRelationship) {
 
 // GetProcessors returns the Processors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetProcessors() []ProcessorUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ProcessorUnitRelationship
 		return ret
 	}
@@ -821,7 +821,7 @@ func (o *ComputeBlade) SetRegisteredDevice(v AssetDeviceRegistrationRelationship
 
 // GetStorageControllers returns the StorageControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetStorageControllers() []StorageControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageControllerRelationship
 		return ret
 	}
@@ -854,7 +854,7 @@ func (o *ComputeBlade) SetStorageControllers(v []StorageControllerRelationship) 
 
 // GetStorageEnclosures returns the StorageEnclosures field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBlade) GetStorageEnclosures() []StorageEnclosureRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureRelationship
 		return ret
 	}
@@ -1026,36 +1026,36 @@ func (o *ComputeBlade) UnmarshalJSON(bytes []byte) (err error) {
 		// The slot number in the chassis that the blade is discovered in.
 		SlotId *int64 `json:"SlotId,omitempty"`
 		// An array of relationships to adapterUnit resources.
-		Adapters []AdapterUnitRelationship `json:"Adapters,omitempty"`
-		BiosBootmode *BiosBootModeRelationship `json:"BiosBootmode,omitempty"`
+		Adapters          []AdapterUnitRelationship      `json:"Adapters,omitempty"`
+		BiosBootmode      *BiosBootModeRelationship      `json:"BiosBootmode,omitempty"`
 		BiosTokenSettings *BiosTokenSettingsRelationship `json:"BiosTokenSettings,omitempty"`
 		// An array of relationships to biosUnit resources.
-		BiosUnits []BiosUnitRelationship `json:"BiosUnits,omitempty"`
+		BiosUnits                          []BiosUnitRelationship                          `json:"BiosUnits,omitempty"`
 		BiosVfSelectMemoryRasConfiguration *BiosVfSelectMemoryRasConfigurationRelationship `json:"BiosVfSelectMemoryRasConfiguration,omitempty"`
-		Bmc *ManagementControllerRelationship `json:"Bmc,omitempty"`
-		Board *ComputeBoardRelationship `json:"Board,omitempty"`
-		BootDeviceBootmode *BootDeviceBootModeRelationship `json:"BootDeviceBootmode,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
+		Bmc                                *ManagementControllerRelationship               `json:"Bmc,omitempty"`
+		Board                              *ComputeBoardRelationship                       `json:"Board,omitempty"`
+		BootDeviceBootmode                 *BootDeviceBootModeRelationship                 `json:"BootDeviceBootmode,omitempty"`
+		EquipmentChassis                   *EquipmentChassisRelationship                   `json:"EquipmentChassis,omitempty"`
 		// An array of relationships to equipmentIoExpander resources.
 		EquipmentIoExpanders []EquipmentIoExpanderRelationship `json:"EquipmentIoExpanders,omitempty"`
 		// An array of relationships to inventoryGenericInventoryHolder resources.
 		GenericInventoryHolders []InventoryGenericInventoryHolderRelationship `json:"GenericInventoryHolders,omitempty"`
 		// An array of relationships to graphicsCard resources.
-		GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+		GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+		LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 		// An array of relationships to memoryArray resources.
 		MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 		// An array of relationships to pciDevice resources.
 		PciDevices []PciDeviceRelationship `json:"PciDevices,omitempty"`
 		// An array of relationships to processorUnit resources.
-		Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
+		Processors       []ProcessorUnitRelationship          `json:"Processors,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to storageController resources.
 		StorageControllers []StorageControllerRelationship `json:"StorageControllers,omitempty"`
 		// An array of relationships to storageEnclosure resources.
 		StorageEnclosures []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
-		TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+		TopSystem         *TopSystemRelationship         `json:"TopSystem,omitempty"`
 	}
 
 	varComputeBladeWithoutEmbeddedStruct := ComputeBladeWithoutEmbeddedStruct{}
@@ -1192,5 +1192,3 @@ func (v *NullableComputeBlade) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

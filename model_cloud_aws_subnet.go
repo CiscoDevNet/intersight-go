@@ -37,9 +37,9 @@ type CloudAwsSubnet struct {
 	// If true, indicates that this is default subnet.
 	IsDefault *bool `json:"IsDefault,omitempty"`
 	// The state of the subnet (pending | available).
-	State *string `json:"State,omitempty"`
-	SubnetTags []CloudCloudTag `json:"SubnetTags,omitempty"`
-	AwsVpc *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
+	State                *string                  `json:"State,omitempty"`
+	SubnetTags           []CloudCloudTag          `json:"SubnetTags,omitempty"`
+	AwsVpc               *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CloudAwsSubnet) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSubnet) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *CloudAwsSubnet) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSubnet) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -342,7 +342,7 @@ func (o *CloudAwsSubnet) SetState(v string) {
 
 // GetSubnetTags returns the SubnetTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSubnet) GetSubnetTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -475,9 +475,9 @@ func (o *CloudAwsSubnet) UnmarshalJSON(bytes []byte) (err error) {
 		// If true, indicates that this is default subnet.
 		IsDefault *bool `json:"IsDefault,omitempty"`
 		// The state of the subnet (pending | available).
-		State *string `json:"State,omitempty"`
-		SubnetTags []CloudCloudTag `json:"SubnetTags,omitempty"`
-		AwsVpc *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
+		State      *string                  `json:"State,omitempty"`
+		SubnetTags []CloudCloudTag          `json:"SubnetTags,omitempty"`
+		AwsVpc     *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
 	}
 
 	varCloudAwsSubnetWithoutEmbeddedStruct := CloudAwsSubnetWithoutEmbeddedStruct{}
@@ -584,5 +584,3 @@ func (v *NullableCloudAwsSubnet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

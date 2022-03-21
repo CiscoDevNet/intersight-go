@@ -39,8 +39,8 @@ type HyperflexLocalCredentialPolicy struct {
 	// Indicates whether the value of the 'hypervisorAdminPwd' property has been set.
 	IsHypervisorAdminPwdSet *bool `json:"IsHypervisorAdminPwdSet,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *HyperflexLocalCredentialPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexLocalCredentialPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *HyperflexLocalCredentialPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexLocalCredentialPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -347,7 +347,7 @@ func (o *HyperflexLocalCredentialPolicy) SetIsHypervisorAdminPwdSet(v bool) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexLocalCredentialPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *HyperflexLocalCredentialPolicy) UnmarshalJSON(bytes []byte) (err error)
 		IsHypervisorAdminPwdSet *bool `json:"IsHypervisorAdminPwdSet,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexLocalCredentialPolicyWithoutEmbeddedStruct := HyperflexLocalCredentialPolicyWithoutEmbeddedStruct{}
@@ -590,5 +590,3 @@ func (v *NullableHyperflexLocalCredentialPolicy) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

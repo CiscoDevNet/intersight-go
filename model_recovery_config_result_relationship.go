@@ -18,20 +18,19 @@ import (
 
 // RecoveryConfigResultRelationship - A relationship to the 'recovery.ConfigResult' resource, or the expanded 'recovery.ConfigResult' resource, or the 'null' value.
 type RecoveryConfigResultRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 	RecoveryConfigResult *RecoveryConfigResult
 }
 
 // MoMoRefAsRecoveryConfigResultRelationship is a convenience function that returns MoMoRef wrapped in RecoveryConfigResultRelationship
 func MoMoRefAsRecoveryConfigResultRelationship(v *MoMoRef) RecoveryConfigResultRelationship {
-	return RecoveryConfigResultRelationship{ MoMoRef: v}
+	return RecoveryConfigResultRelationship{MoMoRef: v}
 }
 
 // RecoveryConfigResultAsRecoveryConfigResultRelationship is a convenience function that returns RecoveryConfigResult wrapped in RecoveryConfigResultRelationship
 func RecoveryConfigResultAsRecoveryConfigResultRelationship(v *RecoveryConfigResult) RecoveryConfigResultRelationship {
-	return RecoveryConfigResultRelationship{ RecoveryConfigResult: v}
+	return RecoveryConfigResultRelationship{RecoveryConfigResult: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecoveryConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecoveryConfigResultRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *RecoveryConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *RecoveryConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecoveryConfigResultRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

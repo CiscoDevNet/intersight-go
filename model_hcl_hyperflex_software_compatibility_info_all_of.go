@@ -20,7 +20,7 @@ type HclHyperflexSoftwareCompatibilityInfoAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string          `json:"ObjectType"`
 	Constraints []HclConstraint `json:"Constraints,omitempty"`
 	// HXDP component software version.
 	HxdpVersion *string `json:"HxdpVersion,omitempty"`
@@ -31,8 +31,8 @@ type HclHyperflexSoftwareCompatibilityInfoAllOf struct {
 	// Type of the HXDP bundle mgmt or full.
 	IsMgmtBuild *string `json:"IsMgmtBuild,omitempty"`
 	// UCS Server Firmware component software version.
-	ServerFwVersion *string `json:"ServerFwVersion,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	ServerFwVersion      *string                          `json:"ServerFwVersion,omitempty"`
+	AppCatalog           *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) SetObjectType(v string) {
 
 // GetConstraints returns the Constraints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclHyperflexSoftwareCompatibilityInfoAllOf) GetConstraints() []HclConstraint {
-	if o == nil  {
+	if o == nil {
 		var ret []HclConstraint
 		return ret
 	}
@@ -435,5 +435,3 @@ func (v *NullableHclHyperflexSoftwareCompatibilityInfoAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

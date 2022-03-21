@@ -29,7 +29,7 @@ type IqnpoolIqnSuffixBlock struct {
 	// The suffix for this block of IQNs.
 	Suffix *string `json:"Suffix,omitempty"`
 	// The last suffix number in the block.
-	To *int64 `json:"To,omitempty"`
+	To                   *int64 `json:"To,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *IqnpoolIqnSuffixBlock) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolIqnSuffixBlock) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *IqnpoolIqnSuffixBlock) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolIqnSuffixBlock) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableIqnpoolIqnSuffixBlock) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

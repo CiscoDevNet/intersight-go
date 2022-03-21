@@ -24,7 +24,7 @@ type NiatelemetryInterfaceAllOf struct {
 	// Return value of number of interafces down.
 	InterfaceDownCount *int64 `json:"InterfaceDownCount,omitempty"`
 	// Return value of number of interafces up.
-	InterfaceUpCount *int64 `json:"InterfaceUpCount,omitempty"`
+	InterfaceUpCount     *int64 `json:"InterfaceUpCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *NiatelemetryInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *NiatelemetryInterfaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableNiatelemetryInterfaceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

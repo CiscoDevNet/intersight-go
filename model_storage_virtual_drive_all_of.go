@@ -70,18 +70,18 @@ type StorageVirtualDriveAllOf struct {
 	// The UUID value of the vendor.
 	VendorUuid *string `json:"VendorUuid,omitempty"`
 	// The identifier for this Virtual drive.
-	VirtualDriveId *string `json:"VirtualDriveId,omitempty"`
-	DiskGroup *StorageDiskGroupRelationship `json:"DiskGroup,omitempty"`
+	VirtualDriveId      *string                          `json:"VirtualDriveId,omitempty"`
+	DiskGroup           *StorageDiskGroupRelationship    `json:"DiskGroup,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to storagePhysicalDiskUsage resources.
-	PhysicalDiskUsages []StoragePhysicalDiskUsageRelationship `json:"PhysicalDiskUsages,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
+	PhysicalDiskUsages           []StoragePhysicalDiskUsageRelationship    `json:"PhysicalDiskUsages,omitempty"`
+	RegisteredDevice             *AssetDeviceRegistrationRelationship      `json:"RegisteredDevice,omitempty"`
+	StorageController            *StorageControllerRelationship            `json:"StorageController,omitempty"`
 	StorageVirtualDriveContainer *StorageVirtualDriveContainerRelationship `json:"StorageVirtualDriveContainer,omitempty"`
 	// An array of relationships to storageVdMemberEp resources.
-	VdMemberEps []StorageVdMemberEpRelationship `json:"VdMemberEps,omitempty"`
+	VdMemberEps           []StorageVdMemberEpRelationship           `json:"VdMemberEps,omitempty"`
 	VirtualDriveExtension *StorageVirtualDriveExtensionRelationship `json:"VirtualDriveExtension,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _StorageVirtualDriveAllOf StorageVirtualDriveAllOf
@@ -122,7 +122,7 @@ func (o *StorageVirtualDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -146,7 +146,7 @@ func (o *StorageVirtualDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1023,7 +1023,7 @@ func (o *StorageVirtualDriveAllOf) SetInventoryDeviceInfo(v InventoryDeviceInfoR
 
 // GetPhysicalDiskUsages returns the PhysicalDiskUsages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageVirtualDriveAllOf) GetPhysicalDiskUsages() []StoragePhysicalDiskUsageRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskUsageRelationship
 		return ret
 	}
@@ -1152,7 +1152,7 @@ func (o *StorageVirtualDriveAllOf) SetStorageVirtualDriveContainer(v StorageVirt
 
 // GetVdMemberEps returns the VdMemberEps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageVirtualDriveAllOf) GetVdMemberEps() []StorageVdMemberEpRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVdMemberEpRelationship
 		return ret
 	}
@@ -1416,5 +1416,3 @@ func (v *NullableStorageVirtualDriveAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

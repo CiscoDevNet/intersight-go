@@ -20,9 +20,9 @@ type EquipmentChassisIdentityAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	IoCardIdentityList []EquipmentIoCardIdentity `json:"IoCardIdentityList,omitempty"`
-	Chassis *EquipmentChassisRelationship `json:"Chassis,omitempty"`
+	ObjectType           string                        `json:"ObjectType"`
+	IoCardIdentityList   []EquipmentIoCardIdentity     `json:"IoCardIdentityList,omitempty"`
+	Chassis              *EquipmentChassisRelationship `json:"Chassis,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *EquipmentChassisIdentityAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisIdentityAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *EquipmentChassisIdentityAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentChassisIdentityAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *EquipmentChassisIdentityAllOf) SetObjectType(v string) {
 
 // GetIoCardIdentityList returns the IoCardIdentityList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentChassisIdentityAllOf) GetIoCardIdentityList() []EquipmentIoCardIdentity {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentIoCardIdentity
 		return ret
 	}
@@ -241,5 +241,3 @@ func (v *NullableEquipmentChassisIdentityAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

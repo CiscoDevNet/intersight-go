@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // HyperflexStorageContainer A storage container (datastore) entity.
@@ -28,7 +28,7 @@ type HyperflexStorageContainer struct {
 	// Storage container accessibility summary. * `NOT_APPLICABLE` - The HyperFlex storage container accessibility summary is not applicable. * `ACCESSIBLE` - The HyperFlex storage container is accessible. * `NOT_ACCESSIBLE` - The HyperFlex storage container is not accessible. * `PARTIALLY_ACCESSIBLE` - The HyperFlex storage container is partially accessible.
 	AccessibilitySummary *string `json:"AccessibilitySummary,omitempty"`
 	// Storage container data block size in bytes.
-	DataBlockSize *int64 `json:"DataBlockSize,omitempty"`
+	DataBlockSize   *int64                                   `json:"DataBlockSize,omitempty"`
 	HostMountStatus []StorageStorageContainerHostMountStatus `json:"HostMountStatus,omitempty"`
 	// Indicates whether the storage container has volumes.
 	InUse *bool `json:"InUse,omitempty"`
@@ -53,10 +53,10 @@ type HyperflexStorageContainer struct {
 	// UUID of the datastore/storage container.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Number of volumes associated with the storage container.
-	VolumeCount *int64 `json:"VolumeCount,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	VolumeCount *int64                        `json:"VolumeCount,omitempty"`
+	Cluster     *HyperflexClusterRelationship `json:"Cluster,omitempty"`
 	// An array of relationships to hyperflexVolume resources.
-	Volumes []HyperflexVolumeRelationship `json:"Volumes,omitempty"`
+	Volumes              []HyperflexVolumeRelationship `json:"Volumes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *HyperflexStorageContainer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStorageContainer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *HyperflexStorageContainer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStorageContainer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -199,7 +199,7 @@ func (o *HyperflexStorageContainer) SetDataBlockSize(v int64) {
 
 // GetHostMountStatus returns the HostMountStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStorageContainer) GetHostMountStatus() []StorageStorageContainerHostMountStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageStorageContainerHostMountStatus
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *HyperflexStorageContainer) SetCluster(v HyperflexClusterRelationship) {
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStorageContainer) GetVolumes() []HyperflexVolumeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexVolumeRelationship
 		return ret
 	}
@@ -763,7 +763,7 @@ func (o *HyperflexStorageContainer) UnmarshalJSON(bytes []byte) (err error) {
 		// Storage container accessibility summary. * `NOT_APPLICABLE` - The HyperFlex storage container accessibility summary is not applicable. * `ACCESSIBLE` - The HyperFlex storage container is accessible. * `NOT_ACCESSIBLE` - The HyperFlex storage container is not accessible. * `PARTIALLY_ACCESSIBLE` - The HyperFlex storage container is partially accessible.
 		AccessibilitySummary *string `json:"AccessibilitySummary,omitempty"`
 		// Storage container data block size in bytes.
-		DataBlockSize *int64 `json:"DataBlockSize,omitempty"`
+		DataBlockSize   *int64                                   `json:"DataBlockSize,omitempty"`
 		HostMountStatus []StorageStorageContainerHostMountStatus `json:"HostMountStatus,omitempty"`
 		// Indicates whether the storage container has volumes.
 		InUse *bool `json:"InUse,omitempty"`
@@ -788,8 +788,8 @@ func (o *HyperflexStorageContainer) UnmarshalJSON(bytes []byte) (err error) {
 		// UUID of the datastore/storage container.
 		Uuid *string `json:"Uuid,omitempty"`
 		// Number of volumes associated with the storage container.
-		VolumeCount *int64 `json:"VolumeCount,omitempty"`
-		Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+		VolumeCount *int64                        `json:"VolumeCount,omitempty"`
+		Cluster     *HyperflexClusterRelationship `json:"Cluster,omitempty"`
 		// An array of relationships to hyperflexVolume resources.
 		Volumes []HyperflexVolumeRelationship `json:"Volumes,omitempty"`
 	}
@@ -914,5 +914,3 @@ func (v *NullableHyperflexStorageContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

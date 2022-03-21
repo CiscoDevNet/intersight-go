@@ -18,20 +18,19 @@ import (
 
 // StorageFlexFlashVirtualDriveRelationship - A relationship to the 'storage.FlexFlashVirtualDrive' resource, or the expanded 'storage.FlexFlashVirtualDrive' resource, or the 'null' value.
 type StorageFlexFlashVirtualDriveRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	StorageFlexFlashVirtualDrive *StorageFlexFlashVirtualDrive
 }
 
 // MoMoRefAsStorageFlexFlashVirtualDriveRelationship is a convenience function that returns MoMoRef wrapped in StorageFlexFlashVirtualDriveRelationship
 func MoMoRefAsStorageFlexFlashVirtualDriveRelationship(v *MoMoRef) StorageFlexFlashVirtualDriveRelationship {
-	return StorageFlexFlashVirtualDriveRelationship{ MoMoRef: v}
+	return StorageFlexFlashVirtualDriveRelationship{MoMoRef: v}
 }
 
 // StorageFlexFlashVirtualDriveAsStorageFlexFlashVirtualDriveRelationship is a convenience function that returns StorageFlexFlashVirtualDrive wrapped in StorageFlexFlashVirtualDriveRelationship
 func StorageFlexFlashVirtualDriveAsStorageFlexFlashVirtualDriveRelationship(v *StorageFlexFlashVirtualDrive) StorageFlexFlashVirtualDriveRelationship {
-	return StorageFlexFlashVirtualDriveRelationship{ StorageFlexFlashVirtualDrive: v}
+	return StorageFlexFlashVirtualDriveRelationship{StorageFlexFlashVirtualDrive: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexFlashVirtualDriveRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageFlexFlashVirtualDriveRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *StorageFlexFlashVirtualDriveRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageFlexFlashVirtualDriveRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageFlexFlashVirtualDriveRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

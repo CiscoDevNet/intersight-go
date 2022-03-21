@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // OnpremImagePackage ImagePackage encapsulates a software image package. ImagePackage can be a docker image, a UI web image, an endpoint (e.g. UCSM) image, a device connector image or an ansible scripts package.
@@ -40,7 +40,7 @@ type OnpremImagePackage struct {
 	// Image package type (e.g. service, system etc.).
 	PackageType *string `json:"PackageType,omitempty"`
 	// Image package version string.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *OnpremImagePackage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OnpremImagePackage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *OnpremImagePackage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OnpremImagePackage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -547,5 +547,3 @@ func (v *NullableOnpremImagePackage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

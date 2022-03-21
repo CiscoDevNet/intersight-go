@@ -29,8 +29,8 @@ type FirmwareDistributable struct {
 	// The category into which the distributable falls into according to the supported platform series. For e.g.; C-Series/B-Series/Infrastructure.
 	ImageCategory *string `json:"ImageCategory,omitempty"`
 	// The source of the distributable. If it has been created by the user or system. * `System` - The distributable has been created by the System. * `User` - The distributable has been created by the User.
-	Origin *string `json:"Origin,omitempty"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	Origin               *string                                `json:"Origin,omitempty"`
+	Catalog              *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *FirmwareDistributable) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDistributable) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *FirmwareDistributable) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDistributable) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -290,7 +290,7 @@ func (o *FirmwareDistributable) UnmarshalJSON(bytes []byte) (err error) {
 		// The category into which the distributable falls into according to the supported platform series. For e.g.; C-Series/B-Series/Infrastructure.
 		ImageCategory *string `json:"ImageCategory,omitempty"`
 		// The source of the distributable. If it has been created by the user or system. * `System` - The distributable has been created by the System. * `User` - The distributable has been created by the User.
-		Origin *string `json:"Origin,omitempty"`
+		Origin  *string                                `json:"Origin,omitempty"`
 		Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	}
 
@@ -388,5 +388,3 @@ func (v *NullableFirmwareDistributable) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

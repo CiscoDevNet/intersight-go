@@ -18,20 +18,19 @@ import (
 
 // SoftwarerepositoryOperatingSystemFileRelationship - A relationship to the 'softwarerepository.OperatingSystemFile' resource, or the expanded 'softwarerepository.OperatingSystemFile' resource, or the 'null' value.
 type SoftwarerepositoryOperatingSystemFileRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                               *MoMoRef
 	SoftwarerepositoryOperatingSystemFile *SoftwarerepositoryOperatingSystemFile
 }
 
 // MoMoRefAsSoftwarerepositoryOperatingSystemFileRelationship is a convenience function that returns MoMoRef wrapped in SoftwarerepositoryOperatingSystemFileRelationship
 func MoMoRefAsSoftwarerepositoryOperatingSystemFileRelationship(v *MoMoRef) SoftwarerepositoryOperatingSystemFileRelationship {
-	return SoftwarerepositoryOperatingSystemFileRelationship{ MoMoRef: v}
+	return SoftwarerepositoryOperatingSystemFileRelationship{MoMoRef: v}
 }
 
 // SoftwarerepositoryOperatingSystemFileAsSoftwarerepositoryOperatingSystemFileRelationship is a convenience function that returns SoftwarerepositoryOperatingSystemFile wrapped in SoftwarerepositoryOperatingSystemFileRelationship
 func SoftwarerepositoryOperatingSystemFileAsSoftwarerepositoryOperatingSystemFileRelationship(v *SoftwarerepositoryOperatingSystemFile) SoftwarerepositoryOperatingSystemFileRelationship {
-	return SoftwarerepositoryOperatingSystemFileRelationship{ SoftwarerepositoryOperatingSystemFile: v}
+	return SoftwarerepositoryOperatingSystemFileRelationship{SoftwarerepositoryOperatingSystemFile: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryOperatingSystemFileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SoftwarerepositoryOperatingSystemFileRelationship) MarshalJSON() ([]by
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryOperatingSystemFileRelationship) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryOperatingSystemFileRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSoftwarerepositoryOperatingSystemFileRelationship) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,20 +20,20 @@ type OsBaseInstallConfigAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	AdditionalParameters []OsPlaceHolder `json:"AdditionalParameters,omitempty"`
-	Answers NullableOsAnswers `json:"Answers,omitempty"`
+	ObjectType           string            `json:"ObjectType"`
+	AdditionalParameters []OsPlaceHolder   `json:"AdditionalParameters,omitempty"`
+	Answers              NullableOsAnswers `json:"Answers,omitempty"`
 	// User provided description about the OS install configuration.
 	Description *string `json:"Description,omitempty"`
 	// The failure message of the API.
 	ErrorMsg *string `json:"ErrorMsg,omitempty"`
 	// The install method to be used for OS installation - vMedia, iPXE.  Only vMedia is supported as of now. * `vMedia` - OS image is mounted as vMedia in target server for OS installation.
-	InstallMethod *string `json:"InstallMethod,omitempty"`
+	InstallMethod *string                 `json:"InstallMethod,omitempty"`
 	InstallTarget NullableOsInstallTarget `json:"InstallTarget,omitempty"`
 	// Denotes API operating status as pending, in_progress, completed_ok, completed_error based on the execution status. * `Pending` - The initial value of the OperStatus. * `InProgress` - The OperStatus value will be InProgress during execution. * `CompletedOk` - The API is successful with operation then OperStatus will be marked as CompletedOk. * `CompletedError` - The API is failed with operation then OperStatus will be marked as CompletedError. * `CompletedWarning` - The API is completed with some warning then OperStatus will be CompletedWarning.
-	OperState *string `json:"OperState,omitempty"`
+	OperState                 *string                             `json:"OperState,omitempty"`
 	OperatingSystemParameters NullableOsOperatingSystemParameters `json:"OperatingSystemParameters,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties      map[string]interface{}
 }
 
 type _OsBaseInstallConfigAllOf OsBaseInstallConfigAllOf
@@ -78,7 +78,7 @@ func (o *OsBaseInstallConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsBaseInstallConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *OsBaseInstallConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsBaseInstallConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *OsBaseInstallConfigAllOf) SetObjectType(v string) {
 
 // GetAdditionalParameters returns the AdditionalParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsBaseInstallConfigAllOf) GetAdditionalParameters() []OsPlaceHolder {
-	if o == nil  {
+	if o == nil {
 		var ret []OsPlaceHolder
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *OsBaseInstallConfigAllOf) GetAnswers() OsAnswers {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsBaseInstallConfigAllOf) GetAnswersOk() (*OsAnswers, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Answers.Get(), o.Answers.IsSet()
@@ -178,6 +178,7 @@ func (o *OsBaseInstallConfigAllOf) HasAnswers() bool {
 func (o *OsBaseInstallConfigAllOf) SetAnswers(v OsAnswers) {
 	o.Answers.Set(&v)
 }
+
 // SetAnswersNil sets the value for Answers to be an explicit nil
 func (o *OsBaseInstallConfigAllOf) SetAnswersNil() {
 	o.Answers.Set(nil)
@@ -297,7 +298,7 @@ func (o *OsBaseInstallConfigAllOf) GetInstallTarget() OsInstallTarget {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsBaseInstallConfigAllOf) GetInstallTargetOk() (*OsInstallTarget, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstallTarget.Get(), o.InstallTarget.IsSet()
@@ -316,6 +317,7 @@ func (o *OsBaseInstallConfigAllOf) HasInstallTarget() bool {
 func (o *OsBaseInstallConfigAllOf) SetInstallTarget(v OsInstallTarget) {
 	o.InstallTarget.Set(&v)
 }
+
 // SetInstallTargetNil sets the value for InstallTarget to be an explicit nil
 func (o *OsBaseInstallConfigAllOf) SetInstallTargetNil() {
 	o.InstallTarget.Set(nil)
@@ -371,7 +373,7 @@ func (o *OsBaseInstallConfigAllOf) GetOperatingSystemParameters() OsOperatingSys
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsBaseInstallConfigAllOf) GetOperatingSystemParametersOk() (*OsOperatingSystemParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OperatingSystemParameters.Get(), o.OperatingSystemParameters.IsSet()
@@ -390,6 +392,7 @@ func (o *OsBaseInstallConfigAllOf) HasOperatingSystemParameters() bool {
 func (o *OsBaseInstallConfigAllOf) SetOperatingSystemParameters(v OsOperatingSystemParameters) {
 	o.OperatingSystemParameters.Set(&v)
 }
+
 // SetOperatingSystemParametersNil sets the value for OperatingSystemParameters to be an explicit nil
 func (o *OsBaseInstallConfigAllOf) SetOperatingSystemParametersNil() {
 	o.OperatingSystemParameters.Set(nil)
@@ -501,5 +504,3 @@ func (v *NullableOsBaseInstallConfigAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

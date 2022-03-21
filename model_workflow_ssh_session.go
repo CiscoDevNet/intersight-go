@@ -27,15 +27,15 @@ type WorkflowSshSession struct {
 	// Flag to allow capturing entire command response as batch API output.
 	CaptureCompleteResponse *string `json:"CaptureCompleteResponse,omitempty"`
 	// Optional array of integer values to specify the expected exit codes of a SSH command execution. SSH command execution is marked success upon receiving any of the expected exit code from command execution. If not set, success exit code of 0 is expected from command execution.
-	ExpectedExitCodes interface{} `json:"ExpectedExitCodes,omitempty"`
+	ExpectedExitCodes    interface{}           `json:"ExpectedExitCodes,omitempty"`
 	FileTransferToRemote *WorkflowFileTransfer `json:"FileTransferToRemote,omitempty"`
 	// The type of SSH message to be sent to the remote server. * `ExecuteCommand` - Execute a SSH command on the remote server. * `NewSession` - Open a new SSH connection to the remote server. * `FileTransfer` - Transfer a file from Intersight connected device to the remote server. * `CloseSession` - Close the SSH connection to the remote server.
 	MessageType *string `json:"MessageType,omitempty"`
 	// SSH command to execute on the remote server.
-	SshCommand interface{} `json:"SshCommand,omitempty"`
+	SshCommand       interface{}        `json:"SshCommand,omitempty"`
 	SshConfiguration *WorkflowSshConfig `json:"SshConfiguration,omitempty"`
 	// SSH operation timeout value in seconds. The provided string value should be able to convert to respective integer value.
-	SshOpTimeout *string `json:"SshOpTimeout,omitempty"`
+	SshOpTimeout         *string `json:"SshOpTimeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *WorkflowSshSession) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSshSession) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *WorkflowSshSession) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowSshSession) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -150,7 +150,7 @@ func (o *WorkflowSshSession) SetCaptureCompleteResponse(v string) {
 
 // GetExpectedExitCodes returns the ExpectedExitCodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSshSession) GetExpectedExitCodes() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *WorkflowSshSession) SetMessageType(v string) {
 
 // GetSshCommand returns the SshCommand field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowSshSession) GetSshCommand() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -396,12 +396,12 @@ func (o *WorkflowSshSession) UnmarshalJSON(bytes []byte) (err error) {
 		// Flag to allow capturing entire command response as batch API output.
 		CaptureCompleteResponse *string `json:"CaptureCompleteResponse,omitempty"`
 		// Optional array of integer values to specify the expected exit codes of a SSH command execution. SSH command execution is marked success upon receiving any of the expected exit code from command execution. If not set, success exit code of 0 is expected from command execution.
-		ExpectedExitCodes interface{} `json:"ExpectedExitCodes,omitempty"`
+		ExpectedExitCodes    interface{}           `json:"ExpectedExitCodes,omitempty"`
 		FileTransferToRemote *WorkflowFileTransfer `json:"FileTransferToRemote,omitempty"`
 		// The type of SSH message to be sent to the remote server. * `ExecuteCommand` - Execute a SSH command on the remote server. * `NewSession` - Open a new SSH connection to the remote server. * `FileTransfer` - Transfer a file from Intersight connected device to the remote server. * `CloseSession` - Close the SSH connection to the remote server.
 		MessageType *string `json:"MessageType,omitempty"`
 		// SSH command to execute on the remote server.
-		SshCommand interface{} `json:"SshCommand,omitempty"`
+		SshCommand       interface{}        `json:"SshCommand,omitempty"`
 		SshConfiguration *WorkflowSshConfig `json:"SshConfiguration,omitempty"`
 		// SSH operation timeout value in seconds. The provided string value should be able to convert to respective integer value.
 		SshOpTimeout *string `json:"SshOpTimeout,omitempty"`
@@ -507,5 +507,3 @@ func (v *NullableWorkflowSshSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

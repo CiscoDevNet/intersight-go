@@ -19,31 +19,30 @@ import (
 // OsCatalogResponse - The response body of a HTTP GET request for the 'os.Catalog' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'os.Catalog' resources.
 type OsCatalogResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	OsCatalogList *OsCatalogList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	OsCatalogList        *OsCatalogList
 }
 
 // MoAggregateTransformAsOsCatalogResponse is a convenience function that returns MoAggregateTransform wrapped in OsCatalogResponse
 func MoAggregateTransformAsOsCatalogResponse(v *MoAggregateTransform) OsCatalogResponse {
-	return OsCatalogResponse{ MoAggregateTransform: v}
+	return OsCatalogResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsOsCatalogResponse is a convenience function that returns MoDocumentCount wrapped in OsCatalogResponse
 func MoDocumentCountAsOsCatalogResponse(v *MoDocumentCount) OsCatalogResponse {
-	return OsCatalogResponse{ MoDocumentCount: v}
+	return OsCatalogResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsOsCatalogResponse is a convenience function that returns MoTagSummary wrapped in OsCatalogResponse
 func MoTagSummaryAsOsCatalogResponse(v *MoTagSummary) OsCatalogResponse {
-	return OsCatalogResponse{ MoTagSummary: v}
+	return OsCatalogResponse{MoTagSummary: v}
 }
 
 // OsCatalogListAsOsCatalogResponse is a convenience function that returns OsCatalogList wrapped in OsCatalogResponse
 func OsCatalogListAsOsCatalogResponse(v *OsCatalogList) OsCatalogResponse {
-	return OsCatalogResponse{ OsCatalogList: v}
+	return OsCatalogResponse{OsCatalogList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OsCatalogResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src OsCatalogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OsCatalogResponse) GetActualInstance() (interface{}) {
+func (obj *OsCatalogResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableOsCatalogResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

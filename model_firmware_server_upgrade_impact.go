@@ -23,12 +23,12 @@ type FirmwareServerUpgradeImpact struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                    `json:"ObjectType"`
 	ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 	// Name of the server impacted by the upgrade.
 	Name *string `json:"Name,omitempty"`
 	// Details about the server which will be impacted by the upgrade.
-	UserLabel *string `json:"UserLabel,omitempty"`
+	UserLabel            *string `json:"UserLabel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *FirmwareServerUpgradeImpact) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareServerUpgradeImpact) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *FirmwareServerUpgradeImpact) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareServerUpgradeImpact) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -113,7 +113,7 @@ func (o *FirmwareServerUpgradeImpact) SetObjectType(v string) {
 
 // GetImpactDetail returns the ImpactDetail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareServerUpgradeImpact) GetImpactDetail() []FirmwareComponentImpact {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareComponentImpact
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *FirmwareServerUpgradeImpact) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType   string                    `json:"ObjectType"`
 		ImpactDetail []FirmwareComponentImpact `json:"ImpactDetail,omitempty"`
 		// Name of the server impacted by the upgrade.
 		Name *string `json:"Name,omitempty"`
@@ -346,5 +346,3 @@ func (v *NullableFirmwareServerUpgradeImpact) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

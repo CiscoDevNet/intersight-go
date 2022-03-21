@@ -24,15 +24,15 @@ type TamActionAllOf struct {
 	// Type of the managed object that should be marked with an instance of the Alert (when operation type is create) or that should have an alert instance removed (when operation type is remove).
 	AffectedObjectType *string `json:"AffectedObjectType,omitempty"`
 	// Alert type is used to denote the category of an Intersight alert (FieldNotice, equipment Fault etc.). * `psirt` - Respresents the psirt alert type (https://tools.cisco.com/security/center/publicationListing.x). * `fieldNotice` - Respresents the field notice alert type (https://www.cisco.com/c/en/us/support/web/tsd-products-field-notice-summary.html). * `eolAdvisory` - Represents product End of Life (EOL) type (https://www.cisco.com/c/en/us/products/eos-eol-policy.html).
-	AlertType *string `json:"AlertType,omitempty"`
+	AlertType   *string          `json:"AlertType,omitempty"`
 	Identifiers []TamIdentifiers `json:"Identifiers,omitempty"`
 	// Uniquely identifies a given action among the set of actions corresponding to an advisory. Primarily used to store and compare results of subsequent iterations corresponding to the action queries.
 	Name *string `json:"Name,omitempty"`
 	// Operation type for the alert action. An action is used to carry out the process of \"reacting\" to an alert condition. For e.g.in case of a fieldNotice alert, the intention may be to create a new alert (if the condition matches and there is no existing alert) or to remove an existing alert when the alert condition has been remedied. * `create` - Create an instance of AdvisoryInstance. * `remove` - Remove an instance of AdvisoryInstance.
-	OperationType *string `json:"OperationType,omitempty"`
-	Queries []TamQueryEntry `json:"Queries,omitempty"`
+	OperationType *string         `json:"OperationType,omitempty"`
+	Queries       []TamQueryEntry `json:"Queries,omitempty"`
 	// Type of Intersight alert. An alert in Intersight could be one of several kinds (FieldNotice, PSIRT etc.). Primarily used for filtering alerts based on the type. * `restApi` - Repesents the use of REST API for carrying out alert actions.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *TamActionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamActionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *TamActionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamActionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -187,7 +187,7 @@ func (o *TamActionAllOf) SetAlertType(v string) {
 
 // GetIdentifiers returns the Identifiers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamActionAllOf) GetIdentifiers() []TamIdentifiers {
-	if o == nil  {
+	if o == nil {
 		var ret []TamIdentifiers
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *TamActionAllOf) SetOperationType(v string) {
 
 // GetQueries returns the Queries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamActionAllOf) GetQueries() []TamQueryEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []TamQueryEntry
 		return ret
 	}
@@ -444,5 +444,3 @@ func (v *NullableTamActionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,8 +22,8 @@ type ContentComplexTypeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The unique name of this complex type within the grammar specification.
-	Name *string `json:"Name,omitempty"`
-	Parameters []ContentBaseParameter `json:"Parameters,omitempty"`
+	Name                 *string                `json:"Name,omitempty"`
+	Parameters           []ContentBaseParameter `json:"Parameters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *ContentComplexTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ContentComplexTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *ContentComplexTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ContentComplexTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *ContentComplexTypeAllOf) SetName(v string) {
 
 // GetParameters returns the Parameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ContentComplexTypeAllOf) GetParameters() []ContentBaseParameter {
-	if o == nil  {
+	if o == nil {
 		var ret []ContentBaseParameter
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableContentComplexTypeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,9 +27,9 @@ type CloudAwsOrganizationalUnit struct {
 	// The identity of this organization. This entity is not manipulated by users. It aids in uniquely identifying the organization object.
 	Identity *string `json:"Identity,omitempty"`
 	// Name of the organizational unit.
-	Name *string `json:"Name,omitempty"`
-	ParentOrg *CloudAwsOrganizationalUnitRelationship `json:"ParentOrg,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Name                 *string                                 `json:"Name,omitempty"`
+	ParentOrg            *CloudAwsOrganizationalUnitRelationship `json:"ParentOrg,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CloudAwsOrganizationalUnit) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsOrganizationalUnit) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CloudAwsOrganizationalUnit) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsOrganizationalUnit) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -279,9 +279,9 @@ func (o *CloudAwsOrganizationalUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// The identity of this organization. This entity is not manipulated by users. It aids in uniquely identifying the organization object.
 		Identity *string `json:"Identity,omitempty"`
 		// Name of the organizational unit.
-		Name *string `json:"Name,omitempty"`
-		ParentOrg *CloudAwsOrganizationalUnitRelationship `json:"ParentOrg,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Name             *string                                 `json:"Name,omitempty"`
+		ParentOrg        *CloudAwsOrganizationalUnitRelationship `json:"ParentOrg,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varCloudAwsOrganizationalUnitWithoutEmbeddedStruct := CloudAwsOrganizationalUnitWithoutEmbeddedStruct{}
@@ -378,5 +378,3 @@ func (v *NullableCloudAwsOrganizationalUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

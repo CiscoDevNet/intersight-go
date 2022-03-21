@@ -19,19 +19,18 @@ import (
 // CloudAwsBillingUnitRelationship - A relationship to the 'cloud.AwsBillingUnit' resource, or the expanded 'cloud.AwsBillingUnit' resource, or the 'null' value.
 type CloudAwsBillingUnitRelationship struct {
 	CloudAwsBillingUnit *CloudAwsBillingUnit
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // CloudAwsBillingUnitAsCloudAwsBillingUnitRelationship is a convenience function that returns CloudAwsBillingUnit wrapped in CloudAwsBillingUnitRelationship
 func CloudAwsBillingUnitAsCloudAwsBillingUnitRelationship(v *CloudAwsBillingUnit) CloudAwsBillingUnitRelationship {
-	return CloudAwsBillingUnitRelationship{ CloudAwsBillingUnit: v}
+	return CloudAwsBillingUnitRelationship{CloudAwsBillingUnit: v}
 }
 
 // MoMoRefAsCloudAwsBillingUnitRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsBillingUnitRelationship
 func MoMoRefAsCloudAwsBillingUnitRelationship(v *MoMoRef) CloudAwsBillingUnitRelationship {
-	return CloudAwsBillingUnitRelationship{ MoMoRef: v}
+	return CloudAwsBillingUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsBillingUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsBillingUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsBillingUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsBillingUnitRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsBillingUnit != nil {
 		return obj.CloudAwsBillingUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsBillingUnitRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

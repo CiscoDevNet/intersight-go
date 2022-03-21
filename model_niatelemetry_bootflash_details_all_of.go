@@ -26,7 +26,7 @@ type NiatelemetryBootflashDetailsAllOf struct {
 	// Return model type in boot flash details.
 	ModelType *string `json:"ModelType,omitempty"`
 	// Return serial id in boot flash details.
-	Serial *string `json:"Serial,omitempty"`
+	Serial               *string `json:"Serial,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *NiatelemetryBootflashDetailsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryBootflashDetailsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *NiatelemetryBootflashDetailsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryBootflashDetailsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableNiatelemetryBootflashDetailsAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

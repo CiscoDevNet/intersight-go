@@ -20,7 +20,7 @@ type IaasLicenseInfoListAllOf struct {
 	// The total number of 'iaas.LicenseInfo' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'iaas.LicenseInfo' resources matching the request.
-	Results []IaasLicenseInfo `json:"Results,omitempty"`
+	Results              []IaasLicenseInfo `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *IaasLicenseInfoListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasLicenseInfoListAllOf) GetResults() []IaasLicenseInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasLicenseInfo
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableIaasLicenseInfoListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

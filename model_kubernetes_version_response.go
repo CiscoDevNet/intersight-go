@@ -19,31 +19,30 @@ import (
 // KubernetesVersionResponse - The response body of a HTTP GET request for the 'kubernetes.Version' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.Version' resources.
 type KubernetesVersionResponse struct {
 	KubernetesVersionList *KubernetesVersionList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // KubernetesVersionListAsKubernetesVersionResponse is a convenience function that returns KubernetesVersionList wrapped in KubernetesVersionResponse
 func KubernetesVersionListAsKubernetesVersionResponse(v *KubernetesVersionList) KubernetesVersionResponse {
-	return KubernetesVersionResponse{ KubernetesVersionList: v}
+	return KubernetesVersionResponse{KubernetesVersionList: v}
 }
 
 // MoAggregateTransformAsKubernetesVersionResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesVersionResponse
 func MoAggregateTransformAsKubernetesVersionResponse(v *MoAggregateTransform) KubernetesVersionResponse {
-	return KubernetesVersionResponse{ MoAggregateTransform: v}
+	return KubernetesVersionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesVersionResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesVersionResponse
 func MoDocumentCountAsKubernetesVersionResponse(v *MoDocumentCount) KubernetesVersionResponse {
-	return KubernetesVersionResponse{ MoDocumentCount: v}
+	return KubernetesVersionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesVersionResponse is a convenience function that returns MoTagSummary wrapped in KubernetesVersionResponse
 func MoTagSummaryAsKubernetesVersionResponse(v *MoTagSummary) KubernetesVersionResponse {
-	return KubernetesVersionResponse{ MoTagSummary: v}
+	return KubernetesVersionResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVersionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesVersionResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesVersionResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesVersionResponse) GetActualInstance() interface{} {
 	if obj.KubernetesVersionList != nil {
 		return obj.KubernetesVersionList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesVersionResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // EquipmentRackEnclosureSlotRelationship - A relationship to the 'equipment.RackEnclosureSlot' resource, or the expanded 'equipment.RackEnclosureSlot' resource, or the 'null' value.
 type EquipmentRackEnclosureSlotRelationship struct {
 	EquipmentRackEnclosureSlot *EquipmentRackEnclosureSlot
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 }
 
 // EquipmentRackEnclosureSlotAsEquipmentRackEnclosureSlotRelationship is a convenience function that returns EquipmentRackEnclosureSlot wrapped in EquipmentRackEnclosureSlotRelationship
 func EquipmentRackEnclosureSlotAsEquipmentRackEnclosureSlotRelationship(v *EquipmentRackEnclosureSlot) EquipmentRackEnclosureSlotRelationship {
-	return EquipmentRackEnclosureSlotRelationship{ EquipmentRackEnclosureSlot: v}
+	return EquipmentRackEnclosureSlotRelationship{EquipmentRackEnclosureSlot: v}
 }
 
 // MoMoRefAsEquipmentRackEnclosureSlotRelationship is a convenience function that returns MoMoRef wrapped in EquipmentRackEnclosureSlotRelationship
 func MoMoRefAsEquipmentRackEnclosureSlotRelationship(v *MoMoRef) EquipmentRackEnclosureSlotRelationship {
-	return EquipmentRackEnclosureSlotRelationship{ MoMoRef: v}
+	return EquipmentRackEnclosureSlotRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentRackEnclosureSlotRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentRackEnclosureSlotRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *EquipmentRackEnclosureSlotRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentRackEnclosureSlotRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentRackEnclosureSlot != nil {
 		return obj.EquipmentRackEnclosureSlot
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentRackEnclosureSlotRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

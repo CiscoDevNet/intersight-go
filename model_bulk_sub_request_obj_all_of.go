@@ -20,8 +20,8 @@ type BulkSubRequestObjAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Body *MoBaseMo `json:"Body,omitempty"`
+	ObjectType string    `json:"ObjectType"`
+	Body       *MoBaseMo `json:"Body,omitempty"`
 	// The body of the sub-request in string format.
 	BodyString *string `json:"BodyString,omitempty"`
 	// The time at which processing of this request completed.
@@ -29,8 +29,8 @@ type BulkSubRequestObjAllOf struct {
 	// The time at which processing of this request started.
 	ExecutionStartTime *string `json:"ExecutionStartTime,omitempty"`
 	// This flag indicates if an already existing object was found or not after execution of the action CheckObjectPresence.
-	IsObjectPresent *bool `json:"IsObjectPresent,omitempty"`
-	Result NullableBulkApiResult `json:"Result,omitempty"`
+	IsObjectPresent *bool                 `json:"IsObjectPresent,omitempty"`
+	Result          NullableBulkApiResult `json:"Result,omitempty"`
 	// Skip the already present objects. The value from the Request.
 	SkipDuplicates *bool `json:"SkipDuplicates,omitempty"`
 	// The status of the request. * `Pending` - Indicates that the request is yet to be processed. * `ObjPresenceCheckInProgress` - Indicates that the checking for object presence is in progress. * `ObjPresenceCheckInComplete` - Indicates that the request is being processed. * `ObjPresenceCheckFailed` - Indicates that the checking for object presence failed. * `Processing` - Indicates that the request is being processed. * `TimedOut` - Indicates that the request processing timed out. * `Completed` - Indicates that the request processing is complete. * `Skipped` - Indicates that the request was skipped.
@@ -42,8 +42,8 @@ type BulkSubRequestObjAllOf struct {
 	// The URI on which this bulk action is to be performed.
 	Uri *string `json:"Uri,omitempty"`
 	// The type of operation to be performed. One of - Post (Create), Patch (Update) or Delete (Remove). * `POST` - Used to create a REST resource. * `PATCH` - Used to update a REST resource. * `DELETE` - Used to delete a REST resource.
-	Verb *string `json:"Verb,omitempty"`
-	Request *BulkRequestRelationship `json:"Request,omitempty"`
+	Verb                 *string                  `json:"Verb,omitempty"`
+	Request              *BulkRequestRelationship `json:"Request,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *BulkSubRequestObjAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkSubRequestObjAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *BulkSubRequestObjAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkSubRequestObjAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -297,7 +297,7 @@ func (o *BulkSubRequestObjAllOf) GetResult() BulkApiResult {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BulkSubRequestObjAllOf) GetResultOk() (*BulkApiResult, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Result.Get(), o.Result.IsSet()
@@ -316,6 +316,7 @@ func (o *BulkSubRequestObjAllOf) HasResult() bool {
 func (o *BulkSubRequestObjAllOf) SetResult(v BulkApiResult) {
 	o.Result.Set(&v)
 }
+
 // SetResultNil sets the value for Result to be an explicit nil
 func (o *BulkSubRequestObjAllOf) SetResultNil() {
 	o.Result.Set(nil)
@@ -671,5 +672,3 @@ func (v *NullableBulkSubRequestObjAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

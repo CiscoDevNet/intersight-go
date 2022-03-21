@@ -23,7 +23,7 @@ type PortSubGroupList struct {
 	// The total number of 'port.SubGroup' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'port.SubGroup' resources matching the request.
-	Results []PortSubGroup `json:"Results,omitempty"`
+	Results              []PortSubGroup `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *PortSubGroupList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PortSubGroupList) GetResults() []PortSubGroup {
-	if o == nil  {
+	if o == nil {
 		var ret []PortSubGroup
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullablePortSubGroupList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

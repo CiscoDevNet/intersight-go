@@ -27,7 +27,7 @@ type AccessConfigurationType struct {
 	// This flag enables the use of In-Band configuration for end-point access.
 	ConfigureInband *bool `json:"ConfigureInband,omitempty"`
 	// This flag enables the use of Out-Of-Band configuration for end-point access.
-	ConfigureOutOfBand *bool `json:"ConfigureOutOfBand,omitempty"`
+	ConfigureOutOfBand   *bool `json:"ConfigureOutOfBand,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *AccessConfigurationType) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AccessConfigurationType) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *AccessConfigurationType) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AccessConfigurationType) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -308,5 +308,3 @@ func (v *NullableAccessConfigurationType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

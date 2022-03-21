@@ -20,7 +20,7 @@ type StorageNetAppIpInterfaceListAllOf struct {
 	// The total number of 'storage.NetAppIpInterface' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppIpInterface' resources matching the request.
-	Results []StorageNetAppIpInterface `json:"Results,omitempty"`
+	Results              []StorageNetAppIpInterface `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageNetAppIpInterfaceListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppIpInterfaceListAllOf) GetResults() []StorageNetAppIpInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppIpInterface
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageNetAppIpInterfaceListAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

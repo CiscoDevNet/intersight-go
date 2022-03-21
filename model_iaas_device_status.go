@@ -45,8 +45,8 @@ type IaasDeviceStatus struct {
 	// Describes about the pod to which this device belongs to in UCSD.
 	Pod *string `json:"Pod,omitempty"`
 	// Describes about the podType of Pod to which this device belongs to in UCSD.
-	PodType *string `json:"PodType,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+	PodType              *string                   `json:"PodType,omitempty"`
+	Guid                 *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *IaasDeviceStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasDeviceStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *IaasDeviceStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasDeviceStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -594,8 +594,8 @@ func (o *IaasDeviceStatus) UnmarshalJSON(bytes []byte) (err error) {
 		// Describes about the pod to which this device belongs to in UCSD.
 		Pod *string `json:"Pod,omitempty"`
 		// Describes about the podType of Pod to which this device belongs to in UCSD.
-		PodType *string `json:"PodType,omitempty"`
-		Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+		PodType *string                   `json:"PodType,omitempty"`
+		Guid    *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	}
 
 	varIaasDeviceStatusWithoutEmbeddedStruct := IaasDeviceStatusWithoutEmbeddedStruct{}
@@ -708,5 +708,3 @@ func (v *NullableIaasDeviceStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

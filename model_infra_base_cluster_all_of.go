@@ -24,7 +24,7 @@ type InfraBaseClusterAllOf struct {
 	// The user-provided name for this cluster to facilitate identification.
 	Name *string `json:"Name,omitempty"`
 	// Cluster health status as reported by the hypervisor platform. * `Unknown` - Entity status is unknown. * `Degraded` - State is degraded, and might impact normal operation of the entity. * `Critical` - Entity is in a critical state, impacting operations. * `Ok` - Entity status is in a stable state, operating normally.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,7 +62,7 @@ func (o *InfraBaseClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *InfraBaseClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -86,7 +86,7 @@ func (o *InfraBaseClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *InfraBaseClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,5 +238,3 @@ func (v *NullableInfraBaseClusterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

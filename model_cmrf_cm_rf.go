@@ -21,7 +21,7 @@ import (
 type CmrfCmRf struct {
 	MoBaseComplexType
 	// The Moid of the referenced REST resource.
-	Moid *string `json:"Moid,omitempty"`
+	Moid                 *string `json:"Moid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -189,5 +189,3 @@ func (v *NullableCmrfCmRf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

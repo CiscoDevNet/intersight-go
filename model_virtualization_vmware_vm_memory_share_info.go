@@ -31,7 +31,7 @@ type VirtualizationVmwareVmMemoryShareInfo struct {
 	// Similar to CPU reservations (Mbytes).
 	MemReservation *int64 `json:"MemReservation,omitempty"`
 	// Similar to CPU Shares but applicable to memory. There is no unit for this value. It is a relative measure based on the settings for other resource pools.
-	MemShares *int64 `json:"MemShares,omitempty"`
+	MemShares            *int64 `json:"MemShares,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *VirtualizationVmwareVmMemoryShareInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmMemoryShareInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *VirtualizationVmwareVmMemoryShareInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmMemoryShareInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableVirtualizationVmwareVmMemoryShareInfo) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

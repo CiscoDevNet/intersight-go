@@ -25,10 +25,10 @@ type FabricFcoeUplinkPcRole struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Admin configured speed for the port. * `Auto` - Admin configurable speed AUTO ( default ). * `1Gbps` - Admin configurable speed 1Gbps. * `10Gbps` - Admin configurable speed 10Gbps. * `25Gbps` - Admin configurable speed 25Gbps. * `40Gbps` - Admin configurable speed 40Gbps. * `100Gbps` - Admin configurable speed 100Gbps.
-	AdminSpeed *string `json:"AdminSpeed,omitempty"`
+	AdminSpeed            *string                                  `json:"AdminSpeed,omitempty"`
 	LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship `json:"LinkAggregationPolicy,omitempty"`
-	LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	LinkControlPolicy     *FabricLinkControlPolicyRelationship     `json:"LinkControlPolicy,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _FabricFcoeUplinkPcRole FabricFcoeUplinkPcRole
@@ -73,7 +73,7 @@ func (o *FabricFcoeUplinkPcRole) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricFcoeUplinkPcRole) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *FabricFcoeUplinkPcRole) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricFcoeUplinkPcRole) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -244,9 +244,9 @@ func (o *FabricFcoeUplinkPcRole) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Admin configured speed for the port. * `Auto` - Admin configurable speed AUTO ( default ). * `1Gbps` - Admin configurable speed 1Gbps. * `10Gbps` - Admin configurable speed 10Gbps. * `25Gbps` - Admin configurable speed 25Gbps. * `40Gbps` - Admin configurable speed 40Gbps. * `100Gbps` - Admin configurable speed 100Gbps.
-		AdminSpeed *string `json:"AdminSpeed,omitempty"`
+		AdminSpeed            *string                                  `json:"AdminSpeed,omitempty"`
 		LinkAggregationPolicy *FabricLinkAggregationPolicyRelationship `json:"LinkAggregationPolicy,omitempty"`
-		LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
+		LinkControlPolicy     *FabricLinkControlPolicyRelationship     `json:"LinkControlPolicy,omitempty"`
 	}
 
 	varFabricFcoeUplinkPcRoleWithoutEmbeddedStruct := FabricFcoeUplinkPcRoleWithoutEmbeddedStruct{}
@@ -341,5 +341,3 @@ func (v *NullableFabricFcoeUplinkPcRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,17 +20,17 @@ type StorageDriveGroupAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType          string                             `json:"ObjectType"`
 	AutomaticDriveGroup NullableStorageAutomaticDriveGroup `json:"AutomaticDriveGroup,omitempty"`
-	ManualDriveGroup NullableStorageManualDriveGroup `json:"ManualDriveGroup,omitempty"`
+	ManualDriveGroup    NullableStorageManualDriveGroup    `json:"ManualDriveGroup,omitempty"`
 	// The name of the drive group. The name can be between 1 and 64 alphanumeric characters. Spaces or any special characters other than - (hyphen), _ (underscore), : (colon), and . (period) are not allowed.
 	Name *string `json:"Name,omitempty"`
 	// The supported RAID level for the disk group. * `Raid0` - RAID 0 Stripe Raid Level. * `Raid1` - RAID 1 Mirror Raid Level. * `Raid5` - RAID 5 Mirror Raid Level. * `Raid6` - RAID 6 Mirror Raid Level. * `Raid10` - RAID 10 Mirror Raid Level. * `Raid50` - RAID 50 Mirror Raid Level. * `Raid60` - RAID 60 Mirror Raid Level.
 	RaidLevel *string `json:"RaidLevel,omitempty"`
 	// Type of drive selection to be used for this drive group. * `0` - Drives are selected manually by the user. * `1` - Drives are selected automatically based on the RAID and virtual drive configuration.
-	Type *int32 `json:"Type,omitempty"`
-	VirtualDrives []StorageVirtualDriveConfiguration `json:"VirtualDrives,omitempty"`
-	StoragePolicy *StorageStoragePolicyRelationship `json:"StoragePolicy,omitempty"`
+	Type                 *int32                             `json:"Type,omitempty"`
+	VirtualDrives        []StorageVirtualDriveConfiguration `json:"VirtualDrives,omitempty"`
+	StoragePolicy        *StorageStoragePolicyRelationship  `json:"StoragePolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *StorageDriveGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageDriveGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *StorageDriveGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageDriveGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -124,7 +124,7 @@ func (o *StorageDriveGroupAllOf) GetAutomaticDriveGroup() StorageAutomaticDriveG
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageDriveGroupAllOf) GetAutomaticDriveGroupOk() (*StorageAutomaticDriveGroup, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AutomaticDriveGroup.Get(), o.AutomaticDriveGroup.IsSet()
@@ -143,6 +143,7 @@ func (o *StorageDriveGroupAllOf) HasAutomaticDriveGroup() bool {
 func (o *StorageDriveGroupAllOf) SetAutomaticDriveGroup(v StorageAutomaticDriveGroup) {
 	o.AutomaticDriveGroup.Set(&v)
 }
+
 // SetAutomaticDriveGroupNil sets the value for AutomaticDriveGroup to be an explicit nil
 func (o *StorageDriveGroupAllOf) SetAutomaticDriveGroupNil() {
 	o.AutomaticDriveGroup.Set(nil)
@@ -166,7 +167,7 @@ func (o *StorageDriveGroupAllOf) GetManualDriveGroup() StorageManualDriveGroup {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageDriveGroupAllOf) GetManualDriveGroupOk() (*StorageManualDriveGroup, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ManualDriveGroup.Get(), o.ManualDriveGroup.IsSet()
@@ -185,6 +186,7 @@ func (o *StorageDriveGroupAllOf) HasManualDriveGroup() bool {
 func (o *StorageDriveGroupAllOf) SetManualDriveGroup(v StorageManualDriveGroup) {
 	o.ManualDriveGroup.Set(&v)
 }
+
 // SetManualDriveGroupNil sets the value for ManualDriveGroup to be an explicit nil
 func (o *StorageDriveGroupAllOf) SetManualDriveGroupNil() {
 	o.ManualDriveGroup.Set(nil)
@@ -293,7 +295,7 @@ func (o *StorageDriveGroupAllOf) SetType(v int32) {
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageDriveGroupAllOf) GetVirtualDrives() []StorageVirtualDriveConfiguration {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveConfiguration
 		return ret
 	}
@@ -453,5 +455,3 @@ func (v *NullableStorageDriveGroupAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

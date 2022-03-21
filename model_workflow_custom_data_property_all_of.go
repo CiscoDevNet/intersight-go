@@ -26,7 +26,7 @@ type WorkflowCustomDataPropertyAllOf struct {
 	// The resolved custom data type definition managed object.
 	CustomDataTypeId *string `json:"CustomDataTypeId,omitempty"`
 	// Name of the custom data type for this input.
-	CustomDataTypeName *string `json:"CustomDataTypeName,omitempty"`
+	CustomDataTypeName   *string `json:"CustomDataTypeName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *WorkflowCustomDataPropertyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataPropertyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *WorkflowCustomDataPropertyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataPropertyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableWorkflowCustomDataPropertyAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

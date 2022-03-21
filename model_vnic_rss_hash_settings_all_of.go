@@ -36,7 +36,7 @@ type VnicRssHashSettingsAllOf struct {
 	// When enabled, both the IPv4 address and UDP port number are used for traffic distribution.
 	UdpIpv4Hash *bool `json:"UdpIpv4Hash,omitempty"`
 	// When enabled, both the IPv6 address and UDP port number are used for traffic distribution.
-	UdpIpv6Hash *bool `json:"UdpIpv6Hash,omitempty"`
+	UdpIpv6Hash          *bool `json:"UdpIpv6Hash,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *VnicRssHashSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicRssHashSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -134,7 +134,7 @@ func (o *VnicRssHashSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicRssHashSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -502,5 +502,3 @@ func (v *NullableVnicRssHashSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

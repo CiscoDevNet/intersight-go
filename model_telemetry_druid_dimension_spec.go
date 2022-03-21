@@ -18,20 +18,19 @@ import (
 
 // TelemetryDruidDimensionSpec - struct for TelemetryDruidDimensionSpec
 type TelemetryDruidDimensionSpec struct {
-	TelemetryDruidDefaultDimensionSpec *TelemetryDruidDefaultDimensionSpec
+	TelemetryDruidDefaultDimensionSpec    *TelemetryDruidDefaultDimensionSpec
 	TelemetryDruidExtractionDimensionSpec *TelemetryDruidExtractionDimensionSpec
 }
 
 // TelemetryDruidDefaultDimensionSpecAsTelemetryDruidDimensionSpec is a convenience function that returns TelemetryDruidDefaultDimensionSpec wrapped in TelemetryDruidDimensionSpec
 func TelemetryDruidDefaultDimensionSpecAsTelemetryDruidDimensionSpec(v *TelemetryDruidDefaultDimensionSpec) TelemetryDruidDimensionSpec {
-	return TelemetryDruidDimensionSpec{ TelemetryDruidDefaultDimensionSpec: v}
+	return TelemetryDruidDimensionSpec{TelemetryDruidDefaultDimensionSpec: v}
 }
 
 // TelemetryDruidExtractionDimensionSpecAsTelemetryDruidDimensionSpec is a convenience function that returns TelemetryDruidExtractionDimensionSpec wrapped in TelemetryDruidDimensionSpec
 func TelemetryDruidExtractionDimensionSpecAsTelemetryDruidDimensionSpec(v *TelemetryDruidExtractionDimensionSpec) TelemetryDruidDimensionSpec {
-	return TelemetryDruidDimensionSpec{ TelemetryDruidExtractionDimensionSpec: v}
+	return TelemetryDruidDimensionSpec{TelemetryDruidExtractionDimensionSpec: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TelemetryDruidDimensionSpec) UnmarshalJSON(data []byte) error {
@@ -108,7 +107,7 @@ func (src TelemetryDruidDimensionSpec) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TelemetryDruidDimensionSpec) GetActualInstance() (interface{}) {
+func (obj *TelemetryDruidDimensionSpec) GetActualInstance() interface{} {
 	if obj.TelemetryDruidDefaultDimensionSpec != nil {
 		return obj.TelemetryDruidDefaultDimensionSpec
 	}
@@ -156,5 +155,3 @@ func (v *NullableTelemetryDruidDimensionSpec) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

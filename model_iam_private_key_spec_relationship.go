@@ -19,19 +19,18 @@ import (
 // IamPrivateKeySpecRelationship - A relationship to the 'iam.PrivateKeySpec' resource, or the expanded 'iam.PrivateKeySpec' resource, or the 'null' value.
 type IamPrivateKeySpecRelationship struct {
 	IamPrivateKeySpec *IamPrivateKeySpec
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // IamPrivateKeySpecAsIamPrivateKeySpecRelationship is a convenience function that returns IamPrivateKeySpec wrapped in IamPrivateKeySpecRelationship
 func IamPrivateKeySpecAsIamPrivateKeySpecRelationship(v *IamPrivateKeySpec) IamPrivateKeySpecRelationship {
-	return IamPrivateKeySpecRelationship{ IamPrivateKeySpec: v}
+	return IamPrivateKeySpecRelationship{IamPrivateKeySpec: v}
 }
 
 // MoMoRefAsIamPrivateKeySpecRelationship is a convenience function that returns MoMoRef wrapped in IamPrivateKeySpecRelationship
 func MoMoRefAsIamPrivateKeySpecRelationship(v *MoMoRef) IamPrivateKeySpecRelationship {
-	return IamPrivateKeySpecRelationship{ MoMoRef: v}
+	return IamPrivateKeySpecRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamPrivateKeySpecRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamPrivateKeySpecRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamPrivateKeySpecRelationship) GetActualInstance() (interface{}) {
+func (obj *IamPrivateKeySpecRelationship) GetActualInstance() interface{} {
 	if obj.IamPrivateKeySpec != nil {
 		return obj.IamPrivateKeySpec
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamPrivateKeySpecRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

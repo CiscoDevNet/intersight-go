@@ -19,19 +19,18 @@ import (
 // IamSecurityHolderRelationship - A relationship to the 'iam.SecurityHolder' resource, or the expanded 'iam.SecurityHolder' resource, or the 'null' value.
 type IamSecurityHolderRelationship struct {
 	IamSecurityHolder *IamSecurityHolder
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // IamSecurityHolderAsIamSecurityHolderRelationship is a convenience function that returns IamSecurityHolder wrapped in IamSecurityHolderRelationship
 func IamSecurityHolderAsIamSecurityHolderRelationship(v *IamSecurityHolder) IamSecurityHolderRelationship {
-	return IamSecurityHolderRelationship{ IamSecurityHolder: v}
+	return IamSecurityHolderRelationship{IamSecurityHolder: v}
 }
 
 // MoMoRefAsIamSecurityHolderRelationship is a convenience function that returns MoMoRef wrapped in IamSecurityHolderRelationship
 func MoMoRefAsIamSecurityHolderRelationship(v *MoMoRef) IamSecurityHolderRelationship {
-	return IamSecurityHolderRelationship{ MoMoRef: v}
+	return IamSecurityHolderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamSecurityHolderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamSecurityHolderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamSecurityHolderRelationship) GetActualInstance() (interface{}) {
+func (obj *IamSecurityHolderRelationship) GetActualInstance() interface{} {
 	if obj.IamSecurityHolder != nil {
 		return obj.IamSecurityHolder
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamSecurityHolderRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

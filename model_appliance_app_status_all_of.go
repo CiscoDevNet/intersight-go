@@ -20,7 +20,7 @@ type ApplianceAppStatusAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string               `json:"ObjectType"`
 	ApiStatuses []ApplianceApiStatus `json:"ApiStatuses,omitempty"`
 	// Unique label to identify the application.
 	AppLabel *string `json:"AppLabel,omitempty"`
@@ -39,10 +39,10 @@ type ApplianceAppStatusAllOf struct {
 	// Total number of restarts since last deployment.
 	RestartCountTotal *int64 `json:"RestartCountTotal,omitempty"`
 	// Number of replicas running. The number of instances of the application currently running.
-	RunningCount *int64 `json:"RunningCount,omitempty"`
-	StatusChecks []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
-	GroupStatus *ApplianceGroupStatusRelationship `json:"GroupStatus,omitempty"`
-	SystemStatus *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
+	RunningCount         *int64                             `json:"RunningCount,omitempty"`
+	StatusChecks         []ApplianceStatusCheck             `json:"StatusChecks,omitempty"`
+	GroupStatus          *ApplianceGroupStatusRelationship  `json:"GroupStatus,omitempty"`
+	SystemStatus         *ApplianceSystemStatusRelationship `json:"SystemStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *ApplianceAppStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceAppStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *ApplianceAppStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceAppStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *ApplianceAppStatusAllOf) SetObjectType(v string) {
 
 // GetApiStatuses returns the ApiStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceAppStatusAllOf) GetApiStatuses() []ApplianceApiStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceApiStatus
 		return ret
 	}
@@ -442,7 +442,7 @@ func (o *ApplianceAppStatusAllOf) SetRunningCount(v int64) {
 
 // GetStatusChecks returns the StatusChecks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceAppStatusAllOf) GetStatusChecks() []ApplianceStatusCheck {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceStatusCheck
 		return ret
 	}
@@ -658,5 +658,3 @@ func (v *NullableApplianceAppStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppFcPortEventRelationship - A relationship to the 'storage.NetAppFcPortEvent' resource, or the expanded 'storage.NetAppFcPortEvent' resource, or the 'null' value.
 type StorageNetAppFcPortEventRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	StorageNetAppFcPortEvent *StorageNetAppFcPortEvent
 }
 
 // MoMoRefAsStorageNetAppFcPortEventRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppFcPortEventRelationship
 func MoMoRefAsStorageNetAppFcPortEventRelationship(v *MoMoRef) StorageNetAppFcPortEventRelationship {
-	return StorageNetAppFcPortEventRelationship{ MoMoRef: v}
+	return StorageNetAppFcPortEventRelationship{MoMoRef: v}
 }
 
 // StorageNetAppFcPortEventAsStorageNetAppFcPortEventRelationship is a convenience function that returns StorageNetAppFcPortEvent wrapped in StorageNetAppFcPortEventRelationship
 func StorageNetAppFcPortEventAsStorageNetAppFcPortEventRelationship(v *StorageNetAppFcPortEvent) StorageNetAppFcPortEventRelationship {
-	return StorageNetAppFcPortEventRelationship{ StorageNetAppFcPortEvent: v}
+	return StorageNetAppFcPortEventRelationship{StorageNetAppFcPortEvent: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppFcPortEventRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppFcPortEventRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppFcPortEventRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppFcPortEventRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppFcPortEventRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

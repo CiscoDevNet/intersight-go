@@ -22,8 +22,8 @@ type WorkflowCommentsAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Description field provides comment about the template function.
-	Description *string `json:"Description,omitempty"`
-	Examples []string `json:"Examples,omitempty"`
+	Description          *string  `json:"Description,omitempty"`
+	Examples             []string `json:"Examples,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *WorkflowCommentsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCommentsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *WorkflowCommentsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCommentsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *WorkflowCommentsAllOf) SetDescription(v string) {
 
 // GetExamples returns the Examples field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowCommentsAllOf) GetExamples() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableWorkflowCommentsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

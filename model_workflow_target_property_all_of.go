@@ -22,13 +22,13 @@ type WorkflowTargetPropertyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A singleton value which will contain the path to connector object from the selected object.
-	ConnectorAttribute *string `json:"ConnectorAttribute,omitempty"`
+	ConnectorAttribute   *string  `json:"ConnectorAttribute,omitempty"`
 	ConstraintAttributes []string `json:"ConstraintAttributes,omitempty"`
-	DisplayAttributes []string `json:"DisplayAttributes,omitempty"`
+	DisplayAttributes    []string `json:"DisplayAttributes,omitempty"`
 	// Field to hold an Intersight API along with an optional filter to narrow down the search options for target device.
-	Selector *string `json:"Selector,omitempty"`
-	SelectorProperty NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
-	SupportedObjects []string `json:"SupportedObjects,omitempty"`
+	Selector             *string                          `json:"Selector,omitempty"`
+	SelectorProperty     NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
+	SupportedObjects     []string                         `json:"SupportedObjects,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowTargetPropertyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTargetPropertyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowTargetPropertyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTargetPropertyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *WorkflowTargetPropertyAllOf) SetConnectorAttribute(v string) {
 
 // GetConstraintAttributes returns the ConstraintAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetPropertyAllOf) GetConstraintAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *WorkflowTargetPropertyAllOf) SetConstraintAttributes(v []string) {
 
 // GetDisplayAttributes returns the DisplayAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetPropertyAllOf) GetDisplayAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *WorkflowTargetPropertyAllOf) GetSelectorProperty() WorkflowSelectorProp
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTargetPropertyAllOf) GetSelectorPropertyOk() (*WorkflowSelectorProperty, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SelectorProperty.Get(), o.SelectorProperty.IsSet()
@@ -267,6 +267,7 @@ func (o *WorkflowTargetPropertyAllOf) HasSelectorProperty() bool {
 func (o *WorkflowTargetPropertyAllOf) SetSelectorProperty(v WorkflowSelectorProperty) {
 	o.SelectorProperty.Set(&v)
 }
+
 // SetSelectorPropertyNil sets the value for SelectorProperty to be an explicit nil
 func (o *WorkflowTargetPropertyAllOf) SetSelectorPropertyNil() {
 	o.SelectorProperty.Set(nil)
@@ -279,7 +280,7 @@ func (o *WorkflowTargetPropertyAllOf) UnsetSelectorProperty() {
 
 // GetSupportedObjects returns the SupportedObjects field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetPropertyAllOf) GetSupportedObjects() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -403,5 +404,3 @@ func (v *NullableWorkflowTargetPropertyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

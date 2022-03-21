@@ -18,20 +18,19 @@ import (
 
 // StorageEnclosureRelationship - A relationship to the 'storage.Enclosure' resource, or the expanded 'storage.Enclosure' resource, or the 'null' value.
 type StorageEnclosureRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 	StorageEnclosure *StorageEnclosure
 }
 
 // MoMoRefAsStorageEnclosureRelationship is a convenience function that returns MoMoRef wrapped in StorageEnclosureRelationship
 func MoMoRefAsStorageEnclosureRelationship(v *MoMoRef) StorageEnclosureRelationship {
-	return StorageEnclosureRelationship{ MoMoRef: v}
+	return StorageEnclosureRelationship{MoMoRef: v}
 }
 
 // StorageEnclosureAsStorageEnclosureRelationship is a convenience function that returns StorageEnclosure wrapped in StorageEnclosureRelationship
 func StorageEnclosureAsStorageEnclosureRelationship(v *StorageEnclosure) StorageEnclosureRelationship {
-	return StorageEnclosureRelationship{ StorageEnclosure: v}
+	return StorageEnclosureRelationship{StorageEnclosure: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageEnclosureRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageEnclosureRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageEnclosureRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageEnclosureRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageEnclosureRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

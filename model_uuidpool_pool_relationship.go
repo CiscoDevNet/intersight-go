@@ -18,20 +18,19 @@ import (
 
 // UuidpoolPoolRelationship - A relationship to the 'uuidpool.Pool' resource, or the expanded 'uuidpool.Pool' resource, or the 'null' value.
 type UuidpoolPoolRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 	UuidpoolPool *UuidpoolPool
 }
 
 // MoMoRefAsUuidpoolPoolRelationship is a convenience function that returns MoMoRef wrapped in UuidpoolPoolRelationship
 func MoMoRefAsUuidpoolPoolRelationship(v *MoMoRef) UuidpoolPoolRelationship {
-	return UuidpoolPoolRelationship{ MoMoRef: v}
+	return UuidpoolPoolRelationship{MoMoRef: v}
 }
 
 // UuidpoolPoolAsUuidpoolPoolRelationship is a convenience function that returns UuidpoolPool wrapped in UuidpoolPoolRelationship
 func UuidpoolPoolAsUuidpoolPoolRelationship(v *UuidpoolPool) UuidpoolPoolRelationship {
-	return UuidpoolPoolRelationship{ UuidpoolPool: v}
+	return UuidpoolPoolRelationship{UuidpoolPool: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UuidpoolPoolRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src UuidpoolPoolRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UuidpoolPoolRelationship) GetActualInstance() (interface{}) {
+func (obj *UuidpoolPoolRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableUuidpoolPoolRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

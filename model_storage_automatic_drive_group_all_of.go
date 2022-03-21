@@ -32,7 +32,7 @@ type StorageAutomaticDriveGroupAllOf struct {
 	// Number of span groups to be created for this RAID group. Non-nested RAID levels have a single span.
 	NumberOfSpans *int64 `json:"NumberOfSpans,omitempty"`
 	// This flag enables the drive group to use all the remaining drives on the server.
-	UseRemainingDrives *bool `json:"UseRemainingDrives,omitempty"`
+	UseRemainingDrives   *bool `json:"UseRemainingDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *StorageAutomaticDriveGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageAutomaticDriveGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *StorageAutomaticDriveGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageAutomaticDriveGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -402,5 +402,3 @@ func (v *NullableStorageAutomaticDriveGroupAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

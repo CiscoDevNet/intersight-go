@@ -25,11 +25,11 @@ type IqnpoolPoolMember struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// IQN Address of this pool member.
-	IqnAddress *string `json:"IqnAddress,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	BlockHead *IqnpoolBlockRelationship `json:"BlockHead,omitempty"`
-	Peer *IqnpoolLeaseRelationship `json:"Peer,omitempty"`
-	Pool *IqnpoolPoolRelationship `json:"Pool,omitempty"`
+	IqnAddress           *string                   `json:"IqnAddress,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship     `json:"AssignedToEntity,omitempty"`
+	BlockHead            *IqnpoolBlockRelationship `json:"BlockHead,omitempty"`
+	Peer                 *IqnpoolLeaseRelationship `json:"Peer,omitempty"`
+	Pool                 *IqnpoolPoolRelationship  `json:"Pool,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *IqnpoolPoolMember) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolPoolMember) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *IqnpoolPoolMember) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IqnpoolPoolMember) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -314,11 +314,11 @@ func (o *IqnpoolPoolMember) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// IQN Address of this pool member.
-		IqnAddress *string `json:"IqnAddress,omitempty"`
-		AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-		BlockHead *IqnpoolBlockRelationship `json:"BlockHead,omitempty"`
-		Peer *IqnpoolLeaseRelationship `json:"Peer,omitempty"`
-		Pool *IqnpoolPoolRelationship `json:"Pool,omitempty"`
+		IqnAddress       *string                   `json:"IqnAddress,omitempty"`
+		AssignedToEntity *MoBaseMoRelationship     `json:"AssignedToEntity,omitempty"`
+		BlockHead        *IqnpoolBlockRelationship `json:"BlockHead,omitempty"`
+		Peer             *IqnpoolLeaseRelationship `json:"Peer,omitempty"`
+		Pool             *IqnpoolPoolRelationship  `json:"Pool,omitempty"`
 	}
 
 	varIqnpoolPoolMemberWithoutEmbeddedStruct := IqnpoolPoolMemberWithoutEmbeddedStruct{}
@@ -417,5 +417,3 @@ func (v *NullableIqnpoolPoolMember) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

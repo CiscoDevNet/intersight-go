@@ -34,8 +34,8 @@ type HyperflexVcenterConfigPolicyAllOf struct {
 	// The vCenter username (e.g. administrator@vsphere.local).
 	Username *string `json:"Username,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexVcenterConfigPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVcenterConfigPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *HyperflexVcenterConfigPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVcenterConfigPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -306,7 +306,7 @@ func (o *HyperflexVcenterConfigPolicyAllOf) SetUsername(v string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVcenterConfigPolicyAllOf) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -470,5 +470,3 @@ func (v *NullableHyperflexVcenterConfigPolicyAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // EquipmentPsuControlRelationship - A relationship to the 'equipment.PsuControl' resource, or the expanded 'equipment.PsuControl' resource, or the 'null' value.
 type EquipmentPsuControlRelationship struct {
 	EquipmentPsuControl *EquipmentPsuControl
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // EquipmentPsuControlAsEquipmentPsuControlRelationship is a convenience function that returns EquipmentPsuControl wrapped in EquipmentPsuControlRelationship
 func EquipmentPsuControlAsEquipmentPsuControlRelationship(v *EquipmentPsuControl) EquipmentPsuControlRelationship {
-	return EquipmentPsuControlRelationship{ EquipmentPsuControl: v}
+	return EquipmentPsuControlRelationship{EquipmentPsuControl: v}
 }
 
 // MoMoRefAsEquipmentPsuControlRelationship is a convenience function that returns MoMoRef wrapped in EquipmentPsuControlRelationship
 func MoMoRefAsEquipmentPsuControlRelationship(v *MoMoRef) EquipmentPsuControlRelationship {
-	return EquipmentPsuControlRelationship{ MoMoRef: v}
+	return EquipmentPsuControlRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentPsuControlRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentPsuControlRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentPsuControlRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentPsuControlRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentPsuControl != nil {
 		return obj.EquipmentPsuControl
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentPsuControlRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

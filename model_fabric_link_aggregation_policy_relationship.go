@@ -19,19 +19,18 @@ import (
 // FabricLinkAggregationPolicyRelationship - A relationship to the 'fabric.LinkAggregationPolicy' resource, or the expanded 'fabric.LinkAggregationPolicy' resource, or the 'null' value.
 type FabricLinkAggregationPolicyRelationship struct {
 	FabricLinkAggregationPolicy *FabricLinkAggregationPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 }
 
 // FabricLinkAggregationPolicyAsFabricLinkAggregationPolicyRelationship is a convenience function that returns FabricLinkAggregationPolicy wrapped in FabricLinkAggregationPolicyRelationship
 func FabricLinkAggregationPolicyAsFabricLinkAggregationPolicyRelationship(v *FabricLinkAggregationPolicy) FabricLinkAggregationPolicyRelationship {
-	return FabricLinkAggregationPolicyRelationship{ FabricLinkAggregationPolicy: v}
+	return FabricLinkAggregationPolicyRelationship{FabricLinkAggregationPolicy: v}
 }
 
 // MoMoRefAsFabricLinkAggregationPolicyRelationship is a convenience function that returns MoMoRef wrapped in FabricLinkAggregationPolicyRelationship
 func MoMoRefAsFabricLinkAggregationPolicyRelationship(v *MoMoRef) FabricLinkAggregationPolicyRelationship {
-	return FabricLinkAggregationPolicyRelationship{ MoMoRef: v}
+	return FabricLinkAggregationPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricLinkAggregationPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FabricLinkAggregationPolicyRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *FabricLinkAggregationPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *FabricLinkAggregationPolicyRelationship) GetActualInstance() interface{} {
 	if obj.FabricLinkAggregationPolicy != nil {
 		return obj.FabricLinkAggregationPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableFabricLinkAggregationPolicyRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

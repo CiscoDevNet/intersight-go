@@ -27,7 +27,7 @@ type VirtualizationVmwareDiscoveryProtocol struct {
 	// Operational mode of the ESXI hosts connected to the distributed virtual switch.
 	Operation *string `json:"Operation,omitempty"`
 	// Discovery protocol type enabled on the distributed virtual switch.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *VirtualizationVmwareDiscoveryProtocol) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDiscoveryProtocol) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *VirtualizationVmwareDiscoveryProtocol) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDiscoveryProtocol) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableVirtualizationVmwareDiscoveryProtocol) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

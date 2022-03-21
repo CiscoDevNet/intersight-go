@@ -18,32 +18,31 @@ import (
 
 // VirtualizationIweHostVswitchResponse - The response body of a HTTP GET request for the 'virtualization.IweHostVswitch' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.IweHostVswitch' resources.
 type VirtualizationIweHostVswitchResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform             *MoAggregateTransform
+	MoDocumentCount                  *MoDocumentCount
+	MoTagSummary                     *MoTagSummary
 	VirtualizationIweHostVswitchList *VirtualizationIweHostVswitchList
 }
 
 // MoAggregateTransformAsVirtualizationIweHostVswitchResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationIweHostVswitchResponse
 func MoAggregateTransformAsVirtualizationIweHostVswitchResponse(v *MoAggregateTransform) VirtualizationIweHostVswitchResponse {
-	return VirtualizationIweHostVswitchResponse{ MoAggregateTransform: v}
+	return VirtualizationIweHostVswitchResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationIweHostVswitchResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationIweHostVswitchResponse
 func MoDocumentCountAsVirtualizationIweHostVswitchResponse(v *MoDocumentCount) VirtualizationIweHostVswitchResponse {
-	return VirtualizationIweHostVswitchResponse{ MoDocumentCount: v}
+	return VirtualizationIweHostVswitchResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationIweHostVswitchResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationIweHostVswitchResponse
 func MoTagSummaryAsVirtualizationIweHostVswitchResponse(v *MoTagSummary) VirtualizationIweHostVswitchResponse {
-	return VirtualizationIweHostVswitchResponse{ MoTagSummary: v}
+	return VirtualizationIweHostVswitchResponse{MoTagSummary: v}
 }
 
 // VirtualizationIweHostVswitchListAsVirtualizationIweHostVswitchResponse is a convenience function that returns VirtualizationIweHostVswitchList wrapped in VirtualizationIweHostVswitchResponse
 func VirtualizationIweHostVswitchListAsVirtualizationIweHostVswitchResponse(v *VirtualizationIweHostVswitchList) VirtualizationIweHostVswitchResponse {
-	return VirtualizationIweHostVswitchResponse{ VirtualizationIweHostVswitchList: v}
+	return VirtualizationIweHostVswitchResponse{VirtualizationIweHostVswitchList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationIweHostVswitchResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationIweHostVswitchResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VirtualizationIweHostVswitchResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationIweHostVswitchResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationIweHostVswitchResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

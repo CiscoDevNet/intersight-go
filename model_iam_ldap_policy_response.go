@@ -18,32 +18,31 @@ import (
 
 // IamLdapPolicyResponse - The response body of a HTTP GET request for the 'iam.LdapPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'iam.LdapPolicy' resources.
 type IamLdapPolicyResponse struct {
-	IamLdapPolicyList *IamLdapPolicyList
+	IamLdapPolicyList    *IamLdapPolicyList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IamLdapPolicyListAsIamLdapPolicyResponse is a convenience function that returns IamLdapPolicyList wrapped in IamLdapPolicyResponse
 func IamLdapPolicyListAsIamLdapPolicyResponse(v *IamLdapPolicyList) IamLdapPolicyResponse {
-	return IamLdapPolicyResponse{ IamLdapPolicyList: v}
+	return IamLdapPolicyResponse{IamLdapPolicyList: v}
 }
 
 // MoAggregateTransformAsIamLdapPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in IamLdapPolicyResponse
 func MoAggregateTransformAsIamLdapPolicyResponse(v *MoAggregateTransform) IamLdapPolicyResponse {
-	return IamLdapPolicyResponse{ MoAggregateTransform: v}
+	return IamLdapPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIamLdapPolicyResponse is a convenience function that returns MoDocumentCount wrapped in IamLdapPolicyResponse
 func MoDocumentCountAsIamLdapPolicyResponse(v *MoDocumentCount) IamLdapPolicyResponse {
-	return IamLdapPolicyResponse{ MoDocumentCount: v}
+	return IamLdapPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIamLdapPolicyResponse is a convenience function that returns MoTagSummary wrapped in IamLdapPolicyResponse
 func MoTagSummaryAsIamLdapPolicyResponse(v *MoTagSummary) IamLdapPolicyResponse {
-	return IamLdapPolicyResponse{ MoTagSummary: v}
+	return IamLdapPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLdapPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IamLdapPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLdapPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *IamLdapPolicyResponse) GetActualInstance() interface{} {
 	if obj.IamLdapPolicyList != nil {
 		return obj.IamLdapPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIamLdapPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

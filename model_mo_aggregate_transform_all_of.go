@@ -18,7 +18,7 @@ import (
 // MoAggregateTransformAllOf struct for MoAggregateTransformAllOf
 type MoAggregateTransformAllOf struct {
 	// The results of the aggregation query.
-	Results []map[string]interface{} `json:"Results,omitempty"`
+	Results              []map[string]interface{} `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +43,7 @@ func NewMoAggregateTransformAllOfWithDefaults() *MoAggregateTransformAllOf {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoAggregateTransformAllOf) GetResults() []map[string]interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -139,5 +139,3 @@ func (v *NullableMoAggregateTransformAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

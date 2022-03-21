@@ -20,19 +20,19 @@ type ResourcepoolLeaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Condition []ResourceSelector `json:"Condition,omitempty"`
+	ObjectType string             `json:"ObjectType"`
+	Condition  []ResourceSelector `json:"Condition,omitempty"`
 	// Lease opertion applied for the feature.
-	Feature *string `json:"Feature,omitempty"`
+	Feature         *string                             `json:"Feature,omitempty"`
 	LeaseParameters NullableResourcepoolLeaseParameters `json:"LeaseParameters,omitempty"`
-	Resource *MoBaseMo `json:"Resource,omitempty"`
+	Resource        *MoBaseMo                           `json:"Resource,omitempty"`
 	// The type of the resource present in the pool, example 'server' its combination of RackUnit and Blade. * `None` - The resource cannot consider for Resource Pool. * `Server` - Resource Pool holds the server kind of resources, example - RackServer, Blade.
-	ResourceType *string `json:"ResourceType,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	LeasedResource *ResourcepoolLeaseResourceRelationship `json:"LeasedResource,omitempty"`
-	Pool *ResourcepoolPoolRelationship `json:"Pool,omitempty"`
-	PoolMember *ResourcepoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-	Universe *ResourcepoolUniverseRelationship `json:"Universe,omitempty"`
+	ResourceType         *string                                `json:"ResourceType,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship                  `json:"AssignedToEntity,omitempty"`
+	LeasedResource       *ResourcepoolLeaseResourceRelationship `json:"LeasedResource,omitempty"`
+	Pool                 *ResourcepoolPoolRelationship          `json:"Pool,omitempty"`
+	PoolMember           *ResourcepoolPoolMemberRelationship    `json:"PoolMember,omitempty"`
+	Universe             *ResourcepoolUniverseRelationship      `json:"Universe,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *ResourcepoolLeaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolLeaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *ResourcepoolLeaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourcepoolLeaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *ResourcepoolLeaseAllOf) SetObjectType(v string) {
 
 // GetCondition returns the Condition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourcepoolLeaseAllOf) GetCondition() []ResourceSelector {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceSelector
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *ResourcepoolLeaseAllOf) GetLeaseParameters() ResourcepoolLeaseParameter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResourcepoolLeaseAllOf) GetLeaseParametersOk() (*ResourcepoolLeaseParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LeaseParameters.Get(), o.LeaseParameters.IsSet()
@@ -210,6 +210,7 @@ func (o *ResourcepoolLeaseAllOf) HasLeaseParameters() bool {
 func (o *ResourcepoolLeaseAllOf) SetLeaseParameters(v ResourcepoolLeaseParameters) {
 	o.LeaseParameters.Set(&v)
 }
+
 // SetLeaseParametersNil sets the value for LeaseParameters to be an explicit nil
 func (o *ResourcepoolLeaseAllOf) SetLeaseParametersNil() {
 	o.LeaseParameters.Set(nil)
@@ -553,5 +554,3 @@ func (v *NullableResourcepoolLeaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

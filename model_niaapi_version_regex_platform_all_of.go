@@ -22,11 +22,11 @@ type NiaapiVersionRegexPlatformAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// All long live version Regex pattern.
-	Anyllregex *string `json:"Anyllregex,omitempty"`
-	Currentlltrain NullableNiaapiSoftwareRegex `json:"Currentlltrain,omitempty"`
-	Latestsltrain NullableNiaapiSoftwareRegex `json:"Latestsltrain,omitempty"`
-	Sltrain []NiaapiSoftwareRegex `json:"Sltrain,omitempty"`
-	Upcominglltrain NullableNiaapiSoftwareRegex `json:"Upcominglltrain,omitempty"`
+	Anyllregex           *string                     `json:"Anyllregex,omitempty"`
+	Currentlltrain       NullableNiaapiSoftwareRegex `json:"Currentlltrain,omitempty"`
+	Latestsltrain        NullableNiaapiSoftwareRegex `json:"Latestsltrain,omitempty"`
+	Sltrain              []NiaapiSoftwareRegex       `json:"Sltrain,omitempty"`
+	Upcominglltrain      NullableNiaapiSoftwareRegex `json:"Upcominglltrain,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegexPlatformAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegexPlatformAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -148,7 +148,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) GetCurrentlltrain() NiaapiSoftwareRege
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegexPlatformAllOf) GetCurrentlltrainOk() (*NiaapiSoftwareRegex, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Currentlltrain.Get(), o.Currentlltrain.IsSet()
@@ -167,6 +167,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) HasCurrentlltrain() bool {
 func (o *NiaapiVersionRegexPlatformAllOf) SetCurrentlltrain(v NiaapiSoftwareRegex) {
 	o.Currentlltrain.Set(&v)
 }
+
 // SetCurrentlltrainNil sets the value for Currentlltrain to be an explicit nil
 func (o *NiaapiVersionRegexPlatformAllOf) SetCurrentlltrainNil() {
 	o.Currentlltrain.Set(nil)
@@ -190,7 +191,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) GetLatestsltrain() NiaapiSoftwareRegex
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegexPlatformAllOf) GetLatestsltrainOk() (*NiaapiSoftwareRegex, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Latestsltrain.Get(), o.Latestsltrain.IsSet()
@@ -209,6 +210,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) HasLatestsltrain() bool {
 func (o *NiaapiVersionRegexPlatformAllOf) SetLatestsltrain(v NiaapiSoftwareRegex) {
 	o.Latestsltrain.Set(&v)
 }
+
 // SetLatestsltrainNil sets the value for Latestsltrain to be an explicit nil
 func (o *NiaapiVersionRegexPlatformAllOf) SetLatestsltrainNil() {
 	o.Latestsltrain.Set(nil)
@@ -221,7 +223,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) UnsetLatestsltrain() {
 
 // GetSltrain returns the Sltrain field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiaapiVersionRegexPlatformAllOf) GetSltrain() []NiaapiSoftwareRegex {
-	if o == nil  {
+	if o == nil {
 		var ret []NiaapiSoftwareRegex
 		return ret
 	}
@@ -265,7 +267,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) GetUpcominglltrain() NiaapiSoftwareReg
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegexPlatformAllOf) GetUpcominglltrainOk() (*NiaapiSoftwareRegex, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Upcominglltrain.Get(), o.Upcominglltrain.IsSet()
@@ -284,6 +286,7 @@ func (o *NiaapiVersionRegexPlatformAllOf) HasUpcominglltrain() bool {
 func (o *NiaapiVersionRegexPlatformAllOf) SetUpcominglltrain(v NiaapiSoftwareRegex) {
 	o.Upcominglltrain.Set(&v)
 }
+
 // SetUpcominglltrainNil sets the value for Upcominglltrain to be an explicit nil
 func (o *NiaapiVersionRegexPlatformAllOf) SetUpcominglltrainNil() {
 	o.Upcominglltrain.Set(nil)
@@ -383,5 +386,3 @@ func (v *NullableNiaapiVersionRegexPlatformAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

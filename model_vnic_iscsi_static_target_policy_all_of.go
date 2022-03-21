@@ -22,13 +22,13 @@ type VnicIscsiStaticTargetPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The IPv4 address assigned to the iSCSI target.
-	IpAddress *string `json:"IpAddress,omitempty"`
-	Lun NullableVnicLun `json:"Lun,omitempty"`
+	IpAddress *string         `json:"IpAddress,omitempty"`
+	Lun       NullableVnicLun `json:"Lun,omitempty"`
 	// The port associated with the iSCSI target.
 	Port *int64 `json:"Port,omitempty"`
 	// Qualified Name (IQN) or Extended Unique Identifier (EUI) name of the iSCSI target.
-	TargetName *string `json:"TargetName,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	TargetName           *string                               `json:"TargetName,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VnicIscsiStaticTargetPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiStaticTargetPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VnicIscsiStaticTargetPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiStaticTargetPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -150,7 +150,7 @@ func (o *VnicIscsiStaticTargetPolicyAllOf) GetLun() VnicLun {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicIscsiStaticTargetPolicyAllOf) GetLunOk() (*VnicLun, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Lun.Get(), o.Lun.IsSet()
@@ -169,6 +169,7 @@ func (o *VnicIscsiStaticTargetPolicyAllOf) HasLun() bool {
 func (o *VnicIscsiStaticTargetPolicyAllOf) SetLun(v VnicLun) {
 	o.Lun.Set(&v)
 }
+
 // SetLunNil sets the value for Lun to be an explicit nil
 func (o *VnicIscsiStaticTargetPolicyAllOf) SetLunNil() {
 	o.Lun.Set(nil)
@@ -364,5 +365,3 @@ func (v *NullableVnicIscsiStaticTargetPolicyAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

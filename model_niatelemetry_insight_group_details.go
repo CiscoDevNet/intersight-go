@@ -45,9 +45,9 @@ type NiatelemetryInsightGroupDetails struct {
 	// Prechange analysis count of the Insight group.
 	PrechangeAnalysisCount *int64 `json:"PrechangeAnalysisCount,omitempty"`
 	// TAC collection config count of the Insight group.
-	TacCollectionConfigCount *int64 `json:"TacCollectionConfigCount,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TacCollectionConfigCount *int64                               `json:"TacCollectionConfigCount,omitempty"`
+	RegisteredDevice         *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _NiatelemetryInsightGroupDetails NiatelemetryInsightGroupDetails
@@ -88,7 +88,7 @@ func (o *NiatelemetryInsightGroupDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInsightGroupDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *NiatelemetryInsightGroupDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryInsightGroupDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -594,8 +594,8 @@ func (o *NiatelemetryInsightGroupDetails) UnmarshalJSON(bytes []byte) (err error
 		// Prechange analysis count of the Insight group.
 		PrechangeAnalysisCount *int64 `json:"PrechangeAnalysisCount,omitempty"`
 		// TAC collection config count of the Insight group.
-		TacCollectionConfigCount *int64 `json:"TacCollectionConfigCount,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		TacCollectionConfigCount *int64                               `json:"TacCollectionConfigCount,omitempty"`
+		RegisteredDevice         *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varNiatelemetryInsightGroupDetailsWithoutEmbeddedStruct := NiatelemetryInsightGroupDetailsWithoutEmbeddedStruct{}
@@ -708,5 +708,3 @@ func (v *NullableNiatelemetryInsightGroupDetails) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // ResourceMembershipResponse - The response body of a HTTP GET request for the 'resource.Membership' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'resource.Membership' resources.
 type ResourceMembershipResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 	ResourceMembershipList *ResourceMembershipList
 }
 
 // MoAggregateTransformAsResourceMembershipResponse is a convenience function that returns MoAggregateTransform wrapped in ResourceMembershipResponse
 func MoAggregateTransformAsResourceMembershipResponse(v *MoAggregateTransform) ResourceMembershipResponse {
-	return ResourceMembershipResponse{ MoAggregateTransform: v}
+	return ResourceMembershipResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsResourceMembershipResponse is a convenience function that returns MoDocumentCount wrapped in ResourceMembershipResponse
 func MoDocumentCountAsResourceMembershipResponse(v *MoDocumentCount) ResourceMembershipResponse {
-	return ResourceMembershipResponse{ MoDocumentCount: v}
+	return ResourceMembershipResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsResourceMembershipResponse is a convenience function that returns MoTagSummary wrapped in ResourceMembershipResponse
 func MoTagSummaryAsResourceMembershipResponse(v *MoTagSummary) ResourceMembershipResponse {
-	return ResourceMembershipResponse{ MoTagSummary: v}
+	return ResourceMembershipResponse{MoTagSummary: v}
 }
 
 // ResourceMembershipListAsResourceMembershipResponse is a convenience function that returns ResourceMembershipList wrapped in ResourceMembershipResponse
 func ResourceMembershipListAsResourceMembershipResponse(v *ResourceMembershipList) ResourceMembershipResponse {
-	return ResourceMembershipResponse{ ResourceMembershipList: v}
+	return ResourceMembershipResponse{ResourceMembershipList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourceMembershipResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ResourceMembershipResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourceMembershipResponse) GetActualInstance() (interface{}) {
+func (obj *ResourceMembershipResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableResourceMembershipResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

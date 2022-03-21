@@ -18,20 +18,19 @@ import (
 
 // StorageHyperFlexVolumeRelationship - A relationship to the 'storage.HyperFlexVolume' resource, or the expanded 'storage.HyperFlexVolume' resource, or the 'null' value.
 type StorageHyperFlexVolumeRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 	StorageHyperFlexVolume *StorageHyperFlexVolume
 }
 
 // MoMoRefAsStorageHyperFlexVolumeRelationship is a convenience function that returns MoMoRef wrapped in StorageHyperFlexVolumeRelationship
 func MoMoRefAsStorageHyperFlexVolumeRelationship(v *MoMoRef) StorageHyperFlexVolumeRelationship {
-	return StorageHyperFlexVolumeRelationship{ MoMoRef: v}
+	return StorageHyperFlexVolumeRelationship{MoMoRef: v}
 }
 
 // StorageHyperFlexVolumeAsStorageHyperFlexVolumeRelationship is a convenience function that returns StorageHyperFlexVolume wrapped in StorageHyperFlexVolumeRelationship
 func StorageHyperFlexVolumeAsStorageHyperFlexVolumeRelationship(v *StorageHyperFlexVolume) StorageHyperFlexVolumeRelationship {
-	return StorageHyperFlexVolumeRelationship{ StorageHyperFlexVolume: v}
+	return StorageHyperFlexVolumeRelationship{StorageHyperFlexVolume: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageHyperFlexVolumeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageHyperFlexVolumeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageHyperFlexVolumeRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageHyperFlexVolumeRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageHyperFlexVolumeRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

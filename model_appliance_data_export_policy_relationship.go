@@ -19,19 +19,18 @@ import (
 // ApplianceDataExportPolicyRelationship - A relationship to the 'appliance.DataExportPolicy' resource, or the expanded 'appliance.DataExportPolicy' resource, or the 'null' value.
 type ApplianceDataExportPolicyRelationship struct {
 	ApplianceDataExportPolicy *ApplianceDataExportPolicy
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // ApplianceDataExportPolicyAsApplianceDataExportPolicyRelationship is a convenience function that returns ApplianceDataExportPolicy wrapped in ApplianceDataExportPolicyRelationship
 func ApplianceDataExportPolicyAsApplianceDataExportPolicyRelationship(v *ApplianceDataExportPolicy) ApplianceDataExportPolicyRelationship {
-	return ApplianceDataExportPolicyRelationship{ ApplianceDataExportPolicy: v}
+	return ApplianceDataExportPolicyRelationship{ApplianceDataExportPolicy: v}
 }
 
 // MoMoRefAsApplianceDataExportPolicyRelationship is a convenience function that returns MoMoRef wrapped in ApplianceDataExportPolicyRelationship
 func MoMoRefAsApplianceDataExportPolicyRelationship(v *MoMoRef) ApplianceDataExportPolicyRelationship {
-	return ApplianceDataExportPolicyRelationship{ MoMoRef: v}
+	return ApplianceDataExportPolicyRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceDataExportPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ApplianceDataExportPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceDataExportPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *ApplianceDataExportPolicyRelationship) GetActualInstance() interface{} {
 	if obj.ApplianceDataExportPolicy != nil {
 		return obj.ApplianceDataExportPolicy
 	}
@@ -137,5 +136,3 @@ func (v *NullableApplianceDataExportPolicyRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

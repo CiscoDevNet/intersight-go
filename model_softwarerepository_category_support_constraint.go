@@ -25,15 +25,15 @@ type SoftwarerepositoryCategorySupportConstraint struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Identifier for this managed object.
-	ConstraintId *string `json:"ConstraintId,omitempty"`
+	ConstraintId   *string                              `json:"ConstraintId,omitempty"`
 	FilteredModels []SoftwarerepositoryConstraintModels `json:"FilteredModels,omitempty"`
 	// Cisco software repository image category identifier.
 	MdfId *string `json:"MdfId,omitempty"`
 	// Minimum image version from where the models can be supported.
 	MinVersion *string `json:"MinVersion,omitempty"`
 	// Fields which tells if the constraint is based on image name parsing.
-	ParseFromImageName *bool `json:"ParseFromImageName,omitempty"`
-	SupportedModels []string `json:"SupportedModels,omitempty"`
+	ParseFromImageName   *bool    `json:"ParseFromImageName,omitempty"`
+	SupportedModels      []string `json:"SupportedModels,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *SoftwarerepositoryCategorySupportConstraint) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategorySupportConstraint) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *SoftwarerepositoryCategorySupportConstraint) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCategorySupportConstraint) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -144,7 +144,7 @@ func (o *SoftwarerepositoryCategorySupportConstraint) SetConstraintId(v string) 
 
 // GetFilteredModels returns the FilteredModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategorySupportConstraint) GetFilteredModels() []SoftwarerepositoryConstraintModels {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwarerepositoryConstraintModels
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *SoftwarerepositoryCategorySupportConstraint) SetParseFromImageName(v bo
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCategorySupportConstraint) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -353,15 +353,15 @@ func (o *SoftwarerepositoryCategorySupportConstraint) UnmarshalJSON(bytes []byte
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Identifier for this managed object.
-		ConstraintId *string `json:"ConstraintId,omitempty"`
+		ConstraintId   *string                              `json:"ConstraintId,omitempty"`
 		FilteredModels []SoftwarerepositoryConstraintModels `json:"FilteredModels,omitempty"`
 		// Cisco software repository image category identifier.
 		MdfId *string `json:"MdfId,omitempty"`
 		// Minimum image version from where the models can be supported.
 		MinVersion *string `json:"MinVersion,omitempty"`
 		// Fields which tells if the constraint is based on image name parsing.
-		ParseFromImageName *bool `json:"ParseFromImageName,omitempty"`
-		SupportedModels []string `json:"SupportedModels,omitempty"`
+		ParseFromImageName *bool    `json:"ParseFromImageName,omitempty"`
+		SupportedModels    []string `json:"SupportedModels,omitempty"`
 	}
 
 	varSoftwarerepositoryCategorySupportConstraintWithoutEmbeddedStruct := SoftwarerepositoryCategorySupportConstraintWithoutEmbeddedStruct{}
@@ -462,5 +462,3 @@ func (v *NullableSoftwarerepositoryCategorySupportConstraint) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

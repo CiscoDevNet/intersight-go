@@ -18,20 +18,19 @@ import (
 
 // RecoveryBackupConfigPolicyRelationship - A relationship to the 'recovery.BackupConfigPolicy' resource, or the expanded 'recovery.BackupConfigPolicy' resource, or the 'null' value.
 type RecoveryBackupConfigPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 	RecoveryBackupConfigPolicy *RecoveryBackupConfigPolicy
 }
 
 // MoMoRefAsRecoveryBackupConfigPolicyRelationship is a convenience function that returns MoMoRef wrapped in RecoveryBackupConfigPolicyRelationship
 func MoMoRefAsRecoveryBackupConfigPolicyRelationship(v *MoMoRef) RecoveryBackupConfigPolicyRelationship {
-	return RecoveryBackupConfigPolicyRelationship{ MoMoRef: v}
+	return RecoveryBackupConfigPolicyRelationship{MoMoRef: v}
 }
 
 // RecoveryBackupConfigPolicyAsRecoveryBackupConfigPolicyRelationship is a convenience function that returns RecoveryBackupConfigPolicy wrapped in RecoveryBackupConfigPolicyRelationship
 func RecoveryBackupConfigPolicyAsRecoveryBackupConfigPolicyRelationship(v *RecoveryBackupConfigPolicy) RecoveryBackupConfigPolicyRelationship {
-	return RecoveryBackupConfigPolicyRelationship{ RecoveryBackupConfigPolicy: v}
+	return RecoveryBackupConfigPolicyRelationship{RecoveryBackupConfigPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecoveryBackupConfigPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecoveryBackupConfigPolicyRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *RecoveryBackupConfigPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *RecoveryBackupConfigPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecoveryBackupConfigPolicyRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

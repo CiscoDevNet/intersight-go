@@ -18,32 +18,31 @@ import (
 
 // HclDriverImageResponse - The response body of a HTTP GET request for the 'hcl.DriverImage' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hcl.DriverImage' resources.
 type HclDriverImageResponse struct {
-	HclDriverImageList *HclDriverImageList
+	HclDriverImageList   *HclDriverImageList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // HclDriverImageListAsHclDriverImageResponse is a convenience function that returns HclDriverImageList wrapped in HclDriverImageResponse
 func HclDriverImageListAsHclDriverImageResponse(v *HclDriverImageList) HclDriverImageResponse {
-	return HclDriverImageResponse{ HclDriverImageList: v}
+	return HclDriverImageResponse{HclDriverImageList: v}
 }
 
 // MoAggregateTransformAsHclDriverImageResponse is a convenience function that returns MoAggregateTransform wrapped in HclDriverImageResponse
 func MoAggregateTransformAsHclDriverImageResponse(v *MoAggregateTransform) HclDriverImageResponse {
-	return HclDriverImageResponse{ MoAggregateTransform: v}
+	return HclDriverImageResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHclDriverImageResponse is a convenience function that returns MoDocumentCount wrapped in HclDriverImageResponse
 func MoDocumentCountAsHclDriverImageResponse(v *MoDocumentCount) HclDriverImageResponse {
-	return HclDriverImageResponse{ MoDocumentCount: v}
+	return HclDriverImageResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHclDriverImageResponse is a convenience function that returns MoTagSummary wrapped in HclDriverImageResponse
 func MoTagSummaryAsHclDriverImageResponse(v *MoTagSummary) HclDriverImageResponse {
-	return HclDriverImageResponse{ MoTagSummary: v}
+	return HclDriverImageResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HclDriverImageResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HclDriverImageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HclDriverImageResponse) GetActualInstance() (interface{}) {
+func (obj *HclDriverImageResponse) GetActualInstance() interface{} {
 	if obj.HclDriverImageList != nil {
 		return obj.HclDriverImageList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHclDriverImageResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

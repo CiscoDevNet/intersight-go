@@ -18,32 +18,31 @@ import (
 
 // WorkflowTaskDefinitionResponse - The response body of a HTTP GET request for the 'workflow.TaskDefinition' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.TaskDefinition' resources.
 type WorkflowTaskDefinitionResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 	WorkflowTaskDefinitionList *WorkflowTaskDefinitionList
 }
 
 // MoAggregateTransformAsWorkflowTaskDefinitionResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowTaskDefinitionResponse
 func MoAggregateTransformAsWorkflowTaskDefinitionResponse(v *MoAggregateTransform) WorkflowTaskDefinitionResponse {
-	return WorkflowTaskDefinitionResponse{ MoAggregateTransform: v}
+	return WorkflowTaskDefinitionResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowTaskDefinitionResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowTaskDefinitionResponse
 func MoDocumentCountAsWorkflowTaskDefinitionResponse(v *MoDocumentCount) WorkflowTaskDefinitionResponse {
-	return WorkflowTaskDefinitionResponse{ MoDocumentCount: v}
+	return WorkflowTaskDefinitionResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowTaskDefinitionResponse is a convenience function that returns MoTagSummary wrapped in WorkflowTaskDefinitionResponse
 func MoTagSummaryAsWorkflowTaskDefinitionResponse(v *MoTagSummary) WorkflowTaskDefinitionResponse {
-	return WorkflowTaskDefinitionResponse{ MoTagSummary: v}
+	return WorkflowTaskDefinitionResponse{MoTagSummary: v}
 }
 
 // WorkflowTaskDefinitionListAsWorkflowTaskDefinitionResponse is a convenience function that returns WorkflowTaskDefinitionList wrapped in WorkflowTaskDefinitionResponse
 func WorkflowTaskDefinitionListAsWorkflowTaskDefinitionResponse(v *WorkflowTaskDefinitionList) WorkflowTaskDefinitionResponse {
-	return WorkflowTaskDefinitionResponse{ WorkflowTaskDefinitionList: v}
+	return WorkflowTaskDefinitionResponse{WorkflowTaskDefinitionList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowTaskDefinitionResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowTaskDefinitionResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowTaskDefinitionResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowTaskDefinitionResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowTaskDefinitionResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

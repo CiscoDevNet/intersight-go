@@ -28,9 +28,9 @@ type IamSessionLimitsAllOf struct {
 	// The maximum number of sessions allowed per user. Default value is 32.
 	PerUserLimit *int64 `json:"PerUserLimit,omitempty"`
 	// The session expiry duration in seconds. The minimum value is 350 seconds and the maximum value is 31536000 seconds (1 year). The system default value is 57600 seconds.
-	SessionTimeOut *int64 `json:"SessionTimeOut,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
+	SessionTimeOut       *int64                     `json:"SessionTimeOut,omitempty"`
+	Account              *IamAccountRelationship    `json:"Account,omitempty"`
+	Permission           *IamPermissionRelationship `json:"Permission,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *IamSessionLimitsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSessionLimitsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *IamSessionLimitsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSessionLimitsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -408,5 +408,3 @@ func (v *NullableIamSessionLimitsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

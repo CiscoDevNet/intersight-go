@@ -50,10 +50,10 @@ type MemoryPersistentMemoryUnitAllOf struct {
 	// Total capacity in GiB of the Persistent Memory Module on a server.
 	TotalCapacity *string `json:"TotalCapacity,omitempty"`
 	// UID of the Persistent Memory Module on a server.
-	Uid *string `json:"Uid,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	MemoryArray *MemoryArrayRelationship `json:"MemoryArray,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Uid                  *string                              `json:"Uid,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	MemoryArray          *MemoryArrayRelationship             `json:"MemoryArray,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *MemoryPersistentMemoryUnitAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryUnitAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *MemoryPersistentMemoryUnitAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryUnitAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -847,5 +847,3 @@ func (v *NullableMemoryPersistentMemoryUnitAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

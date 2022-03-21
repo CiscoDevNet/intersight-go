@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceDeviceCertificate DeviceCertificate managed object stores the CA Certificate used by device connector and it allow tracks it renewal.
@@ -30,20 +30,20 @@ type ApplianceDeviceCertificate struct {
 	// The expiry datetime of new ca certificate which need to be applied on device connector.
 	CaCertificateExpiryTime *time.Time `json:"CaCertificateExpiryTime,omitempty"`
 	// The date time allocated till cert renewal will be executed. This time used here will be based on cert renewal plan.
-	CertificateRenewalExpiryTime *time.Time `json:"CertificateRenewalExpiryTime,omitempty"`
-	CompletedPhases []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
+	CertificateRenewalExpiryTime *time.Time                  `json:"CertificateRenewalExpiryTime,omitempty"`
+	CompletedPhases              []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
 	// The operation configuration MOId.
-	ConfigurationMoId *string `json:"ConfigurationMoId,omitempty"`
-	CurrentPhase NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
+	ConfigurationMoId *string                           `json:"ConfigurationMoId,omitempty"`
+	CurrentPhase      NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
 	// End date of the certificate renewal.
 	EndTime *time.Time `json:"EndTime,omitempty"`
 	// The last poll time when data collection was successfull. This time is used to collect data after this time in next cycle.
 	LastSuccessPollTime *time.Time `json:"LastSuccessPollTime,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	Messages            []string   `json:"Messages,omitempty"`
 	// Start date of the certificate renewal.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// The status of ca certificate renewal.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -85,7 +85,7 @@ func (o *ApplianceDeviceCertificate) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceCertificate) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *ApplianceDeviceCertificate) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceCertificate) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -218,7 +218,7 @@ func (o *ApplianceDeviceCertificate) SetCertificateRenewalExpiryTime(v time.Time
 
 // GetCompletedPhases returns the CompletedPhases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDeviceCertificate) GetCompletedPhases() []ApplianceCertRenewalPhase {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceCertRenewalPhase
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *ApplianceDeviceCertificate) GetCurrentPhase() ApplianceCertRenewalPhase
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceDeviceCertificate) GetCurrentPhaseOk() (*ApplianceCertRenewalPhase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CurrentPhase.Get(), o.CurrentPhase.IsSet()
@@ -313,6 +313,7 @@ func (o *ApplianceDeviceCertificate) HasCurrentPhase() bool {
 func (o *ApplianceDeviceCertificate) SetCurrentPhase(v ApplianceCertRenewalPhase) {
 	o.CurrentPhase.Set(&v)
 }
+
 // SetCurrentPhaseNil sets the value for CurrentPhase to be an explicit nil
 func (o *ApplianceDeviceCertificate) SetCurrentPhaseNil() {
 	o.CurrentPhase.Set(nil)
@@ -389,7 +390,7 @@ func (o *ApplianceDeviceCertificate) SetLastSuccessPollTime(v time.Time) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDeviceCertificate) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -552,16 +553,16 @@ func (o *ApplianceDeviceCertificate) UnmarshalJSON(bytes []byte) (err error) {
 		// The expiry datetime of new ca certificate which need to be applied on device connector.
 		CaCertificateExpiryTime *time.Time `json:"CaCertificateExpiryTime,omitempty"`
 		// The date time allocated till cert renewal will be executed. This time used here will be based on cert renewal plan.
-		CertificateRenewalExpiryTime *time.Time `json:"CertificateRenewalExpiryTime,omitempty"`
-		CompletedPhases []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
+		CertificateRenewalExpiryTime *time.Time                  `json:"CertificateRenewalExpiryTime,omitempty"`
+		CompletedPhases              []ApplianceCertRenewalPhase `json:"CompletedPhases,omitempty"`
 		// The operation configuration MOId.
-		ConfigurationMoId *string `json:"ConfigurationMoId,omitempty"`
-		CurrentPhase NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
+		ConfigurationMoId *string                           `json:"ConfigurationMoId,omitempty"`
+		CurrentPhase      NullableApplianceCertRenewalPhase `json:"CurrentPhase,omitempty"`
 		// End date of the certificate renewal.
 		EndTime *time.Time `json:"EndTime,omitempty"`
 		// The last poll time when data collection was successfull. This time is used to collect data after this time in next cycle.
 		LastSuccessPollTime *time.Time `json:"LastSuccessPollTime,omitempty"`
-		Messages []string `json:"Messages,omitempty"`
+		Messages            []string   `json:"Messages,omitempty"`
 		// Start date of the certificate renewal.
 		StartTime *time.Time `json:"StartTime,omitempty"`
 		// The status of ca certificate renewal.
@@ -676,5 +677,3 @@ func (v *NullableApplianceDeviceCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

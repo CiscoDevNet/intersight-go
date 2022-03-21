@@ -18,20 +18,19 @@ import (
 
 // ProcessorUnitRelationship - A relationship to the 'processor.Unit' resource, or the expanded 'processor.Unit' resource, or the 'null' value.
 type ProcessorUnitRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 	ProcessorUnit *ProcessorUnit
 }
 
 // MoMoRefAsProcessorUnitRelationship is a convenience function that returns MoMoRef wrapped in ProcessorUnitRelationship
 func MoMoRefAsProcessorUnitRelationship(v *MoMoRef) ProcessorUnitRelationship {
-	return ProcessorUnitRelationship{ MoMoRef: v}
+	return ProcessorUnitRelationship{MoMoRef: v}
 }
 
 // ProcessorUnitAsProcessorUnitRelationship is a convenience function that returns ProcessorUnit wrapped in ProcessorUnitRelationship
 func ProcessorUnitAsProcessorUnitRelationship(v *ProcessorUnit) ProcessorUnitRelationship {
-	return ProcessorUnitRelationship{ ProcessorUnit: v}
+	return ProcessorUnitRelationship{ProcessorUnit: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ProcessorUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ProcessorUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ProcessorUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *ProcessorUnitRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableProcessorUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

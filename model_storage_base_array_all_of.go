@@ -20,8 +20,8 @@ type StorageBaseArrayAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	ObjectType           string                      `json:"ObjectType"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *StorageBaseArrayAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseArrayAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -83,7 +83,7 @@ func (o *StorageBaseArrayAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseArrayAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *StorageBaseArrayAllOf) GetStorageUtilization() StorageBaseCapacity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseArrayAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -126,6 +126,7 @@ func (o *StorageBaseArrayAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseArrayAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseArrayAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -209,5 +210,3 @@ func (v *NullableStorageBaseArrayAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

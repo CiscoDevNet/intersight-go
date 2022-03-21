@@ -18,32 +18,31 @@ import (
 
 // StorageFlexFlashControllerPropsResponse - The response body of a HTTP GET request for the 'storage.FlexFlashControllerProps' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.FlexFlashControllerProps' resources.
 type StorageFlexFlashControllerPropsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                *MoAggregateTransform
+	MoDocumentCount                     *MoDocumentCount
+	MoTagSummary                        *MoTagSummary
 	StorageFlexFlashControllerPropsList *StorageFlexFlashControllerPropsList
 }
 
 // MoAggregateTransformAsStorageFlexFlashControllerPropsResponse is a convenience function that returns MoAggregateTransform wrapped in StorageFlexFlashControllerPropsResponse
 func MoAggregateTransformAsStorageFlexFlashControllerPropsResponse(v *MoAggregateTransform) StorageFlexFlashControllerPropsResponse {
-	return StorageFlexFlashControllerPropsResponse{ MoAggregateTransform: v}
+	return StorageFlexFlashControllerPropsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageFlexFlashControllerPropsResponse is a convenience function that returns MoDocumentCount wrapped in StorageFlexFlashControllerPropsResponse
 func MoDocumentCountAsStorageFlexFlashControllerPropsResponse(v *MoDocumentCount) StorageFlexFlashControllerPropsResponse {
-	return StorageFlexFlashControllerPropsResponse{ MoDocumentCount: v}
+	return StorageFlexFlashControllerPropsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageFlexFlashControllerPropsResponse is a convenience function that returns MoTagSummary wrapped in StorageFlexFlashControllerPropsResponse
 func MoTagSummaryAsStorageFlexFlashControllerPropsResponse(v *MoTagSummary) StorageFlexFlashControllerPropsResponse {
-	return StorageFlexFlashControllerPropsResponse{ MoTagSummary: v}
+	return StorageFlexFlashControllerPropsResponse{MoTagSummary: v}
 }
 
 // StorageFlexFlashControllerPropsListAsStorageFlexFlashControllerPropsResponse is a convenience function that returns StorageFlexFlashControllerPropsList wrapped in StorageFlexFlashControllerPropsResponse
 func StorageFlexFlashControllerPropsListAsStorageFlexFlashControllerPropsResponse(v *StorageFlexFlashControllerPropsList) StorageFlexFlashControllerPropsResponse {
-	return StorageFlexFlashControllerPropsResponse{ StorageFlexFlashControllerPropsList: v}
+	return StorageFlexFlashControllerPropsResponse{StorageFlexFlashControllerPropsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageFlexFlashControllerPropsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageFlexFlashControllerPropsResponse) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *StorageFlexFlashControllerPropsResponse) GetActualInstance() (interface{}) {
+func (obj *StorageFlexFlashControllerPropsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageFlexFlashControllerPropsResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

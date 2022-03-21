@@ -18,32 +18,31 @@ import (
 
 // RecommendationPhysicalItemResponse - The response body of a HTTP GET request for the 'recommendation.PhysicalItem' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'recommendation.PhysicalItem' resources.
 type RecommendationPhysicalItemResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 	RecommendationPhysicalItemList *RecommendationPhysicalItemList
 }
 
 // MoAggregateTransformAsRecommendationPhysicalItemResponse is a convenience function that returns MoAggregateTransform wrapped in RecommendationPhysicalItemResponse
 func MoAggregateTransformAsRecommendationPhysicalItemResponse(v *MoAggregateTransform) RecommendationPhysicalItemResponse {
-	return RecommendationPhysicalItemResponse{ MoAggregateTransform: v}
+	return RecommendationPhysicalItemResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsRecommendationPhysicalItemResponse is a convenience function that returns MoDocumentCount wrapped in RecommendationPhysicalItemResponse
 func MoDocumentCountAsRecommendationPhysicalItemResponse(v *MoDocumentCount) RecommendationPhysicalItemResponse {
-	return RecommendationPhysicalItemResponse{ MoDocumentCount: v}
+	return RecommendationPhysicalItemResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsRecommendationPhysicalItemResponse is a convenience function that returns MoTagSummary wrapped in RecommendationPhysicalItemResponse
 func MoTagSummaryAsRecommendationPhysicalItemResponse(v *MoTagSummary) RecommendationPhysicalItemResponse {
-	return RecommendationPhysicalItemResponse{ MoTagSummary: v}
+	return RecommendationPhysicalItemResponse{MoTagSummary: v}
 }
 
 // RecommendationPhysicalItemListAsRecommendationPhysicalItemResponse is a convenience function that returns RecommendationPhysicalItemList wrapped in RecommendationPhysicalItemResponse
 func RecommendationPhysicalItemListAsRecommendationPhysicalItemResponse(v *RecommendationPhysicalItemList) RecommendationPhysicalItemResponse {
-	return RecommendationPhysicalItemResponse{ RecommendationPhysicalItemList: v}
+	return RecommendationPhysicalItemResponse{RecommendationPhysicalItemList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecommendationPhysicalItemResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src RecommendationPhysicalItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *RecommendationPhysicalItemResponse) GetActualInstance() (interface{}) {
+func (obj *RecommendationPhysicalItemResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableRecommendationPhysicalItemResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

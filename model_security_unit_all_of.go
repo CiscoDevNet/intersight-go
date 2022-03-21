@@ -38,10 +38,10 @@ type SecurityUnitAllOf struct {
 	// The vendor identifier of the security unit.
 	Vid *string `json:"Vid,omitempty"`
 	// The voltage state of the security unit.
-	Voltage *string `json:"Voltage,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Voltage              *string                              `json:"Voltage,omitempty"`
+	ComputeBoard         *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *SecurityUnitAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SecurityUnitAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *SecurityUnitAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SecurityUnitAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -619,5 +619,3 @@ func (v *NullableSecurityUnitAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

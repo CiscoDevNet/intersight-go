@@ -25,9 +25,9 @@ type FabricPortChannelRole struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Unique Identifier of the port-channel, local to this switch.
-	PcId *int64 `json:"PcId,omitempty"`
-	Ports []FabricPortIdentifier `json:"Ports,omitempty"`
-	PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
+	PcId                 *int64                        `json:"PcId,omitempty"`
+	Ports                []FabricPortIdentifier        `json:"Ports,omitempty"`
+	PortPolicy           *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *FabricPortChannelRole) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricPortChannelRole) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *FabricPortChannelRole) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricPortChannelRole) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *FabricPortChannelRole) SetPcId(v int64) {
 
 // GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricPortChannelRole) GetPorts() []FabricPortIdentifier {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricPortIdentifier
 		return ret
 	}
@@ -237,8 +237,8 @@ func (o *FabricPortChannelRole) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// Unique Identifier of the port-channel, local to this switch.
-		PcId *int64 `json:"PcId,omitempty"`
-		Ports []FabricPortIdentifier `json:"Ports,omitempty"`
+		PcId       *int64                        `json:"PcId,omitempty"`
+		Ports      []FabricPortIdentifier        `json:"Ports,omitempty"`
 		PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	}
 
@@ -334,5 +334,3 @@ func (v *NullableFabricPortChannelRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

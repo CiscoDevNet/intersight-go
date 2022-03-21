@@ -20,7 +20,7 @@ type StorageNetAppNodeEventListAllOf struct {
 	// The total number of 'storage.NetAppNodeEvent' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.NetAppNodeEvent' resources matching the request.
-	Results []StorageNetAppNodeEvent `json:"Results,omitempty"`
+	Results              []StorageNetAppNodeEvent `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageNetAppNodeEventListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppNodeEventListAllOf) GetResults() []StorageNetAppNodeEvent {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppNodeEvent
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageNetAppNodeEventListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

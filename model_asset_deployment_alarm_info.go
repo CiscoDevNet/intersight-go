@@ -23,8 +23,8 @@ type AssetDeploymentAlarmInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	EnabledAlarms []string `json:"EnabledAlarms,omitempty"`
+	ObjectType           string   `json:"ObjectType"`
+	EnabledAlarms        []string `json:"EnabledAlarms,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *AssetDeploymentAlarmInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentAlarmInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *AssetDeploymentAlarmInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeploymentAlarmInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *AssetDeploymentAlarmInfo) SetObjectType(v string) {
 
 // GetEnabledAlarms returns the EnabledAlarms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeploymentAlarmInfo) GetEnabledAlarms() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *AssetDeploymentAlarmInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType    string   `json:"ObjectType"`
 		EnabledAlarms []string `json:"EnabledAlarms,omitempty"`
 	}
 
@@ -258,5 +258,3 @@ func (v *NullableAssetDeploymentAlarmInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

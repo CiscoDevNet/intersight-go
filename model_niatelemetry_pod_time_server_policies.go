@@ -35,8 +35,8 @@ type NiatelemetryPodTimeServerPolicies struct {
 	// Admin State of the time server Pol in APIC.
 	TimeServerEnableSt *string `json:"TimeServerEnableSt,omitempty"`
 	// Time server of the time server Pol in APIC.
-	TimeServers *string `json:"TimeServers,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TimeServers          *string                              `json:"TimeServers,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *NiatelemetryPodTimeServerPolicies) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodTimeServerPolicies) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *NiatelemetryPodTimeServerPolicies) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryPodTimeServerPolicies) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -399,7 +399,7 @@ func (o *NiatelemetryPodTimeServerPolicies) UnmarshalJSON(bytes []byte) (err err
 		// Admin State of the time server Pol in APIC.
 		TimeServerEnableSt *string `json:"TimeServerEnableSt,omitempty"`
 		// Time server of the time server Pol in APIC.
-		TimeServers *string `json:"TimeServers,omitempty"`
+		TimeServers      *string                              `json:"TimeServers,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -503,5 +503,3 @@ func (v *NullableNiatelemetryPodTimeServerPolicies) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

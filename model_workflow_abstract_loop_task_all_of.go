@@ -26,7 +26,7 @@ type WorkflowAbstractLoopTaskAllOf struct {
 	// Start task where the list of tasks will be executed multiple times based on the count or condition value.
 	LoopStartTask *string `json:"LoopStartTask,omitempty"`
 	// This specifies the name of the next task to run if all iterations of the loop task succeeds. The unique name given to the task instance within the workflow must be provided here. In a graph model, denotes an edge to another Task Node.
-	OnSuccess *string `json:"OnSuccess,omitempty"`
+	OnSuccess            *string `json:"OnSuccess,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *WorkflowAbstractLoopTaskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAbstractLoopTaskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *WorkflowAbstractLoopTaskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAbstractLoopTaskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -276,5 +276,3 @@ func (v *NullableWorkflowAbstractLoopTaskAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

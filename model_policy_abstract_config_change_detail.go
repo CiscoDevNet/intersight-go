@@ -23,16 +23,16 @@ type PolicyAbstractConfigChangeDetail struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Changes []string `json:"Changes,omitempty"`
+	ObjectType          string                            `json:"ObjectType"`
+	Changes             []string                          `json:"Changes,omitempty"`
 	ConfigChangeContext NullablePolicyConfigResultContext `json:"ConfigChangeContext,omitempty"`
 	// Config change flag to differentiate Pending-changes and Config-drift. * `Pending-changes` - Config change flag represents changes are due to not deployed changes from Intersight. * `Drift-changes` - Config change flag represents changes are due to endpoint configuration changes.
-	ConfigChangeFlag *string `json:"ConfigChangeFlag,omitempty"`
-	Disruptions []string `json:"Disruptions,omitempty"`
+	ConfigChangeFlag *string  `json:"ConfigChangeFlag,omitempty"`
+	Disruptions      []string `json:"Disruptions,omitempty"`
 	// Detailed description of the config change.
 	Message *string `json:"Message,omitempty"`
 	// Modification status of the mo in this config change. * `None` - The 'none' operation/state.Indicates a configuration profile has been deployed, and the desired configuration matches the actual device configuration. * `Created` - The 'create' operation/state.Indicates a configuration profile has been created and associated with a device, but the configuration specified in the profilehas not been applied yet. For example, this could happen when the user creates a server profile and has not deployed the profile yet. * `Modified` - The 'update' operation/state.Indicates some of the desired configuration changes specified in a profile have not been been applied to the associated device.This happens when the user has made changes to a profile and has not deployed the changes yet, or when the workflow to applythe configuration changes has not completed succesfully. * `Deleted` - The 'delete' operation/state.Indicates a configuration profile has been been disassociated from a device and the user has not undeployed these changes yet.
-	ModStatus *string `json:"ModStatus,omitempty"`
+	ModStatus            *string `json:"ModStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *PolicyAbstractConfigChangeDetail) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigChangeDetail) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *PolicyAbstractConfigChangeDetail) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigChangeDetail) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *PolicyAbstractConfigChangeDetail) SetObjectType(v string) {
 
 // GetChanges returns the Changes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigChangeDetail) GetChanges() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *PolicyAbstractConfigChangeDetail) GetConfigChangeContext() PolicyConfig
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyAbstractConfigChangeDetail) GetConfigChangeContextOk() (*PolicyConfigResultContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChangeContext.Get(), o.ConfigChangeContext.IsSet()
@@ -178,6 +178,7 @@ func (o *PolicyAbstractConfigChangeDetail) HasConfigChangeContext() bool {
 func (o *PolicyAbstractConfigChangeDetail) SetConfigChangeContext(v PolicyConfigResultContext) {
 	o.ConfigChangeContext.Set(&v)
 }
+
 // SetConfigChangeContextNil sets the value for ConfigChangeContext to be an explicit nil
 func (o *PolicyAbstractConfigChangeDetail) SetConfigChangeContextNil() {
 	o.ConfigChangeContext.Set(nil)
@@ -222,7 +223,7 @@ func (o *PolicyAbstractConfigChangeDetail) SetConfigChangeFlag(v string) {
 
 // GetDisruptions returns the Disruptions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigChangeDetail) GetDisruptions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -364,12 +365,12 @@ func (o *PolicyAbstractConfigChangeDetail) UnmarshalJSON(bytes []byte) (err erro
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
-		Changes []string `json:"Changes,omitempty"`
+		ObjectType          string                            `json:"ObjectType"`
+		Changes             []string                          `json:"Changes,omitempty"`
 		ConfigChangeContext NullablePolicyConfigResultContext `json:"ConfigChangeContext,omitempty"`
 		// Config change flag to differentiate Pending-changes and Config-drift. * `Pending-changes` - Config change flag represents changes are due to not deployed changes from Intersight. * `Drift-changes` - Config change flag represents changes are due to endpoint configuration changes.
-		ConfigChangeFlag *string `json:"ConfigChangeFlag,omitempty"`
-		Disruptions []string `json:"Disruptions,omitempty"`
+		ConfigChangeFlag *string  `json:"ConfigChangeFlag,omitempty"`
+		Disruptions      []string `json:"Disruptions,omitempty"`
 		// Detailed description of the config change.
 		Message *string `json:"Message,omitempty"`
 		// Modification status of the mo in this config change. * `None` - The 'none' operation/state.Indicates a configuration profile has been deployed, and the desired configuration matches the actual device configuration. * `Created` - The 'create' operation/state.Indicates a configuration profile has been created and associated with a device, but the configuration specified in the profilehas not been applied yet. For example, this could happen when the user creates a server profile and has not deployed the profile yet. * `Modified` - The 'update' operation/state.Indicates some of the desired configuration changes specified in a profile have not been been applied to the associated device.This happens when the user has made changes to a profile and has not deployed the changes yet, or when the workflow to applythe configuration changes has not completed succesfully. * `Deleted` - The 'delete' operation/state.Indicates a configuration profile has been been disassociated from a device and the user has not undeployed these changes yet.
@@ -474,5 +475,3 @@ func (v *NullablePolicyAbstractConfigChangeDetail) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,7 +24,7 @@ type KubernetesEthernetMatcherAllOf struct {
 	// Which property we should use to find the ethernet interface. * `Name` - A network interface name, e.g. eth0, eno9. * `MacAddress` - A network interface Mac Address.
 	Type *string `json:"Type,omitempty"`
 	// The value to match for the property specified by type.
-	Value *string `json:"Value,omitempty"`
+	Value                *string `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesEthernetMatcherAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEthernetMatcherAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesEthernetMatcherAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEthernetMatcherAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableKubernetesEthernetMatcherAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

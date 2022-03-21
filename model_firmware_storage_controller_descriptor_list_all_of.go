@@ -20,7 +20,7 @@ type FirmwareStorageControllerDescriptorListAllOf struct {
 	// The total number of 'firmware.StorageControllerDescriptor' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'firmware.StorageControllerDescriptor' resources matching the request.
-	Results []FirmwareStorageControllerDescriptor `json:"Results,omitempty"`
+	Results              []FirmwareStorageControllerDescriptor `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *FirmwareStorageControllerDescriptorListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareStorageControllerDescriptorListAllOf) GetResults() []FirmwareStorageControllerDescriptor {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareStorageControllerDescriptor
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableFirmwareStorageControllerDescriptorListAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

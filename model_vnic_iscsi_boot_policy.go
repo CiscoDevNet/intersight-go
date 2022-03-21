@@ -25,22 +25,22 @@ type VnicIscsiBootPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Auto target interface that is represented via the Initiator name or the DHCP vendor ID. The vendor ID can be up to 32 alphanumeric characters.
-	AutoTargetvendorName *string `json:"AutoTargetvendorName,omitempty"`
-	Chap NullableVnicIscsiAuthProfile `json:"Chap,omitempty"`
+	AutoTargetvendorName *string                      `json:"AutoTargetvendorName,omitempty"`
+	Chap                 NullableVnicIscsiAuthProfile `json:"Chap,omitempty"`
 	// Source Type of Initiator IP Address - Auto/Static/Pool. * `DHCP` - The IP address is assigned using DHCP, if available. * `Static` - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area. * `Pool` - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool.
 	InitiatorIpSource *string `json:"InitiatorIpSource,omitempty"`
 	// Static IP address provided for iSCSI Initiator.
-	InitiatorStaticIpV4Address *string `json:"InitiatorStaticIpV4Address,omitempty"`
-	InitiatorStaticIpV4Config NullableIppoolIpV4Config `json:"InitiatorStaticIpV4Config,omitempty"`
-	MutualChap NullableVnicIscsiAuthProfile `json:"MutualChap,omitempty"`
+	InitiatorStaticIpV4Address *string                      `json:"InitiatorStaticIpV4Address,omitempty"`
+	InitiatorStaticIpV4Config  NullableIppoolIpV4Config     `json:"InitiatorStaticIpV4Config,omitempty"`
+	MutualChap                 NullableVnicIscsiAuthProfile `json:"MutualChap,omitempty"`
 	// Source Type of Targets - Auto/Static. * `Static` - Type indicates that static target interface is assigned to iSCSI boot. * `Auto` - Type indicates that the system selects the target interface automatically during iSCSI boot.
-	TargetSourceType *string `json:"TargetSourceType,omitempty"`
-	InitiatorIpPool *IppoolPoolRelationship `json:"InitiatorIpPool,omitempty"`
-	IscsiAdapterPolicy *VnicIscsiAdapterPolicyRelationship `json:"IscsiAdapterPolicy,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	PrimaryTargetPolicy *VnicIscsiStaticTargetPolicyRelationship `json:"PrimaryTargetPolicy,omitempty"`
+	TargetSourceType      *string                                  `json:"TargetSourceType,omitempty"`
+	InitiatorIpPool       *IppoolPoolRelationship                  `json:"InitiatorIpPool,omitempty"`
+	IscsiAdapterPolicy    *VnicIscsiAdapterPolicyRelationship      `json:"IscsiAdapterPolicy,omitempty"`
+	Organization          *OrganizationOrganizationRelationship    `json:"Organization,omitempty"`
+	PrimaryTargetPolicy   *VnicIscsiStaticTargetPolicyRelationship `json:"PrimaryTargetPolicy,omitempty"`
 	SecondaryTargetPolicy *VnicIscsiStaticTargetPolicyRelationship `json:"SecondaryTargetPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _VnicIscsiBootPolicy VnicIscsiBootPolicy
@@ -89,7 +89,7 @@ func (o *VnicIscsiBootPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiBootPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *VnicIscsiBootPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicIscsiBootPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -169,7 +169,7 @@ func (o *VnicIscsiBootPolicy) GetChap() VnicIscsiAuthProfile {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicIscsiBootPolicy) GetChapOk() (*VnicIscsiAuthProfile, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Chap.Get(), o.Chap.IsSet()
@@ -188,6 +188,7 @@ func (o *VnicIscsiBootPolicy) HasChap() bool {
 func (o *VnicIscsiBootPolicy) SetChap(v VnicIscsiAuthProfile) {
 	o.Chap.Set(&v)
 }
+
 // SetChapNil sets the value for Chap to be an explicit nil
 func (o *VnicIscsiBootPolicy) SetChapNil() {
 	o.Chap.Set(nil)
@@ -275,7 +276,7 @@ func (o *VnicIscsiBootPolicy) GetInitiatorStaticIpV4Config() IppoolIpV4Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicIscsiBootPolicy) GetInitiatorStaticIpV4ConfigOk() (*IppoolIpV4Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InitiatorStaticIpV4Config.Get(), o.InitiatorStaticIpV4Config.IsSet()
@@ -294,6 +295,7 @@ func (o *VnicIscsiBootPolicy) HasInitiatorStaticIpV4Config() bool {
 func (o *VnicIscsiBootPolicy) SetInitiatorStaticIpV4Config(v IppoolIpV4Config) {
 	o.InitiatorStaticIpV4Config.Set(&v)
 }
+
 // SetInitiatorStaticIpV4ConfigNil sets the value for InitiatorStaticIpV4Config to be an explicit nil
 func (o *VnicIscsiBootPolicy) SetInitiatorStaticIpV4ConfigNil() {
 	o.InitiatorStaticIpV4Config.Set(nil)
@@ -317,7 +319,7 @@ func (o *VnicIscsiBootPolicy) GetMutualChap() VnicIscsiAuthProfile {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicIscsiBootPolicy) GetMutualChapOk() (*VnicIscsiAuthProfile, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MutualChap.Get(), o.MutualChap.IsSet()
@@ -336,6 +338,7 @@ func (o *VnicIscsiBootPolicy) HasMutualChap() bool {
 func (o *VnicIscsiBootPolicy) SetMutualChap(v VnicIscsiAuthProfile) {
 	o.MutualChap.Set(&v)
 }
+
 // SetMutualChapNil sets the value for MutualChap to be an explicit nil
 func (o *VnicIscsiBootPolicy) SetMutualChapNil() {
 	o.MutualChap.Set(nil)
@@ -605,20 +608,20 @@ func (o *VnicIscsiBootPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Auto target interface that is represented via the Initiator name or the DHCP vendor ID. The vendor ID can be up to 32 alphanumeric characters.
-		AutoTargetvendorName *string `json:"AutoTargetvendorName,omitempty"`
-		Chap NullableVnicIscsiAuthProfile `json:"Chap,omitempty"`
+		AutoTargetvendorName *string                      `json:"AutoTargetvendorName,omitempty"`
+		Chap                 NullableVnicIscsiAuthProfile `json:"Chap,omitempty"`
 		// Source Type of Initiator IP Address - Auto/Static/Pool. * `DHCP` - The IP address is assigned using DHCP, if available. * `Static` - Static IPv4 address is assigned to the iSCSI boot interface based on the information entered in this area. * `Pool` - An IPv4 address is assigned to the iSCSI boot interface from the management IP address pool.
 		InitiatorIpSource *string `json:"InitiatorIpSource,omitempty"`
 		// Static IP address provided for iSCSI Initiator.
-		InitiatorStaticIpV4Address *string `json:"InitiatorStaticIpV4Address,omitempty"`
-		InitiatorStaticIpV4Config NullableIppoolIpV4Config `json:"InitiatorStaticIpV4Config,omitempty"`
-		MutualChap NullableVnicIscsiAuthProfile `json:"MutualChap,omitempty"`
+		InitiatorStaticIpV4Address *string                      `json:"InitiatorStaticIpV4Address,omitempty"`
+		InitiatorStaticIpV4Config  NullableIppoolIpV4Config     `json:"InitiatorStaticIpV4Config,omitempty"`
+		MutualChap                 NullableVnicIscsiAuthProfile `json:"MutualChap,omitempty"`
 		// Source Type of Targets - Auto/Static. * `Static` - Type indicates that static target interface is assigned to iSCSI boot. * `Auto` - Type indicates that the system selects the target interface automatically during iSCSI boot.
-		TargetSourceType *string `json:"TargetSourceType,omitempty"`
-		InitiatorIpPool *IppoolPoolRelationship `json:"InitiatorIpPool,omitempty"`
-		IscsiAdapterPolicy *VnicIscsiAdapterPolicyRelationship `json:"IscsiAdapterPolicy,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		PrimaryTargetPolicy *VnicIscsiStaticTargetPolicyRelationship `json:"PrimaryTargetPolicy,omitempty"`
+		TargetSourceType      *string                                  `json:"TargetSourceType,omitempty"`
+		InitiatorIpPool       *IppoolPoolRelationship                  `json:"InitiatorIpPool,omitempty"`
+		IscsiAdapterPolicy    *VnicIscsiAdapterPolicyRelationship      `json:"IscsiAdapterPolicy,omitempty"`
+		Organization          *OrganizationOrganizationRelationship    `json:"Organization,omitempty"`
+		PrimaryTargetPolicy   *VnicIscsiStaticTargetPolicyRelationship `json:"PrimaryTargetPolicy,omitempty"`
 		SecondaryTargetPolicy *VnicIscsiStaticTargetPolicyRelationship `json:"SecondaryTargetPolicy,omitempty"`
 	}
 
@@ -732,5 +735,3 @@ func (v *NullableVnicIscsiBootPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

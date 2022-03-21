@@ -17,7 +17,7 @@ import (
 
 // TelemetryDruidNotFilterAllOf struct for TelemetryDruidNotFilterAllOf
 type TelemetryDruidNotFilterAllOf struct {
-	Field TelemetryDruidFilter `json:"field"`
+	Field                TelemetryDruidFilter `json:"field"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -54,7 +54,7 @@ func (o *TelemetryDruidNotFilterAllOf) GetField() TelemetryDruidFilter {
 // GetFieldOk returns a tuple with the Field field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidNotFilterAllOf) GetFieldOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Field, true
@@ -130,5 +130,3 @@ func (v *NullableTelemetryDruidNotFilterAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

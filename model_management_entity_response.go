@@ -20,30 +20,29 @@ import (
 type ManagementEntityResponse struct {
 	ManagementEntityList *ManagementEntityList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ManagementEntityListAsManagementEntityResponse is a convenience function that returns ManagementEntityList wrapped in ManagementEntityResponse
 func ManagementEntityListAsManagementEntityResponse(v *ManagementEntityList) ManagementEntityResponse {
-	return ManagementEntityResponse{ ManagementEntityList: v}
+	return ManagementEntityResponse{ManagementEntityList: v}
 }
 
 // MoAggregateTransformAsManagementEntityResponse is a convenience function that returns MoAggregateTransform wrapped in ManagementEntityResponse
 func MoAggregateTransformAsManagementEntityResponse(v *MoAggregateTransform) ManagementEntityResponse {
-	return ManagementEntityResponse{ MoAggregateTransform: v}
+	return ManagementEntityResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsManagementEntityResponse is a convenience function that returns MoDocumentCount wrapped in ManagementEntityResponse
 func MoDocumentCountAsManagementEntityResponse(v *MoDocumentCount) ManagementEntityResponse {
-	return ManagementEntityResponse{ MoDocumentCount: v}
+	return ManagementEntityResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsManagementEntityResponse is a convenience function that returns MoTagSummary wrapped in ManagementEntityResponse
 func MoTagSummaryAsManagementEntityResponse(v *MoTagSummary) ManagementEntityResponse {
-	return ManagementEntityResponse{ MoTagSummary: v}
+	return ManagementEntityResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ManagementEntityResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ManagementEntityResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ManagementEntityResponse) GetActualInstance() (interface{}) {
+func (obj *ManagementEntityResponse) GetActualInstance() interface{} {
 	if obj.ManagementEntityList != nil {
 		return obj.ManagementEntityList
 	}
@@ -184,5 +183,3 @@ func (v *NullableManagementEntityResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -39,9 +39,9 @@ type VirtualizationVmwareVirtualNetworkInterface struct {
 	// Type of network for virtual network interface. It can be either standard or distributed.
 	NetworkType *string `json:"NetworkType,omitempty"`
 	// Identity of the virtual machine where the virtual network interface is created.
-	VmIdentity *string `json:"VmIdentity,omitempty"`
-	Network *VirtualizationBaseNetworkRelationship `json:"Network,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	VmIdentity           *string                                         `json:"VmIdentity,omitempty"`
+	Network              *VirtualizationBaseNetworkRelationship          `json:"Network,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *VirtualizationVmwareVirtualNetworkInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualNetworkInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *VirtualizationVmwareVirtualNetworkInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualNetworkInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -517,8 +517,8 @@ func (o *VirtualizationVmwareVirtualNetworkInterface) UnmarshalJSON(bytes []byte
 		// Type of network for virtual network interface. It can be either standard or distributed.
 		NetworkType *string `json:"NetworkType,omitempty"`
 		// Identity of the virtual machine where the virtual network interface is created.
-		VmIdentity *string `json:"VmIdentity,omitempty"`
-		Network *VirtualizationBaseNetworkRelationship `json:"Network,omitempty"`
+		VmIdentity     *string                                         `json:"VmIdentity,omitempty"`
+		Network        *VirtualizationBaseNetworkRelationship          `json:"Network,omitempty"`
 		VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
@@ -628,5 +628,3 @@ func (v *NullableVirtualizationVmwareVirtualNetworkInterface) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

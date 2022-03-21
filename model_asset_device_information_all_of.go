@@ -22,9 +22,9 @@ type AssetDeviceInformationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Application name reported by Cisco Install Base.
-	ApplicationName *string `json:"ApplicationName,omitempty"`
-	DeviceTransactions []AssetDeviceTransaction `json:"DeviceTransactions,omitempty"`
-	EndCustomer NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
+	ApplicationName    *string                          `json:"ApplicationName,omitempty"`
+	DeviceTransactions []AssetDeviceTransaction         `json:"DeviceTransactions,omitempty"`
+	EndCustomer        NullableAssetCustomerInformation `json:"EndCustomer,omitempty"`
 	// Instance number of the device. example \"917280220\".
 	InstanceId *string `json:"InstanceId,omitempty"`
 	// Item type flag. example ATO, Child, Standalone. ATO - refers to Cisco Block based major device. Child - refers to Child device part of an ATO block. Standalone - refers to a device that is managed and configured as an individual entity with limited capacity.
@@ -48,7 +48,7 @@ type AssetDeviceInformationAllOf struct {
 	// Product type helps to determine if device has to be billed using consumption metering. example \"SERVER\".
 	ProductType *string `json:"ProductType,omitempty"`
 	// Unit of Measure is flag used to identify the type of metric being pushed. example - \"STORAGE\" for hardware metrics , \"VM\" - for hypervisor metrics. * `None` - A default value to catch cases where unit of measure is not correctly detected. * `STORAGE` - The metric type of the device is a storage metric. * `NODE` - The metric type of the device is a hardware metric. * `VM` - The metric type of the device is a hypervisor metric.
-	UnitOfMeasure *string `json:"UnitOfMeasure,omitempty"`
+	UnitOfMeasure        *string `json:"UnitOfMeasure,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *AssetDeviceInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *AssetDeviceInformationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -159,7 +159,7 @@ func (o *AssetDeviceInformationAllOf) SetApplicationName(v string) {
 
 // GetDeviceTransactions returns the DeviceTransactions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AssetDeviceInformationAllOf) GetDeviceTransactions() []AssetDeviceTransaction {
-	if o == nil  {
+	if o == nil {
 		var ret []AssetDeviceTransaction
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *AssetDeviceInformationAllOf) GetEndCustomer() AssetCustomerInformation 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceInformationAllOf) GetEndCustomerOk() (*AssetCustomerInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndCustomer.Get(), o.EndCustomer.IsSet()
@@ -222,6 +222,7 @@ func (o *AssetDeviceInformationAllOf) HasEndCustomer() bool {
 func (o *AssetDeviceInformationAllOf) SetEndCustomer(v AssetCustomerInformation) {
 	o.EndCustomer.Set(&v)
 }
+
 // SetEndCustomerNil sets the value for EndCustomer to be an explicit nil
 func (o *AssetDeviceInformationAllOf) SetEndCustomerNil() {
 	o.EndCustomer.Set(nil)
@@ -745,5 +746,3 @@ func (v *NullableAssetDeviceInformationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

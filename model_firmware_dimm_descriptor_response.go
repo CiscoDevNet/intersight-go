@@ -19,31 +19,30 @@ import (
 // FirmwareDimmDescriptorResponse - The response body of a HTTP GET request for the 'firmware.DimmDescriptor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'firmware.DimmDescriptor' resources.
 type FirmwareDimmDescriptorResponse struct {
 	FirmwareDimmDescriptorList *FirmwareDimmDescriptorList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // FirmwareDimmDescriptorListAsFirmwareDimmDescriptorResponse is a convenience function that returns FirmwareDimmDescriptorList wrapped in FirmwareDimmDescriptorResponse
 func FirmwareDimmDescriptorListAsFirmwareDimmDescriptorResponse(v *FirmwareDimmDescriptorList) FirmwareDimmDescriptorResponse {
-	return FirmwareDimmDescriptorResponse{ FirmwareDimmDescriptorList: v}
+	return FirmwareDimmDescriptorResponse{FirmwareDimmDescriptorList: v}
 }
 
 // MoAggregateTransformAsFirmwareDimmDescriptorResponse is a convenience function that returns MoAggregateTransform wrapped in FirmwareDimmDescriptorResponse
 func MoAggregateTransformAsFirmwareDimmDescriptorResponse(v *MoAggregateTransform) FirmwareDimmDescriptorResponse {
-	return FirmwareDimmDescriptorResponse{ MoAggregateTransform: v}
+	return FirmwareDimmDescriptorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFirmwareDimmDescriptorResponse is a convenience function that returns MoDocumentCount wrapped in FirmwareDimmDescriptorResponse
 func MoDocumentCountAsFirmwareDimmDescriptorResponse(v *MoDocumentCount) FirmwareDimmDescriptorResponse {
-	return FirmwareDimmDescriptorResponse{ MoDocumentCount: v}
+	return FirmwareDimmDescriptorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFirmwareDimmDescriptorResponse is a convenience function that returns MoTagSummary wrapped in FirmwareDimmDescriptorResponse
 func MoTagSummaryAsFirmwareDimmDescriptorResponse(v *MoTagSummary) FirmwareDimmDescriptorResponse {
-	return FirmwareDimmDescriptorResponse{ MoTagSummary: v}
+	return FirmwareDimmDescriptorResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareDimmDescriptorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FirmwareDimmDescriptorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareDimmDescriptorResponse) GetActualInstance() (interface{}) {
+func (obj *FirmwareDimmDescriptorResponse) GetActualInstance() interface{} {
 	if obj.FirmwareDimmDescriptorList != nil {
 		return obj.FirmwareDimmDescriptorList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFirmwareDimmDescriptorResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

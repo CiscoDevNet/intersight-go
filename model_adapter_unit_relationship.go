@@ -19,19 +19,18 @@ import (
 // AdapterUnitRelationship - A relationship to the 'adapter.Unit' resource, or the expanded 'adapter.Unit' resource, or the 'null' value.
 type AdapterUnitRelationship struct {
 	AdapterUnit *AdapterUnit
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 }
 
 // AdapterUnitAsAdapterUnitRelationship is a convenience function that returns AdapterUnit wrapped in AdapterUnitRelationship
 func AdapterUnitAsAdapterUnitRelationship(v *AdapterUnit) AdapterUnitRelationship {
-	return AdapterUnitRelationship{ AdapterUnit: v}
+	return AdapterUnitRelationship{AdapterUnit: v}
 }
 
 // MoMoRefAsAdapterUnitRelationship is a convenience function that returns MoMoRef wrapped in AdapterUnitRelationship
 func MoMoRefAsAdapterUnitRelationship(v *MoMoRef) AdapterUnitRelationship {
-	return AdapterUnitRelationship{ MoMoRef: v}
+	return AdapterUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AdapterUnitRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *AdapterUnitRelationship) GetActualInstance() interface{} {
 	if obj.AdapterUnit != nil {
 		return obj.AdapterUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableAdapterUnitRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

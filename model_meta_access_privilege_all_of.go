@@ -24,7 +24,7 @@ type MetaAccessPrivilegeAllOf struct {
 	// The type of CRUD operation (create, read, update, delete) for which an access privilege is required. * `Update` - The 'update' operation/state. * `Create` - The 'create' operation/state. * `Read` - The 'read' operation/state. * `Delete` - The 'delete' operation/state.
 	Method *string `json:"Method,omitempty"`
 	// The name of the privilege which is required to invoke the specified CRUD method.
-	Privilege *string `json:"Privilege,omitempty"`
+	Privilege            *string `json:"Privilege,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *MetaAccessPrivilegeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MetaAccessPrivilegeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *MetaAccessPrivilegeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MetaAccessPrivilegeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableMetaAccessPrivilegeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

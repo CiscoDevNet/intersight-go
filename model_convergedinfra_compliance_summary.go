@@ -31,7 +31,7 @@ type ConvergedinfraComplianceSummary struct {
 	// The count of elements where compliance has failed for one or more reason. e.g. For HCL of server, some part of the HCL validation has failed.
 	NotListed *int64 `json:"NotListed,omitempty"`
 	// The count of elements where compliance has passed validation for all components. e.g. For HCL of server, all of the components have passed validation.
-	Validated *int64 `json:"Validated,omitempty"`
+	Validated            *int64 `json:"Validated,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ConvergedinfraComplianceSummary) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraComplianceSummary) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ConvergedinfraComplianceSummary) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraComplianceSummary) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableConvergedinfraComplianceSummary) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

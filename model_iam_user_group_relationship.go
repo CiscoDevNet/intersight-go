@@ -19,19 +19,18 @@ import (
 // IamUserGroupRelationship - A relationship to the 'iam.UserGroup' resource, or the expanded 'iam.UserGroup' resource, or the 'null' value.
 type IamUserGroupRelationship struct {
 	IamUserGroup *IamUserGroup
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IamUserGroupAsIamUserGroupRelationship is a convenience function that returns IamUserGroup wrapped in IamUserGroupRelationship
 func IamUserGroupAsIamUserGroupRelationship(v *IamUserGroup) IamUserGroupRelationship {
-	return IamUserGroupRelationship{ IamUserGroup: v}
+	return IamUserGroupRelationship{IamUserGroup: v}
 }
 
 // MoMoRefAsIamUserGroupRelationship is a convenience function that returns MoMoRef wrapped in IamUserGroupRelationship
 func MoMoRefAsIamUserGroupRelationship(v *MoMoRef) IamUserGroupRelationship {
-	return IamUserGroupRelationship{ MoMoRef: v}
+	return IamUserGroupRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamUserGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamUserGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamUserGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *IamUserGroupRelationship) GetActualInstance() interface{} {
 	if obj.IamUserGroup != nil {
 		return obj.IamUserGroup
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamUserGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -30,9 +30,9 @@ type StorageHitachiParityGroupAllOf struct {
 	// Value of the copy back mode setting of the parity group. true, Copy back mode is enabled. false, Copy back mode is disabled.
 	IsCopyBackModeEnabled *bool `json:"IsCopyBackModeEnabled,omitempty"`
 	// Value of the encryption setting of the parity group. true, Encryption is enabled. false, Encryption is disabled.
-	IsEncryptionEnabled *bool `json:"IsEncryptionEnabled,omitempty"`
-	Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	IsEncryptionEnabled  *bool                                `json:"IsEncryptionEnabled,omitempty"`
+	Array                *StorageHitachiArrayRelationship     `json:"Array,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *StorageHitachiParityGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiParityGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *StorageHitachiParityGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiParityGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -430,5 +430,3 @@ func (v *NullableStorageHitachiParityGroupAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

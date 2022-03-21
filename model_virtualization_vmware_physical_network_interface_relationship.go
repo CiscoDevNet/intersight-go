@@ -18,20 +18,19 @@ import (
 
 // VirtualizationVmwarePhysicalNetworkInterfaceRelationship - A relationship to the 'virtualization.VmwarePhysicalNetworkInterface' resource, or the expanded 'virtualization.VmwarePhysicalNetworkInterface' resource, or the 'null' value.
 type VirtualizationVmwarePhysicalNetworkInterfaceRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                                      *MoMoRef
 	VirtualizationVmwarePhysicalNetworkInterface *VirtualizationVmwarePhysicalNetworkInterface
 }
 
 // MoMoRefAsVirtualizationVmwarePhysicalNetworkInterfaceRelationship is a convenience function that returns MoMoRef wrapped in VirtualizationVmwarePhysicalNetworkInterfaceRelationship
 func MoMoRefAsVirtualizationVmwarePhysicalNetworkInterfaceRelationship(v *MoMoRef) VirtualizationVmwarePhysicalNetworkInterfaceRelationship {
-	return VirtualizationVmwarePhysicalNetworkInterfaceRelationship{ MoMoRef: v}
+	return VirtualizationVmwarePhysicalNetworkInterfaceRelationship{MoMoRef: v}
 }
 
 // VirtualizationVmwarePhysicalNetworkInterfaceAsVirtualizationVmwarePhysicalNetworkInterfaceRelationship is a convenience function that returns VirtualizationVmwarePhysicalNetworkInterface wrapped in VirtualizationVmwarePhysicalNetworkInterfaceRelationship
 func VirtualizationVmwarePhysicalNetworkInterfaceAsVirtualizationVmwarePhysicalNetworkInterfaceRelationship(v *VirtualizationVmwarePhysicalNetworkInterface) VirtualizationVmwarePhysicalNetworkInterfaceRelationship {
-	return VirtualizationVmwarePhysicalNetworkInterfaceRelationship{ VirtualizationVmwarePhysicalNetworkInterface: v}
+	return VirtualizationVmwarePhysicalNetworkInterfaceRelationship{VirtualizationVmwarePhysicalNetworkInterface: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwarePhysicalNetworkInterfaceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VirtualizationVmwarePhysicalNetworkInterfaceRelationship) MarshalJSON(
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwarePhysicalNetworkInterfaceRelationship) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwarePhysicalNetworkInterfaceRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVirtualizationVmwarePhysicalNetworkInterfaceRelationship) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

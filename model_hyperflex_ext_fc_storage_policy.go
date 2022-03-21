@@ -25,13 +25,13 @@ type HyperflexExtFcStoragePolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enables or disables external FC storage configuration.
-	AdminState *bool `json:"AdminState,omitempty"`
-	ExtaTraffic NullableHyperflexNamedVsan `json:"ExtaTraffic,omitempty"`
-	ExtbTraffic NullableHyperflexNamedVsan `json:"ExtbTraffic,omitempty"`
+	AdminState      *bool                            `json:"AdminState,omitempty"`
+	ExtaTraffic     NullableHyperflexNamedVsan       `json:"ExtaTraffic,omitempty"`
+	ExtbTraffic     NullableHyperflexNamedVsan       `json:"ExtbTraffic,omitempty"`
 	WwxnPrefixRange NullableHyperflexWwxnPrefixRange `json:"WwxnPrefixRange,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexExtFcStoragePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexExtFcStoragePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexExtFcStoragePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexExtFcStoragePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -153,7 +153,7 @@ func (o *HyperflexExtFcStoragePolicy) GetExtaTraffic() HyperflexNamedVsan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexExtFcStoragePolicy) GetExtaTrafficOk() (*HyperflexNamedVsan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExtaTraffic.Get(), o.ExtaTraffic.IsSet()
@@ -172,6 +172,7 @@ func (o *HyperflexExtFcStoragePolicy) HasExtaTraffic() bool {
 func (o *HyperflexExtFcStoragePolicy) SetExtaTraffic(v HyperflexNamedVsan) {
 	o.ExtaTraffic.Set(&v)
 }
+
 // SetExtaTrafficNil sets the value for ExtaTraffic to be an explicit nil
 func (o *HyperflexExtFcStoragePolicy) SetExtaTrafficNil() {
 	o.ExtaTraffic.Set(nil)
@@ -195,7 +196,7 @@ func (o *HyperflexExtFcStoragePolicy) GetExtbTraffic() HyperflexNamedVsan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexExtFcStoragePolicy) GetExtbTrafficOk() (*HyperflexNamedVsan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExtbTraffic.Get(), o.ExtbTraffic.IsSet()
@@ -214,6 +215,7 @@ func (o *HyperflexExtFcStoragePolicy) HasExtbTraffic() bool {
 func (o *HyperflexExtFcStoragePolicy) SetExtbTraffic(v HyperflexNamedVsan) {
 	o.ExtbTraffic.Set(&v)
 }
+
 // SetExtbTrafficNil sets the value for ExtbTraffic to be an explicit nil
 func (o *HyperflexExtFcStoragePolicy) SetExtbTrafficNil() {
 	o.ExtbTraffic.Set(nil)
@@ -237,7 +239,7 @@ func (o *HyperflexExtFcStoragePolicy) GetWwxnPrefixRange() HyperflexWwxnPrefixRa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexExtFcStoragePolicy) GetWwxnPrefixRangeOk() (*HyperflexWwxnPrefixRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.WwxnPrefixRange.Get(), o.WwxnPrefixRange.IsSet()
@@ -256,6 +258,7 @@ func (o *HyperflexExtFcStoragePolicy) HasWwxnPrefixRange() bool {
 func (o *HyperflexExtFcStoragePolicy) SetWwxnPrefixRange(v HyperflexWwxnPrefixRange) {
 	o.WwxnPrefixRange.Set(&v)
 }
+
 // SetWwxnPrefixRangeNil sets the value for WwxnPrefixRange to be an explicit nil
 func (o *HyperflexExtFcStoragePolicy) SetWwxnPrefixRangeNil() {
 	o.WwxnPrefixRange.Set(nil)
@@ -268,7 +271,7 @@ func (o *HyperflexExtFcStoragePolicy) UnsetWwxnPrefixRange() {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexExtFcStoragePolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -380,13 +383,13 @@ func (o *HyperflexExtFcStoragePolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Enables or disables external FC storage configuration.
-		AdminState *bool `json:"AdminState,omitempty"`
-		ExtaTraffic NullableHyperflexNamedVsan `json:"ExtaTraffic,omitempty"`
-		ExtbTraffic NullableHyperflexNamedVsan `json:"ExtbTraffic,omitempty"`
+		AdminState      *bool                            `json:"AdminState,omitempty"`
+		ExtaTraffic     NullableHyperflexNamedVsan       `json:"ExtaTraffic,omitempty"`
+		ExtbTraffic     NullableHyperflexNamedVsan       `json:"ExtbTraffic,omitempty"`
 		WwxnPrefixRange NullableHyperflexWwxnPrefixRange `json:"WwxnPrefixRange,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexExtFcStoragePolicyWithoutEmbeddedStruct := HyperflexExtFcStoragePolicyWithoutEmbeddedStruct{}
@@ -487,5 +490,3 @@ func (v *NullableHyperflexExtFcStoragePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

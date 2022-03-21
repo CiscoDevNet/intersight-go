@@ -19,31 +19,30 @@ import (
 // StoragePureDiskResponse - The response body of a HTTP GET request for the 'storage.PureDisk' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PureDisk' resources.
 type StoragePureDiskResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	StoragePureDiskList *StoragePureDiskList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	StoragePureDiskList  *StoragePureDiskList
 }
 
 // MoAggregateTransformAsStoragePureDiskResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePureDiskResponse
 func MoAggregateTransformAsStoragePureDiskResponse(v *MoAggregateTransform) StoragePureDiskResponse {
-	return StoragePureDiskResponse{ MoAggregateTransform: v}
+	return StoragePureDiskResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePureDiskResponse is a convenience function that returns MoDocumentCount wrapped in StoragePureDiskResponse
 func MoDocumentCountAsStoragePureDiskResponse(v *MoDocumentCount) StoragePureDiskResponse {
-	return StoragePureDiskResponse{ MoDocumentCount: v}
+	return StoragePureDiskResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePureDiskResponse is a convenience function that returns MoTagSummary wrapped in StoragePureDiskResponse
 func MoTagSummaryAsStoragePureDiskResponse(v *MoTagSummary) StoragePureDiskResponse {
-	return StoragePureDiskResponse{ MoTagSummary: v}
+	return StoragePureDiskResponse{MoTagSummary: v}
 }
 
 // StoragePureDiskListAsStoragePureDiskResponse is a convenience function that returns StoragePureDiskList wrapped in StoragePureDiskResponse
 func StoragePureDiskListAsStoragePureDiskResponse(v *StoragePureDiskList) StoragePureDiskResponse {
-	return StoragePureDiskResponse{ StoragePureDiskList: v}
+	return StoragePureDiskResponse{StoragePureDiskList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureDiskResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePureDiskResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureDiskResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePureDiskResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePureDiskResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

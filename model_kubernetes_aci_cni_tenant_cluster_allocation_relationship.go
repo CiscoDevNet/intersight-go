@@ -19,19 +19,18 @@ import (
 // KubernetesAciCniTenantClusterAllocationRelationship - A relationship to the 'kubernetes.AciCniTenantClusterAllocation' resource, or the expanded 'kubernetes.AciCniTenantClusterAllocation' resource, or the 'null' value.
 type KubernetesAciCniTenantClusterAllocationRelationship struct {
 	KubernetesAciCniTenantClusterAllocation *KubernetesAciCniTenantClusterAllocation
-	MoMoRef *MoMoRef
+	MoMoRef                                 *MoMoRef
 }
 
 // KubernetesAciCniTenantClusterAllocationAsKubernetesAciCniTenantClusterAllocationRelationship is a convenience function that returns KubernetesAciCniTenantClusterAllocation wrapped in KubernetesAciCniTenantClusterAllocationRelationship
 func KubernetesAciCniTenantClusterAllocationAsKubernetesAciCniTenantClusterAllocationRelationship(v *KubernetesAciCniTenantClusterAllocation) KubernetesAciCniTenantClusterAllocationRelationship {
-	return KubernetesAciCniTenantClusterAllocationRelationship{ KubernetesAciCniTenantClusterAllocation: v}
+	return KubernetesAciCniTenantClusterAllocationRelationship{KubernetesAciCniTenantClusterAllocation: v}
 }
 
 // MoMoRefAsKubernetesAciCniTenantClusterAllocationRelationship is a convenience function that returns MoMoRef wrapped in KubernetesAciCniTenantClusterAllocationRelationship
 func MoMoRefAsKubernetesAciCniTenantClusterAllocationRelationship(v *MoMoRef) KubernetesAciCniTenantClusterAllocationRelationship {
-	return KubernetesAciCniTenantClusterAllocationRelationship{ MoMoRef: v}
+	return KubernetesAciCniTenantClusterAllocationRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesAciCniTenantClusterAllocationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesAciCniTenantClusterAllocationRelationship) MarshalJSON() ([]
 }
 
 // Get the actual instance
-func (obj *KubernetesAciCniTenantClusterAllocationRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesAciCniTenantClusterAllocationRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesAciCniTenantClusterAllocation != nil {
 		return obj.KubernetesAciCniTenantClusterAllocation
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesAciCniTenantClusterAllocationRelationship) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

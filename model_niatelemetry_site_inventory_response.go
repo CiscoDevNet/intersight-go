@@ -18,32 +18,31 @@ import (
 
 // NiatelemetrySiteInventoryResponse - The response body of a HTTP GET request for the 'niatelemetry.SiteInventory' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.SiteInventory' resources.
 type NiatelemetrySiteInventoryResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	NiatelemetrySiteInventoryList *NiatelemetrySiteInventoryList
 }
 
 // MoAggregateTransformAsNiatelemetrySiteInventoryResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetrySiteInventoryResponse
 func MoAggregateTransformAsNiatelemetrySiteInventoryResponse(v *MoAggregateTransform) NiatelemetrySiteInventoryResponse {
-	return NiatelemetrySiteInventoryResponse{ MoAggregateTransform: v}
+	return NiatelemetrySiteInventoryResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetrySiteInventoryResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetrySiteInventoryResponse
 func MoDocumentCountAsNiatelemetrySiteInventoryResponse(v *MoDocumentCount) NiatelemetrySiteInventoryResponse {
-	return NiatelemetrySiteInventoryResponse{ MoDocumentCount: v}
+	return NiatelemetrySiteInventoryResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetrySiteInventoryResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetrySiteInventoryResponse
 func MoTagSummaryAsNiatelemetrySiteInventoryResponse(v *MoTagSummary) NiatelemetrySiteInventoryResponse {
-	return NiatelemetrySiteInventoryResponse{ MoTagSummary: v}
+	return NiatelemetrySiteInventoryResponse{MoTagSummary: v}
 }
 
 // NiatelemetrySiteInventoryListAsNiatelemetrySiteInventoryResponse is a convenience function that returns NiatelemetrySiteInventoryList wrapped in NiatelemetrySiteInventoryResponse
 func NiatelemetrySiteInventoryListAsNiatelemetrySiteInventoryResponse(v *NiatelemetrySiteInventoryList) NiatelemetrySiteInventoryResponse {
-	return NiatelemetrySiteInventoryResponse{ NiatelemetrySiteInventoryList: v}
+	return NiatelemetrySiteInventoryResponse{NiatelemetrySiteInventoryList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetrySiteInventoryResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetrySiteInventoryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetrySiteInventoryResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetrySiteInventoryResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetrySiteInventoryResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

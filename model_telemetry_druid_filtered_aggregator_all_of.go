@@ -17,8 +17,8 @@ import (
 
 // TelemetryDruidFilteredAggregatorAllOf struct for TelemetryDruidFilteredAggregatorAllOf
 type TelemetryDruidFilteredAggregatorAllOf struct {
-	Filter TelemetryDruidFilter `json:"filter"`
-	Aggregator TelemetryDruidAggregator `json:"aggregator"`
+	Filter               TelemetryDruidFilter     `json:"filter"`
+	Aggregator           TelemetryDruidAggregator `json:"aggregator"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -56,7 +56,7 @@ func (o *TelemetryDruidFilteredAggregatorAllOf) GetFilter() TelemetryDruidFilter
 // GetFilterOk returns a tuple with the Filter field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFilteredAggregatorAllOf) GetFilterOk() (*TelemetryDruidFilter, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Filter, true
@@ -80,7 +80,7 @@ func (o *TelemetryDruidFilteredAggregatorAllOf) GetAggregator() TelemetryDruidAg
 // GetAggregatorOk returns a tuple with the Aggregator field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidFilteredAggregatorAllOf) GetAggregatorOk() (*TelemetryDruidAggregator, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Aggregator, true
@@ -160,5 +160,3 @@ func (v *NullableTelemetryDruidFilteredAggregatorAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

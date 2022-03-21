@@ -36,11 +36,11 @@ type VnicLanConnectivityPolicy struct {
 	// Deprecated
 	TargetPlatform *string `json:"TargetPlatform,omitempty"`
 	// An array of relationships to vnicEthIf resources.
-	EthIfs []VnicEthIfRelationship `json:"EthIfs,omitempty"`
-	IqnPool *IqnpoolPoolRelationship `json:"IqnPool,omitempty"`
+	EthIfs       []VnicEthIfRelationship               `json:"EthIfs,omitempty"`
+	IqnPool      *IqnpoolPoolRelationship              `json:"IqnPool,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *VnicLanConnectivityPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicLanConnectivityPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *VnicLanConnectivityPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicLanConnectivityPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -298,7 +298,7 @@ func (o *VnicLanConnectivityPolicy) SetTargetPlatform(v string) {
 
 // GetEthIfs returns the EthIfs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicLanConnectivityPolicy) GetEthIfs() []VnicEthIfRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicEthIfRelationship
 		return ret
 	}
@@ -395,7 +395,7 @@ func (o *VnicLanConnectivityPolicy) SetOrganization(v OrganizationOrganizationRe
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicLanConnectivityPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -495,8 +495,8 @@ func (o *VnicLanConnectivityPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Deprecated
 		TargetPlatform *string `json:"TargetPlatform,omitempty"`
 		// An array of relationships to vnicEthIf resources.
-		EthIfs []VnicEthIfRelationship `json:"EthIfs,omitempty"`
-		IqnPool *IqnpoolPoolRelationship `json:"IqnPool,omitempty"`
+		EthIfs       []VnicEthIfRelationship               `json:"EthIfs,omitempty"`
+		IqnPool      *IqnpoolPoolRelationship              `json:"IqnPool,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -606,5 +606,3 @@ func (v *NullableVnicLanConnectivityPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

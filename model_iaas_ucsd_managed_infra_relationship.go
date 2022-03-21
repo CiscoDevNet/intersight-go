@@ -19,19 +19,18 @@ import (
 // IaasUcsdManagedInfraRelationship - A relationship to the 'iaas.UcsdManagedInfra' resource, or the expanded 'iaas.UcsdManagedInfra' resource, or the 'null' value.
 type IaasUcsdManagedInfraRelationship struct {
 	IaasUcsdManagedInfra *IaasUcsdManagedInfra
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // IaasUcsdManagedInfraAsIaasUcsdManagedInfraRelationship is a convenience function that returns IaasUcsdManagedInfra wrapped in IaasUcsdManagedInfraRelationship
 func IaasUcsdManagedInfraAsIaasUcsdManagedInfraRelationship(v *IaasUcsdManagedInfra) IaasUcsdManagedInfraRelationship {
-	return IaasUcsdManagedInfraRelationship{ IaasUcsdManagedInfra: v}
+	return IaasUcsdManagedInfraRelationship{IaasUcsdManagedInfra: v}
 }
 
 // MoMoRefAsIaasUcsdManagedInfraRelationship is a convenience function that returns MoMoRef wrapped in IaasUcsdManagedInfraRelationship
 func MoMoRefAsIaasUcsdManagedInfraRelationship(v *MoMoRef) IaasUcsdManagedInfraRelationship {
-	return IaasUcsdManagedInfraRelationship{ MoMoRef: v}
+	return IaasUcsdManagedInfraRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasUcsdManagedInfraRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IaasUcsdManagedInfraRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasUcsdManagedInfraRelationship) GetActualInstance() (interface{}) {
+func (obj *IaasUcsdManagedInfraRelationship) GetActualInstance() interface{} {
 	if obj.IaasUcsdManagedInfra != nil {
 		return obj.IaasUcsdManagedInfra
 	}
@@ -137,5 +136,3 @@ func (v *NullableIaasUcsdManagedInfraRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

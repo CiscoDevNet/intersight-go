@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryHttpsAclContractFilterMapResponse - The response body of a HTTP GET request for the 'niatelemetry.HttpsAclContractFilterMap' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.HttpsAclContractFilterMap' resources.
 type NiatelemetryHttpsAclContractFilterMapResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                      *MoAggregateTransform
+	MoDocumentCount                           *MoDocumentCount
+	MoTagSummary                              *MoTagSummary
 	NiatelemetryHttpsAclContractFilterMapList *NiatelemetryHttpsAclContractFilterMapList
 }
 
 // MoAggregateTransformAsNiatelemetryHttpsAclContractFilterMapResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryHttpsAclContractFilterMapResponse
 func MoAggregateTransformAsNiatelemetryHttpsAclContractFilterMapResponse(v *MoAggregateTransform) NiatelemetryHttpsAclContractFilterMapResponse {
-	return NiatelemetryHttpsAclContractFilterMapResponse{ MoAggregateTransform: v}
+	return NiatelemetryHttpsAclContractFilterMapResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryHttpsAclContractFilterMapResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryHttpsAclContractFilterMapResponse
 func MoDocumentCountAsNiatelemetryHttpsAclContractFilterMapResponse(v *MoDocumentCount) NiatelemetryHttpsAclContractFilterMapResponse {
-	return NiatelemetryHttpsAclContractFilterMapResponse{ MoDocumentCount: v}
+	return NiatelemetryHttpsAclContractFilterMapResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryHttpsAclContractFilterMapResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryHttpsAclContractFilterMapResponse
 func MoTagSummaryAsNiatelemetryHttpsAclContractFilterMapResponse(v *MoTagSummary) NiatelemetryHttpsAclContractFilterMapResponse {
-	return NiatelemetryHttpsAclContractFilterMapResponse{ MoTagSummary: v}
+	return NiatelemetryHttpsAclContractFilterMapResponse{MoTagSummary: v}
 }
 
 // NiatelemetryHttpsAclContractFilterMapListAsNiatelemetryHttpsAclContractFilterMapResponse is a convenience function that returns NiatelemetryHttpsAclContractFilterMapList wrapped in NiatelemetryHttpsAclContractFilterMapResponse
 func NiatelemetryHttpsAclContractFilterMapListAsNiatelemetryHttpsAclContractFilterMapResponse(v *NiatelemetryHttpsAclContractFilterMapList) NiatelemetryHttpsAclContractFilterMapResponse {
-	return NiatelemetryHttpsAclContractFilterMapResponse{ NiatelemetryHttpsAclContractFilterMapList: v}
+	return NiatelemetryHttpsAclContractFilterMapResponse{NiatelemetryHttpsAclContractFilterMapList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryHttpsAclContractFilterMapResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryHttpsAclContractFilterMapResponse) MarshalJSON() ([]byte, 
 }
 
 // Get the actual instance
-func (obj *NiatelemetryHttpsAclContractFilterMapResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryHttpsAclContractFilterMapResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryHttpsAclContractFilterMapResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

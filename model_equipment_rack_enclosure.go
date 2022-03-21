@@ -27,13 +27,13 @@ type EquipmentRackEnclosure struct {
 	// This represents the Enclosure Identifier for Rack servers.
 	EnclosureId *int64 `json:"EnclosureId,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
-	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
+	Fanmodules          []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to equipmentPsu resources.
-	Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+	Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to equipmentRackEnclosureSlot resources.
-	Slots []EquipmentRackEnclosureSlotRelationship `json:"Slots,omitempty"`
+	Slots                []EquipmentRackEnclosureSlotRelationship `json:"Slots,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *EquipmentRackEnclosure) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentRackEnclosure) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *EquipmentRackEnclosure) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentRackEnclosure) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -144,7 +144,7 @@ func (o *EquipmentRackEnclosure) SetEnclosureId(v int64) {
 
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentRackEnclosure) GetFanmodules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *EquipmentRackEnclosure) SetInventoryDeviceInfo(v InventoryDeviceInfoRel
 
 // GetPsus returns the Psus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentRackEnclosure) GetPsus() []EquipmentPsuRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentPsuRelationship
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *EquipmentRackEnclosure) SetRegisteredDevice(v AssetDeviceRegistrationRe
 
 // GetSlots returns the Slots field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentRackEnclosure) GetSlots() []EquipmentRackEnclosureSlotRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentRackEnclosureSlotRelationship
 		return ret
 	}
@@ -356,10 +356,10 @@ func (o *EquipmentRackEnclosure) UnmarshalJSON(bytes []byte) (err error) {
 		// This represents the Enclosure Identifier for Rack servers.
 		EnclosureId *int64 `json:"EnclosureId,omitempty"`
 		// An array of relationships to equipmentFanModule resources.
-		Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
+		Fanmodules          []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to equipmentPsu resources.
-		Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+		Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to equipmentRackEnclosureSlot resources.
 		Slots []EquipmentRackEnclosureSlotRelationship `json:"Slots,omitempty"`
@@ -463,5 +463,3 @@ func (v *NullableEquipmentRackEnclosure) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

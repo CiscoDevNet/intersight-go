@@ -30,8 +30,8 @@ type VirtualizationVmwarePhysicalNetworkInterfaceAllOf struct {
 	// PCI info for physical network interface.
 	Pci *string `json:"Pci,omitempty"`
 	// Switch associated with the physical network interface.
-	SwitchName *string `json:"SwitchName,omitempty"`
-	Host *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
+	SwitchName           *string                               `json:"SwitchName,omitempty"`
+	Host                 *VirtualizationVmwareHostRelationship `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *VirtualizationVmwarePhysicalNetworkInterfaceAllOf) GetClassId() string 
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwarePhysicalNetworkInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *VirtualizationVmwarePhysicalNetworkInterfaceAllOf) GetObjectType() stri
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwarePhysicalNetworkInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,5 +393,3 @@ func (v *NullableVirtualizationVmwarePhysicalNetworkInterfaceAllOf) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

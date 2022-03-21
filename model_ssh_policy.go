@@ -29,10 +29,10 @@ type SshPolicy struct {
 	// Port used for secure shell access.
 	Port *int64 `json:"Port,omitempty"`
 	// Number of seconds to wait before the system considers a SSH request to have timed out.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout      *int64                                `json:"Timeout,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *SshPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SshPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *SshPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SshPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -251,7 +251,7 @@ func (o *SshPolicy) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SshPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -332,7 +332,7 @@ func (o *SshPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Port used for secure shell access.
 		Port *int64 `json:"Port,omitempty"`
 		// Number of seconds to wait before the system considers a SSH request to have timed out.
-		Timeout *int64 `json:"Timeout,omitempty"`
+		Timeout      *int64                                `json:"Timeout,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -434,5 +434,3 @@ func (v *NullableSshPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

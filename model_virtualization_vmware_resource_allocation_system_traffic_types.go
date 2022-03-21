@@ -33,7 +33,7 @@ type VirtualizationVmwareResourceAllocationSystemTrafficTypes struct {
 	// The number of shares allocated. Used to determine resource allocation in case of resource contention. Shares value is only set if level is set to custom. If level is not set to custom, this value is ignored. Therefore, only shares with custom values can be compared.
 	SharesValue *int32 `json:"SharesValue,omitempty"`
 	// Key of the host infrastructure resource.
-	TrafficType *string `json:"TrafficType,omitempty"`
+	TrafficType          *string `json:"TrafficType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *VirtualizationVmwareResourceAllocationSystemTrafficTypes) GetClassId() 
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareResourceAllocationSystemTrafficTypes) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *VirtualizationVmwareResourceAllocationSystemTrafficTypes) GetObjectType
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareResourceAllocationSystemTrafficTypes) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -427,5 +427,3 @@ func (v *NullableVirtualizationVmwareResourceAllocationSystemTrafficTypes) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

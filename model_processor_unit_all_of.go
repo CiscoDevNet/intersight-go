@@ -30,8 +30,8 @@ type ProcessorUnitAllOf struct {
 	// The maximum number of threads available in the installed processor.
 	NumThreads *string `json:"NumThreads,omitempty"`
 	// The power state of the processor.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	OperReason []string `json:"OperReason,omitempty"`
+	OperPowerState *string  `json:"OperPowerState,omitempty"`
+	OperReason     []string `json:"OperReason,omitempty"`
 	// The health indicator of the processor, 'OK' indicates the processor is operatinal.
 	OperState *string `json:"OperState,omitempty"`
 	// Operability state of the central processing unit.
@@ -45,12 +45,12 @@ type ProcessorUnitAllOf struct {
 	// The CPU stepping of the installed processor.
 	Stepping *string `json:"Stepping,omitempty"`
 	// The temperature of the processor in centigrade.
-	Thermal *string `json:"Thermal,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Thermal              *string                              `json:"Thermal,omitempty"`
+	ComputeBlade         *ComputeBladeRelationship            `json:"ComputeBlade,omitempty"`
+	ComputeBoard         *ComputeBoardRelationship            `json:"ComputeBoard,omitempty"`
+	ComputeRackUnit      *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *ProcessorUnitAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorUnitAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *ProcessorUnitAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ProcessorUnitAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -289,7 +289,7 @@ func (o *ProcessorUnitAllOf) SetOperPowerState(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProcessorUnitAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -845,5 +845,3 @@ func (v *NullableProcessorUnitAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

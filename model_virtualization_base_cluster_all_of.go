@@ -20,16 +20,16 @@ type VirtualizationBaseClusterAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType   string                   `json:"ObjectType"`
 	AlarmSummary NullableCondAlarmSummary `json:"AlarmSummary,omitempty"`
 	// Identifies the broad type of the underlying hypervisor. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 	HypervisorType *string `json:"HypervisorType,omitempty"`
 	// The internally generated identity of this cluster. This entity is not manipulated by users.
-	Identity *string `json:"Identity,omitempty"`
-	MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
+	Identity          *string                               `json:"Identity,omitempty"`
+	MemoryCapacity    NullableVirtualizationMemoryCapacity  `json:"MemoryCapacity,omitempty"`
 	ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
 	// Total number of CPU cores in this cluster. It is a cumulative number across all hosts in the cluster.
-	TotalCores *int64 `json:"TotalCores,omitempty"`
+	TotalCores           *int64 `json:"TotalCores,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VirtualizationBaseClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationBaseClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *VirtualizationBaseClusterAllOf) GetAlarmSummary() CondAlarmSummary {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseClusterAllOf) GetAlarmSummaryOk() (*CondAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -138,6 +138,7 @@ func (o *VirtualizationBaseClusterAllOf) HasAlarmSummary() bool {
 func (o *VirtualizationBaseClusterAllOf) SetAlarmSummary(v CondAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *VirtualizationBaseClusterAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -225,7 +226,7 @@ func (o *VirtualizationBaseClusterAllOf) GetMemoryCapacity() VirtualizationMemor
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseClusterAllOf) GetMemoryCapacityOk() (*VirtualizationMemoryCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryCapacity.Get(), o.MemoryCapacity.IsSet()
@@ -244,6 +245,7 @@ func (o *VirtualizationBaseClusterAllOf) HasMemoryCapacity() bool {
 func (o *VirtualizationBaseClusterAllOf) SetMemoryCapacity(v VirtualizationMemoryCapacity) {
 	o.MemoryCapacity.Set(&v)
 }
+
 // SetMemoryCapacityNil sets the value for MemoryCapacity to be an explicit nil
 func (o *VirtualizationBaseClusterAllOf) SetMemoryCapacityNil() {
 	o.MemoryCapacity.Set(nil)
@@ -267,7 +269,7 @@ func (o *VirtualizationBaseClusterAllOf) GetProcessorCapacity() VirtualizationCo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseClusterAllOf) GetProcessorCapacityOk() (*VirtualizationComputeCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProcessorCapacity.Get(), o.ProcessorCapacity.IsSet()
@@ -286,6 +288,7 @@ func (o *VirtualizationBaseClusterAllOf) HasProcessorCapacity() bool {
 func (o *VirtualizationBaseClusterAllOf) SetProcessorCapacity(v VirtualizationComputeCapacity) {
 	o.ProcessorCapacity.Set(&v)
 }
+
 // SetProcessorCapacityNil sets the value for ProcessorCapacity to be an explicit nil
 func (o *VirtualizationBaseClusterAllOf) SetProcessorCapacityNil() {
 	o.ProcessorCapacity.Set(nil)
@@ -421,5 +424,3 @@ func (v *NullableVirtualizationBaseClusterAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

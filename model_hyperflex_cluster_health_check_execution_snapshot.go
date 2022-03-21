@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // HyperflexClusterHealthCheckExecutionSnapshot Health check execution snapshot of the HyperFlex cluster.
@@ -26,10 +26,10 @@ type HyperflexClusterHealthCheckExecutionSnapshot struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Timestamp of the last health check execution on the HyperFlex cluster.
-	Timestamp *time.Time `json:"Timestamp,omitempty"`
-	HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+	Timestamp            *time.Time                           `json:"Timestamp,omitempty"`
+	HxCluster            *HyperflexClusterRelationship        `json:"HxCluster,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Workflow             *WorkflowWorkflowInfoRelationship    `json:"Workflow,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *HyperflexClusterHealthCheckExecutionSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterHealthCheckExecutionSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *HyperflexClusterHealthCheckExecutionSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterHealthCheckExecutionSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -277,10 +277,10 @@ func (o *HyperflexClusterHealthCheckExecutionSnapshot) UnmarshalJSON(bytes []byt
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Timestamp of the last health check execution on the HyperFlex cluster.
-		Timestamp *time.Time `json:"Timestamp,omitempty"`
-		HxCluster *HyperflexClusterRelationship `json:"HxCluster,omitempty"`
+		Timestamp        *time.Time                           `json:"Timestamp,omitempty"`
+		HxCluster        *HyperflexClusterRelationship        `json:"HxCluster,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+		Workflow         *WorkflowWorkflowInfoRelationship    `json:"Workflow,omitempty"`
 	}
 
 	varHyperflexClusterHealthCheckExecutionSnapshotWithoutEmbeddedStruct := HyperflexClusterHealthCheckExecutionSnapshotWithoutEmbeddedStruct{}
@@ -377,5 +377,3 @@ func (v *NullableHyperflexClusterHealthCheckExecutionSnapshot) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

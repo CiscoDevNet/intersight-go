@@ -33,8 +33,8 @@ type NiatelemetryMsoTenantDetails struct {
 	// ID of tenant in Multi-Site Orchestrator.
 	TenantId *string `json:"TenantId,omitempty"`
 	// Name of the tenant in Multi-Site Orchestrator.
-	TenantName *string `json:"TenantName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TenantName           *string                              `json:"TenantName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *NiatelemetryMsoTenantDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoTenantDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *NiatelemetryMsoTenantDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryMsoTenantDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -360,7 +360,7 @@ func (o *NiatelemetryMsoTenantDetails) UnmarshalJSON(bytes []byte) (err error) {
 		// ID of tenant in Multi-Site Orchestrator.
 		TenantId *string `json:"TenantId,omitempty"`
 		// Name of the tenant in Multi-Site Orchestrator.
-		TenantName *string `json:"TenantName,omitempty"`
+		TenantName       *string                              `json:"TenantName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -462,5 +462,3 @@ func (v *NullableNiatelemetryMsoTenantDetails) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

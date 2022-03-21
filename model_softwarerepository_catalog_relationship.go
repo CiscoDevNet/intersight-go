@@ -18,20 +18,19 @@ import (
 
 // SoftwarerepositoryCatalogRelationship - A relationship to the 'softwarerepository.Catalog' resource, or the expanded 'softwarerepository.Catalog' resource, or the 'null' value.
 type SoftwarerepositoryCatalogRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	SoftwarerepositoryCatalog *SoftwarerepositoryCatalog
 }
 
 // MoMoRefAsSoftwarerepositoryCatalogRelationship is a convenience function that returns MoMoRef wrapped in SoftwarerepositoryCatalogRelationship
 func MoMoRefAsSoftwarerepositoryCatalogRelationship(v *MoMoRef) SoftwarerepositoryCatalogRelationship {
-	return SoftwarerepositoryCatalogRelationship{ MoMoRef: v}
+	return SoftwarerepositoryCatalogRelationship{MoMoRef: v}
 }
 
 // SoftwarerepositoryCatalogAsSoftwarerepositoryCatalogRelationship is a convenience function that returns SoftwarerepositoryCatalog wrapped in SoftwarerepositoryCatalogRelationship
 func SoftwarerepositoryCatalogAsSoftwarerepositoryCatalogRelationship(v *SoftwarerepositoryCatalog) SoftwarerepositoryCatalogRelationship {
-	return SoftwarerepositoryCatalogRelationship{ SoftwarerepositoryCatalog: v}
+	return SoftwarerepositoryCatalogRelationship{SoftwarerepositoryCatalog: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryCatalogRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SoftwarerepositoryCatalogRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryCatalogRelationship) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryCatalogRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSoftwarerepositoryCatalogRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

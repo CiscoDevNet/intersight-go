@@ -23,7 +23,7 @@ type HclHyperflexSoftwareCompatibilityInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string          `json:"ObjectType"`
 	Constraints []HclConstraint `json:"Constraints,omitempty"`
 	// HXDP component software version.
 	HxdpVersion *string `json:"HxdpVersion,omitempty"`
@@ -34,8 +34,8 @@ type HclHyperflexSoftwareCompatibilityInfo struct {
 	// Type of the HXDP bundle mgmt or full.
 	IsMgmtBuild *string `json:"IsMgmtBuild,omitempty"`
 	// UCS Server Firmware component software version.
-	ServerFwVersion *string `json:"ServerFwVersion,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	ServerFwVersion      *string                          `json:"ServerFwVersion,omitempty"`
+	AppCatalog           *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclHyperflexSoftwareCompatibilityInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclHyperflexSoftwareCompatibilityInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfo) SetObjectType(v string) {
 
 // GetConstraints returns the Constraints field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclHyperflexSoftwareCompatibilityInfo) GetConstraints() []HclConstraint {
-	if o == nil  {
+	if o == nil {
 		var ret []HclConstraint
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *HclHyperflexSoftwareCompatibilityInfo) UnmarshalJSON(bytes []byte) (err
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string          `json:"ObjectType"`
 		Constraints []HclConstraint `json:"Constraints,omitempty"`
 		// HXDP component software version.
 		HxdpVersion *string `json:"HxdpVersion,omitempty"`
@@ -402,8 +402,8 @@ func (o *HclHyperflexSoftwareCompatibilityInfo) UnmarshalJSON(bytes []byte) (err
 		// Type of the HXDP bundle mgmt or full.
 		IsMgmtBuild *string `json:"IsMgmtBuild,omitempty"`
 		// UCS Server Firmware component software version.
-		ServerFwVersion *string `json:"ServerFwVersion,omitempty"`
-		AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+		ServerFwVersion *string                          `json:"ServerFwVersion,omitempty"`
+		AppCatalog      *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	}
 
 	varHclHyperflexSoftwareCompatibilityInfoWithoutEmbeddedStruct := HclHyperflexSoftwareCompatibilityInfoWithoutEmbeddedStruct{}
@@ -506,5 +506,3 @@ func (v *NullableHclHyperflexSoftwareCompatibilityInfo) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

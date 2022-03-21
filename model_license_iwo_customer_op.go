@@ -33,8 +33,8 @@ type LicenseIwoCustomerOp struct {
 	// The default Trial or Grace period customer is entitled to.
 	EvaluationPeriod *int64 `json:"EvaluationPeriod,omitempty"`
 	// The number of days the trial Trial or Grace period is extended. The trial or grace period can be extended once.
-	ExtraEvaluation *int64 `json:"ExtraEvaluation,omitempty"`
-	AccountLicenseData *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
+	ExtraEvaluation      *int64                                 `json:"ExtraEvaluation,omitempty"`
+	AccountLicenseData   *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *LicenseIwoCustomerOp) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *LicenseIwoCustomerOp) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *LicenseIwoCustomerOp) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *LicenseIwoCustomerOp) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -364,7 +364,7 @@ func (o *LicenseIwoCustomerOp) UnmarshalJSON(bytes []byte) (err error) {
 		// The default Trial or Grace period customer is entitled to.
 		EvaluationPeriod *int64 `json:"EvaluationPeriod,omitempty"`
 		// The number of days the trial Trial or Grace period is extended. The trial or grace period can be extended once.
-		ExtraEvaluation *int64 `json:"ExtraEvaluation,omitempty"`
+		ExtraEvaluation    *int64                                 `json:"ExtraEvaluation,omitempty"`
 		AccountLicenseData *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
 	}
 
@@ -466,5 +466,3 @@ func (v *NullableLicenseIwoCustomerOp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

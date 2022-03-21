@@ -19,19 +19,18 @@ import (
 // IamLdapProviderRelationship - A relationship to the 'iam.LdapProvider' resource, or the expanded 'iam.LdapProvider' resource, or the 'null' value.
 type IamLdapProviderRelationship struct {
 	IamLdapProvider *IamLdapProvider
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // IamLdapProviderAsIamLdapProviderRelationship is a convenience function that returns IamLdapProvider wrapped in IamLdapProviderRelationship
 func IamLdapProviderAsIamLdapProviderRelationship(v *IamLdapProvider) IamLdapProviderRelationship {
-	return IamLdapProviderRelationship{ IamLdapProvider: v}
+	return IamLdapProviderRelationship{IamLdapProvider: v}
 }
 
 // MoMoRefAsIamLdapProviderRelationship is a convenience function that returns MoMoRef wrapped in IamLdapProviderRelationship
 func MoMoRefAsIamLdapProviderRelationship(v *MoMoRef) IamLdapProviderRelationship {
-	return IamLdapProviderRelationship{ MoMoRef: v}
+	return IamLdapProviderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamLdapProviderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamLdapProviderRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamLdapProviderRelationship) GetActualInstance() (interface{}) {
+func (obj *IamLdapProviderRelationship) GetActualInstance() interface{} {
 	if obj.IamLdapProvider != nil {
 		return obj.IamLdapProvider
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamLdapProviderRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

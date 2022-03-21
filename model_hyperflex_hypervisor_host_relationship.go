@@ -19,19 +19,18 @@ import (
 // HyperflexHypervisorHostRelationship - A relationship to the 'hyperflex.HypervisorHost' resource, or the expanded 'hyperflex.HypervisorHost' resource, or the 'null' value.
 type HyperflexHypervisorHostRelationship struct {
 	HyperflexHypervisorHost *HyperflexHypervisorHost
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // HyperflexHypervisorHostAsHyperflexHypervisorHostRelationship is a convenience function that returns HyperflexHypervisorHost wrapped in HyperflexHypervisorHostRelationship
 func HyperflexHypervisorHostAsHyperflexHypervisorHostRelationship(v *HyperflexHypervisorHost) HyperflexHypervisorHostRelationship {
-	return HyperflexHypervisorHostRelationship{ HyperflexHypervisorHost: v}
+	return HyperflexHypervisorHostRelationship{HyperflexHypervisorHost: v}
 }
 
 // MoMoRefAsHyperflexHypervisorHostRelationship is a convenience function that returns MoMoRef wrapped in HyperflexHypervisorHostRelationship
 func MoMoRefAsHyperflexHypervisorHostRelationship(v *MoMoRef) HyperflexHypervisorHostRelationship {
-	return HyperflexHypervisorHostRelationship{ MoMoRef: v}
+	return HyperflexHypervisorHostRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHypervisorHostRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexHypervisorHostRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexHypervisorHostRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexHypervisorHostRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexHypervisorHost != nil {
 		return obj.HyperflexHypervisorHost
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexHypervisorHostRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

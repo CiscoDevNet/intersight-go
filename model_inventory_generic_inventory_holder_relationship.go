@@ -19,19 +19,18 @@ import (
 // InventoryGenericInventoryHolderRelationship - A relationship to the 'inventory.GenericInventoryHolder' resource, or the expanded 'inventory.GenericInventoryHolder' resource, or the 'null' value.
 type InventoryGenericInventoryHolderRelationship struct {
 	InventoryGenericInventoryHolder *InventoryGenericInventoryHolder
-	MoMoRef *MoMoRef
+	MoMoRef                         *MoMoRef
 }
 
 // InventoryGenericInventoryHolderAsInventoryGenericInventoryHolderRelationship is a convenience function that returns InventoryGenericInventoryHolder wrapped in InventoryGenericInventoryHolderRelationship
 func InventoryGenericInventoryHolderAsInventoryGenericInventoryHolderRelationship(v *InventoryGenericInventoryHolder) InventoryGenericInventoryHolderRelationship {
-	return InventoryGenericInventoryHolderRelationship{ InventoryGenericInventoryHolder: v}
+	return InventoryGenericInventoryHolderRelationship{InventoryGenericInventoryHolder: v}
 }
 
 // MoMoRefAsInventoryGenericInventoryHolderRelationship is a convenience function that returns MoMoRef wrapped in InventoryGenericInventoryHolderRelationship
 func MoMoRefAsInventoryGenericInventoryHolderRelationship(v *MoMoRef) InventoryGenericInventoryHolderRelationship {
-	return InventoryGenericInventoryHolderRelationship{ MoMoRef: v}
+	return InventoryGenericInventoryHolderRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InventoryGenericInventoryHolderRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src InventoryGenericInventoryHolderRelationship) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *InventoryGenericInventoryHolderRelationship) GetActualInstance() (interface{}) {
+func (obj *InventoryGenericInventoryHolderRelationship) GetActualInstance() interface{} {
 	if obj.InventoryGenericInventoryHolder != nil {
 		return obj.InventoryGenericInventoryHolder
 	}
@@ -137,5 +136,3 @@ func (v *NullableInventoryGenericInventoryHolderRelationship) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

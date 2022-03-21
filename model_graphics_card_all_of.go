@@ -40,16 +40,16 @@ type GraphicsCardAllOf struct {
 	// This list contains the PCI address of all controllers for corresponding card.
 	PciAddressList *string `json:"PciAddressList,omitempty"`
 	// The PCI slot name of the graphics card.
-	PciSlot *string `json:"PciSlot,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	PciSlot         *string                      `json:"PciSlot,omitempty"`
+	ComputeBlade    *ComputeBladeRelationship    `json:"ComputeBlade,omitempty"`
+	ComputeBoard    *ComputeBoardRelationship    `json:"ComputeBoard,omitempty"`
 	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
 	// An array of relationships to graphicsController resources.
-	GraphicsControllers []GraphicsControllerRelationship `json:"GraphicsControllers,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	GraphicsControllers []GraphicsControllerRelationship     `json:"GraphicsControllers,omitempty"`
+	InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
-	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+	RunningFirmware      []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *GraphicsCardAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *GraphicsCardAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *GraphicsCardAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *GraphicsCardAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -544,7 +544,7 @@ func (o *GraphicsCardAllOf) SetComputeRackUnit(v ComputeRackUnitRelationship) {
 
 // GetGraphicsControllers returns the GraphicsControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GraphicsCardAllOf) GetGraphicsControllers() []GraphicsControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []GraphicsControllerRelationship
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *GraphicsCardAllOf) SetRegisteredDevice(v AssetDeviceRegistrationRelatio
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GraphicsCardAllOf) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -809,5 +809,3 @@ func (v *NullableGraphicsCardAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

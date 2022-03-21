@@ -19,19 +19,18 @@ import (
 // EquipmentIoCardRelationship - A relationship to the 'equipment.IoCard' resource, or the expanded 'equipment.IoCard' resource, or the 'null' value.
 type EquipmentIoCardRelationship struct {
 	EquipmentIoCard *EquipmentIoCard
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // EquipmentIoCardAsEquipmentIoCardRelationship is a convenience function that returns EquipmentIoCard wrapped in EquipmentIoCardRelationship
 func EquipmentIoCardAsEquipmentIoCardRelationship(v *EquipmentIoCard) EquipmentIoCardRelationship {
-	return EquipmentIoCardRelationship{ EquipmentIoCard: v}
+	return EquipmentIoCardRelationship{EquipmentIoCard: v}
 }
 
 // MoMoRefAsEquipmentIoCardRelationship is a convenience function that returns MoMoRef wrapped in EquipmentIoCardRelationship
 func MoMoRefAsEquipmentIoCardRelationship(v *MoMoRef) EquipmentIoCardRelationship {
-	return EquipmentIoCardRelationship{ MoMoRef: v}
+	return EquipmentIoCardRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentIoCardRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentIoCardRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentIoCardRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentIoCardRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentIoCard != nil {
 		return obj.EquipmentIoCard
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentIoCardRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

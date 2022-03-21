@@ -28,7 +28,7 @@ type WorkflowWaitTaskPromptAllOf struct {
 	// Name for the wait prompt.
 	Name *string `json:"Name,omitempty"`
 	// Task status for the wait task when this prompt option is selected. * `Scheduled` - The enum represents the status when task is in scheduled state. * `InProgress` - The enum represents the status when task is in-progress state. * `NoOp` - The enum represents the status when task is a noop. * `Timeout` - The enum represents the status when task has timed out. * `Completed` - The enum represents the status when task has completed. * `Failed` - The enum represents the status when task has failed.
-	TaskStatus *string `json:"TaskStatus,omitempty"`
+	TaskStatus           *string `json:"TaskStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *WorkflowWaitTaskPromptAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWaitTaskPromptAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *WorkflowWaitTaskPromptAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWaitTaskPromptAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -322,5 +322,3 @@ func (v *NullableWorkflowWaitTaskPromptAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

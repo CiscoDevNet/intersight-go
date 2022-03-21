@@ -20,20 +20,20 @@ type FirmwareNetworkShareAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                     `json:"ObjectType"`
 	CifsServer NullableFirmwareCifsServer `json:"CifsServer,omitempty"`
 	HttpServer NullableFirmwareHttpServer `json:"HttpServer,omitempty"`
 	// Indicates whether the value of the 'password' property has been set.
 	IsPasswordSet *bool `json:"IsPasswordSet,omitempty"`
 	// File server protocols such as CIFS, NFS, WWW for HTTP (S) that hosts the image. * `nfs` - File server protocol used is NFS. * `cifs` - File server protocol used is CIFS. * `www` - File server protocol used is WWW.
-	MapType *string `json:"MapType,omitempty"`
+	MapType   *string                   `json:"MapType,omitempty"`
 	NfsServer NullableFirmwareNfsServer `json:"NfsServer,omitempty"`
 	// Password as configured on the file server.
 	Password *string `json:"Password,omitempty"`
 	// Option to control the upgrade operation. Some examples, 1) nw_upgrade_mount_only - mount the image from a file server and run the upgrade on the next server boot and 2) nw_upgrade_full - mount the image and immediately run the upgrade. * `nw_upgrade_full` - Network upgrade option for full upgrade. * `nw_upgrade_mount_only` - Network upgrade mount only.
 	Upgradeoption *string `json:"Upgradeoption,omitempty"`
 	// Username as configured on the file server.
-	Username *string `json:"Username,omitempty"`
+	Username             *string `json:"Username,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *FirmwareNetworkShareAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareNetworkShareAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *FirmwareNetworkShareAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareNetworkShareAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -131,7 +131,7 @@ func (o *FirmwareNetworkShareAllOf) GetCifsServer() FirmwareCifsServer {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareNetworkShareAllOf) GetCifsServerOk() (*FirmwareCifsServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CifsServer.Get(), o.CifsServer.IsSet()
@@ -150,6 +150,7 @@ func (o *FirmwareNetworkShareAllOf) HasCifsServer() bool {
 func (o *FirmwareNetworkShareAllOf) SetCifsServer(v FirmwareCifsServer) {
 	o.CifsServer.Set(&v)
 }
+
 // SetCifsServerNil sets the value for CifsServer to be an explicit nil
 func (o *FirmwareNetworkShareAllOf) SetCifsServerNil() {
 	o.CifsServer.Set(nil)
@@ -173,7 +174,7 @@ func (o *FirmwareNetworkShareAllOf) GetHttpServer() FirmwareHttpServer {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareNetworkShareAllOf) GetHttpServerOk() (*FirmwareHttpServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HttpServer.Get(), o.HttpServer.IsSet()
@@ -192,6 +193,7 @@ func (o *FirmwareNetworkShareAllOf) HasHttpServer() bool {
 func (o *FirmwareNetworkShareAllOf) SetHttpServer(v FirmwareHttpServer) {
 	o.HttpServer.Set(&v)
 }
+
 // SetHttpServerNil sets the value for HttpServer to be an explicit nil
 func (o *FirmwareNetworkShareAllOf) SetHttpServerNil() {
 	o.HttpServer.Set(nil)
@@ -279,7 +281,7 @@ func (o *FirmwareNetworkShareAllOf) GetNfsServer() FirmwareNfsServer {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareNetworkShareAllOf) GetNfsServerOk() (*FirmwareNfsServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NfsServer.Get(), o.NfsServer.IsSet()
@@ -298,6 +300,7 @@ func (o *FirmwareNetworkShareAllOf) HasNfsServer() bool {
 func (o *FirmwareNetworkShareAllOf) SetNfsServer(v FirmwareNfsServer) {
 	o.NfsServer.Set(&v)
 }
+
 // SetNfsServerNil sets the value for NfsServer to be an explicit nil
 func (o *FirmwareNetworkShareAllOf) SetNfsServerNil() {
 	o.NfsServer.Set(nil)
@@ -505,5 +508,3 @@ func (v *NullableFirmwareNetworkShareAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

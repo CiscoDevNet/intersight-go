@@ -23,15 +23,15 @@ type FabricSwitchProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
-	AssignedSwitch *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
+	ObjectType       string                      `json:"ObjectType"`
+	ConfigChanges    NullablePolicyConfigChange  `json:"ConfigChanges,omitempty"`
+	AssignedSwitch   *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
 	AssociatedSwitch *NetworkElementRelationship `json:"AssociatedSwitch,omitempty"`
 	// An array of relationships to fabricConfigChangeDetail resources.
 	ConfigChangeDetails []FabricConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-	ConfigResult *FabricConfigResultRelationship `json:"ConfigResult,omitempty"`
+	ConfigResult        *FabricConfigResultRelationship        `json:"ConfigResult,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
+	RunningWorkflows     []WorkflowWorkflowInfoRelationship      `json:"RunningWorkflows,omitempty"`
 	SwitchClusterProfile *FabricSwitchClusterProfileRelationship `json:"SwitchClusterProfile,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -78,7 +78,7 @@ func (o *FabricSwitchProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *FabricSwitchProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -126,7 +126,7 @@ func (o *FabricSwitchProfile) GetConfigChanges() PolicyConfigChange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchProfile) GetConfigChangesOk() (*PolicyConfigChange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChanges.Get(), o.ConfigChanges.IsSet()
@@ -145,6 +145,7 @@ func (o *FabricSwitchProfile) HasConfigChanges() bool {
 func (o *FabricSwitchProfile) SetConfigChanges(v PolicyConfigChange) {
 	o.ConfigChanges.Set(&v)
 }
+
 // SetConfigChangesNil sets the value for ConfigChanges to be an explicit nil
 func (o *FabricSwitchProfile) SetConfigChangesNil() {
 	o.ConfigChanges.Set(nil)
@@ -221,7 +222,7 @@ func (o *FabricSwitchProfile) SetAssociatedSwitch(v NetworkElementRelationship) 
 
 // GetConfigChangeDetails returns the ConfigChangeDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchProfile) GetConfigChangeDetails() []FabricConfigChangeDetailRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricConfigChangeDetailRelationship
 		return ret
 	}
@@ -286,7 +287,7 @@ func (o *FabricSwitchProfile) SetConfigResult(v FabricConfigResultRelationship) 
 
 // GetRunningWorkflows returns the RunningWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchProfile) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -399,15 +400,15 @@ func (o *FabricSwitchProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
-		AssignedSwitch *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
+		ObjectType       string                      `json:"ObjectType"`
+		ConfigChanges    NullablePolicyConfigChange  `json:"ConfigChanges,omitempty"`
+		AssignedSwitch   *NetworkElementRelationship `json:"AssignedSwitch,omitempty"`
 		AssociatedSwitch *NetworkElementRelationship `json:"AssociatedSwitch,omitempty"`
 		// An array of relationships to fabricConfigChangeDetail resources.
 		ConfigChangeDetails []FabricConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-		ConfigResult *FabricConfigResultRelationship `json:"ConfigResult,omitempty"`
+		ConfigResult        *FabricConfigResultRelationship        `json:"ConfigResult,omitempty"`
 		// An array of relationships to workflowWorkflowInfo resources.
-		RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
+		RunningWorkflows     []WorkflowWorkflowInfoRelationship      `json:"RunningWorkflows,omitempty"`
 		SwitchClusterProfile *FabricSwitchClusterProfileRelationship `json:"SwitchClusterProfile,omitempty"`
 	}
 
@@ -511,5 +512,3 @@ func (v *NullableFabricSwitchProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

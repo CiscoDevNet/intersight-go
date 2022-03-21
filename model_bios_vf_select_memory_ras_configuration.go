@@ -27,12 +27,12 @@ type BiosVfSelectMemoryRasConfiguration struct {
 	// Parent server serial number.
 	Serial *string `json:"Serial,omitempty"`
 	// The actual BIOS memory RAS configuration as reported by the platform BIOS. Possible values are \"maximum-performance\", \"mirror-mode-1lm\", \"adddc-sparing\", \"platform-default\", \"lockstep\", \"sparing\", \"mirroring\".
-	VpSelectMemoryRasConfiguration *string `json:"VpSelectMemoryRasConfiguration,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	VpSelectMemoryRasConfiguration *string                              `json:"VpSelectMemoryRasConfiguration,omitempty"`
+	ComputeBlade                   *ComputeBladeRelationship            `json:"ComputeBlade,omitempty"`
+	ComputeRackUnit                *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	InventoryDeviceInfo            *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice               *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties           map[string]interface{}
 }
 
 type _BiosVfSelectMemoryRasConfiguration BiosVfSelectMemoryRasConfiguration
@@ -73,7 +73,7 @@ func (o *BiosVfSelectMemoryRasConfiguration) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BiosVfSelectMemoryRasConfiguration) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *BiosVfSelectMemoryRasConfiguration) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BiosVfSelectMemoryRasConfiguration) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -351,11 +351,11 @@ func (o *BiosVfSelectMemoryRasConfiguration) UnmarshalJSON(bytes []byte) (err er
 		// Parent server serial number.
 		Serial *string `json:"Serial,omitempty"`
 		// The actual BIOS memory RAS configuration as reported by the platform BIOS. Possible values are \"maximum-performance\", \"mirror-mode-1lm\", \"adddc-sparing\", \"platform-default\", \"lockstep\", \"sparing\", \"mirroring\".
-		VpSelectMemoryRasConfiguration *string `json:"VpSelectMemoryRasConfiguration,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VpSelectMemoryRasConfiguration *string                              `json:"VpSelectMemoryRasConfiguration,omitempty"`
+		ComputeBlade                   *ComputeBladeRelationship            `json:"ComputeBlade,omitempty"`
+		ComputeRackUnit                *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+		InventoryDeviceInfo            *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice               *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varBiosVfSelectMemoryRasConfigurationWithoutEmbeddedStruct := BiosVfSelectMemoryRasConfigurationWithoutEmbeddedStruct{}
@@ -456,5 +456,3 @@ func (v *NullableBiosVfSelectMemoryRasConfiguration) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

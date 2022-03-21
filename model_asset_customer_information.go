@@ -23,12 +23,12 @@ type AssetCustomerInformation struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Address NullableAssetAddressInformation `json:"Address,omitempty"`
+	ObjectType string                          `json:"ObjectType"`
+	Address    NullableAssetAddressInformation `json:"Address,omitempty"`
 	// Unique identifier for an end customer. This identifier is allocated by Cisco.
 	Id *string `json:"Id,omitempty"`
 	// Name as per the information provided by the user.
-	Name *string `json:"Name,omitempty"`
+	Name                 *string `json:"Name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *AssetCustomerInformation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetCustomerInformation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *AssetCustomerInformation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetCustomerInformation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *AssetCustomerInformation) GetAddress() AssetAddressInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetCustomerInformation) GetAddressOk() (*AssetAddressInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address.Get(), o.Address.IsSet()
@@ -137,6 +137,7 @@ func (o *AssetCustomerInformation) HasAddress() bool {
 func (o *AssetCustomerInformation) SetAddress(v AssetAddressInformation) {
 	o.Address.Set(&v)
 }
+
 // SetAddressNil sets the value for Address to be an explicit nil
 func (o *AssetCustomerInformation) SetAddressNil() {
 	o.Address.Set(nil)
@@ -249,8 +250,8 @@ func (o *AssetCustomerInformation) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Address NullableAssetAddressInformation `json:"Address,omitempty"`
+		ObjectType string                          `json:"ObjectType"`
+		Address    NullableAssetAddressInformation `json:"Address,omitempty"`
 		// Unique identifier for an end customer. This identifier is allocated by Cisco.
 		Id *string `json:"Id,omitempty"`
 		// Name as per the information provided by the user.
@@ -349,5 +350,3 @@ func (v *NullableAssetCustomerInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

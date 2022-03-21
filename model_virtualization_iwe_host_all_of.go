@@ -26,7 +26,7 @@ type VirtualizationIweHostAllOf struct {
 	// Chassis version of the Host.
 	ChassisVersion *string `json:"ChassisVersion,omitempty"`
 	// The UUID of the cluster to which this Host belongs to.
-	ClusterUuid *string `json:"ClusterUuid,omitempty"`
+	ClusterUuid   *string                             `json:"ClusterUuid,omitempty"`
 	CpuAllocation NullableVirtualizationCpuAllocation `json:"CpuAllocation,omitempty"`
 	// Reason of the failure when host is in failed state.
 	FailureReason *string `json:"FailureReason,omitempty"`
@@ -37,16 +37,16 @@ type VirtualizationIweHostAllOf struct {
 	// Management IP Address of the Host.
 	ManagementIpAddress *string `json:"ManagementIpAddress,omitempty"`
 	// Is the role of this host is master in the cluster? true or false.
-	MasterRole *bool `json:"MasterRole,omitempty"`
+	MasterRole       *bool                                  `json:"MasterRole,omitempty"`
 	MemoryAllocation NullableVirtualizationMemoryAllocation `json:"MemoryAllocation,omitempty"`
-	StorageCapacity NullableVirtualizationStorageCapacity `json:"StorageCapacity,omitempty"`
+	StorageCapacity  NullableVirtualizationStorageCapacity  `json:"StorageCapacity,omitempty"`
 	// Is the Storage Controller VM on the host Powered-up or Powered-down. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
 	StorageVmPowerState *string `json:"StorageVmPowerState,omitempty"`
 	// Product version of the Host.
-	Version *string `json:"Version,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
-	PhysicalServer *ComputePhysicalRelationship `json:"PhysicalServer,omitempty"`
+	Version              *string                               `json:"Version,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+	ClusterMember        *AssetClusterMemberRelationship       `json:"ClusterMember,omitempty"`
+	PhysicalServer       *ComputePhysicalRelationship          `json:"PhysicalServer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *VirtualizationIweHostAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *VirtualizationIweHostAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -240,7 +240,7 @@ func (o *VirtualizationIweHostAllOf) GetCpuAllocation() VirtualizationCpuAllocat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweHostAllOf) GetCpuAllocationOk() (*VirtualizationCpuAllocation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CpuAllocation.Get(), o.CpuAllocation.IsSet()
@@ -259,6 +259,7 @@ func (o *VirtualizationIweHostAllOf) HasCpuAllocation() bool {
 func (o *VirtualizationIweHostAllOf) SetCpuAllocation(v VirtualizationCpuAllocation) {
 	o.CpuAllocation.Set(&v)
 }
+
 // SetCpuAllocationNil sets the value for CpuAllocation to be an explicit nil
 func (o *VirtualizationIweHostAllOf) SetCpuAllocationNil() {
 	o.CpuAllocation.Set(nil)
@@ -442,7 +443,7 @@ func (o *VirtualizationIweHostAllOf) GetMemoryAllocation() VirtualizationMemoryA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweHostAllOf) GetMemoryAllocationOk() (*VirtualizationMemoryAllocation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryAllocation.Get(), o.MemoryAllocation.IsSet()
@@ -461,6 +462,7 @@ func (o *VirtualizationIweHostAllOf) HasMemoryAllocation() bool {
 func (o *VirtualizationIweHostAllOf) SetMemoryAllocation(v VirtualizationMemoryAllocation) {
 	o.MemoryAllocation.Set(&v)
 }
+
 // SetMemoryAllocationNil sets the value for MemoryAllocation to be an explicit nil
 func (o *VirtualizationIweHostAllOf) SetMemoryAllocationNil() {
 	o.MemoryAllocation.Set(nil)
@@ -484,7 +486,7 @@ func (o *VirtualizationIweHostAllOf) GetStorageCapacity() VirtualizationStorageC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweHostAllOf) GetStorageCapacityOk() (*VirtualizationStorageCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageCapacity.Get(), o.StorageCapacity.IsSet()
@@ -503,6 +505,7 @@ func (o *VirtualizationIweHostAllOf) HasStorageCapacity() bool {
 func (o *VirtualizationIweHostAllOf) SetStorageCapacity(v VirtualizationStorageCapacity) {
 	o.StorageCapacity.Set(&v)
 }
+
 // SetStorageCapacityNil sets the value for StorageCapacity to be an explicit nil
 func (o *VirtualizationIweHostAllOf) SetStorageCapacityNil() {
 	o.StorageCapacity.Set(nil)
@@ -806,5 +809,3 @@ func (v *NullableVirtualizationIweHostAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,10 +25,10 @@ type OsDistribution struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the OS distribution such as ESXi, CentOS.
-	Name *string `json:"Name,omitempty"`
-	SupportedEditions []string `json:"SupportedEditions,omitempty"`
-	Catalog *OsCatalogRelationship `json:"Catalog,omitempty"`
-	Version *HclOperatingSystemRelationship `json:"Version,omitempty"`
+	Name                 *string                         `json:"Name,omitempty"`
+	SupportedEditions    []string                        `json:"SupportedEditions,omitempty"`
+	Catalog              *OsCatalogRelationship          `json:"Catalog,omitempty"`
+	Version              *HclOperatingSystemRelationship `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *OsDistribution) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsDistribution) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *OsDistribution) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsDistribution) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *OsDistribution) SetName(v string) {
 
 // GetSupportedEditions returns the SupportedEditions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsDistribution) GetSupportedEditions() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -277,10 +277,10 @@ func (o *OsDistribution) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The name of the OS distribution such as ESXi, CentOS.
-		Name *string `json:"Name,omitempty"`
-		SupportedEditions []string `json:"SupportedEditions,omitempty"`
-		Catalog *OsCatalogRelationship `json:"Catalog,omitempty"`
-		Version *HclOperatingSystemRelationship `json:"Version,omitempty"`
+		Name              *string                         `json:"Name,omitempty"`
+		SupportedEditions []string                        `json:"SupportedEditions,omitempty"`
+		Catalog           *OsCatalogRelationship          `json:"Catalog,omitempty"`
+		Version           *HclOperatingSystemRelationship `json:"Version,omitempty"`
 	}
 
 	varOsDistributionWithoutEmbeddedStruct := OsDistributionWithoutEmbeddedStruct{}
@@ -377,5 +377,3 @@ func (v *NullableOsDistribution) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

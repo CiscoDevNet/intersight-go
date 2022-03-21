@@ -18,20 +18,19 @@ import (
 
 // WorkflowPendingDynamicWorkflowInfoRelationship - A relationship to the 'workflow.PendingDynamicWorkflowInfo' resource, or the expanded 'workflow.PendingDynamicWorkflowInfo' resource, or the 'null' value.
 type WorkflowPendingDynamicWorkflowInfoRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                            *MoMoRef
 	WorkflowPendingDynamicWorkflowInfo *WorkflowPendingDynamicWorkflowInfo
 }
 
 // MoMoRefAsWorkflowPendingDynamicWorkflowInfoRelationship is a convenience function that returns MoMoRef wrapped in WorkflowPendingDynamicWorkflowInfoRelationship
 func MoMoRefAsWorkflowPendingDynamicWorkflowInfoRelationship(v *MoMoRef) WorkflowPendingDynamicWorkflowInfoRelationship {
-	return WorkflowPendingDynamicWorkflowInfoRelationship{ MoMoRef: v}
+	return WorkflowPendingDynamicWorkflowInfoRelationship{MoMoRef: v}
 }
 
 // WorkflowPendingDynamicWorkflowInfoAsWorkflowPendingDynamicWorkflowInfoRelationship is a convenience function that returns WorkflowPendingDynamicWorkflowInfo wrapped in WorkflowPendingDynamicWorkflowInfoRelationship
 func WorkflowPendingDynamicWorkflowInfoAsWorkflowPendingDynamicWorkflowInfoRelationship(v *WorkflowPendingDynamicWorkflowInfo) WorkflowPendingDynamicWorkflowInfoRelationship {
-	return WorkflowPendingDynamicWorkflowInfoRelationship{ WorkflowPendingDynamicWorkflowInfo: v}
+	return WorkflowPendingDynamicWorkflowInfoRelationship{WorkflowPendingDynamicWorkflowInfo: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowPendingDynamicWorkflowInfoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src WorkflowPendingDynamicWorkflowInfoRelationship) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *WorkflowPendingDynamicWorkflowInfoRelationship) GetActualInstance() (interface{}) {
+func (obj *WorkflowPendingDynamicWorkflowInfoRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableWorkflowPendingDynamicWorkflowInfoRelationship) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

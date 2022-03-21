@@ -23,13 +23,13 @@ type FabricSwitchClusterProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                      `json:"ObjectType"`
 	ConfigContext NullablePolicyConfigContext `json:"ConfigContext,omitempty"`
 	// Number of switch profiles that are part of this cluster profile.
-	SwitchProfilesCount *int64 `json:"SwitchProfilesCount,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	SwitchProfilesCount *int64                                `json:"SwitchProfilesCount,omitempty"`
+	Organization        *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to fabricSwitchProfile resources.
-	SwitchProfiles []FabricSwitchProfileRelationship `json:"SwitchProfiles,omitempty"`
+	SwitchProfiles       []FabricSwitchProfileRelationship `json:"SwitchProfiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *FabricSwitchClusterProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchClusterProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *FabricSwitchClusterProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricSwitchClusterProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *FabricSwitchClusterProfile) GetConfigContext() PolicyConfigContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricSwitchClusterProfile) GetConfigContextOk() (*PolicyConfigContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigContext.Get(), o.ConfigContext.IsSet()
@@ -140,6 +140,7 @@ func (o *FabricSwitchClusterProfile) HasConfigContext() bool {
 func (o *FabricSwitchClusterProfile) SetConfigContext(v PolicyConfigContext) {
 	o.ConfigContext.Set(&v)
 }
+
 // SetConfigContextNil sets the value for ConfigContext to be an explicit nil
 func (o *FabricSwitchClusterProfile) SetConfigContextNil() {
 	o.ConfigContext.Set(nil)
@@ -216,7 +217,7 @@ func (o *FabricSwitchClusterProfile) SetOrganization(v OrganizationOrganizationR
 
 // GetSwitchProfiles returns the SwitchProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricSwitchClusterProfile) GetSwitchProfiles() []FabricSwitchProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricSwitchProfileRelationship
 		return ret
 	}
@@ -288,11 +289,11 @@ func (o *FabricSwitchClusterProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType    string                      `json:"ObjectType"`
 		ConfigContext NullablePolicyConfigContext `json:"ConfigContext,omitempty"`
 		// Number of switch profiles that are part of this cluster profile.
-		SwitchProfilesCount *int64 `json:"SwitchProfilesCount,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		SwitchProfilesCount *int64                                `json:"SwitchProfilesCount,omitempty"`
+		Organization        *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to fabricSwitchProfile resources.
 		SwitchProfiles []FabricSwitchProfileRelationship `json:"SwitchProfiles,omitempty"`
 	}
@@ -391,5 +392,3 @@ func (v *NullableFabricSwitchClusterProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

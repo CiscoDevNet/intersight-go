@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceDeviceUpgradePolicy DeviceUpgradePolicy stores the current upgrade policy of the Intersight Appliances.
@@ -34,13 +34,13 @@ type ApplianceDeviceUpgradePolicy struct {
 	// Start date of the black out period. The appliance will not be upgraded during this period.
 	BlackoutStartDate *time.Time `json:"BlackoutStartDate,omitempty"`
 	// Indicates if the updated metadata files should be synced immediately or at the next upgrade.
-	EnableMetaDataSync *bool `json:"EnableMetaDataSync,omitempty"`
-	Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
+	EnableMetaDataSync *bool                  `json:"EnableMetaDataSync,omitempty"`
+	Schedule           NullableOnpremSchedule `json:"Schedule,omitempty"`
 	// SerialId of the Intersight Appliance. SerialId is generated when the Intersight Appliance is setup. It is a unique UUID string, and serialId will not change for the life time of the Intersight Appliance.
 	SerialId *string `json:"SerialId,omitempty"`
 	// UpgradeType is used to indicate the kink of software upload to upgrade. * `unknown` - Indicates user setting of upgrade service to unknown. * `connected` - Indicates if the upgrade service is set to upload software to latest version automatically. * `manual` - Indicates if the upgrade service is set to upload software to user picked verison manually.
-	SoftwareDownloadType *string `json:"SoftwareDownloadType,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SoftwareDownloadType *string                              `json:"SoftwareDownloadType,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *ApplianceDeviceUpgradePolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceUpgradePolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *ApplianceDeviceUpgradePolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDeviceUpgradePolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -298,7 +298,7 @@ func (o *ApplianceDeviceUpgradePolicy) GetSchedule() OnpremSchedule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceDeviceUpgradePolicy) GetScheduleOk() (*OnpremSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -317,6 +317,7 @@ func (o *ApplianceDeviceUpgradePolicy) HasSchedule() bool {
 func (o *ApplianceDeviceUpgradePolicy) SetSchedule(v OnpremSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *ApplianceDeviceUpgradePolicy) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -489,13 +490,13 @@ func (o *ApplianceDeviceUpgradePolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// Start date of the black out period. The appliance will not be upgraded during this period.
 		BlackoutStartDate *time.Time `json:"BlackoutStartDate,omitempty"`
 		// Indicates if the updated metadata files should be synced immediately or at the next upgrade.
-		EnableMetaDataSync *bool `json:"EnableMetaDataSync,omitempty"`
-		Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
+		EnableMetaDataSync *bool                  `json:"EnableMetaDataSync,omitempty"`
+		Schedule           NullableOnpremSchedule `json:"Schedule,omitempty"`
 		// SerialId of the Intersight Appliance. SerialId is generated when the Intersight Appliance is setup. It is a unique UUID string, and serialId will not change for the life time of the Intersight Appliance.
 		SerialId *string `json:"SerialId,omitempty"`
 		// UpgradeType is used to indicate the kink of software upload to upgrade. * `unknown` - Indicates user setting of upgrade service to unknown. * `connected` - Indicates if the upgrade service is set to upload software to latest version automatically. * `manual` - Indicates if the upgrade service is set to upload software to user picked verison manually.
-		SoftwareDownloadType *string `json:"SoftwareDownloadType,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		SoftwareDownloadType *string                              `json:"SoftwareDownloadType,omitempty"`
+		RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varApplianceDeviceUpgradePolicyWithoutEmbeddedStruct := ApplianceDeviceUpgradePolicyWithoutEmbeddedStruct{}
@@ -602,5 +603,3 @@ func (v *NullableApplianceDeviceUpgradePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

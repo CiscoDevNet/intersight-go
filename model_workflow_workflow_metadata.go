@@ -31,8 +31,8 @@ type WorkflowWorkflowMetadata struct {
 	// The name for this workflow metadata. You can have multiple versions of the workflow with the same name. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.) or an underscore (_).
 	Name *string `json:"Name,omitempty"`
 	// An array of relationships to iamRole resources.
-	AssociatedRoles []IamRoleRelationship `json:"AssociatedRoles,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
+	AssociatedRoles      []IamRoleRelationship        `json:"AssociatedRoles,omitempty"`
+	Catalog              *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *WorkflowWorkflowMetadata) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMetadata) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *WorkflowWorkflowMetadata) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowMetadata) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *WorkflowWorkflowMetadata) SetName(v string) {
 
 // GetAssociatedRoles returns the AssociatedRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowMetadata) GetAssociatedRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -322,8 +322,8 @@ func (o *WorkflowWorkflowMetadata) UnmarshalJSON(bytes []byte) (err error) {
 		// The name for this workflow metadata. You can have multiple versions of the workflow with the same name. Name can only contain letters (a-z, A-Z), numbers (0-9), hyphen (-), period (.) or an underscore (_).
 		Name *string `json:"Name,omitempty"`
 		// An array of relationships to iamRole resources.
-		AssociatedRoles []IamRoleRelationship `json:"AssociatedRoles,omitempty"`
-		Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
+		AssociatedRoles []IamRoleRelationship        `json:"AssociatedRoles,omitempty"`
+		Catalog         *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
 	}
 
 	varWorkflowWorkflowMetadataWithoutEmbeddedStruct := WorkflowWorkflowMetadataWithoutEmbeddedStruct{}
@@ -422,5 +422,3 @@ func (v *NullableWorkflowWorkflowMetadata) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

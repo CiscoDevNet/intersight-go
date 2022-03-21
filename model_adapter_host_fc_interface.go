@@ -31,7 +31,7 @@ type AdapterHostFcInterface struct {
 	// Identifier of Host Fibre Channel Interface.
 	HostFcInterfaceId *int64 `json:"HostFcInterfaceId,omitempty"`
 	// Name of Host Fibre Channel Interface.
-	Name *string `json:"Name,omitempty"`
+	Name       *string  `json:"Name,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// Operational State of Host Fibre Channel Interface.
 	OperState *string `json:"OperState,omitempty"`
@@ -46,10 +46,10 @@ type AdapterHostFcInterface struct {
 	// The uniquely distinguishable user configured World Wide Node Name of the Host.
 	Wwnn *string `json:"Wwnn,omitempty"`
 	// The uniquely distinguishable user configured World Wide Port Name of the Host Fibre Channel Interface.
-	Wwpn *string `json:"Wwpn,omitempty"`
-	AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Wwpn                 *string                              `json:"Wwpn,omitempty"`
+	AdapterUnit          *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *AdapterHostFcInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostFcInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *AdapterHostFcInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostFcInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -256,7 +256,7 @@ func (o *AdapterHostFcInterface) SetName(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterHostFcInterface) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -689,7 +689,7 @@ func (o *AdapterHostFcInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// Identifier of Host Fibre Channel Interface.
 		HostFcInterfaceId *int64 `json:"HostFcInterfaceId,omitempty"`
 		// Name of Host Fibre Channel Interface.
-		Name *string `json:"Name,omitempty"`
+		Name       *string  `json:"Name,omitempty"`
 		OperReason []string `json:"OperReason,omitempty"`
 		// Operational State of Host Fibre Channel Interface.
 		OperState *string `json:"OperState,omitempty"`
@@ -704,10 +704,10 @@ func (o *AdapterHostFcInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// The uniquely distinguishable user configured World Wide Node Name of the Host.
 		Wwnn *string `json:"Wwnn,omitempty"`
 		// The uniquely distinguishable user configured World Wide Port Name of the Host Fibre Channel Interface.
-		Wwpn *string `json:"Wwpn,omitempty"`
-		AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Wwpn                *string                              `json:"Wwpn,omitempty"`
+		AdapterUnit         *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varAdapterHostFcInterfaceWithoutEmbeddedStruct := AdapterHostFcInterfaceWithoutEmbeddedStruct{}
@@ -826,5 +826,3 @@ func (v *NullableAdapterHostFcInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // EquipmentDeviceSummaryResponse - The response body of a HTTP GET request for the 'equipment.DeviceSummary' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.DeviceSummary' resources.
 type EquipmentDeviceSummaryResponse struct {
 	EquipmentDeviceSummaryList *EquipmentDeviceSummaryList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform       *MoAggregateTransform
+	MoDocumentCount            *MoDocumentCount
+	MoTagSummary               *MoTagSummary
 }
 
 // EquipmentDeviceSummaryListAsEquipmentDeviceSummaryResponse is a convenience function that returns EquipmentDeviceSummaryList wrapped in EquipmentDeviceSummaryResponse
 func EquipmentDeviceSummaryListAsEquipmentDeviceSummaryResponse(v *EquipmentDeviceSummaryList) EquipmentDeviceSummaryResponse {
-	return EquipmentDeviceSummaryResponse{ EquipmentDeviceSummaryList: v}
+	return EquipmentDeviceSummaryResponse{EquipmentDeviceSummaryList: v}
 }
 
 // MoAggregateTransformAsEquipmentDeviceSummaryResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentDeviceSummaryResponse
 func MoAggregateTransformAsEquipmentDeviceSummaryResponse(v *MoAggregateTransform) EquipmentDeviceSummaryResponse {
-	return EquipmentDeviceSummaryResponse{ MoAggregateTransform: v}
+	return EquipmentDeviceSummaryResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentDeviceSummaryResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentDeviceSummaryResponse
 func MoDocumentCountAsEquipmentDeviceSummaryResponse(v *MoDocumentCount) EquipmentDeviceSummaryResponse {
-	return EquipmentDeviceSummaryResponse{ MoDocumentCount: v}
+	return EquipmentDeviceSummaryResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentDeviceSummaryResponse is a convenience function that returns MoTagSummary wrapped in EquipmentDeviceSummaryResponse
 func MoTagSummaryAsEquipmentDeviceSummaryResponse(v *MoTagSummary) EquipmentDeviceSummaryResponse {
-	return EquipmentDeviceSummaryResponse{ MoTagSummary: v}
+	return EquipmentDeviceSummaryResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentDeviceSummaryResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentDeviceSummaryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentDeviceSummaryResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentDeviceSummaryResponse) GetActualInstance() interface{} {
 	if obj.EquipmentDeviceSummaryList != nil {
 		return obj.EquipmentDeviceSummaryList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentDeviceSummaryResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,15 +22,15 @@ type AssetSubscriptionDeviceContractInformationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Unique identifier of the Cisco device.
-	DeviceId *string `json:"DeviceId,omitempty"`
+	DeviceId          *string                        `json:"DeviceId,omitempty"`
 	DeviceInformation NullableAssetDeviceInformation `json:"DeviceInformation,omitempty"`
 	// Product identifier for the specified Cisco device. It is used to distinguish between HyperFlex and UCS devices.
 	DevicePid *string `json:"DevicePid,omitempty"`
 	// Identifies the consumption-based subscription.
-	SubscriptionRefId *string `json:"SubscriptionRefId,omitempty"`
+	SubscriptionRefId         *string                                     `json:"SubscriptionRefId,omitempty"`
 	DeviceContractInformation *AssetDeviceContractInformationRelationship `json:"DeviceContractInformation,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice          *AssetDeviceRegistrationRelationship        `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _AssetSubscriptionDeviceContractInformationAllOf AssetSubscriptionDeviceContractInformationAllOf
@@ -71,7 +71,7 @@ func (o *AssetSubscriptionDeviceContractInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetSubscriptionDeviceContractInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *AssetSubscriptionDeviceContractInformationAllOf) GetObjectType() string
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetSubscriptionDeviceContractInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -151,7 +151,7 @@ func (o *AssetSubscriptionDeviceContractInformationAllOf) GetDeviceInformation()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetSubscriptionDeviceContractInformationAllOf) GetDeviceInformationOk() (*AssetDeviceInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeviceInformation.Get(), o.DeviceInformation.IsSet()
@@ -170,6 +170,7 @@ func (o *AssetSubscriptionDeviceContractInformationAllOf) HasDeviceInformation()
 func (o *AssetSubscriptionDeviceContractInformationAllOf) SetDeviceInformation(v AssetDeviceInformation) {
 	o.DeviceInformation.Set(&v)
 }
+
 // SetDeviceInformationNil sets the value for DeviceInformation to be an explicit nil
 func (o *AssetSubscriptionDeviceContractInformationAllOf) SetDeviceInformationNil() {
 	o.DeviceInformation.Set(nil)
@@ -401,5 +402,3 @@ func (v *NullableAssetSubscriptionDeviceContractInformationAllOf) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

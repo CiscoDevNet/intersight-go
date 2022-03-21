@@ -23,7 +23,7 @@ type HyperflexLocalCredentialPolicyList struct {
 	// The total number of 'hyperflex.LocalCredentialPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.LocalCredentialPolicy' resources matching the request.
-	Results []HyperflexLocalCredentialPolicy `json:"Results,omitempty"`
+	Results              []HyperflexLocalCredentialPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexLocalCredentialPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexLocalCredentialPolicyList) GetResults() []HyperflexLocalCredentialPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexLocalCredentialPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexLocalCredentialPolicyList) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

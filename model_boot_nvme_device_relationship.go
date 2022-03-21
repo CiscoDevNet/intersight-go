@@ -19,19 +19,18 @@ import (
 // BootNvmeDeviceRelationship - A relationship to the 'boot.NvmeDevice' resource, or the expanded 'boot.NvmeDevice' resource, or the 'null' value.
 type BootNvmeDeviceRelationship struct {
 	BootNvmeDevice *BootNvmeDevice
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // BootNvmeDeviceAsBootNvmeDeviceRelationship is a convenience function that returns BootNvmeDevice wrapped in BootNvmeDeviceRelationship
 func BootNvmeDeviceAsBootNvmeDeviceRelationship(v *BootNvmeDevice) BootNvmeDeviceRelationship {
-	return BootNvmeDeviceRelationship{ BootNvmeDevice: v}
+	return BootNvmeDeviceRelationship{BootNvmeDevice: v}
 }
 
 // MoMoRefAsBootNvmeDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootNvmeDeviceRelationship
 func MoMoRefAsBootNvmeDeviceRelationship(v *MoMoRef) BootNvmeDeviceRelationship {
-	return BootNvmeDeviceRelationship{ MoMoRef: v}
+	return BootNvmeDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootNvmeDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootNvmeDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootNvmeDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootNvmeDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootNvmeDevice != nil {
 		return obj.BootNvmeDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootNvmeDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -36,9 +36,9 @@ type VirtualizationVmwareVirtualNetworkInterfaceAllOf struct {
 	// Type of network for virtual network interface. It can be either standard or distributed.
 	NetworkType *string `json:"NetworkType,omitempty"`
 	// Identity of the virtual machine where the virtual network interface is created.
-	VmIdentity *string `json:"VmIdentity,omitempty"`
-	Network *VirtualizationBaseNetworkRelationship `json:"Network,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	VmIdentity           *string                                         `json:"VmIdentity,omitempty"`
+	Network              *VirtualizationBaseNetworkRelationship          `json:"Network,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *VirtualizationVmwareVirtualNetworkInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualNetworkInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *VirtualizationVmwareVirtualNetworkInterfaceAllOf) GetObjectType() strin
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualNetworkInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -548,5 +548,3 @@ func (v *NullableVirtualizationVmwareVirtualNetworkInterfaceAllOf) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

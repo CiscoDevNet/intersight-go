@@ -32,8 +32,8 @@ type ForecastDefinitionAllOf struct {
 	// Number of days of data queried from the data source (example Druid ) which is used as input data for computing forecast model.
 	NumOfDaysOfHistoricalData *int64 `json:"NumOfDaysOfHistoricalData,omitempty"`
 	// The platform type for which we want to compute forecast. For example HyperFlex, NetworkElement.
-	PlatformType *string `json:"PlatformType,omitempty"`
-	Catalog *ForecastCatalogRelationship `json:"Catalog,omitempty"`
+	PlatformType         *string                      `json:"PlatformType,omitempty"`
+	Catalog              *ForecastCatalogRelationship `json:"Catalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *ForecastDefinitionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ForecastDefinitionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *ForecastDefinitionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ForecastDefinitionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -431,5 +431,3 @@ func (v *NullableForecastDefinitionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

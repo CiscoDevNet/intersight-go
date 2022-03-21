@@ -22,7 +22,7 @@ type SyslogLocalClientBaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Lowest level of messages to be included in the local log. * `warning` - Use logging level warning for logs classified as warning. * `emergency` - Use logging level emergency for logs classified as emergency. * `alert` - Use logging level alert for logs classified as alert. * `critical` - Use logging level critical for logs classified as critical. * `error` - Use logging level error for logs classified as error. * `notice` - Use logging level notice for logs classified as notice. * `informational` - Use logging level informational for logs classified as informational. * `debug` - Use logging level debug for logs classified as debug.
-	MinSeverity *string `json:"MinSeverity,omitempty"`
+	MinSeverity          *string `json:"MinSeverity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *SyslogLocalClientBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SyslogLocalClientBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *SyslogLocalClientBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SyslogLocalClientBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -208,5 +208,3 @@ func (v *NullableSyslogLocalClientBaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

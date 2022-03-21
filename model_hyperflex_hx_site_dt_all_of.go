@@ -22,8 +22,8 @@ type HyperflexHxSiteDtAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Name of the site for this HyperFlex cluster.
-	Name *string `json:"Name,omitempty"`
-	Zone NullableHyperflexHxZoneInfoDt `json:"Zone,omitempty"`
+	Name                 *string                       `json:"Name,omitempty"`
+	Zone                 NullableHyperflexHxZoneInfoDt `json:"Zone,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *HyperflexHxSiteDtAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxSiteDtAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *HyperflexHxSiteDtAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxSiteDtAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -145,7 +145,7 @@ func (o *HyperflexHxSiteDtAllOf) GetZone() HyperflexHxZoneInfoDt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHxSiteDtAllOf) GetZoneOk() (*HyperflexHxZoneInfoDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Zone.Get(), o.Zone.IsSet()
@@ -164,6 +164,7 @@ func (o *HyperflexHxSiteDtAllOf) HasZone() bool {
 func (o *HyperflexHxSiteDtAllOf) SetZone(v HyperflexHxZoneInfoDt) {
 	o.Zone.Set(&v)
 }
+
 // SetZoneNil sets the value for Zone to be an explicit nil
 func (o *HyperflexHxSiteDtAllOf) SetZoneNil() {
 	o.Zone.Set(nil)
@@ -251,5 +252,3 @@ func (v *NullableHyperflexHxSiteDtAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

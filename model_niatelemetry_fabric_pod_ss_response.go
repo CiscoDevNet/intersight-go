@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryFabricPodSsResponse - The response body of a HTTP GET request for the 'niatelemetry.FabricPodSs' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.FabricPodSs' resources.
 type NiatelemetryFabricPodSsResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform        *MoAggregateTransform
+	MoDocumentCount             *MoDocumentCount
+	MoTagSummary                *MoTagSummary
 	NiatelemetryFabricPodSsList *NiatelemetryFabricPodSsList
 }
 
 // MoAggregateTransformAsNiatelemetryFabricPodSsResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryFabricPodSsResponse
 func MoAggregateTransformAsNiatelemetryFabricPodSsResponse(v *MoAggregateTransform) NiatelemetryFabricPodSsResponse {
-	return NiatelemetryFabricPodSsResponse{ MoAggregateTransform: v}
+	return NiatelemetryFabricPodSsResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryFabricPodSsResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryFabricPodSsResponse
 func MoDocumentCountAsNiatelemetryFabricPodSsResponse(v *MoDocumentCount) NiatelemetryFabricPodSsResponse {
-	return NiatelemetryFabricPodSsResponse{ MoDocumentCount: v}
+	return NiatelemetryFabricPodSsResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryFabricPodSsResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryFabricPodSsResponse
 func MoTagSummaryAsNiatelemetryFabricPodSsResponse(v *MoTagSummary) NiatelemetryFabricPodSsResponse {
-	return NiatelemetryFabricPodSsResponse{ MoTagSummary: v}
+	return NiatelemetryFabricPodSsResponse{MoTagSummary: v}
 }
 
 // NiatelemetryFabricPodSsListAsNiatelemetryFabricPodSsResponse is a convenience function that returns NiatelemetryFabricPodSsList wrapped in NiatelemetryFabricPodSsResponse
 func NiatelemetryFabricPodSsListAsNiatelemetryFabricPodSsResponse(v *NiatelemetryFabricPodSsList) NiatelemetryFabricPodSsResponse {
-	return NiatelemetryFabricPodSsResponse{ NiatelemetryFabricPodSsList: v}
+	return NiatelemetryFabricPodSsResponse{NiatelemetryFabricPodSsList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryFabricPodSsResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryFabricPodSsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryFabricPodSsResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryFabricPodSsResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryFabricPodSsResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type SearchSuggestItemListAllOf struct {
 	// The total number of 'search.SuggestItem' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'search.SuggestItem' resources matching the request.
-	Results *[]map[string]interface{} `json:"Results,omitempty"`
+	Results              *[]map[string]interface{} `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -176,5 +176,3 @@ func (v *NullableSearchSuggestItemListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // CloudAwsKeyPairRelationship - A relationship to the 'cloud.AwsKeyPair' resource, or the expanded 'cloud.AwsKeyPair' resource, or the 'null' value.
 type CloudAwsKeyPairRelationship struct {
 	CloudAwsKeyPair *CloudAwsKeyPair
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // CloudAwsKeyPairAsCloudAwsKeyPairRelationship is a convenience function that returns CloudAwsKeyPair wrapped in CloudAwsKeyPairRelationship
 func CloudAwsKeyPairAsCloudAwsKeyPairRelationship(v *CloudAwsKeyPair) CloudAwsKeyPairRelationship {
-	return CloudAwsKeyPairRelationship{ CloudAwsKeyPair: v}
+	return CloudAwsKeyPairRelationship{CloudAwsKeyPair: v}
 }
 
 // MoMoRefAsCloudAwsKeyPairRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsKeyPairRelationship
 func MoMoRefAsCloudAwsKeyPairRelationship(v *MoMoRef) CloudAwsKeyPairRelationship {
-	return CloudAwsKeyPairRelationship{ MoMoRef: v}
+	return CloudAwsKeyPairRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsKeyPairRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsKeyPairRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsKeyPairRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsKeyPairRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsKeyPair != nil {
 		return obj.CloudAwsKeyPair
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsKeyPairRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

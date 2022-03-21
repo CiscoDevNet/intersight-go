@@ -35,16 +35,16 @@ type VirtualizationVirtualNetwork struct {
 	// Name of the virtual network. Name must be unique.
 	Name *string `json:"Name,omitempty"`
 	// Type of network layer, either L2 or L3. * `unknown` - This network is of an unknown network type. * `L2` - A Layer 2 switching network type.
-	NetworkType *string `json:"NetworkType,omitempty"`
-	Trunk []string `json:"Trunk,omitempty"`
+	NetworkType *string  `json:"NetworkType,omitempty"`
+	Trunk       []string `json:"Trunk,omitempty"`
 	// A VLAN id set on the network attachment point.
 	Vlan *int64 `json:"Vlan,omitempty"`
 	// Name of the virtual switch.
-	Vswitch *string `json:"Vswitch,omitempty"`
-	Cluster *VirtualizationBaseClusterRelationship `json:"Cluster,omitempty"`
-	Inventory *VirtualizationBaseVirtualNetworkRelationship `json:"Inventory,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Vswitch              *string                                       `json:"Vswitch,omitempty"`
+	Cluster              *VirtualizationBaseClusterRelationship        `json:"Cluster,omitempty"`
+	Inventory            *VirtualizationBaseVirtualNetworkRelationship `json:"Inventory,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship             `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *VirtualizationVirtualNetwork) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualNetwork) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *VirtualizationVirtualNetwork) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualNetwork) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -319,7 +319,7 @@ func (o *VirtualizationVirtualNetwork) SetNetworkType(v string) {
 
 // GetTrunk returns the Trunk field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVirtualNetwork) GetTrunk() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -622,16 +622,16 @@ func (o *VirtualizationVirtualNetwork) UnmarshalJSON(bytes []byte) (err error) {
 		// Name of the virtual network. Name must be unique.
 		Name *string `json:"Name,omitempty"`
 		// Type of network layer, either L2 or L3. * `unknown` - This network is of an unknown network type. * `L2` - A Layer 2 switching network type.
-		NetworkType *string `json:"NetworkType,omitempty"`
-		Trunk []string `json:"Trunk,omitempty"`
+		NetworkType *string  `json:"NetworkType,omitempty"`
+		Trunk       []string `json:"Trunk,omitempty"`
 		// A VLAN id set on the network attachment point.
 		Vlan *int64 `json:"Vlan,omitempty"`
 		// Name of the virtual switch.
-		Vswitch *string `json:"Vswitch,omitempty"`
-		Cluster *VirtualizationBaseClusterRelationship `json:"Cluster,omitempty"`
-		Inventory *VirtualizationBaseVirtualNetworkRelationship `json:"Inventory,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		Vswitch          *string                                       `json:"Vswitch,omitempty"`
+		Cluster          *VirtualizationBaseClusterRelationship        `json:"Cluster,omitempty"`
+		Inventory        *VirtualizationBaseVirtualNetworkRelationship `json:"Inventory,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+		WorkflowInfo     *WorkflowWorkflowInfoRelationship             `json:"WorkflowInfo,omitempty"`
 	}
 
 	varVirtualizationVirtualNetworkWithoutEmbeddedStruct := VirtualizationVirtualNetworkWithoutEmbeddedStruct{}
@@ -746,5 +746,3 @@ func (v *NullableVirtualizationVirtualNetwork) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // WorkflowTaskInfo Task instance which represents the run time instance of a task within a workflow.
@@ -38,7 +38,7 @@ type WorkflowTaskInfo struct {
 	// Denotes whether or not this is an internal task.  Internal tasks will be hidden from the UI within a workflow.
 	Internal *bool `json:"Internal,omitempty"`
 	// User friendly short label to describe this task instance in the workflow.
-	Label *string `json:"Label,omitempty"`
+	Label   *string           `json:"Label,omitempty"`
 	Message []WorkflowMessage `json:"Message,omitempty"`
 	// Task definition name which specifies the task type.
 	Name *string `json:"Name,omitempty"`
@@ -55,12 +55,12 @@ type WorkflowTaskInfo struct {
 	// The time stamp when the task started execution.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// The status of the task and this will specify if the task is running or has reached a final state.
-	Status *string `json:"Status,omitempty"`
-	TaskInstIdList []WorkflowTaskRetryInfo `json:"TaskInstIdList,omitempty"`
-	TaskLoopInfo NullableWorkflowTaskLoopInfo `json:"TaskLoopInfo,omitempty"`
-	SubWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"SubWorkflowInfo,omitempty"`
-	TaskDefinition *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Status               *string                             `json:"Status,omitempty"`
+	TaskInstIdList       []WorkflowTaskRetryInfo             `json:"TaskInstIdList,omitempty"`
+	TaskLoopInfo         NullableWorkflowTaskLoopInfo        `json:"TaskLoopInfo,omitempty"`
+	SubWorkflowInfo      *WorkflowWorkflowInfoRelationship   `json:"SubWorkflowInfo,omitempty"`
+	TaskDefinition       *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship   `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *WorkflowTaskInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *WorkflowTaskInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -235,7 +235,7 @@ func (o *WorkflowTaskInfo) SetFailureReason(v string) {
 
 // GetInput returns the Input field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfo) GetInput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *WorkflowTaskInfo) SetLabel(v string) {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfo) GetMessage() []WorkflowMessage {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowMessage
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *WorkflowTaskInfo) SetName(v string) {
 
 // GetOutput returns the Output field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfo) GetOutput() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -654,7 +654,7 @@ func (o *WorkflowTaskInfo) SetStatus(v string) {
 
 // GetTaskInstIdList returns the TaskInstIdList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTaskInfo) GetTaskInstIdList() []WorkflowTaskRetryInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTaskRetryInfo
 		return ret
 	}
@@ -698,7 +698,7 @@ func (o *WorkflowTaskInfo) GetTaskLoopInfo() WorkflowTaskLoopInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTaskInfo) GetTaskLoopInfoOk() (*WorkflowTaskLoopInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TaskLoopInfo.Get(), o.TaskLoopInfo.IsSet()
@@ -717,6 +717,7 @@ func (o *WorkflowTaskInfo) HasTaskLoopInfo() bool {
 func (o *WorkflowTaskInfo) SetTaskLoopInfo(v WorkflowTaskLoopInfo) {
 	o.TaskLoopInfo.Set(&v)
 }
+
 // SetTaskLoopInfoNil sets the value for TaskLoopInfo to be an explicit nil
 func (o *WorkflowTaskInfo) SetTaskLoopInfoNil() {
 	o.TaskLoopInfo.Set(nil)
@@ -929,7 +930,7 @@ func (o *WorkflowTaskInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// Denotes whether or not this is an internal task.  Internal tasks will be hidden from the UI within a workflow.
 		Internal *bool `json:"Internal,omitempty"`
 		// User friendly short label to describe this task instance in the workflow.
-		Label *string `json:"Label,omitempty"`
+		Label   *string           `json:"Label,omitempty"`
 		Message []WorkflowMessage `json:"Message,omitempty"`
 		// Task definition name which specifies the task type.
 		Name *string `json:"Name,omitempty"`
@@ -946,12 +947,12 @@ func (o *WorkflowTaskInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The time stamp when the task started execution.
 		StartTime *time.Time `json:"StartTime,omitempty"`
 		// The status of the task and this will specify if the task is running or has reached a final state.
-		Status *string `json:"Status,omitempty"`
-		TaskInstIdList []WorkflowTaskRetryInfo `json:"TaskInstIdList,omitempty"`
-		TaskLoopInfo NullableWorkflowTaskLoopInfo `json:"TaskLoopInfo,omitempty"`
-		SubWorkflowInfo *WorkflowWorkflowInfoRelationship `json:"SubWorkflowInfo,omitempty"`
-		TaskDefinition *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		Status          *string                             `json:"Status,omitempty"`
+		TaskInstIdList  []WorkflowTaskRetryInfo             `json:"TaskInstIdList,omitempty"`
+		TaskLoopInfo    NullableWorkflowTaskLoopInfo        `json:"TaskLoopInfo,omitempty"`
+		SubWorkflowInfo *WorkflowWorkflowInfoRelationship   `json:"SubWorkflowInfo,omitempty"`
+		TaskDefinition  *WorkflowTaskDefinitionRelationship `json:"TaskDefinition,omitempty"`
+		WorkflowInfo    *WorkflowWorkflowInfoRelationship   `json:"WorkflowInfo,omitempty"`
 	}
 
 	varWorkflowTaskInfoWithoutEmbeddedStruct := WorkflowTaskInfoWithoutEmbeddedStruct{}
@@ -1082,5 +1083,3 @@ func (v *NullableWorkflowTaskInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

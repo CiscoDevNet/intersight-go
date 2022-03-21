@@ -27,7 +27,7 @@ type EquipmentFanModule struct {
 	// This field is to provide description for the fan module.
 	Description *string `json:"Description,omitempty"`
 	// This field acts as the identifier for this particular Module, within the Fabric Interconnect.
-	ModuleId *int64 `json:"ModuleId,omitempty"`
+	ModuleId   *int64   `json:"ModuleId,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// This field is used to indicate this fan module's operational state.
 	OperState *string `json:"OperState,omitempty"`
@@ -40,17 +40,17 @@ type EquipmentFanModule struct {
 	// Tray identifier for the fan module.
 	TrayId *int64 `json:"TrayId,omitempty"`
 	// This field identifies the Vendor ID for this Fan Module.
-	Vid *string `json:"Vid,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
+	Vid                     *string                              `json:"Vid,omitempty"`
+	ComputeRackUnit         *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+	EquipmentChassis        *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
 	EquipmentExpanderModule *EquipmentExpanderModuleRelationship `json:"EquipmentExpanderModule,omitempty"`
-	EquipmentIoCard *EquipmentIoCardRelationship `json:"EquipmentIoCard,omitempty"`
-	EquipmentRackEnclosure *EquipmentRackEnclosureRelationship `json:"EquipmentRackEnclosure,omitempty"`
+	EquipmentIoCard         *EquipmentIoCardRelationship         `json:"EquipmentIoCard,omitempty"`
+	EquipmentRackEnclosure  *EquipmentRackEnclosureRelationship  `json:"EquipmentRackEnclosure,omitempty"`
 	// An array of relationships to equipmentFan resources.
-	Fans []EquipmentFanRelationship `json:"Fans,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Fans                 []EquipmentFanRelationship           `json:"Fans,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *EquipmentFanModule) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanModule) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *EquipmentFanModule) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanModule) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -193,7 +193,7 @@ func (o *EquipmentFanModule) SetModuleId(v int64) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFanModule) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -578,7 +578,7 @@ func (o *EquipmentFanModule) SetEquipmentRackEnclosure(v EquipmentRackEnclosureR
 
 // GetFans returns the Fans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFanModule) GetFans() []EquipmentFanRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanRelationship
 		return ret
 	}
@@ -792,7 +792,7 @@ func (o *EquipmentFanModule) UnmarshalJSON(bytes []byte) (err error) {
 		// This field is to provide description for the fan module.
 		Description *string `json:"Description,omitempty"`
 		// This field acts as the identifier for this particular Module, within the Fabric Interconnect.
-		ModuleId *int64 `json:"ModuleId,omitempty"`
+		ModuleId   *int64   `json:"ModuleId,omitempty"`
 		OperReason []string `json:"OperReason,omitempty"`
 		// This field is used to indicate this fan module's operational state.
 		OperState *string `json:"OperState,omitempty"`
@@ -805,17 +805,17 @@ func (o *EquipmentFanModule) UnmarshalJSON(bytes []byte) (err error) {
 		// Tray identifier for the fan module.
 		TrayId *int64 `json:"TrayId,omitempty"`
 		// This field identifies the Vendor ID for this Fan Module.
-		Vid *string `json:"Vid,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
+		Vid                     *string                              `json:"Vid,omitempty"`
+		ComputeRackUnit         *ComputeRackUnitRelationship         `json:"ComputeRackUnit,omitempty"`
+		EquipmentChassis        *EquipmentChassisRelationship        `json:"EquipmentChassis,omitempty"`
 		EquipmentExpanderModule *EquipmentExpanderModuleRelationship `json:"EquipmentExpanderModule,omitempty"`
-		EquipmentIoCard *EquipmentIoCardRelationship `json:"EquipmentIoCard,omitempty"`
-		EquipmentRackEnclosure *EquipmentRackEnclosureRelationship `json:"EquipmentRackEnclosure,omitempty"`
+		EquipmentIoCard         *EquipmentIoCardRelationship         `json:"EquipmentIoCard,omitempty"`
+		EquipmentRackEnclosure  *EquipmentRackEnclosureRelationship  `json:"EquipmentRackEnclosure,omitempty"`
 		// An array of relationships to equipmentFan resources.
-		Fans []EquipmentFanRelationship `json:"Fans,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Fans                []EquipmentFanRelationship           `json:"Fans,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		NetworkElement      *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varEquipmentFanModuleWithoutEmbeddedStruct := EquipmentFanModuleWithoutEmbeddedStruct{}
@@ -940,5 +940,3 @@ func (v *NullableEquipmentFanModule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

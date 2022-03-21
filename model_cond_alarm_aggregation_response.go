@@ -19,31 +19,30 @@ import (
 // CondAlarmAggregationResponse - The response body of a HTTP GET request for the 'cond.AlarmAggregation' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'cond.AlarmAggregation' resources.
 type CondAlarmAggregationResponse struct {
 	CondAlarmAggregationList *CondAlarmAggregationList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // CondAlarmAggregationListAsCondAlarmAggregationResponse is a convenience function that returns CondAlarmAggregationList wrapped in CondAlarmAggregationResponse
 func CondAlarmAggregationListAsCondAlarmAggregationResponse(v *CondAlarmAggregationList) CondAlarmAggregationResponse {
-	return CondAlarmAggregationResponse{ CondAlarmAggregationList: v}
+	return CondAlarmAggregationResponse{CondAlarmAggregationList: v}
 }
 
 // MoAggregateTransformAsCondAlarmAggregationResponse is a convenience function that returns MoAggregateTransform wrapped in CondAlarmAggregationResponse
 func MoAggregateTransformAsCondAlarmAggregationResponse(v *MoAggregateTransform) CondAlarmAggregationResponse {
-	return CondAlarmAggregationResponse{ MoAggregateTransform: v}
+	return CondAlarmAggregationResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCondAlarmAggregationResponse is a convenience function that returns MoDocumentCount wrapped in CondAlarmAggregationResponse
 func MoDocumentCountAsCondAlarmAggregationResponse(v *MoDocumentCount) CondAlarmAggregationResponse {
-	return CondAlarmAggregationResponse{ MoDocumentCount: v}
+	return CondAlarmAggregationResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCondAlarmAggregationResponse is a convenience function that returns MoTagSummary wrapped in CondAlarmAggregationResponse
 func MoTagSummaryAsCondAlarmAggregationResponse(v *MoTagSummary) CondAlarmAggregationResponse {
-	return CondAlarmAggregationResponse{ MoTagSummary: v}
+	return CondAlarmAggregationResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CondAlarmAggregationResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CondAlarmAggregationResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CondAlarmAggregationResponse) GetActualInstance() (interface{}) {
+func (obj *CondAlarmAggregationResponse) GetActualInstance() interface{} {
 	if obj.CondAlarmAggregationList != nil {
 		return obj.CondAlarmAggregationList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCondAlarmAggregationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

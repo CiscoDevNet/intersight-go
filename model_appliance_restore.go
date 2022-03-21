@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceRestore Restore tracks requests to restore the Intersight Appliance. There will be only one Restore managed object with a 'Started' state at any time. All other Restore managed objects will be in terminal states.
@@ -30,15 +30,15 @@ type ApplianceRestore struct {
 	// End date and time of the restore process.
 	EndTime *time.Time `json:"EndTime,omitempty"`
 	// Indicates whether the value of the 'password' property has been set.
-	IsPasswordSet *bool `json:"IsPasswordSet,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	IsPasswordSet *bool    `json:"IsPasswordSet,omitempty"`
+	Messages      []string `json:"Messages,omitempty"`
 	// Password for authenticating with the file server.
 	Password *string `json:"Password,omitempty"`
 	// Start date and time of the restore process.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// Status of the restore managed object. * `Started` - Backup or restore process has started. * `Created` - Backup or restore is in created state. * `Failed` - Backup or restore process has failed. * `Completed` - Backup or restore process has completed. * `Copied` - Backup file has been copied.
-	Status *string `json:"Status,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Status               *string                 `json:"Status,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *ApplianceRestore) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceRestore) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *ApplianceRestore) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceRestore) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -215,7 +215,7 @@ func (o *ApplianceRestore) SetIsPasswordSet(v bool) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceRestore) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -433,14 +433,14 @@ func (o *ApplianceRestore) UnmarshalJSON(bytes []byte) (err error) {
 		// End date and time of the restore process.
 		EndTime *time.Time `json:"EndTime,omitempty"`
 		// Indicates whether the value of the 'password' property has been set.
-		IsPasswordSet *bool `json:"IsPasswordSet,omitempty"`
-		Messages []string `json:"Messages,omitempty"`
+		IsPasswordSet *bool    `json:"IsPasswordSet,omitempty"`
+		Messages      []string `json:"Messages,omitempty"`
 		// Password for authenticating with the file server.
 		Password *string `json:"Password,omitempty"`
 		// Start date and time of the restore process.
 		StartTime *time.Time `json:"StartTime,omitempty"`
 		// Status of the restore managed object. * `Started` - Backup or restore process has started. * `Created` - Backup or restore is in created state. * `Failed` - Backup or restore process has failed. * `Completed` - Backup or restore process has completed. * `Copied` - Backup file has been copied.
-		Status *string `json:"Status,omitempty"`
+		Status  *string                 `json:"Status,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -546,5 +546,3 @@ func (v *NullableApplianceRestore) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

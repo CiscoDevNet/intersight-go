@@ -19,19 +19,18 @@ import (
 // CloudAwsVpcRelationship - A relationship to the 'cloud.AwsVpc' resource, or the expanded 'cloud.AwsVpc' resource, or the 'null' value.
 type CloudAwsVpcRelationship struct {
 	CloudAwsVpc *CloudAwsVpc
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 }
 
 // CloudAwsVpcAsCloudAwsVpcRelationship is a convenience function that returns CloudAwsVpc wrapped in CloudAwsVpcRelationship
 func CloudAwsVpcAsCloudAwsVpcRelationship(v *CloudAwsVpc) CloudAwsVpcRelationship {
-	return CloudAwsVpcRelationship{ CloudAwsVpc: v}
+	return CloudAwsVpcRelationship{CloudAwsVpc: v}
 }
 
 // MoMoRefAsCloudAwsVpcRelationship is a convenience function that returns MoMoRef wrapped in CloudAwsVpcRelationship
 func MoMoRefAsCloudAwsVpcRelationship(v *MoMoRef) CloudAwsVpcRelationship {
-	return CloudAwsVpcRelationship{ MoMoRef: v}
+	return CloudAwsVpcRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudAwsVpcRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudAwsVpcRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudAwsVpcRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudAwsVpcRelationship) GetActualInstance() interface{} {
 	if obj.CloudAwsVpc != nil {
 		return obj.CloudAwsVpc
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudAwsVpcRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

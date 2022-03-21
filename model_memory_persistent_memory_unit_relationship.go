@@ -19,19 +19,18 @@ import (
 // MemoryPersistentMemoryUnitRelationship - A relationship to the 'memory.PersistentMemoryUnit' resource, or the expanded 'memory.PersistentMemoryUnit' resource, or the 'null' value.
 type MemoryPersistentMemoryUnitRelationship struct {
 	MemoryPersistentMemoryUnit *MemoryPersistentMemoryUnit
-	MoMoRef *MoMoRef
+	MoMoRef                    *MoMoRef
 }
 
 // MemoryPersistentMemoryUnitAsMemoryPersistentMemoryUnitRelationship is a convenience function that returns MemoryPersistentMemoryUnit wrapped in MemoryPersistentMemoryUnitRelationship
 func MemoryPersistentMemoryUnitAsMemoryPersistentMemoryUnitRelationship(v *MemoryPersistentMemoryUnit) MemoryPersistentMemoryUnitRelationship {
-	return MemoryPersistentMemoryUnitRelationship{ MemoryPersistentMemoryUnit: v}
+	return MemoryPersistentMemoryUnitRelationship{MemoryPersistentMemoryUnit: v}
 }
 
 // MoMoRefAsMemoryPersistentMemoryUnitRelationship is a convenience function that returns MoMoRef wrapped in MemoryPersistentMemoryUnitRelationship
 func MoMoRefAsMemoryPersistentMemoryUnitRelationship(v *MoMoRef) MemoryPersistentMemoryUnitRelationship {
-	return MemoryPersistentMemoryUnitRelationship{ MoMoRef: v}
+	return MemoryPersistentMemoryUnitRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryPersistentMemoryUnitRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryPersistentMemoryUnitRelationship) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *MemoryPersistentMemoryUnitRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryPersistentMemoryUnitRelationship) GetActualInstance() interface{} {
 	if obj.MemoryPersistentMemoryUnit != nil {
 		return obj.MemoryPersistentMemoryUnit
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryPersistentMemoryUnitRelationship) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

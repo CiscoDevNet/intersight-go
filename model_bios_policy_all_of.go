@@ -800,10 +800,10 @@ type BiosPolicyAllOf struct {
 	// BIOS Token for setting XPT Prefetch configuration. * `platform-default` - Default value used by the platform for the BIOS setting. * `Auto` - Value - Auto for configuring XptPrefetch token. * `disabled` - Value - disabled for configuring XptPrefetch token. * `enabled` - Value - enabled for configuring XptPrefetch token.
 	XptPrefetch *string `json:"XptPrefetch,omitempty"`
 	// BIOS Token for setting XPT Remote Prefetch configuration. * `platform-default` - Default value used by the platform for the BIOS setting. * `Auto` - Value - Auto for configuring XptRemotePrefetch token. * `disabled` - Value - disabled for configuring XptRemotePrefetch token. * `enabled` - Value - enabled for configuring XptRemotePrefetch token.
-	XptRemotePrefetch *string `json:"XptRemotePrefetch,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	XptRemotePrefetch *string                               `json:"XptRemotePrefetch,omitempty"`
+	Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -2405,7 +2405,7 @@ func (o *BiosPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BiosPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -2429,7 +2429,7 @@ func (o *BiosPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BiosPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -14954,7 +14954,7 @@ func (o *BiosPolicyAllOf) SetOrganization(v OrganizationOrganizationRelationship
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BiosPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -16622,5 +16622,3 @@ func (v *NullableBiosPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

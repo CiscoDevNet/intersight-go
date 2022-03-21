@@ -24,9 +24,9 @@ type WorkflowCliCommandAllOf struct {
 	// The command to run on the device connector.
 	Command *string `json:"Command,omitempty"`
 	// The regex string that identifies the end of the command response.
-	EndPrompt *string `json:"EndPrompt,omitempty"`
-	ExpectPrompts []WorkflowExpectPrompt `json:"ExpectPrompts,omitempty"`
-	ExpectedExitCodes []int64 `json:"ExpectedExitCodes,omitempty"`
+	EndPrompt         *string                `json:"EndPrompt,omitempty"`
+	ExpectPrompts     []WorkflowExpectPrompt `json:"ExpectPrompts,omitempty"`
+	ExpectedExitCodes []int64                `json:"ExpectedExitCodes,omitempty"`
 	// Skips the execution status check of the terminal command. One use case for this is while exiting the terminal session from esxi host.
 	SkipStatusCheck *bool `json:"SkipStatusCheck,omitempty"`
 	// If this flag is set, it marks the end of the terminal session where the previous commands were executed.
@@ -34,7 +34,7 @@ type WorkflowCliCommandAllOf struct {
 	// If this flag is set, the execution of this command initiates a terminal session in which the subsequent CLI commands are executed until a command with terminalEnd flag is encountered or the end of the batch.
 	TerminalStart *bool `json:"TerminalStart,omitempty"`
 	// The type of the command - can be interactive or non-interactive. * `NonInteractive` - The CLI command is not an interactive command. * `Interactive` - The CLI command is executed in interactive mode and the command must provide the expects andanswers.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *WorkflowCliCommandAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCliCommandAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *WorkflowCliCommandAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCliCommandAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -181,7 +181,7 @@ func (o *WorkflowCliCommandAllOf) SetEndPrompt(v string) {
 
 // GetExpectPrompts returns the ExpectPrompts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowCliCommandAllOf) GetExpectPrompts() []WorkflowExpectPrompt {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowExpectPrompt
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *WorkflowCliCommandAllOf) SetExpectPrompts(v []WorkflowExpectPrompt) {
 
 // GetExpectedExitCodes returns the ExpectedExitCodes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowCliCommandAllOf) GetExpectedExitCodes() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -474,5 +474,3 @@ func (v *NullableWorkflowCliCommandAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

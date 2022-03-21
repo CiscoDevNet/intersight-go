@@ -22,8 +22,8 @@ type HyperflexHxZoneResiliencyInfoDtAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the availability zone.
-	Name *string `json:"Name,omitempty"`
-	ResiliencyInfo NullableHyperflexHxResiliencyInfoDt `json:"ResiliencyInfo,omitempty"`
+	Name                 *string                             `json:"Name,omitempty"`
+	ResiliencyInfo       NullableHyperflexHxResiliencyInfoDt `json:"ResiliencyInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -145,7 +145,7 @@ func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetResiliencyInfo() HyperflexHxRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHxZoneResiliencyInfoDtAllOf) GetResiliencyInfoOk() (*HyperflexHxResiliencyInfoDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResiliencyInfo.Get(), o.ResiliencyInfo.IsSet()
@@ -164,6 +164,7 @@ func (o *HyperflexHxZoneResiliencyInfoDtAllOf) HasResiliencyInfo() bool {
 func (o *HyperflexHxZoneResiliencyInfoDtAllOf) SetResiliencyInfo(v HyperflexHxResiliencyInfoDt) {
 	o.ResiliencyInfo.Set(&v)
 }
+
 // SetResiliencyInfoNil sets the value for ResiliencyInfo to be an explicit nil
 func (o *HyperflexHxZoneResiliencyInfoDtAllOf) SetResiliencyInfoNil() {
 	o.ResiliencyInfo.Set(nil)
@@ -251,5 +252,3 @@ func (v *NullableHyperflexHxZoneResiliencyInfoDtAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

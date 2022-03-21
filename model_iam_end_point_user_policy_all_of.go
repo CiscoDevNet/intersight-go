@@ -20,13 +20,13 @@ type IamEndPointUserPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType         string                                `json:"ObjectType"`
 	PasswordProperties NullableIamEndPointPasswordProperties `json:"PasswordProperties,omitempty"`
 	// An array of relationships to iamEndPointUserRole resources.
-	EndPointUserRoles []IamEndPointUserRoleRelationship `json:"EndPointUserRoles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	EndPointUserRoles []IamEndPointUserRoleRelationship     `json:"EndPointUserRoles,omitempty"`
+	Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *IamEndPointUserPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *IamEndPointUserPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *IamEndPointUserPolicyAllOf) GetPasswordProperties() IamEndPointPassword
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamEndPointUserPolicyAllOf) GetPasswordPropertiesOk() (*IamEndPointPasswordProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PasswordProperties.Get(), o.PasswordProperties.IsSet()
@@ -135,6 +135,7 @@ func (o *IamEndPointUserPolicyAllOf) HasPasswordProperties() bool {
 func (o *IamEndPointUserPolicyAllOf) SetPasswordProperties(v IamEndPointPasswordProperties) {
 	o.PasswordProperties.Set(&v)
 }
+
 // SetPasswordPropertiesNil sets the value for PasswordProperties to be an explicit nil
 func (o *IamEndPointUserPolicyAllOf) SetPasswordPropertiesNil() {
 	o.PasswordProperties.Set(nil)
@@ -147,7 +148,7 @@ func (o *IamEndPointUserPolicyAllOf) UnsetPasswordProperties() {
 
 // GetEndPointUserRoles returns the EndPointUserRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserPolicyAllOf) GetEndPointUserRoles() []IamEndPointUserRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointUserRoleRelationship
 		return ret
 	}
@@ -212,7 +213,7 @@ func (o *IamEndPointUserPolicyAllOf) SetOrganization(v OrganizationOrganizationR
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserPolicyAllOf) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -328,5 +329,3 @@ func (v *NullableIamEndPointUserPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

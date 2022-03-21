@@ -19,19 +19,18 @@ import (
 // HyperflexHealthRelationship - A relationship to the 'hyperflex.Health' resource, or the expanded 'hyperflex.Health' resource, or the 'null' value.
 type HyperflexHealthRelationship struct {
 	HyperflexHealth *HyperflexHealth
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // HyperflexHealthAsHyperflexHealthRelationship is a convenience function that returns HyperflexHealth wrapped in HyperflexHealthRelationship
 func HyperflexHealthAsHyperflexHealthRelationship(v *HyperflexHealth) HyperflexHealthRelationship {
-	return HyperflexHealthRelationship{ HyperflexHealth: v}
+	return HyperflexHealthRelationship{HyperflexHealth: v}
 }
 
 // MoMoRefAsHyperflexHealthRelationship is a convenience function that returns MoMoRef wrapped in HyperflexHealthRelationship
 func MoMoRefAsHyperflexHealthRelationship(v *MoMoRef) HyperflexHealthRelationship {
-	return HyperflexHealthRelationship{ MoMoRef: v}
+	return HyperflexHealthRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexHealthRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexHealthRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexHealthRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexHealthRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexHealth != nil {
 		return obj.HyperflexHealth
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexHealthRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

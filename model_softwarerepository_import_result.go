@@ -27,7 +27,7 @@ type SoftwarerepositoryImportResult struct {
 	// The reason for the failure of an import operation, if applicable.
 	ErrorMessage *string `json:"ErrorMessage,omitempty"`
 	// The progress percentage for the import operation.
-	Progress *int64 `json:"Progress,omitempty"`
+	Progress             *int64 `json:"Progress,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *SoftwarerepositoryImportResult) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryImportResult) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *SoftwarerepositoryImportResult) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryImportResult) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableSoftwarerepositoryImportResult) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

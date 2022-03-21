@@ -20,10 +20,10 @@ type KubernetesEthernetAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Matcher NullableKubernetesEthernetMatcher `json:"Matcher,omitempty"`
+	ObjectType string                            `json:"ObjectType"`
+	Matcher    NullableKubernetesEthernetMatcher `json:"Matcher,omitempty"`
 	// If the infrastructure network is selectable, this indicates which network to attach to the port.
-	ProviderName *string `json:"ProviderName,omitempty"`
+	ProviderName         *string `json:"ProviderName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *KubernetesEthernetAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEthernetAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *KubernetesEthernetAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesEthernetAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -113,7 +113,7 @@ func (o *KubernetesEthernetAllOf) GetMatcher() KubernetesEthernetMatcher {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesEthernetAllOf) GetMatcherOk() (*KubernetesEthernetMatcher, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Matcher.Get(), o.Matcher.IsSet()
@@ -132,6 +132,7 @@ func (o *KubernetesEthernetAllOf) HasMatcher() bool {
 func (o *KubernetesEthernetAllOf) SetMatcher(v KubernetesEthernetMatcher) {
 	o.Matcher.Set(&v)
 }
+
 // SetMatcherNil sets the value for Matcher to be an explicit nil
 func (o *KubernetesEthernetAllOf) SetMatcherNil() {
 	o.Matcher.Set(nil)
@@ -251,5 +252,3 @@ func (v *NullableKubernetesEthernetAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

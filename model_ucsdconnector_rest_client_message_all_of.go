@@ -28,7 +28,7 @@ type UcsdconnectorRestClientMessageAllOf struct {
 	// REST Method, should be set to one of [HTTP.MethodGet, HTTP.MethodPost].
 	Method *string `json:"Method,omitempty"`
 	// REST URL endpoint to which the HTTP request is sent.
-	RestUrl *string `json:"RestUrl,omitempty"`
+	RestUrl              *string `json:"RestUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *UcsdconnectorRestClientMessageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *UcsdconnectorRestClientMessageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *UcsdconnectorRestClientMessageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *UcsdconnectorRestClientMessageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *UcsdconnectorRestClientMessageAllOf) SetBody(v string) {
 
 // GetHeader returns the Header field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UcsdconnectorRestClientMessageAllOf) GetHeader() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -319,5 +319,3 @@ func (v *NullableUcsdconnectorRestClientMessageAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

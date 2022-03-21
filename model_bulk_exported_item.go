@@ -27,8 +27,8 @@ type BulkExportedItem struct {
 	// Specifies whether tags must be exported for item MO.
 	ExportTags *bool `json:"ExportTags,omitempty"`
 	// Name of the file corresponding to item MO.
-	FileName *string `json:"FileName,omitempty"`
-	Item *MoMoRef `json:"Item,omitempty"`
+	FileName *string  `json:"FileName,omitempty"`
+	Item     *MoMoRef `json:"Item,omitempty"`
 	// MO item identity (the moref corresponding to item) expressed as a string.
 	Name *string `json:"Name,omitempty"`
 	// Name of the service that owns the item MO.
@@ -38,11 +38,11 @@ type BulkExportedItem struct {
 	// Status of the item's export operation. * `` - The operation has not started. * `ValidationInProgress` - The validation operation is in progress. * `Valid` - The content to be imported is valid. * `InValid` - The content to be imported is not valid and the status message will have the reason. * `InProgress` - The operation is in progress. * `Success` - The operation has succeeded. * `Failed` - The operation has failed. * `RollBackInitiated` - The rollback has been inititiated for import failure. * `RollBackFailed` - The rollback has failed for import failure. * `RollbackCompleted` - The rollback has completed for import failure. * `RollbackAborted` - The rollback has been aborted for import failure. * `OperationTimedOut` - The operation has timed out. * `OperationCancelled` - The operation has been cancelled. * `CancelInProgress` - The operation is being cancelled.
 	Status *string `json:"Status,omitempty"`
 	// Progress or error message for the MO's export operation.
-	StatusMessage *string `json:"StatusMessage,omitempty"`
-	Export *BulkExportRelationship `json:"Export,omitempty"`
-	ParentItem *BulkExportedItemRelationship `json:"ParentItem,omitempty"`
+	StatusMessage *string                       `json:"StatusMessage,omitempty"`
+	Export        *BulkExportRelationship       `json:"Export,omitempty"`
+	ParentItem    *BulkExportedItemRelationship `json:"ParentItem,omitempty"`
 	// An array of relationships to bulkExportedItem resources.
-	RelatedItems []BulkExportedItemRelationship `json:"RelatedItems,omitempty"`
+	RelatedItems         []BulkExportedItemRelationship `json:"RelatedItems,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *BulkExportedItem) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BulkExportedItem) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *BulkExportedItem) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BulkExportedItem) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -441,7 +441,7 @@ func (o *BulkExportedItem) SetParentItem(v BulkExportedItemRelationship) {
 
 // GetRelatedItems returns the RelatedItems field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BulkExportedItem) GetRelatedItems() []BulkExportedItemRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BulkExportedItemRelationship
 		return ret
 	}
@@ -538,8 +538,8 @@ func (o *BulkExportedItem) UnmarshalJSON(bytes []byte) (err error) {
 		// Specifies whether tags must be exported for item MO.
 		ExportTags *bool `json:"ExportTags,omitempty"`
 		// Name of the file corresponding to item MO.
-		FileName *string `json:"FileName,omitempty"`
-		Item *MoMoRef `json:"Item,omitempty"`
+		FileName *string  `json:"FileName,omitempty"`
+		Item     *MoMoRef `json:"Item,omitempty"`
 		// MO item identity (the moref corresponding to item) expressed as a string.
 		Name *string `json:"Name,omitempty"`
 		// Name of the service that owns the item MO.
@@ -549,9 +549,9 @@ func (o *BulkExportedItem) UnmarshalJSON(bytes []byte) (err error) {
 		// Status of the item's export operation. * `` - The operation has not started. * `ValidationInProgress` - The validation operation is in progress. * `Valid` - The content to be imported is valid. * `InValid` - The content to be imported is not valid and the status message will have the reason. * `InProgress` - The operation is in progress. * `Success` - The operation has succeeded. * `Failed` - The operation has failed. * `RollBackInitiated` - The rollback has been inititiated for import failure. * `RollBackFailed` - The rollback has failed for import failure. * `RollbackCompleted` - The rollback has completed for import failure. * `RollbackAborted` - The rollback has been aborted for import failure. * `OperationTimedOut` - The operation has timed out. * `OperationCancelled` - The operation has been cancelled. * `CancelInProgress` - The operation is being cancelled.
 		Status *string `json:"Status,omitempty"`
 		// Progress or error message for the MO's export operation.
-		StatusMessage *string `json:"StatusMessage,omitempty"`
-		Export *BulkExportRelationship `json:"Export,omitempty"`
-		ParentItem *BulkExportedItemRelationship `json:"ParentItem,omitempty"`
+		StatusMessage *string                       `json:"StatusMessage,omitempty"`
+		Export        *BulkExportRelationship       `json:"Export,omitempty"`
+		ParentItem    *BulkExportedItemRelationship `json:"ParentItem,omitempty"`
 		// An array of relationships to bulkExportedItem resources.
 		RelatedItems []BulkExportedItemRelationship `json:"RelatedItems,omitempty"`
 	}
@@ -664,5 +664,3 @@ func (v *NullableBulkExportedItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

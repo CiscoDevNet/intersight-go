@@ -44,14 +44,14 @@ type EquipmentSwitchCardAllOf struct {
 	// The Thermal status of the fabric interconnect. * `unknown` - The default state of the sensor (in case no data is received). * `ok` - State of the sensor indicating the sensor's temperature range is okay. * `upper-non-recoverable` - State of the sensor indicating that the temperature is extremely high above normal range. * `upper-critical` - State of the sensor indicating that the temperature is above normal range. * `upper-non-critical` - State of the sensor indicating that the temperature is a little above the normal range. * `lower-non-critical` - State of the sensor indicating that the temperature is a little below the normal range. * `lower-critical` - State of the sensor indicating that the temperature is below normal range. * `lower-non-recoverable` - State of the sensor indicating that the temperature is extremely below normal range.
 	Thermal *string `json:"Thermal,omitempty"`
 	// An array of relationships to fcPortChannel resources.
-	FcPortChannels []FcPortChannelRelationship `json:"FcPortChannels,omitempty"`
+	FcPortChannels      []FcPortChannelRelationship      `json:"FcPortChannels,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+	NetworkElement      *NetworkElementRelationship      `json:"NetworkElement,omitempty"`
 	// An array of relationships to etherPortChannel resources.
 	PortChannels []EtherPortChannelRelationship `json:"PortChannels,omitempty"`
 	// An array of relationships to portGroup resources.
-	PortGroups []PortGroupRelationship `json:"PortGroups,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	PortGroups           []PortGroupRelationship              `json:"PortGroups,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *EquipmentSwitchCardAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSwitchCardAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *EquipmentSwitchCardAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentSwitchCardAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -486,7 +486,7 @@ func (o *EquipmentSwitchCardAllOf) SetThermal(v string) {
 
 // GetFcPortChannels returns the FcPortChannels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentSwitchCardAllOf) GetFcPortChannels() []FcPortChannelRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FcPortChannelRelationship
 		return ret
 	}
@@ -583,7 +583,7 @@ func (o *EquipmentSwitchCardAllOf) SetNetworkElement(v NetworkElementRelationshi
 
 // GetPortChannels returns the PortChannels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentSwitchCardAllOf) GetPortChannels() []EtherPortChannelRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EtherPortChannelRelationship
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *EquipmentSwitchCardAllOf) SetPortChannels(v []EtherPortChannelRelations
 
 // GetPortGroups returns the PortGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentSwitchCardAllOf) GetPortGroups() []PortGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PortGroupRelationship
 		return ret
 	}
@@ -816,5 +816,3 @@ func (v *NullableEquipmentSwitchCardAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

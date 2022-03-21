@@ -29,11 +29,11 @@ var (
 type KubernetesApiService service
 
 type ApiCreateKubernetesAciCniApicRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                  _context.Context
+	ApiService           *KubernetesApiService
 	kubernetesAciCniApic *KubernetesAciCniApic
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;kubernetes.AciCniApic&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateKubernetesAciCniApicRequest) KubernetesAciCniApic(kubernetesAci
 	r.kubernetesAciCniApic = &kubernetesAciCniApic
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAciCniApicRequest) IfMatch(ifMatch string) ApiCreateKubernetesAciCniApicRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAciCniApicRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAciCniApicRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -67,7 +69,7 @@ Deprecated
 func (a *KubernetesApiService) CreateKubernetesAciCniApic(ctx _context.Context) ApiCreateKubernetesAciCniApicRequest {
 	return ApiCreateKubernetesAciCniApicRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -185,13 +187,13 @@ func (a *KubernetesApiService) CreateKubernetesAciCniApicExecute(r ApiCreateKube
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -208,11 +210,11 @@ func (a *KubernetesApiService) CreateKubernetesAciCniApicExecute(r ApiCreateKube
 }
 
 type ApiCreateKubernetesAciCniProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
 	kubernetesAciCniProfile *KubernetesAciCniProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;kubernetes.AciCniProfile&#39; resource to create.
@@ -220,11 +222,13 @@ func (r ApiCreateKubernetesAciCniProfileRequest) KubernetesAciCniProfile(kuberne
 	r.kubernetesAciCniProfile = &kubernetesAciCniProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAciCniProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesAciCniProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAciCniProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAciCniProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -246,7 +250,7 @@ Deprecated
 func (a *KubernetesApiService) CreateKubernetesAciCniProfile(ctx _context.Context) ApiCreateKubernetesAciCniProfileRequest {
 	return ApiCreateKubernetesAciCniProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -364,13 +368,13 @@ func (a *KubernetesApiService) CreateKubernetesAciCniProfileExecute(r ApiCreateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -387,11 +391,11 @@ func (a *KubernetesApiService) CreateKubernetesAciCniProfileExecute(r ApiCreateK
 }
 
 type ApiCreateKubernetesAciCniTenantClusterAllocationRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                                     _context.Context
+	ApiService                              *KubernetesApiService
 	kubernetesAciCniTenantClusterAllocation *KubernetesAciCniTenantClusterAllocation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                 *string
+	ifNoneMatch                             *string
 }
 
 // The &#39;kubernetes.AciCniTenantClusterAllocation&#39; resource to create.
@@ -399,11 +403,13 @@ func (r ApiCreateKubernetesAciCniTenantClusterAllocationRequest) KubernetesAciCn
 	r.kubernetesAciCniTenantClusterAllocation = &kubernetesAciCniTenantClusterAllocation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAciCniTenantClusterAllocationRequest) IfMatch(ifMatch string) ApiCreateKubernetesAciCniTenantClusterAllocationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAciCniTenantClusterAllocationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAciCniTenantClusterAllocationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -425,7 +431,7 @@ Deprecated
 func (a *KubernetesApiService) CreateKubernetesAciCniTenantClusterAllocation(ctx _context.Context) ApiCreateKubernetesAciCniTenantClusterAllocationRequest {
 	return ApiCreateKubernetesAciCniTenantClusterAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -543,13 +549,13 @@ func (a *KubernetesApiService) CreateKubernetesAciCniTenantClusterAllocationExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -566,11 +572,11 @@ func (a *KubernetesApiService) CreateKubernetesAciCniTenantClusterAllocationExec
 }
 
 type ApiCreateKubernetesAddonDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
 	kubernetesAddonDefinition *KubernetesAddonDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;kubernetes.AddonDefinition&#39; resource to create.
@@ -578,11 +584,13 @@ func (r ApiCreateKubernetesAddonDefinitionRequest) KubernetesAddonDefinition(kub
 	r.kubernetesAddonDefinition = &kubernetesAddonDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAddonDefinitionRequest) IfMatch(ifMatch string) ApiCreateKubernetesAddonDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAddonDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAddonDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -602,7 +610,7 @@ CreateKubernetesAddonDefinition Create a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) CreateKubernetesAddonDefinition(ctx _context.Context) ApiCreateKubernetesAddonDefinitionRequest {
 	return ApiCreateKubernetesAddonDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -719,13 +727,13 @@ func (a *KubernetesApiService) CreateKubernetesAddonDefinitionExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -742,11 +750,11 @@ func (a *KubernetesApiService) CreateKubernetesAddonDefinitionExecute(r ApiCreat
 }
 
 type ApiCreateKubernetesAddonPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                   _context.Context
+	ApiService            *KubernetesApiService
 	kubernetesAddonPolicy *KubernetesAddonPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;kubernetes.AddonPolicy&#39; resource to create.
@@ -754,11 +762,13 @@ func (r ApiCreateKubernetesAddonPolicyRequest) KubernetesAddonPolicy(kubernetesA
 	r.kubernetesAddonPolicy = &kubernetesAddonPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAddonPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesAddonPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAddonPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAddonPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -778,7 +788,7 @@ CreateKubernetesAddonPolicy Create a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) CreateKubernetesAddonPolicy(ctx _context.Context) ApiCreateKubernetesAddonPolicyRequest {
 	return ApiCreateKubernetesAddonPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -895,13 +905,13 @@ func (a *KubernetesApiService) CreateKubernetesAddonPolicyExecute(r ApiCreateKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -918,11 +928,11 @@ func (a *KubernetesApiService) CreateKubernetesAddonPolicyExecute(r ApiCreateKub
 }
 
 type ApiCreateKubernetesAddonRepositoryRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
 	kubernetesAddonRepository *KubernetesAddonRepository
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;kubernetes.AddonRepository&#39; resource to create.
@@ -930,11 +940,13 @@ func (r ApiCreateKubernetesAddonRepositoryRequest) KubernetesAddonRepository(kub
 	r.kubernetesAddonRepository = &kubernetesAddonRepository
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesAddonRepositoryRequest) IfMatch(ifMatch string) ApiCreateKubernetesAddonRepositoryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesAddonRepositoryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesAddonRepositoryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -954,7 +966,7 @@ CreateKubernetesAddonRepository Create a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) CreateKubernetesAddonRepository(ctx _context.Context) ApiCreateKubernetesAddonRepositoryRequest {
 	return ApiCreateKubernetesAddonRepositoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1071,13 +1083,13 @@ func (a *KubernetesApiService) CreateKubernetesAddonRepositoryExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1094,11 +1106,11 @@ func (a *KubernetesApiService) CreateKubernetesAddonRepositoryExecute(r ApiCreat
 }
 
 type ApiCreateKubernetesBaremetalNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                            _context.Context
+	ApiService                     *KubernetesApiService
 	kubernetesBaremetalNodeProfile *KubernetesBaremetalNodeProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;kubernetes.BaremetalNodeProfile&#39; resource to create.
@@ -1106,11 +1118,13 @@ func (r ApiCreateKubernetesBaremetalNodeProfileRequest) KubernetesBaremetalNodeP
 	r.kubernetesBaremetalNodeProfile = &kubernetesBaremetalNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesBaremetalNodeProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesBaremetalNodeProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesBaremetalNodeProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesBaremetalNodeProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1130,7 +1144,7 @@ CreateKubernetesBaremetalNodeProfile Create a 'kubernetes.BaremetalNodeProfile' 
 func (a *KubernetesApiService) CreateKubernetesBaremetalNodeProfile(ctx _context.Context) ApiCreateKubernetesBaremetalNodeProfileRequest {
 	return ApiCreateKubernetesBaremetalNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1247,13 +1261,13 @@ func (a *KubernetesApiService) CreateKubernetesBaremetalNodeProfileExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1270,11 +1284,11 @@ func (a *KubernetesApiService) CreateKubernetesBaremetalNodeProfileExecute(r Api
 }
 
 type ApiCreateKubernetesClusterRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
 	kubernetesCluster *KubernetesCluster
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;kubernetes.Cluster&#39; resource to create.
@@ -1282,11 +1296,13 @@ func (r ApiCreateKubernetesClusterRequest) KubernetesCluster(kubernetesCluster K
 	r.kubernetesCluster = &kubernetesCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesClusterRequest) IfMatch(ifMatch string) ApiCreateKubernetesClusterRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesClusterRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesClusterRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1306,7 +1322,7 @@ CreateKubernetesCluster Create a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) CreateKubernetesCluster(ctx _context.Context) ApiCreateKubernetesClusterRequest {
 	return ApiCreateKubernetesClusterRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1423,13 +1439,13 @@ func (a *KubernetesApiService) CreateKubernetesClusterExecute(r ApiCreateKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1446,11 +1462,11 @@ func (a *KubernetesApiService) CreateKubernetesClusterExecute(r ApiCreateKuberne
 }
 
 type ApiCreateKubernetesClusterAddonProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                           _context.Context
+	ApiService                    *KubernetesApiService
 	kubernetesClusterAddonProfile *KubernetesClusterAddonProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;kubernetes.ClusterAddonProfile&#39; resource to create.
@@ -1458,11 +1474,13 @@ func (r ApiCreateKubernetesClusterAddonProfileRequest) KubernetesClusterAddonPro
 	r.kubernetesClusterAddonProfile = &kubernetesClusterAddonProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesClusterAddonProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesClusterAddonProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesClusterAddonProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesClusterAddonProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1482,7 +1500,7 @@ CreateKubernetesClusterAddonProfile Create a 'kubernetes.ClusterAddonProfile' re
 func (a *KubernetesApiService) CreateKubernetesClusterAddonProfile(ctx _context.Context) ApiCreateKubernetesClusterAddonProfileRequest {
 	return ApiCreateKubernetesClusterAddonProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1599,13 +1617,13 @@ func (a *KubernetesApiService) CreateKubernetesClusterAddonProfileExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1622,11 +1640,11 @@ func (a *KubernetesApiService) CreateKubernetesClusterAddonProfileExecute(r ApiC
 }
 
 type ApiCreateKubernetesClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                      _context.Context
+	ApiService               *KubernetesApiService
 	kubernetesClusterProfile *KubernetesClusterProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;kubernetes.ClusterProfile&#39; resource to create.
@@ -1634,11 +1652,13 @@ func (r ApiCreateKubernetesClusterProfileRequest) KubernetesClusterProfile(kuber
 	r.kubernetesClusterProfile = &kubernetesClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesClusterProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesClusterProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesClusterProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesClusterProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1658,7 +1678,7 @@ CreateKubernetesClusterProfile Create a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) CreateKubernetesClusterProfile(ctx _context.Context) ApiCreateKubernetesClusterProfileRequest {
 	return ApiCreateKubernetesClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1775,13 +1795,13 @@ func (a *KubernetesApiService) CreateKubernetesClusterProfileExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1798,11 +1818,11 @@ func (a *KubernetesApiService) CreateKubernetesClusterProfileExecute(r ApiCreate
 }
 
 type ApiCreateKubernetesContainerRuntimePolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                              _context.Context
+	ApiService                       *KubernetesApiService
 	kubernetesContainerRuntimePolicy *KubernetesContainerRuntimePolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                          *string
+	ifNoneMatch                      *string
 }
 
 // The &#39;kubernetes.ContainerRuntimePolicy&#39; resource to create.
@@ -1810,11 +1830,13 @@ func (r ApiCreateKubernetesContainerRuntimePolicyRequest) KubernetesContainerRun
 	r.kubernetesContainerRuntimePolicy = &kubernetesContainerRuntimePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesContainerRuntimePolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesContainerRuntimePolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesContainerRuntimePolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesContainerRuntimePolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1834,7 +1856,7 @@ CreateKubernetesContainerRuntimePolicy Create a 'kubernetes.ContainerRuntimePoli
 func (a *KubernetesApiService) CreateKubernetesContainerRuntimePolicy(ctx _context.Context) ApiCreateKubernetesContainerRuntimePolicyRequest {
 	return ApiCreateKubernetesContainerRuntimePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1951,13 +1973,13 @@ func (a *KubernetesApiService) CreateKubernetesContainerRuntimePolicyExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1974,11 +1996,11 @@ func (a *KubernetesApiService) CreateKubernetesContainerRuntimePolicyExecute(r A
 }
 
 type ApiCreateKubernetesNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
 	kubernetesNetworkPolicy *KubernetesNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;kubernetes.NetworkPolicy&#39; resource to create.
@@ -1986,11 +2008,13 @@ func (r ApiCreateKubernetesNetworkPolicyRequest) KubernetesNetworkPolicy(kuberne
 	r.kubernetesNetworkPolicy = &kubernetesNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2010,7 +2034,7 @@ CreateKubernetesNetworkPolicy Create a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) CreateKubernetesNetworkPolicy(ctx _context.Context) ApiCreateKubernetesNetworkPolicyRequest {
 	return ApiCreateKubernetesNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2127,13 +2151,13 @@ func (a *KubernetesApiService) CreateKubernetesNetworkPolicyExecute(r ApiCreateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2150,11 +2174,11 @@ func (a *KubernetesApiService) CreateKubernetesNetworkPolicyExecute(r ApiCreateK
 }
 
 type ApiCreateKubernetesNodeGroupProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                        _context.Context
+	ApiService                 *KubernetesApiService
 	kubernetesNodeGroupProfile *KubernetesNodeGroupProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;kubernetes.NodeGroupProfile&#39; resource to create.
@@ -2162,11 +2186,13 @@ func (r ApiCreateKubernetesNodeGroupProfileRequest) KubernetesNodeGroupProfile(k
 	r.kubernetesNodeGroupProfile = &kubernetesNodeGroupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesNodeGroupProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesNodeGroupProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesNodeGroupProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesNodeGroupProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2186,7 +2212,7 @@ CreateKubernetesNodeGroupProfile Create a 'kubernetes.NodeGroupProfile' resource
 func (a *KubernetesApiService) CreateKubernetesNodeGroupProfile(ctx _context.Context) ApiCreateKubernetesNodeGroupProfileRequest {
 	return ApiCreateKubernetesNodeGroupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2303,13 +2329,13 @@ func (a *KubernetesApiService) CreateKubernetesNodeGroupProfileExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2326,11 +2352,11 @@ func (a *KubernetesApiService) CreateKubernetesNodeGroupProfileExecute(r ApiCrea
 }
 
 type ApiCreateKubernetesSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
 	kubernetesSysConfigPolicy *KubernetesSysConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;kubernetes.SysConfigPolicy&#39; resource to create.
@@ -2338,11 +2364,13 @@ func (r ApiCreateKubernetesSysConfigPolicyRequest) KubernetesSysConfigPolicy(kub
 	r.kubernetesSysConfigPolicy = &kubernetesSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesSysConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesSysConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesSysConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2362,7 +2390,7 @@ CreateKubernetesSysConfigPolicy Create a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) CreateKubernetesSysConfigPolicy(ctx _context.Context) ApiCreateKubernetesSysConfigPolicyRequest {
 	return ApiCreateKubernetesSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2479,13 +2507,13 @@ func (a *KubernetesApiService) CreateKubernetesSysConfigPolicyExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2502,11 +2530,11 @@ func (a *KubernetesApiService) CreateKubernetesSysConfigPolicyExecute(r ApiCreat
 }
 
 type ApiCreateKubernetesTrustedRegistriesPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                               _context.Context
+	ApiService                        *KubernetesApiService
 	kubernetesTrustedRegistriesPolicy *KubernetesTrustedRegistriesPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                           *string
+	ifNoneMatch                       *string
 }
 
 // The &#39;kubernetes.TrustedRegistriesPolicy&#39; resource to create.
@@ -2514,11 +2542,13 @@ func (r ApiCreateKubernetesTrustedRegistriesPolicyRequest) KubernetesTrustedRegi
 	r.kubernetesTrustedRegistriesPolicy = &kubernetesTrustedRegistriesPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesTrustedRegistriesPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesTrustedRegistriesPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesTrustedRegistriesPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesTrustedRegistriesPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2538,7 +2568,7 @@ CreateKubernetesTrustedRegistriesPolicy Create a 'kubernetes.TrustedRegistriesPo
 func (a *KubernetesApiService) CreateKubernetesTrustedRegistriesPolicy(ctx _context.Context) ApiCreateKubernetesTrustedRegistriesPolicyRequest {
 	return ApiCreateKubernetesTrustedRegistriesPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2655,13 +2685,13 @@ func (a *KubernetesApiService) CreateKubernetesTrustedRegistriesPolicyExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2678,11 +2708,11 @@ func (a *KubernetesApiService) CreateKubernetesTrustedRegistriesPolicyExecute(r 
 }
 
 type ApiCreateKubernetesVersionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
 	kubernetesVersion *KubernetesVersion
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch           *string
+	ifNoneMatch       *string
 }
 
 // The &#39;kubernetes.Version&#39; resource to create.
@@ -2690,11 +2720,13 @@ func (r ApiCreateKubernetesVersionRequest) KubernetesVersion(kubernetesVersion K
 	r.kubernetesVersion = &kubernetesVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVersionRequest) IfMatch(ifMatch string) ApiCreateKubernetesVersionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVersionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVersionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2714,7 +2746,7 @@ CreateKubernetesVersion Create a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) CreateKubernetesVersion(ctx _context.Context) ApiCreateKubernetesVersionRequest {
 	return ApiCreateKubernetesVersionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2831,13 +2863,13 @@ func (a *KubernetesApiService) CreateKubernetesVersionExecute(r ApiCreateKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2854,11 +2886,11 @@ func (a *KubernetesApiService) CreateKubernetesVersionExecute(r ApiCreateKuberne
 }
 
 type ApiCreateKubernetesVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
 	kubernetesVersionPolicy *KubernetesVersionPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;kubernetes.VersionPolicy&#39; resource to create.
@@ -2866,11 +2898,13 @@ func (r ApiCreateKubernetesVersionPolicyRequest) KubernetesVersionPolicy(kuberne
 	r.kubernetesVersionPolicy = &kubernetesVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVersionPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesVersionPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVersionPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVersionPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2890,7 +2924,7 @@ CreateKubernetesVersionPolicy Create a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) CreateKubernetesVersionPolicy(ctx _context.Context) ApiCreateKubernetesVersionPolicyRequest {
 	return ApiCreateKubernetesVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3007,13 +3041,13 @@ func (a *KubernetesApiService) CreateKubernetesVersionPolicyExecute(r ApiCreateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3030,11 +3064,11 @@ func (a *KubernetesApiService) CreateKubernetesVersionPolicyExecute(r ApiCreateK
 }
 
 type ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                                       _context.Context
+	ApiService                                *KubernetesApiService
 	kubernetesVirtualMachineInfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                   *string
+	ifNoneMatch                               *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfraConfigPolicy&#39; resource to create.
@@ -3042,11 +3076,13 @@ func (r ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest) KubernetesVir
 	r.kubernetesVirtualMachineInfraConfigPolicy = &kubernetesVirtualMachineInfraConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3066,7 +3102,7 @@ CreateKubernetesVirtualMachineInfraConfigPolicy Create a 'kubernetes.VirtualMach
 func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfraConfigPolicy(ctx _context.Context) ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest {
 	return ApiCreateKubernetesVirtualMachineInfraConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3183,13 +3219,13 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfraConfigPolicyEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3206,11 +3242,11 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfraConfigPolicyEx
 }
 
 type ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                                            _context.Context
+	ApiService                                     *KubernetesApiService
 	kubernetesVirtualMachineInfrastructureProvider *KubernetesVirtualMachineInfrastructureProvider
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                        *string
+	ifNoneMatch                                    *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfrastructureProvider&#39; resource to create.
@@ -3218,11 +3254,13 @@ func (r ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest) Kubernet
 	r.kubernetesVirtualMachineInfrastructureProvider = &kubernetesVirtualMachineInfrastructureProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest) IfMatch(ifMatch string) ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3242,7 +3280,7 @@ CreateKubernetesVirtualMachineInfrastructureProvider Create a 'kubernetes.Virtua
 func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfrastructureProvider(ctx _context.Context) ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest {
 	return ApiCreateKubernetesVirtualMachineInfrastructureProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3359,13 +3397,13 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfrastructureProvi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3382,11 +3420,11 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInfrastructureProvi
 }
 
 type ApiCreateKubernetesVirtualMachineInstanceTypeRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                                  _context.Context
+	ApiService                           *KubernetesApiService
 	kubernetesVirtualMachineInstanceType *KubernetesVirtualMachineInstanceType
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                              *string
+	ifNoneMatch                          *string
 }
 
 // The &#39;kubernetes.VirtualMachineInstanceType&#39; resource to create.
@@ -3394,11 +3432,13 @@ func (r ApiCreateKubernetesVirtualMachineInstanceTypeRequest) KubernetesVirtualM
 	r.kubernetesVirtualMachineInstanceType = &kubernetesVirtualMachineInstanceType
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVirtualMachineInstanceTypeRequest) IfMatch(ifMatch string) ApiCreateKubernetesVirtualMachineInstanceTypeRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVirtualMachineInstanceTypeRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVirtualMachineInstanceTypeRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3418,7 +3458,7 @@ CreateKubernetesVirtualMachineInstanceType Create a 'kubernetes.VirtualMachineIn
 func (a *KubernetesApiService) CreateKubernetesVirtualMachineInstanceType(ctx _context.Context) ApiCreateKubernetesVirtualMachineInstanceTypeRequest {
 	return ApiCreateKubernetesVirtualMachineInstanceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3535,13 +3575,13 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInstanceTypeExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3558,11 +3598,11 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineInstanceTypeExecute
 }
 
 type ApiCreateKubernetesVirtualMachineNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
+	ctx                                 _context.Context
+	ApiService                          *KubernetesApiService
 	kubernetesVirtualMachineNodeProfile *KubernetesVirtualMachineNodeProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;kubernetes.VirtualMachineNodeProfile&#39; resource to create.
@@ -3570,11 +3610,13 @@ func (r ApiCreateKubernetesVirtualMachineNodeProfileRequest) KubernetesVirtualMa
 	r.kubernetesVirtualMachineNodeProfile = &kubernetesVirtualMachineNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateKubernetesVirtualMachineNodeProfileRequest) IfMatch(ifMatch string) ApiCreateKubernetesVirtualMachineNodeProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateKubernetesVirtualMachineNodeProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateKubernetesVirtualMachineNodeProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3594,7 +3636,7 @@ CreateKubernetesVirtualMachineNodeProfile Create a 'kubernetes.VirtualMachineNod
 func (a *KubernetesApiService) CreateKubernetesVirtualMachineNodeProfile(ctx _context.Context) ApiCreateKubernetesVirtualMachineNodeProfileRequest {
 	return ApiCreateKubernetesVirtualMachineNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3711,13 +3753,13 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineNodeProfileExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3734,11 +3776,10 @@ func (a *KubernetesApiService) CreateKubernetesVirtualMachineNodeProfileExecute(
 }
 
 type ApiDeleteKubernetesAciCniApicRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAciCniApicRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAciCniApicExecute(r)
@@ -3756,8 +3797,8 @@ Deprecated
 func (a *KubernetesApiService) DeleteKubernetesAciCniApic(ctx _context.Context, moid string) ApiDeleteKubernetesAciCniApicRequest {
 	return ApiDeleteKubernetesAciCniApicRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3863,13 +3904,13 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniApicExecute(r ApiDeleteKube
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -3877,11 +3918,10 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniApicExecute(r ApiDeleteKube
 }
 
 type ApiDeleteKubernetesAciCniProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAciCniProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAciCniProfileExecute(r)
@@ -3899,8 +3939,8 @@ Deprecated
 func (a *KubernetesApiService) DeleteKubernetesAciCniProfile(ctx _context.Context, moid string) ApiDeleteKubernetesAciCniProfileRequest {
 	return ApiDeleteKubernetesAciCniProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4006,13 +4046,13 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniProfileExecute(r ApiDeleteK
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4020,11 +4060,10 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniProfileExecute(r ApiDeleteK
 }
 
 type ApiDeleteKubernetesAciCniTenantClusterAllocationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAciCniTenantClusterAllocationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAciCniTenantClusterAllocationExecute(r)
@@ -4042,8 +4081,8 @@ Deprecated
 func (a *KubernetesApiService) DeleteKubernetesAciCniTenantClusterAllocation(ctx _context.Context, moid string) ApiDeleteKubernetesAciCniTenantClusterAllocationRequest {
 	return ApiDeleteKubernetesAciCniTenantClusterAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4149,13 +4188,13 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniTenantClusterAllocationExec
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4163,11 +4202,10 @@ func (a *KubernetesApiService) DeleteKubernetesAciCniTenantClusterAllocationExec
 }
 
 type ApiDeleteKubernetesAddonDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAddonDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAddonDefinitionExecute(r)
@@ -4183,8 +4221,8 @@ DeleteKubernetesAddonDefinition Delete a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) DeleteKubernetesAddonDefinition(ctx _context.Context, moid string) ApiDeleteKubernetesAddonDefinitionRequest {
 	return ApiDeleteKubernetesAddonDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4289,13 +4327,13 @@ func (a *KubernetesApiService) DeleteKubernetesAddonDefinitionExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4303,11 +4341,10 @@ func (a *KubernetesApiService) DeleteKubernetesAddonDefinitionExecute(r ApiDelet
 }
 
 type ApiDeleteKubernetesAddonPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAddonPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAddonPolicyExecute(r)
@@ -4323,8 +4360,8 @@ DeleteKubernetesAddonPolicy Delete a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) DeleteKubernetesAddonPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesAddonPolicyRequest {
 	return ApiDeleteKubernetesAddonPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4429,13 +4466,13 @@ func (a *KubernetesApiService) DeleteKubernetesAddonPolicyExecute(r ApiDeleteKub
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4443,11 +4480,10 @@ func (a *KubernetesApiService) DeleteKubernetesAddonPolicyExecute(r ApiDeleteKub
 }
 
 type ApiDeleteKubernetesAddonRepositoryRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesAddonRepositoryRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesAddonRepositoryExecute(r)
@@ -4463,8 +4499,8 @@ DeleteKubernetesAddonRepository Delete a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) DeleteKubernetesAddonRepository(ctx _context.Context, moid string) ApiDeleteKubernetesAddonRepositoryRequest {
 	return ApiDeleteKubernetesAddonRepositoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4569,13 +4605,13 @@ func (a *KubernetesApiService) DeleteKubernetesAddonRepositoryExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4583,11 +4619,10 @@ func (a *KubernetesApiService) DeleteKubernetesAddonRepositoryExecute(r ApiDelet
 }
 
 type ApiDeleteKubernetesBaremetalNodeProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesBaremetalNodeProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesBaremetalNodeProfileExecute(r)
@@ -4603,8 +4638,8 @@ DeleteKubernetesBaremetalNodeProfile Delete a 'kubernetes.BaremetalNodeProfile' 
 func (a *KubernetesApiService) DeleteKubernetesBaremetalNodeProfile(ctx _context.Context, moid string) ApiDeleteKubernetesBaremetalNodeProfileRequest {
 	return ApiDeleteKubernetesBaremetalNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4709,13 +4744,13 @@ func (a *KubernetesApiService) DeleteKubernetesBaremetalNodeProfileExecute(r Api
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4723,11 +4758,10 @@ func (a *KubernetesApiService) DeleteKubernetesBaremetalNodeProfileExecute(r Api
 }
 
 type ApiDeleteKubernetesClusterRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesClusterRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesClusterExecute(r)
@@ -4743,8 +4777,8 @@ DeleteKubernetesCluster Delete a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) DeleteKubernetesCluster(ctx _context.Context, moid string) ApiDeleteKubernetesClusterRequest {
 	return ApiDeleteKubernetesClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4849,13 +4883,13 @@ func (a *KubernetesApiService) DeleteKubernetesClusterExecute(r ApiDeleteKuberne
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -4863,11 +4897,10 @@ func (a *KubernetesApiService) DeleteKubernetesClusterExecute(r ApiDeleteKuberne
 }
 
 type ApiDeleteKubernetesClusterAddonProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesClusterAddonProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesClusterAddonProfileExecute(r)
@@ -4883,8 +4916,8 @@ DeleteKubernetesClusterAddonProfile Delete a 'kubernetes.ClusterAddonProfile' re
 func (a *KubernetesApiService) DeleteKubernetesClusterAddonProfile(ctx _context.Context, moid string) ApiDeleteKubernetesClusterAddonProfileRequest {
 	return ApiDeleteKubernetesClusterAddonProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4989,13 +5022,13 @@ func (a *KubernetesApiService) DeleteKubernetesClusterAddonProfileExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5003,11 +5036,10 @@ func (a *KubernetesApiService) DeleteKubernetesClusterAddonProfileExecute(r ApiD
 }
 
 type ApiDeleteKubernetesClusterProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesClusterProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesClusterProfileExecute(r)
@@ -5023,8 +5055,8 @@ DeleteKubernetesClusterProfile Delete a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) DeleteKubernetesClusterProfile(ctx _context.Context, moid string) ApiDeleteKubernetesClusterProfileRequest {
 	return ApiDeleteKubernetesClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5129,13 +5161,13 @@ func (a *KubernetesApiService) DeleteKubernetesClusterProfileExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5143,11 +5175,10 @@ func (a *KubernetesApiService) DeleteKubernetesClusterProfileExecute(r ApiDelete
 }
 
 type ApiDeleteKubernetesContainerRuntimePolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesContainerRuntimePolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesContainerRuntimePolicyExecute(r)
@@ -5163,8 +5194,8 @@ DeleteKubernetesContainerRuntimePolicy Delete a 'kubernetes.ContainerRuntimePoli
 func (a *KubernetesApiService) DeleteKubernetesContainerRuntimePolicy(ctx _context.Context, moid string) ApiDeleteKubernetesContainerRuntimePolicyRequest {
 	return ApiDeleteKubernetesContainerRuntimePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5269,13 +5300,13 @@ func (a *KubernetesApiService) DeleteKubernetesContainerRuntimePolicyExecute(r A
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5283,11 +5314,10 @@ func (a *KubernetesApiService) DeleteKubernetesContainerRuntimePolicyExecute(r A
 }
 
 type ApiDeleteKubernetesDaemonSetRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesDaemonSetRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesDaemonSetExecute(r)
@@ -5303,8 +5333,8 @@ DeleteKubernetesDaemonSet Delete a 'kubernetes.DaemonSet' resource.
 func (a *KubernetesApiService) DeleteKubernetesDaemonSet(ctx _context.Context, moid string) ApiDeleteKubernetesDaemonSetRequest {
 	return ApiDeleteKubernetesDaemonSetRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5409,13 +5439,13 @@ func (a *KubernetesApiService) DeleteKubernetesDaemonSetExecute(r ApiDeleteKuber
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5423,11 +5453,10 @@ func (a *KubernetesApiService) DeleteKubernetesDaemonSetExecute(r ApiDeleteKuber
 }
 
 type ApiDeleteKubernetesDeploymentRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesDeploymentRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesDeploymentExecute(r)
@@ -5443,8 +5472,8 @@ DeleteKubernetesDeployment Delete a 'kubernetes.Deployment' resource.
 func (a *KubernetesApiService) DeleteKubernetesDeployment(ctx _context.Context, moid string) ApiDeleteKubernetesDeploymentRequest {
 	return ApiDeleteKubernetesDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5549,13 +5578,13 @@ func (a *KubernetesApiService) DeleteKubernetesDeploymentExecute(r ApiDeleteKube
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5563,11 +5592,10 @@ func (a *KubernetesApiService) DeleteKubernetesDeploymentExecute(r ApiDeleteKube
 }
 
 type ApiDeleteKubernetesIngressRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesIngressRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesIngressExecute(r)
@@ -5583,8 +5611,8 @@ DeleteKubernetesIngress Delete a 'kubernetes.Ingress' resource.
 func (a *KubernetesApiService) DeleteKubernetesIngress(ctx _context.Context, moid string) ApiDeleteKubernetesIngressRequest {
 	return ApiDeleteKubernetesIngressRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5689,13 +5717,13 @@ func (a *KubernetesApiService) DeleteKubernetesIngressExecute(r ApiDeleteKuberne
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5703,11 +5731,10 @@ func (a *KubernetesApiService) DeleteKubernetesIngressExecute(r ApiDeleteKuberne
 }
 
 type ApiDeleteKubernetesNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesNetworkPolicyExecute(r)
@@ -5723,8 +5750,8 @@ DeleteKubernetesNetworkPolicy Delete a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) DeleteKubernetesNetworkPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesNetworkPolicyRequest {
 	return ApiDeleteKubernetesNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5829,13 +5856,13 @@ func (a *KubernetesApiService) DeleteKubernetesNetworkPolicyExecute(r ApiDeleteK
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5843,11 +5870,10 @@ func (a *KubernetesApiService) DeleteKubernetesNetworkPolicyExecute(r ApiDeleteK
 }
 
 type ApiDeleteKubernetesNodeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesNodeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesNodeExecute(r)
@@ -5863,8 +5889,8 @@ DeleteKubernetesNode Delete a 'kubernetes.Node' resource.
 func (a *KubernetesApiService) DeleteKubernetesNode(ctx _context.Context, moid string) ApiDeleteKubernetesNodeRequest {
 	return ApiDeleteKubernetesNodeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5969,13 +5995,13 @@ func (a *KubernetesApiService) DeleteKubernetesNodeExecute(r ApiDeleteKubernetes
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -5983,11 +6009,10 @@ func (a *KubernetesApiService) DeleteKubernetesNodeExecute(r ApiDeleteKubernetes
 }
 
 type ApiDeleteKubernetesNodeGroupProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesNodeGroupProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesNodeGroupProfileExecute(r)
@@ -6003,8 +6028,8 @@ DeleteKubernetesNodeGroupProfile Delete a 'kubernetes.NodeGroupProfile' resource
 func (a *KubernetesApiService) DeleteKubernetesNodeGroupProfile(ctx _context.Context, moid string) ApiDeleteKubernetesNodeGroupProfileRequest {
 	return ApiDeleteKubernetesNodeGroupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6109,13 +6134,13 @@ func (a *KubernetesApiService) DeleteKubernetesNodeGroupProfileExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6123,11 +6148,10 @@ func (a *KubernetesApiService) DeleteKubernetesNodeGroupProfileExecute(r ApiDele
 }
 
 type ApiDeleteKubernetesPodRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesPodRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesPodExecute(r)
@@ -6143,8 +6167,8 @@ DeleteKubernetesPod Delete a 'kubernetes.Pod' resource.
 func (a *KubernetesApiService) DeleteKubernetesPod(ctx _context.Context, moid string) ApiDeleteKubernetesPodRequest {
 	return ApiDeleteKubernetesPodRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6249,13 +6273,13 @@ func (a *KubernetesApiService) DeleteKubernetesPodExecute(r ApiDeleteKubernetesP
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6263,11 +6287,10 @@ func (a *KubernetesApiService) DeleteKubernetesPodExecute(r ApiDeleteKubernetesP
 }
 
 type ApiDeleteKubernetesServiceRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesServiceRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesServiceExecute(r)
@@ -6283,8 +6306,8 @@ DeleteKubernetesService Delete a 'kubernetes.Service' resource.
 func (a *KubernetesApiService) DeleteKubernetesService(ctx _context.Context, moid string) ApiDeleteKubernetesServiceRequest {
 	return ApiDeleteKubernetesServiceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6389,13 +6412,13 @@ func (a *KubernetesApiService) DeleteKubernetesServiceExecute(r ApiDeleteKuberne
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6403,11 +6426,10 @@ func (a *KubernetesApiService) DeleteKubernetesServiceExecute(r ApiDeleteKuberne
 }
 
 type ApiDeleteKubernetesStatefulSetRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesStatefulSetRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesStatefulSetExecute(r)
@@ -6423,8 +6445,8 @@ DeleteKubernetesStatefulSet Delete a 'kubernetes.StatefulSet' resource.
 func (a *KubernetesApiService) DeleteKubernetesStatefulSet(ctx _context.Context, moid string) ApiDeleteKubernetesStatefulSetRequest {
 	return ApiDeleteKubernetesStatefulSetRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6529,13 +6551,13 @@ func (a *KubernetesApiService) DeleteKubernetesStatefulSetExecute(r ApiDeleteKub
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6543,11 +6565,10 @@ func (a *KubernetesApiService) DeleteKubernetesStatefulSetExecute(r ApiDeleteKub
 }
 
 type ApiDeleteKubernetesSysConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesSysConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesSysConfigPolicyExecute(r)
@@ -6563,8 +6584,8 @@ DeleteKubernetesSysConfigPolicy Delete a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) DeleteKubernetesSysConfigPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesSysConfigPolicyRequest {
 	return ApiDeleteKubernetesSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6669,13 +6690,13 @@ func (a *KubernetesApiService) DeleteKubernetesSysConfigPolicyExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6683,11 +6704,10 @@ func (a *KubernetesApiService) DeleteKubernetesSysConfigPolicyExecute(r ApiDelet
 }
 
 type ApiDeleteKubernetesTrustedRegistriesPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesTrustedRegistriesPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesTrustedRegistriesPolicyExecute(r)
@@ -6703,8 +6723,8 @@ DeleteKubernetesTrustedRegistriesPolicy Delete a 'kubernetes.TrustedRegistriesPo
 func (a *KubernetesApiService) DeleteKubernetesTrustedRegistriesPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesTrustedRegistriesPolicyRequest {
 	return ApiDeleteKubernetesTrustedRegistriesPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6809,13 +6829,13 @@ func (a *KubernetesApiService) DeleteKubernetesTrustedRegistriesPolicyExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6823,11 +6843,10 @@ func (a *KubernetesApiService) DeleteKubernetesTrustedRegistriesPolicyExecute(r 
 }
 
 type ApiDeleteKubernetesVersionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesVersionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesVersionExecute(r)
@@ -6843,8 +6862,8 @@ DeleteKubernetesVersion Delete a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) DeleteKubernetesVersion(ctx _context.Context, moid string) ApiDeleteKubernetesVersionRequest {
 	return ApiDeleteKubernetesVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6949,13 +6968,13 @@ func (a *KubernetesApiService) DeleteKubernetesVersionExecute(r ApiDeleteKuberne
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6963,11 +6982,10 @@ func (a *KubernetesApiService) DeleteKubernetesVersionExecute(r ApiDeleteKuberne
 }
 
 type ApiDeleteKubernetesVersionPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesVersionPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesVersionPolicyExecute(r)
@@ -6983,8 +7001,8 @@ DeleteKubernetesVersionPolicy Delete a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) DeleteKubernetesVersionPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesVersionPolicyRequest {
 	return ApiDeleteKubernetesVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7089,13 +7107,13 @@ func (a *KubernetesApiService) DeleteKubernetesVersionPolicyExecute(r ApiDeleteK
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7103,11 +7121,10 @@ func (a *KubernetesApiService) DeleteKubernetesVersionPolicyExecute(r ApiDeleteK
 }
 
 type ApiDeleteKubernetesVirtualMachineInfraConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesVirtualMachineInfraConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesVirtualMachineInfraConfigPolicyExecute(r)
@@ -7123,8 +7140,8 @@ DeleteKubernetesVirtualMachineInfraConfigPolicy Delete a 'kubernetes.VirtualMach
 func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInfraConfigPolicy(ctx _context.Context, moid string) ApiDeleteKubernetesVirtualMachineInfraConfigPolicyRequest {
 	return ApiDeleteKubernetesVirtualMachineInfraConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7229,13 +7246,13 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInfraConfigPolicyEx
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7243,11 +7260,10 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInfraConfigPolicyEx
 }
 
 type ApiDeleteKubernetesVirtualMachineInstanceTypeRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesVirtualMachineInstanceTypeRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesVirtualMachineInstanceTypeExecute(r)
@@ -7263,8 +7279,8 @@ DeleteKubernetesVirtualMachineInstanceType Delete a 'kubernetes.VirtualMachineIn
 func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInstanceType(ctx _context.Context, moid string) ApiDeleteKubernetesVirtualMachineInstanceTypeRequest {
 	return ApiDeleteKubernetesVirtualMachineInstanceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7369,13 +7385,13 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInstanceTypeExecute
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7383,11 +7399,10 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineInstanceTypeExecute
 }
 
 type ApiDeleteKubernetesVirtualMachineNodeProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteKubernetesVirtualMachineNodeProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteKubernetesVirtualMachineNodeProfileExecute(r)
@@ -7403,8 +7418,8 @@ DeleteKubernetesVirtualMachineNodeProfile Delete a 'kubernetes.VirtualMachineNod
 func (a *KubernetesApiService) DeleteKubernetesVirtualMachineNodeProfile(ctx _context.Context, moid string) ApiDeleteKubernetesVirtualMachineNodeProfileRequest {
 	return ApiDeleteKubernetesVirtualMachineNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7509,13 +7524,13 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineNodeProfileExecute(
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7523,11 +7538,10 @@ func (a *KubernetesApiService) DeleteKubernetesVirtualMachineNodeProfileExecute(
 }
 
 type ApiGetKubernetesAciCniApicByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAciCniApicByMoidRequest) Execute() (KubernetesAciCniApic, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAciCniApicByMoidExecute(r)
@@ -7545,8 +7559,8 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniApicByMoid(ctx _context.Context, moid string) ApiGetKubernetesAciCniApicByMoidRequest {
 	return ApiGetKubernetesAciCniApicByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7654,13 +7668,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniApicByMoidExecute(r ApiGetKube
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7677,19 +7691,19 @@ func (a *KubernetesApiService) GetKubernetesAciCniApicByMoidExecute(r ApiGetKube
 }
 
 type ApiGetKubernetesAciCniApicListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -7697,51 +7711,61 @@ func (r ApiGetKubernetesAciCniApicListRequest) Filter(filter string) ApiGetKuber
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAciCniApicListRequest) Orderby(orderby string) ApiGetKubernetesAciCniApicListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAciCniApicListRequest) Top(top int32) ApiGetKubernetesAciCniApicListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAciCniApicListRequest) Skip(skip int32) ApiGetKubernetesAciCniApicListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAciCniApicListRequest) Select_(select_ string) ApiGetKubernetesAciCniApicListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAciCniApicListRequest) Expand(expand string) ApiGetKubernetesAciCniApicListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAciCniApicListRequest) Apply(apply string) ApiGetKubernetesAciCniApicListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAciCniApicListRequest) Count(count bool) ApiGetKubernetesAciCniApicListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAciCniApicListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAciCniApicListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAciCniApicListRequest) At(at string) ApiGetKubernetesAciCniApicListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAciCniApicListRequest) Tags(tags string) ApiGetKubernetesAciCniApicListRequest {
 	r.tags = &tags
@@ -7763,7 +7787,7 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniApicList(ctx _context.Context) ApiGetKubernetesAciCniApicListRequest {
 	return ApiGetKubernetesAciCniApicListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -7903,13 +7927,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniApicListExecute(r ApiGetKubern
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -7926,11 +7950,10 @@ func (a *KubernetesApiService) GetKubernetesAciCniApicListExecute(r ApiGetKubern
 }
 
 type ApiGetKubernetesAciCniProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAciCniProfileByMoidRequest) Execute() (KubernetesAciCniProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAciCniProfileByMoidExecute(r)
@@ -7948,8 +7971,8 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesAciCniProfileByMoidRequest {
 	return ApiGetKubernetesAciCniProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8057,13 +8080,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniProfileByMoidExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8080,19 +8103,19 @@ func (a *KubernetesApiService) GetKubernetesAciCniProfileByMoidExecute(r ApiGetK
 }
 
 type ApiGetKubernetesAciCniProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8100,51 +8123,61 @@ func (r ApiGetKubernetesAciCniProfileListRequest) Filter(filter string) ApiGetKu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAciCniProfileListRequest) Orderby(orderby string) ApiGetKubernetesAciCniProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAciCniProfileListRequest) Top(top int32) ApiGetKubernetesAciCniProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAciCniProfileListRequest) Skip(skip int32) ApiGetKubernetesAciCniProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAciCniProfileListRequest) Select_(select_ string) ApiGetKubernetesAciCniProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAciCniProfileListRequest) Expand(expand string) ApiGetKubernetesAciCniProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAciCniProfileListRequest) Apply(apply string) ApiGetKubernetesAciCniProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAciCniProfileListRequest) Count(count bool) ApiGetKubernetesAciCniProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAciCniProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAciCniProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAciCniProfileListRequest) At(at string) ApiGetKubernetesAciCniProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAciCniProfileListRequest) Tags(tags string) ApiGetKubernetesAciCniProfileListRequest {
 	r.tags = &tags
@@ -8166,7 +8199,7 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniProfileList(ctx _context.Context) ApiGetKubernetesAciCniProfileListRequest {
 	return ApiGetKubernetesAciCniProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8306,13 +8339,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniProfileListExecute(r ApiGetKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8329,11 +8362,10 @@ func (a *KubernetesApiService) GetKubernetesAciCniProfileListExecute(r ApiGetKub
 }
 
 type ApiGetKubernetesAciCniTenantClusterAllocationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAciCniTenantClusterAllocationByMoidRequest) Execute() (KubernetesAciCniTenantClusterAllocation, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAciCniTenantClusterAllocationByMoidExecute(r)
@@ -8351,8 +8383,8 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationByMoid(ctx _context.Context, moid string) ApiGetKubernetesAciCniTenantClusterAllocationByMoidRequest {
 	return ApiGetKubernetesAciCniTenantClusterAllocationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8460,13 +8492,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationByMoidE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8483,19 +8515,19 @@ func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationByMoidE
 }
 
 type ApiGetKubernetesAciCniTenantClusterAllocationListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8503,51 +8535,61 @@ func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Filter(filter 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Orderby(orderby string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Top(top int32) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Skip(skip int32) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Select_(select_ string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Expand(expand string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Apply(apply string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Count(count bool) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) At(at string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAciCniTenantClusterAllocationListRequest) Tags(tags string) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	r.tags = &tags
@@ -8569,7 +8611,7 @@ Deprecated
 func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationList(ctx _context.Context) ApiGetKubernetesAciCniTenantClusterAllocationListRequest {
 	return ApiGetKubernetesAciCniTenantClusterAllocationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -8709,13 +8751,13 @@ func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationListExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8732,11 +8774,10 @@ func (a *KubernetesApiService) GetKubernetesAciCniTenantClusterAllocationListExe
 }
 
 type ApiGetKubernetesAddonDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAddonDefinitionByMoidRequest) Execute() (KubernetesAddonDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAddonDefinitionByMoidExecute(r)
@@ -8752,8 +8793,8 @@ GetKubernetesAddonDefinitionByMoid Read a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) GetKubernetesAddonDefinitionByMoid(ctx _context.Context, moid string) ApiGetKubernetesAddonDefinitionByMoidRequest {
 	return ApiGetKubernetesAddonDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8860,13 +8901,13 @@ func (a *KubernetesApiService) GetKubernetesAddonDefinitionByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -8883,19 +8924,19 @@ func (a *KubernetesApiService) GetKubernetesAddonDefinitionByMoidExecute(r ApiGe
 }
 
 type ApiGetKubernetesAddonDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -8903,51 +8944,61 @@ func (r ApiGetKubernetesAddonDefinitionListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Orderby(orderby string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Top(top int32) ApiGetKubernetesAddonDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Skip(skip int32) ApiGetKubernetesAddonDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Select_(select_ string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Expand(expand string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Apply(apply string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Count(count bool) ApiGetKubernetesAddonDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAddonDefinitionListRequest) At(at string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAddonDefinitionListRequest) Tags(tags string) ApiGetKubernetesAddonDefinitionListRequest {
 	r.tags = &tags
@@ -8967,7 +9018,7 @@ GetKubernetesAddonDefinitionList Read a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) GetKubernetesAddonDefinitionList(ctx _context.Context) ApiGetKubernetesAddonDefinitionListRequest {
 	return ApiGetKubernetesAddonDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9106,13 +9157,13 @@ func (a *KubernetesApiService) GetKubernetesAddonDefinitionListExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9129,11 +9180,10 @@ func (a *KubernetesApiService) GetKubernetesAddonDefinitionListExecute(r ApiGetK
 }
 
 type ApiGetKubernetesAddonPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAddonPolicyByMoidRequest) Execute() (KubernetesAddonPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAddonPolicyByMoidExecute(r)
@@ -9149,8 +9199,8 @@ GetKubernetesAddonPolicyByMoid Read a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesAddonPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesAddonPolicyByMoidRequest {
 	return ApiGetKubernetesAddonPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9257,13 +9307,13 @@ func (a *KubernetesApiService) GetKubernetesAddonPolicyByMoidExecute(r ApiGetKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9280,19 +9330,19 @@ func (a *KubernetesApiService) GetKubernetesAddonPolicyByMoidExecute(r ApiGetKub
 }
 
 type ApiGetKubernetesAddonPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9300,51 +9350,61 @@ func (r ApiGetKubernetesAddonPolicyListRequest) Filter(filter string) ApiGetKube
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAddonPolicyListRequest) Orderby(orderby string) ApiGetKubernetesAddonPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAddonPolicyListRequest) Top(top int32) ApiGetKubernetesAddonPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAddonPolicyListRequest) Skip(skip int32) ApiGetKubernetesAddonPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAddonPolicyListRequest) Select_(select_ string) ApiGetKubernetesAddonPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAddonPolicyListRequest) Expand(expand string) ApiGetKubernetesAddonPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAddonPolicyListRequest) Apply(apply string) ApiGetKubernetesAddonPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAddonPolicyListRequest) Count(count bool) ApiGetKubernetesAddonPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAddonPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAddonPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAddonPolicyListRequest) At(at string) ApiGetKubernetesAddonPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAddonPolicyListRequest) Tags(tags string) ApiGetKubernetesAddonPolicyListRequest {
 	r.tags = &tags
@@ -9364,7 +9424,7 @@ GetKubernetesAddonPolicyList Read a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesAddonPolicyList(ctx _context.Context) ApiGetKubernetesAddonPolicyListRequest {
 	return ApiGetKubernetesAddonPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9503,13 +9563,13 @@ func (a *KubernetesApiService) GetKubernetesAddonPolicyListExecute(r ApiGetKuber
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9526,11 +9586,10 @@ func (a *KubernetesApiService) GetKubernetesAddonPolicyListExecute(r ApiGetKuber
 }
 
 type ApiGetKubernetesAddonRepositoryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesAddonRepositoryByMoidRequest) Execute() (KubernetesAddonRepository, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesAddonRepositoryByMoidExecute(r)
@@ -9546,8 +9605,8 @@ GetKubernetesAddonRepositoryByMoid Read a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) GetKubernetesAddonRepositoryByMoid(ctx _context.Context, moid string) ApiGetKubernetesAddonRepositoryByMoidRequest {
 	return ApiGetKubernetesAddonRepositoryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9654,13 +9713,13 @@ func (a *KubernetesApiService) GetKubernetesAddonRepositoryByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9677,19 +9736,19 @@ func (a *KubernetesApiService) GetKubernetesAddonRepositoryByMoidExecute(r ApiGe
 }
 
 type ApiGetKubernetesAddonRepositoryListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -9697,51 +9756,61 @@ func (r ApiGetKubernetesAddonRepositoryListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Orderby(orderby string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Top(top int32) ApiGetKubernetesAddonRepositoryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Skip(skip int32) ApiGetKubernetesAddonRepositoryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Select_(select_ string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Expand(expand string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Apply(apply string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Count(count bool) ApiGetKubernetesAddonRepositoryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Inlinecount(inlinecount string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesAddonRepositoryListRequest) At(at string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesAddonRepositoryListRequest) Tags(tags string) ApiGetKubernetesAddonRepositoryListRequest {
 	r.tags = &tags
@@ -9761,7 +9830,7 @@ GetKubernetesAddonRepositoryList Read a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) GetKubernetesAddonRepositoryList(ctx _context.Context) ApiGetKubernetesAddonRepositoryListRequest {
 	return ApiGetKubernetesAddonRepositoryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -9900,13 +9969,13 @@ func (a *KubernetesApiService) GetKubernetesAddonRepositoryListExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -9923,11 +9992,10 @@ func (a *KubernetesApiService) GetKubernetesAddonRepositoryListExecute(r ApiGetK
 }
 
 type ApiGetKubernetesBaremetalNodeProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesBaremetalNodeProfileByMoidRequest) Execute() (KubernetesBaremetalNodeProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesBaremetalNodeProfileByMoidExecute(r)
@@ -9943,8 +10011,8 @@ GetKubernetesBaremetalNodeProfileByMoid Read a 'kubernetes.BaremetalNodeProfile'
 func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesBaremetalNodeProfileByMoidRequest {
 	return ApiGetKubernetesBaremetalNodeProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10051,13 +10119,13 @@ func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10074,19 +10142,19 @@ func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileByMoidExecute(r 
 }
 
 type ApiGetKubernetesBaremetalNodeProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10094,51 +10162,61 @@ func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Orderby(orderby string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Top(top int32) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Skip(skip int32) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Select_(select_ string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Expand(expand string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Apply(apply string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Count(count bool) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) At(at string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesBaremetalNodeProfileListRequest) Tags(tags string) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	r.tags = &tags
@@ -10158,7 +10236,7 @@ GetKubernetesBaremetalNodeProfileList Read a 'kubernetes.BaremetalNodeProfile' r
 func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileList(ctx _context.Context) ApiGetKubernetesBaremetalNodeProfileListRequest {
 	return ApiGetKubernetesBaremetalNodeProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10297,13 +10375,13 @@ func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10320,11 +10398,10 @@ func (a *KubernetesApiService) GetKubernetesBaremetalNodeProfileListExecute(r Ap
 }
 
 type ApiGetKubernetesCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesCatalogByMoidRequest) Execute() (KubernetesCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesCatalogByMoidExecute(r)
@@ -10340,8 +10417,8 @@ GetKubernetesCatalogByMoid Read a 'kubernetes.Catalog' resource.
 func (a *KubernetesApiService) GetKubernetesCatalogByMoid(ctx _context.Context, moid string) ApiGetKubernetesCatalogByMoidRequest {
 	return ApiGetKubernetesCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10448,13 +10525,13 @@ func (a *KubernetesApiService) GetKubernetesCatalogByMoidExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10471,19 +10548,19 @@ func (a *KubernetesApiService) GetKubernetesCatalogByMoidExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10491,51 +10568,61 @@ func (r ApiGetKubernetesCatalogListRequest) Filter(filter string) ApiGetKubernet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesCatalogListRequest) Orderby(orderby string) ApiGetKubernetesCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesCatalogListRequest) Top(top int32) ApiGetKubernetesCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesCatalogListRequest) Skip(skip int32) ApiGetKubernetesCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesCatalogListRequest) Select_(select_ string) ApiGetKubernetesCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesCatalogListRequest) Expand(expand string) ApiGetKubernetesCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesCatalogListRequest) Apply(apply string) ApiGetKubernetesCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesCatalogListRequest) Count(count bool) ApiGetKubernetesCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesCatalogListRequest) Inlinecount(inlinecount string) ApiGetKubernetesCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesCatalogListRequest) At(at string) ApiGetKubernetesCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesCatalogListRequest) Tags(tags string) ApiGetKubernetesCatalogListRequest {
 	r.tags = &tags
@@ -10555,7 +10642,7 @@ GetKubernetesCatalogList Read a 'kubernetes.Catalog' resource.
 func (a *KubernetesApiService) GetKubernetesCatalogList(ctx _context.Context) ApiGetKubernetesCatalogListRequest {
 	return ApiGetKubernetesCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -10694,13 +10781,13 @@ func (a *KubernetesApiService) GetKubernetesCatalogListExecute(r ApiGetKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10717,11 +10804,10 @@ func (a *KubernetesApiService) GetKubernetesCatalogListExecute(r ApiGetKubernete
 }
 
 type ApiGetKubernetesClusterAddonProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesClusterAddonProfileByMoidRequest) Execute() (KubernetesClusterAddonProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesClusterAddonProfileByMoidExecute(r)
@@ -10737,8 +10823,8 @@ GetKubernetesClusterAddonProfileByMoid Read a 'kubernetes.ClusterAddonProfile' r
 func (a *KubernetesApiService) GetKubernetesClusterAddonProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesClusterAddonProfileByMoidRequest {
 	return ApiGetKubernetesClusterAddonProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10845,13 +10931,13 @@ func (a *KubernetesApiService) GetKubernetesClusterAddonProfileByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -10868,19 +10954,19 @@ func (a *KubernetesApiService) GetKubernetesClusterAddonProfileByMoidExecute(r A
 }
 
 type ApiGetKubernetesClusterAddonProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -10888,51 +10974,61 @@ func (r ApiGetKubernetesClusterAddonProfileListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Orderby(orderby string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Top(top int32) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Skip(skip int32) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Select_(select_ string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Expand(expand string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Apply(apply string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Count(count bool) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) At(at string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesClusterAddonProfileListRequest) Tags(tags string) ApiGetKubernetesClusterAddonProfileListRequest {
 	r.tags = &tags
@@ -10952,7 +11048,7 @@ GetKubernetesClusterAddonProfileList Read a 'kubernetes.ClusterAddonProfile' res
 func (a *KubernetesApiService) GetKubernetesClusterAddonProfileList(ctx _context.Context) ApiGetKubernetesClusterAddonProfileListRequest {
 	return ApiGetKubernetesClusterAddonProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11091,13 +11187,13 @@ func (a *KubernetesApiService) GetKubernetesClusterAddonProfileListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11114,11 +11210,10 @@ func (a *KubernetesApiService) GetKubernetesClusterAddonProfileListExecute(r Api
 }
 
 type ApiGetKubernetesClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesClusterByMoidRequest) Execute() (KubernetesCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesClusterByMoidExecute(r)
@@ -11134,8 +11229,8 @@ GetKubernetesClusterByMoid Read a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) GetKubernetesClusterByMoid(ctx _context.Context, moid string) ApiGetKubernetesClusterByMoidRequest {
 	return ApiGetKubernetesClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11242,13 +11337,13 @@ func (a *KubernetesApiService) GetKubernetesClusterByMoidExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11265,19 +11360,19 @@ func (a *KubernetesApiService) GetKubernetesClusterByMoidExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesClusterListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11285,51 +11380,61 @@ func (r ApiGetKubernetesClusterListRequest) Filter(filter string) ApiGetKubernet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesClusterListRequest) Orderby(orderby string) ApiGetKubernetesClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesClusterListRequest) Top(top int32) ApiGetKubernetesClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesClusterListRequest) Skip(skip int32) ApiGetKubernetesClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesClusterListRequest) Select_(select_ string) ApiGetKubernetesClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesClusterListRequest) Expand(expand string) ApiGetKubernetesClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesClusterListRequest) Apply(apply string) ApiGetKubernetesClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesClusterListRequest) Count(count bool) ApiGetKubernetesClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesClusterListRequest) Inlinecount(inlinecount string) ApiGetKubernetesClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesClusterListRequest) At(at string) ApiGetKubernetesClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesClusterListRequest) Tags(tags string) ApiGetKubernetesClusterListRequest {
 	r.tags = &tags
@@ -11349,7 +11454,7 @@ GetKubernetesClusterList Read a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) GetKubernetesClusterList(ctx _context.Context) ApiGetKubernetesClusterListRequest {
 	return ApiGetKubernetesClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11488,13 +11593,13 @@ func (a *KubernetesApiService) GetKubernetesClusterListExecute(r ApiGetKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11511,11 +11616,10 @@ func (a *KubernetesApiService) GetKubernetesClusterListExecute(r ApiGetKubernete
 }
 
 type ApiGetKubernetesClusterProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesClusterProfileByMoidRequest) Execute() (KubernetesClusterProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesClusterProfileByMoidExecute(r)
@@ -11531,8 +11635,8 @@ GetKubernetesClusterProfileByMoid Read a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) GetKubernetesClusterProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesClusterProfileByMoidRequest {
 	return ApiGetKubernetesClusterProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11639,13 +11743,13 @@ func (a *KubernetesApiService) GetKubernetesClusterProfileByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11662,19 +11766,19 @@ func (a *KubernetesApiService) GetKubernetesClusterProfileByMoidExecute(r ApiGet
 }
 
 type ApiGetKubernetesClusterProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11682,51 +11786,61 @@ func (r ApiGetKubernetesClusterProfileListRequest) Filter(filter string) ApiGetK
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesClusterProfileListRequest) Orderby(orderby string) ApiGetKubernetesClusterProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesClusterProfileListRequest) Top(top int32) ApiGetKubernetesClusterProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesClusterProfileListRequest) Skip(skip int32) ApiGetKubernetesClusterProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesClusterProfileListRequest) Select_(select_ string) ApiGetKubernetesClusterProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesClusterProfileListRequest) Expand(expand string) ApiGetKubernetesClusterProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesClusterProfileListRequest) Apply(apply string) ApiGetKubernetesClusterProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesClusterProfileListRequest) Count(count bool) ApiGetKubernetesClusterProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesClusterProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesClusterProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesClusterProfileListRequest) At(at string) ApiGetKubernetesClusterProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesClusterProfileListRequest) Tags(tags string) ApiGetKubernetesClusterProfileListRequest {
 	r.tags = &tags
@@ -11746,7 +11860,7 @@ GetKubernetesClusterProfileList Read a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) GetKubernetesClusterProfileList(ctx _context.Context) ApiGetKubernetesClusterProfileListRequest {
 	return ApiGetKubernetesClusterProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -11885,13 +11999,13 @@ func (a *KubernetesApiService) GetKubernetesClusterProfileListExecute(r ApiGetKu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11908,11 +12022,10 @@ func (a *KubernetesApiService) GetKubernetesClusterProfileListExecute(r ApiGetKu
 }
 
 type ApiGetKubernetesConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesConfigResultByMoidRequest) Execute() (KubernetesConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesConfigResultByMoidExecute(r)
@@ -11928,8 +12041,8 @@ GetKubernetesConfigResultByMoid Read a 'kubernetes.ConfigResult' resource.
 func (a *KubernetesApiService) GetKubernetesConfigResultByMoid(ctx _context.Context, moid string) ApiGetKubernetesConfigResultByMoidRequest {
 	return ApiGetKubernetesConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12036,13 +12149,13 @@ func (a *KubernetesApiService) GetKubernetesConfigResultByMoidExecute(r ApiGetKu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12059,11 +12172,10 @@ func (a *KubernetesApiService) GetKubernetesConfigResultByMoidExecute(r ApiGetKu
 }
 
 type ApiGetKubernetesConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesConfigResultEntryByMoidRequest) Execute() (KubernetesConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesConfigResultEntryByMoidExecute(r)
@@ -12079,8 +12191,8 @@ GetKubernetesConfigResultEntryByMoid Read a 'kubernetes.ConfigResultEntry' resou
 func (a *KubernetesApiService) GetKubernetesConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetKubernetesConfigResultEntryByMoidRequest {
 	return ApiGetKubernetesConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12187,13 +12299,13 @@ func (a *KubernetesApiService) GetKubernetesConfigResultEntryByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12210,19 +12322,19 @@ func (a *KubernetesApiService) GetKubernetesConfigResultEntryByMoidExecute(r Api
 }
 
 type ApiGetKubernetesConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12230,51 +12342,61 @@ func (r ApiGetKubernetesConfigResultEntryListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Orderby(orderby string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Top(top int32) ApiGetKubernetesConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Skip(skip int32) ApiGetKubernetesConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Select_(select_ string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Expand(expand string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Apply(apply string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Count(count bool) ApiGetKubernetesConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesConfigResultEntryListRequest) At(at string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesConfigResultEntryListRequest) Tags(tags string) ApiGetKubernetesConfigResultEntryListRequest {
 	r.tags = &tags
@@ -12294,7 +12416,7 @@ GetKubernetesConfigResultEntryList Read a 'kubernetes.ConfigResultEntry' resourc
 func (a *KubernetesApiService) GetKubernetesConfigResultEntryList(ctx _context.Context) ApiGetKubernetesConfigResultEntryListRequest {
 	return ApiGetKubernetesConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12433,13 +12555,13 @@ func (a *KubernetesApiService) GetKubernetesConfigResultEntryListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12456,19 +12578,19 @@ func (a *KubernetesApiService) GetKubernetesConfigResultEntryListExecute(r ApiGe
 }
 
 type ApiGetKubernetesConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12476,51 +12598,61 @@ func (r ApiGetKubernetesConfigResultListRequest) Filter(filter string) ApiGetKub
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesConfigResultListRequest) Orderby(orderby string) ApiGetKubernetesConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesConfigResultListRequest) Top(top int32) ApiGetKubernetesConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesConfigResultListRequest) Skip(skip int32) ApiGetKubernetesConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesConfigResultListRequest) Select_(select_ string) ApiGetKubernetesConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesConfigResultListRequest) Expand(expand string) ApiGetKubernetesConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesConfigResultListRequest) Apply(apply string) ApiGetKubernetesConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesConfigResultListRequest) Count(count bool) ApiGetKubernetesConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesConfigResultListRequest) Inlinecount(inlinecount string) ApiGetKubernetesConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesConfigResultListRequest) At(at string) ApiGetKubernetesConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesConfigResultListRequest) Tags(tags string) ApiGetKubernetesConfigResultListRequest {
 	r.tags = &tags
@@ -12540,7 +12672,7 @@ GetKubernetesConfigResultList Read a 'kubernetes.ConfigResult' resource.
 func (a *KubernetesApiService) GetKubernetesConfigResultList(ctx _context.Context) ApiGetKubernetesConfigResultListRequest {
 	return ApiGetKubernetesConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12679,13 +12811,13 @@ func (a *KubernetesApiService) GetKubernetesConfigResultListExecute(r ApiGetKube
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12702,11 +12834,10 @@ func (a *KubernetesApiService) GetKubernetesConfigResultListExecute(r ApiGetKube
 }
 
 type ApiGetKubernetesContainerRuntimePolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesContainerRuntimePolicyByMoidRequest) Execute() (KubernetesContainerRuntimePolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesContainerRuntimePolicyByMoidExecute(r)
@@ -12722,8 +12853,8 @@ GetKubernetesContainerRuntimePolicyByMoid Read a 'kubernetes.ContainerRuntimePol
 func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesContainerRuntimePolicyByMoidRequest {
 	return ApiGetKubernetesContainerRuntimePolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12830,13 +12961,13 @@ func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12853,19 +12984,19 @@ func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyByMoidExecute(
 }
 
 type ApiGetKubernetesContainerRuntimePolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12873,51 +13004,61 @@ func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Filter(filter string)
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Orderby(orderby string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Top(top int32) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Skip(skip int32) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Select_(select_ string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Expand(expand string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Apply(apply string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Count(count bool) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) At(at string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesContainerRuntimePolicyListRequest) Tags(tags string) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	r.tags = &tags
@@ -12937,7 +13078,7 @@ GetKubernetesContainerRuntimePolicyList Read a 'kubernetes.ContainerRuntimePolic
 func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyList(ctx _context.Context) ApiGetKubernetesContainerRuntimePolicyListRequest {
 	return ApiGetKubernetesContainerRuntimePolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13076,13 +13217,13 @@ func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13099,11 +13240,10 @@ func (a *KubernetesApiService) GetKubernetesContainerRuntimePolicyListExecute(r 
 }
 
 type ApiGetKubernetesDaemonSetByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesDaemonSetByMoidRequest) Execute() (KubernetesDaemonSet, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesDaemonSetByMoidExecute(r)
@@ -13119,8 +13259,8 @@ GetKubernetesDaemonSetByMoid Read a 'kubernetes.DaemonSet' resource.
 func (a *KubernetesApiService) GetKubernetesDaemonSetByMoid(ctx _context.Context, moid string) ApiGetKubernetesDaemonSetByMoidRequest {
 	return ApiGetKubernetesDaemonSetByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13227,13 +13367,13 @@ func (a *KubernetesApiService) GetKubernetesDaemonSetByMoidExecute(r ApiGetKuber
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13250,19 +13390,19 @@ func (a *KubernetesApiService) GetKubernetesDaemonSetByMoidExecute(r ApiGetKuber
 }
 
 type ApiGetKubernetesDaemonSetListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13270,51 +13410,61 @@ func (r ApiGetKubernetesDaemonSetListRequest) Filter(filter string) ApiGetKubern
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesDaemonSetListRequest) Orderby(orderby string) ApiGetKubernetesDaemonSetListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesDaemonSetListRequest) Top(top int32) ApiGetKubernetesDaemonSetListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesDaemonSetListRequest) Skip(skip int32) ApiGetKubernetesDaemonSetListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesDaemonSetListRequest) Select_(select_ string) ApiGetKubernetesDaemonSetListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesDaemonSetListRequest) Expand(expand string) ApiGetKubernetesDaemonSetListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesDaemonSetListRequest) Apply(apply string) ApiGetKubernetesDaemonSetListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesDaemonSetListRequest) Count(count bool) ApiGetKubernetesDaemonSetListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesDaemonSetListRequest) Inlinecount(inlinecount string) ApiGetKubernetesDaemonSetListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesDaemonSetListRequest) At(at string) ApiGetKubernetesDaemonSetListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesDaemonSetListRequest) Tags(tags string) ApiGetKubernetesDaemonSetListRequest {
 	r.tags = &tags
@@ -13334,7 +13484,7 @@ GetKubernetesDaemonSetList Read a 'kubernetes.DaemonSet' resource.
 func (a *KubernetesApiService) GetKubernetesDaemonSetList(ctx _context.Context) ApiGetKubernetesDaemonSetListRequest {
 	return ApiGetKubernetesDaemonSetListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13473,13 +13623,13 @@ func (a *KubernetesApiService) GetKubernetesDaemonSetListExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13496,11 +13646,10 @@ func (a *KubernetesApiService) GetKubernetesDaemonSetListExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesDeploymentByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesDeploymentByMoidRequest) Execute() (KubernetesDeployment, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesDeploymentByMoidExecute(r)
@@ -13516,8 +13665,8 @@ GetKubernetesDeploymentByMoid Read a 'kubernetes.Deployment' resource.
 func (a *KubernetesApiService) GetKubernetesDeploymentByMoid(ctx _context.Context, moid string) ApiGetKubernetesDeploymentByMoidRequest {
 	return ApiGetKubernetesDeploymentByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13624,13 +13773,13 @@ func (a *KubernetesApiService) GetKubernetesDeploymentByMoidExecute(r ApiGetKube
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13647,19 +13796,19 @@ func (a *KubernetesApiService) GetKubernetesDeploymentByMoidExecute(r ApiGetKube
 }
 
 type ApiGetKubernetesDeploymentListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13667,51 +13816,61 @@ func (r ApiGetKubernetesDeploymentListRequest) Filter(filter string) ApiGetKuber
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesDeploymentListRequest) Orderby(orderby string) ApiGetKubernetesDeploymentListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesDeploymentListRequest) Top(top int32) ApiGetKubernetesDeploymentListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesDeploymentListRequest) Skip(skip int32) ApiGetKubernetesDeploymentListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesDeploymentListRequest) Select_(select_ string) ApiGetKubernetesDeploymentListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesDeploymentListRequest) Expand(expand string) ApiGetKubernetesDeploymentListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesDeploymentListRequest) Apply(apply string) ApiGetKubernetesDeploymentListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesDeploymentListRequest) Count(count bool) ApiGetKubernetesDeploymentListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesDeploymentListRequest) Inlinecount(inlinecount string) ApiGetKubernetesDeploymentListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesDeploymentListRequest) At(at string) ApiGetKubernetesDeploymentListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesDeploymentListRequest) Tags(tags string) ApiGetKubernetesDeploymentListRequest {
 	r.tags = &tags
@@ -13731,7 +13890,7 @@ GetKubernetesDeploymentList Read a 'kubernetes.Deployment' resource.
 func (a *KubernetesApiService) GetKubernetesDeploymentList(ctx _context.Context) ApiGetKubernetesDeploymentListRequest {
 	return ApiGetKubernetesDeploymentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13870,13 +14029,13 @@ func (a *KubernetesApiService) GetKubernetesDeploymentListExecute(r ApiGetKubern
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13893,11 +14052,10 @@ func (a *KubernetesApiService) GetKubernetesDeploymentListExecute(r ApiGetKubern
 }
 
 type ApiGetKubernetesIngressByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesIngressByMoidRequest) Execute() (KubernetesIngress, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesIngressByMoidExecute(r)
@@ -13913,8 +14071,8 @@ GetKubernetesIngressByMoid Read a 'kubernetes.Ingress' resource.
 func (a *KubernetesApiService) GetKubernetesIngressByMoid(ctx _context.Context, moid string) ApiGetKubernetesIngressByMoidRequest {
 	return ApiGetKubernetesIngressByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14021,13 +14179,13 @@ func (a *KubernetesApiService) GetKubernetesIngressByMoidExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14044,19 +14202,19 @@ func (a *KubernetesApiService) GetKubernetesIngressByMoidExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesIngressListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14064,51 +14222,61 @@ func (r ApiGetKubernetesIngressListRequest) Filter(filter string) ApiGetKubernet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesIngressListRequest) Orderby(orderby string) ApiGetKubernetesIngressListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesIngressListRequest) Top(top int32) ApiGetKubernetesIngressListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesIngressListRequest) Skip(skip int32) ApiGetKubernetesIngressListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesIngressListRequest) Select_(select_ string) ApiGetKubernetesIngressListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesIngressListRequest) Expand(expand string) ApiGetKubernetesIngressListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesIngressListRequest) Apply(apply string) ApiGetKubernetesIngressListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesIngressListRequest) Count(count bool) ApiGetKubernetesIngressListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesIngressListRequest) Inlinecount(inlinecount string) ApiGetKubernetesIngressListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesIngressListRequest) At(at string) ApiGetKubernetesIngressListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesIngressListRequest) Tags(tags string) ApiGetKubernetesIngressListRequest {
 	r.tags = &tags
@@ -14128,7 +14296,7 @@ GetKubernetesIngressList Read a 'kubernetes.Ingress' resource.
 func (a *KubernetesApiService) GetKubernetesIngressList(ctx _context.Context) ApiGetKubernetesIngressListRequest {
 	return ApiGetKubernetesIngressListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14267,13 +14435,13 @@ func (a *KubernetesApiService) GetKubernetesIngressListExecute(r ApiGetKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14290,11 +14458,10 @@ func (a *KubernetesApiService) GetKubernetesIngressListExecute(r ApiGetKubernete
 }
 
 type ApiGetKubernetesNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesNetworkPolicyByMoidRequest) Execute() (KubernetesNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesNetworkPolicyByMoidExecute(r)
@@ -14310,8 +14477,8 @@ GetKubernetesNetworkPolicyByMoid Read a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesNetworkPolicyByMoidRequest {
 	return ApiGetKubernetesNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14418,13 +14585,13 @@ func (a *KubernetesApiService) GetKubernetesNetworkPolicyByMoidExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14441,19 +14608,19 @@ func (a *KubernetesApiService) GetKubernetesNetworkPolicyByMoidExecute(r ApiGetK
 }
 
 type ApiGetKubernetesNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14461,51 +14628,61 @@ func (r ApiGetKubernetesNetworkPolicyListRequest) Filter(filter string) ApiGetKu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Orderby(orderby string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Top(top int32) ApiGetKubernetesNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Skip(skip int32) ApiGetKubernetesNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Select_(select_ string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Expand(expand string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Apply(apply string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Count(count bool) ApiGetKubernetesNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesNetworkPolicyListRequest) At(at string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesNetworkPolicyListRequest) Tags(tags string) ApiGetKubernetesNetworkPolicyListRequest {
 	r.tags = &tags
@@ -14525,7 +14702,7 @@ GetKubernetesNetworkPolicyList Read a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesNetworkPolicyList(ctx _context.Context) ApiGetKubernetesNetworkPolicyListRequest {
 	return ApiGetKubernetesNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14664,13 +14841,13 @@ func (a *KubernetesApiService) GetKubernetesNetworkPolicyListExecute(r ApiGetKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14687,11 +14864,10 @@ func (a *KubernetesApiService) GetKubernetesNetworkPolicyListExecute(r ApiGetKub
 }
 
 type ApiGetKubernetesNodeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesNodeByMoidRequest) Execute() (KubernetesNode, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesNodeByMoidExecute(r)
@@ -14707,8 +14883,8 @@ GetKubernetesNodeByMoid Read a 'kubernetes.Node' resource.
 func (a *KubernetesApiService) GetKubernetesNodeByMoid(ctx _context.Context, moid string) ApiGetKubernetesNodeByMoidRequest {
 	return ApiGetKubernetesNodeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14815,13 +14991,13 @@ func (a *KubernetesApiService) GetKubernetesNodeByMoidExecute(r ApiGetKubernetes
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14838,11 +15014,10 @@ func (a *KubernetesApiService) GetKubernetesNodeByMoidExecute(r ApiGetKubernetes
 }
 
 type ApiGetKubernetesNodeGroupProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesNodeGroupProfileByMoidRequest) Execute() (KubernetesNodeGroupProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesNodeGroupProfileByMoidExecute(r)
@@ -14858,8 +15033,8 @@ GetKubernetesNodeGroupProfileByMoid Read a 'kubernetes.NodeGroupProfile' resourc
 func (a *KubernetesApiService) GetKubernetesNodeGroupProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesNodeGroupProfileByMoidRequest {
 	return ApiGetKubernetesNodeGroupProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14966,13 +15141,13 @@ func (a *KubernetesApiService) GetKubernetesNodeGroupProfileByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14989,19 +15164,19 @@ func (a *KubernetesApiService) GetKubernetesNodeGroupProfileByMoidExecute(r ApiG
 }
 
 type ApiGetKubernetesNodeGroupProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15009,51 +15184,61 @@ func (r ApiGetKubernetesNodeGroupProfileListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Orderby(orderby string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Top(top int32) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Skip(skip int32) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Select_(select_ string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Expand(expand string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Apply(apply string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Count(count bool) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) At(at string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesNodeGroupProfileListRequest) Tags(tags string) ApiGetKubernetesNodeGroupProfileListRequest {
 	r.tags = &tags
@@ -15073,7 +15258,7 @@ GetKubernetesNodeGroupProfileList Read a 'kubernetes.NodeGroupProfile' resource.
 func (a *KubernetesApiService) GetKubernetesNodeGroupProfileList(ctx _context.Context) ApiGetKubernetesNodeGroupProfileListRequest {
 	return ApiGetKubernetesNodeGroupProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15212,13 +15397,13 @@ func (a *KubernetesApiService) GetKubernetesNodeGroupProfileListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15235,19 +15420,19 @@ func (a *KubernetesApiService) GetKubernetesNodeGroupProfileListExecute(r ApiGet
 }
 
 type ApiGetKubernetesNodeListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15255,51 +15440,61 @@ func (r ApiGetKubernetesNodeListRequest) Filter(filter string) ApiGetKubernetesN
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesNodeListRequest) Orderby(orderby string) ApiGetKubernetesNodeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesNodeListRequest) Top(top int32) ApiGetKubernetesNodeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesNodeListRequest) Skip(skip int32) ApiGetKubernetesNodeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesNodeListRequest) Select_(select_ string) ApiGetKubernetesNodeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesNodeListRequest) Expand(expand string) ApiGetKubernetesNodeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesNodeListRequest) Apply(apply string) ApiGetKubernetesNodeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesNodeListRequest) Count(count bool) ApiGetKubernetesNodeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesNodeListRequest) Inlinecount(inlinecount string) ApiGetKubernetesNodeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesNodeListRequest) At(at string) ApiGetKubernetesNodeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesNodeListRequest) Tags(tags string) ApiGetKubernetesNodeListRequest {
 	r.tags = &tags
@@ -15319,7 +15514,7 @@ GetKubernetesNodeList Read a 'kubernetes.Node' resource.
 func (a *KubernetesApiService) GetKubernetesNodeList(ctx _context.Context) ApiGetKubernetesNodeListRequest {
 	return ApiGetKubernetesNodeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15458,13 +15653,13 @@ func (a *KubernetesApiService) GetKubernetesNodeListExecute(r ApiGetKubernetesNo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15481,11 +15676,10 @@ func (a *KubernetesApiService) GetKubernetesNodeListExecute(r ApiGetKubernetesNo
 }
 
 type ApiGetKubernetesPodByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesPodByMoidRequest) Execute() (KubernetesPod, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesPodByMoidExecute(r)
@@ -15501,8 +15695,8 @@ GetKubernetesPodByMoid Read a 'kubernetes.Pod' resource.
 func (a *KubernetesApiService) GetKubernetesPodByMoid(ctx _context.Context, moid string) ApiGetKubernetesPodByMoidRequest {
 	return ApiGetKubernetesPodByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15609,13 +15803,13 @@ func (a *KubernetesApiService) GetKubernetesPodByMoidExecute(r ApiGetKubernetesP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15632,19 +15826,19 @@ func (a *KubernetesApiService) GetKubernetesPodByMoidExecute(r ApiGetKubernetesP
 }
 
 type ApiGetKubernetesPodListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15652,51 +15846,61 @@ func (r ApiGetKubernetesPodListRequest) Filter(filter string) ApiGetKubernetesPo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesPodListRequest) Orderby(orderby string) ApiGetKubernetesPodListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesPodListRequest) Top(top int32) ApiGetKubernetesPodListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesPodListRequest) Skip(skip int32) ApiGetKubernetesPodListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesPodListRequest) Select_(select_ string) ApiGetKubernetesPodListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesPodListRequest) Expand(expand string) ApiGetKubernetesPodListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesPodListRequest) Apply(apply string) ApiGetKubernetesPodListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesPodListRequest) Count(count bool) ApiGetKubernetesPodListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesPodListRequest) Inlinecount(inlinecount string) ApiGetKubernetesPodListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesPodListRequest) At(at string) ApiGetKubernetesPodListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesPodListRequest) Tags(tags string) ApiGetKubernetesPodListRequest {
 	r.tags = &tags
@@ -15716,7 +15920,7 @@ GetKubernetesPodList Read a 'kubernetes.Pod' resource.
 func (a *KubernetesApiService) GetKubernetesPodList(ctx _context.Context) ApiGetKubernetesPodListRequest {
 	return ApiGetKubernetesPodListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15855,13 +16059,13 @@ func (a *KubernetesApiService) GetKubernetesPodListExecute(r ApiGetKubernetesPod
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15878,11 +16082,10 @@ func (a *KubernetesApiService) GetKubernetesPodListExecute(r ApiGetKubernetesPod
 }
 
 type ApiGetKubernetesServiceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesServiceByMoidRequest) Execute() (KubernetesService, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesServiceByMoidExecute(r)
@@ -15898,8 +16101,8 @@ GetKubernetesServiceByMoid Read a 'kubernetes.Service' resource.
 func (a *KubernetesApiService) GetKubernetesServiceByMoid(ctx _context.Context, moid string) ApiGetKubernetesServiceByMoidRequest {
 	return ApiGetKubernetesServiceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16006,13 +16209,13 @@ func (a *KubernetesApiService) GetKubernetesServiceByMoidExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16029,19 +16232,19 @@ func (a *KubernetesApiService) GetKubernetesServiceByMoidExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesServiceListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16049,51 +16252,61 @@ func (r ApiGetKubernetesServiceListRequest) Filter(filter string) ApiGetKubernet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesServiceListRequest) Orderby(orderby string) ApiGetKubernetesServiceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesServiceListRequest) Top(top int32) ApiGetKubernetesServiceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesServiceListRequest) Skip(skip int32) ApiGetKubernetesServiceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesServiceListRequest) Select_(select_ string) ApiGetKubernetesServiceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesServiceListRequest) Expand(expand string) ApiGetKubernetesServiceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesServiceListRequest) Apply(apply string) ApiGetKubernetesServiceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesServiceListRequest) Count(count bool) ApiGetKubernetesServiceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesServiceListRequest) Inlinecount(inlinecount string) ApiGetKubernetesServiceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesServiceListRequest) At(at string) ApiGetKubernetesServiceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesServiceListRequest) Tags(tags string) ApiGetKubernetesServiceListRequest {
 	r.tags = &tags
@@ -16113,7 +16326,7 @@ GetKubernetesServiceList Read a 'kubernetes.Service' resource.
 func (a *KubernetesApiService) GetKubernetesServiceList(ctx _context.Context) ApiGetKubernetesServiceListRequest {
 	return ApiGetKubernetesServiceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16252,13 +16465,13 @@ func (a *KubernetesApiService) GetKubernetesServiceListExecute(r ApiGetKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16275,11 +16488,10 @@ func (a *KubernetesApiService) GetKubernetesServiceListExecute(r ApiGetKubernete
 }
 
 type ApiGetKubernetesStatefulSetByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesStatefulSetByMoidRequest) Execute() (KubernetesStatefulSet, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesStatefulSetByMoidExecute(r)
@@ -16295,8 +16507,8 @@ GetKubernetesStatefulSetByMoid Read a 'kubernetes.StatefulSet' resource.
 func (a *KubernetesApiService) GetKubernetesStatefulSetByMoid(ctx _context.Context, moid string) ApiGetKubernetesStatefulSetByMoidRequest {
 	return ApiGetKubernetesStatefulSetByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16403,13 +16615,13 @@ func (a *KubernetesApiService) GetKubernetesStatefulSetByMoidExecute(r ApiGetKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16426,19 +16638,19 @@ func (a *KubernetesApiService) GetKubernetesStatefulSetByMoidExecute(r ApiGetKub
 }
 
 type ApiGetKubernetesStatefulSetListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16446,51 +16658,61 @@ func (r ApiGetKubernetesStatefulSetListRequest) Filter(filter string) ApiGetKube
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesStatefulSetListRequest) Orderby(orderby string) ApiGetKubernetesStatefulSetListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesStatefulSetListRequest) Top(top int32) ApiGetKubernetesStatefulSetListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesStatefulSetListRequest) Skip(skip int32) ApiGetKubernetesStatefulSetListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesStatefulSetListRequest) Select_(select_ string) ApiGetKubernetesStatefulSetListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesStatefulSetListRequest) Expand(expand string) ApiGetKubernetesStatefulSetListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesStatefulSetListRequest) Apply(apply string) ApiGetKubernetesStatefulSetListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesStatefulSetListRequest) Count(count bool) ApiGetKubernetesStatefulSetListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesStatefulSetListRequest) Inlinecount(inlinecount string) ApiGetKubernetesStatefulSetListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesStatefulSetListRequest) At(at string) ApiGetKubernetesStatefulSetListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesStatefulSetListRequest) Tags(tags string) ApiGetKubernetesStatefulSetListRequest {
 	r.tags = &tags
@@ -16510,7 +16732,7 @@ GetKubernetesStatefulSetList Read a 'kubernetes.StatefulSet' resource.
 func (a *KubernetesApiService) GetKubernetesStatefulSetList(ctx _context.Context) ApiGetKubernetesStatefulSetListRequest {
 	return ApiGetKubernetesStatefulSetListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16649,13 +16871,13 @@ func (a *KubernetesApiService) GetKubernetesStatefulSetListExecute(r ApiGetKuber
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16672,11 +16894,10 @@ func (a *KubernetesApiService) GetKubernetesStatefulSetListExecute(r ApiGetKuber
 }
 
 type ApiGetKubernetesSysConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesSysConfigPolicyByMoidRequest) Execute() (KubernetesSysConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesSysConfigPolicyByMoidExecute(r)
@@ -16692,8 +16913,8 @@ GetKubernetesSysConfigPolicyByMoid Read a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesSysConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesSysConfigPolicyByMoidRequest {
 	return ApiGetKubernetesSysConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16800,13 +17021,13 @@ func (a *KubernetesApiService) GetKubernetesSysConfigPolicyByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16823,19 +17044,19 @@ func (a *KubernetesApiService) GetKubernetesSysConfigPolicyByMoidExecute(r ApiGe
 }
 
 type ApiGetKubernetesSysConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16843,51 +17064,61 @@ func (r ApiGetKubernetesSysConfigPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Orderby(orderby string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Top(top int32) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Skip(skip int32) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Select_(select_ string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Expand(expand string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Apply(apply string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Count(count bool) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) At(at string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesSysConfigPolicyListRequest) Tags(tags string) ApiGetKubernetesSysConfigPolicyListRequest {
 	r.tags = &tags
@@ -16907,7 +17138,7 @@ GetKubernetesSysConfigPolicyList Read a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesSysConfigPolicyList(ctx _context.Context) ApiGetKubernetesSysConfigPolicyListRequest {
 	return ApiGetKubernetesSysConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17046,13 +17277,13 @@ func (a *KubernetesApiService) GetKubernetesSysConfigPolicyListExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17069,11 +17300,10 @@ func (a *KubernetesApiService) GetKubernetesSysConfigPolicyListExecute(r ApiGetK
 }
 
 type ApiGetKubernetesTrustedRegistriesPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesTrustedRegistriesPolicyByMoidRequest) Execute() (KubernetesTrustedRegistriesPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesTrustedRegistriesPolicyByMoidExecute(r)
@@ -17089,8 +17319,8 @@ GetKubernetesTrustedRegistriesPolicyByMoid Read a 'kubernetes.TrustedRegistriesP
 func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesTrustedRegistriesPolicyByMoidRequest {
 	return ApiGetKubernetesTrustedRegistriesPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17197,13 +17427,13 @@ func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17220,19 +17450,19 @@ func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyByMoidExecute
 }
 
 type ApiGetKubernetesTrustedRegistriesPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17240,51 +17470,61 @@ func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Orderby(orderby string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Top(top int32) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Skip(skip int32) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Select_(select_ string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Expand(expand string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Apply(apply string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Count(count bool) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) At(at string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesTrustedRegistriesPolicyListRequest) Tags(tags string) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	r.tags = &tags
@@ -17304,7 +17544,7 @@ GetKubernetesTrustedRegistriesPolicyList Read a 'kubernetes.TrustedRegistriesPol
 func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyList(ctx _context.Context) ApiGetKubernetesTrustedRegistriesPolicyListRequest {
 	return ApiGetKubernetesTrustedRegistriesPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17443,13 +17683,13 @@ func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17466,11 +17706,10 @@ func (a *KubernetesApiService) GetKubernetesTrustedRegistriesPolicyListExecute(r
 }
 
 type ApiGetKubernetesVersionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVersionByMoidRequest) Execute() (KubernetesVersion, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVersionByMoidExecute(r)
@@ -17486,8 +17725,8 @@ GetKubernetesVersionByMoid Read a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) GetKubernetesVersionByMoid(ctx _context.Context, moid string) ApiGetKubernetesVersionByMoidRequest {
 	return ApiGetKubernetesVersionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17594,13 +17833,13 @@ func (a *KubernetesApiService) GetKubernetesVersionByMoidExecute(r ApiGetKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17617,19 +17856,19 @@ func (a *KubernetesApiService) GetKubernetesVersionByMoidExecute(r ApiGetKuberne
 }
 
 type ApiGetKubernetesVersionListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17637,51 +17876,61 @@ func (r ApiGetKubernetesVersionListRequest) Filter(filter string) ApiGetKubernet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVersionListRequest) Orderby(orderby string) ApiGetKubernetesVersionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVersionListRequest) Top(top int32) ApiGetKubernetesVersionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVersionListRequest) Skip(skip int32) ApiGetKubernetesVersionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVersionListRequest) Select_(select_ string) ApiGetKubernetesVersionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVersionListRequest) Expand(expand string) ApiGetKubernetesVersionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVersionListRequest) Apply(apply string) ApiGetKubernetesVersionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVersionListRequest) Count(count bool) ApiGetKubernetesVersionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVersionListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVersionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVersionListRequest) At(at string) ApiGetKubernetesVersionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVersionListRequest) Tags(tags string) ApiGetKubernetesVersionListRequest {
 	r.tags = &tags
@@ -17701,7 +17950,7 @@ GetKubernetesVersionList Read a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) GetKubernetesVersionList(ctx _context.Context) ApiGetKubernetesVersionListRequest {
 	return ApiGetKubernetesVersionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17840,13 +18089,13 @@ func (a *KubernetesApiService) GetKubernetesVersionListExecute(r ApiGetKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17863,11 +18112,10 @@ func (a *KubernetesApiService) GetKubernetesVersionListExecute(r ApiGetKubernete
 }
 
 type ApiGetKubernetesVersionPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVersionPolicyByMoidRequest) Execute() (KubernetesVersionPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVersionPolicyByMoidExecute(r)
@@ -17883,8 +18131,8 @@ GetKubernetesVersionPolicyByMoid Read a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesVersionPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesVersionPolicyByMoidRequest {
 	return ApiGetKubernetesVersionPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17991,13 +18239,13 @@ func (a *KubernetesApiService) GetKubernetesVersionPolicyByMoidExecute(r ApiGetK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18014,19 +18262,19 @@ func (a *KubernetesApiService) GetKubernetesVersionPolicyByMoidExecute(r ApiGetK
 }
 
 type ApiGetKubernetesVersionPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18034,51 +18282,61 @@ func (r ApiGetKubernetesVersionPolicyListRequest) Filter(filter string) ApiGetKu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVersionPolicyListRequest) Orderby(orderby string) ApiGetKubernetesVersionPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVersionPolicyListRequest) Top(top int32) ApiGetKubernetesVersionPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVersionPolicyListRequest) Skip(skip int32) ApiGetKubernetesVersionPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVersionPolicyListRequest) Select_(select_ string) ApiGetKubernetesVersionPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVersionPolicyListRequest) Expand(expand string) ApiGetKubernetesVersionPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVersionPolicyListRequest) Apply(apply string) ApiGetKubernetesVersionPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVersionPolicyListRequest) Count(count bool) ApiGetKubernetesVersionPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVersionPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVersionPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVersionPolicyListRequest) At(at string) ApiGetKubernetesVersionPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVersionPolicyListRequest) Tags(tags string) ApiGetKubernetesVersionPolicyListRequest {
 	r.tags = &tags
@@ -18098,7 +18356,7 @@ GetKubernetesVersionPolicyList Read a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) GetKubernetesVersionPolicyList(ctx _context.Context) ApiGetKubernetesVersionPolicyListRequest {
 	return ApiGetKubernetesVersionPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18237,13 +18495,13 @@ func (a *KubernetesApiService) GetKubernetesVersionPolicyListExecute(r ApiGetKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18260,11 +18518,10 @@ func (a *KubernetesApiService) GetKubernetesVersionPolicyListExecute(r ApiGetKub
 }
 
 type ApiGetKubernetesVirtualMachineInfraConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyByMoidRequest) Execute() (KubernetesVirtualMachineInfraConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVirtualMachineInfraConfigPolicyByMoidExecute(r)
@@ -18280,8 +18537,8 @@ GetKubernetesVirtualMachineInfraConfigPolicyByMoid Read a 'kubernetes.VirtualMac
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetKubernetesVirtualMachineInfraConfigPolicyByMoidRequest {
 	return ApiGetKubernetesVirtualMachineInfraConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18388,13 +18645,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyByMoi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18411,19 +18668,19 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyByMoi
 }
 
 type ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18431,51 +18688,61 @@ func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Filter(filte
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Orderby(orderby string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Top(top int32) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Skip(skip int32) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Select_(select_ string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Expand(expand string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Apply(apply string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Count(count bool) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) At(at string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest) Tags(tags string) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	r.tags = &tags
@@ -18495,7 +18762,7 @@ GetKubernetesVirtualMachineInfraConfigPolicyList Read a 'kubernetes.VirtualMachi
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyList(ctx _context.Context) ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest {
 	return ApiGetKubernetesVirtualMachineInfraConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18634,13 +18901,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyListE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18657,11 +18924,10 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfraConfigPolicyListE
 }
 
 type ApiGetKubernetesVirtualMachineInfrastructureProviderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderByMoidRequest) Execute() (KubernetesVirtualMachineInfrastructureProvider, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVirtualMachineInfrastructureProviderByMoidExecute(r)
@@ -18677,8 +18943,8 @@ GetKubernetesVirtualMachineInfrastructureProviderByMoid Read a 'kubernetes.Virtu
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProviderByMoid(ctx _context.Context, moid string) ApiGetKubernetesVirtualMachineInfrastructureProviderByMoidRequest {
 	return ApiGetKubernetesVirtualMachineInfrastructureProviderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18785,13 +19051,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProvider
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18808,19 +19074,19 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProvider
 }
 
 type ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18828,51 +19094,61 @@ func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Filter(
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Orderby(orderby string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Top(top int32) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Skip(skip int32) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Select_(select_ string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Expand(expand string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Apply(apply string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Count(count bool) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) At(at string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest) Tags(tags string) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	r.tags = &tags
@@ -18892,7 +19168,7 @@ GetKubernetesVirtualMachineInfrastructureProviderList Read a 'kubernetes.Virtual
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProviderList(ctx _context.Context) ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest {
 	return ApiGetKubernetesVirtualMachineInfrastructureProviderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19031,13 +19307,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProvider
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19054,11 +19330,10 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInfrastructureProvider
 }
 
 type ApiGetKubernetesVirtualMachineInstanceTypeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVirtualMachineInstanceTypeByMoidRequest) Execute() (KubernetesVirtualMachineInstanceType, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVirtualMachineInstanceTypeByMoidExecute(r)
@@ -19074,8 +19349,8 @@ GetKubernetesVirtualMachineInstanceTypeByMoid Read a 'kubernetes.VirtualMachineI
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeByMoid(ctx _context.Context, moid string) ApiGetKubernetesVirtualMachineInstanceTypeByMoidRequest {
 	return ApiGetKubernetesVirtualMachineInstanceTypeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19182,13 +19457,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeByMoidExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19205,19 +19480,19 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeByMoidExec
 }
 
 type ApiGetKubernetesVirtualMachineInstanceTypeListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19225,51 +19500,61 @@ func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Orderby(orderby string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Top(top int32) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Skip(skip int32) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Select_(select_ string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Expand(expand string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Apply(apply string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Count(count bool) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) At(at string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVirtualMachineInstanceTypeListRequest) Tags(tags string) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	r.tags = &tags
@@ -19289,7 +19574,7 @@ GetKubernetesVirtualMachineInstanceTypeList Read a 'kubernetes.VirtualMachineIns
 func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeList(ctx _context.Context) ApiGetKubernetesVirtualMachineInstanceTypeListRequest {
 	return ApiGetKubernetesVirtualMachineInstanceTypeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19428,13 +19713,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeListExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19451,11 +19736,10 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineInstanceTypeListExecut
 }
 
 type ApiGetKubernetesVirtualMachineNodeProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *KubernetesApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetKubernetesVirtualMachineNodeProfileByMoidRequest) Execute() (KubernetesVirtualMachineNodeProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetKubernetesVirtualMachineNodeProfileByMoidExecute(r)
@@ -19471,8 +19755,8 @@ GetKubernetesVirtualMachineNodeProfileByMoid Read a 'kubernetes.VirtualMachineNo
 func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileByMoid(ctx _context.Context, moid string) ApiGetKubernetesVirtualMachineNodeProfileByMoidRequest {
 	return ApiGetKubernetesVirtualMachineNodeProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19579,13 +19863,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19602,19 +19886,19 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileByMoidExecu
 }
 
 type ApiGetKubernetesVirtualMachineNodeProfileListRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *KubernetesApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19622,51 +19906,61 @@ func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Orderby(orderby string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Top(top int32) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Skip(skip int32) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Select_(select_ string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Expand(expand string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Apply(apply string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Count(count bool) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Inlinecount(inlinecount string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) At(at string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetKubernetesVirtualMachineNodeProfileListRequest) Tags(tags string) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	r.tags = &tags
@@ -19686,7 +19980,7 @@ GetKubernetesVirtualMachineNodeProfileList Read a 'kubernetes.VirtualMachineNode
 func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileList(ctx _context.Context) ApiGetKubernetesVirtualMachineNodeProfileListRequest {
 	return ApiGetKubernetesVirtualMachineNodeProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19825,13 +20119,13 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19848,11 +20142,11 @@ func (a *KubernetesApiService) GetKubernetesVirtualMachineNodeProfileListExecute
 }
 
 type ApiPatchKubernetesAciCniApicRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *KubernetesApiService
+	moid                 string
 	kubernetesAciCniApic *KubernetesAciCniApic
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;kubernetes.AciCniApic&#39; resource to update.
@@ -19860,6 +20154,7 @@ func (r ApiPatchKubernetesAciCniApicRequest) KubernetesAciCniApic(kubernetesAciC
 	r.kubernetesAciCniApic = &kubernetesAciCniApic
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAciCniApicRequest) IfMatch(ifMatch string) ApiPatchKubernetesAciCniApicRequest {
 	r.ifMatch = &ifMatch
@@ -19882,8 +20177,8 @@ Deprecated
 func (a *KubernetesApiService) PatchKubernetesAciCniApic(ctx _context.Context, moid string) ApiPatchKubernetesAciCniApicRequest {
 	return ApiPatchKubernetesAciCniApicRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19999,13 +20294,13 @@ func (a *KubernetesApiService) PatchKubernetesAciCniApicExecute(r ApiPatchKubern
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20022,11 +20317,11 @@ func (a *KubernetesApiService) PatchKubernetesAciCniApicExecute(r ApiPatchKubern
 }
 
 type ApiPatchKubernetesAciCniProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesAciCniProfile *KubernetesAciCniProfile
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.AciCniProfile&#39; resource to update.
@@ -20034,6 +20329,7 @@ func (r ApiPatchKubernetesAciCniProfileRequest) KubernetesAciCniProfile(kubernet
 	r.kubernetesAciCniProfile = &kubernetesAciCniProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAciCniProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesAciCniProfileRequest {
 	r.ifMatch = &ifMatch
@@ -20056,8 +20352,8 @@ Deprecated
 func (a *KubernetesApiService) PatchKubernetesAciCniProfile(ctx _context.Context, moid string) ApiPatchKubernetesAciCniProfileRequest {
 	return ApiPatchKubernetesAciCniProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20173,13 +20469,13 @@ func (a *KubernetesApiService) PatchKubernetesAciCniProfileExecute(r ApiPatchKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20196,11 +20492,11 @@ func (a *KubernetesApiService) PatchKubernetesAciCniProfileExecute(r ApiPatchKub
 }
 
 type ApiPatchKubernetesAciCniTenantClusterAllocationRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                     _context.Context
+	ApiService                              *KubernetesApiService
+	moid                                    string
 	kubernetesAciCniTenantClusterAllocation *KubernetesAciCniTenantClusterAllocation
-	ifMatch *string
+	ifMatch                                 *string
 }
 
 // The &#39;kubernetes.AciCniTenantClusterAllocation&#39; resource to update.
@@ -20208,6 +20504,7 @@ func (r ApiPatchKubernetesAciCniTenantClusterAllocationRequest) KubernetesAciCni
 	r.kubernetesAciCniTenantClusterAllocation = &kubernetesAciCniTenantClusterAllocation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAciCniTenantClusterAllocationRequest) IfMatch(ifMatch string) ApiPatchKubernetesAciCniTenantClusterAllocationRequest {
 	r.ifMatch = &ifMatch
@@ -20230,8 +20527,8 @@ Deprecated
 func (a *KubernetesApiService) PatchKubernetesAciCniTenantClusterAllocation(ctx _context.Context, moid string) ApiPatchKubernetesAciCniTenantClusterAllocationRequest {
 	return ApiPatchKubernetesAciCniTenantClusterAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20347,13 +20644,13 @@ func (a *KubernetesApiService) PatchKubernetesAciCniTenantClusterAllocationExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20370,11 +20667,11 @@ func (a *KubernetesApiService) PatchKubernetesAciCniTenantClusterAllocationExecu
 }
 
 type ApiPatchKubernetesAddonDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesAddonDefinition *KubernetesAddonDefinition
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.AddonDefinition&#39; resource to update.
@@ -20382,6 +20679,7 @@ func (r ApiPatchKubernetesAddonDefinitionRequest) KubernetesAddonDefinition(kube
 	r.kubernetesAddonDefinition = &kubernetesAddonDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAddonDefinitionRequest) IfMatch(ifMatch string) ApiPatchKubernetesAddonDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -20402,8 +20700,8 @@ PatchKubernetesAddonDefinition Update a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) PatchKubernetesAddonDefinition(ctx _context.Context, moid string) ApiPatchKubernetesAddonDefinitionRequest {
 	return ApiPatchKubernetesAddonDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20518,13 +20816,13 @@ func (a *KubernetesApiService) PatchKubernetesAddonDefinitionExecute(r ApiPatchK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20541,11 +20839,11 @@ func (a *KubernetesApiService) PatchKubernetesAddonDefinitionExecute(r ApiPatchK
 }
 
 type ApiPatchKubernetesAddonPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *KubernetesApiService
+	moid                  string
 	kubernetesAddonPolicy *KubernetesAddonPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;kubernetes.AddonPolicy&#39; resource to update.
@@ -20553,6 +20851,7 @@ func (r ApiPatchKubernetesAddonPolicyRequest) KubernetesAddonPolicy(kubernetesAd
 	r.kubernetesAddonPolicy = &kubernetesAddonPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAddonPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesAddonPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -20573,8 +20872,8 @@ PatchKubernetesAddonPolicy Update a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) PatchKubernetesAddonPolicy(ctx _context.Context, moid string) ApiPatchKubernetesAddonPolicyRequest {
 	return ApiPatchKubernetesAddonPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20689,13 +20988,13 @@ func (a *KubernetesApiService) PatchKubernetesAddonPolicyExecute(r ApiPatchKuber
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20712,11 +21011,11 @@ func (a *KubernetesApiService) PatchKubernetesAddonPolicyExecute(r ApiPatchKuber
 }
 
 type ApiPatchKubernetesAddonRepositoryRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesAddonRepository *KubernetesAddonRepository
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.AddonRepository&#39; resource to update.
@@ -20724,6 +21023,7 @@ func (r ApiPatchKubernetesAddonRepositoryRequest) KubernetesAddonRepository(kube
 	r.kubernetesAddonRepository = &kubernetesAddonRepository
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesAddonRepositoryRequest) IfMatch(ifMatch string) ApiPatchKubernetesAddonRepositoryRequest {
 	r.ifMatch = &ifMatch
@@ -20744,8 +21044,8 @@ PatchKubernetesAddonRepository Update a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) PatchKubernetesAddonRepository(ctx _context.Context, moid string) ApiPatchKubernetesAddonRepositoryRequest {
 	return ApiPatchKubernetesAddonRepositoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20860,13 +21160,13 @@ func (a *KubernetesApiService) PatchKubernetesAddonRepositoryExecute(r ApiPatchK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20883,11 +21183,11 @@ func (a *KubernetesApiService) PatchKubernetesAddonRepositoryExecute(r ApiPatchK
 }
 
 type ApiPatchKubernetesBaremetalNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *KubernetesApiService
+	moid                           string
 	kubernetesBaremetalNodeProfile *KubernetesBaremetalNodeProfile
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;kubernetes.BaremetalNodeProfile&#39; resource to update.
@@ -20895,6 +21195,7 @@ func (r ApiPatchKubernetesBaremetalNodeProfileRequest) KubernetesBaremetalNodePr
 	r.kubernetesBaremetalNodeProfile = &kubernetesBaremetalNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesBaremetalNodeProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesBaremetalNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -20915,8 +21216,8 @@ PatchKubernetesBaremetalNodeProfile Update a 'kubernetes.BaremetalNodeProfile' r
 func (a *KubernetesApiService) PatchKubernetesBaremetalNodeProfile(ctx _context.Context, moid string) ApiPatchKubernetesBaremetalNodeProfileRequest {
 	return ApiPatchKubernetesBaremetalNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21031,13 +21332,13 @@ func (a *KubernetesApiService) PatchKubernetesBaremetalNodeProfileExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21054,11 +21355,11 @@ func (a *KubernetesApiService) PatchKubernetesBaremetalNodeProfileExecute(r ApiP
 }
 
 type ApiPatchKubernetesClusterRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
+	moid              string
 	kubernetesCluster *KubernetesCluster
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;kubernetes.Cluster&#39; resource to update.
@@ -21066,6 +21367,7 @@ func (r ApiPatchKubernetesClusterRequest) KubernetesCluster(kubernetesCluster Ku
 	r.kubernetesCluster = &kubernetesCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesClusterRequest) IfMatch(ifMatch string) ApiPatchKubernetesClusterRequest {
 	r.ifMatch = &ifMatch
@@ -21086,8 +21388,8 @@ PatchKubernetesCluster Update a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) PatchKubernetesCluster(ctx _context.Context, moid string) ApiPatchKubernetesClusterRequest {
 	return ApiPatchKubernetesClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21202,13 +21504,13 @@ func (a *KubernetesApiService) PatchKubernetesClusterExecute(r ApiPatchKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21225,11 +21527,11 @@ func (a *KubernetesApiService) PatchKubernetesClusterExecute(r ApiPatchKubernete
 }
 
 type ApiPatchKubernetesClusterAddonProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *KubernetesApiService
+	moid                          string
 	kubernetesClusterAddonProfile *KubernetesClusterAddonProfile
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;kubernetes.ClusterAddonProfile&#39; resource to update.
@@ -21237,6 +21539,7 @@ func (r ApiPatchKubernetesClusterAddonProfileRequest) KubernetesClusterAddonProf
 	r.kubernetesClusterAddonProfile = &kubernetesClusterAddonProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesClusterAddonProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesClusterAddonProfileRequest {
 	r.ifMatch = &ifMatch
@@ -21257,8 +21560,8 @@ PatchKubernetesClusterAddonProfile Update a 'kubernetes.ClusterAddonProfile' res
 func (a *KubernetesApiService) PatchKubernetesClusterAddonProfile(ctx _context.Context, moid string) ApiPatchKubernetesClusterAddonProfileRequest {
 	return ApiPatchKubernetesClusterAddonProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21373,13 +21676,13 @@ func (a *KubernetesApiService) PatchKubernetesClusterAddonProfileExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21396,11 +21699,11 @@ func (a *KubernetesApiService) PatchKubernetesClusterAddonProfileExecute(r ApiPa
 }
 
 type ApiPatchKubernetesClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *KubernetesApiService
+	moid                     string
 	kubernetesClusterProfile *KubernetesClusterProfile
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;kubernetes.ClusterProfile&#39; resource to update.
@@ -21408,6 +21711,7 @@ func (r ApiPatchKubernetesClusterProfileRequest) KubernetesClusterProfile(kubern
 	r.kubernetesClusterProfile = &kubernetesClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesClusterProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -21428,8 +21732,8 @@ PatchKubernetesClusterProfile Update a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) PatchKubernetesClusterProfile(ctx _context.Context, moid string) ApiPatchKubernetesClusterProfileRequest {
 	return ApiPatchKubernetesClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21544,13 +21848,13 @@ func (a *KubernetesApiService) PatchKubernetesClusterProfileExecute(r ApiPatchKu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21567,11 +21871,11 @@ func (a *KubernetesApiService) PatchKubernetesClusterProfileExecute(r ApiPatchKu
 }
 
 type ApiPatchKubernetesContainerRuntimePolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *KubernetesApiService
+	moid                             string
 	kubernetesContainerRuntimePolicy *KubernetesContainerRuntimePolicy
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;kubernetes.ContainerRuntimePolicy&#39; resource to update.
@@ -21579,6 +21883,7 @@ func (r ApiPatchKubernetesContainerRuntimePolicyRequest) KubernetesContainerRunt
 	r.kubernetesContainerRuntimePolicy = &kubernetesContainerRuntimePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesContainerRuntimePolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesContainerRuntimePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -21599,8 +21904,8 @@ PatchKubernetesContainerRuntimePolicy Update a 'kubernetes.ContainerRuntimePolic
 func (a *KubernetesApiService) PatchKubernetesContainerRuntimePolicy(ctx _context.Context, moid string) ApiPatchKubernetesContainerRuntimePolicyRequest {
 	return ApiPatchKubernetesContainerRuntimePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21715,13 +22020,13 @@ func (a *KubernetesApiService) PatchKubernetesContainerRuntimePolicyExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21738,11 +22043,11 @@ func (a *KubernetesApiService) PatchKubernetesContainerRuntimePolicyExecute(r Ap
 }
 
 type ApiPatchKubernetesNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesNetworkPolicy *KubernetesNetworkPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.NetworkPolicy&#39; resource to update.
@@ -21750,6 +22055,7 @@ func (r ApiPatchKubernetesNetworkPolicyRequest) KubernetesNetworkPolicy(kubernet
 	r.kubernetesNetworkPolicy = &kubernetesNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -21770,8 +22076,8 @@ PatchKubernetesNetworkPolicy Update a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) PatchKubernetesNetworkPolicy(ctx _context.Context, moid string) ApiPatchKubernetesNetworkPolicyRequest {
 	return ApiPatchKubernetesNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21886,13 +22192,13 @@ func (a *KubernetesApiService) PatchKubernetesNetworkPolicyExecute(r ApiPatchKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21909,11 +22215,11 @@ func (a *KubernetesApiService) PatchKubernetesNetworkPolicyExecute(r ApiPatchKub
 }
 
 type ApiPatchKubernetesNodeGroupProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *KubernetesApiService
+	moid                       string
 	kubernetesNodeGroupProfile *KubernetesNodeGroupProfile
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;kubernetes.NodeGroupProfile&#39; resource to update.
@@ -21921,6 +22227,7 @@ func (r ApiPatchKubernetesNodeGroupProfileRequest) KubernetesNodeGroupProfile(ku
 	r.kubernetesNodeGroupProfile = &kubernetesNodeGroupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesNodeGroupProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesNodeGroupProfileRequest {
 	r.ifMatch = &ifMatch
@@ -21941,8 +22248,8 @@ PatchKubernetesNodeGroupProfile Update a 'kubernetes.NodeGroupProfile' resource.
 func (a *KubernetesApiService) PatchKubernetesNodeGroupProfile(ctx _context.Context, moid string) ApiPatchKubernetesNodeGroupProfileRequest {
 	return ApiPatchKubernetesNodeGroupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22057,13 +22364,13 @@ func (a *KubernetesApiService) PatchKubernetesNodeGroupProfileExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22080,11 +22387,11 @@ func (a *KubernetesApiService) PatchKubernetesNodeGroupProfileExecute(r ApiPatch
 }
 
 type ApiPatchKubernetesSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesSysConfigPolicy *KubernetesSysConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.SysConfigPolicy&#39; resource to update.
@@ -22092,6 +22399,7 @@ func (r ApiPatchKubernetesSysConfigPolicyRequest) KubernetesSysConfigPolicy(kube
 	r.kubernetesSysConfigPolicy = &kubernetesSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesSysConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22112,8 +22420,8 @@ PatchKubernetesSysConfigPolicy Update a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) PatchKubernetesSysConfigPolicy(ctx _context.Context, moid string) ApiPatchKubernetesSysConfigPolicyRequest {
 	return ApiPatchKubernetesSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22228,13 +22536,13 @@ func (a *KubernetesApiService) PatchKubernetesSysConfigPolicyExecute(r ApiPatchK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22251,11 +22559,11 @@ func (a *KubernetesApiService) PatchKubernetesSysConfigPolicyExecute(r ApiPatchK
 }
 
 type ApiPatchKubernetesTrustedRegistriesPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *KubernetesApiService
+	moid                              string
 	kubernetesTrustedRegistriesPolicy *KubernetesTrustedRegistriesPolicy
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;kubernetes.TrustedRegistriesPolicy&#39; resource to update.
@@ -22263,6 +22571,7 @@ func (r ApiPatchKubernetesTrustedRegistriesPolicyRequest) KubernetesTrustedRegis
 	r.kubernetesTrustedRegistriesPolicy = &kubernetesTrustedRegistriesPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesTrustedRegistriesPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesTrustedRegistriesPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22283,8 +22592,8 @@ PatchKubernetesTrustedRegistriesPolicy Update a 'kubernetes.TrustedRegistriesPol
 func (a *KubernetesApiService) PatchKubernetesTrustedRegistriesPolicy(ctx _context.Context, moid string) ApiPatchKubernetesTrustedRegistriesPolicyRequest {
 	return ApiPatchKubernetesTrustedRegistriesPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22399,13 +22708,13 @@ func (a *KubernetesApiService) PatchKubernetesTrustedRegistriesPolicyExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22422,11 +22731,11 @@ func (a *KubernetesApiService) PatchKubernetesTrustedRegistriesPolicyExecute(r A
 }
 
 type ApiPatchKubernetesVersionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
+	moid              string
 	kubernetesVersion *KubernetesVersion
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;kubernetes.Version&#39; resource to update.
@@ -22434,6 +22743,7 @@ func (r ApiPatchKubernetesVersionRequest) KubernetesVersion(kubernetesVersion Ku
 	r.kubernetesVersion = &kubernetesVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVersionRequest) IfMatch(ifMatch string) ApiPatchKubernetesVersionRequest {
 	r.ifMatch = &ifMatch
@@ -22454,8 +22764,8 @@ PatchKubernetesVersion Update a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) PatchKubernetesVersion(ctx _context.Context, moid string) ApiPatchKubernetesVersionRequest {
 	return ApiPatchKubernetesVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22570,13 +22880,13 @@ func (a *KubernetesApiService) PatchKubernetesVersionExecute(r ApiPatchKubernete
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22593,11 +22903,11 @@ func (a *KubernetesApiService) PatchKubernetesVersionExecute(r ApiPatchKubernete
 }
 
 type ApiPatchKubernetesVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesVersionPolicy *KubernetesVersionPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.VersionPolicy&#39; resource to update.
@@ -22605,6 +22915,7 @@ func (r ApiPatchKubernetesVersionPolicyRequest) KubernetesVersionPolicy(kubernet
 	r.kubernetesVersionPolicy = &kubernetesVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVersionPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesVersionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22625,8 +22936,8 @@ PatchKubernetesVersionPolicy Update a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) PatchKubernetesVersionPolicy(ctx _context.Context, moid string) ApiPatchKubernetesVersionPolicyRequest {
 	return ApiPatchKubernetesVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22741,13 +23052,13 @@ func (a *KubernetesApiService) PatchKubernetesVersionPolicyExecute(r ApiPatchKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22764,11 +23075,11 @@ func (a *KubernetesApiService) PatchKubernetesVersionPolicyExecute(r ApiPatchKub
 }
 
 type ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                       _context.Context
+	ApiService                                *KubernetesApiService
+	moid                                      string
 	kubernetesVirtualMachineInfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicy
-	ifMatch *string
+	ifMatch                                   *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfraConfigPolicy&#39; resource to update.
@@ -22776,6 +23087,7 @@ func (r ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest) KubernetesVirt
 	r.kubernetesVirtualMachineInfraConfigPolicy = &kubernetesVirtualMachineInfraConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -22796,8 +23108,8 @@ PatchKubernetesVirtualMachineInfraConfigPolicy Update a 'kubernetes.VirtualMachi
 func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfraConfigPolicy(ctx _context.Context, moid string) ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest {
 	return ApiPatchKubernetesVirtualMachineInfraConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22912,13 +23224,13 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfraConfigPolicyExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22935,11 +23247,11 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfraConfigPolicyExe
 }
 
 type ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                            _context.Context
+	ApiService                                     *KubernetesApiService
+	moid                                           string
 	kubernetesVirtualMachineInfrastructureProvider *KubernetesVirtualMachineInfrastructureProvider
-	ifMatch *string
+	ifMatch                                        *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfrastructureProvider&#39; resource to update.
@@ -22947,6 +23259,7 @@ func (r ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest) Kubernete
 	r.kubernetesVirtualMachineInfrastructureProvider = &kubernetesVirtualMachineInfrastructureProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest) IfMatch(ifMatch string) ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest {
 	r.ifMatch = &ifMatch
@@ -22967,8 +23280,8 @@ PatchKubernetesVirtualMachineInfrastructureProvider Update a 'kubernetes.Virtual
 func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfrastructureProvider(ctx _context.Context, moid string) ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest {
 	return ApiPatchKubernetesVirtualMachineInfrastructureProviderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23083,13 +23396,13 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfrastructureProvid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23106,11 +23419,11 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInfrastructureProvid
 }
 
 type ApiPatchKubernetesVirtualMachineInstanceTypeRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *KubernetesApiService
+	moid                                 string
 	kubernetesVirtualMachineInstanceType *KubernetesVirtualMachineInstanceType
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;kubernetes.VirtualMachineInstanceType&#39; resource to update.
@@ -23118,6 +23431,7 @@ func (r ApiPatchKubernetesVirtualMachineInstanceTypeRequest) KubernetesVirtualMa
 	r.kubernetesVirtualMachineInstanceType = &kubernetesVirtualMachineInstanceType
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVirtualMachineInstanceTypeRequest) IfMatch(ifMatch string) ApiPatchKubernetesVirtualMachineInstanceTypeRequest {
 	r.ifMatch = &ifMatch
@@ -23138,8 +23452,8 @@ PatchKubernetesVirtualMachineInstanceType Update a 'kubernetes.VirtualMachineIns
 func (a *KubernetesApiService) PatchKubernetesVirtualMachineInstanceType(ctx _context.Context, moid string) ApiPatchKubernetesVirtualMachineInstanceTypeRequest {
 	return ApiPatchKubernetesVirtualMachineInstanceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23254,13 +23568,13 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInstanceTypeExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23277,11 +23591,11 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineInstanceTypeExecute(
 }
 
 type ApiPatchKubernetesVirtualMachineNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *KubernetesApiService
+	moid                                string
 	kubernetesVirtualMachineNodeProfile *KubernetesVirtualMachineNodeProfile
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;kubernetes.VirtualMachineNodeProfile&#39; resource to update.
@@ -23289,6 +23603,7 @@ func (r ApiPatchKubernetesVirtualMachineNodeProfileRequest) KubernetesVirtualMac
 	r.kubernetesVirtualMachineNodeProfile = &kubernetesVirtualMachineNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchKubernetesVirtualMachineNodeProfileRequest) IfMatch(ifMatch string) ApiPatchKubernetesVirtualMachineNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -23309,8 +23624,8 @@ PatchKubernetesVirtualMachineNodeProfile Update a 'kubernetes.VirtualMachineNode
 func (a *KubernetesApiService) PatchKubernetesVirtualMachineNodeProfile(ctx _context.Context, moid string) ApiPatchKubernetesVirtualMachineNodeProfileRequest {
 	return ApiPatchKubernetesVirtualMachineNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23425,13 +23740,13 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineNodeProfileExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23448,11 +23763,11 @@ func (a *KubernetesApiService) PatchKubernetesVirtualMachineNodeProfileExecute(r
 }
 
 type ApiUpdateKubernetesAciCniApicRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *KubernetesApiService
+	moid                 string
 	kubernetesAciCniApic *KubernetesAciCniApic
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;kubernetes.AciCniApic&#39; resource to update.
@@ -23460,6 +23775,7 @@ func (r ApiUpdateKubernetesAciCniApicRequest) KubernetesAciCniApic(kubernetesAci
 	r.kubernetesAciCniApic = &kubernetesAciCniApic
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAciCniApicRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAciCniApicRequest {
 	r.ifMatch = &ifMatch
@@ -23482,8 +23798,8 @@ Deprecated
 func (a *KubernetesApiService) UpdateKubernetesAciCniApic(ctx _context.Context, moid string) ApiUpdateKubernetesAciCniApicRequest {
 	return ApiUpdateKubernetesAciCniApicRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23599,13 +23915,13 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniApicExecute(r ApiUpdateKube
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23622,11 +23938,11 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniApicExecute(r ApiUpdateKube
 }
 
 type ApiUpdateKubernetesAciCniProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesAciCniProfile *KubernetesAciCniProfile
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.AciCniProfile&#39; resource to update.
@@ -23634,6 +23950,7 @@ func (r ApiUpdateKubernetesAciCniProfileRequest) KubernetesAciCniProfile(kuberne
 	r.kubernetesAciCniProfile = &kubernetesAciCniProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAciCniProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAciCniProfileRequest {
 	r.ifMatch = &ifMatch
@@ -23656,8 +23973,8 @@ Deprecated
 func (a *KubernetesApiService) UpdateKubernetesAciCniProfile(ctx _context.Context, moid string) ApiUpdateKubernetesAciCniProfileRequest {
 	return ApiUpdateKubernetesAciCniProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23773,13 +24090,13 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniProfileExecute(r ApiUpdateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23796,11 +24113,11 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniProfileExecute(r ApiUpdateK
 }
 
 type ApiUpdateKubernetesAciCniTenantClusterAllocationRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                     _context.Context
+	ApiService                              *KubernetesApiService
+	moid                                    string
 	kubernetesAciCniTenantClusterAllocation *KubernetesAciCniTenantClusterAllocation
-	ifMatch *string
+	ifMatch                                 *string
 }
 
 // The &#39;kubernetes.AciCniTenantClusterAllocation&#39; resource to update.
@@ -23808,6 +24125,7 @@ func (r ApiUpdateKubernetesAciCniTenantClusterAllocationRequest) KubernetesAciCn
 	r.kubernetesAciCniTenantClusterAllocation = &kubernetesAciCniTenantClusterAllocation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAciCniTenantClusterAllocationRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAciCniTenantClusterAllocationRequest {
 	r.ifMatch = &ifMatch
@@ -23830,8 +24148,8 @@ Deprecated
 func (a *KubernetesApiService) UpdateKubernetesAciCniTenantClusterAllocation(ctx _context.Context, moid string) ApiUpdateKubernetesAciCniTenantClusterAllocationRequest {
 	return ApiUpdateKubernetesAciCniTenantClusterAllocationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23947,13 +24265,13 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniTenantClusterAllocationExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23970,11 +24288,11 @@ func (a *KubernetesApiService) UpdateKubernetesAciCniTenantClusterAllocationExec
 }
 
 type ApiUpdateKubernetesAddonDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesAddonDefinition *KubernetesAddonDefinition
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.AddonDefinition&#39; resource to update.
@@ -23982,6 +24300,7 @@ func (r ApiUpdateKubernetesAddonDefinitionRequest) KubernetesAddonDefinition(kub
 	r.kubernetesAddonDefinition = &kubernetesAddonDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAddonDefinitionRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAddonDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -24002,8 +24321,8 @@ UpdateKubernetesAddonDefinition Update a 'kubernetes.AddonDefinition' resource.
 func (a *KubernetesApiService) UpdateKubernetesAddonDefinition(ctx _context.Context, moid string) ApiUpdateKubernetesAddonDefinitionRequest {
 	return ApiUpdateKubernetesAddonDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24118,13 +24437,13 @@ func (a *KubernetesApiService) UpdateKubernetesAddonDefinitionExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24141,11 +24460,11 @@ func (a *KubernetesApiService) UpdateKubernetesAddonDefinitionExecute(r ApiUpdat
 }
 
 type ApiUpdateKubernetesAddonPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *KubernetesApiService
+	moid                  string
 	kubernetesAddonPolicy *KubernetesAddonPolicy
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;kubernetes.AddonPolicy&#39; resource to update.
@@ -24153,6 +24472,7 @@ func (r ApiUpdateKubernetesAddonPolicyRequest) KubernetesAddonPolicy(kubernetesA
 	r.kubernetesAddonPolicy = &kubernetesAddonPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAddonPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAddonPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -24173,8 +24493,8 @@ UpdateKubernetesAddonPolicy Update a 'kubernetes.AddonPolicy' resource.
 func (a *KubernetesApiService) UpdateKubernetesAddonPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesAddonPolicyRequest {
 	return ApiUpdateKubernetesAddonPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24289,13 +24609,13 @@ func (a *KubernetesApiService) UpdateKubernetesAddonPolicyExecute(r ApiUpdateKub
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24312,11 +24632,11 @@ func (a *KubernetesApiService) UpdateKubernetesAddonPolicyExecute(r ApiUpdateKub
 }
 
 type ApiUpdateKubernetesAddonRepositoryRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesAddonRepository *KubernetesAddonRepository
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.AddonRepository&#39; resource to update.
@@ -24324,6 +24644,7 @@ func (r ApiUpdateKubernetesAddonRepositoryRequest) KubernetesAddonRepository(kub
 	r.kubernetesAddonRepository = &kubernetesAddonRepository
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesAddonRepositoryRequest) IfMatch(ifMatch string) ApiUpdateKubernetesAddonRepositoryRequest {
 	r.ifMatch = &ifMatch
@@ -24344,8 +24665,8 @@ UpdateKubernetesAddonRepository Update a 'kubernetes.AddonRepository' resource.
 func (a *KubernetesApiService) UpdateKubernetesAddonRepository(ctx _context.Context, moid string) ApiUpdateKubernetesAddonRepositoryRequest {
 	return ApiUpdateKubernetesAddonRepositoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24460,13 +24781,13 @@ func (a *KubernetesApiService) UpdateKubernetesAddonRepositoryExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24483,11 +24804,11 @@ func (a *KubernetesApiService) UpdateKubernetesAddonRepositoryExecute(r ApiUpdat
 }
 
 type ApiUpdateKubernetesBaremetalNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *KubernetesApiService
+	moid                           string
 	kubernetesBaremetalNodeProfile *KubernetesBaremetalNodeProfile
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;kubernetes.BaremetalNodeProfile&#39; resource to update.
@@ -24495,6 +24816,7 @@ func (r ApiUpdateKubernetesBaremetalNodeProfileRequest) KubernetesBaremetalNodeP
 	r.kubernetesBaremetalNodeProfile = &kubernetesBaremetalNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesBaremetalNodeProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesBaremetalNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -24515,8 +24837,8 @@ UpdateKubernetesBaremetalNodeProfile Update a 'kubernetes.BaremetalNodeProfile' 
 func (a *KubernetesApiService) UpdateKubernetesBaremetalNodeProfile(ctx _context.Context, moid string) ApiUpdateKubernetesBaremetalNodeProfileRequest {
 	return ApiUpdateKubernetesBaremetalNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24631,13 +24953,13 @@ func (a *KubernetesApiService) UpdateKubernetesBaremetalNodeProfileExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24654,11 +24976,11 @@ func (a *KubernetesApiService) UpdateKubernetesBaremetalNodeProfileExecute(r Api
 }
 
 type ApiUpdateKubernetesClusterRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
+	moid              string
 	kubernetesCluster *KubernetesCluster
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;kubernetes.Cluster&#39; resource to update.
@@ -24666,6 +24988,7 @@ func (r ApiUpdateKubernetesClusterRequest) KubernetesCluster(kubernetesCluster K
 	r.kubernetesCluster = &kubernetesCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesClusterRequest) IfMatch(ifMatch string) ApiUpdateKubernetesClusterRequest {
 	r.ifMatch = &ifMatch
@@ -24686,8 +25009,8 @@ UpdateKubernetesCluster Update a 'kubernetes.Cluster' resource.
 func (a *KubernetesApiService) UpdateKubernetesCluster(ctx _context.Context, moid string) ApiUpdateKubernetesClusterRequest {
 	return ApiUpdateKubernetesClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24802,13 +25125,13 @@ func (a *KubernetesApiService) UpdateKubernetesClusterExecute(r ApiUpdateKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24825,11 +25148,11 @@ func (a *KubernetesApiService) UpdateKubernetesClusterExecute(r ApiUpdateKuberne
 }
 
 type ApiUpdateKubernetesClusterAddonProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *KubernetesApiService
+	moid                          string
 	kubernetesClusterAddonProfile *KubernetesClusterAddonProfile
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;kubernetes.ClusterAddonProfile&#39; resource to update.
@@ -24837,6 +25160,7 @@ func (r ApiUpdateKubernetesClusterAddonProfileRequest) KubernetesClusterAddonPro
 	r.kubernetesClusterAddonProfile = &kubernetesClusterAddonProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesClusterAddonProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesClusterAddonProfileRequest {
 	r.ifMatch = &ifMatch
@@ -24857,8 +25181,8 @@ UpdateKubernetesClusterAddonProfile Update a 'kubernetes.ClusterAddonProfile' re
 func (a *KubernetesApiService) UpdateKubernetesClusterAddonProfile(ctx _context.Context, moid string) ApiUpdateKubernetesClusterAddonProfileRequest {
 	return ApiUpdateKubernetesClusterAddonProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24973,13 +25297,13 @@ func (a *KubernetesApiService) UpdateKubernetesClusterAddonProfileExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24996,11 +25320,11 @@ func (a *KubernetesApiService) UpdateKubernetesClusterAddonProfileExecute(r ApiU
 }
 
 type ApiUpdateKubernetesClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *KubernetesApiService
+	moid                     string
 	kubernetesClusterProfile *KubernetesClusterProfile
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;kubernetes.ClusterProfile&#39; resource to update.
@@ -25008,6 +25332,7 @@ func (r ApiUpdateKubernetesClusterProfileRequest) KubernetesClusterProfile(kuber
 	r.kubernetesClusterProfile = &kubernetesClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesClusterProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -25028,8 +25353,8 @@ UpdateKubernetesClusterProfile Update a 'kubernetes.ClusterProfile' resource.
 func (a *KubernetesApiService) UpdateKubernetesClusterProfile(ctx _context.Context, moid string) ApiUpdateKubernetesClusterProfileRequest {
 	return ApiUpdateKubernetesClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25144,13 +25469,13 @@ func (a *KubernetesApiService) UpdateKubernetesClusterProfileExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25167,11 +25492,11 @@ func (a *KubernetesApiService) UpdateKubernetesClusterProfileExecute(r ApiUpdate
 }
 
 type ApiUpdateKubernetesContainerRuntimePolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                              _context.Context
+	ApiService                       *KubernetesApiService
+	moid                             string
 	kubernetesContainerRuntimePolicy *KubernetesContainerRuntimePolicy
-	ifMatch *string
+	ifMatch                          *string
 }
 
 // The &#39;kubernetes.ContainerRuntimePolicy&#39; resource to update.
@@ -25179,6 +25504,7 @@ func (r ApiUpdateKubernetesContainerRuntimePolicyRequest) KubernetesContainerRun
 	r.kubernetesContainerRuntimePolicy = &kubernetesContainerRuntimePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesContainerRuntimePolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesContainerRuntimePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25199,8 +25525,8 @@ UpdateKubernetesContainerRuntimePolicy Update a 'kubernetes.ContainerRuntimePoli
 func (a *KubernetesApiService) UpdateKubernetesContainerRuntimePolicy(ctx _context.Context, moid string) ApiUpdateKubernetesContainerRuntimePolicyRequest {
 	return ApiUpdateKubernetesContainerRuntimePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25315,13 +25641,13 @@ func (a *KubernetesApiService) UpdateKubernetesContainerRuntimePolicyExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25338,11 +25664,11 @@ func (a *KubernetesApiService) UpdateKubernetesContainerRuntimePolicyExecute(r A
 }
 
 type ApiUpdateKubernetesNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesNetworkPolicy *KubernetesNetworkPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.NetworkPolicy&#39; resource to update.
@@ -25350,6 +25676,7 @@ func (r ApiUpdateKubernetesNetworkPolicyRequest) KubernetesNetworkPolicy(kuberne
 	r.kubernetesNetworkPolicy = &kubernetesNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25370,8 +25697,8 @@ UpdateKubernetesNetworkPolicy Update a 'kubernetes.NetworkPolicy' resource.
 func (a *KubernetesApiService) UpdateKubernetesNetworkPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesNetworkPolicyRequest {
 	return ApiUpdateKubernetesNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25486,13 +25813,13 @@ func (a *KubernetesApiService) UpdateKubernetesNetworkPolicyExecute(r ApiUpdateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25509,11 +25836,11 @@ func (a *KubernetesApiService) UpdateKubernetesNetworkPolicyExecute(r ApiUpdateK
 }
 
 type ApiUpdateKubernetesNodeGroupProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *KubernetesApiService
+	moid                       string
 	kubernetesNodeGroupProfile *KubernetesNodeGroupProfile
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;kubernetes.NodeGroupProfile&#39; resource to update.
@@ -25521,6 +25848,7 @@ func (r ApiUpdateKubernetesNodeGroupProfileRequest) KubernetesNodeGroupProfile(k
 	r.kubernetesNodeGroupProfile = &kubernetesNodeGroupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesNodeGroupProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesNodeGroupProfileRequest {
 	r.ifMatch = &ifMatch
@@ -25541,8 +25869,8 @@ UpdateKubernetesNodeGroupProfile Update a 'kubernetes.NodeGroupProfile' resource
 func (a *KubernetesApiService) UpdateKubernetesNodeGroupProfile(ctx _context.Context, moid string) ApiUpdateKubernetesNodeGroupProfileRequest {
 	return ApiUpdateKubernetesNodeGroupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25657,13 +25985,13 @@ func (a *KubernetesApiService) UpdateKubernetesNodeGroupProfileExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25680,11 +26008,11 @@ func (a *KubernetesApiService) UpdateKubernetesNodeGroupProfileExecute(r ApiUpda
 }
 
 type ApiUpdateKubernetesSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *KubernetesApiService
+	moid                      string
 	kubernetesSysConfigPolicy *KubernetesSysConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;kubernetes.SysConfigPolicy&#39; resource to update.
@@ -25692,6 +26020,7 @@ func (r ApiUpdateKubernetesSysConfigPolicyRequest) KubernetesSysConfigPolicy(kub
 	r.kubernetesSysConfigPolicy = &kubernetesSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesSysConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25712,8 +26041,8 @@ UpdateKubernetesSysConfigPolicy Update a 'kubernetes.SysConfigPolicy' resource.
 func (a *KubernetesApiService) UpdateKubernetesSysConfigPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesSysConfigPolicyRequest {
 	return ApiUpdateKubernetesSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25828,13 +26157,13 @@ func (a *KubernetesApiService) UpdateKubernetesSysConfigPolicyExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25851,11 +26180,11 @@ func (a *KubernetesApiService) UpdateKubernetesSysConfigPolicyExecute(r ApiUpdat
 }
 
 type ApiUpdateKubernetesTrustedRegistriesPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *KubernetesApiService
+	moid                              string
 	kubernetesTrustedRegistriesPolicy *KubernetesTrustedRegistriesPolicy
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;kubernetes.TrustedRegistriesPolicy&#39; resource to update.
@@ -25863,6 +26192,7 @@ func (r ApiUpdateKubernetesTrustedRegistriesPolicyRequest) KubernetesTrustedRegi
 	r.kubernetesTrustedRegistriesPolicy = &kubernetesTrustedRegistriesPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesTrustedRegistriesPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesTrustedRegistriesPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -25883,8 +26213,8 @@ UpdateKubernetesTrustedRegistriesPolicy Update a 'kubernetes.TrustedRegistriesPo
 func (a *KubernetesApiService) UpdateKubernetesTrustedRegistriesPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesTrustedRegistriesPolicyRequest {
 	return ApiUpdateKubernetesTrustedRegistriesPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25999,13 +26329,13 @@ func (a *KubernetesApiService) UpdateKubernetesTrustedRegistriesPolicyExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26022,11 +26352,11 @@ func (a *KubernetesApiService) UpdateKubernetesTrustedRegistriesPolicyExecute(r 
 }
 
 type ApiUpdateKubernetesVersionRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx               _context.Context
+	ApiService        *KubernetesApiService
+	moid              string
 	kubernetesVersion *KubernetesVersion
-	ifMatch *string
+	ifMatch           *string
 }
 
 // The &#39;kubernetes.Version&#39; resource to update.
@@ -26034,6 +26364,7 @@ func (r ApiUpdateKubernetesVersionRequest) KubernetesVersion(kubernetesVersion K
 	r.kubernetesVersion = &kubernetesVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVersionRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVersionRequest {
 	r.ifMatch = &ifMatch
@@ -26054,8 +26385,8 @@ UpdateKubernetesVersion Update a 'kubernetes.Version' resource.
 func (a *KubernetesApiService) UpdateKubernetesVersion(ctx _context.Context, moid string) ApiUpdateKubernetesVersionRequest {
 	return ApiUpdateKubernetesVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26170,13 +26501,13 @@ func (a *KubernetesApiService) UpdateKubernetesVersionExecute(r ApiUpdateKuberne
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26193,11 +26524,11 @@ func (a *KubernetesApiService) UpdateKubernetesVersionExecute(r ApiUpdateKuberne
 }
 
 type ApiUpdateKubernetesVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *KubernetesApiService
+	moid                    string
 	kubernetesVersionPolicy *KubernetesVersionPolicy
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;kubernetes.VersionPolicy&#39; resource to update.
@@ -26205,6 +26536,7 @@ func (r ApiUpdateKubernetesVersionPolicyRequest) KubernetesVersionPolicy(kuberne
 	r.kubernetesVersionPolicy = &kubernetesVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVersionPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVersionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -26225,8 +26557,8 @@ UpdateKubernetesVersionPolicy Update a 'kubernetes.VersionPolicy' resource.
 func (a *KubernetesApiService) UpdateKubernetesVersionPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesVersionPolicyRequest {
 	return ApiUpdateKubernetesVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26341,13 +26673,13 @@ func (a *KubernetesApiService) UpdateKubernetesVersionPolicyExecute(r ApiUpdateK
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26364,11 +26696,11 @@ func (a *KubernetesApiService) UpdateKubernetesVersionPolicyExecute(r ApiUpdateK
 }
 
 type ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                       _context.Context
+	ApiService                                *KubernetesApiService
+	moid                                      string
 	kubernetesVirtualMachineInfraConfigPolicy *KubernetesVirtualMachineInfraConfigPolicy
-	ifMatch *string
+	ifMatch                                   *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfraConfigPolicy&#39; resource to update.
@@ -26376,6 +26708,7 @@ func (r ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest) KubernetesVir
 	r.kubernetesVirtualMachineInfraConfigPolicy = &kubernetesVirtualMachineInfraConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -26396,8 +26729,8 @@ UpdateKubernetesVirtualMachineInfraConfigPolicy Update a 'kubernetes.VirtualMach
 func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfraConfigPolicy(ctx _context.Context, moid string) ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest {
 	return ApiUpdateKubernetesVirtualMachineInfraConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26512,13 +26845,13 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfraConfigPolicyEx
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26535,11 +26868,11 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfraConfigPolicyEx
 }
 
 type ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                            _context.Context
+	ApiService                                     *KubernetesApiService
+	moid                                           string
 	kubernetesVirtualMachineInfrastructureProvider *KubernetesVirtualMachineInfrastructureProvider
-	ifMatch *string
+	ifMatch                                        *string
 }
 
 // The &#39;kubernetes.VirtualMachineInfrastructureProvider&#39; resource to update.
@@ -26547,6 +26880,7 @@ func (r ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest) Kubernet
 	r.kubernetesVirtualMachineInfrastructureProvider = &kubernetesVirtualMachineInfrastructureProvider
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest {
 	r.ifMatch = &ifMatch
@@ -26567,8 +26901,8 @@ UpdateKubernetesVirtualMachineInfrastructureProvider Update a 'kubernetes.Virtua
 func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfrastructureProvider(ctx _context.Context, moid string) ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest {
 	return ApiUpdateKubernetesVirtualMachineInfrastructureProviderRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26683,13 +27017,13 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfrastructureProvi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26706,11 +27040,11 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInfrastructureProvi
 }
 
 type ApiUpdateKubernetesVirtualMachineInstanceTypeRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *KubernetesApiService
+	moid                                 string
 	kubernetesVirtualMachineInstanceType *KubernetesVirtualMachineInstanceType
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;kubernetes.VirtualMachineInstanceType&#39; resource to update.
@@ -26718,6 +27052,7 @@ func (r ApiUpdateKubernetesVirtualMachineInstanceTypeRequest) KubernetesVirtualM
 	r.kubernetesVirtualMachineInstanceType = &kubernetesVirtualMachineInstanceType
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVirtualMachineInstanceTypeRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVirtualMachineInstanceTypeRequest {
 	r.ifMatch = &ifMatch
@@ -26738,8 +27073,8 @@ UpdateKubernetesVirtualMachineInstanceType Update a 'kubernetes.VirtualMachineIn
 func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInstanceType(ctx _context.Context, moid string) ApiUpdateKubernetesVirtualMachineInstanceTypeRequest {
 	return ApiUpdateKubernetesVirtualMachineInstanceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26854,13 +27189,13 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInstanceTypeExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26877,11 +27212,11 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineInstanceTypeExecute
 }
 
 type ApiUpdateKubernetesVirtualMachineNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *KubernetesApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *KubernetesApiService
+	moid                                string
 	kubernetesVirtualMachineNodeProfile *KubernetesVirtualMachineNodeProfile
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;kubernetes.VirtualMachineNodeProfile&#39; resource to update.
@@ -26889,6 +27224,7 @@ func (r ApiUpdateKubernetesVirtualMachineNodeProfileRequest) KubernetesVirtualMa
 	r.kubernetesVirtualMachineNodeProfile = &kubernetesVirtualMachineNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateKubernetesVirtualMachineNodeProfileRequest) IfMatch(ifMatch string) ApiUpdateKubernetesVirtualMachineNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -26909,8 +27245,8 @@ UpdateKubernetesVirtualMachineNodeProfile Update a 'kubernetes.VirtualMachineNod
 func (a *KubernetesApiService) UpdateKubernetesVirtualMachineNodeProfile(ctx _context.Context, moid string) ApiUpdateKubernetesVirtualMachineNodeProfileRequest {
 	return ApiUpdateKubernetesVirtualMachineNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27025,13 +27361,13 @@ func (a *KubernetesApiService) UpdateKubernetesVirtualMachineNodeProfileExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

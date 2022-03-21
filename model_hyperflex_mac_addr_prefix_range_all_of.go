@@ -24,7 +24,7 @@ type HyperflexMacAddrPrefixRangeAllOf struct {
 	// The end MAC address prefix of a MAC address prefix range in the form of 00:25:B5:XX.
 	EndAddr *string `json:"EndAddr,omitempty"`
 	// The start MAC address prefix of a MAC address prefix range in the form of 00:25:B5:XX.
-	StartAddr *string `json:"StartAddr,omitempty"`
+	StartAddr            *string `json:"StartAddr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *HyperflexMacAddrPrefixRangeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMacAddrPrefixRangeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *HyperflexMacAddrPrefixRangeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexMacAddrPrefixRangeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableHyperflexMacAddrPrefixRangeAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

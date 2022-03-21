@@ -19,31 +19,30 @@ import (
 // LicenseCustomerOpResponse - The response body of a HTTP GET request for the 'license.CustomerOp' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'license.CustomerOp' resources.
 type LicenseCustomerOpResponse struct {
 	LicenseCustomerOpList *LicenseCustomerOpList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // LicenseCustomerOpListAsLicenseCustomerOpResponse is a convenience function that returns LicenseCustomerOpList wrapped in LicenseCustomerOpResponse
 func LicenseCustomerOpListAsLicenseCustomerOpResponse(v *LicenseCustomerOpList) LicenseCustomerOpResponse {
-	return LicenseCustomerOpResponse{ LicenseCustomerOpList: v}
+	return LicenseCustomerOpResponse{LicenseCustomerOpList: v}
 }
 
 // MoAggregateTransformAsLicenseCustomerOpResponse is a convenience function that returns MoAggregateTransform wrapped in LicenseCustomerOpResponse
 func MoAggregateTransformAsLicenseCustomerOpResponse(v *MoAggregateTransform) LicenseCustomerOpResponse {
-	return LicenseCustomerOpResponse{ MoAggregateTransform: v}
+	return LicenseCustomerOpResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsLicenseCustomerOpResponse is a convenience function that returns MoDocumentCount wrapped in LicenseCustomerOpResponse
 func MoDocumentCountAsLicenseCustomerOpResponse(v *MoDocumentCount) LicenseCustomerOpResponse {
-	return LicenseCustomerOpResponse{ MoDocumentCount: v}
+	return LicenseCustomerOpResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsLicenseCustomerOpResponse is a convenience function that returns MoTagSummary wrapped in LicenseCustomerOpResponse
 func MoTagSummaryAsLicenseCustomerOpResponse(v *MoTagSummary) LicenseCustomerOpResponse {
-	return LicenseCustomerOpResponse{ MoTagSummary: v}
+	return LicenseCustomerOpResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseCustomerOpResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src LicenseCustomerOpResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseCustomerOpResponse) GetActualInstance() (interface{}) {
+func (obj *LicenseCustomerOpResponse) GetActualInstance() interface{} {
 	if obj.LicenseCustomerOpList != nil {
 		return obj.LicenseCustomerOpList
 	}
@@ -184,5 +183,3 @@ func (v *NullableLicenseCustomerOpResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

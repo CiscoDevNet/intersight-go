@@ -18,20 +18,19 @@ import (
 
 // SoftwarerepositoryFileRelationship - A relationship to the 'softwarerepository.File' resource, or the expanded 'softwarerepository.File' resource, or the 'null' value.
 type SoftwarerepositoryFileRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 	SoftwarerepositoryFile *SoftwarerepositoryFile
 }
 
 // MoMoRefAsSoftwarerepositoryFileRelationship is a convenience function that returns MoMoRef wrapped in SoftwarerepositoryFileRelationship
 func MoMoRefAsSoftwarerepositoryFileRelationship(v *MoMoRef) SoftwarerepositoryFileRelationship {
-	return SoftwarerepositoryFileRelationship{ MoMoRef: v}
+	return SoftwarerepositoryFileRelationship{MoMoRef: v}
 }
 
 // SoftwarerepositoryFileAsSoftwarerepositoryFileRelationship is a convenience function that returns SoftwarerepositoryFile wrapped in SoftwarerepositoryFileRelationship
 func SoftwarerepositoryFileAsSoftwarerepositoryFileRelationship(v *SoftwarerepositoryFile) SoftwarerepositoryFileRelationship {
-	return SoftwarerepositoryFileRelationship{ SoftwarerepositoryFile: v}
+	return SoftwarerepositoryFileRelationship{SoftwarerepositoryFile: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryFileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SoftwarerepositoryFileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryFileRelationship) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryFileRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSoftwarerepositoryFileRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,10 @@ var (
 type GraphicsApiService service
 
 type ApiGetGraphicsCardByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *GraphicsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetGraphicsCardByMoidRequest) Execute() (GraphicsCard, *_nethttp.Response, error) {
 	return r.ApiService.GetGraphicsCardByMoidExecute(r)
@@ -49,8 +48,8 @@ GetGraphicsCardByMoid Read a 'graphics.Card' resource.
 func (a *GraphicsApiService) GetGraphicsCardByMoid(ctx _context.Context, moid string) ApiGetGraphicsCardByMoidRequest {
 	return ApiGetGraphicsCardByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *GraphicsApiService) GetGraphicsCardByMoidExecute(r ApiGetGraphicsCardBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *GraphicsApiService) GetGraphicsCardByMoidExecute(r ApiGetGraphicsCardBy
 }
 
 type ApiGetGraphicsCardListRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *GraphicsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetGraphicsCardListRequest) Filter(filter string) ApiGetGraphicsCardL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetGraphicsCardListRequest) Orderby(orderby string) ApiGetGraphicsCardListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetGraphicsCardListRequest) Top(top int32) ApiGetGraphicsCardListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetGraphicsCardListRequest) Skip(skip int32) ApiGetGraphicsCardListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetGraphicsCardListRequest) Select_(select_ string) ApiGetGraphicsCardListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetGraphicsCardListRequest) Expand(expand string) ApiGetGraphicsCardListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetGraphicsCardListRequest) Apply(apply string) ApiGetGraphicsCardListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetGraphicsCardListRequest) Count(count bool) ApiGetGraphicsCardListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetGraphicsCardListRequest) Inlinecount(inlinecount string) ApiGetGraphicsCardListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetGraphicsCardListRequest) At(at string) ApiGetGraphicsCardListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetGraphicsCardListRequest) Tags(tags string) ApiGetGraphicsCardListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetGraphicsCardList Read a 'graphics.Card' resource.
 func (a *GraphicsApiService) GetGraphicsCardList(ctx _context.Context) ApiGetGraphicsCardListRequest {
 	return ApiGetGraphicsCardListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *GraphicsApiService) GetGraphicsCardListExecute(r ApiGetGraphicsCardList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *GraphicsApiService) GetGraphicsCardListExecute(r ApiGetGraphicsCardList
 }
 
 type ApiGetGraphicsControllerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *GraphicsApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetGraphicsControllerByMoidRequest) Execute() (GraphicsController, *_nethttp.Response, error) {
 	return r.ApiService.GetGraphicsControllerByMoidExecute(r)
@@ -446,8 +454,8 @@ GetGraphicsControllerByMoid Read a 'graphics.Controller' resource.
 func (a *GraphicsApiService) GetGraphicsControllerByMoid(ctx _context.Context, moid string) ApiGetGraphicsControllerByMoidRequest {
 	return ApiGetGraphicsControllerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *GraphicsApiService) GetGraphicsControllerByMoidExecute(r ApiGetGraphics
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *GraphicsApiService) GetGraphicsControllerByMoidExecute(r ApiGetGraphics
 }
 
 type ApiGetGraphicsControllerListRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *GraphicsApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetGraphicsControllerListRequest) Filter(filter string) ApiGetGraphic
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetGraphicsControllerListRequest) Orderby(orderby string) ApiGetGraphicsControllerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetGraphicsControllerListRequest) Top(top int32) ApiGetGraphicsControllerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetGraphicsControllerListRequest) Skip(skip int32) ApiGetGraphicsControllerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetGraphicsControllerListRequest) Select_(select_ string) ApiGetGraphicsControllerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetGraphicsControllerListRequest) Expand(expand string) ApiGetGraphicsControllerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetGraphicsControllerListRequest) Apply(apply string) ApiGetGraphicsControllerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetGraphicsControllerListRequest) Count(count bool) ApiGetGraphicsControllerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetGraphicsControllerListRequest) Inlinecount(inlinecount string) ApiGetGraphicsControllerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetGraphicsControllerListRequest) At(at string) ApiGetGraphicsControllerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetGraphicsControllerListRequest) Tags(tags string) ApiGetGraphicsControllerListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetGraphicsControllerList Read a 'graphics.Controller' resource.
 func (a *GraphicsApiService) GetGraphicsControllerList(ctx _context.Context) ApiGetGraphicsControllerListRequest {
 	return ApiGetGraphicsControllerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *GraphicsApiService) GetGraphicsControllerListExecute(r ApiGetGraphicsCo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,11 @@ func (a *GraphicsApiService) GetGraphicsControllerListExecute(r ApiGetGraphicsCo
 }
 
 type ApiPatchGraphicsCardRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *GraphicsApiService
+	moid         string
 	graphicsCard *GraphicsCard
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;graphics.Card&#39; resource to update.
@@ -835,6 +853,7 @@ func (r ApiPatchGraphicsCardRequest) GraphicsCard(graphicsCard GraphicsCard) Api
 	r.graphicsCard = &graphicsCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchGraphicsCardRequest) IfMatch(ifMatch string) ApiPatchGraphicsCardRequest {
 	r.ifMatch = &ifMatch
@@ -855,8 +874,8 @@ PatchGraphicsCard Update a 'graphics.Card' resource.
 func (a *GraphicsApiService) PatchGraphicsCard(ctx _context.Context, moid string) ApiPatchGraphicsCardRequest {
 	return ApiPatchGraphicsCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -971,13 +990,13 @@ func (a *GraphicsApiService) PatchGraphicsCardExecute(r ApiPatchGraphicsCardRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -994,11 +1013,11 @@ func (a *GraphicsApiService) PatchGraphicsCardExecute(r ApiPatchGraphicsCardRequ
 }
 
 type ApiPatchGraphicsControllerRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *GraphicsApiService
+	moid               string
 	graphicsController *GraphicsController
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;graphics.Controller&#39; resource to update.
@@ -1006,6 +1025,7 @@ func (r ApiPatchGraphicsControllerRequest) GraphicsController(graphicsController
 	r.graphicsController = &graphicsController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchGraphicsControllerRequest) IfMatch(ifMatch string) ApiPatchGraphicsControllerRequest {
 	r.ifMatch = &ifMatch
@@ -1026,8 +1046,8 @@ PatchGraphicsController Update a 'graphics.Controller' resource.
 func (a *GraphicsApiService) PatchGraphicsController(ctx _context.Context, moid string) ApiPatchGraphicsControllerRequest {
 	return ApiPatchGraphicsControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1142,13 +1162,13 @@ func (a *GraphicsApiService) PatchGraphicsControllerExecute(r ApiPatchGraphicsCo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1165,11 +1185,11 @@ func (a *GraphicsApiService) PatchGraphicsControllerExecute(r ApiPatchGraphicsCo
 }
 
 type ApiUpdateGraphicsCardRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *GraphicsApiService
+	moid         string
 	graphicsCard *GraphicsCard
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;graphics.Card&#39; resource to update.
@@ -1177,6 +1197,7 @@ func (r ApiUpdateGraphicsCardRequest) GraphicsCard(graphicsCard GraphicsCard) Ap
 	r.graphicsCard = &graphicsCard
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateGraphicsCardRequest) IfMatch(ifMatch string) ApiUpdateGraphicsCardRequest {
 	r.ifMatch = &ifMatch
@@ -1197,8 +1218,8 @@ UpdateGraphicsCard Update a 'graphics.Card' resource.
 func (a *GraphicsApiService) UpdateGraphicsCard(ctx _context.Context, moid string) ApiUpdateGraphicsCardRequest {
 	return ApiUpdateGraphicsCardRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1313,13 +1334,13 @@ func (a *GraphicsApiService) UpdateGraphicsCardExecute(r ApiUpdateGraphicsCardRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1336,11 +1357,11 @@ func (a *GraphicsApiService) UpdateGraphicsCardExecute(r ApiUpdateGraphicsCardRe
 }
 
 type ApiUpdateGraphicsControllerRequest struct {
-	ctx _context.Context
-	ApiService *GraphicsApiService
-	moid string
+	ctx                _context.Context
+	ApiService         *GraphicsApiService
+	moid               string
 	graphicsController *GraphicsController
-	ifMatch *string
+	ifMatch            *string
 }
 
 // The &#39;graphics.Controller&#39; resource to update.
@@ -1348,6 +1369,7 @@ func (r ApiUpdateGraphicsControllerRequest) GraphicsController(graphicsControlle
 	r.graphicsController = &graphicsController
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateGraphicsControllerRequest) IfMatch(ifMatch string) ApiUpdateGraphicsControllerRequest {
 	r.ifMatch = &ifMatch
@@ -1368,8 +1390,8 @@ UpdateGraphicsController Update a 'graphics.Controller' resource.
 func (a *GraphicsApiService) UpdateGraphicsController(ctx _context.Context, moid string) ApiUpdateGraphicsControllerRequest {
 	return ApiUpdateGraphicsControllerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1484,13 +1506,13 @@ func (a *GraphicsApiService) UpdateGraphicsControllerExecute(r ApiUpdateGraphics
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

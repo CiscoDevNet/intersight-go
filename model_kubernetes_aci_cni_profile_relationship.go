@@ -19,19 +19,18 @@ import (
 // KubernetesAciCniProfileRelationship - A relationship to the 'kubernetes.AciCniProfile' resource, or the expanded 'kubernetes.AciCniProfile' resource, or the 'null' value.
 type KubernetesAciCniProfileRelationship struct {
 	KubernetesAciCniProfile *KubernetesAciCniProfile
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // KubernetesAciCniProfileAsKubernetesAciCniProfileRelationship is a convenience function that returns KubernetesAciCniProfile wrapped in KubernetesAciCniProfileRelationship
 func KubernetesAciCniProfileAsKubernetesAciCniProfileRelationship(v *KubernetesAciCniProfile) KubernetesAciCniProfileRelationship {
-	return KubernetesAciCniProfileRelationship{ KubernetesAciCniProfile: v}
+	return KubernetesAciCniProfileRelationship{KubernetesAciCniProfile: v}
 }
 
 // MoMoRefAsKubernetesAciCniProfileRelationship is a convenience function that returns MoMoRef wrapped in KubernetesAciCniProfileRelationship
 func MoMoRefAsKubernetesAciCniProfileRelationship(v *MoMoRef) KubernetesAciCniProfileRelationship {
-	return KubernetesAciCniProfileRelationship{ MoMoRef: v}
+	return KubernetesAciCniProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesAciCniProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesAciCniProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesAciCniProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesAciCniProfileRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesAciCniProfile != nil {
 		return obj.KubernetesAciCniProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesAciCniProfileRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // IamEndPointPrivilegeRelationship - A relationship to the 'iam.EndPointPrivilege' resource, or the expanded 'iam.EndPointPrivilege' resource, or the 'null' value.
 type IamEndPointPrivilegeRelationship struct {
 	IamEndPointPrivilege *IamEndPointPrivilege
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // IamEndPointPrivilegeAsIamEndPointPrivilegeRelationship is a convenience function that returns IamEndPointPrivilege wrapped in IamEndPointPrivilegeRelationship
 func IamEndPointPrivilegeAsIamEndPointPrivilegeRelationship(v *IamEndPointPrivilege) IamEndPointPrivilegeRelationship {
-	return IamEndPointPrivilegeRelationship{ IamEndPointPrivilege: v}
+	return IamEndPointPrivilegeRelationship{IamEndPointPrivilege: v}
 }
 
 // MoMoRefAsIamEndPointPrivilegeRelationship is a convenience function that returns MoMoRef wrapped in IamEndPointPrivilegeRelationship
 func MoMoRefAsIamEndPointPrivilegeRelationship(v *MoMoRef) IamEndPointPrivilegeRelationship {
-	return IamEndPointPrivilegeRelationship{ MoMoRef: v}
+	return IamEndPointPrivilegeRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamEndPointPrivilegeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamEndPointPrivilegeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamEndPointPrivilegeRelationship) GetActualInstance() (interface{}) {
+func (obj *IamEndPointPrivilegeRelationship) GetActualInstance() interface{} {
 	if obj.IamEndPointPrivilege != nil {
 		return obj.IamEndPointPrivilege
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamEndPointPrivilegeRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

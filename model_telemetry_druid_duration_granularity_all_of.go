@@ -21,7 +21,7 @@ type TelemetryDruidDurationGranularityAllOf struct {
 	// The duration in milliseconds.
 	Duration int64 `json:"duration"`
 	// An optional value specifying when to start counting time buckets from. The default value is 1970-01-01T00:00:00Z.
-	Origin *time.Time `json:"origin,omitempty"`
+	Origin               *time.Time `json:"origin,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidDurationGranularityAllOf) GetDuration() int64 {
 // GetDurationOk returns a tuple with the Duration field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidDurationGranularityAllOf) GetDurationOk() (*int64, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Duration, true
@@ -170,5 +170,3 @@ func (v *NullableTelemetryDruidDurationGranularityAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

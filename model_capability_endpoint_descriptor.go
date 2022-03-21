@@ -33,7 +33,7 @@ type CapabilityEndpointDescriptor struct {
 	// The firmware or software version of the endpoint, for which this capability information is applicable.
 	Version *string `json:"Version,omitempty"`
 	// An array of relationships to capabilityCapability resources.
-	Capabilities []CapabilityCapabilityRelationship `json:"Capabilities,omitempty"`
+	Capabilities         []CapabilityCapabilityRelationship `json:"Capabilities,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CapabilityEndpointDescriptor) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEndpointDescriptor) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CapabilityEndpointDescriptor) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEndpointDescriptor) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -236,7 +236,7 @@ func (o *CapabilityEndpointDescriptor) SetVersion(v string) {
 
 // GetCapabilities returns the Capabilities field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityEndpointDescriptor) GetCapabilities() []CapabilityCapabilityRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityCapabilityRelationship
 		return ret
 	}
@@ -420,5 +420,3 @@ func (v *NullableCapabilityEndpointDescriptor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

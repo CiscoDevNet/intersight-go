@@ -23,20 +23,20 @@ type HyperflexReplicationPeerInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                                  `json:"ObjectType"`
 	Datastores []HyperflexReplicationPlatDatastorePair `json:"Datastores,omitempty"`
 	// Data Cluster IP for the replication peer.
-	Dcip *string `json:"Dcip,omitempty"`
-	Er NullableHyperflexEntityReference `json:"Er,omitempty"`
+	Dcip *string                          `json:"Dcip,omitempty"`
+	Er   NullableHyperflexEntityReference `json:"Er,omitempty"`
 	// Management Cluster IP for the replication peer.
-	Mcip *string `json:"Mcip,omitempty"`
+	Mcip  *string                            `json:"Mcip,omitempty"`
 	Ports []HyperflexPortTypeToPortNumberMap `json:"Ports,omitempty"`
 	// Replication Cluster IP for the replication peer.
 	ReplCip *string `json:"ReplCip,omitempty"`
 	// Peer Cluster Status for the replication peer.
 	Status *string `json:"Status,omitempty"`
 	// Peer Cluster Status Details for the replication peer.
-	StatusDetails *string `json:"StatusDetails,omitempty"`
+	StatusDetails        *string `json:"StatusDetails,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *HyperflexReplicationPeerInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPeerInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *HyperflexReplicationPeerInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPeerInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *HyperflexReplicationPeerInfo) SetObjectType(v string) {
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexReplicationPeerInfo) GetDatastores() []HyperflexReplicationPlatDatastorePair {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexReplicationPlatDatastorePair
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *HyperflexReplicationPeerInfo) GetEr() HyperflexEntityReference {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPeerInfo) GetErOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Er.Get(), o.Er.IsSet()
@@ -210,6 +210,7 @@ func (o *HyperflexReplicationPeerInfo) HasEr() bool {
 func (o *HyperflexReplicationPeerInfo) SetEr(v HyperflexEntityReference) {
 	o.Er.Set(&v)
 }
+
 // SetErNil sets the value for Er to be an explicit nil
 func (o *HyperflexReplicationPeerInfo) SetErNil() {
 	o.Er.Set(nil)
@@ -254,7 +255,7 @@ func (o *HyperflexReplicationPeerInfo) SetMcip(v string) {
 
 // GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexReplicationPeerInfo) GetPorts() []HyperflexPortTypeToPortNumberMap {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexPortTypeToPortNumberMap
 		return ret
 	}
@@ -434,13 +435,13 @@ func (o *HyperflexReplicationPeerInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                                  `json:"ObjectType"`
 		Datastores []HyperflexReplicationPlatDatastorePair `json:"Datastores,omitempty"`
 		// Data Cluster IP for the replication peer.
-		Dcip *string `json:"Dcip,omitempty"`
-		Er NullableHyperflexEntityReference `json:"Er,omitempty"`
+		Dcip *string                          `json:"Dcip,omitempty"`
+		Er   NullableHyperflexEntityReference `json:"Er,omitempty"`
 		// Management Cluster IP for the replication peer.
-		Mcip *string `json:"Mcip,omitempty"`
+		Mcip  *string                            `json:"Mcip,omitempty"`
 		Ports []HyperflexPortTypeToPortNumberMap `json:"Ports,omitempty"`
 		// Replication Cluster IP for the replication peer.
 		ReplCip *string `json:"ReplCip,omitempty"`
@@ -552,5 +553,3 @@ func (v *NullableHyperflexReplicationPeerInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

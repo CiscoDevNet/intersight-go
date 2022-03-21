@@ -49,7 +49,7 @@ type IamLdapBaseProperties struct {
 	// The password of the user for initial bind process. It can be any string that adheres to the following constraints. It can have character except spaces, tabs, line breaks. It cannot be more than 254 characters.
 	Password *string `json:"Password,omitempty"`
 	// LDAP authentication timeout duration, in seconds.
-	Timeout *int64 `json:"Timeout,omitempty"`
+	Timeout              *int64 `json:"Timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -103,7 +103,7 @@ func (o *IamLdapBaseProperties) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapBaseProperties) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -127,7 +127,7 @@ func (o *IamLdapBaseProperties) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamLdapBaseProperties) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -763,5 +763,3 @@ func (v *NullableIamLdapBaseProperties) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

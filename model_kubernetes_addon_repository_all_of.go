@@ -20,8 +20,8 @@ type KubernetesAddonRepositoryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	CaCert NullableX509Certificate `json:"CaCert,omitempty"`
+	ObjectType string                  `json:"ObjectType"`
+	CaCert     NullableX509Certificate `json:"CaCert,omitempty"`
 	// Allow connecting to http registries or https registries which do not have certificate signed by a well known CA.
 	InsecureSkipVerification *bool `json:"InsecureSkipVerification,omitempty"`
 	// Indicates whether the value of the 'password' property has been set.
@@ -33,9 +33,9 @@ type KubernetesAddonRepositoryAllOf struct {
 	// URL for the repository where the addon is hosted.
 	RepositoryUrl *string `json:"RepositoryUrl,omitempty"`
 	// Username to authenticate to the addon registry.
-	Username *string `json:"Username,omitempty"`
-	Catalog *WorkflowCatalogRelationship `json:"Catalog,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Username             *string                              `json:"Username,omitempty"`
+	Catalog              *WorkflowCatalogRelationship         `json:"Catalog,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *KubernetesAddonRepositoryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonRepositoryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *KubernetesAddonRepositoryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonRepositoryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -129,7 +129,7 @@ func (o *KubernetesAddonRepositoryAllOf) GetCaCert() X509Certificate {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesAddonRepositoryAllOf) GetCaCertOk() (*X509Certificate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CaCert.Get(), o.CaCert.IsSet()
@@ -148,6 +148,7 @@ func (o *KubernetesAddonRepositoryAllOf) HasCaCert() bool {
 func (o *KubernetesAddonRepositoryAllOf) SetCaCert(v X509Certificate) {
 	o.CaCert.Set(&v)
 }
+
 // SetCaCertNil sets the value for CaCert to be an explicit nil
 func (o *KubernetesAddonRepositoryAllOf) SetCaCertNil() {
 	o.CaCert.Set(nil)
@@ -519,5 +520,3 @@ func (v *NullableKubernetesAddonRepositoryAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

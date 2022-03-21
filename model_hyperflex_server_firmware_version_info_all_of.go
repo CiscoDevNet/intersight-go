@@ -24,7 +24,7 @@ type HyperflexServerFirmwareVersionInfoAllOf struct {
 	// The platform type for UCS server. * `M5` - M5 generation of UCS server. * `M3` - M3 generation of UCS server. * `M4` - M4 generation of UCS server. * `M6` - M6 generation of UCS server.
 	ServerPlatform *string `json:"ServerPlatform,omitempty"`
 	// The server firmware bundle version.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *HyperflexServerFirmwareVersionInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersionInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *HyperflexServerFirmwareVersionInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersionInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -246,5 +246,3 @@ func (v *NullableHyperflexServerFirmwareVersionInfoAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

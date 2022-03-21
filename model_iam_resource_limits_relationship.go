@@ -19,19 +19,18 @@ import (
 // IamResourceLimitsRelationship - A relationship to the 'iam.ResourceLimits' resource, or the expanded 'iam.ResourceLimits' resource, or the 'null' value.
 type IamResourceLimitsRelationship struct {
 	IamResourceLimits *IamResourceLimits
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // IamResourceLimitsAsIamResourceLimitsRelationship is a convenience function that returns IamResourceLimits wrapped in IamResourceLimitsRelationship
 func IamResourceLimitsAsIamResourceLimitsRelationship(v *IamResourceLimits) IamResourceLimitsRelationship {
-	return IamResourceLimitsRelationship{ IamResourceLimits: v}
+	return IamResourceLimitsRelationship{IamResourceLimits: v}
 }
 
 // MoMoRefAsIamResourceLimitsRelationship is a convenience function that returns MoMoRef wrapped in IamResourceLimitsRelationship
 func MoMoRefAsIamResourceLimitsRelationship(v *MoMoRef) IamResourceLimitsRelationship {
-	return IamResourceLimitsRelationship{ MoMoRef: v}
+	return IamResourceLimitsRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamResourceLimitsRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamResourceLimitsRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamResourceLimitsRelationship) GetActualInstance() (interface{}) {
+func (obj *IamResourceLimitsRelationship) GetActualInstance() interface{} {
 	if obj.IamResourceLimits != nil {
 		return obj.IamResourceLimits
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamResourceLimitsRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

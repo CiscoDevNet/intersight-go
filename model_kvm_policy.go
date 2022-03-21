@@ -35,10 +35,10 @@ type KvmPolicy struct {
 	// The port used for KVM communication.
 	RemotePort *int64 `json:"RemotePort,omitempty"`
 	// Enables Tunneled vKVM on the endpoint. Applicable only for Device Connectors that support Tunneled vKVM.
-	TunneledKvmEnabled *bool `json:"TunneledKvmEnabled,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	TunneledKvmEnabled *bool                                 `json:"TunneledKvmEnabled,omitempty"`
+	Organization       *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -104,7 +104,7 @@ func (o *KvmPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KvmPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -128,7 +128,7 @@ func (o *KvmPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KvmPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -365,7 +365,7 @@ func (o *KvmPolicy) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KvmPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -461,8 +461,8 @@ func (o *KvmPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The port used for KVM communication.
 		RemotePort *int64 `json:"RemotePort,omitempty"`
 		// Enables Tunneled vKVM on the endpoint. Applicable only for Device Connectors that support Tunneled vKVM.
-		TunneledKvmEnabled *bool `json:"TunneledKvmEnabled,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		TunneledKvmEnabled *bool                                 `json:"TunneledKvmEnabled,omitempty"`
+		Organization       *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -569,5 +569,3 @@ func (v *NullableKvmPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

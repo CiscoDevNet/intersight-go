@@ -25,9 +25,9 @@ type KubernetesBaremetalNodeProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Network interface from NetworkInfo (by name) to use for kubernetes VIP.
-	KubernetesNic *string `json:"KubernetesNic,omitempty"`
-	NetworkInfo NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
-	Server *ComputeRackUnitRelationship `json:"Server,omitempty"`
+	KubernetesNic        *string                                `json:"KubernetesNic,omitempty"`
+	NetworkInfo          NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
+	Server               *ComputeRackUnitRelationship           `json:"Server,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KubernetesBaremetalNodeProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNodeProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KubernetesBaremetalNodeProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesBaremetalNodeProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -155,7 +155,7 @@ func (o *KubernetesBaremetalNodeProfile) GetNetworkInfo() KubernetesBaremetalNet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesBaremetalNodeProfile) GetNetworkInfoOk() (*KubernetesBaremetalNetworkInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetworkInfo.Get(), o.NetworkInfo.IsSet()
@@ -174,6 +174,7 @@ func (o *KubernetesBaremetalNodeProfile) HasNetworkInfo() bool {
 func (o *KubernetesBaremetalNodeProfile) SetNetworkInfo(v KubernetesBaremetalNetworkInfo) {
 	o.NetworkInfo.Set(&v)
 }
+
 // SetNetworkInfoNil sets the value for NetworkInfo to be an explicit nil
 func (o *KubernetesBaremetalNodeProfile) SetNetworkInfoNil() {
 	o.NetworkInfo.Set(nil)
@@ -256,9 +257,9 @@ func (o *KubernetesBaremetalNodeProfile) UnmarshalJSON(bytes []byte) (err error)
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Network interface from NetworkInfo (by name) to use for kubernetes VIP.
-		KubernetesNic *string `json:"KubernetesNic,omitempty"`
-		NetworkInfo NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
-		Server *ComputeRackUnitRelationship `json:"Server,omitempty"`
+		KubernetesNic *string                                `json:"KubernetesNic,omitempty"`
+		NetworkInfo   NullableKubernetesBaremetalNetworkInfo `json:"NetworkInfo,omitempty"`
+		Server        *ComputeRackUnitRelationship           `json:"Server,omitempty"`
 	}
 
 	varKubernetesBaremetalNodeProfileWithoutEmbeddedStruct := KubernetesBaremetalNodeProfileWithoutEmbeddedStruct{}
@@ -353,5 +354,3 @@ func (v *NullableKubernetesBaremetalNodeProfile) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

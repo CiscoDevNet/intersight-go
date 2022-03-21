@@ -18,20 +18,19 @@ import (
 
 // NiatelemetryNiaInventoryRelationship - A relationship to the 'niatelemetry.NiaInventory' resource, or the expanded 'niatelemetry.NiaInventory' resource, or the 'null' value.
 type NiatelemetryNiaInventoryRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	NiatelemetryNiaInventory *NiatelemetryNiaInventory
 }
 
 // MoMoRefAsNiatelemetryNiaInventoryRelationship is a convenience function that returns MoMoRef wrapped in NiatelemetryNiaInventoryRelationship
 func MoMoRefAsNiatelemetryNiaInventoryRelationship(v *MoMoRef) NiatelemetryNiaInventoryRelationship {
-	return NiatelemetryNiaInventoryRelationship{ MoMoRef: v}
+	return NiatelemetryNiaInventoryRelationship{MoMoRef: v}
 }
 
 // NiatelemetryNiaInventoryAsNiatelemetryNiaInventoryRelationship is a convenience function that returns NiatelemetryNiaInventory wrapped in NiatelemetryNiaInventoryRelationship
 func NiatelemetryNiaInventoryAsNiatelemetryNiaInventoryRelationship(v *NiatelemetryNiaInventory) NiatelemetryNiaInventoryRelationship {
-	return NiatelemetryNiaInventoryRelationship{ NiatelemetryNiaInventory: v}
+	return NiatelemetryNiaInventoryRelationship{NiatelemetryNiaInventory: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryNiaInventoryRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src NiatelemetryNiaInventoryRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryNiaInventoryRelationship) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryNiaInventoryRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableNiatelemetryNiaInventoryRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

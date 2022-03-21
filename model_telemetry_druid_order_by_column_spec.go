@@ -22,7 +22,7 @@ type TelemetryDruidOrderByColumnSpec struct {
 	// null
 	Direction *string `json:"direction,omitempty"`
 	// null
-	DimensionOrder *string `json:"dimensionOrder,omitempty"`
+	DimensionOrder       *string `json:"dimensionOrder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -214,5 +214,3 @@ func (v *NullableTelemetryDruidOrderByColumnSpec) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

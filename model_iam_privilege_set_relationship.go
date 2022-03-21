@@ -19,19 +19,18 @@ import (
 // IamPrivilegeSetRelationship - A relationship to the 'iam.PrivilegeSet' resource, or the expanded 'iam.PrivilegeSet' resource, or the 'null' value.
 type IamPrivilegeSetRelationship struct {
 	IamPrivilegeSet *IamPrivilegeSet
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 }
 
 // IamPrivilegeSetAsIamPrivilegeSetRelationship is a convenience function that returns IamPrivilegeSet wrapped in IamPrivilegeSetRelationship
 func IamPrivilegeSetAsIamPrivilegeSetRelationship(v *IamPrivilegeSet) IamPrivilegeSetRelationship {
-	return IamPrivilegeSetRelationship{ IamPrivilegeSet: v}
+	return IamPrivilegeSetRelationship{IamPrivilegeSet: v}
 }
 
 // MoMoRefAsIamPrivilegeSetRelationship is a convenience function that returns MoMoRef wrapped in IamPrivilegeSetRelationship
 func MoMoRefAsIamPrivilegeSetRelationship(v *MoMoRef) IamPrivilegeSetRelationship {
-	return IamPrivilegeSetRelationship{ MoMoRef: v}
+	return IamPrivilegeSetRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamPrivilegeSetRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamPrivilegeSetRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamPrivilegeSetRelationship) GetActualInstance() (interface{}) {
+func (obj *IamPrivilegeSetRelationship) GetActualInstance() interface{} {
 	if obj.IamPrivilegeSet != nil {
 		return obj.IamPrivilegeSet
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamPrivilegeSetRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,11 @@ var (
 type UuidpoolApiService service
 
 type ApiCreateUuidpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
+	ctx          _context.Context
+	ApiService   *UuidpoolApiService
 	uuidpoolPool *UuidpoolPool
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch      *string
+	ifNoneMatch  *string
 }
 
 // The &#39;uuidpool.Pool&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateUuidpoolPoolRequest) UuidpoolPool(uuidpoolPool UuidpoolPool) Ap
 	r.uuidpoolPool = &uuidpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateUuidpoolPoolRequest) IfMatch(ifMatch string) ApiCreateUuidpoolPoolRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateUuidpoolPoolRequest) IfNoneMatch(ifNoneMatch string) ApiCreateUuidpoolPoolRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateUuidpoolPool Create a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) CreateUuidpoolPool(ctx _context.Context) ApiCreateUuidpoolPoolRequest {
 	return ApiCreateUuidpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *UuidpoolApiService) CreateUuidpoolPoolExecute(r ApiCreateUuidpoolPoolRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *UuidpoolApiService) CreateUuidpoolPoolExecute(r ApiCreateUuidpoolPoolRe
 }
 
 type ApiDeleteUuidpoolPoolRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteUuidpoolPoolRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteUuidpoolPoolExecute(r)
@@ -225,8 +226,8 @@ DeleteUuidpoolPool Delete a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) DeleteUuidpoolPool(ctx _context.Context, moid string) ApiDeleteUuidpoolPoolRequest {
 	return ApiDeleteUuidpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *UuidpoolApiService) DeleteUuidpoolPoolExecute(r ApiDeleteUuidpoolPoolRe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *UuidpoolApiService) DeleteUuidpoolPoolExecute(r ApiDeleteUuidpoolPoolRe
 }
 
 type ApiDeleteUuidpoolUuidLeaseRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteUuidpoolUuidLeaseRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteUuidpoolUuidLeaseExecute(r)
@@ -365,8 +365,8 @@ DeleteUuidpoolUuidLease Delete a 'uuidpool.UuidLease' resource.
 func (a *UuidpoolApiService) DeleteUuidpoolUuidLease(ctx _context.Context, moid string) ApiDeleteUuidpoolUuidLeaseRequest {
 	return ApiDeleteUuidpoolUuidLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -471,13 +471,13 @@ func (a *UuidpoolApiService) DeleteUuidpoolUuidLeaseExecute(r ApiDeleteUuidpoolU
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -485,11 +485,10 @@ func (a *UuidpoolApiService) DeleteUuidpoolUuidLeaseExecute(r ApiDeleteUuidpoolU
 }
 
 type ApiGetUuidpoolBlockByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetUuidpoolBlockByMoidRequest) Execute() (UuidpoolBlock, *_nethttp.Response, error) {
 	return r.ApiService.GetUuidpoolBlockByMoidExecute(r)
@@ -505,8 +504,8 @@ GetUuidpoolBlockByMoid Read a 'uuidpool.Block' resource.
 func (a *UuidpoolApiService) GetUuidpoolBlockByMoid(ctx _context.Context, moid string) ApiGetUuidpoolBlockByMoidRequest {
 	return ApiGetUuidpoolBlockByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -613,13 +612,13 @@ func (a *UuidpoolApiService) GetUuidpoolBlockByMoidExecute(r ApiGetUuidpoolBlock
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -636,19 +635,19 @@ func (a *UuidpoolApiService) GetUuidpoolBlockByMoidExecute(r ApiGetUuidpoolBlock
 }
 
 type ApiGetUuidpoolBlockListRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *UuidpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -656,51 +655,61 @@ func (r ApiGetUuidpoolBlockListRequest) Filter(filter string) ApiGetUuidpoolBloc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetUuidpoolBlockListRequest) Orderby(orderby string) ApiGetUuidpoolBlockListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetUuidpoolBlockListRequest) Top(top int32) ApiGetUuidpoolBlockListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetUuidpoolBlockListRequest) Skip(skip int32) ApiGetUuidpoolBlockListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetUuidpoolBlockListRequest) Select_(select_ string) ApiGetUuidpoolBlockListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetUuidpoolBlockListRequest) Expand(expand string) ApiGetUuidpoolBlockListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetUuidpoolBlockListRequest) Apply(apply string) ApiGetUuidpoolBlockListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetUuidpoolBlockListRequest) Count(count bool) ApiGetUuidpoolBlockListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetUuidpoolBlockListRequest) Inlinecount(inlinecount string) ApiGetUuidpoolBlockListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetUuidpoolBlockListRequest) At(at string) ApiGetUuidpoolBlockListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetUuidpoolBlockListRequest) Tags(tags string) ApiGetUuidpoolBlockListRequest {
 	r.tags = &tags
@@ -720,7 +729,7 @@ GetUuidpoolBlockList Read a 'uuidpool.Block' resource.
 func (a *UuidpoolApiService) GetUuidpoolBlockList(ctx _context.Context) ApiGetUuidpoolBlockListRequest {
 	return ApiGetUuidpoolBlockListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -859,13 +868,13 @@ func (a *UuidpoolApiService) GetUuidpoolBlockListExecute(r ApiGetUuidpoolBlockLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -882,11 +891,10 @@ func (a *UuidpoolApiService) GetUuidpoolBlockListExecute(r ApiGetUuidpoolBlockLi
 }
 
 type ApiGetUuidpoolPoolByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetUuidpoolPoolByMoidRequest) Execute() (UuidpoolPool, *_nethttp.Response, error) {
 	return r.ApiService.GetUuidpoolPoolByMoidExecute(r)
@@ -902,8 +910,8 @@ GetUuidpoolPoolByMoid Read a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) GetUuidpoolPoolByMoid(ctx _context.Context, moid string) ApiGetUuidpoolPoolByMoidRequest {
 	return ApiGetUuidpoolPoolByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1010,13 +1018,13 @@ func (a *UuidpoolApiService) GetUuidpoolPoolByMoidExecute(r ApiGetUuidpoolPoolBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1033,19 +1041,19 @@ func (a *UuidpoolApiService) GetUuidpoolPoolByMoidExecute(r ApiGetUuidpoolPoolBy
 }
 
 type ApiGetUuidpoolPoolListRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *UuidpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1053,51 +1061,61 @@ func (r ApiGetUuidpoolPoolListRequest) Filter(filter string) ApiGetUuidpoolPoolL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetUuidpoolPoolListRequest) Orderby(orderby string) ApiGetUuidpoolPoolListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetUuidpoolPoolListRequest) Top(top int32) ApiGetUuidpoolPoolListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetUuidpoolPoolListRequest) Skip(skip int32) ApiGetUuidpoolPoolListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetUuidpoolPoolListRequest) Select_(select_ string) ApiGetUuidpoolPoolListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetUuidpoolPoolListRequest) Expand(expand string) ApiGetUuidpoolPoolListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetUuidpoolPoolListRequest) Apply(apply string) ApiGetUuidpoolPoolListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetUuidpoolPoolListRequest) Count(count bool) ApiGetUuidpoolPoolListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetUuidpoolPoolListRequest) Inlinecount(inlinecount string) ApiGetUuidpoolPoolListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetUuidpoolPoolListRequest) At(at string) ApiGetUuidpoolPoolListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetUuidpoolPoolListRequest) Tags(tags string) ApiGetUuidpoolPoolListRequest {
 	r.tags = &tags
@@ -1117,7 +1135,7 @@ GetUuidpoolPoolList Read a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) GetUuidpoolPoolList(ctx _context.Context) ApiGetUuidpoolPoolListRequest {
 	return ApiGetUuidpoolPoolListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1256,13 +1274,13 @@ func (a *UuidpoolApiService) GetUuidpoolPoolListExecute(r ApiGetUuidpoolPoolList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1279,11 +1297,10 @@ func (a *UuidpoolApiService) GetUuidpoolPoolListExecute(r ApiGetUuidpoolPoolList
 }
 
 type ApiGetUuidpoolPoolMemberByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetUuidpoolPoolMemberByMoidRequest) Execute() (UuidpoolPoolMember, *_nethttp.Response, error) {
 	return r.ApiService.GetUuidpoolPoolMemberByMoidExecute(r)
@@ -1299,8 +1316,8 @@ GetUuidpoolPoolMemberByMoid Read a 'uuidpool.PoolMember' resource.
 func (a *UuidpoolApiService) GetUuidpoolPoolMemberByMoid(ctx _context.Context, moid string) ApiGetUuidpoolPoolMemberByMoidRequest {
 	return ApiGetUuidpoolPoolMemberByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1407,13 +1424,13 @@ func (a *UuidpoolApiService) GetUuidpoolPoolMemberByMoidExecute(r ApiGetUuidpool
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1430,19 +1447,19 @@ func (a *UuidpoolApiService) GetUuidpoolPoolMemberByMoidExecute(r ApiGetUuidpool
 }
 
 type ApiGetUuidpoolPoolMemberListRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *UuidpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1450,51 +1467,61 @@ func (r ApiGetUuidpoolPoolMemberListRequest) Filter(filter string) ApiGetUuidpoo
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetUuidpoolPoolMemberListRequest) Orderby(orderby string) ApiGetUuidpoolPoolMemberListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetUuidpoolPoolMemberListRequest) Top(top int32) ApiGetUuidpoolPoolMemberListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetUuidpoolPoolMemberListRequest) Skip(skip int32) ApiGetUuidpoolPoolMemberListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetUuidpoolPoolMemberListRequest) Select_(select_ string) ApiGetUuidpoolPoolMemberListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetUuidpoolPoolMemberListRequest) Expand(expand string) ApiGetUuidpoolPoolMemberListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetUuidpoolPoolMemberListRequest) Apply(apply string) ApiGetUuidpoolPoolMemberListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetUuidpoolPoolMemberListRequest) Count(count bool) ApiGetUuidpoolPoolMemberListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetUuidpoolPoolMemberListRequest) Inlinecount(inlinecount string) ApiGetUuidpoolPoolMemberListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetUuidpoolPoolMemberListRequest) At(at string) ApiGetUuidpoolPoolMemberListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetUuidpoolPoolMemberListRequest) Tags(tags string) ApiGetUuidpoolPoolMemberListRequest {
 	r.tags = &tags
@@ -1514,7 +1541,7 @@ GetUuidpoolPoolMemberList Read a 'uuidpool.PoolMember' resource.
 func (a *UuidpoolApiService) GetUuidpoolPoolMemberList(ctx _context.Context) ApiGetUuidpoolPoolMemberListRequest {
 	return ApiGetUuidpoolPoolMemberListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1653,13 +1680,13 @@ func (a *UuidpoolApiService) GetUuidpoolPoolMemberListExecute(r ApiGetUuidpoolPo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1676,11 +1703,10 @@ func (a *UuidpoolApiService) GetUuidpoolPoolMemberListExecute(r ApiGetUuidpoolPo
 }
 
 type ApiGetUuidpoolUniverseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetUuidpoolUniverseByMoidRequest) Execute() (UuidpoolUniverse, *_nethttp.Response, error) {
 	return r.ApiService.GetUuidpoolUniverseByMoidExecute(r)
@@ -1696,8 +1722,8 @@ GetUuidpoolUniverseByMoid Read a 'uuidpool.Universe' resource.
 func (a *UuidpoolApiService) GetUuidpoolUniverseByMoid(ctx _context.Context, moid string) ApiGetUuidpoolUniverseByMoidRequest {
 	return ApiGetUuidpoolUniverseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1804,13 +1830,13 @@ func (a *UuidpoolApiService) GetUuidpoolUniverseByMoidExecute(r ApiGetUuidpoolUn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1827,19 +1853,19 @@ func (a *UuidpoolApiService) GetUuidpoolUniverseByMoidExecute(r ApiGetUuidpoolUn
 }
 
 type ApiGetUuidpoolUniverseListRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *UuidpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1847,51 +1873,61 @@ func (r ApiGetUuidpoolUniverseListRequest) Filter(filter string) ApiGetUuidpoolU
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetUuidpoolUniverseListRequest) Orderby(orderby string) ApiGetUuidpoolUniverseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetUuidpoolUniverseListRequest) Top(top int32) ApiGetUuidpoolUniverseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetUuidpoolUniverseListRequest) Skip(skip int32) ApiGetUuidpoolUniverseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetUuidpoolUniverseListRequest) Select_(select_ string) ApiGetUuidpoolUniverseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetUuidpoolUniverseListRequest) Expand(expand string) ApiGetUuidpoolUniverseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetUuidpoolUniverseListRequest) Apply(apply string) ApiGetUuidpoolUniverseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetUuidpoolUniverseListRequest) Count(count bool) ApiGetUuidpoolUniverseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetUuidpoolUniverseListRequest) Inlinecount(inlinecount string) ApiGetUuidpoolUniverseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetUuidpoolUniverseListRequest) At(at string) ApiGetUuidpoolUniverseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetUuidpoolUniverseListRequest) Tags(tags string) ApiGetUuidpoolUniverseListRequest {
 	r.tags = &tags
@@ -1911,7 +1947,7 @@ GetUuidpoolUniverseList Read a 'uuidpool.Universe' resource.
 func (a *UuidpoolApiService) GetUuidpoolUniverseList(ctx _context.Context) ApiGetUuidpoolUniverseListRequest {
 	return ApiGetUuidpoolUniverseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2050,13 +2086,13 @@ func (a *UuidpoolApiService) GetUuidpoolUniverseListExecute(r ApiGetUuidpoolUniv
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2073,11 +2109,10 @@ func (a *UuidpoolApiService) GetUuidpoolUniverseListExecute(r ApiGetUuidpoolUniv
 }
 
 type ApiGetUuidpoolUuidLeaseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *UuidpoolApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetUuidpoolUuidLeaseByMoidRequest) Execute() (UuidpoolUuidLease, *_nethttp.Response, error) {
 	return r.ApiService.GetUuidpoolUuidLeaseByMoidExecute(r)
@@ -2093,8 +2128,8 @@ GetUuidpoolUuidLeaseByMoid Read a 'uuidpool.UuidLease' resource.
 func (a *UuidpoolApiService) GetUuidpoolUuidLeaseByMoid(ctx _context.Context, moid string) ApiGetUuidpoolUuidLeaseByMoidRequest {
 	return ApiGetUuidpoolUuidLeaseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2201,13 +2236,13 @@ func (a *UuidpoolApiService) GetUuidpoolUuidLeaseByMoidExecute(r ApiGetUuidpoolU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2224,19 +2259,19 @@ func (a *UuidpoolApiService) GetUuidpoolUuidLeaseByMoidExecute(r ApiGetUuidpoolU
 }
 
 type ApiGetUuidpoolUuidLeaseListRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *UuidpoolApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2244,51 +2279,61 @@ func (r ApiGetUuidpoolUuidLeaseListRequest) Filter(filter string) ApiGetUuidpool
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Orderby(orderby string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Top(top int32) ApiGetUuidpoolUuidLeaseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Skip(skip int32) ApiGetUuidpoolUuidLeaseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Select_(select_ string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Expand(expand string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Apply(apply string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Count(count bool) ApiGetUuidpoolUuidLeaseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Inlinecount(inlinecount string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetUuidpoolUuidLeaseListRequest) At(at string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetUuidpoolUuidLeaseListRequest) Tags(tags string) ApiGetUuidpoolUuidLeaseListRequest {
 	r.tags = &tags
@@ -2308,7 +2353,7 @@ GetUuidpoolUuidLeaseList Read a 'uuidpool.UuidLease' resource.
 func (a *UuidpoolApiService) GetUuidpoolUuidLeaseList(ctx _context.Context) ApiGetUuidpoolUuidLeaseListRequest {
 	return ApiGetUuidpoolUuidLeaseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2447,13 +2492,13 @@ func (a *UuidpoolApiService) GetUuidpoolUuidLeaseListExecute(r ApiGetUuidpoolUui
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2470,11 +2515,11 @@ func (a *UuidpoolApiService) GetUuidpoolUuidLeaseListExecute(r ApiGetUuidpoolUui
 }
 
 type ApiPatchUuidpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *UuidpoolApiService
+	moid         string
 	uuidpoolPool *UuidpoolPool
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;uuidpool.Pool&#39; resource to update.
@@ -2482,6 +2527,7 @@ func (r ApiPatchUuidpoolPoolRequest) UuidpoolPool(uuidpoolPool UuidpoolPool) Api
 	r.uuidpoolPool = &uuidpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchUuidpoolPoolRequest) IfMatch(ifMatch string) ApiPatchUuidpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2502,8 +2548,8 @@ PatchUuidpoolPool Update a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) PatchUuidpoolPool(ctx _context.Context, moid string) ApiPatchUuidpoolPoolRequest {
 	return ApiPatchUuidpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2618,13 +2664,13 @@ func (a *UuidpoolApiService) PatchUuidpoolPoolExecute(r ApiPatchUuidpoolPoolRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2641,11 +2687,11 @@ func (a *UuidpoolApiService) PatchUuidpoolPoolExecute(r ApiPatchUuidpoolPoolRequ
 }
 
 type ApiUpdateUuidpoolPoolRequest struct {
-	ctx _context.Context
-	ApiService *UuidpoolApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *UuidpoolApiService
+	moid         string
 	uuidpoolPool *UuidpoolPool
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;uuidpool.Pool&#39; resource to update.
@@ -2653,6 +2699,7 @@ func (r ApiUpdateUuidpoolPoolRequest) UuidpoolPool(uuidpoolPool UuidpoolPool) Ap
 	r.uuidpoolPool = &uuidpoolPool
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateUuidpoolPoolRequest) IfMatch(ifMatch string) ApiUpdateUuidpoolPoolRequest {
 	r.ifMatch = &ifMatch
@@ -2673,8 +2720,8 @@ UpdateUuidpoolPool Update a 'uuidpool.Pool' resource.
 func (a *UuidpoolApiService) UpdateUuidpoolPool(ctx _context.Context, moid string) ApiUpdateUuidpoolPoolRequest {
 	return ApiUpdateUuidpoolPoolRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2789,13 +2836,13 @@ func (a *UuidpoolApiService) UpdateUuidpoolPoolExecute(r ApiUpdateUuidpoolPoolRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

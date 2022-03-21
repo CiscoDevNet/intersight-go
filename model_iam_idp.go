@@ -35,16 +35,16 @@ type IamIdp struct {
 	// The name of the Identity Provider, for example Cisco, Okta, or OneID.
 	Name *string `json:"Name,omitempty"`
 	// Authentication protocol used by the IdP. * `saml` - Use SAML as the authentication protocol for sign-on. * `oidc` - Open ID connect to be used as an authentication protocol for sign-on. * `local` - The local authentication method to be used for sign-on. Local type is set to default for the Intersight Appliance IdP.
-	Type *string `json:"Type,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Type       *string                    `json:"Type,omitempty"`
+	Account    *IamAccountRelationship    `json:"Account,omitempty"`
 	LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
-	System *IamSystemRelationship `json:"System,omitempty"`
+	System     *IamSystemRelationship     `json:"System,omitempty"`
 	// An array of relationships to iamUserPreference resources.
 	UserPreferences []IamUserPreferenceRelationship `json:"UserPreferences,omitempty"`
 	// An array of relationships to iamUserGroup resources.
 	Usergroups []IamUserGroupRelationship `json:"Usergroups,omitempty"`
 	// An array of relationships to iamUser resources.
-	Users []IamUserRelationship `json:"Users,omitempty"`
+	Users                []IamUserRelationship `json:"Users,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *IamIdp) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamIdp) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -114,7 +114,7 @@ func (o *IamIdp) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamIdp) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -415,7 +415,7 @@ func (o *IamIdp) SetSystem(v IamSystemRelationship) {
 
 // GetUserPreferences returns the UserPreferences field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamIdp) GetUserPreferences() []IamUserPreferenceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserPreferenceRelationship
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *IamIdp) SetUserPreferences(v []IamUserPreferenceRelationship) {
 
 // GetUsergroups returns the Usergroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamIdp) GetUsergroups() []IamUserGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserGroupRelationship
 		return ret
 	}
@@ -481,7 +481,7 @@ func (o *IamIdp) SetUsergroups(v []IamUserGroupRelationship) {
 
 // GetUsers returns the Users field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamIdp) GetUsers() []IamUserRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamUserRelationship
 		return ret
 	}
@@ -589,10 +589,10 @@ func (o *IamIdp) UnmarshalJSON(bytes []byte) (err error) {
 		// The name of the Identity Provider, for example Cisco, Okta, or OneID.
 		Name *string `json:"Name,omitempty"`
 		// Authentication protocol used by the IdP. * `saml` - Use SAML as the authentication protocol for sign-on. * `oidc` - Open ID connect to be used as an authentication protocol for sign-on. * `local` - The local authentication method to be used for sign-on. Local type is set to default for the Intersight Appliance IdP.
-		Type *string `json:"Type,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Type       *string                    `json:"Type,omitempty"`
+		Account    *IamAccountRelationship    `json:"Account,omitempty"`
 		LdapPolicy *IamLdapPolicyRelationship `json:"LdapPolicy,omitempty"`
-		System *IamSystemRelationship `json:"System,omitempty"`
+		System     *IamSystemRelationship     `json:"System,omitempty"`
 		// An array of relationships to iamUserPreference resources.
 		UserPreferences []IamUserPreferenceRelationship `json:"UserPreferences,omitempty"`
 		// An array of relationships to iamUserGroup resources.
@@ -711,5 +711,3 @@ func (v *NullableIamIdp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

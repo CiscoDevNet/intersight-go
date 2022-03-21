@@ -20,8 +20,8 @@ type ConnectorDownloadStatusAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Checksum NullableConnectorFileChecksum `json:"Checksum,omitempty"`
+	ObjectType string                        `json:"ObjectType"`
+	Checksum   NullableConnectorFileChecksum `json:"Checksum,omitempty"`
 	// Any error encountered. Set to empty when download is in progress or completed.
 	DownloadError *string `json:"DownloadError,omitempty"`
 	// The download progress of the file represented as a percentage between 0% and 100%. If progress reporting is not possible a value of -1 is sent.
@@ -29,7 +29,7 @@ type ConnectorDownloadStatusAllOf struct {
 	// The number of retries the plugin attempted before succeeding or failing the download.
 	DownloadRetries *int64 `json:"DownloadRetries,omitempty"`
 	// The sha256checksum of the downloaded file as calculated by the download plugin after successfully downloading a file.
-	Sha256checksum *string `json:"Sha256checksum,omitempty"`
+	Sha256checksum       *string `json:"Sha256checksum,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *ConnectorDownloadStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorDownloadStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *ConnectorDownloadStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorDownloadStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *ConnectorDownloadStatusAllOf) GetChecksum() ConnectorFileChecksum {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConnectorDownloadStatusAllOf) GetChecksumOk() (*ConnectorFileChecksum, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Checksum.Get(), o.Checksum.IsSet()
@@ -134,6 +134,7 @@ func (o *ConnectorDownloadStatusAllOf) HasChecksum() bool {
 func (o *ConnectorDownloadStatusAllOf) SetChecksum(v ConnectorFileChecksum) {
 	o.Checksum.Set(&v)
 }
+
 // SetChecksumNil sets the value for Checksum to be an explicit nil
 func (o *ConnectorDownloadStatusAllOf) SetChecksumNil() {
 	o.Checksum.Set(nil)
@@ -361,5 +362,3 @@ func (v *NullableConnectorDownloadStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

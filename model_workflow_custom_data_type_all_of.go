@@ -20,8 +20,8 @@ type WorkflowCustomDataTypeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Properties NullableWorkflowCustomDataProperty `json:"Properties,omitempty"`
+	ObjectType           string                             `json:"ObjectType"`
+	Properties           NullableWorkflowCustomDataProperty `json:"Properties,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *WorkflowCustomDataTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *WorkflowCustomDataTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowCustomDataTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *WorkflowCustomDataTypeAllOf) GetProperties() WorkflowCustomDataProperty
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowCustomDataTypeAllOf) GetPropertiesOk() (*WorkflowCustomDataProperty, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Properties.Get(), o.Properties.IsSet()
@@ -130,6 +130,7 @@ func (o *WorkflowCustomDataTypeAllOf) HasProperties() bool {
 func (o *WorkflowCustomDataTypeAllOf) SetProperties(v WorkflowCustomDataProperty) {
 	o.Properties.Set(&v)
 }
+
 // SetPropertiesNil sets the value for Properties to be an explicit nil
 func (o *WorkflowCustomDataTypeAllOf) SetPropertiesNil() {
 	o.Properties.Set(nil)
@@ -213,5 +214,3 @@ func (v *NullableWorkflowCustomDataTypeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

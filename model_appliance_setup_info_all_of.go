@@ -25,7 +25,7 @@ type ApplianceSetupInfoAllOf struct {
 	// The version of Intersight Appliance backup which can restore to.
 	BackupVersion *string `json:"BackupVersion,omitempty"`
 	// Build type of the Intersight Appliance setup (e.g. release or debug).
-	BuildType *string `json:"BuildType,omitempty"`
+	BuildType    *string                 `json:"BuildType,omitempty"`
 	Capabilities []ApplianceKeyValuePair `json:"Capabilities,omitempty"`
 	// URL of the Intersight to which this Intersight Appliance is connected to.
 	CloudUrl *string `json:"CloudUrl,omitempty"`
@@ -34,11 +34,11 @@ type ApplianceSetupInfoAllOf struct {
 	// End date of the Intersight Appliance's initial setup.
 	EndTime *time.Time `json:"EndTime,omitempty"`
 	// The most recent version which Intersight Appliance can upgrade to.
-	LatestVersion *string `json:"LatestVersion,omitempty"`
-	SetupStates []string `json:"SetupStates,omitempty"`
+	LatestVersion *string  `json:"LatestVersion,omitempty"`
+	SetupStates   []string `json:"SetupStates,omitempty"`
 	// Start date of the Intersight Appliance's initial setup.
-	StartTime *time.Time `json:"StartTime,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	StartTime            *time.Time              `json:"StartTime,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *ApplianceSetupInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceSetupInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *ApplianceSetupInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceSetupInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -181,7 +181,7 @@ func (o *ApplianceSetupInfoAllOf) SetBuildType(v string) {
 
 // GetCapabilities returns the Capabilities field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSetupInfoAllOf) GetCapabilities() []ApplianceKeyValuePair {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceKeyValuePair
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *ApplianceSetupInfoAllOf) SetLatestVersion(v string) {
 
 // GetSetupStates returns the SetupStates field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceSetupInfoAllOf) GetSetupStates() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -546,5 +546,3 @@ func (v *NullableApplianceSetupInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

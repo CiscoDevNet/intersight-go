@@ -19,19 +19,18 @@ import (
 // BootVmediaDeviceRelationship - A relationship to the 'boot.VmediaDevice' resource, or the expanded 'boot.VmediaDevice' resource, or the 'null' value.
 type BootVmediaDeviceRelationship struct {
 	BootVmediaDevice *BootVmediaDevice
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // BootVmediaDeviceAsBootVmediaDeviceRelationship is a convenience function that returns BootVmediaDevice wrapped in BootVmediaDeviceRelationship
 func BootVmediaDeviceAsBootVmediaDeviceRelationship(v *BootVmediaDevice) BootVmediaDeviceRelationship {
-	return BootVmediaDeviceRelationship{ BootVmediaDevice: v}
+	return BootVmediaDeviceRelationship{BootVmediaDevice: v}
 }
 
 // MoMoRefAsBootVmediaDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootVmediaDeviceRelationship
 func MoMoRefAsBootVmediaDeviceRelationship(v *MoMoRef) BootVmediaDeviceRelationship {
-	return BootVmediaDeviceRelationship{ MoMoRef: v}
+	return BootVmediaDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootVmediaDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootVmediaDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootVmediaDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootVmediaDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootVmediaDevice != nil {
 		return obj.BootVmediaDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootVmediaDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

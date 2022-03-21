@@ -35,11 +35,11 @@ type ApplianceUpgradePolicyAllOf struct {
 	// Flag to indicate software upgrade setting is synchronized with Intersight SaaS.
 	IsSynced *bool `json:"IsSynced,omitempty"`
 	// Intersight Appliance manual upgrade start time.
-	ManualInstallationStartTime *time.Time `json:"ManualInstallationStartTime,omitempty"`
-	Schedule NullableOnpremSchedule `json:"Schedule,omitempty"`
+	ManualInstallationStartTime *time.Time             `json:"ManualInstallationStartTime,omitempty"`
+	Schedule                    NullableOnpremSchedule `json:"Schedule,omitempty"`
 	// SoftwareDownloadType is used to indicate the kind of software download. * `unknown` - Indicates user setting of upgrade service to unknown. * `connected` - Indicates if the upgrade service is set to upload software to latest version automatically. * `manual` - Indicates if the upgrade service is set to upload software to user picked verison manually.
-	SoftwareDownloadType *string `json:"SoftwareDownloadType,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	SoftwareDownloadType *string                 `json:"SoftwareDownloadType,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -89,7 +89,7 @@ func (o *ApplianceUpgradePolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgradePolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -113,7 +113,7 @@ func (o *ApplianceUpgradePolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgradePolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -361,7 +361,7 @@ func (o *ApplianceUpgradePolicyAllOf) GetSchedule() OnpremSchedule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceUpgradePolicyAllOf) GetScheduleOk() (*OnpremSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -380,6 +380,7 @@ func (o *ApplianceUpgradePolicyAllOf) HasSchedule() bool {
 func (o *ApplianceUpgradePolicyAllOf) SetSchedule(v OnpremSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *ApplianceUpgradePolicyAllOf) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -563,5 +564,3 @@ func (v *NullableApplianceUpgradePolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

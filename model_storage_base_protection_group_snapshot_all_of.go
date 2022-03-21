@@ -29,7 +29,7 @@ type StorageBaseProtectionGroupSnapshotAllOf struct {
 	// Snapshot size represented in bytes. It is a cumulative size of all snapshots in a set.
 	Size *int64 `json:"Size,omitempty"`
 	// Source protection group name on which the snapshot is created.
-	Source *string `json:"Source,omitempty"`
+	Source               *string `json:"Source,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *StorageBaseProtectionGroupSnapshotAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseProtectionGroupSnapshotAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *StorageBaseProtectionGroupSnapshotAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseProtectionGroupSnapshotAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -319,5 +319,3 @@ func (v *NullableStorageBaseProtectionGroupSnapshotAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

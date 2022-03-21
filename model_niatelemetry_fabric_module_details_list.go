@@ -23,7 +23,7 @@ type NiatelemetryFabricModuleDetailsList struct {
 	// The total number of 'niatelemetry.FabricModuleDetails' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.FabricModuleDetails' resources matching the request.
-	Results []NiatelemetryFabricModuleDetails `json:"Results,omitempty"`
+	Results              []NiatelemetryFabricModuleDetails `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *NiatelemetryFabricModuleDetailsList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryFabricModuleDetailsList) GetResults() []NiatelemetryFabricModuleDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryFabricModuleDetails
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableNiatelemetryFabricModuleDetailsList) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

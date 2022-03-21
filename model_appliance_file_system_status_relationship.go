@@ -19,19 +19,18 @@ import (
 // ApplianceFileSystemStatusRelationship - A relationship to the 'appliance.FileSystemStatus' resource, or the expanded 'appliance.FileSystemStatus' resource, or the 'null' value.
 type ApplianceFileSystemStatusRelationship struct {
 	ApplianceFileSystemStatus *ApplianceFileSystemStatus
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // ApplianceFileSystemStatusAsApplianceFileSystemStatusRelationship is a convenience function that returns ApplianceFileSystemStatus wrapped in ApplianceFileSystemStatusRelationship
 func ApplianceFileSystemStatusAsApplianceFileSystemStatusRelationship(v *ApplianceFileSystemStatus) ApplianceFileSystemStatusRelationship {
-	return ApplianceFileSystemStatusRelationship{ ApplianceFileSystemStatus: v}
+	return ApplianceFileSystemStatusRelationship{ApplianceFileSystemStatus: v}
 }
 
 // MoMoRefAsApplianceFileSystemStatusRelationship is a convenience function that returns MoMoRef wrapped in ApplianceFileSystemStatusRelationship
 func MoMoRefAsApplianceFileSystemStatusRelationship(v *MoMoRef) ApplianceFileSystemStatusRelationship {
-	return ApplianceFileSystemStatusRelationship{ MoMoRef: v}
+	return ApplianceFileSystemStatusRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceFileSystemStatusRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ApplianceFileSystemStatusRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceFileSystemStatusRelationship) GetActualInstance() (interface{}) {
+func (obj *ApplianceFileSystemStatusRelationship) GetActualInstance() interface{} {
 	if obj.ApplianceFileSystemStatus != nil {
 		return obj.ApplianceFileSystemStatus
 	}
@@ -137,5 +136,3 @@ func (v *NullableApplianceFileSystemStatusRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

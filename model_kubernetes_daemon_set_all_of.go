@@ -20,9 +20,9 @@ type KubernetesDaemonSetAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Status NullableKubernetesDaemonSetStatus `json:"Status,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ObjectType           string                               `json:"ObjectType"`
+	Status               NullableKubernetesDaemonSetStatus    `json:"Status,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *KubernetesDaemonSetAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesDaemonSetAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *KubernetesDaemonSetAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesDaemonSetAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *KubernetesDaemonSetAllOf) GetStatus() KubernetesDaemonSetStatus {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesDaemonSetAllOf) GetStatusOk() (*KubernetesDaemonSetStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
@@ -131,6 +131,7 @@ func (o *KubernetesDaemonSetAllOf) HasStatus() bool {
 func (o *KubernetesDaemonSetAllOf) SetStatus(v KubernetesDaemonSetStatus) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *KubernetesDaemonSetAllOf) SetStatusNil() {
 	o.Status.Set(nil)
@@ -250,5 +251,3 @@ func (v *NullableKubernetesDaemonSetAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

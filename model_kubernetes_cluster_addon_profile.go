@@ -23,12 +23,12 @@ type KubernetesClusterAddonProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Addons []KubernetesAddon `json:"Addons,omitempty"`
+	ObjectType string            `json:"ObjectType"`
+	Addons     []KubernetesAddon `json:"Addons,omitempty"`
 	// Name of the cluster addon profile.
-	Name *string `json:"Name,omitempty"`
-	AssociatedCluster *KubernetesClusterRelationship `json:"AssociatedCluster,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Name                 *string                               `json:"Name,omitempty"`
+	AssociatedCluster    *KubernetesClusterRelationship        `json:"AssociatedCluster,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesClusterAddonProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterAddonProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesClusterAddonProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterAddonProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -107,7 +107,7 @@ func (o *KubernetesClusterAddonProfile) SetObjectType(v string) {
 
 // GetAddons returns the Addons field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterAddonProfile) GetAddons() []KubernetesAddon {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesAddon
 		return ret
 	}
@@ -275,12 +275,12 @@ func (o *KubernetesClusterAddonProfile) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Addons []KubernetesAddon `json:"Addons,omitempty"`
+		ObjectType string            `json:"ObjectType"`
+		Addons     []KubernetesAddon `json:"Addons,omitempty"`
 		// Name of the cluster addon profile.
-		Name *string `json:"Name,omitempty"`
-		AssociatedCluster *KubernetesClusterRelationship `json:"AssociatedCluster,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Name              *string                               `json:"Name,omitempty"`
+		AssociatedCluster *KubernetesClusterRelationship        `json:"AssociatedCluster,omitempty"`
+		Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varKubernetesClusterAddonProfileWithoutEmbeddedStruct := KubernetesClusterAddonProfileWithoutEmbeddedStruct{}
@@ -377,5 +377,3 @@ func (v *NullableKubernetesClusterAddonProfile) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

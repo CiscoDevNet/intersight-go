@@ -19,19 +19,18 @@ import (
 // CloudTfcOrganizationRelationship - A relationship to the 'cloud.TfcOrganization' resource, or the expanded 'cloud.TfcOrganization' resource, or the 'null' value.
 type CloudTfcOrganizationRelationship struct {
 	CloudTfcOrganization *CloudTfcOrganization
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // CloudTfcOrganizationAsCloudTfcOrganizationRelationship is a convenience function that returns CloudTfcOrganization wrapped in CloudTfcOrganizationRelationship
 func CloudTfcOrganizationAsCloudTfcOrganizationRelationship(v *CloudTfcOrganization) CloudTfcOrganizationRelationship {
-	return CloudTfcOrganizationRelationship{ CloudTfcOrganization: v}
+	return CloudTfcOrganizationRelationship{CloudTfcOrganization: v}
 }
 
 // MoMoRefAsCloudTfcOrganizationRelationship is a convenience function that returns MoMoRef wrapped in CloudTfcOrganizationRelationship
 func MoMoRefAsCloudTfcOrganizationRelationship(v *MoMoRef) CloudTfcOrganizationRelationship {
-	return CloudTfcOrganizationRelationship{ MoMoRef: v}
+	return CloudTfcOrganizationRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CloudTfcOrganizationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CloudTfcOrganizationRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CloudTfcOrganizationRelationship) GetActualInstance() (interface{}) {
+func (obj *CloudTfcOrganizationRelationship) GetActualInstance() interface{} {
 	if obj.CloudTfcOrganization != nil {
 		return obj.CloudTfcOrganization
 	}
@@ -137,5 +136,3 @@ func (v *NullableCloudTfcOrganizationRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

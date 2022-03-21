@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // CloudAwsNetworkInterface AWS Network Interface object is represented here.It is Virtual interface that can be attached to an instance in a Virtual Private Cloud (VPC).
@@ -24,20 +24,20 @@ type CloudAwsNetworkInterface struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType         string                                 `json:"ObjectType"`
 	InstanceAttachment NullableCloudNetworkInstanceAttachment `json:"InstanceAttachment,omitempty"`
 	// Time when this network interface is created.
 	NicCreateTime *time.Time `json:"NicCreateTime,omitempty"`
 	// The private DNS hostname name assigned to the network interface.
-	PrivateDnsName *string `json:"PrivateDnsName,omitempty"`
+	PrivateDnsName   *string  `json:"PrivateDnsName,omitempty"`
 	PrivateIpAddress []string `json:"PrivateIpAddress,omitempty"`
 	// The public DNS hostname name assigned to the network interface.
-	PublicDnsName *string `json:"PublicDnsName,omitempty"`
+	PublicDnsName   *string  `json:"PublicDnsName,omitempty"`
 	PublicIpAddress []string `json:"PublicIpAddress,omitempty"`
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
+	SecurityGroups  []string `json:"SecurityGroups,omitempty"`
 	// The status of the network interface. If the network interface is not attached to an instance, the status is available; if a network interface is attached to an instance the status is in-use.
-	Status *string `json:"Status,omitempty"`
-	AwsSubnet *CloudAwsSubnetRelationship `json:"AwsSubnet,omitempty"`
+	Status               *string                     `json:"Status,omitempty"`
+	AwsSubnet            *CloudAwsSubnetRelationship `json:"AwsSubnet,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CloudAwsNetworkInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsNetworkInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *CloudAwsNetworkInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsNetworkInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -129,7 +129,7 @@ func (o *CloudAwsNetworkInterface) GetInstanceAttachment() CloudNetworkInstanceA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudAwsNetworkInterface) GetInstanceAttachmentOk() (*CloudNetworkInstanceAttachment, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InstanceAttachment.Get(), o.InstanceAttachment.IsSet()
@@ -148,6 +148,7 @@ func (o *CloudAwsNetworkInterface) HasInstanceAttachment() bool {
 func (o *CloudAwsNetworkInterface) SetInstanceAttachment(v CloudNetworkInstanceAttachment) {
 	o.InstanceAttachment.Set(&v)
 }
+
 // SetInstanceAttachmentNil sets the value for InstanceAttachment to be an explicit nil
 func (o *CloudAwsNetworkInterface) SetInstanceAttachmentNil() {
 	o.InstanceAttachment.Set(nil)
@@ -224,7 +225,7 @@ func (o *CloudAwsNetworkInterface) SetPrivateDnsName(v string) {
 
 // GetPrivateIpAddress returns the PrivateIpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsNetworkInterface) GetPrivateIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -289,7 +290,7 @@ func (o *CloudAwsNetworkInterface) SetPublicDnsName(v string) {
 
 // GetPublicIpAddress returns the PublicIpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsNetworkInterface) GetPublicIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -322,7 +323,7 @@ func (o *CloudAwsNetworkInterface) SetPublicIpAddress(v []string) {
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsNetworkInterface) GetSecurityGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -473,19 +474,19 @@ func (o *CloudAwsNetworkInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType         string                                 `json:"ObjectType"`
 		InstanceAttachment NullableCloudNetworkInstanceAttachment `json:"InstanceAttachment,omitempty"`
 		// Time when this network interface is created.
 		NicCreateTime *time.Time `json:"NicCreateTime,omitempty"`
 		// The private DNS hostname name assigned to the network interface.
-		PrivateDnsName *string `json:"PrivateDnsName,omitempty"`
+		PrivateDnsName   *string  `json:"PrivateDnsName,omitempty"`
 		PrivateIpAddress []string `json:"PrivateIpAddress,omitempty"`
 		// The public DNS hostname name assigned to the network interface.
-		PublicDnsName *string `json:"PublicDnsName,omitempty"`
+		PublicDnsName   *string  `json:"PublicDnsName,omitempty"`
 		PublicIpAddress []string `json:"PublicIpAddress,omitempty"`
-		SecurityGroups []string `json:"SecurityGroups,omitempty"`
+		SecurityGroups  []string `json:"SecurityGroups,omitempty"`
 		// The status of the network interface. If the network interface is not attached to an instance, the status is available; if a network interface is attached to an instance the status is in-use.
-		Status *string `json:"Status,omitempty"`
+		Status    *string                     `json:"Status,omitempty"`
 		AwsSubnet *CloudAwsSubnetRelationship `json:"AwsSubnet,omitempty"`
 	}
 
@@ -593,5 +594,3 @@ func (v *NullableCloudAwsNetworkInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

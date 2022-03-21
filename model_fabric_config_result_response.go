@@ -19,31 +19,30 @@ import (
 // FabricConfigResultResponse - The response body of a HTTP GET request for the 'fabric.ConfigResult' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fabric.ConfigResult' resources.
 type FabricConfigResultResponse struct {
 	FabricConfigResultList *FabricConfigResultList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform   *MoAggregateTransform
+	MoDocumentCount        *MoDocumentCount
+	MoTagSummary           *MoTagSummary
 }
 
 // FabricConfigResultListAsFabricConfigResultResponse is a convenience function that returns FabricConfigResultList wrapped in FabricConfigResultResponse
 func FabricConfigResultListAsFabricConfigResultResponse(v *FabricConfigResultList) FabricConfigResultResponse {
-	return FabricConfigResultResponse{ FabricConfigResultList: v}
+	return FabricConfigResultResponse{FabricConfigResultList: v}
 }
 
 // MoAggregateTransformAsFabricConfigResultResponse is a convenience function that returns MoAggregateTransform wrapped in FabricConfigResultResponse
 func MoAggregateTransformAsFabricConfigResultResponse(v *MoAggregateTransform) FabricConfigResultResponse {
-	return FabricConfigResultResponse{ MoAggregateTransform: v}
+	return FabricConfigResultResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricConfigResultResponse is a convenience function that returns MoDocumentCount wrapped in FabricConfigResultResponse
 func MoDocumentCountAsFabricConfigResultResponse(v *MoDocumentCount) FabricConfigResultResponse {
-	return FabricConfigResultResponse{ MoDocumentCount: v}
+	return FabricConfigResultResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricConfigResultResponse is a convenience function that returns MoTagSummary wrapped in FabricConfigResultResponse
 func MoTagSummaryAsFabricConfigResultResponse(v *MoTagSummary) FabricConfigResultResponse {
-	return FabricConfigResultResponse{ MoTagSummary: v}
+	return FabricConfigResultResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricConfigResultResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricConfigResultResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricConfigResultResponse) GetActualInstance() (interface{}) {
+func (obj *FabricConfigResultResponse) GetActualInstance() interface{} {
 	if obj.FabricConfigResultList != nil {
 		return obj.FabricConfigResultList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricConfigResultResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

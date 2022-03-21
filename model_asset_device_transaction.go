@@ -37,7 +37,7 @@ type AssetDeviceTransaction struct {
 	// Transaction Date reported by Cisco Install Base.
 	TransactionDate *string `json:"TransactionDate,omitempty"`
 	// Transaction sequence reported by Cisco Install Base.
-	TransactionSequence *int64 `json:"TransactionSequence,omitempty"`
+	TransactionSequence  *int64 `json:"TransactionSequence,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *AssetDeviceTransaction) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceTransaction) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *AssetDeviceTransaction) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceTransaction) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -505,5 +505,3 @@ func (v *NullableAssetDeviceTransaction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

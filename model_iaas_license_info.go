@@ -25,13 +25,13 @@ type IaasLicenseInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// UCS Director license expiration date.
-	LicenseExpirationDate *string `json:"LicenseExpirationDate,omitempty"`
-	LicenseKeysInfo []IaasLicenseKeysInfo `json:"LicenseKeysInfo,omitempty"`
+	LicenseExpirationDate *string               `json:"LicenseExpirationDate,omitempty"`
+	LicenseKeysInfo       []IaasLicenseKeysInfo `json:"LicenseKeysInfo,omitempty"`
 	// License type of UCSD whether it is EVAL/Permanent/Subscription..
-	LicenseType *string `json:"LicenseType,omitempty"`
+	LicenseType            *string                      `json:"LicenseType,omitempty"`
 	LicenseUtilizationInfo []IaasLicenseUtilizationInfo `json:"LicenseUtilizationInfo,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Guid                   *IaasUcsdInfoRelationship    `json:"Guid,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _IaasLicenseInfo IaasLicenseInfo
@@ -72,7 +72,7 @@ func (o *IaasLicenseInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasLicenseInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *IaasLicenseInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasLicenseInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -141,7 +141,7 @@ func (o *IaasLicenseInfo) SetLicenseExpirationDate(v string) {
 
 // GetLicenseKeysInfo returns the LicenseKeysInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasLicenseInfo) GetLicenseKeysInfo() []IaasLicenseKeysInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasLicenseKeysInfo
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *IaasLicenseInfo) SetLicenseType(v string) {
 
 // GetLicenseUtilizationInfo returns the LicenseUtilizationInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IaasLicenseInfo) GetLicenseUtilizationInfo() []IaasLicenseUtilizationInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []IaasLicenseUtilizationInfo
 		return ret
 	}
@@ -315,12 +315,12 @@ func (o *IaasLicenseInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// UCS Director license expiration date.
-		LicenseExpirationDate *string `json:"LicenseExpirationDate,omitempty"`
-		LicenseKeysInfo []IaasLicenseKeysInfo `json:"LicenseKeysInfo,omitempty"`
+		LicenseExpirationDate *string               `json:"LicenseExpirationDate,omitempty"`
+		LicenseKeysInfo       []IaasLicenseKeysInfo `json:"LicenseKeysInfo,omitempty"`
 		// License type of UCSD whether it is EVAL/Permanent/Subscription..
-		LicenseType *string `json:"LicenseType,omitempty"`
+		LicenseType            *string                      `json:"LicenseType,omitempty"`
 		LicenseUtilizationInfo []IaasLicenseUtilizationInfo `json:"LicenseUtilizationInfo,omitempty"`
-		Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+		Guid                   *IaasUcsdInfoRelationship    `json:"Guid,omitempty"`
 	}
 
 	varIaasLicenseInfoWithoutEmbeddedStruct := IaasLicenseInfoWithoutEmbeddedStruct{}
@@ -419,5 +419,3 @@ func (v *NullableIaasLicenseInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

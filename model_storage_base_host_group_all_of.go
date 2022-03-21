@@ -24,8 +24,8 @@ type StorageBaseHostGroupAllOf struct {
 	// Short description about the host group.
 	Description *string `json:"Description,omitempty"`
 	// Name of the host group in storage array.
-	Name *string `json:"Name,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	Name                 *string                     `json:"Name,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *StorageBaseHostGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHostGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *StorageBaseHostGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseHostGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -179,7 +179,7 @@ func (o *StorageBaseHostGroupAllOf) GetStorageUtilization() StorageBaseCapacity 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseHostGroupAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -198,6 +198,7 @@ func (o *StorageBaseHostGroupAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseHostGroupAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseHostGroupAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -289,5 +290,3 @@ func (v *NullableStorageBaseHostGroupAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

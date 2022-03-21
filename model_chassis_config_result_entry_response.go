@@ -19,31 +19,30 @@ import (
 // ChassisConfigResultEntryResponse - The response body of a HTTP GET request for the 'chassis.ConfigResultEntry' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'chassis.ConfigResultEntry' resources.
 type ChassisConfigResultEntryResponse struct {
 	ChassisConfigResultEntryList *ChassisConfigResultEntryList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 }
 
 // ChassisConfigResultEntryListAsChassisConfigResultEntryResponse is a convenience function that returns ChassisConfigResultEntryList wrapped in ChassisConfigResultEntryResponse
 func ChassisConfigResultEntryListAsChassisConfigResultEntryResponse(v *ChassisConfigResultEntryList) ChassisConfigResultEntryResponse {
-	return ChassisConfigResultEntryResponse{ ChassisConfigResultEntryList: v}
+	return ChassisConfigResultEntryResponse{ChassisConfigResultEntryList: v}
 }
 
 // MoAggregateTransformAsChassisConfigResultEntryResponse is a convenience function that returns MoAggregateTransform wrapped in ChassisConfigResultEntryResponse
 func MoAggregateTransformAsChassisConfigResultEntryResponse(v *MoAggregateTransform) ChassisConfigResultEntryResponse {
-	return ChassisConfigResultEntryResponse{ MoAggregateTransform: v}
+	return ChassisConfigResultEntryResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsChassisConfigResultEntryResponse is a convenience function that returns MoDocumentCount wrapped in ChassisConfigResultEntryResponse
 func MoDocumentCountAsChassisConfigResultEntryResponse(v *MoDocumentCount) ChassisConfigResultEntryResponse {
-	return ChassisConfigResultEntryResponse{ MoDocumentCount: v}
+	return ChassisConfigResultEntryResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsChassisConfigResultEntryResponse is a convenience function that returns MoTagSummary wrapped in ChassisConfigResultEntryResponse
 func MoTagSummaryAsChassisConfigResultEntryResponse(v *MoTagSummary) ChassisConfigResultEntryResponse {
-	return ChassisConfigResultEntryResponse{ MoTagSummary: v}
+	return ChassisConfigResultEntryResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ChassisConfigResultEntryResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ChassisConfigResultEntryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ChassisConfigResultEntryResponse) GetActualInstance() (interface{}) {
+func (obj *ChassisConfigResultEntryResponse) GetActualInstance() interface{} {
 	if obj.ChassisConfigResultEntryList != nil {
 		return obj.ChassisConfigResultEntryList
 	}
@@ -184,5 +183,3 @@ func (v *NullableChassisConfigResultEntryResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

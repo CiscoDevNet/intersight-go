@@ -24,16 +24,16 @@ type HyperflexHealthAllOf struct {
 	// The status of the HyperFlex cluster's connection to the Intersight arbitration service. The arbitration service state is only applicable to 2-node edge clusters. * `NOT_AVAILABLE` - The cluster does not require a connection to the arbitration service. * `UNKNOWN` - The cluster's connection state to the arbitration service cannot be determined. * `ONLINE` - The cluster is connected to the arbitration service. * `OFFLINE` - The cluster is disconnected from the arbitration service.
 	ArbitrationServiceState *string `json:"ArbitrationServiceState,omitempty"`
 	// The HyperFlex cluster's compliance to the configured replication factor. It indicates that the compliance has degraded if the number of copies of data is reduced. * `UNKNOWN` - The replication compliance of the HyperFlex cluster is not known. * `COMPLIANT` - The HyperFlex cluster is compliant with the replication policy. All data on the cluster is replicated according to the configured replication factor. * `NON_COMPLIANT` - The HyperFlex cluster is not compliant with the replication policy. Some data on the cluster is not replicated in accordance with the configured replication factor.
-	DataReplicationCompliance *string `json:"DataReplicationCompliance,omitempty"`
-	ResiliencyDetails NullableHyperflexHxResiliencyInfoDt `json:"ResiliencyDetails,omitempty"`
+	DataReplicationCompliance *string                             `json:"DataReplicationCompliance,omitempty"`
+	ResiliencyDetails         NullableHyperflexHxResiliencyInfoDt `json:"ResiliencyDetails,omitempty"`
 	// The operational status of the HyperFlex cluster. * `UNKNOWN` - The operational status of the cluster cannot be determined. * `ONLINE` - The HyperFlex cluster is online and is performing IO operations. * `OFFLINE` - The HyperFlex cluster is offline and is not ready to perform IO operations. * `ENOSPACE` - The HyperFlex cluster is out of available storage capacity and cannot perform write transactions. * `READONLY` - The HyperFlex cluster is not accepting write transactions, but can still display static cluster information.
 	State *string `json:"State,omitempty"`
 	// The unique identifier for the cluster.
 	Uuid *string `json:"Uuid,omitempty"`
 	// The health status of the HyperFlex cluster's zookeeper ensemble. * `NOT_AVAILABLE` - The operational status of the ZK ensemble is not provided by the HyperFlex cluster. * `UNKNOWN` - The operational status of the ZK ensemble cannot be determined. * `ONLINE` - The ZK ensemble is online and operational. * `OFFLINE` - The ZK ensemble is offline and not operational.
-	ZkHealth *string `json:"ZkHealth,omitempty"`
-	ZoneResiliencyList []HyperflexHxZoneResiliencyInfoDt `json:"ZoneResiliencyList,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	ZkHealth             *string                           `json:"ZkHealth,omitempty"`
+	ZoneResiliencyList   []HyperflexHxZoneResiliencyInfoDt `json:"ZoneResiliencyList,omitempty"`
+	Cluster              *HyperflexClusterRelationship     `json:"Cluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *HyperflexHealthAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexHealthAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -187,7 +187,7 @@ func (o *HyperflexHealthAllOf) GetResiliencyDetails() HyperflexHxResiliencyInfoD
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexHealthAllOf) GetResiliencyDetailsOk() (*HyperflexHxResiliencyInfoDt, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResiliencyDetails.Get(), o.ResiliencyDetails.IsSet()
@@ -206,6 +206,7 @@ func (o *HyperflexHealthAllOf) HasResiliencyDetails() bool {
 func (o *HyperflexHealthAllOf) SetResiliencyDetails(v HyperflexHxResiliencyInfoDt) {
 	o.ResiliencyDetails.Set(&v)
 }
+
 // SetResiliencyDetailsNil sets the value for ResiliencyDetails to be an explicit nil
 func (o *HyperflexHealthAllOf) SetResiliencyDetailsNil() {
 	o.ResiliencyDetails.Set(nil)
@@ -314,7 +315,7 @@ func (o *HyperflexHealthAllOf) SetZkHealth(v string) {
 
 // GetZoneResiliencyList returns the ZoneResiliencyList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexHealthAllOf) GetZoneResiliencyList() []HyperflexHxZoneResiliencyInfoDt {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexHxZoneResiliencyInfoDt
 		return ret
 	}
@@ -478,5 +479,3 @@ func (v *NullableHyperflexHealthAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

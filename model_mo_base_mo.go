@@ -31,19 +31,19 @@ type MoBaseMo struct {
 	// The time when this managed object was last modified.
 	ModTime *time.Time `json:"ModTime,omitempty"`
 	// The unique identifier of this Managed Object instance.
-	Moid *string `json:"Moid,omitempty"`
+	Moid   *string  `json:"Moid,omitempty"`
 	Owners []string `json:"Owners,omitempty"`
 	// Intersight provides pre-built workflows, tasks and policies to end users through global catalogs. Objects that are made available through global catalogs are said to have a 'shared' ownership. Shared objects are either made globally available to all end users or restricted to end users based on their license entitlement. Users can use this property to differentiate the scope (global or a specific license tier) to which a shared MO belongs.
-	SharedScope *string `json:"SharedScope,omitempty"`
-	Tags []MoTag `json:"Tags,omitempty"`
+	SharedScope    *string                  `json:"SharedScope,omitempty"`
+	Tags           []MoTag                  `json:"Tags,omitempty"`
 	VersionContext NullableMoVersionContext `json:"VersionContext,omitempty"`
 	// An array of relationships to moBaseMo resources.
 	Ancestors []MoBaseMoRelationship `json:"Ancestors,omitempty"`
-	Parent *MoBaseMoRelationship `json:"Parent,omitempty"`
+	Parent    *MoBaseMoRelationship  `json:"Parent,omitempty"`
 	// An array of relationships to moBaseMo resources.
 	PermissionResources []MoBaseMoRelationship `json:"PermissionResources,omitempty"`
 	// A set of display names for the MO resource. These names are calculated based on other properties of the MO and potentially properties of Ancestor MOs. Displaynames are intended as a way to provide a normalized user appropriate name for an MO, especially for MOs which do not have a 'Name' property, which is the case for much of the inventory discovered from managed targets. There are a limited number of keys, currently 'short' and 'hierarchical'. The value is an array and clients should use the first element of the array.
-	DisplayNames map[string][]string `json:"DisplayNames,omitempty"`
+	DisplayNames         map[string][]string `json:"DisplayNames,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *MoBaseMo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MoBaseMo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *MoBaseMo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MoBaseMo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -278,7 +278,7 @@ func (o *MoBaseMo) SetMoid(v string) {
 
 // GetOwners returns the Owners field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoBaseMo) GetOwners() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *MoBaseMo) SetSharedScope(v string) {
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoBaseMo) GetTags() []MoTag {
-	if o == nil  {
+	if o == nil {
 		var ret []MoTag
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *MoBaseMo) GetVersionContext() MoVersionContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MoBaseMo) GetVersionContextOk() (*MoVersionContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VersionContext.Get(), o.VersionContext.IsSet()
@@ -406,6 +406,7 @@ func (o *MoBaseMo) HasVersionContext() bool {
 func (o *MoBaseMo) SetVersionContext(v MoVersionContext) {
 	o.VersionContext.Set(&v)
 }
+
 // SetVersionContextNil sets the value for VersionContext to be an explicit nil
 func (o *MoBaseMo) SetVersionContextNil() {
 	o.VersionContext.Set(nil)
@@ -418,7 +419,7 @@ func (o *MoBaseMo) UnsetVersionContext() {
 
 // GetAncestors returns the Ancestors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoBaseMo) GetAncestors() []MoBaseMoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMoRelationship
 		return ret
 	}
@@ -483,7 +484,7 @@ func (o *MoBaseMo) SetParent(v MoBaseMoRelationship) {
 
 // GetPermissionResources returns the PermissionResources field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoBaseMo) GetPermissionResources() []MoBaseMoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MoBaseMoRelationship
 		return ret
 	}
@@ -516,7 +517,7 @@ func (o *MoBaseMo) SetPermissionResources(v []MoBaseMoRelationship) {
 
 // GetDisplayNames returns the DisplayNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MoBaseMo) GetDisplayNames() map[string][]string {
-	if o == nil  {
+	if o == nil {
 		var ret map[string][]string
 		return ret
 	}
@@ -668,5 +669,3 @@ func (v *NullableMoBaseMo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,7 +18,7 @@ import (
 // TelemetryDruidLookupDataSourceAllOf struct for TelemetryDruidLookupDataSourceAllOf
 type TelemetryDruidLookupDataSourceAllOf struct {
 	// the name of the lookup object.
-	Lookup string `json:"lookup"`
+	Lookup               string `json:"lookup"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ func (o *TelemetryDruidLookupDataSourceAllOf) GetLookup() string {
 // GetLookupOk returns a tuple with the Lookup field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidLookupDataSourceAllOf) GetLookupOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Lookup, true
@@ -131,5 +131,3 @@ func (v *NullableTelemetryDruidLookupDataSourceAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

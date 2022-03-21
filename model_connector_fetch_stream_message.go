@@ -23,8 +23,8 @@ type ConnectorFetchStreamMessage struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Sequences []int64 `json:"Sequences,omitempty"`
+	ObjectType           string  `json:"ObjectType"`
+	Sequences            []int64 `json:"Sequences,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *ConnectorFetchStreamMessage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorFetchStreamMessage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *ConnectorFetchStreamMessage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorFetchStreamMessage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *ConnectorFetchStreamMessage) SetObjectType(v string) {
 
 // GetSequences returns the Sequences field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorFetchStreamMessage) GetSequences() []int64 {
-	if o == nil  {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -166,8 +166,8 @@ func (o *ConnectorFetchStreamMessage) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Sequences []int64 `json:"Sequences,omitempty"`
+		ObjectType string  `json:"ObjectType"`
+		Sequences  []int64 `json:"Sequences,omitempty"`
 	}
 
 	varConnectorFetchStreamMessageWithoutEmbeddedStruct := ConnectorFetchStreamMessageWithoutEmbeddedStruct{}
@@ -258,5 +258,3 @@ func (v *NullableConnectorFetchStreamMessage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

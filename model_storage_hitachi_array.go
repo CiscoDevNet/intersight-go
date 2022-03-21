@@ -37,8 +37,8 @@ type StorageHitachiArray struct {
 	// IP address of the SVP (Service Processor). The SVP provides out‑of‑band configuration and management of the storage system, and collects performance data for key components to enable diagnostic testing and analysis.
 	SvpIp *string `json:"SvpIp,omitempty"`
 	// Controller operated by the REST API.
-	TargetCtl *string `json:"TargetCtl,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TargetCtl            *string                              `json:"TargetCtl,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *StorageHitachiArray) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiArray) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *StorageHitachiArray) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiArray) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *StorageHitachiArray) UnmarshalJSON(bytes []byte) (err error) {
 		// IP address of the SVP (Service Processor). The SVP provides out‑of‑band configuration and management of the storage system, and collects performance data for key components to enable diagnostic testing and analysis.
 		SvpIp *string `json:"SvpIp,omitempty"`
 		// Controller operated by the REST API.
-		TargetCtl *string `json:"TargetCtl,omitempty"`
+		TargetCtl        *string                              `json:"TargetCtl,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableStorageHitachiArray) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

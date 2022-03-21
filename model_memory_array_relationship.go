@@ -19,19 +19,18 @@ import (
 // MemoryArrayRelationship - A relationship to the 'memory.Array' resource, or the expanded 'memory.Array' resource, or the 'null' value.
 type MemoryArrayRelationship struct {
 	MemoryArray *MemoryArray
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 }
 
 // MemoryArrayAsMemoryArrayRelationship is a convenience function that returns MemoryArray wrapped in MemoryArrayRelationship
 func MemoryArrayAsMemoryArrayRelationship(v *MemoryArray) MemoryArrayRelationship {
-	return MemoryArrayRelationship{ MemoryArray: v}
+	return MemoryArrayRelationship{MemoryArray: v}
 }
 
 // MoMoRefAsMemoryArrayRelationship is a convenience function that returns MoMoRef wrapped in MemoryArrayRelationship
 func MoMoRefAsMemoryArrayRelationship(v *MoMoRef) MemoryArrayRelationship {
-	return MemoryArrayRelationship{ MoMoRef: v}
+	return MemoryArrayRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryArrayRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryArrayRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MemoryArrayRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryArrayRelationship) GetActualInstance() interface{} {
 	if obj.MemoryArray != nil {
 		return obj.MemoryArray
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryArrayRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -34,7 +34,7 @@ type WorkflowRollbackTaskAllOf struct {
 	// The resolved referenced rollback task definition managed object.
 	TaskMoid *string `json:"TaskMoid,omitempty"`
 	// The version of the task definition.
-	Version *int64 `json:"Version,omitempty"`
+	Version              *int64 `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *WorkflowRollbackTaskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowRollbackTaskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *WorkflowRollbackTaskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowRollbackTaskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *WorkflowRollbackTaskAllOf) SetDescription(v string) {
 
 // GetInputParameters returns the InputParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowRollbackTaskAllOf) GetInputParameters() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -433,5 +433,3 @@ func (v *NullableWorkflowRollbackTaskAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

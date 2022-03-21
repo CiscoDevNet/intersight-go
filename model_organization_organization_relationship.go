@@ -18,20 +18,19 @@ import (
 
 // OrganizationOrganizationRelationship - A relationship to the 'organization.Organization' resource, or the expanded 'organization.Organization' resource, or the 'null' value.
 type OrganizationOrganizationRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 	OrganizationOrganization *OrganizationOrganization
 }
 
 // MoMoRefAsOrganizationOrganizationRelationship is a convenience function that returns MoMoRef wrapped in OrganizationOrganizationRelationship
 func MoMoRefAsOrganizationOrganizationRelationship(v *MoMoRef) OrganizationOrganizationRelationship {
-	return OrganizationOrganizationRelationship{ MoMoRef: v}
+	return OrganizationOrganizationRelationship{MoMoRef: v}
 }
 
 // OrganizationOrganizationAsOrganizationOrganizationRelationship is a convenience function that returns OrganizationOrganization wrapped in OrganizationOrganizationRelationship
 func OrganizationOrganizationAsOrganizationOrganizationRelationship(v *OrganizationOrganization) OrganizationOrganizationRelationship {
-	return OrganizationOrganizationRelationship{ OrganizationOrganization: v}
+	return OrganizationOrganizationRelationship{OrganizationOrganization: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OrganizationOrganizationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src OrganizationOrganizationRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OrganizationOrganizationRelationship) GetActualInstance() (interface{}) {
+func (obj *OrganizationOrganizationRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableOrganizationOrganizationRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

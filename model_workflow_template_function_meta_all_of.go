@@ -20,14 +20,14 @@ type WorkflowTemplateFunctionMetaAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Comments NullableWorkflowComments `json:"Comments,omitempty"`
-	Inputs []WorkflowBaseDataType `json:"Inputs,omitempty"`
+	ObjectType string                   `json:"ObjectType"`
+	Comments   NullableWorkflowComments `json:"Comments,omitempty"`
+	Inputs     []WorkflowBaseDataType   `json:"Inputs,omitempty"`
 	// The flag indicates whether a guided mode template is supported for it or not.
 	IsGuidedModeSupported *bool `json:"IsGuidedModeSupported,omitempty"`
 	// The template function name.
-	Name *string `json:"Name,omitempty"`
-	Outputs []WorkflowBaseDataType `json:"Outputs,omitempty"`
+	Name                 *string                `json:"Name,omitempty"`
+	Outputs              []WorkflowBaseDataType `json:"Outputs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTemplateFunctionMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTemplateFunctionMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) GetComments() WorkflowComments {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTemplateFunctionMetaAllOf) GetCommentsOk() (*WorkflowComments, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comments.Get(), o.Comments.IsSet()
@@ -136,6 +136,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) HasComments() bool {
 func (o *WorkflowTemplateFunctionMetaAllOf) SetComments(v WorkflowComments) {
 	o.Comments.Set(&v)
 }
+
 // SetCommentsNil sets the value for Comments to be an explicit nil
 func (o *WorkflowTemplateFunctionMetaAllOf) SetCommentsNil() {
 	o.Comments.Set(nil)
@@ -148,7 +149,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) UnsetComments() {
 
 // GetInputs returns the Inputs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTemplateFunctionMetaAllOf) GetInputs() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -245,7 +246,7 @@ func (o *WorkflowTemplateFunctionMetaAllOf) SetName(v string) {
 
 // GetOutputs returns the Outputs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTemplateFunctionMetaAllOf) GetOutputs() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -365,5 +366,3 @@ func (v *NullableWorkflowTemplateFunctionMetaAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

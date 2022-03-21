@@ -38,11 +38,11 @@ type StorageVirtualDriveExtensionAllOf struct {
 	// The distinguished name of the virtual drive for which the extended data is provided.
 	VirtualDriveDn *string `json:"VirtualDriveDn,omitempty"`
 	// The Id of the virtual drive.
-	VirtualDriveId *string `json:"VirtualDriveId,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
-	VirtualDrive *StorageVirtualDriveRelationship `json:"VirtualDrive,omitempty"`
+	VirtualDriveId       *string                              `json:"VirtualDriveId,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StorageController    *StorageControllerRelationship       `json:"StorageController,omitempty"`
+	VirtualDrive         *StorageVirtualDriveRelationship     `json:"VirtualDrive,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *StorageVirtualDriveExtensionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveExtensionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *StorageVirtualDriveExtensionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageVirtualDriveExtensionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -656,5 +656,3 @@ func (v *NullableStorageVirtualDriveExtensionAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,7 +26,7 @@ type ConnectorExpectPromptAllOf struct {
 	// The timeout for the expect prompt while executing interactive command. If timeout is not set a default of 60 seconds will be used.
 	ExpectTimeout *int64 `json:"ExpectTimeout,omitempty"`
 	// The answer string to the expect prompt.
-	Send *string `json:"Send,omitempty"`
+	Send                 *string `json:"Send,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *ConnectorExpectPromptAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorExpectPromptAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *ConnectorExpectPromptAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorExpectPromptAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableConnectorExpectPromptAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

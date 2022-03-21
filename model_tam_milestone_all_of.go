@@ -35,7 +35,7 @@ type TamMilestoneAllOf struct {
 	// A milestone defined by an end-of-life advisory.
 	Name *string `json:"Name,omitempty"`
 	// Number of days (inclusive) relative to the milestone date when the milestone is considered to be in effect. A nagative number indicates number of days ahead of the milestone date. The default is 0 which means the milestone take effect exactly on the same date as the specified milestone date. A negative value of -2147483648 (0x80000000) indicates the milestone date range's lower bound is omitted.
-	StartOffset *int32 `json:"StartOffset,omitempty"`
+	StartOffset          *int32 `json:"StartOffset,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *TamMilestoneAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamMilestoneAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *TamMilestoneAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamMilestoneAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -449,5 +449,3 @@ func (v *NullableTamMilestoneAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

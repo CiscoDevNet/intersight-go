@@ -25,9 +25,9 @@ type StorageKeySetting struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Method to be used for fetching the encryption key. * `None` - Drive encryption not configured. * `Manual` - Drive encryption using manual key. * `Kmip` - Remote encryption using KMIP.
-	KeyType *string `json:"KeyType,omitempty"`
-	ManualKey NullableStorageLocalKeySetting `json:"ManualKey,omitempty"`
-	RemoteKey NullableStorageRemoteKeySetting `json:"RemoteKey,omitempty"`
+	KeyType              *string                         `json:"KeyType,omitempty"`
+	ManualKey            NullableStorageLocalKeySetting  `json:"ManualKey,omitempty"`
+	RemoteKey            NullableStorageRemoteKeySetting `json:"RemoteKey,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageKeySetting) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageKeySetting) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageKeySetting) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageKeySetting) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -153,7 +153,7 @@ func (o *StorageKeySetting) GetManualKey() StorageLocalKeySetting {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageKeySetting) GetManualKeyOk() (*StorageLocalKeySetting, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ManualKey.Get(), o.ManualKey.IsSet()
@@ -172,6 +172,7 @@ func (o *StorageKeySetting) HasManualKey() bool {
 func (o *StorageKeySetting) SetManualKey(v StorageLocalKeySetting) {
 	o.ManualKey.Set(&v)
 }
+
 // SetManualKeyNil sets the value for ManualKey to be an explicit nil
 func (o *StorageKeySetting) SetManualKeyNil() {
 	o.ManualKey.Set(nil)
@@ -195,7 +196,7 @@ func (o *StorageKeySetting) GetRemoteKey() StorageRemoteKeySetting {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageKeySetting) GetRemoteKeyOk() (*StorageRemoteKeySetting, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RemoteKey.Get(), o.RemoteKey.IsSet()
@@ -214,6 +215,7 @@ func (o *StorageKeySetting) HasRemoteKey() bool {
 func (o *StorageKeySetting) SetRemoteKey(v StorageRemoteKeySetting) {
 	o.RemoteKey.Set(&v)
 }
+
 // SetRemoteKeyNil sets the value for RemoteKey to be an explicit nil
 func (o *StorageKeySetting) SetRemoteKeyNil() {
 	o.RemoteKey.Set(nil)
@@ -264,8 +266,8 @@ func (o *StorageKeySetting) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Method to be used for fetching the encryption key. * `None` - Drive encryption not configured. * `Manual` - Drive encryption using manual key. * `Kmip` - Remote encryption using KMIP.
-		KeyType *string `json:"KeyType,omitempty"`
-		ManualKey NullableStorageLocalKeySetting `json:"ManualKey,omitempty"`
+		KeyType   *string                         `json:"KeyType,omitempty"`
+		ManualKey NullableStorageLocalKeySetting  `json:"ManualKey,omitempty"`
 		RemoteKey NullableStorageRemoteKeySetting `json:"RemoteKey,omitempty"`
 	}
 
@@ -361,5 +363,3 @@ func (v *NullableStorageKeySetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

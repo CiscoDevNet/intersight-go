@@ -35,12 +35,12 @@ type SoftwarerepositoryCachedImageAllOf struct {
 	// The actual sha512sum of the cached image.
 	OriginalSha512sum *string `json:"OriginalSha512sum,omitempty"`
 	// The absolute path of the imported file in the endpoint.
-	Path *string `json:"Path,omitempty"`
+	Path                *string  `json:"Path,omitempty"`
 	RegisteredWorkflows []string `json:"RegisteredWorkflows,omitempty"`
 	// The number of times this file has been used to copy or upgrade or install actions. Used by the cache monitoring process to determine the files to be evicted from the cache.
-	UsedCount *int64 `json:"UsedCount,omitempty"`
-	File *SoftwarerepositoryFileRelationship `json:"File,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+	UsedCount            *int64                              `json:"UsedCount,omitempty"`
+	File                 *SoftwarerepositoryFileRelationship `json:"File,omitempty"`
+	NetworkElement       *NetworkElementRelationship         `json:"NetworkElement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *SoftwarerepositoryCachedImageAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCachedImageAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *SoftwarerepositoryCachedImageAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwarerepositoryCachedImageAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -347,7 +347,7 @@ func (o *SoftwarerepositoryCachedImageAllOf) SetPath(v string) {
 
 // GetRegisteredWorkflows returns the RegisteredWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryCachedImageAllOf) GetRegisteredWorkflows() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -587,5 +587,3 @@ func (v *NullableSoftwarerepositoryCachedImageAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

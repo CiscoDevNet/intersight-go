@@ -19,31 +19,30 @@ import (
 // UcsdBackupInfoResponse - The response body of a HTTP GET request for the 'ucsd.BackupInfo' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ucsd.BackupInfo' resources.
 type UcsdBackupInfoResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	UcsdBackupInfoList *UcsdBackupInfoList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	UcsdBackupInfoList   *UcsdBackupInfoList
 }
 
 // MoAggregateTransformAsUcsdBackupInfoResponse is a convenience function that returns MoAggregateTransform wrapped in UcsdBackupInfoResponse
 func MoAggregateTransformAsUcsdBackupInfoResponse(v *MoAggregateTransform) UcsdBackupInfoResponse {
-	return UcsdBackupInfoResponse{ MoAggregateTransform: v}
+	return UcsdBackupInfoResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsUcsdBackupInfoResponse is a convenience function that returns MoDocumentCount wrapped in UcsdBackupInfoResponse
 func MoDocumentCountAsUcsdBackupInfoResponse(v *MoDocumentCount) UcsdBackupInfoResponse {
-	return UcsdBackupInfoResponse{ MoDocumentCount: v}
+	return UcsdBackupInfoResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsUcsdBackupInfoResponse is a convenience function that returns MoTagSummary wrapped in UcsdBackupInfoResponse
 func MoTagSummaryAsUcsdBackupInfoResponse(v *MoTagSummary) UcsdBackupInfoResponse {
-	return UcsdBackupInfoResponse{ MoTagSummary: v}
+	return UcsdBackupInfoResponse{MoTagSummary: v}
 }
 
 // UcsdBackupInfoListAsUcsdBackupInfoResponse is a convenience function that returns UcsdBackupInfoList wrapped in UcsdBackupInfoResponse
 func UcsdBackupInfoListAsUcsdBackupInfoResponse(v *UcsdBackupInfoList) UcsdBackupInfoResponse {
-	return UcsdBackupInfoResponse{ UcsdBackupInfoList: v}
+	return UcsdBackupInfoResponse{UcsdBackupInfoList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UcsdBackupInfoResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src UcsdBackupInfoResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UcsdBackupInfoResponse) GetActualInstance() (interface{}) {
+func (obj *UcsdBackupInfoResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableUcsdBackupInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

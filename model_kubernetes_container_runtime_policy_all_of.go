@@ -22,13 +22,13 @@ type KubernetesContainerRuntimePolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Bridge IP (--bip) including Prefix (e.g., 172.17.0.5/24) that Docker will use for the default bridge network (docker0). Containers will connect to this if no other network is configured, not used by kubernetes pods because their network is managed by CNI. However this address space must not collide with other CIDRs on your networks, including the cluster's Service CIDR, Pod Network CIDR and IP Pools.
-	DockerBridgeNetworkCidr *string `json:"DockerBridgeNetworkCidr,omitempty"`
-	DockerHttpProxy NullableKubernetesProxyConfig `json:"DockerHttpProxy,omitempty"`
-	DockerHttpsProxy NullableKubernetesProxyConfig `json:"DockerHttpsProxy,omitempty"`
-	DockerNoProxy []string `json:"DockerNoProxy,omitempty"`
+	DockerBridgeNetworkCidr *string                       `json:"DockerBridgeNetworkCidr,omitempty"`
+	DockerHttpProxy         NullableKubernetesProxyConfig `json:"DockerHttpProxy,omitempty"`
+	DockerHttpsProxy        NullableKubernetesProxyConfig `json:"DockerHttpsProxy,omitempty"`
+	DockerNoProxy           []string                      `json:"DockerNoProxy,omitempty"`
 	// An array of relationships to kubernetesClusterProfile resources.
-	ClusterProfiles []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []KubernetesClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesContainerRuntimePolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesContainerRuntimePolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -150,7 +150,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) GetDockerHttpProxy() KubernetesP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesContainerRuntimePolicyAllOf) GetDockerHttpProxyOk() (*KubernetesProxyConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DockerHttpProxy.Get(), o.DockerHttpProxy.IsSet()
@@ -169,6 +169,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) HasDockerHttpProxy() bool {
 func (o *KubernetesContainerRuntimePolicyAllOf) SetDockerHttpProxy(v KubernetesProxyConfig) {
 	o.DockerHttpProxy.Set(&v)
 }
+
 // SetDockerHttpProxyNil sets the value for DockerHttpProxy to be an explicit nil
 func (o *KubernetesContainerRuntimePolicyAllOf) SetDockerHttpProxyNil() {
 	o.DockerHttpProxy.Set(nil)
@@ -192,7 +193,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) GetDockerHttpsProxy() Kubernetes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesContainerRuntimePolicyAllOf) GetDockerHttpsProxyOk() (*KubernetesProxyConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DockerHttpsProxy.Get(), o.DockerHttpsProxy.IsSet()
@@ -211,6 +212,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) HasDockerHttpsProxy() bool {
 func (o *KubernetesContainerRuntimePolicyAllOf) SetDockerHttpsProxy(v KubernetesProxyConfig) {
 	o.DockerHttpsProxy.Set(&v)
 }
+
 // SetDockerHttpsProxyNil sets the value for DockerHttpsProxy to be an explicit nil
 func (o *KubernetesContainerRuntimePolicyAllOf) SetDockerHttpsProxyNil() {
 	o.DockerHttpsProxy.Set(nil)
@@ -223,7 +225,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) UnsetDockerHttpsProxy() {
 
 // GetDockerNoProxy returns the DockerNoProxy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesContainerRuntimePolicyAllOf) GetDockerNoProxy() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -256,7 +258,7 @@ func (o *KubernetesContainerRuntimePolicyAllOf) SetDockerNoProxy(v []string) {
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesContainerRuntimePolicyAllOf) GetClusterProfiles() []KubernetesClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesClusterProfileRelationship
 		return ret
 	}
@@ -412,5 +414,3 @@ func (v *NullableKubernetesContainerRuntimePolicyAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

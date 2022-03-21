@@ -31,24 +31,24 @@ type ComputeRackUnit struct {
 	// To maintain the Topology workflow run status.
 	TopologyScanStatus *string `json:"TopologyScanStatus,omitempty"`
 	// An array of relationships to adapterUnit resources.
-	Adapters []AdapterUnitRelationship `json:"Adapters,omitempty"`
-	BiosBootmode *BiosBootModeRelationship `json:"BiosBootmode,omitempty"`
-	BiosTokenSettings *BiosTokenSettingsRelationship `json:"BiosTokenSettings,omitempty"`
+	Adapters                           []AdapterUnitRelationship                       `json:"Adapters,omitempty"`
+	BiosBootmode                       *BiosBootModeRelationship                       `json:"BiosBootmode,omitempty"`
+	BiosTokenSettings                  *BiosTokenSettingsRelationship                  `json:"BiosTokenSettings,omitempty"`
 	BiosVfSelectMemoryRasConfiguration *BiosVfSelectMemoryRasConfigurationRelationship `json:"BiosVfSelectMemoryRasConfiguration,omitempty"`
 	// An array of relationships to biosUnit resources.
 	// Deprecated
-	Biosunits []BiosUnitRelationship `json:"Biosunits,omitempty"`
-	Bmc *ManagementControllerRelationship `json:"Bmc,omitempty"`
-	Board *ComputeBoardRelationship `json:"Board,omitempty"`
-	BootDeviceBootmode *BootDeviceBootModeRelationship `json:"BootDeviceBootmode,omitempty"`
+	Biosunits          []BiosUnitRelationship            `json:"Biosunits,omitempty"`
+	Bmc                *ManagementControllerRelationship `json:"Bmc,omitempty"`
+	Board              *ComputeBoardRelationship         `json:"Board,omitempty"`
+	BootDeviceBootmode *BootDeviceBootModeRelationship   `json:"BootDeviceBootmode,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
 	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 	// An array of relationships to inventoryGenericInventoryHolder resources.
 	GenericInventoryHolders []InventoryGenericInventoryHolderRelationship `json:"GenericInventoryHolders,omitempty"`
 	// An array of relationships to graphicsCard resources.
-	GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+	GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 	// An array of relationships to memoryArray resources.
 	MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 	// An array of relationships to pciDevice resources.
@@ -56,18 +56,18 @@ type ComputeRackUnit struct {
 	// An array of relationships to processorUnit resources.
 	Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
 	// An array of relationships to equipmentPsu resources.
-	Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+	Psus              []EquipmentPsuRelationship              `json:"Psus,omitempty"`
 	RackEnclosureSlot *EquipmentRackEnclosureSlotRelationship `json:"RackEnclosureSlot,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	RegisteredDevice  *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to storageSasExpander resources.
 	SasExpanders []StorageSasExpanderRelationship `json:"SasExpanders,omitempty"`
 	// An array of relationships to storageController resources.
 	StorageControllers []StorageControllerRelationship `json:"StorageControllers,omitempty"`
 	// An array of relationships to storageEnclosure resources.
 	StorageEnclosures []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
-	TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+	TopSystem         *TopSystemRelationship         `json:"TopSystem,omitempty"`
 	// An array of relationships to rackUnitPersonality resources.
-	UnitPersonality []RackUnitPersonalityRelationship `json:"UnitPersonality,omitempty"`
+	UnitPersonality      []RackUnitPersonalityRelationship `json:"UnitPersonality,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -111,7 +111,7 @@ func (o *ComputeRackUnit) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeRackUnit) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -135,7 +135,7 @@ func (o *ComputeRackUnit) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeRackUnit) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -244,7 +244,7 @@ func (o *ComputeRackUnit) SetTopologyScanStatus(v string) {
 
 // GetAdapters returns the Adapters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetAdapters() []AdapterUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterUnitRelationship
 		return ret
 	}
@@ -374,7 +374,7 @@ func (o *ComputeRackUnit) SetBiosVfSelectMemoryRasConfiguration(v BiosVfSelectMe
 // GetBiosunits returns the Biosunits field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *ComputeRackUnit) GetBiosunits() []BiosUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []BiosUnitRelationship
 		return ret
 	}
@@ -505,7 +505,7 @@ func (o *ComputeRackUnit) SetBootDeviceBootmode(v BootDeviceBootModeRelationship
 
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetFanmodules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -538,7 +538,7 @@ func (o *ComputeRackUnit) SetFanmodules(v []EquipmentFanModuleRelationship) {
 
 // GetGenericInventoryHolders returns the GenericInventoryHolders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetGenericInventoryHolders() []InventoryGenericInventoryHolderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []InventoryGenericInventoryHolderRelationship
 		return ret
 	}
@@ -571,7 +571,7 @@ func (o *ComputeRackUnit) SetGenericInventoryHolders(v []InventoryGenericInvento
 
 // GetGraphicsCards returns the GraphicsCards field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetGraphicsCards() []GraphicsCardRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []GraphicsCardRelationship
 		return ret
 	}
@@ -668,7 +668,7 @@ func (o *ComputeRackUnit) SetLocatorLed(v EquipmentLocatorLedRelationship) {
 
 // GetMemoryArrays returns the MemoryArrays field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetMemoryArrays() []MemoryArrayRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryArrayRelationship
 		return ret
 	}
@@ -701,7 +701,7 @@ func (o *ComputeRackUnit) SetMemoryArrays(v []MemoryArrayRelationship) {
 
 // GetPciDevices returns the PciDevices field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetPciDevices() []PciDeviceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PciDeviceRelationship
 		return ret
 	}
@@ -734,7 +734,7 @@ func (o *ComputeRackUnit) SetPciDevices(v []PciDeviceRelationship) {
 
 // GetProcessors returns the Processors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetProcessors() []ProcessorUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ProcessorUnitRelationship
 		return ret
 	}
@@ -767,7 +767,7 @@ func (o *ComputeRackUnit) SetProcessors(v []ProcessorUnitRelationship) {
 
 // GetPsus returns the Psus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetPsus() []EquipmentPsuRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentPsuRelationship
 		return ret
 	}
@@ -864,7 +864,7 @@ func (o *ComputeRackUnit) SetRegisteredDevice(v AssetDeviceRegistrationRelations
 
 // GetSasExpanders returns the SasExpanders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetSasExpanders() []StorageSasExpanderRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageSasExpanderRelationship
 		return ret
 	}
@@ -897,7 +897,7 @@ func (o *ComputeRackUnit) SetSasExpanders(v []StorageSasExpanderRelationship) {
 
 // GetStorageControllers returns the StorageControllers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetStorageControllers() []StorageControllerRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageControllerRelationship
 		return ret
 	}
@@ -930,7 +930,7 @@ func (o *ComputeRackUnit) SetStorageControllers(v []StorageControllerRelationshi
 
 // GetStorageEnclosures returns the StorageEnclosures field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetStorageEnclosures() []StorageEnclosureRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureRelationship
 		return ret
 	}
@@ -995,7 +995,7 @@ func (o *ComputeRackUnit) SetTopSystem(v TopSystemRelationship) {
 
 // GetUnitPersonality returns the UnitPersonality field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeRackUnit) GetUnitPersonality() []RackUnitPersonalityRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RackUnitPersonalityRelationship
 		return ret
 	}
@@ -1144,24 +1144,24 @@ func (o *ComputeRackUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// To maintain the Topology workflow run status.
 		TopologyScanStatus *string `json:"TopologyScanStatus,omitempty"`
 		// An array of relationships to adapterUnit resources.
-		Adapters []AdapterUnitRelationship `json:"Adapters,omitempty"`
-		BiosBootmode *BiosBootModeRelationship `json:"BiosBootmode,omitempty"`
-		BiosTokenSettings *BiosTokenSettingsRelationship `json:"BiosTokenSettings,omitempty"`
+		Adapters                           []AdapterUnitRelationship                       `json:"Adapters,omitempty"`
+		BiosBootmode                       *BiosBootModeRelationship                       `json:"BiosBootmode,omitempty"`
+		BiosTokenSettings                  *BiosTokenSettingsRelationship                  `json:"BiosTokenSettings,omitempty"`
 		BiosVfSelectMemoryRasConfiguration *BiosVfSelectMemoryRasConfigurationRelationship `json:"BiosVfSelectMemoryRasConfiguration,omitempty"`
 		// An array of relationships to biosUnit resources.
 		// Deprecated
-		Biosunits []BiosUnitRelationship `json:"Biosunits,omitempty"`
-		Bmc *ManagementControllerRelationship `json:"Bmc,omitempty"`
-		Board *ComputeBoardRelationship `json:"Board,omitempty"`
-		BootDeviceBootmode *BootDeviceBootModeRelationship `json:"BootDeviceBootmode,omitempty"`
+		Biosunits          []BiosUnitRelationship            `json:"Biosunits,omitempty"`
+		Bmc                *ManagementControllerRelationship `json:"Bmc,omitempty"`
+		Board              *ComputeBoardRelationship         `json:"Board,omitempty"`
+		BootDeviceBootmode *BootDeviceBootModeRelationship   `json:"BootDeviceBootmode,omitempty"`
 		// An array of relationships to equipmentFanModule resources.
 		Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 		// An array of relationships to inventoryGenericInventoryHolder resources.
 		GenericInventoryHolders []InventoryGenericInventoryHolderRelationship `json:"GenericInventoryHolders,omitempty"`
 		// An array of relationships to graphicsCard resources.
-		GraphicsCards []GraphicsCardRelationship `json:"GraphicsCards,omitempty"`
+		GraphicsCards       []GraphicsCardRelationship       `json:"GraphicsCards,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+		LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 		// An array of relationships to memoryArray resources.
 		MemoryArrays []MemoryArrayRelationship `json:"MemoryArrays,omitempty"`
 		// An array of relationships to pciDevice resources.
@@ -1169,16 +1169,16 @@ func (o *ComputeRackUnit) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to processorUnit resources.
 		Processors []ProcessorUnitRelationship `json:"Processors,omitempty"`
 		// An array of relationships to equipmentPsu resources.
-		Psus []EquipmentPsuRelationship `json:"Psus,omitempty"`
+		Psus              []EquipmentPsuRelationship              `json:"Psus,omitempty"`
 		RackEnclosureSlot *EquipmentRackEnclosureSlotRelationship `json:"RackEnclosureSlot,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice  *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to storageSasExpander resources.
 		SasExpanders []StorageSasExpanderRelationship `json:"SasExpanders,omitempty"`
 		// An array of relationships to storageController resources.
 		StorageControllers []StorageControllerRelationship `json:"StorageControllers,omitempty"`
 		// An array of relationships to storageEnclosure resources.
 		StorageEnclosures []StorageEnclosureRelationship `json:"StorageEnclosures,omitempty"`
-		TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+		TopSystem         *TopSystemRelationship         `json:"TopSystem,omitempty"`
 		// An array of relationships to rackUnitPersonality resources.
 		UnitPersonality []RackUnitPersonalityRelationship `json:"UnitPersonality,omitempty"`
 	}
@@ -1323,5 +1323,3 @@ func (v *NullableComputeRackUnit) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,16 +22,16 @@ type EquipmentExpanderModuleAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Module identifier for the expander module.
-	ModuleId *int64 `json:"ModuleId,omitempty"`
+	ModuleId   *int64   `json:"ModuleId,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// Operational state of expander module.
 	OperState *string `json:"OperState,omitempty"`
 	// Part number identifier for the expander module.
-	PartNumber *string `json:"PartNumber,omitempty"`
+	PartNumber       *string                       `json:"PartNumber,omitempty"`
 	EquipmentChassis *EquipmentChassisRelationship `json:"EquipmentChassis,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
-	FanModules []EquipmentFanModuleRelationship `json:"FanModules,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	FanModules           []EquipmentFanModuleRelationship     `json:"FanModules,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *EquipmentExpanderModuleAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentExpanderModuleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *EquipmentExpanderModuleAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentExpanderModuleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -142,7 +142,7 @@ func (o *EquipmentExpanderModuleAllOf) SetModuleId(v int64) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentExpanderModuleAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *EquipmentExpanderModuleAllOf) SetEquipmentChassis(v EquipmentChassisRel
 
 // GetFanModules returns the FanModules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentExpanderModuleAllOf) GetFanModules() []EquipmentFanModuleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EquipmentFanModuleRelationship
 		return ret
 	}
@@ -431,5 +431,3 @@ func (v *NullableEquipmentExpanderModuleAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

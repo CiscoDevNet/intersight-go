@@ -19,31 +19,30 @@ import (
 // AdapterUnitExpanderResponse - The response body of a HTTP GET request for the 'adapter.UnitExpander' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'adapter.UnitExpander' resources.
 type AdapterUnitExpanderResponse struct {
 	AdapterUnitExpanderList *AdapterUnitExpanderList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 }
 
 // AdapterUnitExpanderListAsAdapterUnitExpanderResponse is a convenience function that returns AdapterUnitExpanderList wrapped in AdapterUnitExpanderResponse
 func AdapterUnitExpanderListAsAdapterUnitExpanderResponse(v *AdapterUnitExpanderList) AdapterUnitExpanderResponse {
-	return AdapterUnitExpanderResponse{ AdapterUnitExpanderList: v}
+	return AdapterUnitExpanderResponse{AdapterUnitExpanderList: v}
 }
 
 // MoAggregateTransformAsAdapterUnitExpanderResponse is a convenience function that returns MoAggregateTransform wrapped in AdapterUnitExpanderResponse
 func MoAggregateTransformAsAdapterUnitExpanderResponse(v *MoAggregateTransform) AdapterUnitExpanderResponse {
-	return AdapterUnitExpanderResponse{ MoAggregateTransform: v}
+	return AdapterUnitExpanderResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAdapterUnitExpanderResponse is a convenience function that returns MoDocumentCount wrapped in AdapterUnitExpanderResponse
 func MoDocumentCountAsAdapterUnitExpanderResponse(v *MoDocumentCount) AdapterUnitExpanderResponse {
-	return AdapterUnitExpanderResponse{ MoDocumentCount: v}
+	return AdapterUnitExpanderResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAdapterUnitExpanderResponse is a convenience function that returns MoTagSummary wrapped in AdapterUnitExpanderResponse
 func MoTagSummaryAsAdapterUnitExpanderResponse(v *MoTagSummary) AdapterUnitExpanderResponse {
-	return AdapterUnitExpanderResponse{ MoTagSummary: v}
+	return AdapterUnitExpanderResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterUnitExpanderResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AdapterUnitExpanderResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterUnitExpanderResponse) GetActualInstance() (interface{}) {
+func (obj *AdapterUnitExpanderResponse) GetActualInstance() interface{} {
 	if obj.AdapterUnitExpanderList != nil {
 		return obj.AdapterUnitExpanderList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAdapterUnitExpanderResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

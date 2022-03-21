@@ -18,20 +18,19 @@ import (
 
 // StorageItemRelationship - A relationship to the 'storage.Item' resource, or the expanded 'storage.Item' resource, or the 'null' value.
 type StorageItemRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef     *MoMoRef
 	StorageItem *StorageItem
 }
 
 // MoMoRefAsStorageItemRelationship is a convenience function that returns MoMoRef wrapped in StorageItemRelationship
 func MoMoRefAsStorageItemRelationship(v *MoMoRef) StorageItemRelationship {
-	return StorageItemRelationship{ MoMoRef: v}
+	return StorageItemRelationship{MoMoRef: v}
 }
 
 // StorageItemAsStorageItemRelationship is a convenience function that returns StorageItem wrapped in StorageItemRelationship
 func StorageItemAsStorageItemRelationship(v *StorageItem) StorageItemRelationship {
-	return StorageItemRelationship{ StorageItem: v}
+	return StorageItemRelationship{StorageItem: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageItemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageItemRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageItemRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageItemRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageItemRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

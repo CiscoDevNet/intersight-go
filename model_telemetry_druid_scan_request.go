@@ -18,13 +18,13 @@ import (
 // TelemetryDruidScanRequest The Scan query returns raw Apache Druid rows in streaming mode. In addition to straightforward usage where a Scan query is issued to the Broker, the Scan query can also be issued directly to Historical processes or streaming ingestion tasks. This can be useful if you want to retrieve large amounts of data in parallel.
 type TelemetryDruidScanRequest struct {
 	// null
-	QueryType string `json:"queryType"`
+	QueryType  string                   `json:"queryType"`
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over.
 	Intervals []string `json:"intervals"`
 	// How the results are represented, list, compactedList or valueVector. Currently only list is supported.
-	ResultFormat *string `json:"resultFormat,omitempty"`
-	Filter *TelemetryDruidFilter `json:"filter,omitempty"`
+	ResultFormat *string               `json:"resultFormat,omitempty"`
+	Filter       *TelemetryDruidFilter `json:"filter,omitempty"`
 	// A String array of dimensions and metrics to scan. If left empty, all dimensions and metrics are returned.
 	Columns *[]string `json:"columns,omitempty"`
 	// The maximum number of rows buffered before being returned to the client.
@@ -34,8 +34,8 @@ type TelemetryDruidScanRequest struct {
 	// The ordering of returned rows based on timestamp. \"ascending\", \"descending\", and \"none\" (default) are supported. Currently, \"ascending\" and \"descending\" are only supported for queries where the __time column is included in the columns field and the requirements outlined in the time ordering section are met.
 	Order *string `json:"order,omitempty"`
 	// Return results consistent with the legacy \"scan-query\" contrib extension. Defaults to the value set by druid.query.scan.legacy, which in turn defaults to false.
-	Legacy *bool `json:"legacy,omitempty"`
-	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
+	Legacy               *bool                       `json:"legacy,omitempty"`
+	Context              *TelemetryDruidQueryContext `json:"context,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -90,7 +90,7 @@ func (o *TelemetryDruidScanRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidScanRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -114,7 +114,7 @@ func (o *TelemetryDruidScanRequest) GetDataSource() TelemetryDruidDataSource {
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidScanRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -138,7 +138,7 @@ func (o *TelemetryDruidScanRequest) GetIntervals() []string {
 // GetIntervalsOk returns a tuple with the Intervals field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidScanRequest) GetIntervalsOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Intervals, true
@@ -510,5 +510,3 @@ func (v *NullableTelemetryDruidScanRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

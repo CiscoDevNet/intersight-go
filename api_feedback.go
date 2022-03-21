@@ -28,11 +28,11 @@ var (
 type FeedbackApiService service
 
 type ApiCreateFeedbackFeedbackPostRequest struct {
-	ctx _context.Context
-	ApiService *FeedbackApiService
+	ctx                  _context.Context
+	ApiService           *FeedbackApiService
 	feedbackFeedbackPost *FeedbackFeedbackPost
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;feedback.FeedbackPost&#39; resource to create.
@@ -40,11 +40,13 @@ func (r ApiCreateFeedbackFeedbackPostRequest) FeedbackFeedbackPost(feedbackFeedb
 	r.feedbackFeedbackPost = &feedbackFeedbackPost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateFeedbackFeedbackPostRequest) IfMatch(ifMatch string) ApiCreateFeedbackFeedbackPostRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateFeedbackFeedbackPostRequest) IfNoneMatch(ifNoneMatch string) ApiCreateFeedbackFeedbackPostRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -64,7 +66,7 @@ CreateFeedbackFeedbackPost Create a 'feedback.FeedbackPost' resource.
 func (a *FeedbackApiService) CreateFeedbackFeedbackPost(ctx _context.Context) ApiCreateFeedbackFeedbackPostRequest {
 	return ApiCreateFeedbackFeedbackPostRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -181,13 +183,13 @@ func (a *FeedbackApiService) CreateFeedbackFeedbackPostExecute(r ApiCreateFeedba
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

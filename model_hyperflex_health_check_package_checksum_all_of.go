@@ -31,7 +31,7 @@ type HyperflexHealthCheckPackageChecksumAllOf struct {
 	// Timestamp of last update of HyperFlex health check package checksum.
 	Timestamp *time.Time `json:"Timestamp,omitempty"`
 	// HyperFlex health check Debian Package Version.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexHealthCheckPackageChecksumAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckPackageChecksumAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexHealthCheckPackageChecksumAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHealthCheckPackageChecksumAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -357,5 +357,3 @@ func (v *NullableHyperflexHealthCheckPackageChecksumAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

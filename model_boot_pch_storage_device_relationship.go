@@ -19,19 +19,18 @@ import (
 // BootPchStorageDeviceRelationship - A relationship to the 'boot.PchStorageDevice' resource, or the expanded 'boot.PchStorageDevice' resource, or the 'null' value.
 type BootPchStorageDeviceRelationship struct {
 	BootPchStorageDevice *BootPchStorageDevice
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // BootPchStorageDeviceAsBootPchStorageDeviceRelationship is a convenience function that returns BootPchStorageDevice wrapped in BootPchStorageDeviceRelationship
 func BootPchStorageDeviceAsBootPchStorageDeviceRelationship(v *BootPchStorageDevice) BootPchStorageDeviceRelationship {
-	return BootPchStorageDeviceRelationship{ BootPchStorageDevice: v}
+	return BootPchStorageDeviceRelationship{BootPchStorageDevice: v}
 }
 
 // MoMoRefAsBootPchStorageDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootPchStorageDeviceRelationship
 func MoMoRefAsBootPchStorageDeviceRelationship(v *MoMoRef) BootPchStorageDeviceRelationship {
-	return BootPchStorageDeviceRelationship{ MoMoRef: v}
+	return BootPchStorageDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootPchStorageDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootPchStorageDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootPchStorageDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootPchStorageDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootPchStorageDevice != nil {
 		return obj.BootPchStorageDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootPchStorageDeviceRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

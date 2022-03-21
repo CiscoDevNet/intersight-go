@@ -20,10 +20,10 @@ type HyperflexReplicationClusterReferenceToScheduleAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Schedule NullableHyperflexReplicationSchedule `json:"Schedule,omitempty"`
-	TargetClusterEntityReference NullableHyperflexEntityReference `json:"TargetClusterEntityReference,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ObjectType                   string                               `json:"ObjectType"`
+	Schedule                     NullableHyperflexReplicationSchedule `json:"Schedule,omitempty"`
+	TargetClusterEntityReference NullableHyperflexEntityReference     `json:"TargetClusterEntityReference,omitempty"`
+	AdditionalProperties         map[string]interface{}
 }
 
 type _HyperflexReplicationClusterReferenceToScheduleAllOf HyperflexReplicationClusterReferenceToScheduleAllOf
@@ -64,7 +64,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetClassId() strin
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetObjectType() st
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetSchedule() Hype
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetScheduleOk() (*HyperflexReplicationSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -131,6 +131,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) HasSchedule() bool
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) SetSchedule(v HyperflexReplicationSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -154,7 +155,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetTargetClusterEn
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) GetTargetClusterEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TargetClusterEntityReference.Get(), o.TargetClusterEntityReference.IsSet()
@@ -173,6 +174,7 @@ func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) HasTargetClusterEn
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) SetTargetClusterEntityReference(v HyperflexEntityReference) {
 	o.TargetClusterEntityReference.Set(&v)
 }
+
 // SetTargetClusterEntityReferenceNil sets the value for TargetClusterEntityReference to be an explicit nil
 func (o *HyperflexReplicationClusterReferenceToScheduleAllOf) SetTargetClusterEntityReferenceNil() {
 	o.TargetClusterEntityReference.Set(nil)
@@ -260,5 +262,3 @@ func (v *NullableHyperflexReplicationClusterReferenceToScheduleAllOf) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

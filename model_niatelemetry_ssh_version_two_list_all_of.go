@@ -20,7 +20,7 @@ type NiatelemetrySshVersionTwoListAllOf struct {
 	// The total number of 'niatelemetry.SshVersionTwo' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'niatelemetry.SshVersionTwo' resources matching the request.
-	Results []NiatelemetrySshVersionTwo `json:"Results,omitempty"`
+	Results              []NiatelemetrySshVersionTwo `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetrySshVersionTwoListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetrySshVersionTwoListAllOf) GetResults() []NiatelemetrySshVersionTwo {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetrySshVersionTwo
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableNiatelemetrySshVersionTwoListAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

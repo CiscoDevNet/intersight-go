@@ -25,14 +25,14 @@ type IamSystemAllOf struct {
 	EndPointPrivileges []IamEndPointPrivilegeRelationship `json:"EndPointPrivileges,omitempty"`
 	// An array of relationships to iamEndPointRole resources.
 	EndPointRoles []IamEndPointRoleRelationship `json:"EndPointRoles,omitempty"`
-	Idp *IamIdpRelationship `json:"Idp,omitempty"`
+	Idp           *IamIdpRelationship           `json:"Idp,omitempty"`
 	// An array of relationships to iamPrivilegeSet resources.
 	PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
 	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
-	ServiceProvider *IamServiceProviderRelationship `json:"ServiceProvider,omitempty"`
+	Roles                []IamRoleRelationship           `json:"Roles,omitempty"`
+	ServiceProvider      *IamServiceProviderRelationship `json:"ServiceProvider,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IamSystemAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSystemAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IamSystemAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSystemAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *IamSystemAllOf) SetObjectType(v string) {
 
 // GetEndPointPrivileges returns the EndPointPrivileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystemAllOf) GetEndPointPrivileges() []IamEndPointPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointPrivilegeRelationship
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *IamSystemAllOf) SetEndPointPrivileges(v []IamEndPointPrivilegeRelations
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystemAllOf) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *IamSystemAllOf) SetIdp(v IamIdpRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystemAllOf) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *IamSystemAllOf) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystemAllOf) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *IamSystemAllOf) SetPrivileges(v []IamPrivilegeRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSystemAllOf) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -435,5 +435,3 @@ func (v *NullableIamSystemAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

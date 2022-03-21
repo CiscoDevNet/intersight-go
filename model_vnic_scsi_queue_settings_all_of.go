@@ -24,7 +24,7 @@ type VnicScsiQueueSettingsAllOf struct {
 	// The number of SCSI I/O queue resources the system should allocate.
 	Count *int64 `json:"Count,omitempty"`
 	// The number of descriptors in each SCSI I/O queue.
-	RingSize *int64 `json:"RingSize,omitempty"`
+	RingSize             *int64 `json:"RingSize,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *VnicScsiQueueSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicScsiQueueSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *VnicScsiQueueSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicScsiQueueSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -250,5 +250,3 @@ func (v *NullableVnicScsiQueueSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

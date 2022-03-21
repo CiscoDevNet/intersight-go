@@ -19,19 +19,18 @@ import (
 // MoBaseMoRelationship - A relationship to the 'mo.BaseMo' resource, or the expanded 'mo.BaseMo' resource, or the 'null' value.
 type MoBaseMoRelationship struct {
 	MoBaseMo *MoBaseMo
-	MoMoRef *MoMoRef
+	MoMoRef  *MoMoRef
 }
 
 // MoBaseMoAsMoBaseMoRelationship is a convenience function that returns MoBaseMo wrapped in MoBaseMoRelationship
 func MoBaseMoAsMoBaseMoRelationship(v *MoBaseMo) MoBaseMoRelationship {
-	return MoBaseMoRelationship{ MoBaseMo: v}
+	return MoBaseMoRelationship{MoBaseMo: v}
 }
 
 // MoMoRefAsMoBaseMoRelationship is a convenience function that returns MoMoRef wrapped in MoBaseMoRelationship
 func MoMoRefAsMoBaseMoRelationship(v *MoMoRef) MoBaseMoRelationship {
-	return MoBaseMoRelationship{ MoMoRef: v}
+	return MoBaseMoRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MoBaseMoRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MoBaseMoRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MoBaseMoRelationship) GetActualInstance() (interface{}) {
+func (obj *MoBaseMoRelationship) GetActualInstance() interface{} {
 	if obj.MoBaseMo != nil {
 		return obj.MoBaseMo
 	}
@@ -137,5 +136,3 @@ func (v *NullableMoBaseMoRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

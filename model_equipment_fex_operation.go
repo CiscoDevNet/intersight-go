@@ -27,10 +27,10 @@ type EquipmentFexOperation struct {
 	// Action performed on the locator LED for a FEX. * `None` - No operation action for the Locator Led of an equipment. * `TurnOn` - Turn on the Locator Led of an equipment. * `TurnOff` - Turn off the Locator Led of an equipment.
 	AdminLocatorLedAction *string `json:"AdminLocatorLedAction,omitempty"`
 	// Defines status of action performed on AdminLocatorLedState. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-	AdminLocatorLedActionState *string `json:"AdminLocatorLedActionState,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-	Fex *EquipmentFexRelationship `json:"Fex,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdminLocatorLedActionState *string                              `json:"AdminLocatorLedActionState,omitempty"`
+	DeviceRegistration         *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
+	Fex                        *EquipmentFexRelationship            `json:"Fex,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _EquipmentFexOperation EquipmentFexOperation
@@ -79,7 +79,7 @@ func (o *EquipmentFexOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFexOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *EquipmentFexOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFexOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -287,9 +287,9 @@ func (o *EquipmentFexOperation) UnmarshalJSON(bytes []byte) (err error) {
 		// Action performed on the locator LED for a FEX. * `None` - No operation action for the Locator Led of an equipment. * `TurnOn` - Turn on the Locator Led of an equipment. * `TurnOff` - Turn off the Locator Led of an equipment.
 		AdminLocatorLedAction *string `json:"AdminLocatorLedAction,omitempty"`
 		// Defines status of action performed on AdminLocatorLedState. * `None` - Nil value when no action has been triggered by the user. * `Applied` - User configured settings are in applied state. * `Applying` - User settings are being applied on the target server. * `Failed` - User configured settings could not be applied.
-		AdminLocatorLedActionState *string `json:"AdminLocatorLedActionState,omitempty"`
-		DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-		Fex *EquipmentFexRelationship `json:"Fex,omitempty"`
+		AdminLocatorLedActionState *string                              `json:"AdminLocatorLedActionState,omitempty"`
+		DeviceRegistration         *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
+		Fex                        *EquipmentFexRelationship            `json:"Fex,omitempty"`
 	}
 
 	varEquipmentFexOperationWithoutEmbeddedStruct := EquipmentFexOperationWithoutEmbeddedStruct{}
@@ -386,5 +386,3 @@ func (v *NullableEquipmentFexOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,13 +23,13 @@ type IamEndPointUserPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType         string                                `json:"ObjectType"`
 	PasswordProperties NullableIamEndPointPasswordProperties `json:"PasswordProperties,omitempty"`
 	// An array of relationships to iamEndPointUserRole resources.
-	EndPointUserRoles []IamEndPointUserRoleRelationship `json:"EndPointUserRoles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	EndPointUserRoles []IamEndPointUserRoleRelationship     `json:"EndPointUserRoles,omitempty"`
+	Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *IamEndPointUserPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *IamEndPointUserPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamEndPointUserPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *IamEndPointUserPolicy) GetPasswordProperties() IamEndPointPasswordPrope
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamEndPointUserPolicy) GetPasswordPropertiesOk() (*IamEndPointPasswordProperties, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PasswordProperties.Get(), o.PasswordProperties.IsSet()
@@ -138,6 +138,7 @@ func (o *IamEndPointUserPolicy) HasPasswordProperties() bool {
 func (o *IamEndPointUserPolicy) SetPasswordProperties(v IamEndPointPasswordProperties) {
 	o.PasswordProperties.Set(&v)
 }
+
 // SetPasswordPropertiesNil sets the value for PasswordProperties to be an explicit nil
 func (o *IamEndPointUserPolicy) SetPasswordPropertiesNil() {
 	o.PasswordProperties.Set(nil)
@@ -150,7 +151,7 @@ func (o *IamEndPointUserPolicy) UnsetPasswordProperties() {
 
 // GetEndPointUserRoles returns the EndPointUserRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserPolicy) GetEndPointUserRoles() []IamEndPointUserRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointUserRoleRelationship
 		return ret
 	}
@@ -215,7 +216,7 @@ func (o *IamEndPointUserPolicy) SetOrganization(v OrganizationOrganizationRelati
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamEndPointUserPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -287,11 +288,11 @@ func (o *IamEndPointUserPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType         string                                `json:"ObjectType"`
 		PasswordProperties NullableIamEndPointPasswordProperties `json:"PasswordProperties,omitempty"`
 		// An array of relationships to iamEndPointUserRole resources.
-		EndPointUserRoles []IamEndPointUserRoleRelationship `json:"EndPointUserRoles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		EndPointUserRoles []IamEndPointUserRoleRelationship     `json:"EndPointUserRoles,omitempty"`
+		Organization      *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -390,5 +391,3 @@ func (v *NullableIamEndPointUserPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

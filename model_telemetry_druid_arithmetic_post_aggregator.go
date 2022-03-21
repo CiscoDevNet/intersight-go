@@ -26,7 +26,7 @@ type TelemetryDruidArithmeticPostAggregator struct {
 	// null
 	Fn *string `json:"fn,omitempty"`
 	// Arithmetic post-aggregators may specify an ordering, which defines the order of resulting values when sorting results. This can be useful for topN queries for instance. If no ordering (or null) is specified, the default floating point ordering is used. numericFirst ordering always returns finite values first, followed by NaN, and infinite values last.
-	Ordering *string `json:"ordering,omitempty"`
+	Ordering             *string `json:"ordering,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *TelemetryDruidArithmeticPostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidArithmeticPostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -283,5 +283,3 @@ func (v *NullableTelemetryDruidArithmeticPostAggregator) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

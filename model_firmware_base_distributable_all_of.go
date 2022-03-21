@@ -22,7 +22,7 @@ type FirmwareBaseDistributableAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// The bundle type of the image, as published on cisco.com.
-	BundleType *string `json:"BundleType,omitempty"`
+	BundleType    *string                 `json:"BundleType,omitempty"`
 	ComponentMeta []FirmwareComponentMeta `json:"ComponentMeta,omitempty"`
 	// The unique identifier for an image in a Cisco repository.
 	Guid *string `json:"Guid,omitempty"`
@@ -39,13 +39,13 @@ type FirmwareBaseDistributableAllOf struct {
 	// The url for the release notes of this image.
 	ReleaseNotesUrl *string `json:"ReleaseNotesUrl,omitempty"`
 	// The software type id provided by cisco.com.
-	SoftwareTypeId *string `json:"SoftwareTypeId,omitempty"`
+	SoftwareTypeId  *string  `json:"SoftwareTypeId,omitempty"`
 	SupportedModels []string `json:"SupportedModels,omitempty"`
 	// The vendor or publisher of this file.
 	Vendor *string `json:"Vendor,omitempty"`
 	// An array of relationships to firmwareDistributableMeta resources.
-	DistributableMetas []FirmwareDistributableMetaRelationship `json:"DistributableMetas,omitempty"`
-	Release *SoftwarerepositoryReleaseRelationship `json:"Release,omitempty"`
+	DistributableMetas   []FirmwareDistributableMetaRelationship `json:"DistributableMetas,omitempty"`
+	Release              *SoftwarerepositoryReleaseRelationship  `json:"Release,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *FirmwareBaseDistributableAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareBaseDistributableAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *FirmwareBaseDistributableAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareBaseDistributableAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -156,7 +156,7 @@ func (o *FirmwareBaseDistributableAllOf) SetBundleType(v string) {
 
 // GetComponentMeta returns the ComponentMeta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareBaseDistributableAllOf) GetComponentMeta() []FirmwareComponentMeta {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareComponentMeta
 		return ret
 	}
@@ -445,7 +445,7 @@ func (o *FirmwareBaseDistributableAllOf) SetSoftwareTypeId(v string) {
 
 // GetSupportedModels returns the SupportedModels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareBaseDistributableAllOf) GetSupportedModels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -510,7 +510,7 @@ func (o *FirmwareBaseDistributableAllOf) SetVendor(v string) {
 
 // GetDistributableMetas returns the DistributableMetas field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FirmwareBaseDistributableAllOf) GetDistributableMetas() []FirmwareDistributableMetaRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareDistributableMetaRelationship
 		return ret
 	}
@@ -698,5 +698,3 @@ func (v *NullableFirmwareBaseDistributableAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

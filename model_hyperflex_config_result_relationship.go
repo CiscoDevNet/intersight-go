@@ -19,19 +19,18 @@ import (
 // HyperflexConfigResultRelationship - A relationship to the 'hyperflex.ConfigResult' resource, or the expanded 'hyperflex.ConfigResult' resource, or the 'null' value.
 type HyperflexConfigResultRelationship struct {
 	HyperflexConfigResult *HyperflexConfigResult
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // HyperflexConfigResultAsHyperflexConfigResultRelationship is a convenience function that returns HyperflexConfigResult wrapped in HyperflexConfigResultRelationship
 func HyperflexConfigResultAsHyperflexConfigResultRelationship(v *HyperflexConfigResult) HyperflexConfigResultRelationship {
-	return HyperflexConfigResultRelationship{ HyperflexConfigResult: v}
+	return HyperflexConfigResultRelationship{HyperflexConfigResult: v}
 }
 
 // MoMoRefAsHyperflexConfigResultRelationship is a convenience function that returns MoMoRef wrapped in HyperflexConfigResultRelationship
 func MoMoRefAsHyperflexConfigResultRelationship(v *MoMoRef) HyperflexConfigResultRelationship {
-	return HyperflexConfigResultRelationship{ MoMoRef: v}
+	return HyperflexConfigResultRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexConfigResultRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexConfigResultRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexConfigResultRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexConfigResultRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexConfigResult != nil {
 		return obj.HyperflexConfigResult
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexConfigResultRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

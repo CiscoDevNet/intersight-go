@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // StorageBaseStorageContainer Storage container objects. It is a logical entity having common attributes of storage pool/datastores.
@@ -28,8 +28,8 @@ type StorageBaseStorageContainer struct {
 	// Storage container's creation time.
 	CreatedTime *time.Time `json:"CreatedTime,omitempty"`
 	// Name of the storage container.
-	Name *string `json:"Name,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	Name                 *string                     `json:"Name,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *StorageBaseStorageContainer) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseStorageContainer) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *StorageBaseStorageContainer) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseStorageContainer) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -179,7 +179,7 @@ func (o *StorageBaseStorageContainer) GetStorageUtilization() StorageBaseCapacit
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseStorageContainer) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -198,6 +198,7 @@ func (o *StorageBaseStorageContainer) HasStorageUtilization() bool {
 func (o *StorageBaseStorageContainer) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseStorageContainer) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -250,7 +251,7 @@ func (o *StorageBaseStorageContainer) UnmarshalJSON(bytes []byte) (err error) {
 		// Storage container's creation time.
 		CreatedTime *time.Time `json:"CreatedTime,omitempty"`
 		// Name of the storage container.
-		Name *string `json:"Name,omitempty"`
+		Name               *string                     `json:"Name,omitempty"`
 		StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	}
 
@@ -346,5 +347,3 @@ func (v *NullableStorageBaseStorageContainer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

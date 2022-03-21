@@ -24,14 +24,13 @@ type PciLinkRelationship struct {
 
 // MoMoRefAsPciLinkRelationship is a convenience function that returns MoMoRef wrapped in PciLinkRelationship
 func MoMoRefAsPciLinkRelationship(v *MoMoRef) PciLinkRelationship {
-	return PciLinkRelationship{ MoMoRef: v}
+	return PciLinkRelationship{MoMoRef: v}
 }
 
 // PciLinkAsPciLinkRelationship is a convenience function that returns PciLink wrapped in PciLinkRelationship
 func PciLinkAsPciLinkRelationship(v *PciLink) PciLinkRelationship {
-	return PciLinkRelationship{ PciLink: v}
+	return PciLinkRelationship{PciLink: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PciLinkRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PciLinkRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PciLinkRelationship) GetActualInstance() (interface{}) {
+func (obj *PciLinkRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePciLinkRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

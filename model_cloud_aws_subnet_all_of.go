@@ -34,9 +34,9 @@ type CloudAwsSubnetAllOf struct {
 	// If true, indicates that this is default subnet.
 	IsDefault *bool `json:"IsDefault,omitempty"`
 	// The state of the subnet (pending | available).
-	State *string `json:"State,omitempty"`
-	SubnetTags []CloudCloudTag `json:"SubnetTags,omitempty"`
-	AwsVpc *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
+	State                *string                  `json:"State,omitempty"`
+	SubnetTags           []CloudCloudTag          `json:"SubnetTags,omitempty"`
+	AwsVpc               *CloudAwsVpcRelationship `json:"AwsVpc,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *CloudAwsSubnetAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSubnetAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *CloudAwsSubnetAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudAwsSubnetAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -339,7 +339,7 @@ func (o *CloudAwsSubnetAllOf) SetState(v string) {
 
 // GetSubnetTags returns the SubnetTags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsSubnetAllOf) GetSubnetTags() []CloudCloudTag {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCloudTag
 		return ret
 	}
@@ -507,5 +507,3 @@ func (v *NullableCloudAwsSubnetAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

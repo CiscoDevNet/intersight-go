@@ -20,10 +20,10 @@ type SoftwareUcsdBundleDistributableAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Catalog *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
+	ObjectType string                                 `json:"ObjectType"`
+	Catalog    *SoftwarerepositoryCatalogRelationship `json:"Catalog,omitempty"`
 	// An array of relationships to softwareUcsdDistributable resources.
-	Images []SoftwareUcsdDistributableRelationship `json:"Images,omitempty"`
+	Images               []SoftwareUcsdDistributableRelationship `json:"Images,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *SoftwareUcsdBundleDistributableAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareUcsdBundleDistributableAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *SoftwareUcsdBundleDistributableAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SoftwareUcsdBundleDistributableAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *SoftwareUcsdBundleDistributableAllOf) SetCatalog(v SoftwarerepositoryCa
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwareUcsdBundleDistributableAllOf) GetImages() []SoftwareUcsdDistributableRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwareUcsdDistributableRelationship
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableSoftwareUcsdBundleDistributableAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

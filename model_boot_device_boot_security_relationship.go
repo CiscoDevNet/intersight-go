@@ -19,19 +19,18 @@ import (
 // BootDeviceBootSecurityRelationship - A relationship to the 'boot.DeviceBootSecurity' resource, or the expanded 'boot.DeviceBootSecurity' resource, or the 'null' value.
 type BootDeviceBootSecurityRelationship struct {
 	BootDeviceBootSecurity *BootDeviceBootSecurity
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 }
 
 // BootDeviceBootSecurityAsBootDeviceBootSecurityRelationship is a convenience function that returns BootDeviceBootSecurity wrapped in BootDeviceBootSecurityRelationship
 func BootDeviceBootSecurityAsBootDeviceBootSecurityRelationship(v *BootDeviceBootSecurity) BootDeviceBootSecurityRelationship {
-	return BootDeviceBootSecurityRelationship{ BootDeviceBootSecurity: v}
+	return BootDeviceBootSecurityRelationship{BootDeviceBootSecurity: v}
 }
 
 // MoMoRefAsBootDeviceBootSecurityRelationship is a convenience function that returns MoMoRef wrapped in BootDeviceBootSecurityRelationship
 func MoMoRefAsBootDeviceBootSecurityRelationship(v *MoMoRef) BootDeviceBootSecurityRelationship {
-	return BootDeviceBootSecurityRelationship{ MoMoRef: v}
+	return BootDeviceBootSecurityRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootDeviceBootSecurityRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootDeviceBootSecurityRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootDeviceBootSecurityRelationship) GetActualInstance() (interface{}) {
+func (obj *BootDeviceBootSecurityRelationship) GetActualInstance() interface{} {
 	if obj.BootDeviceBootSecurity != nil {
 		return obj.BootDeviceBootSecurity
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootDeviceBootSecurityRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

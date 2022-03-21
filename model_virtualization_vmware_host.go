@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // VirtualizationVmwareHost The VMware Host entity with its attributes. Every Host belongs to a Datacenter and may run VMs.
@@ -30,32 +30,32 @@ type VirtualizationVmwareHost struct {
 	// Indicates if the host is connected to the vCenter. Values are connected, not connected.
 	ConnectionState *string `json:"ConnectionState,omitempty"`
 	// This field stores the inventory path of a datacenter. Used in host maintenance action.
-	DcInvPath *string `json:"DcInvPath,omitempty"`
+	DcInvPath  *string  `json:"DcInvPath,omitempty"`
 	DnsServers []string `json:"DnsServers,omitempty"`
 	// Is the host Powered-up or Powered-down. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
 	HwPowerState *string `json:"HwPowerState,omitempty"`
 	// True if SSH is enabled in the host, false otherwise.
 	IsSshEnabled *bool `json:"IsSshEnabled,omitempty"`
 	// The count of all network adapters attached to this host.
-	NetworkAdapterCount *int64 `json:"NetworkAdapterCount,omitempty"`
-	NtpServers []string `json:"NtpServers,omitempty"`
-	ResourceConsumed NullableVirtualizationVmwareResourceConsumption `json:"ResourceConsumed,omitempty"`
+	NetworkAdapterCount *int64                                          `json:"NetworkAdapterCount,omitempty"`
+	NtpServers          []string                                        `json:"NtpServers,omitempty"`
+	ResourceConsumed    NullableVirtualizationVmwareResourceConsumption `json:"ResourceConsumed,omitempty"`
 	// The count of all storage adapters attached to this host.
 	StorageAdapterCount *int64 `json:"StorageAdapterCount,omitempty"`
 	// Time zone this host is in.
 	TimeZone *string `json:"TimeZone,omitempty"`
 	// The identity of this host within vCenter (optional).
-	VcenterHostId *string `json:"VcenterHostId,omitempty"`
-	Cluster *VirtualizationVmwareClusterRelationship `json:"Cluster,omitempty"`
-	Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+	VcenterHostId *string                                     `json:"VcenterHostId,omitempty"`
+	Cluster       *VirtualizationVmwareClusterRelationship    `json:"Cluster,omitempty"`
+	Datacenter    *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
 	// An array of relationships to virtualizationVmwareDatastore resources.
 	Datastores []VirtualizationVmwareDatastoreRelationship `json:"Datastores,omitempty"`
 	// An array of relationships to virtualizationVmwareDistributedNetwork resources.
 	DistributedNetworks []VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetworks,omitempty"`
 	// An array of relationships to virtualizationVmwareDistributedSwitch resources.
-	DistributedSwitches []VirtualizationVmwareDistributedSwitchRelationship `json:"DistributedSwitches,omitempty"`
-	HyperFlexNode *HyperflexNodeRelationship `json:"HyperFlexNode,omitempty"`
-	Server *ComputePhysicalSummaryRelationship `json:"Server,omitempty"`
+	DistributedSwitches  []VirtualizationVmwareDistributedSwitchRelationship `json:"DistributedSwitches,omitempty"`
+	HyperFlexNode        *HyperflexNodeRelationship                          `json:"HyperFlexNode,omitempty"`
+	Server               *ComputePhysicalSummaryRelationship                 `json:"Server,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -105,7 +105,7 @@ func (o *VirtualizationVmwareHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -129,7 +129,7 @@ func (o *VirtualizationVmwareHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -238,7 +238,7 @@ func (o *VirtualizationVmwareHost) SetDcInvPath(v string) {
 
 // GetDnsServers returns the DnsServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareHost) GetDnsServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *VirtualizationVmwareHost) SetNetworkAdapterCount(v int64) {
 
 // GetNtpServers returns the NtpServers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareHost) GetNtpServers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -411,7 +411,7 @@ func (o *VirtualizationVmwareHost) GetResourceConsumed() VirtualizationVmwareRes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareHost) GetResourceConsumedOk() (*VirtualizationVmwareResourceConsumption, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResourceConsumed.Get(), o.ResourceConsumed.IsSet()
@@ -430,6 +430,7 @@ func (o *VirtualizationVmwareHost) HasResourceConsumed() bool {
 func (o *VirtualizationVmwareHost) SetResourceConsumed(v VirtualizationVmwareResourceConsumption) {
 	o.ResourceConsumed.Set(&v)
 }
+
 // SetResourceConsumedNil sets the value for ResourceConsumed to be an explicit nil
 func (o *VirtualizationVmwareHost) SetResourceConsumedNil() {
 	o.ResourceConsumed.Set(nil)
@@ -602,7 +603,7 @@ func (o *VirtualizationVmwareHost) SetDatacenter(v VirtualizationVmwareDatacente
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareHost) GetDatastores() []VirtualizationVmwareDatastoreRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDatastoreRelationship
 		return ret
 	}
@@ -635,7 +636,7 @@ func (o *VirtualizationVmwareHost) SetDatastores(v []VirtualizationVmwareDatasto
 
 // GetDistributedNetworks returns the DistributedNetworks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareHost) GetDistributedNetworks() []VirtualizationVmwareDistributedNetworkRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDistributedNetworkRelationship
 		return ret
 	}
@@ -668,7 +669,7 @@ func (o *VirtualizationVmwareHost) SetDistributedNetworks(v []VirtualizationVmwa
 
 // GetDistributedSwitches returns the DistributedSwitches field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareHost) GetDistributedSwitches() []VirtualizationVmwareDistributedSwitchRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDistributedSwitchRelationship
 		return ret
 	}
@@ -855,32 +856,32 @@ func (o *VirtualizationVmwareHost) UnmarshalJSON(bytes []byte) (err error) {
 		// Indicates if the host is connected to the vCenter. Values are connected, not connected.
 		ConnectionState *string `json:"ConnectionState,omitempty"`
 		// This field stores the inventory path of a datacenter. Used in host maintenance action.
-		DcInvPath *string `json:"DcInvPath,omitempty"`
+		DcInvPath  *string  `json:"DcInvPath,omitempty"`
 		DnsServers []string `json:"DnsServers,omitempty"`
 		// Is the host Powered-up or Powered-down. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
 		HwPowerState *string `json:"HwPowerState,omitempty"`
 		// True if SSH is enabled in the host, false otherwise.
 		IsSshEnabled *bool `json:"IsSshEnabled,omitempty"`
 		// The count of all network adapters attached to this host.
-		NetworkAdapterCount *int64 `json:"NetworkAdapterCount,omitempty"`
-		NtpServers []string `json:"NtpServers,omitempty"`
-		ResourceConsumed NullableVirtualizationVmwareResourceConsumption `json:"ResourceConsumed,omitempty"`
+		NetworkAdapterCount *int64                                          `json:"NetworkAdapterCount,omitempty"`
+		NtpServers          []string                                        `json:"NtpServers,omitempty"`
+		ResourceConsumed    NullableVirtualizationVmwareResourceConsumption `json:"ResourceConsumed,omitempty"`
 		// The count of all storage adapters attached to this host.
 		StorageAdapterCount *int64 `json:"StorageAdapterCount,omitempty"`
 		// Time zone this host is in.
 		TimeZone *string `json:"TimeZone,omitempty"`
 		// The identity of this host within vCenter (optional).
-		VcenterHostId *string `json:"VcenterHostId,omitempty"`
-		Cluster *VirtualizationVmwareClusterRelationship `json:"Cluster,omitempty"`
-		Datacenter *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
+		VcenterHostId *string                                     `json:"VcenterHostId,omitempty"`
+		Cluster       *VirtualizationVmwareClusterRelationship    `json:"Cluster,omitempty"`
+		Datacenter    *VirtualizationVmwareDatacenterRelationship `json:"Datacenter,omitempty"`
 		// An array of relationships to virtualizationVmwareDatastore resources.
 		Datastores []VirtualizationVmwareDatastoreRelationship `json:"Datastores,omitempty"`
 		// An array of relationships to virtualizationVmwareDistributedNetwork resources.
 		DistributedNetworks []VirtualizationVmwareDistributedNetworkRelationship `json:"DistributedNetworks,omitempty"`
 		// An array of relationships to virtualizationVmwareDistributedSwitch resources.
 		DistributedSwitches []VirtualizationVmwareDistributedSwitchRelationship `json:"DistributedSwitches,omitempty"`
-		HyperFlexNode *HyperflexNodeRelationship `json:"HyperFlexNode,omitempty"`
-		Server *ComputePhysicalSummaryRelationship `json:"Server,omitempty"`
+		HyperFlexNode       *HyperflexNodeRelationship                          `json:"HyperFlexNode,omitempty"`
+		Server              *ComputePhysicalSummaryRelationship                 `json:"Server,omitempty"`
 	}
 
 	varVirtualizationVmwareHostWithoutEmbeddedStruct := VirtualizationVmwareHostWithoutEmbeddedStruct{}
@@ -1007,5 +1008,3 @@ func (v *NullableVirtualizationVmwareHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,30 +20,29 @@ import (
 type IaasMostRunTasksResponse struct {
 	IaasMostRunTasksList *IaasMostRunTasksList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // IaasMostRunTasksListAsIaasMostRunTasksResponse is a convenience function that returns IaasMostRunTasksList wrapped in IaasMostRunTasksResponse
 func IaasMostRunTasksListAsIaasMostRunTasksResponse(v *IaasMostRunTasksList) IaasMostRunTasksResponse {
-	return IaasMostRunTasksResponse{ IaasMostRunTasksList: v}
+	return IaasMostRunTasksResponse{IaasMostRunTasksList: v}
 }
 
 // MoAggregateTransformAsIaasMostRunTasksResponse is a convenience function that returns MoAggregateTransform wrapped in IaasMostRunTasksResponse
 func MoAggregateTransformAsIaasMostRunTasksResponse(v *MoAggregateTransform) IaasMostRunTasksResponse {
-	return IaasMostRunTasksResponse{ MoAggregateTransform: v}
+	return IaasMostRunTasksResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIaasMostRunTasksResponse is a convenience function that returns MoDocumentCount wrapped in IaasMostRunTasksResponse
 func MoDocumentCountAsIaasMostRunTasksResponse(v *MoDocumentCount) IaasMostRunTasksResponse {
-	return IaasMostRunTasksResponse{ MoDocumentCount: v}
+	return IaasMostRunTasksResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIaasMostRunTasksResponse is a convenience function that returns MoTagSummary wrapped in IaasMostRunTasksResponse
 func MoTagSummaryAsIaasMostRunTasksResponse(v *MoTagSummary) IaasMostRunTasksResponse {
-	return IaasMostRunTasksResponse{ MoTagSummary: v}
+	return IaasMostRunTasksResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IaasMostRunTasksResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IaasMostRunTasksResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IaasMostRunTasksResponse) GetActualInstance() (interface{}) {
+func (obj *IaasMostRunTasksResponse) GetActualInstance() interface{} {
 	if obj.IaasMostRunTasksList != nil {
 		return obj.IaasMostRunTasksList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIaasMostRunTasksResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

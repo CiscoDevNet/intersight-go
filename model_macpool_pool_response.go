@@ -18,32 +18,31 @@ import (
 
 // MacpoolPoolResponse - The response body of a HTTP GET request for the 'macpool.Pool' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'macpool.Pool' resources.
 type MacpoolPoolResponse struct {
-	MacpoolPoolList *MacpoolPoolList
+	MacpoolPoolList      *MacpoolPoolList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // MacpoolPoolListAsMacpoolPoolResponse is a convenience function that returns MacpoolPoolList wrapped in MacpoolPoolResponse
 func MacpoolPoolListAsMacpoolPoolResponse(v *MacpoolPoolList) MacpoolPoolResponse {
-	return MacpoolPoolResponse{ MacpoolPoolList: v}
+	return MacpoolPoolResponse{MacpoolPoolList: v}
 }
 
 // MoAggregateTransformAsMacpoolPoolResponse is a convenience function that returns MoAggregateTransform wrapped in MacpoolPoolResponse
 func MoAggregateTransformAsMacpoolPoolResponse(v *MoAggregateTransform) MacpoolPoolResponse {
-	return MacpoolPoolResponse{ MoAggregateTransform: v}
+	return MacpoolPoolResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsMacpoolPoolResponse is a convenience function that returns MoDocumentCount wrapped in MacpoolPoolResponse
 func MoDocumentCountAsMacpoolPoolResponse(v *MoDocumentCount) MacpoolPoolResponse {
-	return MacpoolPoolResponse{ MoDocumentCount: v}
+	return MacpoolPoolResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsMacpoolPoolResponse is a convenience function that returns MoTagSummary wrapped in MacpoolPoolResponse
 func MoTagSummaryAsMacpoolPoolResponse(v *MoTagSummary) MacpoolPoolResponse {
-	return MacpoolPoolResponse{ MoTagSummary: v}
+	return MacpoolPoolResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolPoolResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src MacpoolPoolResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolPoolResponse) GetActualInstance() (interface{}) {
+func (obj *MacpoolPoolResponse) GetActualInstance() interface{} {
 	if obj.MacpoolPoolList != nil {
 		return obj.MacpoolPoolList
 	}
@@ -184,5 +183,3 @@ func (v *NullableMacpoolPoolResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

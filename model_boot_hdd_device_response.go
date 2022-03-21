@@ -18,32 +18,31 @@ import (
 
 // BootHddDeviceResponse - The response body of a HTTP GET request for the 'boot.HddDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'boot.HddDevice' resources.
 type BootHddDeviceResponse struct {
-	BootHddDeviceList *BootHddDeviceList
+	BootHddDeviceList    *BootHddDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BootHddDeviceListAsBootHddDeviceResponse is a convenience function that returns BootHddDeviceList wrapped in BootHddDeviceResponse
 func BootHddDeviceListAsBootHddDeviceResponse(v *BootHddDeviceList) BootHddDeviceResponse {
-	return BootHddDeviceResponse{ BootHddDeviceList: v}
+	return BootHddDeviceResponse{BootHddDeviceList: v}
 }
 
 // MoAggregateTransformAsBootHddDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootHddDeviceResponse
 func MoAggregateTransformAsBootHddDeviceResponse(v *MoAggregateTransform) BootHddDeviceResponse {
-	return BootHddDeviceResponse{ MoAggregateTransform: v}
+	return BootHddDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootHddDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootHddDeviceResponse
 func MoDocumentCountAsBootHddDeviceResponse(v *MoDocumentCount) BootHddDeviceResponse {
-	return BootHddDeviceResponse{ MoDocumentCount: v}
+	return BootHddDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootHddDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootHddDeviceResponse
 func MoTagSummaryAsBootHddDeviceResponse(v *MoTagSummary) BootHddDeviceResponse {
-	return BootHddDeviceResponse{ MoTagSummary: v}
+	return BootHddDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootHddDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootHddDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootHddDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootHddDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootHddDeviceList != nil {
 		return obj.BootHddDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootHddDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

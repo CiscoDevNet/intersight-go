@@ -24,7 +24,7 @@ type FabricLldpSettingsAllOf struct {
 	// Determines if the LLDP frames can be received by an interface on the switch.
 	ReceiveEnabled *bool `json:"ReceiveEnabled,omitempty"`
 	// Determines if the LLDP frames can be transmitted by an interface on the switch.
-	TransmitEnabled *bool `json:"TransmitEnabled,omitempty"`
+	TransmitEnabled      *bool `json:"TransmitEnabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *FabricLldpSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricLldpSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *FabricLldpSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricLldpSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -250,5 +250,3 @@ func (v *NullableFabricLldpSettingsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

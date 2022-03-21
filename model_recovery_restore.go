@@ -23,12 +23,12 @@ type RecoveryRestore struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ConfigParams NullableRecoveryConfigParams `json:"ConfigParams,omitempty"`
-	BackupInfo *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+	ObjectType           string                                  `json:"ObjectType"`
+	ConfigParams         NullableRecoveryConfigParams            `json:"ConfigParams,omitempty"`
+	BackupInfo           *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
+	Device               *AssetDeviceRegistrationRelationship    `json:"Device,omitempty"`
+	Organization         *OrganizationOrganizationRelationship   `json:"Organization,omitempty"`
+	Workflow             *WorkflowWorkflowInfoRelationship       `json:"Workflow,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *RecoveryRestore) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryRestore) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *RecoveryRestore) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryRestore) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -118,7 +118,7 @@ func (o *RecoveryRestore) GetConfigParams() RecoveryConfigParams {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RecoveryRestore) GetConfigParamsOk() (*RecoveryConfigParams, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigParams.Get(), o.ConfigParams.IsSet()
@@ -137,6 +137,7 @@ func (o *RecoveryRestore) HasConfigParams() bool {
 func (o *RecoveryRestore) SetConfigParams(v RecoveryConfigParams) {
 	o.ConfigParams.Set(&v)
 }
+
 // SetConfigParamsNil sets the value for ConfigParams to be an explicit nil
 func (o *RecoveryRestore) SetConfigParamsNil() {
 	o.ConfigParams.Set(nil)
@@ -319,12 +320,12 @@ func (o *RecoveryRestore) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ConfigParams NullableRecoveryConfigParams `json:"ConfigParams,omitempty"`
-		BackupInfo *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
-		Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		Workflow *WorkflowWorkflowInfoRelationship `json:"Workflow,omitempty"`
+		ObjectType   string                                  `json:"ObjectType"`
+		ConfigParams NullableRecoveryConfigParams            `json:"ConfigParams,omitempty"`
+		BackupInfo   *RecoveryAbstractBackupInfoRelationship `json:"BackupInfo,omitempty"`
+		Device       *AssetDeviceRegistrationRelationship    `json:"Device,omitempty"`
+		Organization *OrganizationOrganizationRelationship   `json:"Organization,omitempty"`
+		Workflow     *WorkflowWorkflowInfoRelationship       `json:"Workflow,omitempty"`
 	}
 
 	varRecoveryRestoreWithoutEmbeddedStruct := RecoveryRestoreWithoutEmbeddedStruct{}
@@ -423,5 +424,3 @@ func (v *NullableRecoveryRestore) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

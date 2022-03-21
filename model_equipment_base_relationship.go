@@ -19,19 +19,18 @@ import (
 // EquipmentBaseRelationship - A relationship to the 'equipment.Base' resource, or the expanded 'equipment.Base' resource, or the 'null' value.
 type EquipmentBaseRelationship struct {
 	EquipmentBase *EquipmentBase
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // EquipmentBaseAsEquipmentBaseRelationship is a convenience function that returns EquipmentBase wrapped in EquipmentBaseRelationship
 func EquipmentBaseAsEquipmentBaseRelationship(v *EquipmentBase) EquipmentBaseRelationship {
-	return EquipmentBaseRelationship{ EquipmentBase: v}
+	return EquipmentBaseRelationship{EquipmentBase: v}
 }
 
 // MoMoRefAsEquipmentBaseRelationship is a convenience function that returns MoMoRef wrapped in EquipmentBaseRelationship
 func MoMoRefAsEquipmentBaseRelationship(v *MoMoRef) EquipmentBaseRelationship {
-	return EquipmentBaseRelationship{ MoMoRef: v}
+	return EquipmentBaseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentBaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentBaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentBaseRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentBaseRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentBase != nil {
 		return obj.EquipmentBase
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentBaseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

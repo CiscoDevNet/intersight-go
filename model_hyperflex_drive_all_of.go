@@ -52,9 +52,9 @@ type HyperflexDriveAllOf struct {
 	// The unique identifier of the Hyperflex drive.
 	Uuid *string `json:"Uuid,omitempty"`
 	// The firmware version of the Hyperflex drive.
-	Version *string `json:"Version,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
-	Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+	Version              *string                          `json:"Version,omitempty"`
+	LocatorLed           *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	Node                 *HyperflexNodeRelationship       `json:"Node,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *HyperflexDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *HyperflexDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -848,5 +848,3 @@ func (v *NullableHyperflexDriveAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // VirtualizationVmwareVcenterResponse - The response body of a HTTP GET request for the 'virtualization.VmwareVcenter' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.VmwareVcenter' resources.
 type VirtualizationVmwareVcenterResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	VirtualizationVmwareVcenterList *VirtualizationVmwareVcenterList
 }
 
 // MoAggregateTransformAsVirtualizationVmwareVcenterResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationVmwareVcenterResponse
 func MoAggregateTransformAsVirtualizationVmwareVcenterResponse(v *MoAggregateTransform) VirtualizationVmwareVcenterResponse {
-	return VirtualizationVmwareVcenterResponse{ MoAggregateTransform: v}
+	return VirtualizationVmwareVcenterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationVmwareVcenterResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationVmwareVcenterResponse
 func MoDocumentCountAsVirtualizationVmwareVcenterResponse(v *MoDocumentCount) VirtualizationVmwareVcenterResponse {
-	return VirtualizationVmwareVcenterResponse{ MoDocumentCount: v}
+	return VirtualizationVmwareVcenterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationVmwareVcenterResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationVmwareVcenterResponse
 func MoTagSummaryAsVirtualizationVmwareVcenterResponse(v *MoTagSummary) VirtualizationVmwareVcenterResponse {
-	return VirtualizationVmwareVcenterResponse{ MoTagSummary: v}
+	return VirtualizationVmwareVcenterResponse{MoTagSummary: v}
 }
 
 // VirtualizationVmwareVcenterListAsVirtualizationVmwareVcenterResponse is a convenience function that returns VirtualizationVmwareVcenterList wrapped in VirtualizationVmwareVcenterResponse
 func VirtualizationVmwareVcenterListAsVirtualizationVmwareVcenterResponse(v *VirtualizationVmwareVcenterList) VirtualizationVmwareVcenterResponse {
-	return VirtualizationVmwareVcenterResponse{ VirtualizationVmwareVcenterList: v}
+	return VirtualizationVmwareVcenterResponse{VirtualizationVmwareVcenterList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareVcenterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationVmwareVcenterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareVcenterResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareVcenterResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationVmwareVcenterResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

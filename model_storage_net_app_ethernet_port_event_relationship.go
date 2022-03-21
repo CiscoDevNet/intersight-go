@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppEthernetPortEventRelationship - A relationship to the 'storage.NetAppEthernetPortEvent' resource, or the expanded 'storage.NetAppEthernetPortEvent' resource, or the 'null' value.
 type StorageNetAppEthernetPortEventRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                        *MoMoRef
 	StorageNetAppEthernetPortEvent *StorageNetAppEthernetPortEvent
 }
 
 // MoMoRefAsStorageNetAppEthernetPortEventRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppEthernetPortEventRelationship
 func MoMoRefAsStorageNetAppEthernetPortEventRelationship(v *MoMoRef) StorageNetAppEthernetPortEventRelationship {
-	return StorageNetAppEthernetPortEventRelationship{ MoMoRef: v}
+	return StorageNetAppEthernetPortEventRelationship{MoMoRef: v}
 }
 
 // StorageNetAppEthernetPortEventAsStorageNetAppEthernetPortEventRelationship is a convenience function that returns StorageNetAppEthernetPortEvent wrapped in StorageNetAppEthernetPortEventRelationship
 func StorageNetAppEthernetPortEventAsStorageNetAppEthernetPortEventRelationship(v *StorageNetAppEthernetPortEvent) StorageNetAppEthernetPortEventRelationship {
-	return StorageNetAppEthernetPortEventRelationship{ StorageNetAppEthernetPortEvent: v}
+	return StorageNetAppEthernetPortEventRelationship{StorageNetAppEthernetPortEvent: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppEthernetPortEventRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppEthernetPortEventRelationship) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *StorageNetAppEthernetPortEventRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppEthernetPortEventRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppEthernetPortEventRelationship) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

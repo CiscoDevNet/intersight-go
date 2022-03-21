@@ -24,8 +24,8 @@ type ComputeStorageVirtualDriveOperationAllOf struct {
 	// Administrative actions that can be performed on the Storage Virtual Drives. * `None` - No action on the selected Storage virtual Drives. * `Delete` - Delete action on the selected Storage Virtual Drives.
 	AdminAction *string `json:"AdminAction,omitempty"`
 	// Storage Controller Id of the storage Virtual Drives of the server.
-	ControllerId *string `json:"ControllerId,omitempty"`
-	VirtualDrives []ComputeStorageVirtualDrive `json:"VirtualDrives,omitempty"`
+	ControllerId         *string                      `json:"ControllerId,omitempty"`
+	VirtualDrives        []ComputeStorageVirtualDrive `json:"VirtualDrives,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *ComputeStorageVirtualDriveOperationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageVirtualDriveOperationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *ComputeStorageVirtualDriveOperationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageVirtualDriveOperationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *ComputeStorageVirtualDriveOperationAllOf) SetControllerId(v string) {
 
 // GetVirtualDrives returns the VirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeStorageVirtualDriveOperationAllOf) GetVirtualDrives() []ComputeStorageVirtualDrive {
-	if o == nil  {
+	if o == nil {
 		var ret []ComputeStorageVirtualDrive
 		return ret
 	}
@@ -284,5 +284,3 @@ func (v *NullableComputeStorageVirtualDriveOperationAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

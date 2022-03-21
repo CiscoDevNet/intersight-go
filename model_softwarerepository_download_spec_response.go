@@ -18,32 +18,31 @@ import (
 
 // SoftwarerepositoryDownloadSpecResponse - The response body of a HTTP GET request for the 'softwarerepository.DownloadSpec' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'softwarerepository.DownloadSpec' resources.
 type SoftwarerepositoryDownloadSpecResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 	SoftwarerepositoryDownloadSpecList *SoftwarerepositoryDownloadSpecList
 }
 
 // MoAggregateTransformAsSoftwarerepositoryDownloadSpecResponse is a convenience function that returns MoAggregateTransform wrapped in SoftwarerepositoryDownloadSpecResponse
 func MoAggregateTransformAsSoftwarerepositoryDownloadSpecResponse(v *MoAggregateTransform) SoftwarerepositoryDownloadSpecResponse {
-	return SoftwarerepositoryDownloadSpecResponse{ MoAggregateTransform: v}
+	return SoftwarerepositoryDownloadSpecResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSoftwarerepositoryDownloadSpecResponse is a convenience function that returns MoDocumentCount wrapped in SoftwarerepositoryDownloadSpecResponse
 func MoDocumentCountAsSoftwarerepositoryDownloadSpecResponse(v *MoDocumentCount) SoftwarerepositoryDownloadSpecResponse {
-	return SoftwarerepositoryDownloadSpecResponse{ MoDocumentCount: v}
+	return SoftwarerepositoryDownloadSpecResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSoftwarerepositoryDownloadSpecResponse is a convenience function that returns MoTagSummary wrapped in SoftwarerepositoryDownloadSpecResponse
 func MoTagSummaryAsSoftwarerepositoryDownloadSpecResponse(v *MoTagSummary) SoftwarerepositoryDownloadSpecResponse {
-	return SoftwarerepositoryDownloadSpecResponse{ MoTagSummary: v}
+	return SoftwarerepositoryDownloadSpecResponse{MoTagSummary: v}
 }
 
 // SoftwarerepositoryDownloadSpecListAsSoftwarerepositoryDownloadSpecResponse is a convenience function that returns SoftwarerepositoryDownloadSpecList wrapped in SoftwarerepositoryDownloadSpecResponse
 func SoftwarerepositoryDownloadSpecListAsSoftwarerepositoryDownloadSpecResponse(v *SoftwarerepositoryDownloadSpecList) SoftwarerepositoryDownloadSpecResponse {
-	return SoftwarerepositoryDownloadSpecResponse{ SoftwarerepositoryDownloadSpecList: v}
+	return SoftwarerepositoryDownloadSpecResponse{SoftwarerepositoryDownloadSpecList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwarerepositoryDownloadSpecResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SoftwarerepositoryDownloadSpecResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *SoftwarerepositoryDownloadSpecResponse) GetActualInstance() (interface{}) {
+func (obj *SoftwarerepositoryDownloadSpecResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSoftwarerepositoryDownloadSpecResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type HyperflexSoftwareDistributionComponentList struct {
 	// The total number of 'hyperflex.SoftwareDistributionComponent' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.SoftwareDistributionComponent' resources matching the request.
-	Results []HyperflexSoftwareDistributionComponent `json:"Results,omitempty"`
+	Results              []HyperflexSoftwareDistributionComponent `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexSoftwareDistributionComponentList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSoftwareDistributionComponentList) GetResults() []HyperflexSoftwareDistributionComponent {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexSoftwareDistributionComponent
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableHyperflexSoftwareDistributionComponentList) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

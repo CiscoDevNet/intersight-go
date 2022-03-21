@@ -33,7 +33,7 @@ type HyperflexEntityReference struct {
 	// Name of the entity for this entity reference.
 	Name *string `json:"Name,omitempty"`
 	// Type of the entity for this entity reference. * `DISK` - This entity type is a disk. * `PNODE` - This entity type is a P node. * `NODE` - This entity type is a node. * `CLUSTER` - This entity type is a cluster. * `DATASTORE` - This entity is a datastore. * `VIRTNODE` - This entity is a HyperFlex virtual node. * `VIRTCLUSTER` - This entity type is a virtual cluster. * `VIRTDATASTORE` - This entity type is a virtual data store. * `VIRTMACHINE` - This entity type is a virtual machine. * `PDISK` - This entity type is a P disk. * `PDATASTORE` - This entity type is a P Datastore. * `VIRTMACHINESNAPSHOT` - This entity is a virtual machine snapshot. * `FOLDER` - This entity type is a folder. * `RESOURCEPOOL` - This entity type is a resource pool. * `FILE` - This entity type is a file. * `VIRTDATACENTER` - This entity type is a virtual data center. * `REPLICATION_APPLIANCE` - This entity type is a replication appliance. * `REPLICATION_JOB` - This entity type is a replication job. * `IP_POOL` - This entity type is an IP Pool. * `REPLICATION_INFO` - This entity type is a replication information. * `DP_VM_SNAPSHOT` - This entity type is a DP VM Snapshot. * `DP_VMGROUP_SNAPSHOT` - This entity type is a DP VM Group Snapshot. * `DP_VM_CONFIG` - This entity type is a DP VM Configuration. * `DP_VM` - This entity type is a DP VM. * `DP_VMGROUP` - This entity type is a DP VM Group. * `DP_VM_SNAPSHOT_POINT` - This entity type is a DP VM Snapshot Point. * `CLUSTER_PAIR` - This entity is a cluster pair. * `HX_TASK` - This entity type is a HyperFlex task. * `ZONE` - This entity type is a zone.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *HyperflexEntityReference) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexEntityReference) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexEntityReference) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexEntityReference) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -423,5 +423,3 @@ func (v *NullableHyperflexEntityReference) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

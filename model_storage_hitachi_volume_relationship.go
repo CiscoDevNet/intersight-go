@@ -18,20 +18,19 @@ import (
 
 // StorageHitachiVolumeRelationship - A relationship to the 'storage.HitachiVolume' resource, or the expanded 'storage.HitachiVolume' resource, or the 'null' value.
 type StorageHitachiVolumeRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 	StorageHitachiVolume *StorageHitachiVolume
 }
 
 // MoMoRefAsStorageHitachiVolumeRelationship is a convenience function that returns MoMoRef wrapped in StorageHitachiVolumeRelationship
 func MoMoRefAsStorageHitachiVolumeRelationship(v *MoMoRef) StorageHitachiVolumeRelationship {
-	return StorageHitachiVolumeRelationship{ MoMoRef: v}
+	return StorageHitachiVolumeRelationship{MoMoRef: v}
 }
 
 // StorageHitachiVolumeAsStorageHitachiVolumeRelationship is a convenience function that returns StorageHitachiVolume wrapped in StorageHitachiVolumeRelationship
 func StorageHitachiVolumeAsStorageHitachiVolumeRelationship(v *StorageHitachiVolume) StorageHitachiVolumeRelationship {
-	return StorageHitachiVolumeRelationship{ StorageHitachiVolume: v}
+	return StorageHitachiVolumeRelationship{StorageHitachiVolume: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageHitachiVolumeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageHitachiVolumeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageHitachiVolumeRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageHitachiVolumeRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageHitachiVolumeRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

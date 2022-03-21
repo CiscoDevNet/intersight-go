@@ -20,7 +20,7 @@ type TelemetryDruidSumAggregatorAllOf struct {
 	// Output name for the summed value.
 	Name string `json:"name"`
 	// Name of the metric column to sum over.
-	FieldName string `json:"fieldName"`
+	FieldName            string `json:"fieldName"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidSumAggregatorAllOf) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSumAggregatorAllOf) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidSumAggregatorAllOf) GetFieldName() string {
 // GetFieldNameOk returns a tuple with the FieldName field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSumAggregatorAllOf) GetFieldNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FieldName, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidSumAggregatorAllOf) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

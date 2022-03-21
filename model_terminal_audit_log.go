@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // TerminalAuditLog Audit log of remote terminal user sessions.
@@ -28,9 +28,9 @@ type TerminalAuditLog struct {
 	// The time the terminal was closed. If terminal has not closed, value is zero time.
 	EndTime *time.Time `json:"EndTime,omitempty"`
 	// The time the terminal session was opened.
-	StartTime *time.Time `json:"StartTime,omitempty"`
-	DeviceRegistration *AssetDeviceConnectionRelationship `json:"DeviceRegistration,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	StartTime            *time.Time                         `json:"StartTime,omitempty"`
+	DeviceRegistration   *AssetDeviceConnectionRelationship `json:"DeviceRegistration,omitempty"`
+	User                 *IamUserRelationship               `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *TerminalAuditLog) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TerminalAuditLog) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *TerminalAuditLog) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TerminalAuditLog) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,9 +280,9 @@ func (o *TerminalAuditLog) UnmarshalJSON(bytes []byte) (err error) {
 		// The time the terminal was closed. If terminal has not closed, value is zero time.
 		EndTime *time.Time `json:"EndTime,omitempty"`
 		// The time the terminal session was opened.
-		StartTime *time.Time `json:"StartTime,omitempty"`
+		StartTime          *time.Time                         `json:"StartTime,omitempty"`
 		DeviceRegistration *AssetDeviceConnectionRelationship `json:"DeviceRegistration,omitempty"`
-		User *IamUserRelationship `json:"User,omitempty"`
+		User               *IamUserRelationship               `json:"User,omitempty"`
 	}
 
 	varTerminalAuditLogWithoutEmbeddedStruct := TerminalAuditLogWithoutEmbeddedStruct{}
@@ -379,5 +379,3 @@ func (v *NullableTerminalAuditLog) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

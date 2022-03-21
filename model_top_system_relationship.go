@@ -18,20 +18,19 @@ import (
 
 // TopSystemRelationship - A relationship to the 'top.System' resource, or the expanded 'top.System' resource, or the 'null' value.
 type TopSystemRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 	TopSystem *TopSystem
 }
 
 // MoMoRefAsTopSystemRelationship is a convenience function that returns MoMoRef wrapped in TopSystemRelationship
 func MoMoRefAsTopSystemRelationship(v *MoMoRef) TopSystemRelationship {
-	return TopSystemRelationship{ MoMoRef: v}
+	return TopSystemRelationship{MoMoRef: v}
 }
 
 // TopSystemAsTopSystemRelationship is a convenience function that returns TopSystem wrapped in TopSystemRelationship
 func TopSystemAsTopSystemRelationship(v *TopSystem) TopSystemRelationship {
-	return TopSystemRelationship{ TopSystem: v}
+	return TopSystemRelationship{TopSystem: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TopSystemRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src TopSystemRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *TopSystemRelationship) GetActualInstance() (interface{}) {
+func (obj *TopSystemRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableTopSystemRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

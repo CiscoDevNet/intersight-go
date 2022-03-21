@@ -22,8 +22,8 @@ type RecoveryBackupConfigPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to recoveryBackupProfile resources.
-	BackupProfiles []RecoveryBackupProfileRelationship `json:"BackupProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BackupProfiles       []RecoveryBackupProfileRelationship   `json:"BackupProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *RecoveryBackupConfigPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupConfigPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *RecoveryBackupConfigPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryBackupConfigPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -102,7 +102,7 @@ func (o *RecoveryBackupConfigPolicyAllOf) SetObjectType(v string) {
 
 // GetBackupProfiles returns the BackupProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecoveryBackupConfigPolicyAllOf) GetBackupProfiles() []RecoveryBackupProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RecoveryBackupProfileRelationship
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableRecoveryBackupConfigPolicyAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

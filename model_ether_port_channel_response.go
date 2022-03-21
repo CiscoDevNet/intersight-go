@@ -20,30 +20,29 @@ import (
 type EtherPortChannelResponse struct {
 	EtherPortChannelList *EtherPortChannelList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // EtherPortChannelListAsEtherPortChannelResponse is a convenience function that returns EtherPortChannelList wrapped in EtherPortChannelResponse
 func EtherPortChannelListAsEtherPortChannelResponse(v *EtherPortChannelList) EtherPortChannelResponse {
-	return EtherPortChannelResponse{ EtherPortChannelList: v}
+	return EtherPortChannelResponse{EtherPortChannelList: v}
 }
 
 // MoAggregateTransformAsEtherPortChannelResponse is a convenience function that returns MoAggregateTransform wrapped in EtherPortChannelResponse
 func MoAggregateTransformAsEtherPortChannelResponse(v *MoAggregateTransform) EtherPortChannelResponse {
-	return EtherPortChannelResponse{ MoAggregateTransform: v}
+	return EtherPortChannelResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEtherPortChannelResponse is a convenience function that returns MoDocumentCount wrapped in EtherPortChannelResponse
 func MoDocumentCountAsEtherPortChannelResponse(v *MoDocumentCount) EtherPortChannelResponse {
-	return EtherPortChannelResponse{ MoDocumentCount: v}
+	return EtherPortChannelResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEtherPortChannelResponse is a convenience function that returns MoTagSummary wrapped in EtherPortChannelResponse
 func MoTagSummaryAsEtherPortChannelResponse(v *MoTagSummary) EtherPortChannelResponse {
-	return EtherPortChannelResponse{ MoTagSummary: v}
+	return EtherPortChannelResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EtherPortChannelResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EtherPortChannelResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EtherPortChannelResponse) GetActualInstance() (interface{}) {
+func (obj *EtherPortChannelResponse) GetActualInstance() interface{} {
 	if obj.EtherPortChannelList != nil {
 		return obj.EtherPortChannelList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEtherPortChannelResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

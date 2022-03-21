@@ -18,32 +18,31 @@ import (
 
 // MacpoolIdBlockResponse - The response body of a HTTP GET request for the 'macpool.IdBlock' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'macpool.IdBlock' resources.
 type MacpoolIdBlockResponse struct {
-	MacpoolIdBlockList *MacpoolIdBlockList
+	MacpoolIdBlockList   *MacpoolIdBlockList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // MacpoolIdBlockListAsMacpoolIdBlockResponse is a convenience function that returns MacpoolIdBlockList wrapped in MacpoolIdBlockResponse
 func MacpoolIdBlockListAsMacpoolIdBlockResponse(v *MacpoolIdBlockList) MacpoolIdBlockResponse {
-	return MacpoolIdBlockResponse{ MacpoolIdBlockList: v}
+	return MacpoolIdBlockResponse{MacpoolIdBlockList: v}
 }
 
 // MoAggregateTransformAsMacpoolIdBlockResponse is a convenience function that returns MoAggregateTransform wrapped in MacpoolIdBlockResponse
 func MoAggregateTransformAsMacpoolIdBlockResponse(v *MoAggregateTransform) MacpoolIdBlockResponse {
-	return MacpoolIdBlockResponse{ MoAggregateTransform: v}
+	return MacpoolIdBlockResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsMacpoolIdBlockResponse is a convenience function that returns MoDocumentCount wrapped in MacpoolIdBlockResponse
 func MoDocumentCountAsMacpoolIdBlockResponse(v *MoDocumentCount) MacpoolIdBlockResponse {
-	return MacpoolIdBlockResponse{ MoDocumentCount: v}
+	return MacpoolIdBlockResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsMacpoolIdBlockResponse is a convenience function that returns MoTagSummary wrapped in MacpoolIdBlockResponse
 func MoTagSummaryAsMacpoolIdBlockResponse(v *MoTagSummary) MacpoolIdBlockResponse {
-	return MacpoolIdBlockResponse{ MoTagSummary: v}
+	return MacpoolIdBlockResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MacpoolIdBlockResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src MacpoolIdBlockResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *MacpoolIdBlockResponse) GetActualInstance() (interface{}) {
+func (obj *MacpoolIdBlockResponse) GetActualInstance() interface{} {
 	if obj.MacpoolIdBlockList != nil {
 		return obj.MacpoolIdBlockList
 	}
@@ -184,5 +183,3 @@ func (v *NullableMacpoolIdBlockResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

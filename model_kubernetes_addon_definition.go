@@ -37,17 +37,17 @@ type KubernetesAddonDefinition struct {
 	// Digest used to verify the integrity of an addon.
 	Digest *string `json:"Digest,omitempty"`
 	// Icon used to represent the addon in UI.
-	IconUrl *string `json:"IconUrl,omitempty"`
-	Labels []string `json:"Labels,omitempty"`
+	IconUrl *string  `json:"IconUrl,omitempty"`
+	Labels  []string `json:"Labels,omitempty"`
 	// Name of an addon component.
 	Name *string `json:"Name,omitempty"`
 	// Properties that can be overridden for an addon.
-	Overrides *string `json:"Overrides,omitempty"`
+	Overrides *string  `json:"Overrides,omitempty"`
 	Platforms []string `json:"Platforms,omitempty"`
 	// Version of the addon component.
-	Version *string `json:"Version,omitempty"`
-	Catalog *KubernetesCatalogRelationship `json:"Catalog,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Version              *string                               `json:"Version,omitempty"`
+	Catalog              *KubernetesCatalogRelationship        `json:"Catalog,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *KubernetesAddonDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *KubernetesAddonDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -358,7 +358,7 @@ func (o *KubernetesAddonDefinition) SetIconUrl(v string) {
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAddonDefinition) GetLabels() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *KubernetesAddonDefinition) SetOverrides(v string) {
 
 // GetPlatforms returns the Platforms field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAddonDefinition) GetPlatforms() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -667,16 +667,16 @@ func (o *KubernetesAddonDefinition) UnmarshalJSON(bytes []byte) (err error) {
 		// Digest used to verify the integrity of an addon.
 		Digest *string `json:"Digest,omitempty"`
 		// Icon used to represent the addon in UI.
-		IconUrl *string `json:"IconUrl,omitempty"`
-		Labels []string `json:"Labels,omitempty"`
+		IconUrl *string  `json:"IconUrl,omitempty"`
+		Labels  []string `json:"Labels,omitempty"`
 		// Name of an addon component.
 		Name *string `json:"Name,omitempty"`
 		// Properties that can be overridden for an addon.
-		Overrides *string `json:"Overrides,omitempty"`
+		Overrides *string  `json:"Overrides,omitempty"`
 		Platforms []string `json:"Platforms,omitempty"`
 		// Version of the addon component.
-		Version *string `json:"Version,omitempty"`
-		Catalog *KubernetesCatalogRelationship `json:"Catalog,omitempty"`
+		Version      *string                               `json:"Version,omitempty"`
+		Catalog      *KubernetesCatalogRelationship        `json:"Catalog,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
@@ -794,5 +794,3 @@ func (v *NullableKubernetesAddonDefinition) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

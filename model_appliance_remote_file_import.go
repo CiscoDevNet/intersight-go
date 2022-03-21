@@ -39,8 +39,8 @@ type ApplianceRemoteFileImport struct {
 	// Protocol for the remote request. * `scp` - Secure Copy Protocol (SCP) to access the file server. * `sftp` - SSH File Transfer Protocol (SFTP) to access file server.
 	Protocol *string `json:"Protocol,omitempty"`
 	// The username for the remote request.
-	Username *string `json:"Username,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Username             *string                 `json:"Username,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *ApplianceRemoteFileImport) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceRemoteFileImport) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *ApplianceRemoteFileImport) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceRemoteFileImport) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -481,8 +481,8 @@ func (o *ApplianceRemoteFileImport) UnmarshalJSON(bytes []byte) (err error) {
 		// Protocol for the remote request. * `scp` - Secure Copy Protocol (SCP) to access the file server. * `sftp` - SSH File Transfer Protocol (SFTP) to access file server.
 		Protocol *string `json:"Protocol,omitempty"`
 		// The username for the remote request.
-		Username *string `json:"Username,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Username *string                 `json:"Username,omitempty"`
+		Account  *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
 	varApplianceRemoteFileImportWithoutEmbeddedStruct := ApplianceRemoteFileImportWithoutEmbeddedStruct{}
@@ -589,5 +589,3 @@ func (v *NullableApplianceRemoteFileImport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

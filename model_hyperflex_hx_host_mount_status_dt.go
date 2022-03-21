@@ -31,7 +31,7 @@ type HyperflexHxHostMountStatusDt struct {
 	// Is the datastore mounted or not.
 	Mounted *bool `json:"Mounted,omitempty"`
 	// Reason for inaccessibility.
-	Reason *string `json:"Reason,omitempty"`
+	Reason               *string `json:"Reason,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexHxHostMountStatusDt) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxHostMountStatusDt) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexHxHostMountStatusDt) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxHostMountStatusDt) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableHyperflexHxHostMountStatusDt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -22,11 +22,11 @@ type VirtualizationIweHostVswitchAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the host to which this vSwitch belongs to.
-	HostName *string `json:"HostName,omitempty"`
-	Ports []VirtualizationNetworkPort `json:"Ports,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	DvSwitch *VirtualizationIweDvswitchRelationship `json:"DvSwitch,omitempty"`
-	Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
+	HostName             *string                                `json:"HostName,omitempty"`
+	Ports                []VirtualizationNetworkPort            `json:"Ports,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
+	DvSwitch             *VirtualizationIweDvswitchRelationship `json:"DvSwitch,omitempty"`
+	Host                 *VirtualizationIweHostRelationship     `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *VirtualizationIweHostVswitchAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostVswitchAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *VirtualizationIweHostVswitchAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostVswitchAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *VirtualizationIweHostVswitchAllOf) SetHostName(v string) {
 
 // GetPorts returns the Ports field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweHostVswitchAllOf) GetPorts() []VirtualizationNetworkPort {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationNetworkPort
 		return ret
 	}
@@ -353,5 +353,3 @@ func (v *NullableVirtualizationIweHostVswitchAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

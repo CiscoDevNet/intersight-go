@@ -30,7 +30,7 @@ type WorkflowBuildTaskMetaAllOf struct {
 	// The type of the task within this workflow.
 	TaskType *string `json:"TaskType,omitempty"`
 	// The type for the dynamic workflow.
-	WorkflowType *string `json:"WorkflowType,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *WorkflowBuildTaskMetaAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBuildTaskMetaAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *WorkflowBuildTaskMetaAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowBuildTaskMetaAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -173,7 +173,7 @@ func (o *WorkflowBuildTaskMetaAllOf) SetSrc(v string) {
 
 // GetTaskList returns the TaskList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowBuildTaskMetaAllOf) GetTaskList() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -357,5 +357,3 @@ func (v *NullableWorkflowBuildTaskMetaAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

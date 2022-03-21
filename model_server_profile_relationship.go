@@ -18,20 +18,19 @@ import (
 
 // ServerProfileRelationship - A relationship to the 'server.Profile' resource, or the expanded 'server.Profile' resource, or the 'null' value.
 type ServerProfileRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 	ServerProfile *ServerProfile
 }
 
 // MoMoRefAsServerProfileRelationship is a convenience function that returns MoMoRef wrapped in ServerProfileRelationship
 func MoMoRefAsServerProfileRelationship(v *MoMoRef) ServerProfileRelationship {
-	return ServerProfileRelationship{ MoMoRef: v}
+	return ServerProfileRelationship{MoMoRef: v}
 }
 
 // ServerProfileAsServerProfileRelationship is a convenience function that returns ServerProfile wrapped in ServerProfileRelationship
 func ServerProfileAsServerProfileRelationship(v *ServerProfile) ServerProfileRelationship {
-	return ServerProfileRelationship{ ServerProfile: v}
+	return ServerProfileRelationship{ServerProfile: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ServerProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ServerProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ServerProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *ServerProfileRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableServerProfileRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

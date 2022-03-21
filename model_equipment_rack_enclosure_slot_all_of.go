@@ -24,12 +24,12 @@ type EquipmentRackEnclosureSlotAllOf struct {
 	// Server ID which is part of Rack Enclosure Slot.
 	RackId *int64 `json:"RackId,omitempty"`
 	// Server DN which is part of Rack Enclosure Slot.
-	RackUnitDn *string `json:"RackUnitDn,omitempty"`
-	EquipmentRackEnclosure *EquipmentRackEnclosureRelationship `json:"EquipmentRackEnclosure,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RackUnit *ComputeRackUnitRelationship `json:"RackUnit,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RackUnitDn             *string                              `json:"RackUnitDn,omitempty"`
+	EquipmentRackEnclosure *EquipmentRackEnclosureRelationship  `json:"EquipmentRackEnclosure,omitempty"`
+	InventoryDeviceInfo    *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RackUnit               *ComputeRackUnitRelationship         `json:"RackUnit,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _EquipmentRackEnclosureSlotAllOf EquipmentRackEnclosureSlotAllOf
@@ -70,7 +70,7 @@ func (o *EquipmentRackEnclosureSlotAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentRackEnclosureSlotAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *EquipmentRackEnclosureSlotAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentRackEnclosureSlotAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -390,5 +390,3 @@ func (v *NullableEquipmentRackEnclosureSlotAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

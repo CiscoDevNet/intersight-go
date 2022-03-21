@@ -25,7 +25,7 @@ type CloudSkuRegionRateCards struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The currency code used for the price. For e.g. USD or EUR. * `USD` - The currency code for United states dollar. * `EUR` - The currency code for European Union.
-	Currency *string `json:"Currency,omitempty"`
+	Currency         *string                 `json:"Currency,omitempty"`
 	CustomAttributes []CloudCustomAttributes `json:"CustomAttributes,omitempty"`
 	// The OS distribution running on this instance type.
 	DistributionType *string `json:"DistributionType,omitempty"`
@@ -46,9 +46,9 @@ type CloudSkuRegionRateCards struct {
 	// The epoch start time from which the price will be applied.
 	ValidFrom *int64 `json:"ValidFrom,omitempty"`
 	// The epoch end time of the current price.
-	ValidTo *int64 `json:"ValidTo,omitempty"`
-	Region *CloudRegionsRelationship `json:"Region,omitempty"`
-	Sku *CloudBaseSkuRelationship `json:"Sku,omitempty"`
+	ValidTo              *int64                    `json:"ValidTo,omitempty"`
+	Region               *CloudRegionsRelationship `json:"Region,omitempty"`
+	Sku                  *CloudBaseSkuRelationship `json:"Sku,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -102,7 +102,7 @@ func (o *CloudSkuRegionRateCards) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuRegionRateCards) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -126,7 +126,7 @@ func (o *CloudSkuRegionRateCards) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuRegionRateCards) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *CloudSkuRegionRateCards) SetCurrency(v string) {
 
 // GetCustomAttributes returns the CustomAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudSkuRegionRateCards) GetCustomAttributes() []CloudCustomAttributes {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCustomAttributes
 		return ret
 	}
@@ -659,7 +659,7 @@ func (o *CloudSkuRegionRateCards) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The currency code used for the price. For e.g. USD or EUR. * `USD` - The currency code for United states dollar. * `EUR` - The currency code for European Union.
-		Currency *string `json:"Currency,omitempty"`
+		Currency         *string                 `json:"Currency,omitempty"`
 		CustomAttributes []CloudCustomAttributes `json:"CustomAttributes,omitempty"`
 		// The OS distribution running on this instance type.
 		DistributionType *string `json:"DistributionType,omitempty"`
@@ -680,9 +680,9 @@ func (o *CloudSkuRegionRateCards) UnmarshalJSON(bytes []byte) (err error) {
 		// The epoch start time from which the price will be applied.
 		ValidFrom *int64 `json:"ValidFrom,omitempty"`
 		// The epoch end time of the current price.
-		ValidTo *int64 `json:"ValidTo,omitempty"`
-		Region *CloudRegionsRelationship `json:"Region,omitempty"`
-		Sku *CloudBaseSkuRelationship `json:"Sku,omitempty"`
+		ValidTo *int64                    `json:"ValidTo,omitempty"`
+		Region  *CloudRegionsRelationship `json:"Region,omitempty"`
+		Sku     *CloudBaseSkuRelationship `json:"Sku,omitempty"`
 	}
 
 	varCloudSkuRegionRateCardsWithoutEmbeddedStruct := CloudSkuRegionRateCardsWithoutEmbeddedStruct{}
@@ -799,5 +799,3 @@ func (v *NullableCloudSkuRegionRateCards) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

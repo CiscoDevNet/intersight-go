@@ -51,7 +51,7 @@ type HyperflexVirtualMachineRuntimeInfo struct {
 	// Virtual Machine unique MOID.
 	Moid *string `json:"Moid,omitempty"`
 	// Name of the Virtual Machine.
-	Name *string `json:"Name,omitempty"`
+	Name     *string  `json:"Name,omitempty"`
 	Networks []string `json:"Networks,omitempty"`
 	// Number of CPUs for the VM.
 	NumCpu *int64 `json:"NumCpu,omitempty"`
@@ -66,7 +66,7 @@ type HyperflexVirtualMachineRuntimeInfo struct {
 	// Version of the Virtual Machine.
 	Version *string `json:"Version,omitempty"`
 	// Vmx Path in VC datastore format.
-	VmxPath *string `json:"VmxPath,omitempty"`
+	VmxPath              *string `json:"VmxPath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *HyperflexVirtualMachineRuntimeInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVirtualMachineRuntimeInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -132,7 +132,7 @@ func (o *HyperflexVirtualMachineRuntimeInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVirtualMachineRuntimeInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -593,7 +593,7 @@ func (o *HyperflexVirtualMachineRuntimeInfo) SetName(v string) {
 
 // GetNetworks returns the Networks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVirtualMachineRuntimeInfo) GetNetworks() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -971,7 +971,7 @@ func (o *HyperflexVirtualMachineRuntimeInfo) UnmarshalJSON(bytes []byte) (err er
 		// Virtual Machine unique MOID.
 		Moid *string `json:"Moid,omitempty"`
 		// Name of the Virtual Machine.
-		Name *string `json:"Name,omitempty"`
+		Name     *string  `json:"Name,omitempty"`
 		Networks []string `json:"Networks,omitempty"`
 		// Number of CPUs for the VM.
 		NumCpu *int64 `json:"NumCpu,omitempty"`
@@ -1119,5 +1119,3 @@ func (v *NullableHyperflexVirtualMachineRuntimeInfo) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

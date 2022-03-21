@@ -22,16 +22,16 @@ type IamApiKeyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The cryptographic hash algorithm to calculate the message digest. * `SHA256` - The SHA-256 cryptographic hash, as defined by NIST in FIPS 180-4. * `SHA384` - The SHA-384 cryptographic hash, as defined by NIST in FIPS 180-4. * `SHA512` - The SHA-512 cryptographic hash, as defined by NIST in FIPS 180-4. * `SHA512_224` - The SHA-512/224 cryptographic hash, as defined by NIST in FIPS 180-4. * `SHA512_256` - The SHA-512/256 cryptographic hash, as defined by NIST in FIPS 180-4.
-	HashAlgorithm *string `json:"HashAlgorithm,omitempty"`
-	KeySpec NullablePkixKeyGenerationSpec `json:"KeySpec,omitempty"`
+	HashAlgorithm *string                       `json:"HashAlgorithm,omitempty"`
+	KeySpec       NullablePkixKeyGenerationSpec `json:"KeySpec,omitempty"`
 	// Holds the private key for the API key.
 	PrivateKey *string `json:"PrivateKey,omitempty"`
 	// The purpose of the API Key.
 	Purpose *string `json:"Purpose,omitempty"`
 	// The signing algorithm used by the client to authenticate API requests to Intersight. The signing algorithm must be compatible with the key generation specification. * `RSASSA-PKCS1-v1_5` - RSASSA-PKCS1-v1_5 is a RSA signature scheme specified in [RFC 8017](https://tools.ietf.org/html/rfc8017).RSASSA-PKCS1-v1_5 is included only for compatibility with existing applications. * `RSASSA-PSS` - RSASSA-PSS is a RSA signature scheme specified in [RFC 8017](https://tools.ietf.org/html/rfc8017).It combines the RSASP1 and RSAVP1 primitives with the EMSA-PSS encoding method.In the interest of increased robustness, RSASSA-PSS is required in new applications. * `Ed25519` - The Ed25519 signature algorithm, as specified in [RFC 8032](https://tools.ietf.org/html/rfc8032).Ed25519 is a public-key signature system with several attractive features, includingfast single-signature verification, very fast signing, fast key generation and high security level. * `Ecdsa` - The Elliptic Curve Digital Signature Standard (ECDSA), as defined by NIST in FIPS 186-4 and ANSI X9.62.The signature is encoded as a ASN.1 DER SEQUENCE with two INTEGERs (r and s), as defined in RFC3279.When using ECDSA signatures, configure the client to use the same signature encoding as specified on the server side. * `EcdsaP1363Format` - The Elliptic Curve Digital Signature Standard (ECDSA), as defined by NIST in FIPS 186-4 and ANSI X9.62.The signature is the raw concatenation of r and s, as defined in the ISO/IEC 7816-8 IEEE P.1363 standard.In that format, r and s are represented as unsigned, big endian numbers.Extra padding bytes (of value 0x00) is applied so that both r and s encodings have the same size.When using ECDSA signatures, configure the client to use the same signature encoding as specified on the server side.
-	SigningAlgorithm *string `json:"SigningAlgorithm,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	SigningAlgorithm     *string                    `json:"SigningAlgorithm,omitempty"`
+	Permission           *IamPermissionRelationship `json:"Permission,omitempty"`
+	User                 *IamUserRelationship       `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *IamApiKeyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamApiKeyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *IamApiKeyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamApiKeyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -161,7 +161,7 @@ func (o *IamApiKeyAllOf) GetKeySpec() PkixKeyGenerationSpec {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamApiKeyAllOf) GetKeySpecOk() (*PkixKeyGenerationSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KeySpec.Get(), o.KeySpec.IsSet()
@@ -180,6 +180,7 @@ func (o *IamApiKeyAllOf) HasKeySpec() bool {
 func (o *IamApiKeyAllOf) SetKeySpec(v PkixKeyGenerationSpec) {
 	o.KeySpec.Set(&v)
 }
+
 // SetKeySpecNil sets the value for KeySpec to be an explicit nil
 func (o *IamApiKeyAllOf) SetKeySpecNil() {
 	o.KeySpec.Set(nil)
@@ -447,5 +448,3 @@ func (v *NullableIamApiKeyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

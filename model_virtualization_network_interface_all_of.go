@@ -46,11 +46,11 @@ type VirtualizationNetworkInterfaceAllOf struct {
 	// Allocation mode for NIC addresses e.g. DHCP or static. * `DHCP` - Dynamic IP address allocation using DHCP protocol. * `STATIC_IP` - Assign fixed / static IPs to resources for use. * `IPAM_CALLOUT` - Use callout scripts to query cloud IP allocation tools to assign network parameters. * `PREALLOCATE_IP` - Allows the cloud infrastructure IP allocation to be dynamically provided before the server boots up.
 	PrivateIpAllocationMode *string `json:"PrivateIpAllocationMode,omitempty"`
 	// Set to true, if public IP should be allocated for the NIC.
-	PublicIpAllocate *bool `json:"PublicIpAllocate,omitempty"`
-	SecurityGroups []string `json:"SecurityGroups,omitempty"`
-	StaticIpAddress []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
+	PublicIpAllocate *bool                         `json:"PublicIpAllocate,omitempty"`
+	SecurityGroups   []string                      `json:"SecurityGroups,omitempty"`
+	StaticIpAddress  []VirtualizationIpAddressInfo `json:"StaticIpAddress,omitempty"`
 	// Subnet identifier for the NIC.
-	SubnetId *string `json:"SubnetId,omitempty"`
+	SubnetId             *string `json:"SubnetId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *VirtualizationNetworkInterfaceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkInterfaceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *VirtualizationNetworkInterfaceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationNetworkInterfaceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -553,7 +553,7 @@ func (o *VirtualizationNetworkInterfaceAllOf) SetPublicIpAllocate(v bool) {
 
 // GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationNetworkInterfaceAllOf) GetSecurityGroups() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -586,7 +586,7 @@ func (o *VirtualizationNetworkInterfaceAllOf) SetSecurityGroups(v []string) {
 
 // GetStaticIpAddress returns the StaticIpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationNetworkInterfaceAllOf) GetStaticIpAddress() []VirtualizationIpAddressInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIpAddressInfo
 		return ret
 	}
@@ -782,5 +782,3 @@ func (v *NullableVirtualizationNetworkInterfaceAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

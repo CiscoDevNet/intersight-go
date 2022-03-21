@@ -34,8 +34,8 @@ type NiatelemetryHttpsAclEpgContractMapAllOf struct {
 	// Name of the APIC site from which this data is being collected.
 	SiteName *string `json:"SiteName,omitempty"`
 	// TDn of the HTTPS ACL contract provider for APIC.
-	TargetDn *string `json:"TargetDn,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TargetDn             *string                              `json:"TargetDn,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryHttpsAclEpgContractMapAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclEpgContractMapAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *NiatelemetryHttpsAclEpgContractMapAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryHttpsAclEpgContractMapAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -469,5 +469,3 @@ func (v *NullableNiatelemetryHttpsAclEpgContractMapAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

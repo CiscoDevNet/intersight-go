@@ -18,32 +18,31 @@ import (
 
 // StoragePhysicalDiskResponse - The response body of a HTTP GET request for the 'storage.PhysicalDisk' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PhysicalDisk' resources.
 type StoragePhysicalDiskResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 	StoragePhysicalDiskList *StoragePhysicalDiskList
 }
 
 // MoAggregateTransformAsStoragePhysicalDiskResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePhysicalDiskResponse
 func MoAggregateTransformAsStoragePhysicalDiskResponse(v *MoAggregateTransform) StoragePhysicalDiskResponse {
-	return StoragePhysicalDiskResponse{ MoAggregateTransform: v}
+	return StoragePhysicalDiskResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePhysicalDiskResponse is a convenience function that returns MoDocumentCount wrapped in StoragePhysicalDiskResponse
 func MoDocumentCountAsStoragePhysicalDiskResponse(v *MoDocumentCount) StoragePhysicalDiskResponse {
-	return StoragePhysicalDiskResponse{ MoDocumentCount: v}
+	return StoragePhysicalDiskResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePhysicalDiskResponse is a convenience function that returns MoTagSummary wrapped in StoragePhysicalDiskResponse
 func MoTagSummaryAsStoragePhysicalDiskResponse(v *MoTagSummary) StoragePhysicalDiskResponse {
-	return StoragePhysicalDiskResponse{ MoTagSummary: v}
+	return StoragePhysicalDiskResponse{MoTagSummary: v}
 }
 
 // StoragePhysicalDiskListAsStoragePhysicalDiskResponse is a convenience function that returns StoragePhysicalDiskList wrapped in StoragePhysicalDiskResponse
 func StoragePhysicalDiskListAsStoragePhysicalDiskResponse(v *StoragePhysicalDiskList) StoragePhysicalDiskResponse {
-	return StoragePhysicalDiskResponse{ StoragePhysicalDiskList: v}
+	return StoragePhysicalDiskResponse{StoragePhysicalDiskList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePhysicalDiskResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePhysicalDiskResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePhysicalDiskResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePhysicalDiskResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePhysicalDiskResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

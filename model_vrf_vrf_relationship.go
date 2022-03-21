@@ -19,19 +19,18 @@ import (
 // VrfVrfRelationship - A relationship to the 'vrf.Vrf' resource, or the expanded 'vrf.Vrf' resource, or the 'null' value.
 type VrfVrfRelationship struct {
 	MoMoRef *MoMoRef
-	VrfVrf *VrfVrf
+	VrfVrf  *VrfVrf
 }
 
 // MoMoRefAsVrfVrfRelationship is a convenience function that returns MoMoRef wrapped in VrfVrfRelationship
 func MoMoRefAsVrfVrfRelationship(v *MoMoRef) VrfVrfRelationship {
-	return VrfVrfRelationship{ MoMoRef: v}
+	return VrfVrfRelationship{MoMoRef: v}
 }
 
 // VrfVrfAsVrfVrfRelationship is a convenience function that returns VrfVrf wrapped in VrfVrfRelationship
 func VrfVrfAsVrfVrfRelationship(v *VrfVrf) VrfVrfRelationship {
-	return VrfVrfRelationship{ VrfVrf: v}
+	return VrfVrfRelationship{VrfVrf: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VrfVrfRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VrfVrfRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VrfVrfRelationship) GetActualInstance() (interface{}) {
+func (obj *VrfVrfRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVrfVrfRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

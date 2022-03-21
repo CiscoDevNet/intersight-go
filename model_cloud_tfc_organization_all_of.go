@@ -36,8 +36,8 @@ type CloudTfcOrganizationAllOf struct {
 	// The max number of simultaneous runs allowed in this organization.
 	RunCeiling *int64 `json:"RunCeiling,omitempty"`
 	// Total number of VCS providers in the organization.
-	VcsProviders *int64 `json:"VcsProviders,omitempty"`
-	Target *AssetTargetRelationship `json:"Target,omitempty"`
+	VcsProviders         *int64                   `json:"VcsProviders,omitempty"`
+	Target               *AssetTargetRelationship `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *CloudTfcOrganizationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcOrganizationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *CloudTfcOrganizationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcOrganizationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -507,5 +507,3 @@ func (v *NullableCloudTfcOrganizationAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,19 +19,18 @@ import (
 // IqnpoolBlockRelationship - A relationship to the 'iqnpool.Block' resource, or the expanded 'iqnpool.Block' resource, or the 'null' value.
 type IqnpoolBlockRelationship struct {
 	IqnpoolBlock *IqnpoolBlock
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IqnpoolBlockAsIqnpoolBlockRelationship is a convenience function that returns IqnpoolBlock wrapped in IqnpoolBlockRelationship
 func IqnpoolBlockAsIqnpoolBlockRelationship(v *IqnpoolBlock) IqnpoolBlockRelationship {
-	return IqnpoolBlockRelationship{ IqnpoolBlock: v}
+	return IqnpoolBlockRelationship{IqnpoolBlock: v}
 }
 
 // MoMoRefAsIqnpoolBlockRelationship is a convenience function that returns MoMoRef wrapped in IqnpoolBlockRelationship
 func MoMoRefAsIqnpoolBlockRelationship(v *MoMoRef) IqnpoolBlockRelationship {
-	return IqnpoolBlockRelationship{ MoMoRef: v}
+	return IqnpoolBlockRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IqnpoolBlockRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IqnpoolBlockRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IqnpoolBlockRelationship) GetActualInstance() (interface{}) {
+func (obj *IqnpoolBlockRelationship) GetActualInstance() interface{} {
 	if obj.IqnpoolBlock != nil {
 		return obj.IqnpoolBlock
 	}
@@ -137,5 +136,3 @@ func (v *NullableIqnpoolBlockRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

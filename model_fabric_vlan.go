@@ -31,9 +31,9 @@ type FabricVlan struct {
 	// The 'name' used to identify this VLAN.
 	Name *string `json:"Name,omitempty"`
 	// The identifier for this Virtual LAN.
-	VlanId *int64 `json:"VlanId,omitempty"`
-	EthNetworkPolicy *FabricEthNetworkPolicyRelationship `json:"EthNetworkPolicy,omitempty"`
-	MulticastPolicy *FabricMulticastPolicyRelationship `json:"MulticastPolicy,omitempty"`
+	VlanId               *int64                              `json:"VlanId,omitempty"`
+	EthNetworkPolicy     *FabricEthNetworkPolicyRelationship `json:"EthNetworkPolicy,omitempty"`
+	MulticastPolicy      *FabricMulticastPolicyRelationship  `json:"MulticastPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *FabricVlan) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricVlan) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *FabricVlan) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricVlan) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -361,9 +361,9 @@ func (o *FabricVlan) UnmarshalJSON(bytes []byte) (err error) {
 		// The 'name' used to identify this VLAN.
 		Name *string `json:"Name,omitempty"`
 		// The identifier for this Virtual LAN.
-		VlanId *int64 `json:"VlanId,omitempty"`
+		VlanId           *int64                              `json:"VlanId,omitempty"`
 		EthNetworkPolicy *FabricEthNetworkPolicyRelationship `json:"EthNetworkPolicy,omitempty"`
-		MulticastPolicy *FabricMulticastPolicyRelationship `json:"MulticastPolicy,omitempty"`
+		MulticastPolicy  *FabricMulticastPolicyRelationship  `json:"MulticastPolicy,omitempty"`
 	}
 
 	varFabricVlanWithoutEmbeddedStruct := FabricVlanWithoutEmbeddedStruct{}
@@ -464,5 +464,3 @@ func (v *NullableFabricVlan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

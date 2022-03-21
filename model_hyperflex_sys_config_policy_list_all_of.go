@@ -20,7 +20,7 @@ type HyperflexSysConfigPolicyListAllOf struct {
 	// The total number of 'hyperflex.SysConfigPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'hyperflex.SysConfigPolicy' resources matching the request.
-	Results []HyperflexSysConfigPolicy `json:"Results,omitempty"`
+	Results              []HyperflexSysConfigPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *HyperflexSysConfigPolicyListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexSysConfigPolicyListAllOf) GetResults() []HyperflexSysConfigPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexSysConfigPolicy
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableHyperflexSysConfigPolicyListAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

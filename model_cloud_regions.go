@@ -23,7 +23,7 @@ type CloudRegions struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType     string   `json:"ObjectType"`
 	AlternateNames []string `json:"AlternateNames,omitempty"`
 	// The default zone for this region.
 	DefaultZone *string `json:"DefaultZone,omitempty"`
@@ -40,9 +40,9 @@ type CloudRegions struct {
 	// HTTP endpoint of the region. For example https://ec2.us-east-2.amazonaws.com.
 	RegionEndPoint *string `json:"RegionEndPoint,omitempty"`
 	// The region Id which is assigned by the cloud provider. For e.g. us-east-1.
-	RegionId *string `json:"RegionId,omitempty"`
-	Zones []string `json:"Zones,omitempty"`
-	Target *AssetTargetRelationship `json:"Target,omitempty"`
+	RegionId             *string                  `json:"RegionId,omitempty"`
+	Zones                []string                 `json:"Zones,omitempty"`
+	Target               *AssetTargetRelationship `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *CloudRegions) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudRegions) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *CloudRegions) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudRegions) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -129,7 +129,7 @@ func (o *CloudRegions) SetObjectType(v string) {
 
 // GetAlternateNames returns the AlternateNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudRegions) GetAlternateNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *CloudRegions) SetRegionId(v string) {
 
 // GetZones returns the Zones field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudRegions) GetZones() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -543,7 +543,7 @@ func (o *CloudRegions) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType     string   `json:"ObjectType"`
 		AlternateNames []string `json:"AlternateNames,omitempty"`
 		// The default zone for this region.
 		DefaultZone *string `json:"DefaultZone,omitempty"`
@@ -560,9 +560,9 @@ func (o *CloudRegions) UnmarshalJSON(bytes []byte) (err error) {
 		// HTTP endpoint of the region. For example https://ec2.us-east-2.amazonaws.com.
 		RegionEndPoint *string `json:"RegionEndPoint,omitempty"`
 		// The region Id which is assigned by the cloud provider. For e.g. us-east-1.
-		RegionId *string `json:"RegionId,omitempty"`
-		Zones []string `json:"Zones,omitempty"`
-		Target *AssetTargetRelationship `json:"Target,omitempty"`
+		RegionId *string                  `json:"RegionId,omitempty"`
+		Zones    []string                 `json:"Zones,omitempty"`
+		Target   *AssetTargetRelationship `json:"Target,omitempty"`
 	}
 
 	varCloudRegionsWithoutEmbeddedStruct := CloudRegionsWithoutEmbeddedStruct{}
@@ -673,5 +673,3 @@ func (v *NullableCloudRegions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

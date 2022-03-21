@@ -22,10 +22,10 @@ type PortInterfaceBaseAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Operational state of an Interface.
-	OperState *string `json:"OperState,omitempty"`
+	OperState                 *string                            `json:"OperState,omitempty"`
 	AcknowledgedPeerInterface *EtherPhysicalPortBaseRelationship `json:"AcknowledgedPeerInterface,omitempty"`
-	PeerInterface *EtherPhysicalPortBaseRelationship `json:"PeerInterface,omitempty"`
-	AdditionalProperties map[string]interface{}
+	PeerInterface             *EtherPhysicalPortBaseRelationship `json:"PeerInterface,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _PortInterfaceBaseAllOf PortInterfaceBaseAllOf
@@ -62,7 +62,7 @@ func (o *PortInterfaceBaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PortInterfaceBaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -86,7 +86,7 @@ func (o *PortInterfaceBaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PortInterfaceBaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -274,5 +274,3 @@ func (v *NullablePortInterfaceBaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

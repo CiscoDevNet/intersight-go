@@ -26,7 +26,7 @@ type CapabilityCimcFirmwareDescriptorAllOf struct {
 	// Revision information for the server.
 	Revision *string `json:"Revision,omitempty"`
 	// Minimum server firmware version for UUID feature support.
-	UuidSupportedVer *string `json:"UuidSupportedVer,omitempty"`
+	UuidSupportedVer     *string `json:"UuidSupportedVer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *CapabilityCimcFirmwareDescriptorAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityCimcFirmwareDescriptorAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *CapabilityCimcFirmwareDescriptorAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityCimcFirmwareDescriptorAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableCapabilityCimcFirmwareDescriptorAllOf) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

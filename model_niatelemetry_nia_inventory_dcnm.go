@@ -29,7 +29,7 @@ type NiatelemetryNiaInventoryDcnm struct {
 	// Returns the value of the dev Field.
 	Dev *bool `json:"Dev,omitempty"`
 	// Number of EPLD images uploaded to DCNM.
-	EpldImageCount *int64 `json:"EpldImageCount,omitempty"`
+	EpldImageCount     *int64                    `json:"EpldImageCount,omitempty"`
 	GoldenImageDetails []NiatelemetryImageDetail `json:"GoldenImageDetails,omitempty"`
 	// Returns the value of the haEnabled field.
 	HaEnabled *bool `json:"HaEnabled,omitempty"`
@@ -48,7 +48,7 @@ type NiatelemetryNiaInventoryDcnm struct {
 	// Returns true if the Smart license is enabled and is in use.
 	IsSmartLicenseEnabled *bool `json:"IsSmartLicenseEnabled,omitempty"`
 	// Mode of controller on DCNM.
-	Mode *string `json:"Mode,omitempty"`
+	Mode        *string                         `json:"Mode,omitempty"`
 	NetworkInfo NullableNiatelemetryNetworkInfo `json:"NetworkInfo,omitempty"`
 	// Returns total number of fabrics in DCNM set-up.
 	NumFabrics *int64 `json:"NumFabrics,omitempty"`
@@ -77,11 +77,11 @@ type NiatelemetryNiaInventoryDcnm struct {
 	// Returns the number of underlay peering active links.
 	UnderlayPeeringActiveLinksCount *int64 `json:"UnderlayPeeringActiveLinksCount,omitempty"`
 	// Number of upgrade jobs configured on DCNM.
-	UpgJobCount *int64 `json:"UpgJobCount,omitempty"`
-	UpgStatus []NiatelemetryJobDetail `json:"UpgStatus,omitempty"`
+	UpgJobCount *int64                  `json:"UpgJobCount,omitempty"`
+	UpgStatus   []NiatelemetryJobDetail `json:"UpgStatus,omitempty"`
 	// Returns the value of the version field.
-	Version *string `json:"Version,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                              `json:"Version,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -123,7 +123,7 @@ func (o *NiatelemetryNiaInventoryDcnm) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryDcnm) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -147,7 +147,7 @@ func (o *NiatelemetryNiaInventoryDcnm) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryDcnm) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -256,7 +256,7 @@ func (o *NiatelemetryNiaInventoryDcnm) SetEpldImageCount(v int64) {
 
 // GetGoldenImageDetails returns the GoldenImageDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryDcnm) GetGoldenImageDetails() []NiatelemetryImageDetail {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryImageDetail
 		return ret
 	}
@@ -588,7 +588,7 @@ func (o *NiatelemetryNiaInventoryDcnm) GetNetworkInfo() NiatelemetryNetworkInfo 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryDcnm) GetNetworkInfoOk() (*NiatelemetryNetworkInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NetworkInfo.Get(), o.NetworkInfo.IsSet()
@@ -607,6 +607,7 @@ func (o *NiatelemetryNiaInventoryDcnm) HasNetworkInfo() bool {
 func (o *NiatelemetryNiaInventoryDcnm) SetNetworkInfo(v NiatelemetryNetworkInfo) {
 	o.NetworkInfo.Set(&v)
 }
+
 // SetNetworkInfoNil sets the value for NetworkInfo to be an explicit nil
 func (o *NiatelemetryNiaInventoryDcnm) SetNetworkInfoNil() {
 	o.NetworkInfo.Set(nil)
@@ -1067,7 +1068,7 @@ func (o *NiatelemetryNiaInventoryDcnm) SetUpgJobCount(v int64) {
 
 // GetUpgStatus returns the UpgStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryDcnm) GetUpgStatus() []NiatelemetryJobDetail {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryJobDetail
 		return ret
 	}
@@ -1290,7 +1291,7 @@ func (o *NiatelemetryNiaInventoryDcnm) UnmarshalJSON(bytes []byte) (err error) {
 		// Returns the value of the dev Field.
 		Dev *bool `json:"Dev,omitempty"`
 		// Number of EPLD images uploaded to DCNM.
-		EpldImageCount *int64 `json:"EpldImageCount,omitempty"`
+		EpldImageCount     *int64                    `json:"EpldImageCount,omitempty"`
 		GoldenImageDetails []NiatelemetryImageDetail `json:"GoldenImageDetails,omitempty"`
 		// Returns the value of the haEnabled field.
 		HaEnabled *bool `json:"HaEnabled,omitempty"`
@@ -1309,7 +1310,7 @@ func (o *NiatelemetryNiaInventoryDcnm) UnmarshalJSON(bytes []byte) (err error) {
 		// Returns true if the Smart license is enabled and is in use.
 		IsSmartLicenseEnabled *bool `json:"IsSmartLicenseEnabled,omitempty"`
 		// Mode of controller on DCNM.
-		Mode *string `json:"Mode,omitempty"`
+		Mode        *string                         `json:"Mode,omitempty"`
 		NetworkInfo NullableNiatelemetryNetworkInfo `json:"NetworkInfo,omitempty"`
 		// Returns total number of fabrics in DCNM set-up.
 		NumFabrics *int64 `json:"NumFabrics,omitempty"`
@@ -1338,10 +1339,10 @@ func (o *NiatelemetryNiaInventoryDcnm) UnmarshalJSON(bytes []byte) (err error) {
 		// Returns the number of underlay peering active links.
 		UnderlayPeeringActiveLinksCount *int64 `json:"UnderlayPeeringActiveLinksCount,omitempty"`
 		// Number of upgrade jobs configured on DCNM.
-		UpgJobCount *int64 `json:"UpgJobCount,omitempty"`
-		UpgStatus []NiatelemetryJobDetail `json:"UpgStatus,omitempty"`
+		UpgJobCount *int64                  `json:"UpgJobCount,omitempty"`
+		UpgStatus   []NiatelemetryJobDetail `json:"UpgStatus,omitempty"`
 		// Returns the value of the version field.
-		Version *string `json:"Version,omitempty"`
+		Version          *string                              `json:"Version,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -1493,5 +1494,3 @@ func (v *NullableNiatelemetryNiaInventoryDcnm) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

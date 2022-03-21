@@ -20,10 +20,10 @@ type HclCompatibilityStatusAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                            `json:"ObjectType"`
 	ProfileList []HclHardwareCompatibilityProfile `json:"ProfileList,omitempty"`
 	// Type of the request to be served. * `FillSupportedVersions` - Responds with the supported firmware and driver versions. The API doesn't expect firmware and driver versions to be passed in the request and ignores if passed. * `CheckCompatibility` - Checks the compatibility for the given firmware and driver versions. This request type expects the firmware and driver versions to filled and the service validates the values and responds back with the error codes. * `GetRecommendedDrivers` - Responds with the supported drivers. The API expects firmware version to be filled. The API populates driver ISO url for the given server model. Today the link is same for all servers managed by UCSM whereas it depends on the model for Standalone servers.
-	RequestType *string `json:"RequestType,omitempty"`
+	RequestType          *string `json:"RequestType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *HclCompatibilityStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclCompatibilityStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *HclCompatibilityStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclCompatibilityStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -106,7 +106,7 @@ func (o *HclCompatibilityStatusAllOf) SetObjectType(v string) {
 
 // GetProfileList returns the ProfileList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclCompatibilityStatusAllOf) GetProfileList() []HclHardwareCompatibilityProfile {
-	if o == nil  {
+	if o == nil {
 		var ret []HclHardwareCompatibilityProfile
 		return ret
 	}
@@ -246,5 +246,3 @@ func (v *NullableHclCompatibilityStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

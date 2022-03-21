@@ -25,11 +25,11 @@ type PolicyAbstractConfigProfile struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// User initiated action. Each profile type has its own supported actions. For HyperFlex cluster profile, the supported actions are -- Validate, Deploy, Continue, Retry, Abort, Unassign For server profile, the support actions are -- Deploy, Unassign.
-	Action *string `json:"Action,omitempty"`
-	ActionParams []PolicyActionParam `json:"ActionParams,omitempty"`
+	Action        *string                     `json:"Action,omitempty"`
+	ActionParams  []PolicyActionParam         `json:"ActionParams,omitempty"`
 	ConfigContext NullablePolicyConfigContext `json:"ConfigContext,omitempty"`
 	// An array of relationships to policyAbstractPolicy resources.
-	PolicyBucket []PolicyAbstractPolicyRelationship `json:"PolicyBucket,omitempty"`
+	PolicyBucket         []PolicyAbstractPolicyRelationship `json:"PolicyBucket,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *PolicyAbstractConfigProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *PolicyAbstractConfigProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PolicyAbstractConfigProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -142,7 +142,7 @@ func (o *PolicyAbstractConfigProfile) SetAction(v string) {
 
 // GetActionParams returns the ActionParams field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigProfile) GetActionParams() []PolicyActionParam {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyActionParam
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *PolicyAbstractConfigProfile) GetConfigContext() PolicyConfigContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyAbstractConfigProfile) GetConfigContextOk() (*PolicyConfigContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigContext.Get(), o.ConfigContext.IsSet()
@@ -205,6 +205,7 @@ func (o *PolicyAbstractConfigProfile) HasConfigContext() bool {
 func (o *PolicyAbstractConfigProfile) SetConfigContext(v PolicyConfigContext) {
 	o.ConfigContext.Set(&v)
 }
+
 // SetConfigContextNil sets the value for ConfigContext to be an explicit nil
 func (o *PolicyAbstractConfigProfile) SetConfigContextNil() {
 	o.ConfigContext.Set(nil)
@@ -217,7 +218,7 @@ func (o *PolicyAbstractConfigProfile) UnsetConfigContext() {
 
 // GetPolicyBucket returns the PolicyBucket field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAbstractConfigProfile) GetPolicyBucket() []PolicyAbstractPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractPolicyRelationship
 		return ret
 	}
@@ -291,8 +292,8 @@ func (o *PolicyAbstractConfigProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// User initiated action. Each profile type has its own supported actions. For HyperFlex cluster profile, the supported actions are -- Validate, Deploy, Continue, Retry, Abort, Unassign For server profile, the support actions are -- Deploy, Unassign.
-		Action *string `json:"Action,omitempty"`
-		ActionParams []PolicyActionParam `json:"ActionParams,omitempty"`
+		Action        *string                     `json:"Action,omitempty"`
+		ActionParams  []PolicyActionParam         `json:"ActionParams,omitempty"`
 		ConfigContext NullablePolicyConfigContext `json:"ConfigContext,omitempty"`
 		// An array of relationships to policyAbstractPolicy resources.
 		PolicyBucket []PolicyAbstractPolicyRelationship `json:"PolicyBucket,omitempty"`
@@ -392,5 +393,3 @@ func (v *NullablePolicyAbstractConfigProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

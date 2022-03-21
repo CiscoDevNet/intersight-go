@@ -27,7 +27,7 @@ type HyperflexWwxnPrefixRange struct {
 	// The end WWxN prefix of a WWPN/WWNN range in the form of 20:00:00:25:B5:XX.
 	EndAddr *string `json:"EndAddr,omitempty"`
 	// The start WWxN prefix of a WWPN/WWNN range in the form of 20:00:00:25:B5:XX.
-	StartAddr *string `json:"StartAddr,omitempty"`
+	StartAddr            *string `json:"StartAddr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *HyperflexWwxnPrefixRange) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexWwxnPrefixRange) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *HyperflexWwxnPrefixRange) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexWwxnPrefixRange) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableHyperflexWwxnPrefixRange) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

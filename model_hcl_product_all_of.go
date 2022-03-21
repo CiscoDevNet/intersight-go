@@ -20,10 +20,10 @@ type HclProductAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string   `json:"ObjectType"`
 	DriverNames []string `json:"DriverNames,omitempty"`
 	// Error code indicating the support status. * `Success` - The input combination is valid. * `Unknown` - Unknown API request to the service. * `UnknownServer` - An invalid server model is given API requests or the server model is not present in the HCL database. * `InvalidUcsVersion` - UCS Version is not in expected format. * `ProcessorNotSupported` - Processor is not supported with the given Server or the Processor does not exist in the HCL database. * `OSNotSupported` - OS version is not supported with the given server, processor combination or OS information is not present in the HCL database. * `OSUnknown` - OS vendor or version is not known as per the HCL database. * `UCSVersionNotSupported` - UCS Version is not supported with the given server, processor and OS combination or the UCS version is not present in the HCL database. * `UcsVersionServerOSCombinationNotSupported` - Combination of UCS version, server (model and processor) and os version is not supported. * `ProductUnknown` - Product is not known as per the HCL database. * `ProductNotSupported` - Product is not supported in the given UCS version, server (model and processor) and operating system version. * `DriverNameNotSupported` - Driver protocol or name is not supported for the given product. * `FirmwareVersionNotSupported` - Firmware version not supported for the component and the server, operating system combination. * `DriverVersionNotSupported` - Driver version not supported for the component and the server, operating system combination. * `FirmwareVersionDriverVersionCombinationNotSupported` - Both Firmware and Driver versions are not supported for the component and the server, operating system combination. * `FirmwareVersionAndDriverVersionNotSupported` - Firmware and Driver version combination not supported for the component and the server, operating system combination. * `FirmwareVersionAndDriverNameNotSupported` - Firmware Version and Driver name or not supported with the component and the server, operating system combination. * `InternalError` - API requests to the service have either failed or timed out. * `MarshallingError` - Error in JSON marshalling. * `Exempted` - An exempted error code means that the product is part of the exempted Catalog and should be ignored for HCL validation purposes.
-	ErrorCode *string `json:"ErrorCode,omitempty"`
+	ErrorCode *string       `json:"ErrorCode,omitempty"`
 	Firmwares []HclFirmware `json:"Firmwares,omitempty"`
 	// Identifier of the product.
 	Id *string `json:"Id,omitempty"`
@@ -34,7 +34,7 @@ type HclProductAllOf struct {
 	// Type of the product/adapter say OCP, PT, GPU. * `` - Default type of the Product. * `Adapter` - Represents network adapter cards. * `StorageController` - Represents storage controllers. * `GPU` - Represents graphics cards.
 	Type *string `json:"Type,omitempty"`
 	// Vendor of the product or adapter.
-	Vendor *string `json:"Vendor,omitempty"`
+	Vendor               *string `json:"Vendor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *HclProductAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclProductAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *HclProductAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclProductAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *HclProductAllOf) SetObjectType(v string) {
 
 // GetDriverNames returns the DriverNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclProductAllOf) GetDriverNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *HclProductAllOf) SetErrorCode(v string) {
 
 // GetFirmwares returns the Firmwares field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclProductAllOf) GetFirmwares() []HclFirmware {
-	if o == nil  {
+	if o == nil {
 		var ret []HclFirmware
 		return ret
 	}
@@ -474,5 +474,3 @@ func (v *NullableHclProductAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

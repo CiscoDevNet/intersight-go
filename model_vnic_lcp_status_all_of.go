@@ -24,9 +24,9 @@ type VnicLcpStatusAllOf struct {
 	// The reason for the status - it will be empty if status is ok or validating. If error, it will have the appropriate message indicating the reason for failure.
 	Reason *string `json:"Reason,omitempty"`
 	// Indicates if the LCP is ready for Deploy or not. * `ok` - No issues with the LCP/SCP/VIF. * `error` - The LCP/SCP/VIF cannot be deployed due to error. * `validating` - Validation in progress for the LCP.
-	Status *string `json:"Status,omitempty"`
-	VnicInfo []VnicVifStatus `json:"VnicInfo,omitempty"`
-	Profile *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
+	Status               *string                                  `json:"Status,omitempty"`
+	VnicInfo             []VnicVifStatus                          `json:"VnicInfo,omitempty"`
+	Profile              *PolicyAbstractConfigProfileRelationship `json:"Profile,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *VnicLcpStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicLcpStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *VnicLcpStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicLcpStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -173,7 +173,7 @@ func (o *VnicLcpStatusAllOf) SetStatus(v string) {
 
 // GetVnicInfo returns the VnicInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VnicLcpStatusAllOf) GetVnicInfo() []VnicVifStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []VnicVifStatus
 		return ret
 	}
@@ -321,5 +321,3 @@ func (v *NullableVnicLcpStatusAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

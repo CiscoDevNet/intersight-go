@@ -18,32 +18,31 @@ import (
 
 // BootUsbDeviceResponse - The response body of a HTTP GET request for the 'boot.UsbDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'boot.UsbDevice' resources.
 type BootUsbDeviceResponse struct {
-	BootUsbDeviceList *BootUsbDeviceList
+	BootUsbDeviceList    *BootUsbDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BootUsbDeviceListAsBootUsbDeviceResponse is a convenience function that returns BootUsbDeviceList wrapped in BootUsbDeviceResponse
 func BootUsbDeviceListAsBootUsbDeviceResponse(v *BootUsbDeviceList) BootUsbDeviceResponse {
-	return BootUsbDeviceResponse{ BootUsbDeviceList: v}
+	return BootUsbDeviceResponse{BootUsbDeviceList: v}
 }
 
 // MoAggregateTransformAsBootUsbDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootUsbDeviceResponse
 func MoAggregateTransformAsBootUsbDeviceResponse(v *MoAggregateTransform) BootUsbDeviceResponse {
-	return BootUsbDeviceResponse{ MoAggregateTransform: v}
+	return BootUsbDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootUsbDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootUsbDeviceResponse
 func MoDocumentCountAsBootUsbDeviceResponse(v *MoDocumentCount) BootUsbDeviceResponse {
-	return BootUsbDeviceResponse{ MoDocumentCount: v}
+	return BootUsbDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootUsbDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootUsbDeviceResponse
 func MoTagSummaryAsBootUsbDeviceResponse(v *MoTagSummary) BootUsbDeviceResponse {
-	return BootUsbDeviceResponse{ MoTagSummary: v}
+	return BootUsbDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootUsbDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootUsbDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootUsbDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootUsbDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootUsbDeviceList != nil {
 		return obj.BootUsbDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootUsbDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

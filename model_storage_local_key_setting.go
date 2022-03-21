@@ -31,7 +31,7 @@ type StorageLocalKeySetting struct {
 	// Indicates whether the value of the 'newKey' property has been set.
 	IsNewKeySet *bool `json:"IsNewKeySet,omitempty"`
 	// New key to be configured on the controller.
-	NewKey *string `json:"NewKey,omitempty"`
+	NewKey               *string `json:"NewKey,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *StorageLocalKeySetting) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageLocalKeySetting) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *StorageLocalKeySetting) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageLocalKeySetting) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableStorageLocalKeySetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

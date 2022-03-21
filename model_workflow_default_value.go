@@ -29,7 +29,7 @@ type WorkflowDefaultValue struct {
 	// Override the default value provided for the data type. When true, allow the user to enter value for the data type.
 	Override *bool `json:"Override,omitempty"`
 	// Default value for the data type. If default value was provided and the input was required the default value will be used as the input.
-	Value interface{} `json:"Value,omitempty"`
+	Value                interface{} `json:"Value,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *WorkflowDefaultValue) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDefaultValue) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *WorkflowDefaultValue) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowDefaultValue) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -172,7 +172,7 @@ func (o *WorkflowDefaultValue) SetOverride(v bool) {
 
 // GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowDefaultValue) GetValue() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -342,5 +342,3 @@ func (v *NullableWorkflowDefaultValue) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

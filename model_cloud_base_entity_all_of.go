@@ -20,18 +20,18 @@ type CloudBaseEntityAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string                   `json:"ObjectType"`
 	BillingUnit NullableCloudBillingUnit `json:"BillingUnit,omitempty"`
 	// Description about the cloud resource.
 	Description *string `json:"Description,omitempty"`
 	// Internally generated identity of the cloud resource.
 	Identity *string `json:"Identity,omitempty"`
 	// Name of the cloud resource.
-	Name *string `json:"Name,omitempty"`
+	Name       *string                  `json:"Name,omitempty"`
 	RegionInfo NullableCloudCloudRegion `json:"RegionInfo,omitempty"`
 	// UUID (Universally Unique IDentifier) is a 128-bit value used for unique identification.
-	Uuid *string `json:"Uuid,omitempty"`
-	ZoneInfo NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
+	Uuid                 *string                       `json:"Uuid,omitempty"`
+	ZoneInfo             NullableCloudAvailabilityZone `json:"ZoneInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *CloudBaseEntityAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseEntityAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *CloudBaseEntityAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseEntityAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *CloudBaseEntityAllOf) GetBillingUnit() CloudBillingUnit {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseEntityAllOf) GetBillingUnitOk() (*CloudBillingUnit, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingUnit.Get(), o.BillingUnit.IsSet()
@@ -136,6 +136,7 @@ func (o *CloudBaseEntityAllOf) HasBillingUnit() bool {
 func (o *CloudBaseEntityAllOf) SetBillingUnit(v CloudBillingUnit) {
 	o.BillingUnit.Set(&v)
 }
+
 // SetBillingUnitNil sets the value for BillingUnit to be an explicit nil
 func (o *CloudBaseEntityAllOf) SetBillingUnitNil() {
 	o.BillingUnit.Set(nil)
@@ -255,7 +256,7 @@ func (o *CloudBaseEntityAllOf) GetRegionInfo() CloudCloudRegion {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseEntityAllOf) GetRegionInfoOk() (*CloudCloudRegion, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RegionInfo.Get(), o.RegionInfo.IsSet()
@@ -274,6 +275,7 @@ func (o *CloudBaseEntityAllOf) HasRegionInfo() bool {
 func (o *CloudBaseEntityAllOf) SetRegionInfo(v CloudCloudRegion) {
 	o.RegionInfo.Set(&v)
 }
+
 // SetRegionInfoNil sets the value for RegionInfo to be an explicit nil
 func (o *CloudBaseEntityAllOf) SetRegionInfoNil() {
 	o.RegionInfo.Set(nil)
@@ -329,7 +331,7 @@ func (o *CloudBaseEntityAllOf) GetZoneInfo() CloudAvailabilityZone {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CloudBaseEntityAllOf) GetZoneInfoOk() (*CloudAvailabilityZone, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ZoneInfo.Get(), o.ZoneInfo.IsSet()
@@ -348,6 +350,7 @@ func (o *CloudBaseEntityAllOf) HasZoneInfo() bool {
 func (o *CloudBaseEntityAllOf) SetZoneInfo(v CloudAvailabilityZone) {
 	o.ZoneInfo.Set(&v)
 }
+
 // SetZoneInfoNil sets the value for ZoneInfo to be an explicit nil
 func (o *CloudBaseEntityAllOf) SetZoneInfoNil() {
 	o.ZoneInfo.Set(nil)
@@ -455,5 +458,3 @@ func (v *NullableCloudBaseEntityAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

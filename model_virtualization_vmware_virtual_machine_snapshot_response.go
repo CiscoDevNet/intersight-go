@@ -18,32 +18,31 @@ import (
 
 // VirtualizationVmwareVirtualMachineSnapshotResponse - The response body of a HTTP GET request for the 'virtualization.VmwareVirtualMachineSnapshot' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.VmwareVirtualMachineSnapshot' resources.
 type VirtualizationVmwareVirtualMachineSnapshotResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                           *MoAggregateTransform
+	MoDocumentCount                                *MoDocumentCount
+	MoTagSummary                                   *MoTagSummary
 	VirtualizationVmwareVirtualMachineSnapshotList *VirtualizationVmwareVirtualMachineSnapshotList
 }
 
 // MoAggregateTransformAsVirtualizationVmwareVirtualMachineSnapshotResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationVmwareVirtualMachineSnapshotResponse
 func MoAggregateTransformAsVirtualizationVmwareVirtualMachineSnapshotResponse(v *MoAggregateTransform) VirtualizationVmwareVirtualMachineSnapshotResponse {
-	return VirtualizationVmwareVirtualMachineSnapshotResponse{ MoAggregateTransform: v}
+	return VirtualizationVmwareVirtualMachineSnapshotResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationVmwareVirtualMachineSnapshotResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationVmwareVirtualMachineSnapshotResponse
 func MoDocumentCountAsVirtualizationVmwareVirtualMachineSnapshotResponse(v *MoDocumentCount) VirtualizationVmwareVirtualMachineSnapshotResponse {
-	return VirtualizationVmwareVirtualMachineSnapshotResponse{ MoDocumentCount: v}
+	return VirtualizationVmwareVirtualMachineSnapshotResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationVmwareVirtualMachineSnapshotResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationVmwareVirtualMachineSnapshotResponse
 func MoTagSummaryAsVirtualizationVmwareVirtualMachineSnapshotResponse(v *MoTagSummary) VirtualizationVmwareVirtualMachineSnapshotResponse {
-	return VirtualizationVmwareVirtualMachineSnapshotResponse{ MoTagSummary: v}
+	return VirtualizationVmwareVirtualMachineSnapshotResponse{MoTagSummary: v}
 }
 
 // VirtualizationVmwareVirtualMachineSnapshotListAsVirtualizationVmwareVirtualMachineSnapshotResponse is a convenience function that returns VirtualizationVmwareVirtualMachineSnapshotList wrapped in VirtualizationVmwareVirtualMachineSnapshotResponse
 func VirtualizationVmwareVirtualMachineSnapshotListAsVirtualizationVmwareVirtualMachineSnapshotResponse(v *VirtualizationVmwareVirtualMachineSnapshotList) VirtualizationVmwareVirtualMachineSnapshotResponse {
-	return VirtualizationVmwareVirtualMachineSnapshotResponse{ VirtualizationVmwareVirtualMachineSnapshotList: v}
+	return VirtualizationVmwareVirtualMachineSnapshotResponse{VirtualizationVmwareVirtualMachineSnapshotList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationVmwareVirtualMachineSnapshotResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationVmwareVirtualMachineSnapshotResponse) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *VirtualizationVmwareVirtualMachineSnapshotResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationVmwareVirtualMachineSnapshotResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineSnapshotResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

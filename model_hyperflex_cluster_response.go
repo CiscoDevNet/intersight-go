@@ -20,30 +20,29 @@ import (
 type HyperflexClusterResponse struct {
 	HyperflexClusterList *HyperflexClusterList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // HyperflexClusterListAsHyperflexClusterResponse is a convenience function that returns HyperflexClusterList wrapped in HyperflexClusterResponse
 func HyperflexClusterListAsHyperflexClusterResponse(v *HyperflexClusterList) HyperflexClusterResponse {
-	return HyperflexClusterResponse{ HyperflexClusterList: v}
+	return HyperflexClusterResponse{HyperflexClusterList: v}
 }
 
 // MoAggregateTransformAsHyperflexClusterResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexClusterResponse
 func MoAggregateTransformAsHyperflexClusterResponse(v *MoAggregateTransform) HyperflexClusterResponse {
-	return HyperflexClusterResponse{ MoAggregateTransform: v}
+	return HyperflexClusterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexClusterResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexClusterResponse
 func MoDocumentCountAsHyperflexClusterResponse(v *MoDocumentCount) HyperflexClusterResponse {
-	return HyperflexClusterResponse{ MoDocumentCount: v}
+	return HyperflexClusterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexClusterResponse is a convenience function that returns MoTagSummary wrapped in HyperflexClusterResponse
 func MoTagSummaryAsHyperflexClusterResponse(v *MoTagSummary) HyperflexClusterResponse {
-	return HyperflexClusterResponse{ MoTagSummary: v}
+	return HyperflexClusterResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexClusterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterResponse) GetActualInstance() interface{} {
 	if obj.HyperflexClusterList != nil {
 		return obj.HyperflexClusterList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexClusterResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

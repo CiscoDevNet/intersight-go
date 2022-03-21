@@ -18,20 +18,19 @@ import (
 
 // RecommendationCapacityRunwayRelationship - A relationship to the 'recommendation.CapacityRunway' resource, or the expanded 'recommendation.CapacityRunway' resource, or the 'null' value.
 type RecommendationCapacityRunwayRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                      *MoMoRef
 	RecommendationCapacityRunway *RecommendationCapacityRunway
 }
 
 // MoMoRefAsRecommendationCapacityRunwayRelationship is a convenience function that returns MoMoRef wrapped in RecommendationCapacityRunwayRelationship
 func MoMoRefAsRecommendationCapacityRunwayRelationship(v *MoMoRef) RecommendationCapacityRunwayRelationship {
-	return RecommendationCapacityRunwayRelationship{ MoMoRef: v}
+	return RecommendationCapacityRunwayRelationship{MoMoRef: v}
 }
 
 // RecommendationCapacityRunwayAsRecommendationCapacityRunwayRelationship is a convenience function that returns RecommendationCapacityRunway wrapped in RecommendationCapacityRunwayRelationship
 func RecommendationCapacityRunwayAsRecommendationCapacityRunwayRelationship(v *RecommendationCapacityRunway) RecommendationCapacityRunwayRelationship {
-	return RecommendationCapacityRunwayRelationship{ RecommendationCapacityRunway: v}
+	return RecommendationCapacityRunwayRelationship{RecommendationCapacityRunway: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *RecommendationCapacityRunwayRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src RecommendationCapacityRunwayRelationship) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *RecommendationCapacityRunwayRelationship) GetActualInstance() (interface{}) {
+func (obj *RecommendationCapacityRunwayRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableRecommendationCapacityRunwayRelationship) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

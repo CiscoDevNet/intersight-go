@@ -24,17 +24,17 @@ type IppoolIpLeaseAllOf struct {
 	// Type of the IP address requested. * `IPv4` - IP V4 address type requested. * `IPv6` - IP V6 address type requested.
 	IpType *string `json:"IpType,omitempty"`
 	// IPv4 Address given as a lease to an external entity like server profiles.
-	IpV4Address *string `json:"IpV4Address,omitempty"`
-	IpV4Config NullableIppoolIpV4Config `json:"IpV4Config,omitempty"`
+	IpV4Address *string                  `json:"IpV4Address,omitempty"`
+	IpV4Config  NullableIppoolIpV4Config `json:"IpV4Config,omitempty"`
 	// IPv6 Address given as a lease to an external entity like server profiles.
-	IpV6Address *string `json:"IpV6Address,omitempty"`
-	IpV6Config NullableIppoolIpV6Config `json:"IpV6Config,omitempty"`
-	AssignedToEntity *MoBaseMoRelationship `json:"AssignedToEntity,omitempty"`
-	BlockLease *IppoolBlockLeaseRelationship `json:"BlockLease,omitempty"`
-	Pool *IppoolPoolRelationship `json:"Pool,omitempty"`
-	PoolMember *IppoolPoolMemberRelationship `json:"PoolMember,omitempty"`
-	Universe *IppoolUniverseRelationship `json:"Universe,omitempty"`
-	Vrf *VrfVrfRelationship `json:"Vrf,omitempty"`
+	IpV6Address          *string                       `json:"IpV6Address,omitempty"`
+	IpV6Config           NullableIppoolIpV6Config      `json:"IpV6Config,omitempty"`
+	AssignedToEntity     *MoBaseMoRelationship         `json:"AssignedToEntity,omitempty"`
+	BlockLease           *IppoolBlockLeaseRelationship `json:"BlockLease,omitempty"`
+	Pool                 *IppoolPoolRelationship       `json:"Pool,omitempty"`
+	PoolMember           *IppoolPoolMemberRelationship `json:"PoolMember,omitempty"`
+	Universe             *IppoolUniverseRelationship   `json:"Universe,omitempty"`
+	Vrf                  *VrfVrfRelationship           `json:"Vrf,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *IppoolIpLeaseAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IppoolIpLeaseAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *IppoolIpLeaseAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IppoolIpLeaseAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -192,7 +192,7 @@ func (o *IppoolIpLeaseAllOf) GetIpV4Config() IppoolIpV4Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IppoolIpLeaseAllOf) GetIpV4ConfigOk() (*IppoolIpV4Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV4Config.Get(), o.IpV4Config.IsSet()
@@ -211,6 +211,7 @@ func (o *IppoolIpLeaseAllOf) HasIpV4Config() bool {
 func (o *IppoolIpLeaseAllOf) SetIpV4Config(v IppoolIpV4Config) {
 	o.IpV4Config.Set(&v)
 }
+
 // SetIpV4ConfigNil sets the value for IpV4Config to be an explicit nil
 func (o *IppoolIpLeaseAllOf) SetIpV4ConfigNil() {
 	o.IpV4Config.Set(nil)
@@ -266,7 +267,7 @@ func (o *IppoolIpLeaseAllOf) GetIpV6Config() IppoolIpV6Config {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IppoolIpLeaseAllOf) GetIpV6ConfigOk() (*IppoolIpV6Config, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IpV6Config.Get(), o.IpV6Config.IsSet()
@@ -285,6 +286,7 @@ func (o *IppoolIpLeaseAllOf) HasIpV6Config() bool {
 func (o *IppoolIpLeaseAllOf) SetIpV6Config(v IppoolIpV6Config) {
 	o.IpV6Config.Set(&v)
 }
+
 // SetIpV6ConfigNil sets the value for IpV6Config to be an explicit nil
 func (o *IppoolIpLeaseAllOf) SetIpV6ConfigNil() {
 	o.IpV6Config.Set(nil)
@@ -600,5 +602,3 @@ func (v *NullableIppoolIpLeaseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

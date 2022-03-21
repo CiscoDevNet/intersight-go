@@ -54,8 +54,8 @@ type NiatelemetryEpgAllOf struct {
 	// The Site name represents an APIC cluster. Service Engine can onboard multiple APIC clusters / sites.
 	SiteName *string `json:"SiteName,omitempty"`
 	// Logical Operators for attribute based microsegmentation in a hypervisor.
-	UsegHypervCount *int64 `json:"UsegHypervCount,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	UsegHypervCount      *int64                               `json:"UsegHypervCount,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -97,7 +97,7 @@ func (o *NiatelemetryEpgAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryEpgAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -121,7 +121,7 @@ func (o *NiatelemetryEpgAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryEpgAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -849,5 +849,3 @@ func (v *NullableNiatelemetryEpgAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

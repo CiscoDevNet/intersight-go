@@ -34,8 +34,8 @@ type NiatelemetryCommonPoliciesAllOf struct {
 	// List of Dn of Syslog Src for the above common pol.
 	SyslogSrc *string `json:"SyslogSrc,omitempty"`
 	// List of Dn of Syslog Sys Msg the above common pol.
-	SyslogSysMsg *string `json:"SyslogSysMsg,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SyslogSysMsg         *string                              `json:"SyslogSysMsg,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *NiatelemetryCommonPoliciesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryCommonPoliciesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *NiatelemetryCommonPoliciesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryCommonPoliciesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -469,5 +469,3 @@ func (v *NullableNiatelemetryCommonPoliciesAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

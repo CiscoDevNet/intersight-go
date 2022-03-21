@@ -18,32 +18,31 @@ import (
 
 // StoragePureSnapshotScheduleResponse - The response body of a HTTP GET request for the 'storage.PureSnapshotSchedule' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.PureSnapshotSchedule' resources.
 type StoragePureSnapshotScheduleResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	StoragePureSnapshotScheduleList *StoragePureSnapshotScheduleList
 }
 
 // MoAggregateTransformAsStoragePureSnapshotScheduleResponse is a convenience function that returns MoAggregateTransform wrapped in StoragePureSnapshotScheduleResponse
 func MoAggregateTransformAsStoragePureSnapshotScheduleResponse(v *MoAggregateTransform) StoragePureSnapshotScheduleResponse {
-	return StoragePureSnapshotScheduleResponse{ MoAggregateTransform: v}
+	return StoragePureSnapshotScheduleResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStoragePureSnapshotScheduleResponse is a convenience function that returns MoDocumentCount wrapped in StoragePureSnapshotScheduleResponse
 func MoDocumentCountAsStoragePureSnapshotScheduleResponse(v *MoDocumentCount) StoragePureSnapshotScheduleResponse {
-	return StoragePureSnapshotScheduleResponse{ MoDocumentCount: v}
+	return StoragePureSnapshotScheduleResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStoragePureSnapshotScheduleResponse is a convenience function that returns MoTagSummary wrapped in StoragePureSnapshotScheduleResponse
 func MoTagSummaryAsStoragePureSnapshotScheduleResponse(v *MoTagSummary) StoragePureSnapshotScheduleResponse {
-	return StoragePureSnapshotScheduleResponse{ MoTagSummary: v}
+	return StoragePureSnapshotScheduleResponse{MoTagSummary: v}
 }
 
 // StoragePureSnapshotScheduleListAsStoragePureSnapshotScheduleResponse is a convenience function that returns StoragePureSnapshotScheduleList wrapped in StoragePureSnapshotScheduleResponse
 func StoragePureSnapshotScheduleListAsStoragePureSnapshotScheduleResponse(v *StoragePureSnapshotScheduleList) StoragePureSnapshotScheduleResponse {
-	return StoragePureSnapshotScheduleResponse{ StoragePureSnapshotScheduleList: v}
+	return StoragePureSnapshotScheduleResponse{StoragePureSnapshotScheduleList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureSnapshotScheduleResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StoragePureSnapshotScheduleResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureSnapshotScheduleResponse) GetActualInstance() (interface{}) {
+func (obj *StoragePureSnapshotScheduleResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStoragePureSnapshotScheduleResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

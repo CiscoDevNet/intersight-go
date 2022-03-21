@@ -23,7 +23,7 @@ type VirtualizationVmwareDatastoreList struct {
 	// The total number of 'virtualization.VmwareDatastore' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.VmwareDatastore' resources matching the request.
-	Results []VirtualizationVmwareDatastore `json:"Results,omitempty"`
+	Results              []VirtualizationVmwareDatastore `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VirtualizationVmwareDatastoreList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareDatastoreList) GetResults() []VirtualizationVmwareDatastore {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareDatastore
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableVirtualizationVmwareDatastoreList) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,11 +23,11 @@ type RecoveryScheduleConfigPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Schedule NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
+	ObjectType string                         `json:"ObjectType"`
+	Schedule   NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
 	// An array of relationships to recoveryBackupProfile resources.
-	BackupProfiles []RecoveryBackupProfileRelationship `json:"BackupProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BackupProfiles       []RecoveryBackupProfileRelationship   `json:"BackupProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *RecoveryScheduleConfigPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryScheduleConfigPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *RecoveryScheduleConfigPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryScheduleConfigPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *RecoveryScheduleConfigPolicy) GetSchedule() RecoveryBackupSchedule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RecoveryScheduleConfigPolicy) GetScheduleOk() (*RecoveryBackupSchedule, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schedule.Get(), o.Schedule.IsSet()
@@ -136,6 +136,7 @@ func (o *RecoveryScheduleConfigPolicy) HasSchedule() bool {
 func (o *RecoveryScheduleConfigPolicy) SetSchedule(v RecoveryBackupSchedule) {
 	o.Schedule.Set(&v)
 }
+
 // SetScheduleNil sets the value for Schedule to be an explicit nil
 func (o *RecoveryScheduleConfigPolicy) SetScheduleNil() {
 	o.Schedule.Set(nil)
@@ -148,7 +149,7 @@ func (o *RecoveryScheduleConfigPolicy) UnsetSchedule() {
 
 // GetBackupProfiles returns the BackupProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecoveryScheduleConfigPolicy) GetBackupProfiles() []RecoveryBackupProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RecoveryBackupProfileRelationship
 		return ret
 	}
@@ -249,11 +250,11 @@ func (o *RecoveryScheduleConfigPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Schedule NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
+		ObjectType string                         `json:"ObjectType"`
+		Schedule   NullableRecoveryBackupSchedule `json:"Schedule,omitempty"`
 		// An array of relationships to recoveryBackupProfile resources.
-		BackupProfiles []RecoveryBackupProfileRelationship `json:"BackupProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		BackupProfiles []RecoveryBackupProfileRelationship   `json:"BackupProfiles,omitempty"`
+		Organization   *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varRecoveryScheduleConfigPolicyWithoutEmbeddedStruct := RecoveryScheduleConfigPolicyWithoutEmbeddedStruct{}
@@ -348,5 +349,3 @@ func (v *NullableRecoveryScheduleConfigPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

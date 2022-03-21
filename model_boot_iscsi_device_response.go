@@ -18,32 +18,31 @@ import (
 
 // BootIscsiDeviceResponse - The response body of a HTTP GET request for the 'boot.IscsiDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'boot.IscsiDevice' resources.
 type BootIscsiDeviceResponse struct {
-	BootIscsiDeviceList *BootIscsiDeviceList
+	BootIscsiDeviceList  *BootIscsiDeviceList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BootIscsiDeviceListAsBootIscsiDeviceResponse is a convenience function that returns BootIscsiDeviceList wrapped in BootIscsiDeviceResponse
 func BootIscsiDeviceListAsBootIscsiDeviceResponse(v *BootIscsiDeviceList) BootIscsiDeviceResponse {
-	return BootIscsiDeviceResponse{ BootIscsiDeviceList: v}
+	return BootIscsiDeviceResponse{BootIscsiDeviceList: v}
 }
 
 // MoAggregateTransformAsBootIscsiDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in BootIscsiDeviceResponse
 func MoAggregateTransformAsBootIscsiDeviceResponse(v *MoAggregateTransform) BootIscsiDeviceResponse {
-	return BootIscsiDeviceResponse{ MoAggregateTransform: v}
+	return BootIscsiDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBootIscsiDeviceResponse is a convenience function that returns MoDocumentCount wrapped in BootIscsiDeviceResponse
 func MoDocumentCountAsBootIscsiDeviceResponse(v *MoDocumentCount) BootIscsiDeviceResponse {
-	return BootIscsiDeviceResponse{ MoDocumentCount: v}
+	return BootIscsiDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBootIscsiDeviceResponse is a convenience function that returns MoTagSummary wrapped in BootIscsiDeviceResponse
 func MoTagSummaryAsBootIscsiDeviceResponse(v *MoTagSummary) BootIscsiDeviceResponse {
-	return BootIscsiDeviceResponse{ MoTagSummary: v}
+	return BootIscsiDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootIscsiDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BootIscsiDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootIscsiDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *BootIscsiDeviceResponse) GetActualInstance() interface{} {
 	if obj.BootIscsiDeviceList != nil {
 		return obj.BootIscsiDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBootIscsiDeviceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

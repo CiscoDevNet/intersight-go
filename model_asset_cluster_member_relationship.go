@@ -19,19 +19,18 @@ import (
 // AssetClusterMemberRelationship - A relationship to the 'asset.ClusterMember' resource, or the expanded 'asset.ClusterMember' resource, or the 'null' value.
 type AssetClusterMemberRelationship struct {
 	AssetClusterMember *AssetClusterMember
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 }
 
 // AssetClusterMemberAsAssetClusterMemberRelationship is a convenience function that returns AssetClusterMember wrapped in AssetClusterMemberRelationship
 func AssetClusterMemberAsAssetClusterMemberRelationship(v *AssetClusterMember) AssetClusterMemberRelationship {
-	return AssetClusterMemberRelationship{ AssetClusterMember: v}
+	return AssetClusterMemberRelationship{AssetClusterMember: v}
 }
 
 // MoMoRefAsAssetClusterMemberRelationship is a convenience function that returns MoMoRef wrapped in AssetClusterMemberRelationship
 func MoMoRefAsAssetClusterMemberRelationship(v *MoMoRef) AssetClusterMemberRelationship {
-	return AssetClusterMemberRelationship{ MoMoRef: v}
+	return AssetClusterMemberRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetClusterMemberRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetClusterMemberRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetClusterMemberRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetClusterMemberRelationship) GetActualInstance() interface{} {
 	if obj.AssetClusterMember != nil {
 		return obj.AssetClusterMember
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetClusterMemberRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

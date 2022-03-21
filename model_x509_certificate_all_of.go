@@ -21,8 +21,8 @@ type X509CertificateAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Issuer NullablePkixDistinguishedName `json:"Issuer,omitempty"`
+	ObjectType string                        `json:"ObjectType"`
+	Issuer     NullablePkixDistinguishedName `json:"Issuer,omitempty"`
 	// The date on which the certificate's validity period ends.
 	NotAfter *time.Time `json:"NotAfter,omitempty"`
 	// The date on which the certificate's validity period begins.
@@ -32,8 +32,8 @@ type X509CertificateAllOf struct {
 	// The computed SHA-256 fingerprint of the certificate. Equivalent to 'openssl x509 -fingerprint -sha256'.
 	Sha256Fingerprint *string `json:"Sha256Fingerprint,omitempty"`
 	// Signature algorithm, as specified in [RFC 5280](https://tools.ietf.org/html/rfc5280).
-	SignatureAlgorithm *string `json:"SignatureAlgorithm,omitempty"`
-	Subject NullablePkixDistinguishedName `json:"Subject,omitempty"`
+	SignatureAlgorithm   *string                       `json:"SignatureAlgorithm,omitempty"`
+	Subject              NullablePkixDistinguishedName `json:"Subject,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *X509CertificateAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *X509CertificateAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *X509CertificateAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *X509CertificateAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -123,7 +123,7 @@ func (o *X509CertificateAllOf) GetIssuer() PkixDistinguishedName {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *X509CertificateAllOf) GetIssuerOk() (*PkixDistinguishedName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Issuer.Get(), o.Issuer.IsSet()
@@ -142,6 +142,7 @@ func (o *X509CertificateAllOf) HasIssuer() bool {
 func (o *X509CertificateAllOf) SetIssuer(v PkixDistinguishedName) {
 	o.Issuer.Set(&v)
 }
+
 // SetIssuerNil sets the value for Issuer to be an explicit nil
 func (o *X509CertificateAllOf) SetIssuerNil() {
 	o.Issuer.Set(nil)
@@ -325,7 +326,7 @@ func (o *X509CertificateAllOf) GetSubject() PkixDistinguishedName {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *X509CertificateAllOf) GetSubjectOk() (*PkixDistinguishedName, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subject.Get(), o.Subject.IsSet()
@@ -344,6 +345,7 @@ func (o *X509CertificateAllOf) HasSubject() bool {
 func (o *X509CertificateAllOf) SetSubject(v PkixDistinguishedName) {
 	o.Subject.Set(&v)
 }
+
 // SetSubjectNil sets the value for Subject to be an explicit nil
 func (o *X509CertificateAllOf) SetSubjectNil() {
 	o.Subject.Set(nil)
@@ -451,5 +453,3 @@ func (v *NullableX509CertificateAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

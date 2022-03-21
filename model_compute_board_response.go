@@ -18,32 +18,31 @@ import (
 
 // ComputeBoardResponse - The response body of a HTTP GET request for the 'compute.Board' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'compute.Board' resources.
 type ComputeBoardResponse struct {
-	ComputeBoardList *ComputeBoardList
+	ComputeBoardList     *ComputeBoardList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ComputeBoardListAsComputeBoardResponse is a convenience function that returns ComputeBoardList wrapped in ComputeBoardResponse
 func ComputeBoardListAsComputeBoardResponse(v *ComputeBoardList) ComputeBoardResponse {
-	return ComputeBoardResponse{ ComputeBoardList: v}
+	return ComputeBoardResponse{ComputeBoardList: v}
 }
 
 // MoAggregateTransformAsComputeBoardResponse is a convenience function that returns MoAggregateTransform wrapped in ComputeBoardResponse
 func MoAggregateTransformAsComputeBoardResponse(v *MoAggregateTransform) ComputeBoardResponse {
-	return ComputeBoardResponse{ MoAggregateTransform: v}
+	return ComputeBoardResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsComputeBoardResponse is a convenience function that returns MoDocumentCount wrapped in ComputeBoardResponse
 func MoDocumentCountAsComputeBoardResponse(v *MoDocumentCount) ComputeBoardResponse {
-	return ComputeBoardResponse{ MoDocumentCount: v}
+	return ComputeBoardResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsComputeBoardResponse is a convenience function that returns MoTagSummary wrapped in ComputeBoardResponse
 func MoTagSummaryAsComputeBoardResponse(v *MoTagSummary) ComputeBoardResponse {
-	return ComputeBoardResponse{ MoTagSummary: v}
+	return ComputeBoardResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeBoardResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ComputeBoardResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeBoardResponse) GetActualInstance() (interface{}) {
+func (obj *ComputeBoardResponse) GetActualInstance() interface{} {
 	if obj.ComputeBoardList != nil {
 		return obj.ComputeBoardList
 	}
@@ -184,5 +183,3 @@ func (v *NullableComputeBoardResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

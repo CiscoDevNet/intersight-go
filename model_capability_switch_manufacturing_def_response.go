@@ -19,31 +19,30 @@ import (
 // CapabilitySwitchManufacturingDefResponse - The response body of a HTTP GET request for the 'capability.SwitchManufacturingDef' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.SwitchManufacturingDef' resources.
 type CapabilitySwitchManufacturingDefResponse struct {
 	CapabilitySwitchManufacturingDefList *CapabilitySwitchManufacturingDefList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                 *MoAggregateTransform
+	MoDocumentCount                      *MoDocumentCount
+	MoTagSummary                         *MoTagSummary
 }
 
 // CapabilitySwitchManufacturingDefListAsCapabilitySwitchManufacturingDefResponse is a convenience function that returns CapabilitySwitchManufacturingDefList wrapped in CapabilitySwitchManufacturingDefResponse
 func CapabilitySwitchManufacturingDefListAsCapabilitySwitchManufacturingDefResponse(v *CapabilitySwitchManufacturingDefList) CapabilitySwitchManufacturingDefResponse {
-	return CapabilitySwitchManufacturingDefResponse{ CapabilitySwitchManufacturingDefList: v}
+	return CapabilitySwitchManufacturingDefResponse{CapabilitySwitchManufacturingDefList: v}
 }
 
 // MoAggregateTransformAsCapabilitySwitchManufacturingDefResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilitySwitchManufacturingDefResponse
 func MoAggregateTransformAsCapabilitySwitchManufacturingDefResponse(v *MoAggregateTransform) CapabilitySwitchManufacturingDefResponse {
-	return CapabilitySwitchManufacturingDefResponse{ MoAggregateTransform: v}
+	return CapabilitySwitchManufacturingDefResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilitySwitchManufacturingDefResponse is a convenience function that returns MoDocumentCount wrapped in CapabilitySwitchManufacturingDefResponse
 func MoDocumentCountAsCapabilitySwitchManufacturingDefResponse(v *MoDocumentCount) CapabilitySwitchManufacturingDefResponse {
-	return CapabilitySwitchManufacturingDefResponse{ MoDocumentCount: v}
+	return CapabilitySwitchManufacturingDefResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilitySwitchManufacturingDefResponse is a convenience function that returns MoTagSummary wrapped in CapabilitySwitchManufacturingDefResponse
 func MoTagSummaryAsCapabilitySwitchManufacturingDefResponse(v *MoTagSummary) CapabilitySwitchManufacturingDefResponse {
-	return CapabilitySwitchManufacturingDefResponse{ MoTagSummary: v}
+	return CapabilitySwitchManufacturingDefResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilitySwitchManufacturingDefResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilitySwitchManufacturingDefResponse) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *CapabilitySwitchManufacturingDefResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilitySwitchManufacturingDefResponse) GetActualInstance() interface{} {
 	if obj.CapabilitySwitchManufacturingDefList != nil {
 		return obj.CapabilitySwitchManufacturingDefList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilitySwitchManufacturingDefResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

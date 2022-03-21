@@ -29,8 +29,8 @@ type CapabilityAdapterUnitDescriptor struct {
 	// Order in which the ports are connected; sequential or cyclic.
 	ConnectivityOrder *string `json:"ConnectivityOrder,omitempty"`
 	// The port speed for ethernet ports in Mbps.
-	EthernetPortSpeed *int64 `json:"EthernetPortSpeed,omitempty"`
-	Features []CapabilityFeatureConfig `json:"Features,omitempty"`
+	EthernetPortSpeed *int64                    `json:"EthernetPortSpeed,omitempty"`
+	Features          []CapabilityFeatureConfig `json:"Features,omitempty"`
 	// The port speed for fibre channel ports in Mbps.
 	FibreChannelPortSpeed *int64 `json:"FibreChannelPortSpeed,omitempty"`
 	// The number of SCSI I/O Queue resources to allocate.
@@ -50,7 +50,7 @@ type CapabilityAdapterUnitDescriptor struct {
 	// Indicates PCI Link status of adapter.
 	PciLink *int64 `json:"PciLink,omitempty"`
 	// Prom card type for the adapter.
-	PromCardType *string `json:"PromCardType,omitempty"`
+	PromCardType         *string `json:"PromCardType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -120,7 +120,7 @@ func (o *CapabilityAdapterUnitDescriptor) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityAdapterUnitDescriptor) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -144,7 +144,7 @@ func (o *CapabilityAdapterUnitDescriptor) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityAdapterUnitDescriptor) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -253,7 +253,7 @@ func (o *CapabilityAdapterUnitDescriptor) SetEthernetPortSpeed(v int64) {
 
 // GetFeatures returns the Features field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CapabilityAdapterUnitDescriptor) GetFeatures() []CapabilityFeatureConfig {
-	if o == nil  {
+	if o == nil {
 		var ret []CapabilityFeatureConfig
 		return ret
 	}
@@ -681,8 +681,8 @@ func (o *CapabilityAdapterUnitDescriptor) UnmarshalJSON(bytes []byte) (err error
 		// Order in which the ports are connected; sequential or cyclic.
 		ConnectivityOrder *string `json:"ConnectivityOrder,omitempty"`
 		// The port speed for ethernet ports in Mbps.
-		EthernetPortSpeed *int64 `json:"EthernetPortSpeed,omitempty"`
-		Features []CapabilityFeatureConfig `json:"Features,omitempty"`
+		EthernetPortSpeed *int64                    `json:"EthernetPortSpeed,omitempty"`
+		Features          []CapabilityFeatureConfig `json:"Features,omitempty"`
 		// The port speed for fibre channel ports in Mbps.
 		FibreChannelPortSpeed *int64 `json:"FibreChannelPortSpeed,omitempty"`
 		// The number of SCSI I/O Queue resources to allocate.
@@ -819,5 +819,3 @@ func (v *NullableCapabilityAdapterUnitDescriptor) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

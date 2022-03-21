@@ -23,18 +23,18 @@ type HyperflexReplicationPlatDatastorePair struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Ads NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
+	ObjectType string                                    `json:"ObjectType"`
+	Ads        NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
 	// Boolean representing if this is a backup only pair.
-	BackupOnly *bool `json:"BackupOnly,omitempty"`
-	Bds NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
+	BackupOnly *bool                                     `json:"BackupOnly,omitempty"`
+	Bds        NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
 	// Boolean representing if this datastore pairing has quiesce snapshots enabled.
 	Quiesce *bool `json:"Quiesce,omitempty"`
 	// The replication interval for this pair in minutes.
-	ReplicationIntervalInMinutes *int64 `json:"ReplicationIntervalInMinutes,omitempty"`
-	Sourceds NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
+	ReplicationIntervalInMinutes *int64                                    `json:"ReplicationIntervalInMinutes,omitempty"`
+	Sourceds                     NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
 	// HyperFlex datastore pair is used for storage only.
-	StorageOnly *bool `json:"StorageOnly,omitempty"`
+	StorageOnly          *bool `json:"StorageOnly,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *HyperflexReplicationPlatDatastorePair) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastorePair) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *HyperflexReplicationPlatDatastorePair) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationPlatDatastorePair) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -124,7 +124,7 @@ func (o *HyperflexReplicationPlatDatastorePair) GetAds() HyperflexReplicationPla
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePair) GetAdsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ads.Get(), o.Ads.IsSet()
@@ -143,6 +143,7 @@ func (o *HyperflexReplicationPlatDatastorePair) HasAds() bool {
 func (o *HyperflexReplicationPlatDatastorePair) SetAds(v HyperflexReplicationPlatDatastore) {
 	o.Ads.Set(&v)
 }
+
 // SetAdsNil sets the value for Ads to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePair) SetAdsNil() {
 	o.Ads.Set(nil)
@@ -198,7 +199,7 @@ func (o *HyperflexReplicationPlatDatastorePair) GetBds() HyperflexReplicationPla
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePair) GetBdsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bds.Get(), o.Bds.IsSet()
@@ -217,6 +218,7 @@ func (o *HyperflexReplicationPlatDatastorePair) HasBds() bool {
 func (o *HyperflexReplicationPlatDatastorePair) SetBds(v HyperflexReplicationPlatDatastore) {
 	o.Bds.Set(&v)
 }
+
 // SetBdsNil sets the value for Bds to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePair) SetBdsNil() {
 	o.Bds.Set(nil)
@@ -304,7 +306,7 @@ func (o *HyperflexReplicationPlatDatastorePair) GetSourceds() HyperflexReplicati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationPlatDatastorePair) GetSourcedsOk() (*HyperflexReplicationPlatDatastore, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Sourceds.Get(), o.Sourceds.IsSet()
@@ -323,6 +325,7 @@ func (o *HyperflexReplicationPlatDatastorePair) HasSourceds() bool {
 func (o *HyperflexReplicationPlatDatastorePair) SetSourceds(v HyperflexReplicationPlatDatastore) {
 	o.Sourceds.Set(&v)
 }
+
 // SetSourcedsNil sets the value for Sourceds to be an explicit nil
 func (o *HyperflexReplicationPlatDatastorePair) SetSourcedsNil() {
 	o.Sourceds.Set(nil)
@@ -415,16 +418,16 @@ func (o *HyperflexReplicationPlatDatastorePair) UnmarshalJSON(bytes []byte) (err
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Ads NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
+		ObjectType string                                    `json:"ObjectType"`
+		Ads        NullableHyperflexReplicationPlatDatastore `json:"Ads,omitempty"`
 		// Boolean representing if this is a backup only pair.
-		BackupOnly *bool `json:"BackupOnly,omitempty"`
-		Bds NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
+		BackupOnly *bool                                     `json:"BackupOnly,omitempty"`
+		Bds        NullableHyperflexReplicationPlatDatastore `json:"Bds,omitempty"`
 		// Boolean representing if this datastore pairing has quiesce snapshots enabled.
 		Quiesce *bool `json:"Quiesce,omitempty"`
 		// The replication interval for this pair in minutes.
-		ReplicationIntervalInMinutes *int64 `json:"ReplicationIntervalInMinutes,omitempty"`
-		Sourceds NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
+		ReplicationIntervalInMinutes *int64                                    `json:"ReplicationIntervalInMinutes,omitempty"`
+		Sourceds                     NullableHyperflexReplicationPlatDatastore `json:"Sourceds,omitempty"`
 		// HyperFlex datastore pair is used for storage only.
 		StorageOnly *bool `json:"StorageOnly,omitempty"`
 	}
@@ -529,5 +532,3 @@ func (v *NullableHyperflexReplicationPlatDatastorePair) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

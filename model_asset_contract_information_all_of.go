@@ -20,13 +20,13 @@ type AssetContractInformationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	BillTo NullableAssetAddressInformation `json:"BillTo,omitempty"`
-	BillToGlobalUltimate NullableAssetGlobalUltimate `json:"BillToGlobalUltimate,omitempty"`
+	ObjectType           string                          `json:"ObjectType"`
+	BillTo               NullableAssetAddressInformation `json:"BillTo,omitempty"`
+	BillToGlobalUltimate NullableAssetGlobalUltimate     `json:"BillToGlobalUltimate,omitempty"`
 	// Contract number for the Cisco support contract purchased for the Cisco device.
 	ContractNumber *string `json:"ContractNumber,omitempty"`
 	// Contract status as per the Cisco Contract APIx.
-	LineStatus *string `json:"LineStatus,omitempty"`
+	LineStatus           *string `json:"LineStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *AssetContractInformationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetContractInformationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AssetContractInformationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetContractInformationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *AssetContractInformationAllOf) GetBillTo() AssetAddressInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetContractInformationAllOf) GetBillToOk() (*AssetAddressInformation, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillTo.Get(), o.BillTo.IsSet()
@@ -135,6 +135,7 @@ func (o *AssetContractInformationAllOf) HasBillTo() bool {
 func (o *AssetContractInformationAllOf) SetBillTo(v AssetAddressInformation) {
 	o.BillTo.Set(&v)
 }
+
 // SetBillToNil sets the value for BillTo to be an explicit nil
 func (o *AssetContractInformationAllOf) SetBillToNil() {
 	o.BillTo.Set(nil)
@@ -158,7 +159,7 @@ func (o *AssetContractInformationAllOf) GetBillToGlobalUltimate() AssetGlobalUlt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetContractInformationAllOf) GetBillToGlobalUltimateOk() (*AssetGlobalUltimate, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillToGlobalUltimate.Get(), o.BillToGlobalUltimate.IsSet()
@@ -177,6 +178,7 @@ func (o *AssetContractInformationAllOf) HasBillToGlobalUltimate() bool {
 func (o *AssetContractInformationAllOf) SetBillToGlobalUltimate(v AssetGlobalUltimate) {
 	o.BillToGlobalUltimate.Set(&v)
 }
+
 // SetBillToGlobalUltimateNil sets the value for BillToGlobalUltimate to be an explicit nil
 func (o *AssetContractInformationAllOf) SetBillToGlobalUltimateNil() {
 	o.BillToGlobalUltimate.Set(nil)
@@ -336,5 +338,3 @@ func (v *NullableAssetContractInformationAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

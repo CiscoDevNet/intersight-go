@@ -27,9 +27,9 @@ type AdapterUnitExpander struct {
 	// This field identifies the partNumber of the given component.
 	PartNumber *string `json:"PartNumber,omitempty"`
 	// This field identifies the virtual id of the given component.
-	Vid *string `json:"Vid,omitempty"`
-	AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vid                  *string                              `json:"Vid,omitempty"`
+	AdapterUnit          *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *AdapterUnitExpander) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterUnitExpander) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *AdapterUnitExpander) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterUnitExpander) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -279,8 +279,8 @@ func (o *AdapterUnitExpander) UnmarshalJSON(bytes []byte) (err error) {
 		// This field identifies the partNumber of the given component.
 		PartNumber *string `json:"PartNumber,omitempty"`
 		// This field identifies the virtual id of the given component.
-		Vid *string `json:"Vid,omitempty"`
-		AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
+		Vid              *string                              `json:"Vid,omitempty"`
+		AdapterUnit      *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -378,5 +378,3 @@ func (v *NullableAdapterUnitExpander) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

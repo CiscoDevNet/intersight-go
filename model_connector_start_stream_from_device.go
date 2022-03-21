@@ -33,7 +33,7 @@ type ConnectorStartStreamFromDevice struct {
 	// Identifies the type of stream to open to the device. The Intersight service will validate that the device should open a stream of this type and if so build a stream configuration and send it down to the device. The streamType should identify a unique stream to open to a device, that is if the device sends a stream open message and a stream of that type is already open in the cloud the existing stream should be re-used.
 	StreamType *string `json:"StreamType,omitempty"`
 	// The topic the device should send the stream open message to.
-	Topic *string `json:"Topic,omitempty"`
+	Topic                *string `json:"Topic,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *ConnectorStartStreamFromDevice) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorStartStreamFromDevice) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *ConnectorStartStreamFromDevice) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConnectorStartStreamFromDevice) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *ConnectorStartStreamFromDevice) SetMemberStream(v bool) {
 
 // GetStreamConfig returns the StreamConfig field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConnectorStartStreamFromDevice) GetStreamConfig() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -424,5 +424,3 @@ func (v *NullableConnectorStartStreamFromDevice) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -26,9 +26,9 @@ type FabricUplinkRole struct {
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to fabricEthNetworkGroupPolicy resources.
 	EthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-	FlowControlPolicy *FabricFlowControlPolicyRelationship `json:"FlowControlPolicy,omitempty"`
-	LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FlowControlPolicy     *FabricFlowControlPolicyRelationship      `json:"FlowControlPolicy,omitempty"`
+	LinkControlPolicy     *FabricLinkControlPolicyRelationship      `json:"LinkControlPolicy,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _FabricUplinkRole FabricUplinkRole
@@ -73,7 +73,7 @@ func (o *FabricUplinkRole) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkRole) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *FabricUplinkRole) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricUplinkRole) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -110,7 +110,7 @@ func (o *FabricUplinkRole) SetObjectType(v string) {
 
 // GetEthNetworkGroupPolicy returns the EthNetworkGroupPolicy field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FabricUplinkRole) GetEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FabricEthNetworkGroupPolicyRelationship
 		return ret
 	}
@@ -246,8 +246,8 @@ func (o *FabricUplinkRole) UnmarshalJSON(bytes []byte) (err error) {
 		ObjectType string `json:"ObjectType"`
 		// An array of relationships to fabricEthNetworkGroupPolicy resources.
 		EthNetworkGroupPolicy []FabricEthNetworkGroupPolicyRelationship `json:"EthNetworkGroupPolicy,omitempty"`
-		FlowControlPolicy *FabricFlowControlPolicyRelationship `json:"FlowControlPolicy,omitempty"`
-		LinkControlPolicy *FabricLinkControlPolicyRelationship `json:"LinkControlPolicy,omitempty"`
+		FlowControlPolicy     *FabricFlowControlPolicyRelationship      `json:"FlowControlPolicy,omitempty"`
+		LinkControlPolicy     *FabricLinkControlPolicyRelationship      `json:"LinkControlPolicy,omitempty"`
 	}
 
 	varFabricUplinkRoleWithoutEmbeddedStruct := FabricUplinkRoleWithoutEmbeddedStruct{}
@@ -342,5 +342,3 @@ func (v *NullableFabricUplinkRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

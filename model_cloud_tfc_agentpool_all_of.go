@@ -28,8 +28,8 @@ type CloudTfcAgentpoolAllOf struct {
 	// The number of active agents used by this pool. The total active agent are sum of idle, busy and unknown agent counts.
 	NumActiveAgents *int64 `json:"NumActiveAgents,omitempty"`
 	// The number of Tokens in this agent Pool.
-	NumTokens *int64 `json:"NumTokens,omitempty"`
-	Organization *CloudTfcOrganizationRelationship `json:"Organization,omitempty"`
+	NumTokens            *int64                            `json:"NumTokens,omitempty"`
+	Organization         *CloudTfcOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *CloudTfcAgentpoolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcAgentpoolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *CloudTfcAgentpoolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudTfcAgentpoolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -355,5 +355,3 @@ func (v *NullableCloudTfcAgentpoolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

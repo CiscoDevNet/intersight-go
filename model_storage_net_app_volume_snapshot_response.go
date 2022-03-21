@@ -18,32 +18,31 @@ import (
 
 // StorageNetAppVolumeSnapshotResponse - The response body of a HTTP GET request for the 'storage.NetAppVolumeSnapshot' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.NetAppVolumeSnapshot' resources.
 type StorageNetAppVolumeSnapshotResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	StorageNetAppVolumeSnapshotList *StorageNetAppVolumeSnapshotList
 }
 
 // MoAggregateTransformAsStorageNetAppVolumeSnapshotResponse is a convenience function that returns MoAggregateTransform wrapped in StorageNetAppVolumeSnapshotResponse
 func MoAggregateTransformAsStorageNetAppVolumeSnapshotResponse(v *MoAggregateTransform) StorageNetAppVolumeSnapshotResponse {
-	return StorageNetAppVolumeSnapshotResponse{ MoAggregateTransform: v}
+	return StorageNetAppVolumeSnapshotResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageNetAppVolumeSnapshotResponse is a convenience function that returns MoDocumentCount wrapped in StorageNetAppVolumeSnapshotResponse
 func MoDocumentCountAsStorageNetAppVolumeSnapshotResponse(v *MoDocumentCount) StorageNetAppVolumeSnapshotResponse {
-	return StorageNetAppVolumeSnapshotResponse{ MoDocumentCount: v}
+	return StorageNetAppVolumeSnapshotResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageNetAppVolumeSnapshotResponse is a convenience function that returns MoTagSummary wrapped in StorageNetAppVolumeSnapshotResponse
 func MoTagSummaryAsStorageNetAppVolumeSnapshotResponse(v *MoTagSummary) StorageNetAppVolumeSnapshotResponse {
-	return StorageNetAppVolumeSnapshotResponse{ MoTagSummary: v}
+	return StorageNetAppVolumeSnapshotResponse{MoTagSummary: v}
 }
 
 // StorageNetAppVolumeSnapshotListAsStorageNetAppVolumeSnapshotResponse is a convenience function that returns StorageNetAppVolumeSnapshotList wrapped in StorageNetAppVolumeSnapshotResponse
 func StorageNetAppVolumeSnapshotListAsStorageNetAppVolumeSnapshotResponse(v *StorageNetAppVolumeSnapshotList) StorageNetAppVolumeSnapshotResponse {
-	return StorageNetAppVolumeSnapshotResponse{ StorageNetAppVolumeSnapshotList: v}
+	return StorageNetAppVolumeSnapshotResponse{StorageNetAppVolumeSnapshotList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppVolumeSnapshotResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageNetAppVolumeSnapshotResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppVolumeSnapshotResponse) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppVolumeSnapshotResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageNetAppVolumeSnapshotResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

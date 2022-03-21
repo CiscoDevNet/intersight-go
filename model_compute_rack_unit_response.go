@@ -18,32 +18,31 @@ import (
 
 // ComputeRackUnitResponse - The response body of a HTTP GET request for the 'compute.RackUnit' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'compute.RackUnit' resources.
 type ComputeRackUnitResponse struct {
-	ComputeRackUnitList *ComputeRackUnitList
+	ComputeRackUnitList  *ComputeRackUnitList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ComputeRackUnitListAsComputeRackUnitResponse is a convenience function that returns ComputeRackUnitList wrapped in ComputeRackUnitResponse
 func ComputeRackUnitListAsComputeRackUnitResponse(v *ComputeRackUnitList) ComputeRackUnitResponse {
-	return ComputeRackUnitResponse{ ComputeRackUnitList: v}
+	return ComputeRackUnitResponse{ComputeRackUnitList: v}
 }
 
 // MoAggregateTransformAsComputeRackUnitResponse is a convenience function that returns MoAggregateTransform wrapped in ComputeRackUnitResponse
 func MoAggregateTransformAsComputeRackUnitResponse(v *MoAggregateTransform) ComputeRackUnitResponse {
-	return ComputeRackUnitResponse{ MoAggregateTransform: v}
+	return ComputeRackUnitResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsComputeRackUnitResponse is a convenience function that returns MoDocumentCount wrapped in ComputeRackUnitResponse
 func MoDocumentCountAsComputeRackUnitResponse(v *MoDocumentCount) ComputeRackUnitResponse {
-	return ComputeRackUnitResponse{ MoDocumentCount: v}
+	return ComputeRackUnitResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsComputeRackUnitResponse is a convenience function that returns MoTagSummary wrapped in ComputeRackUnitResponse
 func MoTagSummaryAsComputeRackUnitResponse(v *MoTagSummary) ComputeRackUnitResponse {
-	return ComputeRackUnitResponse{ MoTagSummary: v}
+	return ComputeRackUnitResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeRackUnitResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ComputeRackUnitResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeRackUnitResponse) GetActualInstance() (interface{}) {
+func (obj *ComputeRackUnitResponse) GetActualInstance() interface{} {
 	if obj.ComputeRackUnitList != nil {
 		return obj.ComputeRackUnitList
 	}
@@ -184,5 +183,3 @@ func (v *NullableComputeRackUnitResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type MacpoolPoolMemberListAllOf struct {
 	// The total number of 'macpool.PoolMember' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'macpool.PoolMember' resources matching the request.
-	Results []MacpoolPoolMember `json:"Results,omitempty"`
+	Results              []MacpoolPoolMember `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *MacpoolPoolMemberListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MacpoolPoolMemberListAllOf) GetResults() []MacpoolPoolMember {
-	if o == nil  {
+	if o == nil {
 		var ret []MacpoolPoolMember
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableMacpoolPoolMemberListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

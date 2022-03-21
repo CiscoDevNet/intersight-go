@@ -27,13 +27,13 @@ type ServerConfigImport struct {
 	// Description of the imported profile.
 	Description *string `json:"Description,omitempty"`
 	// Policy prefix for the policies of the imported server profile.
-	PolicyPrefix *string `json:"PolicyPrefix,omitempty"`
-	PolicyTypes []string `json:"PolicyTypes,omitempty"`
+	PolicyPrefix *string  `json:"PolicyPrefix,omitempty"`
+	PolicyTypes  []string `json:"PolicyTypes,omitempty"`
 	// Profile name for the imported server profile.
-	ProfileName *string `json:"ProfileName,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	Server *ComputeRackUnitRelationship `json:"Server,omitempty"`
-	ServerProfile *ServerProfileRelationship `json:"ServerProfile,omitempty"`
+	ProfileName          *string                               `json:"ProfileName,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	Server               *ComputeRackUnitRelationship          `json:"Server,omitempty"`
+	ServerProfile        *ServerProfileRelationship            `json:"ServerProfile,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *ServerConfigImport) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ServerConfigImport) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *ServerConfigImport) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ServerConfigImport) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -176,7 +176,7 @@ func (o *ServerConfigImport) SetPolicyPrefix(v string) {
 
 // GetPolicyTypes returns the PolicyTypes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServerConfigImport) GetPolicyTypes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -389,13 +389,13 @@ func (o *ServerConfigImport) UnmarshalJSON(bytes []byte) (err error) {
 		// Description of the imported profile.
 		Description *string `json:"Description,omitempty"`
 		// Policy prefix for the policies of the imported server profile.
-		PolicyPrefix *string `json:"PolicyPrefix,omitempty"`
-		PolicyTypes []string `json:"PolicyTypes,omitempty"`
+		PolicyPrefix *string  `json:"PolicyPrefix,omitempty"`
+		PolicyTypes  []string `json:"PolicyTypes,omitempty"`
 		// Profile name for the imported server profile.
-		ProfileName *string `json:"ProfileName,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		Server *ComputeRackUnitRelationship `json:"Server,omitempty"`
-		ServerProfile *ServerProfileRelationship `json:"ServerProfile,omitempty"`
+		ProfileName   *string                               `json:"ProfileName,omitempty"`
+		Organization  *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Server        *ComputeRackUnitRelationship          `json:"Server,omitempty"`
+		ServerProfile *ServerProfileRelationship            `json:"ServerProfile,omitempty"`
 	}
 
 	varServerConfigImportWithoutEmbeddedStruct := ServerConfigImportWithoutEmbeddedStruct{}
@@ -498,5 +498,3 @@ func (v *NullableServerConfigImport) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

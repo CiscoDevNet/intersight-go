@@ -19,19 +19,18 @@ import (
 // IamOAuthTokenRelationship - A relationship to the 'iam.OAuthToken' resource, or the expanded 'iam.OAuthToken' resource, or the 'null' value.
 type IamOAuthTokenRelationship struct {
 	IamOAuthToken *IamOAuthToken
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // IamOAuthTokenAsIamOAuthTokenRelationship is a convenience function that returns IamOAuthToken wrapped in IamOAuthTokenRelationship
 func IamOAuthTokenAsIamOAuthTokenRelationship(v *IamOAuthToken) IamOAuthTokenRelationship {
-	return IamOAuthTokenRelationship{ IamOAuthToken: v}
+	return IamOAuthTokenRelationship{IamOAuthToken: v}
 }
 
 // MoMoRefAsIamOAuthTokenRelationship is a convenience function that returns MoMoRef wrapped in IamOAuthTokenRelationship
 func MoMoRefAsIamOAuthTokenRelationship(v *MoMoRef) IamOAuthTokenRelationship {
-	return IamOAuthTokenRelationship{ MoMoRef: v}
+	return IamOAuthTokenRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamOAuthTokenRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamOAuthTokenRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamOAuthTokenRelationship) GetActualInstance() (interface{}) {
+func (obj *IamOAuthTokenRelationship) GetActualInstance() interface{} {
 	if obj.IamOAuthToken != nil {
 		return obj.IamOAuthToken
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamOAuthTokenRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

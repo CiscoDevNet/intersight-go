@@ -27,15 +27,15 @@ type KubernetesClusterManagementConfig struct {
 	// Indicates whether the value of the 'tacPasswd' property has been set.
 	IsTacPasswdSet *bool `json:"IsTacPasswdSet,omitempty"`
 	// Number of IP addresses to reserve for load balancer services.
-	LoadBalancerCount *int64 `json:"LoadBalancerCount,omitempty"`
-	LoadBalancers []string `json:"LoadBalancers,omitempty"`
+	LoadBalancerCount *int64   `json:"LoadBalancerCount,omitempty"`
+	LoadBalancers     []string `json:"LoadBalancers,omitempty"`
 	// VIP for the cluster Kubernetes API server. If this is empty and a cluster IP pool is specified, it will be allocated from the IP pool.
-	MasterVip *string `json:"MasterVip,omitempty"`
-	SshKeys []string `json:"SshKeys,omitempty"`
+	MasterVip *string  `json:"MasterVip,omitempty"`
+	SshKeys   []string `json:"SshKeys,omitempty"`
 	// Name of the user to SSH to nodes in a cluster.
 	SshUser *string `json:"SshUser,omitempty"`
 	// Hashed password of the TAC user.
-	TacPasswd *string `json:"TacPasswd,omitempty"`
+	TacPasswd            *string `json:"TacPasswd,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *KubernetesClusterManagementConfig) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterManagementConfig) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *KubernetesClusterManagementConfig) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesClusterManagementConfig) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -178,7 +178,7 @@ func (o *KubernetesClusterManagementConfig) SetLoadBalancerCount(v int64) {
 
 // GetLoadBalancers returns the LoadBalancers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterManagementConfig) GetLoadBalancers() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *KubernetesClusterManagementConfig) SetMasterVip(v string) {
 
 // GetSshKeys returns the SshKeys field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesClusterManagementConfig) GetSshKeys() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -392,11 +392,11 @@ func (o *KubernetesClusterManagementConfig) UnmarshalJSON(bytes []byte) (err err
 		// Indicates whether the value of the 'tacPasswd' property has been set.
 		IsTacPasswdSet *bool `json:"IsTacPasswdSet,omitempty"`
 		// Number of IP addresses to reserve for load balancer services.
-		LoadBalancerCount *int64 `json:"LoadBalancerCount,omitempty"`
-		LoadBalancers []string `json:"LoadBalancers,omitempty"`
+		LoadBalancerCount *int64   `json:"LoadBalancerCount,omitempty"`
+		LoadBalancers     []string `json:"LoadBalancers,omitempty"`
 		// VIP for the cluster Kubernetes API server. If this is empty and a cluster IP pool is specified, it will be allocated from the IP pool.
-		MasterVip *string `json:"MasterVip,omitempty"`
-		SshKeys []string `json:"SshKeys,omitempty"`
+		MasterVip *string  `json:"MasterVip,omitempty"`
+		SshKeys   []string `json:"SshKeys,omitempty"`
 		// Name of the user to SSH to nodes in a cluster.
 		SshUser *string `json:"SshUser,omitempty"`
 		// Hashed password of the TAC user.
@@ -503,5 +503,3 @@ func (v *NullableKubernetesClusterManagementConfig) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

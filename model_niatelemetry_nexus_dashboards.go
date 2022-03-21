@@ -55,8 +55,8 @@ type NiatelemetryNexusDashboards struct {
 	// Type of record DCNM / APIC / SE. This determines the type of platform where inventory was collected.
 	RecordType *string `json:"RecordType,omitempty"`
 	// Type of site added to Multi-Site Orchestrator.
-	TypeOfSiteInMso *string `json:"TypeOfSiteInMso,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	TypeOfSiteInMso      *string                              `json:"TypeOfSiteInMso,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,7 +98,7 @@ func (o *NiatelemetryNexusDashboards) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboards) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -122,7 +122,7 @@ func (o *NiatelemetryNexusDashboards) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNexusDashboards) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -789,7 +789,7 @@ func (o *NiatelemetryNexusDashboards) UnmarshalJSON(bytes []byte) (err error) {
 		// Type of record DCNM / APIC / SE. This determines the type of platform where inventory was collected.
 		RecordType *string `json:"RecordType,omitempty"`
 		// Type of site added to Multi-Site Orchestrator.
-		TypeOfSiteInMso *string `json:"TypeOfSiteInMso,omitempty"`
+		TypeOfSiteInMso  *string                              `json:"TypeOfSiteInMso,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -913,5 +913,3 @@ func (v *NullableNiatelemetryNexusDashboards) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

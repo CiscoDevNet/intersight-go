@@ -35,12 +35,12 @@ type TechsupportmanagementTechSupportStatusAllOf struct {
 	// Status of techsupport collection. Valid values are Pending, CollectionInProgress, CollectionFailed, CollectionComplete, UploadPending, UploadInProgress, UploadPartsComplete, UploadFailed and Completed. The final status will be either CollectionFailed or UploadFailed if there is a failure and Completed if the request completed successfully and the file was uploaded to Intersight Storage Service. All the remaining status values indicates the progress of techsupport collection.
 	Status *string `json:"Status,omitempty"`
 	// The Url to download the techsupport file.
-	TechsupportDownloadUrl *string `json:"TechsupportDownloadUrl,omitempty"`
-	ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-	OriginResource *MoBaseMoRelationship `json:"OriginResource,omitempty"`
-	TechSupportRequest *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TechsupportDownloadUrl *string                                             `json:"TechsupportDownloadUrl,omitempty"`
+	ClusterMember          *AssetClusterMemberRelationship                     `json:"ClusterMember,omitempty"`
+	DeviceRegistration     *AssetDeviceRegistrationRelationship                `json:"DeviceRegistration,omitempty"`
+	OriginResource         *MoBaseMoRelationship                               `json:"OriginResource,omitempty"`
+	TechSupportRequest     *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _TechsupportmanagementTechSupportStatusAllOf TechsupportmanagementTechSupportStatusAllOf
@@ -81,7 +81,7 @@ func (o *TechsupportmanagementTechSupportStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementTechSupportStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *TechsupportmanagementTechSupportStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementTechSupportStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -581,5 +581,3 @@ func (v *NullableTechsupportmanagementTechSupportStatusAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

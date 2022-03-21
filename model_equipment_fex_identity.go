@@ -25,9 +25,9 @@ type EquipmentFexIdentity struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Switch ID to which Fabric Extender is connected, ID can be either 1 or 2, equalent to A or B.
-	SwitchId *int64 `json:"SwitchId,omitempty"`
-	Fex *EquipmentFexRelationship `json:"Fex,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
+	SwitchId             *int64                      `json:"SwitchId,omitempty"`
+	Fex                  *EquipmentFexRelationship   `json:"Fex,omitempty"`
+	NetworkElement       *NetworkElementRelationship `json:"NetworkElement,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *EquipmentFexIdentity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFexIdentity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *EquipmentFexIdentity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFexIdentity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,8 +242,8 @@ func (o *EquipmentFexIdentity) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Switch ID to which Fabric Extender is connected, ID can be either 1 or 2, equalent to A or B.
-		SwitchId *int64 `json:"SwitchId,omitempty"`
-		Fex *EquipmentFexRelationship `json:"Fex,omitempty"`
+		SwitchId       *int64                      `json:"SwitchId,omitempty"`
+		Fex            *EquipmentFexRelationship   `json:"Fex,omitempty"`
 		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
 	}
 
@@ -339,5 +339,3 @@ func (v *NullableEquipmentFexIdentity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

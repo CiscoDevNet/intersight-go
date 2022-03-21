@@ -29,11 +29,10 @@ var (
 type TopApiService service
 
 type ApiGetTopSystemByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TopApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetTopSystemByMoidRequest) Execute() (TopSystem, *_nethttp.Response, error) {
 	return r.ApiService.GetTopSystemByMoidExecute(r)
@@ -49,8 +48,8 @@ GetTopSystemByMoid Read a 'top.System' resource.
 func (a *TopApiService) GetTopSystemByMoid(ctx _context.Context, moid string) ApiGetTopSystemByMoidRequest {
 	return ApiGetTopSystemByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *TopApiService) GetTopSystemByMoidExecute(r ApiGetTopSystemByMoidRequest
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *TopApiService) GetTopSystemByMoidExecute(r ApiGetTopSystemByMoidRequest
 }
 
 type ApiGetTopSystemListRequest struct {
-	ctx _context.Context
-	ApiService *TopApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *TopApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetTopSystemListRequest) Filter(filter string) ApiGetTopSystemListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetTopSystemListRequest) Orderby(orderby string) ApiGetTopSystemListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetTopSystemListRequest) Top(top int32) ApiGetTopSystemListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetTopSystemListRequest) Skip(skip int32) ApiGetTopSystemListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetTopSystemListRequest) Select_(select_ string) ApiGetTopSystemListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetTopSystemListRequest) Expand(expand string) ApiGetTopSystemListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetTopSystemListRequest) Apply(apply string) ApiGetTopSystemListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetTopSystemListRequest) Count(count bool) ApiGetTopSystemListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetTopSystemListRequest) Inlinecount(inlinecount string) ApiGetTopSystemListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetTopSystemListRequest) At(at string) ApiGetTopSystemListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetTopSystemListRequest) Tags(tags string) ApiGetTopSystemListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetTopSystemList Read a 'top.System' resource.
 func (a *TopApiService) GetTopSystemList(ctx _context.Context) ApiGetTopSystemListRequest {
 	return ApiGetTopSystemListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *TopApiService) GetTopSystemListExecute(r ApiGetTopSystemListRequest) (T
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,11 @@ func (a *TopApiService) GetTopSystemListExecute(r ApiGetTopSystemListRequest) (T
 }
 
 type ApiPatchTopSystemRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TopApiService
-	moid string
-	topSystem *TopSystem
-	ifMatch *string
+	moid       string
+	topSystem  *TopSystem
+	ifMatch    *string
 }
 
 // The &#39;top.System&#39; resource to update.
@@ -438,6 +447,7 @@ func (r ApiPatchTopSystemRequest) TopSystem(topSystem TopSystem) ApiPatchTopSyst
 	r.topSystem = &topSystem
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchTopSystemRequest) IfMatch(ifMatch string) ApiPatchTopSystemRequest {
 	r.ifMatch = &ifMatch
@@ -458,8 +468,8 @@ PatchTopSystem Update a 'top.System' resource.
 func (a *TopApiService) PatchTopSystem(ctx _context.Context, moid string) ApiPatchTopSystemRequest {
 	return ApiPatchTopSystemRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -574,13 +584,13 @@ func (a *TopApiService) PatchTopSystemExecute(r ApiPatchTopSystemRequest) (TopSy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -597,11 +607,11 @@ func (a *TopApiService) PatchTopSystemExecute(r ApiPatchTopSystemRequest) (TopSy
 }
 
 type ApiUpdateTopSystemRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *TopApiService
-	moid string
-	topSystem *TopSystem
-	ifMatch *string
+	moid       string
+	topSystem  *TopSystem
+	ifMatch    *string
 }
 
 // The &#39;top.System&#39; resource to update.
@@ -609,6 +619,7 @@ func (r ApiUpdateTopSystemRequest) TopSystem(topSystem TopSystem) ApiUpdateTopSy
 	r.topSystem = &topSystem
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateTopSystemRequest) IfMatch(ifMatch string) ApiUpdateTopSystemRequest {
 	r.ifMatch = &ifMatch
@@ -629,8 +640,8 @@ UpdateTopSystem Update a 'top.System' resource.
 func (a *TopApiService) UpdateTopSystem(ctx _context.Context, moid string) ApiUpdateTopSystemRequest {
 	return ApiUpdateTopSystemRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -745,13 +756,13 @@ func (a *TopApiService) UpdateTopSystemExecute(r ApiUpdateTopSystemRequest) (Top
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

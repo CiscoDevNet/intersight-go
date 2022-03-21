@@ -23,13 +23,13 @@ type StorageNetAppEthernetPortLag struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType  string              `json:"ObjectType"`
 	ActivePorts []StorageNetAppPort `json:"ActivePorts,omitempty"`
 	// Policy for mapping flows to ports for outbound packets through a LAG (ifgrp). * `none` - Default unknown distribution policy type. * `port` - Network traffic is distributed based on the transport layer (TCP/UDP) ports. * `ip` - Network traffic is distributed based on IP addresses. * `mac` - Network traffic is distributed based on MAC addresses. * `sequential` - Network traffic is distributed in round-robin fashion from the list of configured, available ports.
-	DistributionPolicy *string `json:"DistributionPolicy,omitempty"`
-	MemberPorts []StorageNetAppPort `json:"MemberPorts,omitempty"`
+	DistributionPolicy *string             `json:"DistributionPolicy,omitempty"`
+	MemberPorts        []StorageNetAppPort `json:"MemberPorts,omitempty"`
 	// Determines how the ports interact with the switch. * `none` - Default unknown lag mode type. * `multimode_lacp` - Bundle multiple member ports of the interface group using Link Aggregation Control Protocol. * `multimode` - Bundle multiple member ports of the interface group to act as a single trunked port. * `singlemode` - Provide port redundancy using member ports of the interface group for failover.
-	Mode *string `json:"Mode,omitempty"`
+	Mode                 *string `json:"Mode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *StorageNetAppEthernetPortLag) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppEthernetPortLag) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *StorageNetAppEthernetPortLag) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppEthernetPortLag) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *StorageNetAppEthernetPortLag) SetObjectType(v string) {
 
 // GetActivePorts returns the ActivePorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppEthernetPortLag) GetActivePorts() []StorageNetAppPort {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppPort
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *StorageNetAppEthernetPortLag) SetDistributionPolicy(v string) {
 
 // GetMemberPorts returns the MemberPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppEthernetPortLag) GetMemberPorts() []StorageNetAppPort {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppPort
 		return ret
 	}
@@ -285,11 +285,11 @@ func (o *StorageNetAppEthernetPortLag) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType  string              `json:"ObjectType"`
 		ActivePorts []StorageNetAppPort `json:"ActivePorts,omitempty"`
 		// Policy for mapping flows to ports for outbound packets through a LAG (ifgrp). * `none` - Default unknown distribution policy type. * `port` - Network traffic is distributed based on the transport layer (TCP/UDP) ports. * `ip` - Network traffic is distributed based on IP addresses. * `mac` - Network traffic is distributed based on MAC addresses. * `sequential` - Network traffic is distributed in round-robin fashion from the list of configured, available ports.
-		DistributionPolicy *string `json:"DistributionPolicy,omitempty"`
-		MemberPorts []StorageNetAppPort `json:"MemberPorts,omitempty"`
+		DistributionPolicy *string             `json:"DistributionPolicy,omitempty"`
+		MemberPorts        []StorageNetAppPort `json:"MemberPorts,omitempty"`
 		// Determines how the ports interact with the switch. * `none` - Default unknown lag mode type. * `multimode_lacp` - Bundle multiple member ports of the interface group using Link Aggregation Control Protocol. * `multimode` - Bundle multiple member ports of the interface group to act as a single trunked port. * `singlemode` - Provide port redundancy using member ports of the interface group for failover.
 		Mode *string `json:"Mode,omitempty"`
 	}
@@ -388,5 +388,3 @@ func (v *NullableStorageNetAppEthernetPortLag) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

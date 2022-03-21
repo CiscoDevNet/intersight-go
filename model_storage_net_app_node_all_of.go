@@ -20,20 +20,20 @@ type StorageNetAppNodeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType            string                                  `json:"ObjectType"`
 	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 	// The health of the NetApp Node.
-	Health *bool `json:"Health,omitempty"`
+	Health           *bool                                 `json:"Health,omitempty"`
 	HighAvailability NullableStorageNetAppHighAvailability `json:"HighAvailability,omitempty"`
 	// Unique identifier of NetApp Node across data center.
 	Key *string `json:"Key,omitempty"`
 	// The system id of the NetApp Node.
 	Systemid *string `json:"Systemid,omitempty"`
 	// Universally unique identifier of NetApp Node.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid  *string                           `json:"Uuid,omitempty"`
 	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	// An array of relationships to storageNetAppNodeEvent resources.
-	Events []StorageNetAppNodeEventRelationship `json:"Events,omitempty"`
+	Events               []StorageNetAppNodeEventRelationship `json:"Events,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *StorageNetAppNodeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppNodeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *StorageNetAppNodeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppNodeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -187,7 +187,7 @@ func (o *StorageNetAppNodeAllOf) GetHighAvailability() StorageNetAppHighAvailabi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageNetAppNodeAllOf) GetHighAvailabilityOk() (*StorageNetAppHighAvailability, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HighAvailability.Get(), o.HighAvailability.IsSet()
@@ -206,6 +206,7 @@ func (o *StorageNetAppNodeAllOf) HasHighAvailability() bool {
 func (o *StorageNetAppNodeAllOf) SetHighAvailability(v StorageNetAppHighAvailability) {
 	o.HighAvailability.Set(&v)
 }
+
 // SetHighAvailabilityNil sets the value for HighAvailability to be an explicit nil
 func (o *StorageNetAppNodeAllOf) SetHighAvailabilityNil() {
 	o.HighAvailability.Set(nil)
@@ -346,7 +347,7 @@ func (o *StorageNetAppNodeAllOf) SetArray(v StorageNetAppClusterRelationship) {
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppNodeAllOf) GetEvents() []StorageNetAppNodeEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppNodeEventRelationship
 		return ret
 	}
@@ -478,5 +479,3 @@ func (v *NullableStorageNetAppNodeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

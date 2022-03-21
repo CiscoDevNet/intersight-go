@@ -27,8 +27,8 @@ type HclSupportedDriverName struct {
 	// Vendor distributing the Operating System.
 	OsVendor *string `json:"OsVendor,omitempty"`
 	// Version of the Operating System.
-	OsVersion *string `json:"OsVersion,omitempty"`
-	ProductList []HclProduct `json:"ProductList,omitempty"`
+	OsVersion            *string      `json:"OsVersion,omitempty"`
+	ProductList          []HclProduct `json:"ProductList,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *HclSupportedDriverName) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HclSupportedDriverName) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *HclSupportedDriverName) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HclSupportedDriverName) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *HclSupportedDriverName) SetOsVersion(v string) {
 
 // GetProductList returns the ProductList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HclSupportedDriverName) GetProductList() []HclProduct {
-	if o == nil  {
+	if o == nil {
 		var ret []HclProduct
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *HclSupportedDriverName) UnmarshalJSON(bytes []byte) (err error) {
 		// Vendor distributing the Operating System.
 		OsVendor *string `json:"OsVendor,omitempty"`
 		// Version of the Operating System.
-		OsVersion *string `json:"OsVersion,omitempty"`
+		OsVersion   *string      `json:"OsVersion,omitempty"`
 		ProductList []HclProduct `json:"ProductList,omitempty"`
 	}
 
@@ -340,5 +340,3 @@ func (v *NullableHclSupportedDriverName) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

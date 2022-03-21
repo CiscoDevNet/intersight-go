@@ -27,12 +27,12 @@ type VirtualizationIweDvswitch struct {
 	// The name of the dvUplink referenced by this dvswitch.
 	DvUplink *string `json:"DvUplink,omitempty"`
 	// The last host that update this object.
-	LastHostname *string `json:"LastHostname,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+	LastHostname *string                               `json:"LastHostname,omitempty"`
+	Cluster      *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
 	// An array of relationships to virtualizationIweHost resources.
 	MemberHosts []VirtualizationIweHostRelationship `json:"MemberHosts,omitempty"`
 	// An array of relationships to virtualizationIweHostVswitch resources.
-	MemberVswitches []VirtualizationIweHostVswitchRelationship `json:"MemberVswitches,omitempty"`
+	MemberVswitches      []VirtualizationIweHostVswitchRelationship `json:"MemberVswitches,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *VirtualizationIweDvswitch) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweDvswitch) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *VirtualizationIweDvswitch) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweDvswitch) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -207,7 +207,7 @@ func (o *VirtualizationIweDvswitch) SetCluster(v VirtualizationIweClusterRelatio
 
 // GetMemberHosts returns the MemberHosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweDvswitch) GetMemberHosts() []VirtualizationIweHostRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweHostRelationship
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *VirtualizationIweDvswitch) SetMemberHosts(v []VirtualizationIweHostRela
 
 // GetMemberVswitches returns the MemberVswitches field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweDvswitch) GetMemberVswitches() []VirtualizationIweHostVswitchRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationIweHostVswitchRelationship
 		return ret
 	}
@@ -319,8 +319,8 @@ func (o *VirtualizationIweDvswitch) UnmarshalJSON(bytes []byte) (err error) {
 		// The name of the dvUplink referenced by this dvswitch.
 		DvUplink *string `json:"DvUplink,omitempty"`
 		// The last host that update this object.
-		LastHostname *string `json:"LastHostname,omitempty"`
-		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+		LastHostname *string                               `json:"LastHostname,omitempty"`
+		Cluster      *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
 		// An array of relationships to virtualizationIweHost resources.
 		MemberHosts []VirtualizationIweHostRelationship `json:"MemberHosts,omitempty"`
 		// An array of relationships to virtualizationIweHostVswitch resources.
@@ -423,5 +423,3 @@ func (v *NullableVirtualizationIweDvswitch) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

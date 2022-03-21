@@ -30,7 +30,7 @@ type VirtualizationVirtualDiskConfigAllOf struct {
 	// Source disk name from where the clone is done.
 	SourceDiskToClone *string `json:"SourceDiskToClone,omitempty"`
 	// Disk image source for the virtual machine.
-	SourceFilePath *string `json:"SourceFilePath,omitempty"`
+	SourceFilePath       *string `json:"SourceFilePath,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *VirtualizationVirtualDiskConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualDiskConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *VirtualizationVirtualDiskConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVirtualDiskConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -360,5 +360,3 @@ func (v *NullableVirtualizationVirtualDiskConfigAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

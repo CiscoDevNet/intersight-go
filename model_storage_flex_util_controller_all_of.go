@@ -28,15 +28,15 @@ type StorageFlexUtilControllerAllOf struct {
 	// Identifier for the Storage Flex Util Controller.
 	FfControllerId *string `json:"FfControllerId,omitempty"`
 	// The internal state of the controller.
-	InternalState *string `json:"InternalState,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
+	InternalState *string                   `json:"InternalState,omitempty"`
+	ComputeBoard  *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
 	// An array of relationships to storageFlexUtilPhysicalDrive resources.
 	FlexUtilPhysicalDrives []StorageFlexUtilPhysicalDriveRelationship `json:"FlexUtilPhysicalDrives,omitempty"`
 	// An array of relationships to storageFlexUtilVirtualDrive resources.
 	FlexUtilVirtualDrives []StorageFlexUtilVirtualDriveRelationship `json:"FlexUtilVirtualDrives,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InventoryDeviceInfo   *InventoryDeviceInfoRelationship          `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship      `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _StorageFlexUtilControllerAllOf StorageFlexUtilControllerAllOf
@@ -77,7 +77,7 @@ func (o *StorageFlexUtilControllerAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilControllerAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *StorageFlexUtilControllerAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilControllerAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -274,7 +274,7 @@ func (o *StorageFlexUtilControllerAllOf) SetComputeBoard(v ComputeBoardRelations
 
 // GetFlexUtilPhysicalDrives returns the FlexUtilPhysicalDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexUtilControllerAllOf) GetFlexUtilPhysicalDrives() []StorageFlexUtilPhysicalDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexUtilPhysicalDriveRelationship
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *StorageFlexUtilControllerAllOf) SetFlexUtilPhysicalDrives(v []StorageFl
 
 // GetFlexUtilVirtualDrives returns the FlexUtilVirtualDrives field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageFlexUtilControllerAllOf) GetFlexUtilVirtualDrives() []StorageFlexUtilVirtualDriveRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageFlexUtilVirtualDriveRelationship
 		return ret
 	}
@@ -507,5 +507,3 @@ func (v *NullableStorageFlexUtilControllerAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

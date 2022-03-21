@@ -31,7 +31,7 @@ type NiatelemetrySmartLicense struct {
 	// License Udi of the smart license.
 	LicenseUdi *string `json:"LicenseUdi,omitempty"`
 	// Smart licensing account name in CSSM and is retrieved from CSSM after regsitration.
-	SmartAccount *string `json:"SmartAccount,omitempty"`
+	SmartAccount         *string `json:"SmartAccount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *NiatelemetrySmartLicense) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySmartLicense) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *NiatelemetrySmartLicense) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySmartLicense) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableNiatelemetrySmartLicense) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

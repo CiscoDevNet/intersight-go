@@ -25,12 +25,12 @@ type StoragePureVolumeSnapshot struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Unique serial number of the snapshot allocated by the storage array.
-	Serial *string `json:"Serial,omitempty"`
-	Array *StoragePureArrayRelationship `json:"Array,omitempty"`
+	Serial                  *string                                         `json:"Serial,omitempty"`
+	Array                   *StoragePureArrayRelationship                   `json:"Array,omitempty"`
 	ProtectionGroupSnapshot *StoragePureProtectionGroupSnapshotRelationship `json:"ProtectionGroupSnapshot,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	Volume *StoragePureVolumeRelationship `json:"Volume,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice        *AssetDeviceRegistrationRelationship            `json:"RegisteredDevice,omitempty"`
+	Volume                  *StoragePureVolumeRelationship                  `json:"Volume,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _StoragePureVolumeSnapshot StoragePureVolumeSnapshot
@@ -71,7 +71,7 @@ func (o *StoragePureVolumeSnapshot) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureVolumeSnapshot) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *StoragePureVolumeSnapshot) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePureVolumeSnapshot) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -312,11 +312,11 @@ func (o *StoragePureVolumeSnapshot) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Unique serial number of the snapshot allocated by the storage array.
-		Serial *string `json:"Serial,omitempty"`
-		Array *StoragePureArrayRelationship `json:"Array,omitempty"`
+		Serial                  *string                                         `json:"Serial,omitempty"`
+		Array                   *StoragePureArrayRelationship                   `json:"Array,omitempty"`
 		ProtectionGroupSnapshot *StoragePureProtectionGroupSnapshotRelationship `json:"ProtectionGroupSnapshot,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-		Volume *StoragePureVolumeRelationship `json:"Volume,omitempty"`
+		RegisteredDevice        *AssetDeviceRegistrationRelationship            `json:"RegisteredDevice,omitempty"`
+		Volume                  *StoragePureVolumeRelationship                  `json:"Volume,omitempty"`
 	}
 
 	varStoragePureVolumeSnapshotWithoutEmbeddedStruct := StoragePureVolumeSnapshotWithoutEmbeddedStruct{}
@@ -415,5 +415,3 @@ func (v *NullableStoragePureVolumeSnapshot) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

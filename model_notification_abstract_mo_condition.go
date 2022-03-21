@@ -29,7 +29,7 @@ type NotificationAbstractMoCondition struct {
 	// MoType for which the condition is created.
 	MoType *string `json:"MoType,omitempty"`
 	// Odata filter string managed internally. It is built with specific ObjectType properties.
-	OdataFilter *string `json:"OdataFilter,omitempty"`
+	OdataFilter          *string `json:"OdataFilter,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *NotificationAbstractMoCondition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NotificationAbstractMoCondition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *NotificationAbstractMoCondition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NotificationAbstractMoCondition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableNotificationAbstractMoCondition) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

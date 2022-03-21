@@ -27,8 +27,8 @@ type StorageNetAppInitiatorGroup struct {
 	// Initiator group protocol. * `FCP` - Fibre channel initiator type which contains WWN of an HBA on the host. * `iSCSI` - An iSCSI initiator type used by the host. * `mixed` - For systems using both FC and iSCSI connections to the same LUN, create two igroups, one for FC and one for iSCSI. Then map the LUN to both igroups.
 	Protocol *string `json:"Protocol,omitempty"`
 	// Universally unique identifier of the LUN.
-	Uuid *string `json:"Uuid,omitempty"`
-	Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
+	Uuid                 *string                             `json:"Uuid,omitempty"`
+	Tenant               *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *StorageNetAppInitiatorGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppInitiatorGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *StorageNetAppInitiatorGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppInitiatorGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -243,7 +243,7 @@ func (o *StorageNetAppInitiatorGroup) UnmarshalJSON(bytes []byte) (err error) {
 		// Initiator group protocol. * `FCP` - Fibre channel initiator type which contains WWN of an HBA on the host. * `iSCSI` - An iSCSI initiator type used by the host. * `mixed` - For systems using both FC and iSCSI connections to the same LUN, create two igroups, one for FC and one for iSCSI. Then map the LUN to both igroups.
 		Protocol *string `json:"Protocol,omitempty"`
 		// Universally unique identifier of the LUN.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid   *string                             `json:"Uuid,omitempty"`
 		Tenant *StorageNetAppStorageVmRelationship `json:"Tenant,omitempty"`
 	}
 
@@ -339,5 +339,3 @@ func (v *NullableStorageNetAppInitiatorGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type VirtualizationVmwareVmCpuSocketInfo struct {
 	// Number of CPUs allocated to this VM.
 	NumCpus *int64 `json:"NumCpus,omitempty"`
 	// The number of CPU sockets allocated.
-	NumSockets *int64 `json:"NumSockets,omitempty"`
+	NumSockets           *int64 `json:"NumSockets,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *VirtualizationVmwareVmCpuSocketInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmCpuSocketInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *VirtualizationVmwareVmCpuSocketInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmCpuSocketInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableVirtualizationVmwareVmCpuSocketInfo) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -33,10 +33,10 @@ type StorageItem struct {
 	// The size (MB) of the Local storage in FI.
 	Size *string `json:"Size,omitempty"`
 	// The used percent of the Local storage in FI.
-	Used *string `json:"Used,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Used                 *string                              `json:"Used,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *StorageItem) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageItem) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *StorageItem) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageItem) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,10 +432,10 @@ func (o *StorageItem) UnmarshalJSON(bytes []byte) (err error) {
 		// The size (MB) of the Local storage in FI.
 		Size *string `json:"Size,omitempty"`
 		// The used percent of the Local storage in FI.
-		Used *string `json:"Used,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		Used                *string                              `json:"Used,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		NetworkElement      *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStorageItemWithoutEmbeddedStruct := StorageItemWithoutEmbeddedStruct{}
@@ -540,5 +540,3 @@ func (v *NullableStorageItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

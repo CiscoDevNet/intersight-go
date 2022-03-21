@@ -27,7 +27,7 @@ type WorkflowWorkflowInfoProperties struct {
 	// When true, this workflow can be retried if has not been modified for more than a period of 2 weeks.
 	Retryable *bool `json:"Retryable,omitempty"`
 	// Status of rollback for this workflow instance. The rollback action of the workflow can be enabled, disabled, completed. * `Disabled` - Status of the rollback action when workflow is disabled for rollback. * `Enabled` - Status of the rollback action when workflow is enabled for rollback. * `Completed` - Status of the rollback action once workflow completes the rollback for all eligible tasks.
-	RollbackAction *string `json:"RollbackAction,omitempty"`
+	RollbackAction       *string `json:"RollbackAction,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *WorkflowWorkflowInfoProperties) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowInfoProperties) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *WorkflowWorkflowInfoProperties) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowInfoProperties) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,5 +304,3 @@ func (v *NullableWorkflowWorkflowInfoProperties) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

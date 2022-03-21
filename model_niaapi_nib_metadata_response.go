@@ -18,32 +18,31 @@ import (
 
 // NiaapiNibMetadataResponse - The response body of a HTTP GET request for the 'niaapi.NibMetadata' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niaapi.NibMetadata' resources.
 type NiaapiNibMetadataResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 	NiaapiNibMetadataList *NiaapiNibMetadataList
 }
 
 // MoAggregateTransformAsNiaapiNibMetadataResponse is a convenience function that returns MoAggregateTransform wrapped in NiaapiNibMetadataResponse
 func MoAggregateTransformAsNiaapiNibMetadataResponse(v *MoAggregateTransform) NiaapiNibMetadataResponse {
-	return NiaapiNibMetadataResponse{ MoAggregateTransform: v}
+	return NiaapiNibMetadataResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiaapiNibMetadataResponse is a convenience function that returns MoDocumentCount wrapped in NiaapiNibMetadataResponse
 func MoDocumentCountAsNiaapiNibMetadataResponse(v *MoDocumentCount) NiaapiNibMetadataResponse {
-	return NiaapiNibMetadataResponse{ MoDocumentCount: v}
+	return NiaapiNibMetadataResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiaapiNibMetadataResponse is a convenience function that returns MoTagSummary wrapped in NiaapiNibMetadataResponse
 func MoTagSummaryAsNiaapiNibMetadataResponse(v *MoTagSummary) NiaapiNibMetadataResponse {
-	return NiaapiNibMetadataResponse{ MoTagSummary: v}
+	return NiaapiNibMetadataResponse{MoTagSummary: v}
 }
 
 // NiaapiNibMetadataListAsNiaapiNibMetadataResponse is a convenience function that returns NiaapiNibMetadataList wrapped in NiaapiNibMetadataResponse
 func NiaapiNibMetadataListAsNiaapiNibMetadataResponse(v *NiaapiNibMetadataList) NiaapiNibMetadataResponse {
-	return NiaapiNibMetadataResponse{ NiaapiNibMetadataList: v}
+	return NiaapiNibMetadataResponse{NiaapiNibMetadataList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiaapiNibMetadataResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiaapiNibMetadataResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiaapiNibMetadataResponse) GetActualInstance() (interface{}) {
+func (obj *NiaapiNibMetadataResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiaapiNibMetadataResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

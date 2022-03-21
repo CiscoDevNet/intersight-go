@@ -24,7 +24,7 @@ type WorkflowFileTemplateOpAllOf struct {
 	// Path of the template file on the connected device.
 	TemplateFilePath *string `json:"TemplateFilePath,omitempty"`
 	// Input values to render text output file from template file.
-	TemplateValues interface{} `json:"TemplateValues,omitempty"`
+	TemplateValues       interface{} `json:"TemplateValues,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *WorkflowFileTemplateOpAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileTemplateOpAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *WorkflowFileTemplateOpAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowFileTemplateOpAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -135,7 +135,7 @@ func (o *WorkflowFileTemplateOpAllOf) SetTemplateFilePath(v string) {
 
 // GetTemplateValues returns the TemplateValues field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowFileTemplateOpAllOf) GetTemplateValues() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -243,5 +243,3 @@ func (v *NullableWorkflowFileTemplateOpAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

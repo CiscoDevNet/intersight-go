@@ -19,19 +19,18 @@ import (
 // KubernetesClusterRelationship - A relationship to the 'kubernetes.Cluster' resource, or the expanded 'kubernetes.Cluster' resource, or the 'null' value.
 type KubernetesClusterRelationship struct {
 	KubernetesCluster *KubernetesCluster
-	MoMoRef *MoMoRef
+	MoMoRef           *MoMoRef
 }
 
 // KubernetesClusterAsKubernetesClusterRelationship is a convenience function that returns KubernetesCluster wrapped in KubernetesClusterRelationship
 func KubernetesClusterAsKubernetesClusterRelationship(v *KubernetesCluster) KubernetesClusterRelationship {
-	return KubernetesClusterRelationship{ KubernetesCluster: v}
+	return KubernetesClusterRelationship{KubernetesCluster: v}
 }
 
 // MoMoRefAsKubernetesClusterRelationship is a convenience function that returns MoMoRef wrapped in KubernetesClusterRelationship
 func MoMoRefAsKubernetesClusterRelationship(v *MoMoRef) KubernetesClusterRelationship {
-	return KubernetesClusterRelationship{ MoMoRef: v}
+	return KubernetesClusterRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesClusterRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesCluster != nil {
 		return obj.KubernetesCluster
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesClusterRelationship) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

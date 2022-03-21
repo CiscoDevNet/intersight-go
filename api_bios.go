@@ -29,10 +29,10 @@ var (
 type BiosApiService service
 
 type ApiCreateBiosPolicyRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	biosPolicy *BiosPolicy
-	ifMatch *string
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	biosPolicy  *BiosPolicy
+	ifMatch     *string
 	ifNoneMatch *string
 }
 
@@ -41,11 +41,13 @@ func (r ApiCreateBiosPolicyRequest) BiosPolicy(biosPolicy BiosPolicy) ApiCreateB
 	r.biosPolicy = &biosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateBiosPolicyRequest) IfMatch(ifMatch string) ApiCreateBiosPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateBiosPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateBiosPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateBiosPolicy Create a 'bios.Policy' resource.
 func (a *BiosApiService) CreateBiosPolicy(ctx _context.Context) ApiCreateBiosPolicyRequest {
 	return ApiCreateBiosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *BiosApiService) CreateBiosPolicyExecute(r ApiCreateBiosPolicyRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *BiosApiService) CreateBiosPolicyExecute(r ApiCreateBiosPolicyRequest) (
 }
 
 type ApiDeleteBiosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteBiosPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteBiosPolicyExecute(r)
@@ -225,8 +226,8 @@ DeleteBiosPolicy Delete a 'bios.Policy' resource.
 func (a *BiosApiService) DeleteBiosPolicy(ctx _context.Context, moid string) ApiDeleteBiosPolicyRequest {
 	return ApiDeleteBiosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *BiosApiService) DeleteBiosPolicyExecute(r ApiDeleteBiosPolicyRequest) (
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *BiosApiService) DeleteBiosPolicyExecute(r ApiDeleteBiosPolicyRequest) (
 }
 
 type ApiGetBiosBootDeviceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosBootDeviceByMoidRequest) Execute() (BiosBootDevice, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosBootDeviceByMoidExecute(r)
@@ -365,8 +365,8 @@ GetBiosBootDeviceByMoid Read a 'bios.BootDevice' resource.
 func (a *BiosApiService) GetBiosBootDeviceByMoid(ctx _context.Context, moid string) ApiGetBiosBootDeviceByMoidRequest {
 	return ApiGetBiosBootDeviceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -473,13 +473,13 @@ func (a *BiosApiService) GetBiosBootDeviceByMoidExecute(r ApiGetBiosBootDeviceBy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -496,19 +496,19 @@ func (a *BiosApiService) GetBiosBootDeviceByMoidExecute(r ApiGetBiosBootDeviceBy
 }
 
 type ApiGetBiosBootDeviceListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -516,51 +516,61 @@ func (r ApiGetBiosBootDeviceListRequest) Filter(filter string) ApiGetBiosBootDev
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosBootDeviceListRequest) Orderby(orderby string) ApiGetBiosBootDeviceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosBootDeviceListRequest) Top(top int32) ApiGetBiosBootDeviceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosBootDeviceListRequest) Skip(skip int32) ApiGetBiosBootDeviceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosBootDeviceListRequest) Select_(select_ string) ApiGetBiosBootDeviceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosBootDeviceListRequest) Expand(expand string) ApiGetBiosBootDeviceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosBootDeviceListRequest) Apply(apply string) ApiGetBiosBootDeviceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosBootDeviceListRequest) Count(count bool) ApiGetBiosBootDeviceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosBootDeviceListRequest) Inlinecount(inlinecount string) ApiGetBiosBootDeviceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosBootDeviceListRequest) At(at string) ApiGetBiosBootDeviceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosBootDeviceListRequest) Tags(tags string) ApiGetBiosBootDeviceListRequest {
 	r.tags = &tags
@@ -580,7 +590,7 @@ GetBiosBootDeviceList Read a 'bios.BootDevice' resource.
 func (a *BiosApiService) GetBiosBootDeviceList(ctx _context.Context) ApiGetBiosBootDeviceListRequest {
 	return ApiGetBiosBootDeviceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -719,13 +729,13 @@ func (a *BiosApiService) GetBiosBootDeviceListExecute(r ApiGetBiosBootDeviceList
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -742,11 +752,10 @@ func (a *BiosApiService) GetBiosBootDeviceListExecute(r ApiGetBiosBootDeviceList
 }
 
 type ApiGetBiosBootModeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosBootModeByMoidRequest) Execute() (BiosBootMode, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosBootModeByMoidExecute(r)
@@ -762,8 +771,8 @@ GetBiosBootModeByMoid Read a 'bios.BootMode' resource.
 func (a *BiosApiService) GetBiosBootModeByMoid(ctx _context.Context, moid string) ApiGetBiosBootModeByMoidRequest {
 	return ApiGetBiosBootModeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -870,13 +879,13 @@ func (a *BiosApiService) GetBiosBootModeByMoidExecute(r ApiGetBiosBootModeByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -893,19 +902,19 @@ func (a *BiosApiService) GetBiosBootModeByMoidExecute(r ApiGetBiosBootModeByMoid
 }
 
 type ApiGetBiosBootModeListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -913,51 +922,61 @@ func (r ApiGetBiosBootModeListRequest) Filter(filter string) ApiGetBiosBootModeL
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosBootModeListRequest) Orderby(orderby string) ApiGetBiosBootModeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosBootModeListRequest) Top(top int32) ApiGetBiosBootModeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosBootModeListRequest) Skip(skip int32) ApiGetBiosBootModeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosBootModeListRequest) Select_(select_ string) ApiGetBiosBootModeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosBootModeListRequest) Expand(expand string) ApiGetBiosBootModeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosBootModeListRequest) Apply(apply string) ApiGetBiosBootModeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosBootModeListRequest) Count(count bool) ApiGetBiosBootModeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosBootModeListRequest) Inlinecount(inlinecount string) ApiGetBiosBootModeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosBootModeListRequest) At(at string) ApiGetBiosBootModeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosBootModeListRequest) Tags(tags string) ApiGetBiosBootModeListRequest {
 	r.tags = &tags
@@ -977,7 +996,7 @@ GetBiosBootModeList Read a 'bios.BootMode' resource.
 func (a *BiosApiService) GetBiosBootModeList(ctx _context.Context) ApiGetBiosBootModeListRequest {
 	return ApiGetBiosBootModeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1116,13 +1135,13 @@ func (a *BiosApiService) GetBiosBootModeListExecute(r ApiGetBiosBootModeListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1139,11 +1158,10 @@ func (a *BiosApiService) GetBiosBootModeListExecute(r ApiGetBiosBootModeListRequ
 }
 
 type ApiGetBiosPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosPolicyByMoidRequest) Execute() (BiosPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosPolicyByMoidExecute(r)
@@ -1159,8 +1177,8 @@ GetBiosPolicyByMoid Read a 'bios.Policy' resource.
 func (a *BiosApiService) GetBiosPolicyByMoid(ctx _context.Context, moid string) ApiGetBiosPolicyByMoidRequest {
 	return ApiGetBiosPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1267,13 +1285,13 @@ func (a *BiosApiService) GetBiosPolicyByMoidExecute(r ApiGetBiosPolicyByMoidRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1290,19 +1308,19 @@ func (a *BiosApiService) GetBiosPolicyByMoidExecute(r ApiGetBiosPolicyByMoidRequ
 }
 
 type ApiGetBiosPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1310,51 +1328,61 @@ func (r ApiGetBiosPolicyListRequest) Filter(filter string) ApiGetBiosPolicyListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosPolicyListRequest) Orderby(orderby string) ApiGetBiosPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosPolicyListRequest) Top(top int32) ApiGetBiosPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosPolicyListRequest) Skip(skip int32) ApiGetBiosPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosPolicyListRequest) Select_(select_ string) ApiGetBiosPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosPolicyListRequest) Expand(expand string) ApiGetBiosPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosPolicyListRequest) Apply(apply string) ApiGetBiosPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosPolicyListRequest) Count(count bool) ApiGetBiosPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosPolicyListRequest) Inlinecount(inlinecount string) ApiGetBiosPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosPolicyListRequest) At(at string) ApiGetBiosPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosPolicyListRequest) Tags(tags string) ApiGetBiosPolicyListRequest {
 	r.tags = &tags
@@ -1374,7 +1402,7 @@ GetBiosPolicyList Read a 'bios.Policy' resource.
 func (a *BiosApiService) GetBiosPolicyList(ctx _context.Context) ApiGetBiosPolicyListRequest {
 	return ApiGetBiosPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1513,13 +1541,13 @@ func (a *BiosApiService) GetBiosPolicyListExecute(r ApiGetBiosPolicyListRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1536,11 +1564,10 @@ func (a *BiosApiService) GetBiosPolicyListExecute(r ApiGetBiosPolicyListRequest)
 }
 
 type ApiGetBiosSystemBootOrderByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosSystemBootOrderByMoidRequest) Execute() (BiosSystemBootOrder, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosSystemBootOrderByMoidExecute(r)
@@ -1556,8 +1583,8 @@ GetBiosSystemBootOrderByMoid Read a 'bios.SystemBootOrder' resource.
 func (a *BiosApiService) GetBiosSystemBootOrderByMoid(ctx _context.Context, moid string) ApiGetBiosSystemBootOrderByMoidRequest {
 	return ApiGetBiosSystemBootOrderByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1664,13 +1691,13 @@ func (a *BiosApiService) GetBiosSystemBootOrderByMoidExecute(r ApiGetBiosSystemB
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1687,19 +1714,19 @@ func (a *BiosApiService) GetBiosSystemBootOrderByMoidExecute(r ApiGetBiosSystemB
 }
 
 type ApiGetBiosSystemBootOrderListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1707,51 +1734,61 @@ func (r ApiGetBiosSystemBootOrderListRequest) Filter(filter string) ApiGetBiosSy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosSystemBootOrderListRequest) Orderby(orderby string) ApiGetBiosSystemBootOrderListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosSystemBootOrderListRequest) Top(top int32) ApiGetBiosSystemBootOrderListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosSystemBootOrderListRequest) Skip(skip int32) ApiGetBiosSystemBootOrderListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosSystemBootOrderListRequest) Select_(select_ string) ApiGetBiosSystemBootOrderListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosSystemBootOrderListRequest) Expand(expand string) ApiGetBiosSystemBootOrderListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosSystemBootOrderListRequest) Apply(apply string) ApiGetBiosSystemBootOrderListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosSystemBootOrderListRequest) Count(count bool) ApiGetBiosSystemBootOrderListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosSystemBootOrderListRequest) Inlinecount(inlinecount string) ApiGetBiosSystemBootOrderListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosSystemBootOrderListRequest) At(at string) ApiGetBiosSystemBootOrderListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosSystemBootOrderListRequest) Tags(tags string) ApiGetBiosSystemBootOrderListRequest {
 	r.tags = &tags
@@ -1771,7 +1808,7 @@ GetBiosSystemBootOrderList Read a 'bios.SystemBootOrder' resource.
 func (a *BiosApiService) GetBiosSystemBootOrderList(ctx _context.Context) ApiGetBiosSystemBootOrderListRequest {
 	return ApiGetBiosSystemBootOrderListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1910,13 +1947,13 @@ func (a *BiosApiService) GetBiosSystemBootOrderListExecute(r ApiGetBiosSystemBoo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1933,11 +1970,10 @@ func (a *BiosApiService) GetBiosSystemBootOrderListExecute(r ApiGetBiosSystemBoo
 }
 
 type ApiGetBiosTokenSettingsByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosTokenSettingsByMoidRequest) Execute() (BiosTokenSettings, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosTokenSettingsByMoidExecute(r)
@@ -1953,8 +1989,8 @@ GetBiosTokenSettingsByMoid Read a 'bios.TokenSettings' resource.
 func (a *BiosApiService) GetBiosTokenSettingsByMoid(ctx _context.Context, moid string) ApiGetBiosTokenSettingsByMoidRequest {
 	return ApiGetBiosTokenSettingsByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2061,13 +2097,13 @@ func (a *BiosApiService) GetBiosTokenSettingsByMoidExecute(r ApiGetBiosTokenSett
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2084,19 +2120,19 @@ func (a *BiosApiService) GetBiosTokenSettingsByMoidExecute(r ApiGetBiosTokenSett
 }
 
 type ApiGetBiosTokenSettingsListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2104,51 +2140,61 @@ func (r ApiGetBiosTokenSettingsListRequest) Filter(filter string) ApiGetBiosToke
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosTokenSettingsListRequest) Orderby(orderby string) ApiGetBiosTokenSettingsListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosTokenSettingsListRequest) Top(top int32) ApiGetBiosTokenSettingsListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosTokenSettingsListRequest) Skip(skip int32) ApiGetBiosTokenSettingsListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosTokenSettingsListRequest) Select_(select_ string) ApiGetBiosTokenSettingsListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosTokenSettingsListRequest) Expand(expand string) ApiGetBiosTokenSettingsListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosTokenSettingsListRequest) Apply(apply string) ApiGetBiosTokenSettingsListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosTokenSettingsListRequest) Count(count bool) ApiGetBiosTokenSettingsListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosTokenSettingsListRequest) Inlinecount(inlinecount string) ApiGetBiosTokenSettingsListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosTokenSettingsListRequest) At(at string) ApiGetBiosTokenSettingsListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosTokenSettingsListRequest) Tags(tags string) ApiGetBiosTokenSettingsListRequest {
 	r.tags = &tags
@@ -2168,7 +2214,7 @@ GetBiosTokenSettingsList Read a 'bios.TokenSettings' resource.
 func (a *BiosApiService) GetBiosTokenSettingsList(ctx _context.Context) ApiGetBiosTokenSettingsListRequest {
 	return ApiGetBiosTokenSettingsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2307,13 +2353,13 @@ func (a *BiosApiService) GetBiosTokenSettingsListExecute(r ApiGetBiosTokenSettin
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2330,11 +2376,10 @@ func (a *BiosApiService) GetBiosTokenSettingsListExecute(r ApiGetBiosTokenSettin
 }
 
 type ApiGetBiosUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosUnitByMoidRequest) Execute() (BiosUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosUnitByMoidExecute(r)
@@ -2350,8 +2395,8 @@ GetBiosUnitByMoid Read a 'bios.Unit' resource.
 func (a *BiosApiService) GetBiosUnitByMoid(ctx _context.Context, moid string) ApiGetBiosUnitByMoidRequest {
 	return ApiGetBiosUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2458,13 +2503,13 @@ func (a *BiosApiService) GetBiosUnitByMoidExecute(r ApiGetBiosUnitByMoidRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2481,19 +2526,19 @@ func (a *BiosApiService) GetBiosUnitByMoidExecute(r ApiGetBiosUnitByMoidRequest)
 }
 
 type ApiGetBiosUnitListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2501,51 +2546,61 @@ func (r ApiGetBiosUnitListRequest) Filter(filter string) ApiGetBiosUnitListReque
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosUnitListRequest) Orderby(orderby string) ApiGetBiosUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosUnitListRequest) Top(top int32) ApiGetBiosUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosUnitListRequest) Skip(skip int32) ApiGetBiosUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosUnitListRequest) Select_(select_ string) ApiGetBiosUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosUnitListRequest) Expand(expand string) ApiGetBiosUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosUnitListRequest) Apply(apply string) ApiGetBiosUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosUnitListRequest) Count(count bool) ApiGetBiosUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosUnitListRequest) Inlinecount(inlinecount string) ApiGetBiosUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosUnitListRequest) At(at string) ApiGetBiosUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosUnitListRequest) Tags(tags string) ApiGetBiosUnitListRequest {
 	r.tags = &tags
@@ -2565,7 +2620,7 @@ GetBiosUnitList Read a 'bios.Unit' resource.
 func (a *BiosApiService) GetBiosUnitList(ctx _context.Context) ApiGetBiosUnitListRequest {
 	return ApiGetBiosUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2704,13 +2759,13 @@ func (a *BiosApiService) GetBiosUnitListExecute(r ApiGetBiosUnitListRequest) (Bi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2727,11 +2782,10 @@ func (a *BiosApiService) GetBiosUnitListExecute(r ApiGetBiosUnitListRequest) (Bi
 }
 
 type ApiGetBiosVfSelectMemoryRasConfigurationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetBiosVfSelectMemoryRasConfigurationByMoidRequest) Execute() (BiosVfSelectMemoryRasConfiguration, *_nethttp.Response, error) {
 	return r.ApiService.GetBiosVfSelectMemoryRasConfigurationByMoidExecute(r)
@@ -2747,8 +2801,8 @@ GetBiosVfSelectMemoryRasConfigurationByMoid Read a 'bios.VfSelectMemoryRasConfig
 func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationByMoid(ctx _context.Context, moid string) ApiGetBiosVfSelectMemoryRasConfigurationByMoidRequest {
 	return ApiGetBiosVfSelectMemoryRasConfigurationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2855,13 +2909,13 @@ func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2878,19 +2932,19 @@ func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationByMoidExecute(r Ap
 }
 
 type ApiGetBiosVfSelectMemoryRasConfigurationListRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *BiosApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2898,51 +2952,61 @@ func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Orderby(orderby string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Top(top int32) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Skip(skip int32) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Select_(select_ string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Expand(expand string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Apply(apply string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Count(count bool) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Inlinecount(inlinecount string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) At(at string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetBiosVfSelectMemoryRasConfigurationListRequest) Tags(tags string) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	r.tags = &tags
@@ -2962,7 +3026,7 @@ GetBiosVfSelectMemoryRasConfigurationList Read a 'bios.VfSelectMemoryRasConfigur
 func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationList(ctx _context.Context) ApiGetBiosVfSelectMemoryRasConfigurationListRequest {
 	return ApiGetBiosVfSelectMemoryRasConfigurationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3101,13 +3165,13 @@ func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3124,11 +3188,11 @@ func (a *BiosApiService) GetBiosVfSelectMemoryRasConfigurationListExecute(r ApiG
 }
 
 type ApiPatchBiosBootModeRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *BiosApiService
+	moid         string
 	biosBootMode *BiosBootMode
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;bios.BootMode&#39; resource to update.
@@ -3136,6 +3200,7 @@ func (r ApiPatchBiosBootModeRequest) BiosBootMode(biosBootMode BiosBootMode) Api
 	r.biosBootMode = &biosBootMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBiosBootModeRequest) IfMatch(ifMatch string) ApiPatchBiosBootModeRequest {
 	r.ifMatch = &ifMatch
@@ -3156,8 +3221,8 @@ PatchBiosBootMode Update a 'bios.BootMode' resource.
 func (a *BiosApiService) PatchBiosBootMode(ctx _context.Context, moid string) ApiPatchBiosBootModeRequest {
 	return ApiPatchBiosBootModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3272,13 +3337,13 @@ func (a *BiosApiService) PatchBiosBootModeExecute(r ApiPatchBiosBootModeRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3295,11 +3360,11 @@ func (a *BiosApiService) PatchBiosBootModeExecute(r ApiPatchBiosBootModeRequest)
 }
 
 type ApiPatchBiosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 	biosPolicy *BiosPolicy
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;bios.Policy&#39; resource to update.
@@ -3307,6 +3372,7 @@ func (r ApiPatchBiosPolicyRequest) BiosPolicy(biosPolicy BiosPolicy) ApiPatchBio
 	r.biosPolicy = &biosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBiosPolicyRequest) IfMatch(ifMatch string) ApiPatchBiosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -3327,8 +3393,8 @@ PatchBiosPolicy Update a 'bios.Policy' resource.
 func (a *BiosApiService) PatchBiosPolicy(ctx _context.Context, moid string) ApiPatchBiosPolicyRequest {
 	return ApiPatchBiosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3443,13 +3509,13 @@ func (a *BiosApiService) PatchBiosPolicyExecute(r ApiPatchBiosPolicyRequest) (Bi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3466,11 +3532,11 @@ func (a *BiosApiService) PatchBiosPolicyExecute(r ApiPatchBiosPolicyRequest) (Bi
 }
 
 type ApiPatchBiosUnitRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
-	biosUnit *BiosUnit
-	ifMatch *string
+	moid       string
+	biosUnit   *BiosUnit
+	ifMatch    *string
 }
 
 // The &#39;bios.Unit&#39; resource to update.
@@ -3478,6 +3544,7 @@ func (r ApiPatchBiosUnitRequest) BiosUnit(biosUnit BiosUnit) ApiPatchBiosUnitReq
 	r.biosUnit = &biosUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchBiosUnitRequest) IfMatch(ifMatch string) ApiPatchBiosUnitRequest {
 	r.ifMatch = &ifMatch
@@ -3498,8 +3565,8 @@ PatchBiosUnit Update a 'bios.Unit' resource.
 func (a *BiosApiService) PatchBiosUnit(ctx _context.Context, moid string) ApiPatchBiosUnitRequest {
 	return ApiPatchBiosUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3614,13 +3681,13 @@ func (a *BiosApiService) PatchBiosUnitExecute(r ApiPatchBiosUnitRequest) (BiosUn
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3637,11 +3704,11 @@ func (a *BiosApiService) PatchBiosUnitExecute(r ApiPatchBiosUnitRequest) (BiosUn
 }
 
 type ApiUpdateBiosBootModeRequest struct {
-	ctx _context.Context
-	ApiService *BiosApiService
-	moid string
+	ctx          _context.Context
+	ApiService   *BiosApiService
+	moid         string
 	biosBootMode *BiosBootMode
-	ifMatch *string
+	ifMatch      *string
 }
 
 // The &#39;bios.BootMode&#39; resource to update.
@@ -3649,6 +3716,7 @@ func (r ApiUpdateBiosBootModeRequest) BiosBootMode(biosBootMode BiosBootMode) Ap
 	r.biosBootMode = &biosBootMode
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBiosBootModeRequest) IfMatch(ifMatch string) ApiUpdateBiosBootModeRequest {
 	r.ifMatch = &ifMatch
@@ -3669,8 +3737,8 @@ UpdateBiosBootMode Update a 'bios.BootMode' resource.
 func (a *BiosApiService) UpdateBiosBootMode(ctx _context.Context, moid string) ApiUpdateBiosBootModeRequest {
 	return ApiUpdateBiosBootModeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3785,13 +3853,13 @@ func (a *BiosApiService) UpdateBiosBootModeExecute(r ApiUpdateBiosBootModeReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3808,11 +3876,11 @@ func (a *BiosApiService) UpdateBiosBootModeExecute(r ApiUpdateBiosBootModeReques
 }
 
 type ApiUpdateBiosPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
+	moid       string
 	biosPolicy *BiosPolicy
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;bios.Policy&#39; resource to update.
@@ -3820,6 +3888,7 @@ func (r ApiUpdateBiosPolicyRequest) BiosPolicy(biosPolicy BiosPolicy) ApiUpdateB
 	r.biosPolicy = &biosPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBiosPolicyRequest) IfMatch(ifMatch string) ApiUpdateBiosPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -3840,8 +3909,8 @@ UpdateBiosPolicy Update a 'bios.Policy' resource.
 func (a *BiosApiService) UpdateBiosPolicy(ctx _context.Context, moid string) ApiUpdateBiosPolicyRequest {
 	return ApiUpdateBiosPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3956,13 +4025,13 @@ func (a *BiosApiService) UpdateBiosPolicyExecute(r ApiUpdateBiosPolicyRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3979,11 +4048,11 @@ func (a *BiosApiService) UpdateBiosPolicyExecute(r ApiUpdateBiosPolicyRequest) (
 }
 
 type ApiUpdateBiosUnitRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *BiosApiService
-	moid string
-	biosUnit *BiosUnit
-	ifMatch *string
+	moid       string
+	biosUnit   *BiosUnit
+	ifMatch    *string
 }
 
 // The &#39;bios.Unit&#39; resource to update.
@@ -3991,6 +4060,7 @@ func (r ApiUpdateBiosUnitRequest) BiosUnit(biosUnit BiosUnit) ApiUpdateBiosUnitR
 	r.biosUnit = &biosUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateBiosUnitRequest) IfMatch(ifMatch string) ApiUpdateBiosUnitRequest {
 	r.ifMatch = &ifMatch
@@ -4011,8 +4081,8 @@ UpdateBiosUnit Update a 'bios.Unit' resource.
 func (a *BiosApiService) UpdateBiosUnit(ctx _context.Context, moid string) ApiUpdateBiosUnitRequest {
 	return ApiUpdateBiosUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4127,13 +4197,13 @@ func (a *BiosApiService) UpdateBiosUnitExecute(r ApiUpdateBiosUnitRequest) (Bios
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

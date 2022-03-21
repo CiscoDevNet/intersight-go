@@ -29,11 +29,10 @@ var (
 type CondApiService service
 
 type ApiGetCondAlarmAggregationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCondAlarmAggregationByMoidRequest) Execute() (CondAlarmAggregation, *_nethttp.Response, error) {
 	return r.ApiService.GetCondAlarmAggregationByMoidExecute(r)
@@ -49,8 +48,8 @@ GetCondAlarmAggregationByMoid Read a 'cond.AlarmAggregation' resource.
 func (a *CondApiService) GetCondAlarmAggregationByMoid(ctx _context.Context, moid string) ApiGetCondAlarmAggregationByMoidRequest {
 	return ApiGetCondAlarmAggregationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -157,13 +156,13 @@ func (a *CondApiService) GetCondAlarmAggregationByMoidExecute(r ApiGetCondAlarmA
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -180,19 +179,19 @@ func (a *CondApiService) GetCondAlarmAggregationByMoidExecute(r ApiGetCondAlarmA
 }
 
 type ApiGetCondAlarmAggregationListRequest struct {
-	ctx _context.Context
-	ApiService *CondApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CondApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -200,51 +199,61 @@ func (r ApiGetCondAlarmAggregationListRequest) Filter(filter string) ApiGetCondA
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCondAlarmAggregationListRequest) Orderby(orderby string) ApiGetCondAlarmAggregationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCondAlarmAggregationListRequest) Top(top int32) ApiGetCondAlarmAggregationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCondAlarmAggregationListRequest) Skip(skip int32) ApiGetCondAlarmAggregationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCondAlarmAggregationListRequest) Select_(select_ string) ApiGetCondAlarmAggregationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCondAlarmAggregationListRequest) Expand(expand string) ApiGetCondAlarmAggregationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCondAlarmAggregationListRequest) Apply(apply string) ApiGetCondAlarmAggregationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCondAlarmAggregationListRequest) Count(count bool) ApiGetCondAlarmAggregationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCondAlarmAggregationListRequest) Inlinecount(inlinecount string) ApiGetCondAlarmAggregationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCondAlarmAggregationListRequest) At(at string) ApiGetCondAlarmAggregationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCondAlarmAggregationListRequest) Tags(tags string) ApiGetCondAlarmAggregationListRequest {
 	r.tags = &tags
@@ -264,7 +273,7 @@ GetCondAlarmAggregationList Read a 'cond.AlarmAggregation' resource.
 func (a *CondApiService) GetCondAlarmAggregationList(ctx _context.Context) ApiGetCondAlarmAggregationListRequest {
 	return ApiGetCondAlarmAggregationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -403,13 +412,13 @@ func (a *CondApiService) GetCondAlarmAggregationListExecute(r ApiGetCondAlarmAgg
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -426,11 +435,10 @@ func (a *CondApiService) GetCondAlarmAggregationListExecute(r ApiGetCondAlarmAgg
 }
 
 type ApiGetCondAlarmByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCondAlarmByMoidRequest) Execute() (CondAlarm, *_nethttp.Response, error) {
 	return r.ApiService.GetCondAlarmByMoidExecute(r)
@@ -446,8 +454,8 @@ GetCondAlarmByMoid Read a 'cond.Alarm' resource.
 func (a *CondApiService) GetCondAlarmByMoid(ctx _context.Context, moid string) ApiGetCondAlarmByMoidRequest {
 	return ApiGetCondAlarmByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -554,13 +562,13 @@ func (a *CondApiService) GetCondAlarmByMoidExecute(r ApiGetCondAlarmByMoidReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -577,19 +585,19 @@ func (a *CondApiService) GetCondAlarmByMoidExecute(r ApiGetCondAlarmByMoidReques
 }
 
 type ApiGetCondAlarmListRequest struct {
-	ctx _context.Context
-	ApiService *CondApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CondApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -597,51 +605,61 @@ func (r ApiGetCondAlarmListRequest) Filter(filter string) ApiGetCondAlarmListReq
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCondAlarmListRequest) Orderby(orderby string) ApiGetCondAlarmListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCondAlarmListRequest) Top(top int32) ApiGetCondAlarmListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCondAlarmListRequest) Skip(skip int32) ApiGetCondAlarmListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCondAlarmListRequest) Select_(select_ string) ApiGetCondAlarmListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCondAlarmListRequest) Expand(expand string) ApiGetCondAlarmListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCondAlarmListRequest) Apply(apply string) ApiGetCondAlarmListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCondAlarmListRequest) Count(count bool) ApiGetCondAlarmListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCondAlarmListRequest) Inlinecount(inlinecount string) ApiGetCondAlarmListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCondAlarmListRequest) At(at string) ApiGetCondAlarmListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCondAlarmListRequest) Tags(tags string) ApiGetCondAlarmListRequest {
 	r.tags = &tags
@@ -661,7 +679,7 @@ GetCondAlarmList Read a 'cond.Alarm' resource.
 func (a *CondApiService) GetCondAlarmList(ctx _context.Context) ApiGetCondAlarmListRequest {
 	return ApiGetCondAlarmListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -800,13 +818,13 @@ func (a *CondApiService) GetCondAlarmListExecute(r ApiGetCondAlarmListRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -823,11 +841,10 @@ func (a *CondApiService) GetCondAlarmListExecute(r ApiGetCondAlarmListRequest) (
 }
 
 type ApiGetCondHclStatusByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCondHclStatusByMoidRequest) Execute() (CondHclStatus, *_nethttp.Response, error) {
 	return r.ApiService.GetCondHclStatusByMoidExecute(r)
@@ -843,8 +860,8 @@ GetCondHclStatusByMoid Read a 'cond.HclStatus' resource.
 func (a *CondApiService) GetCondHclStatusByMoid(ctx _context.Context, moid string) ApiGetCondHclStatusByMoidRequest {
 	return ApiGetCondHclStatusByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -951,13 +968,13 @@ func (a *CondApiService) GetCondHclStatusByMoidExecute(r ApiGetCondHclStatusByMo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -974,11 +991,10 @@ func (a *CondApiService) GetCondHclStatusByMoidExecute(r ApiGetCondHclStatusByMo
 }
 
 type ApiGetCondHclStatusDetailByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCondHclStatusDetailByMoidRequest) Execute() (CondHclStatusDetail, *_nethttp.Response, error) {
 	return r.ApiService.GetCondHclStatusDetailByMoidExecute(r)
@@ -994,8 +1010,8 @@ GetCondHclStatusDetailByMoid Read a 'cond.HclStatusDetail' resource.
 func (a *CondApiService) GetCondHclStatusDetailByMoid(ctx _context.Context, moid string) ApiGetCondHclStatusDetailByMoidRequest {
 	return ApiGetCondHclStatusDetailByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1102,13 +1118,13 @@ func (a *CondApiService) GetCondHclStatusDetailByMoidExecute(r ApiGetCondHclStat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1125,19 +1141,19 @@ func (a *CondApiService) GetCondHclStatusDetailByMoidExecute(r ApiGetCondHclStat
 }
 
 type ApiGetCondHclStatusDetailListRequest struct {
-	ctx _context.Context
-	ApiService *CondApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CondApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1145,51 +1161,61 @@ func (r ApiGetCondHclStatusDetailListRequest) Filter(filter string) ApiGetCondHc
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCondHclStatusDetailListRequest) Orderby(orderby string) ApiGetCondHclStatusDetailListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCondHclStatusDetailListRequest) Top(top int32) ApiGetCondHclStatusDetailListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCondHclStatusDetailListRequest) Skip(skip int32) ApiGetCondHclStatusDetailListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCondHclStatusDetailListRequest) Select_(select_ string) ApiGetCondHclStatusDetailListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCondHclStatusDetailListRequest) Expand(expand string) ApiGetCondHclStatusDetailListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCondHclStatusDetailListRequest) Apply(apply string) ApiGetCondHclStatusDetailListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCondHclStatusDetailListRequest) Count(count bool) ApiGetCondHclStatusDetailListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCondHclStatusDetailListRequest) Inlinecount(inlinecount string) ApiGetCondHclStatusDetailListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCondHclStatusDetailListRequest) At(at string) ApiGetCondHclStatusDetailListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCondHclStatusDetailListRequest) Tags(tags string) ApiGetCondHclStatusDetailListRequest {
 	r.tags = &tags
@@ -1209,7 +1235,7 @@ GetCondHclStatusDetailList Read a 'cond.HclStatusDetail' resource.
 func (a *CondApiService) GetCondHclStatusDetailList(ctx _context.Context) ApiGetCondHclStatusDetailListRequest {
 	return ApiGetCondHclStatusDetailListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1348,13 +1374,13 @@ func (a *CondApiService) GetCondHclStatusDetailListExecute(r ApiGetCondHclStatus
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1371,11 +1397,10 @@ func (a *CondApiService) GetCondHclStatusDetailListExecute(r ApiGetCondHclStatus
 }
 
 type ApiGetCondHclStatusJobByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetCondHclStatusJobByMoidRequest) Execute() (CondHclStatusJob, *_nethttp.Response, error) {
 	return r.ApiService.GetCondHclStatusJobByMoidExecute(r)
@@ -1391,8 +1416,8 @@ GetCondHclStatusJobByMoid Read a 'cond.HclStatusJob' resource.
 func (a *CondApiService) GetCondHclStatusJobByMoid(ctx _context.Context, moid string) ApiGetCondHclStatusJobByMoidRequest {
 	return ApiGetCondHclStatusJobByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1499,13 +1524,13 @@ func (a *CondApiService) GetCondHclStatusJobByMoidExecute(r ApiGetCondHclStatusJ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1522,19 +1547,19 @@ func (a *CondApiService) GetCondHclStatusJobByMoidExecute(r ApiGetCondHclStatusJ
 }
 
 type ApiGetCondHclStatusJobListRequest struct {
-	ctx _context.Context
-	ApiService *CondApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CondApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1542,51 +1567,61 @@ func (r ApiGetCondHclStatusJobListRequest) Filter(filter string) ApiGetCondHclSt
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCondHclStatusJobListRequest) Orderby(orderby string) ApiGetCondHclStatusJobListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCondHclStatusJobListRequest) Top(top int32) ApiGetCondHclStatusJobListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCondHclStatusJobListRequest) Skip(skip int32) ApiGetCondHclStatusJobListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCondHclStatusJobListRequest) Select_(select_ string) ApiGetCondHclStatusJobListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCondHclStatusJobListRequest) Expand(expand string) ApiGetCondHclStatusJobListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCondHclStatusJobListRequest) Apply(apply string) ApiGetCondHclStatusJobListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCondHclStatusJobListRequest) Count(count bool) ApiGetCondHclStatusJobListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCondHclStatusJobListRequest) Inlinecount(inlinecount string) ApiGetCondHclStatusJobListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCondHclStatusJobListRequest) At(at string) ApiGetCondHclStatusJobListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCondHclStatusJobListRequest) Tags(tags string) ApiGetCondHclStatusJobListRequest {
 	r.tags = &tags
@@ -1606,7 +1641,7 @@ GetCondHclStatusJobList Read a 'cond.HclStatusJob' resource.
 func (a *CondApiService) GetCondHclStatusJobList(ctx _context.Context) ApiGetCondHclStatusJobListRequest {
 	return ApiGetCondHclStatusJobListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1745,13 +1780,13 @@ func (a *CondApiService) GetCondHclStatusJobListExecute(r ApiGetCondHclStatusJob
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1768,19 +1803,19 @@ func (a *CondApiService) GetCondHclStatusJobListExecute(r ApiGetCondHclStatusJob
 }
 
 type ApiGetCondHclStatusListRequest struct {
-	ctx _context.Context
-	ApiService *CondApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *CondApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1788,51 +1823,61 @@ func (r ApiGetCondHclStatusListRequest) Filter(filter string) ApiGetCondHclStatu
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetCondHclStatusListRequest) Orderby(orderby string) ApiGetCondHclStatusListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetCondHclStatusListRequest) Top(top int32) ApiGetCondHclStatusListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetCondHclStatusListRequest) Skip(skip int32) ApiGetCondHclStatusListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetCondHclStatusListRequest) Select_(select_ string) ApiGetCondHclStatusListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetCondHclStatusListRequest) Expand(expand string) ApiGetCondHclStatusListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetCondHclStatusListRequest) Apply(apply string) ApiGetCondHclStatusListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetCondHclStatusListRequest) Count(count bool) ApiGetCondHclStatusListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetCondHclStatusListRequest) Inlinecount(inlinecount string) ApiGetCondHclStatusListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetCondHclStatusListRequest) At(at string) ApiGetCondHclStatusListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetCondHclStatusListRequest) Tags(tags string) ApiGetCondHclStatusListRequest {
 	r.tags = &tags
@@ -1852,7 +1897,7 @@ GetCondHclStatusList Read a 'cond.HclStatus' resource.
 func (a *CondApiService) GetCondHclStatusList(ctx _context.Context) ApiGetCondHclStatusListRequest {
 	return ApiGetCondHclStatusListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1991,13 +2036,13 @@ func (a *CondApiService) GetCondHclStatusListExecute(r ApiGetCondHclStatusListRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2014,11 +2059,11 @@ func (a *CondApiService) GetCondHclStatusListExecute(r ApiGetCondHclStatusListRe
 }
 
 type ApiPatchCondAlarmRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
-	condAlarm *CondAlarm
-	ifMatch *string
+	moid       string
+	condAlarm  *CondAlarm
+	ifMatch    *string
 }
 
 // The &#39;cond.Alarm&#39; resource to update.
@@ -2026,6 +2071,7 @@ func (r ApiPatchCondAlarmRequest) CondAlarm(condAlarm CondAlarm) ApiPatchCondAla
 	r.condAlarm = &condAlarm
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchCondAlarmRequest) IfMatch(ifMatch string) ApiPatchCondAlarmRequest {
 	r.ifMatch = &ifMatch
@@ -2046,8 +2092,8 @@ PatchCondAlarm Update a 'cond.Alarm' resource.
 func (a *CondApiService) PatchCondAlarm(ctx _context.Context, moid string) ApiPatchCondAlarmRequest {
 	return ApiPatchCondAlarmRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2162,13 +2208,13 @@ func (a *CondApiService) PatchCondAlarmExecute(r ApiPatchCondAlarmRequest) (Cond
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2185,11 +2231,11 @@ func (a *CondApiService) PatchCondAlarmExecute(r ApiPatchCondAlarmRequest) (Cond
 }
 
 type ApiUpdateCondAlarmRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *CondApiService
-	moid string
-	condAlarm *CondAlarm
-	ifMatch *string
+	moid       string
+	condAlarm  *CondAlarm
+	ifMatch    *string
 }
 
 // The &#39;cond.Alarm&#39; resource to update.
@@ -2197,6 +2243,7 @@ func (r ApiUpdateCondAlarmRequest) CondAlarm(condAlarm CondAlarm) ApiUpdateCondA
 	r.condAlarm = &condAlarm
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateCondAlarmRequest) IfMatch(ifMatch string) ApiUpdateCondAlarmRequest {
 	r.ifMatch = &ifMatch
@@ -2217,8 +2264,8 @@ UpdateCondAlarm Update a 'cond.Alarm' resource.
 func (a *CondApiService) UpdateCondAlarm(ctx _context.Context, moid string) ApiUpdateCondAlarmRequest {
 	return ApiUpdateCondAlarmRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2333,13 +2380,13 @@ func (a *CondApiService) UpdateCondAlarmExecute(r ApiUpdateCondAlarmRequest) (Co
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

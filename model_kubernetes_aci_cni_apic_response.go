@@ -19,31 +19,30 @@ import (
 // KubernetesAciCniApicResponse - The response body of a HTTP GET request for the 'kubernetes.AciCniApic' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.AciCniApic' resources.
 type KubernetesAciCniApicResponse struct {
 	KubernetesAciCniApicList *KubernetesAciCniApicList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform     *MoAggregateTransform
+	MoDocumentCount          *MoDocumentCount
+	MoTagSummary             *MoTagSummary
 }
 
 // KubernetesAciCniApicListAsKubernetesAciCniApicResponse is a convenience function that returns KubernetesAciCniApicList wrapped in KubernetesAciCniApicResponse
 func KubernetesAciCniApicListAsKubernetesAciCniApicResponse(v *KubernetesAciCniApicList) KubernetesAciCniApicResponse {
-	return KubernetesAciCniApicResponse{ KubernetesAciCniApicList: v}
+	return KubernetesAciCniApicResponse{KubernetesAciCniApicList: v}
 }
 
 // MoAggregateTransformAsKubernetesAciCniApicResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesAciCniApicResponse
 func MoAggregateTransformAsKubernetesAciCniApicResponse(v *MoAggregateTransform) KubernetesAciCniApicResponse {
-	return KubernetesAciCniApicResponse{ MoAggregateTransform: v}
+	return KubernetesAciCniApicResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesAciCniApicResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesAciCniApicResponse
 func MoDocumentCountAsKubernetesAciCniApicResponse(v *MoDocumentCount) KubernetesAciCniApicResponse {
-	return KubernetesAciCniApicResponse{ MoDocumentCount: v}
+	return KubernetesAciCniApicResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesAciCniApicResponse is a convenience function that returns MoTagSummary wrapped in KubernetesAciCniApicResponse
 func MoTagSummaryAsKubernetesAciCniApicResponse(v *MoTagSummary) KubernetesAciCniApicResponse {
-	return KubernetesAciCniApicResponse{ MoTagSummary: v}
+	return KubernetesAciCniApicResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesAciCniApicResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesAciCniApicResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesAciCniApicResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesAciCniApicResponse) GetActualInstance() interface{} {
 	if obj.KubernetesAciCniApicList != nil {
 		return obj.KubernetesAciCniApicList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesAciCniApicResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

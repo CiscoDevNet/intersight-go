@@ -19,31 +19,30 @@ import (
 // HyperflexClusterNetworkPolicyResponse - The response body of a HTTP GET request for the 'hyperflex.ClusterNetworkPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.ClusterNetworkPolicy' resources.
 type HyperflexClusterNetworkPolicyResponse struct {
 	HyperflexClusterNetworkPolicyList *HyperflexClusterNetworkPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform              *MoAggregateTransform
+	MoDocumentCount                   *MoDocumentCount
+	MoTagSummary                      *MoTagSummary
 }
 
 // HyperflexClusterNetworkPolicyListAsHyperflexClusterNetworkPolicyResponse is a convenience function that returns HyperflexClusterNetworkPolicyList wrapped in HyperflexClusterNetworkPolicyResponse
 func HyperflexClusterNetworkPolicyListAsHyperflexClusterNetworkPolicyResponse(v *HyperflexClusterNetworkPolicyList) HyperflexClusterNetworkPolicyResponse {
-	return HyperflexClusterNetworkPolicyResponse{ HyperflexClusterNetworkPolicyList: v}
+	return HyperflexClusterNetworkPolicyResponse{HyperflexClusterNetworkPolicyList: v}
 }
 
 // MoAggregateTransformAsHyperflexClusterNetworkPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexClusterNetworkPolicyResponse
 func MoAggregateTransformAsHyperflexClusterNetworkPolicyResponse(v *MoAggregateTransform) HyperflexClusterNetworkPolicyResponse {
-	return HyperflexClusterNetworkPolicyResponse{ MoAggregateTransform: v}
+	return HyperflexClusterNetworkPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexClusterNetworkPolicyResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexClusterNetworkPolicyResponse
 func MoDocumentCountAsHyperflexClusterNetworkPolicyResponse(v *MoDocumentCount) HyperflexClusterNetworkPolicyResponse {
-	return HyperflexClusterNetworkPolicyResponse{ MoDocumentCount: v}
+	return HyperflexClusterNetworkPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexClusterNetworkPolicyResponse is a convenience function that returns MoTagSummary wrapped in HyperflexClusterNetworkPolicyResponse
 func MoTagSummaryAsHyperflexClusterNetworkPolicyResponse(v *MoTagSummary) HyperflexClusterNetworkPolicyResponse {
-	return HyperflexClusterNetworkPolicyResponse{ MoTagSummary: v}
+	return HyperflexClusterNetworkPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterNetworkPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexClusterNetworkPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterNetworkPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterNetworkPolicyResponse) GetActualInstance() interface{} {
 	if obj.HyperflexClusterNetworkPolicyList != nil {
 		return obj.HyperflexClusterNetworkPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexClusterNetworkPolicyResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

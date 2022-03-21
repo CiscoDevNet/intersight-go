@@ -18,20 +18,19 @@ import (
 
 // OsCatalogRelationship - A relationship to the 'os.Catalog' resource, or the expanded 'os.Catalog' resource, or the 'null' value.
 type OsCatalogRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef   *MoMoRef
 	OsCatalog *OsCatalog
 }
 
 // MoMoRefAsOsCatalogRelationship is a convenience function that returns MoMoRef wrapped in OsCatalogRelationship
 func MoMoRefAsOsCatalogRelationship(v *MoMoRef) OsCatalogRelationship {
-	return OsCatalogRelationship{ MoMoRef: v}
+	return OsCatalogRelationship{MoMoRef: v}
 }
 
 // OsCatalogAsOsCatalogRelationship is a convenience function that returns OsCatalog wrapped in OsCatalogRelationship
 func OsCatalogAsOsCatalogRelationship(v *OsCatalog) OsCatalogRelationship {
-	return OsCatalogRelationship{ OsCatalog: v}
+	return OsCatalogRelationship{OsCatalog: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OsCatalogRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src OsCatalogRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OsCatalogRelationship) GetActualInstance() (interface{}) {
+func (obj *OsCatalogRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableOsCatalogRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

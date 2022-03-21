@@ -20,7 +20,7 @@ type TelemetryDruidHyperUniquePostAggregatorAllOf struct {
 	// Output name for the post-aggregator.
 	Name *string `json:"name,omitempty"`
 	// The name field value of the hyperUnique aggregator.
-	FieldName *string `json:"fieldName,omitempty"`
+	FieldName            *string `json:"fieldName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -176,5 +176,3 @@ func (v *NullableTelemetryDruidHyperUniquePostAggregatorAllOf) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

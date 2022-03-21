@@ -24,8 +24,8 @@ type WorkflowPropertiesAllOf struct {
 	// When set to false task is not cloneable. It is set to true only if task is of ApiTask type and it is not system defined.
 	Cloneable *bool `json:"Cloneable,omitempty"`
 	// When set to false the task definition can only be used by internal system workflows. When set to true then the task can be included in user defined workflows.
-	ExternalMeta *bool `json:"ExternalMeta,omitempty"`
-	InputDefinition []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
+	ExternalMeta     *bool                  `json:"ExternalMeta,omitempty"`
+	InputDefinition  []WorkflowBaseDataType `json:"InputDefinition,omitempty"`
 	OutputDefinition []WorkflowBaseDataType `json:"OutputDefinition,omitempty"`
 	// The number of times a task should be tried before marking as failed.
 	RetryCount *int64 `json:"RetryCount,omitempty"`
@@ -40,7 +40,7 @@ type WorkflowPropertiesAllOf struct {
 	// The timeout value in seconds after which task will be marked as timed out. Max allowed value is 7 days.
 	Timeout *int64 `json:"Timeout,omitempty"`
 	// The timeout policy for the task. * `Timeout` - The enum specifies the option as Timeout where task will be timed out after the specified time in Timeout property. * `Retry` - The enum specifies the option as Retry where task will be re-tried.
-	TimeoutPolicy *string `json:"TimeoutPolicy,omitempty"`
+	TimeoutPolicy        *string `json:"TimeoutPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,7 +110,7 @@ func (o *WorkflowPropertiesAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPropertiesAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -134,7 +134,7 @@ func (o *WorkflowPropertiesAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPropertiesAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -211,7 +211,7 @@ func (o *WorkflowPropertiesAllOf) SetExternalMeta(v bool) {
 
 // GetInputDefinition returns the InputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPropertiesAllOf) GetInputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *WorkflowPropertiesAllOf) SetInputDefinition(v []WorkflowBaseDataType) {
 
 // GetOutputDefinition returns the OutputDefinition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowPropertiesAllOf) GetOutputDefinition() []WorkflowBaseDataType {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowBaseDataType
 		return ret
 	}
@@ -612,5 +612,3 @@ func (v *NullableWorkflowPropertiesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

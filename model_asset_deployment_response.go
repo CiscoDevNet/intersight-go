@@ -18,32 +18,31 @@ import (
 
 // AssetDeploymentResponse - The response body of a HTTP GET request for the 'asset.Deployment' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'asset.Deployment' resources.
 type AssetDeploymentResponse struct {
-	AssetDeploymentList *AssetDeploymentList
+	AssetDeploymentList  *AssetDeploymentList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // AssetDeploymentListAsAssetDeploymentResponse is a convenience function that returns AssetDeploymentList wrapped in AssetDeploymentResponse
 func AssetDeploymentListAsAssetDeploymentResponse(v *AssetDeploymentList) AssetDeploymentResponse {
-	return AssetDeploymentResponse{ AssetDeploymentList: v}
+	return AssetDeploymentResponse{AssetDeploymentList: v}
 }
 
 // MoAggregateTransformAsAssetDeploymentResponse is a convenience function that returns MoAggregateTransform wrapped in AssetDeploymentResponse
 func MoAggregateTransformAsAssetDeploymentResponse(v *MoAggregateTransform) AssetDeploymentResponse {
-	return AssetDeploymentResponse{ MoAggregateTransform: v}
+	return AssetDeploymentResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAssetDeploymentResponse is a convenience function that returns MoDocumentCount wrapped in AssetDeploymentResponse
 func MoDocumentCountAsAssetDeploymentResponse(v *MoDocumentCount) AssetDeploymentResponse {
-	return AssetDeploymentResponse{ MoDocumentCount: v}
+	return AssetDeploymentResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAssetDeploymentResponse is a convenience function that returns MoTagSummary wrapped in AssetDeploymentResponse
 func MoTagSummaryAsAssetDeploymentResponse(v *MoTagSummary) AssetDeploymentResponse {
-	return AssetDeploymentResponse{ MoTagSummary: v}
+	return AssetDeploymentResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeploymentResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AssetDeploymentResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetDeploymentResponse) GetActualInstance() (interface{}) {
+func (obj *AssetDeploymentResponse) GetActualInstance() interface{} {
 	if obj.AssetDeploymentList != nil {
 		return obj.AssetDeploymentList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAssetDeploymentResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

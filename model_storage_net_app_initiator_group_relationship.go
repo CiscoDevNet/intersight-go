@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppInitiatorGroupRelationship - A relationship to the 'storage.NetAppInitiatorGroup' resource, or the expanded 'storage.NetAppInitiatorGroup' resource, or the 'null' value.
 type StorageNetAppInitiatorGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                     *MoMoRef
 	StorageNetAppInitiatorGroup *StorageNetAppInitiatorGroup
 }
 
 // MoMoRefAsStorageNetAppInitiatorGroupRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppInitiatorGroupRelationship
 func MoMoRefAsStorageNetAppInitiatorGroupRelationship(v *MoMoRef) StorageNetAppInitiatorGroupRelationship {
-	return StorageNetAppInitiatorGroupRelationship{ MoMoRef: v}
+	return StorageNetAppInitiatorGroupRelationship{MoMoRef: v}
 }
 
 // StorageNetAppInitiatorGroupAsStorageNetAppInitiatorGroupRelationship is a convenience function that returns StorageNetAppInitiatorGroup wrapped in StorageNetAppInitiatorGroupRelationship
 func StorageNetAppInitiatorGroupAsStorageNetAppInitiatorGroupRelationship(v *StorageNetAppInitiatorGroup) StorageNetAppInitiatorGroupRelationship {
-	return StorageNetAppInitiatorGroupRelationship{ StorageNetAppInitiatorGroup: v}
+	return StorageNetAppInitiatorGroupRelationship{StorageNetAppInitiatorGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppInitiatorGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppInitiatorGroupRelationship) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *StorageNetAppInitiatorGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppInitiatorGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppInitiatorGroupRelationship) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

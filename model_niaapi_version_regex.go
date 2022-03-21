@@ -23,11 +23,11 @@ type NiaapiVersionRegex struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Apic NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
-	Dcnm NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
+	ObjectType string                             `json:"ObjectType"`
+	Apic       NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
+	Dcnm       NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
 	// Version number for the Version Regex data, also used as identity.
-	Version *string `json:"Version,omitempty"`
+	Version              *string `json:"Version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *NiaapiVersionRegex) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegex) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *NiaapiVersionRegex) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiVersionRegex) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -117,7 +117,7 @@ func (o *NiaapiVersionRegex) GetApic() NiaapiVersionRegexPlatform {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegex) GetApicOk() (*NiaapiVersionRegexPlatform, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Apic.Get(), o.Apic.IsSet()
@@ -136,6 +136,7 @@ func (o *NiaapiVersionRegex) HasApic() bool {
 func (o *NiaapiVersionRegex) SetApic(v NiaapiVersionRegexPlatform) {
 	o.Apic.Set(&v)
 }
+
 // SetApicNil sets the value for Apic to be an explicit nil
 func (o *NiaapiVersionRegex) SetApicNil() {
 	o.Apic.Set(nil)
@@ -159,7 +160,7 @@ func (o *NiaapiVersionRegex) GetDcnm() NiaapiVersionRegexPlatform {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiaapiVersionRegex) GetDcnmOk() (*NiaapiVersionRegexPlatform, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Dcnm.Get(), o.Dcnm.IsSet()
@@ -178,6 +179,7 @@ func (o *NiaapiVersionRegex) HasDcnm() bool {
 func (o *NiaapiVersionRegex) SetDcnm(v NiaapiVersionRegexPlatform) {
 	o.Dcnm.Set(&v)
 }
+
 // SetDcnmNil sets the value for Dcnm to be an explicit nil
 func (o *NiaapiVersionRegex) SetDcnmNil() {
 	o.Dcnm.Set(nil)
@@ -258,9 +260,9 @@ func (o *NiaapiVersionRegex) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		Apic NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
-		Dcnm NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
+		ObjectType string                             `json:"ObjectType"`
+		Apic       NullableNiaapiVersionRegexPlatform `json:"Apic,omitempty"`
+		Dcnm       NullableNiaapiVersionRegexPlatform `json:"Dcnm,omitempty"`
 		// Version number for the Version Regex data, also used as identity.
 		Version *string `json:"Version,omitempty"`
 	}
@@ -357,5 +359,3 @@ func (v *NullableNiaapiVersionRegex) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

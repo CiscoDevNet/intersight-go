@@ -18,32 +18,31 @@ import (
 
 // ForecastCatalogResponse - The response body of a HTTP GET request for the 'forecast.Catalog' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'forecast.Catalog' resources.
 type ForecastCatalogResponse struct {
-	ForecastCatalogList *ForecastCatalogList
+	ForecastCatalogList  *ForecastCatalogList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // ForecastCatalogListAsForecastCatalogResponse is a convenience function that returns ForecastCatalogList wrapped in ForecastCatalogResponse
 func ForecastCatalogListAsForecastCatalogResponse(v *ForecastCatalogList) ForecastCatalogResponse {
-	return ForecastCatalogResponse{ ForecastCatalogList: v}
+	return ForecastCatalogResponse{ForecastCatalogList: v}
 }
 
 // MoAggregateTransformAsForecastCatalogResponse is a convenience function that returns MoAggregateTransform wrapped in ForecastCatalogResponse
 func MoAggregateTransformAsForecastCatalogResponse(v *MoAggregateTransform) ForecastCatalogResponse {
-	return ForecastCatalogResponse{ MoAggregateTransform: v}
+	return ForecastCatalogResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsForecastCatalogResponse is a convenience function that returns MoDocumentCount wrapped in ForecastCatalogResponse
 func MoDocumentCountAsForecastCatalogResponse(v *MoDocumentCount) ForecastCatalogResponse {
-	return ForecastCatalogResponse{ MoDocumentCount: v}
+	return ForecastCatalogResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsForecastCatalogResponse is a convenience function that returns MoTagSummary wrapped in ForecastCatalogResponse
 func MoTagSummaryAsForecastCatalogResponse(v *MoTagSummary) ForecastCatalogResponse {
-	return ForecastCatalogResponse{ MoTagSummary: v}
+	return ForecastCatalogResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ForecastCatalogResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ForecastCatalogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ForecastCatalogResponse) GetActualInstance() (interface{}) {
+func (obj *ForecastCatalogResponse) GetActualInstance() interface{} {
 	if obj.ForecastCatalogList != nil {
 		return obj.ForecastCatalogList
 	}
@@ -184,5 +183,3 @@ func (v *NullableForecastCatalogResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

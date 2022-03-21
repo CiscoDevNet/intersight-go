@@ -25,22 +25,22 @@ type ManagementController struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Model of the endpoint that houses the management controller.
-	Model *string `json:"Model,omitempty"`
-	AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-	EquipmentIoCardBase *EquipmentIoCardBaseRelationship `json:"EquipmentIoCardBase,omitempty"`
-	EquipmentSharedIoModule *EquipmentSharedIoModuleRelationship `json:"EquipmentSharedIoModule,omitempty"`
+	Model                       *string                                  `json:"Model,omitempty"`
+	AdapterUnit                 *AdapterUnitRelationship                 `json:"AdapterUnit,omitempty"`
+	ComputeBlade                *ComputeBladeRelationship                `json:"ComputeBlade,omitempty"`
+	ComputeRackUnit             *ComputeRackUnitRelationship             `json:"ComputeRackUnit,omitempty"`
+	EquipmentIoCardBase         *EquipmentIoCardBaseRelationship         `json:"EquipmentIoCardBase,omitempty"`
+	EquipmentSharedIoModule     *EquipmentSharedIoModuleRelationship     `json:"EquipmentSharedIoModule,omitempty"`
 	EquipmentSystemIoController *EquipmentSystemIoControllerRelationship `json:"EquipmentSystemIoController,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	InventoryDeviceInfo         *InventoryDeviceInfoRelationship         `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to managementInterface resources.
-	ManagementInterfaces []ManagementInterfaceRelationship `json:"ManagementInterfaces,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ManagementInterfaces []ManagementInterfaceRelationship    `json:"ManagementInterfaces,omitempty"`
+	NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
-	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
-	StorageSasExpander *StorageSasExpanderRelationship `json:"StorageSasExpander,omitempty"`
-	TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+	RunningFirmware      []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+	StorageSasExpander   *StorageSasExpanderRelationship       `json:"StorageSasExpander,omitempty"`
+	TopSystem            *TopSystemRelationship                `json:"TopSystem,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *ManagementController) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ManagementController) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *ManagementController) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ManagementController) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -375,7 +375,7 @@ func (o *ManagementController) SetInventoryDeviceInfo(v InventoryDeviceInfoRelat
 
 // GetManagementInterfaces returns the ManagementInterfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManagementController) GetManagementInterfaces() []ManagementInterfaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ManagementInterfaceRelationship
 		return ret
 	}
@@ -472,7 +472,7 @@ func (o *ManagementController) SetRegisteredDevice(v AssetDeviceRegistrationRela
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManagementController) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -640,22 +640,22 @@ func (o *ManagementController) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Model of the endpoint that houses the management controller.
-		Model *string `json:"Model,omitempty"`
-		AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
-		EquipmentIoCardBase *EquipmentIoCardBaseRelationship `json:"EquipmentIoCardBase,omitempty"`
-		EquipmentSharedIoModule *EquipmentSharedIoModuleRelationship `json:"EquipmentSharedIoModule,omitempty"`
+		Model                       *string                                  `json:"Model,omitempty"`
+		AdapterUnit                 *AdapterUnitRelationship                 `json:"AdapterUnit,omitempty"`
+		ComputeBlade                *ComputeBladeRelationship                `json:"ComputeBlade,omitempty"`
+		ComputeRackUnit             *ComputeRackUnitRelationship             `json:"ComputeRackUnit,omitempty"`
+		EquipmentIoCardBase         *EquipmentIoCardBaseRelationship         `json:"EquipmentIoCardBase,omitempty"`
+		EquipmentSharedIoModule     *EquipmentSharedIoModuleRelationship     `json:"EquipmentSharedIoModule,omitempty"`
 		EquipmentSystemIoController *EquipmentSystemIoControllerRelationship `json:"EquipmentSystemIoController,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+		InventoryDeviceInfo         *InventoryDeviceInfoRelationship         `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to managementInterface resources.
-		ManagementInterfaces []ManagementInterfaceRelationship `json:"ManagementInterfaces,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		ManagementInterfaces []ManagementInterfaceRelationship    `json:"ManagementInterfaces,omitempty"`
+		NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+		RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to firmwareRunningFirmware resources.
-		RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
-		StorageSasExpander *StorageSasExpanderRelationship `json:"StorageSasExpander,omitempty"`
-		TopSystem *TopSystemRelationship `json:"TopSystem,omitempty"`
+		RunningFirmware    []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
+		StorageSasExpander *StorageSasExpanderRelationship       `json:"StorageSasExpander,omitempty"`
+		TopSystem          *TopSystemRelationship                `json:"TopSystem,omitempty"`
 	}
 
 	varManagementControllerWithoutEmbeddedStruct := ManagementControllerWithoutEmbeddedStruct{}
@@ -772,5 +772,3 @@ func (v *NullableManagementController) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

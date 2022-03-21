@@ -20,9 +20,9 @@ type HyperflexFeatureLimitExternalAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	FeatureLimitEntries []HyperflexFeatureLimitEntry `json:"FeatureLimitEntries,omitempty"`
-	AppCatalog *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
+	ObjectType           string                           `json:"ObjectType"`
+	FeatureLimitEntries  []HyperflexFeatureLimitEntry     `json:"FeatureLimitEntries,omitempty"`
+	AppCatalog           *HyperflexAppCatalogRelationship `json:"AppCatalog,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *HyperflexFeatureLimitExternalAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexFeatureLimitExternalAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *HyperflexFeatureLimitExternalAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexFeatureLimitExternalAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -101,7 +101,7 @@ func (o *HyperflexFeatureLimitExternalAllOf) SetObjectType(v string) {
 
 // GetFeatureLimitEntries returns the FeatureLimitEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexFeatureLimitExternalAllOf) GetFeatureLimitEntries() []HyperflexFeatureLimitEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexFeatureLimitEntry
 		return ret
 	}
@@ -241,5 +241,3 @@ func (v *NullableHyperflexFeatureLimitExternalAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // StorageHyperFlexStorageContainerRelationship - A relationship to the 'storage.HyperFlexStorageContainer' resource, or the expanded 'storage.HyperFlexStorageContainer' resource, or the 'null' value.
 type StorageHyperFlexStorageContainerRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                          *MoMoRef
 	StorageHyperFlexStorageContainer *StorageHyperFlexStorageContainer
 }
 
 // MoMoRefAsStorageHyperFlexStorageContainerRelationship is a convenience function that returns MoMoRef wrapped in StorageHyperFlexStorageContainerRelationship
 func MoMoRefAsStorageHyperFlexStorageContainerRelationship(v *MoMoRef) StorageHyperFlexStorageContainerRelationship {
-	return StorageHyperFlexStorageContainerRelationship{ MoMoRef: v}
+	return StorageHyperFlexStorageContainerRelationship{MoMoRef: v}
 }
 
 // StorageHyperFlexStorageContainerAsStorageHyperFlexStorageContainerRelationship is a convenience function that returns StorageHyperFlexStorageContainer wrapped in StorageHyperFlexStorageContainerRelationship
 func StorageHyperFlexStorageContainerAsStorageHyperFlexStorageContainerRelationship(v *StorageHyperFlexStorageContainer) StorageHyperFlexStorageContainerRelationship {
-	return StorageHyperFlexStorageContainerRelationship{ StorageHyperFlexStorageContainer: v}
+	return StorageHyperFlexStorageContainerRelationship{StorageHyperFlexStorageContainer: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageHyperFlexStorageContainerRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageHyperFlexStorageContainerRelationship) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *StorageHyperFlexStorageContainerRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageHyperFlexStorageContainerRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageHyperFlexStorageContainerRelationship) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

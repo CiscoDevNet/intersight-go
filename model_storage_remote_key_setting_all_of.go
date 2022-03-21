@@ -34,7 +34,7 @@ type StorageRemoteKeySettingAllOf struct {
 	// The certificate/ public key of the KMIP server. It is required for initiating secure communication with the server.
 	ServerCertificate *string `json:"ServerCertificate,omitempty"`
 	// The user name for the KMIP server login.
-	Username *string `json:"Username,omitempty"`
+	Username             *string `json:"Username,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *StorageRemoteKeySettingAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageRemoteKeySettingAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *StorageRemoteKeySettingAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageRemoteKeySettingAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -436,5 +436,3 @@ func (v *NullableStorageRemoteKeySettingAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,11 @@ var (
 type HyperflexApiService service
 
 type ApiCreateHyperflexAppCatalogRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                 _context.Context
+	ApiService          *HyperflexApiService
 	hyperflexAppCatalog *HyperflexAppCatalog
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;hyperflex.AppCatalog&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateHyperflexAppCatalogRequest) HyperflexAppCatalog(hyperflexAppCat
 	r.hyperflexAppCatalog = &hyperflexAppCatalog
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexAppCatalogRequest) IfMatch(ifMatch string) ApiCreateHyperflexAppCatalogRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexAppCatalogRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexAppCatalogRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateHyperflexAppCatalog Create a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) CreateHyperflexAppCatalog(ctx _context.Context) ApiCreateHyperflexAppCatalogRequest {
 	return ApiCreateHyperflexAppCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *HyperflexApiService) CreateHyperflexAppCatalogExecute(r ApiCreateHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *HyperflexApiService) CreateHyperflexAppCatalogExecute(r ApiCreateHyperf
 }
 
 type ApiCreateHyperflexAutoSupportPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                        _context.Context
+	ApiService                 *HyperflexApiService
 	hyperflexAutoSupportPolicy *HyperflexAutoSupportPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;hyperflex.AutoSupportPolicy&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateHyperflexAutoSupportPolicyRequest) HyperflexAutoSupportPolicy(h
 	r.hyperflexAutoSupportPolicy = &hyperflexAutoSupportPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexAutoSupportPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexAutoSupportPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexAutoSupportPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexAutoSupportPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateHyperflexAutoSupportPolicy Create a 'hyperflex.AutoSupportPolicy' resource
 func (a *HyperflexApiService) CreateHyperflexAutoSupportPolicy(ctx _context.Context) ApiCreateHyperflexAutoSupportPolicyRequest {
 	return ApiCreateHyperflexAutoSupportPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *HyperflexApiService) CreateHyperflexAutoSupportPolicyExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *HyperflexApiService) CreateHyperflexAutoSupportPolicyExecute(r ApiCreat
 }
 
 type ApiCreateHyperflexCapabilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
 	hyperflexCapabilityInfo *HyperflexCapabilityInfo
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;hyperflex.CapabilityInfo&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateHyperflexCapabilityInfoRequest) HyperflexCapabilityInfo(hyperfl
 	r.hyperflexCapabilityInfo = &hyperflexCapabilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexCapabilityInfoRequest) IfMatch(ifMatch string) ApiCreateHyperflexCapabilityInfoRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexCapabilityInfoRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexCapabilityInfoRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateHyperflexCapabilityInfo Create a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) CreateHyperflexCapabilityInfo(ctx _context.Context) ApiCreateHyperflexCapabilityInfoRequest {
 	return ApiCreateHyperflexCapabilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *HyperflexApiService) CreateHyperflexCapabilityInfoExecute(r ApiCreateHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *HyperflexApiService) CreateHyperflexCapabilityInfoExecute(r ApiCreateHy
 }
 
 type ApiCreateHyperflexClusterBackupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
 	hyperflexClusterBackupPolicy *HyperflexClusterBackupPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicy&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateHyperflexClusterBackupPolicyRequest) HyperflexClusterBackupPoli
 	r.hyperflexClusterBackupPolicy = &hyperflexClusterBackupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterBackupPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterBackupPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterBackupPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterBackupPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateHyperflexClusterBackupPolicy Create a 'hyperflex.ClusterBackupPolicy' reso
 func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicy(ctx _context.Context) ApiCreateHyperflexClusterBackupPolicyRequest {
 	return ApiCreateHyperflexClusterBackupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicyExecute(r ApiCre
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicyExecute(r ApiCre
 }
 
 type ApiCreateHyperflexClusterBackupPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
 	hyperflexClusterBackupPolicyDeployment *HyperflexClusterBackupPolicyDeployment
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                *string
+	ifNoneMatch                            *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicyDeployment&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateHyperflexClusterBackupPolicyDeploymentRequest) HyperflexCluster
 	r.hyperflexClusterBackupPolicyDeployment = &hyperflexClusterBackupPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterBackupPolicyDeploymentRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterBackupPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterBackupPolicyDeploymentRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterBackupPolicyDeploymentRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateHyperflexClusterBackupPolicyDeployment Create a 'hyperflex.ClusterBackupPo
 func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicyDeployment(ctx _context.Context) ApiCreateHyperflexClusterBackupPolicyDeploymentRequest {
 	return ApiCreateHyperflexClusterBackupPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicyDeploymentExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterBackupPolicyDeploymentExecut
 }
 
 type ApiCreateHyperflexClusterNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
 	hyperflexClusterNetworkPolicy *HyperflexClusterNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;hyperflex.ClusterNetworkPolicy&#39; resource to create.
@@ -921,11 +931,13 @@ func (r ApiCreateHyperflexClusterNetworkPolicyRequest) HyperflexClusterNetworkPo
 	r.hyperflexClusterNetworkPolicy = &hyperflexClusterNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -945,7 +957,7 @@ CreateHyperflexClusterNetworkPolicy Create a 'hyperflex.ClusterNetworkPolicy' re
 func (a *HyperflexApiService) CreateHyperflexClusterNetworkPolicy(ctx _context.Context) ApiCreateHyperflexClusterNetworkPolicyRequest {
 	return ApiCreateHyperflexClusterNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1062,13 +1074,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterNetworkPolicyExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1085,11 +1097,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterNetworkPolicyExecute(r ApiCr
 }
 
 type ApiCreateHyperflexClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
 	hyperflexClusterProfile *HyperflexClusterProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                 *string
+	ifNoneMatch             *string
 }
 
 // The &#39;hyperflex.ClusterProfile&#39; resource to create.
@@ -1097,11 +1109,13 @@ func (r ApiCreateHyperflexClusterProfileRequest) HyperflexClusterProfile(hyperfl
 	r.hyperflexClusterProfile = &hyperflexClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterProfileRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1121,7 +1135,7 @@ CreateHyperflexClusterProfile Create a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) CreateHyperflexClusterProfile(ctx _context.Context) ApiCreateHyperflexClusterProfileRequest {
 	return ApiCreateHyperflexClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1238,13 +1252,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterProfileExecute(r ApiCreateHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1261,11 +1275,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterProfileExecute(r ApiCreateHy
 }
 
 type ApiCreateHyperflexClusterReplicationNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                      _context.Context
+	ApiService                               *HyperflexApiService
 	hyperflexClusterReplicationNetworkPolicy *HyperflexClusterReplicationNetworkPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                  *string
+	ifNoneMatch                              *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicy&#39; resource to create.
@@ -1273,11 +1287,13 @@ func (r ApiCreateHyperflexClusterReplicationNetworkPolicyRequest) HyperflexClust
 	r.hyperflexClusterReplicationNetworkPolicy = &hyperflexClusterReplicationNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterReplicationNetworkPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterReplicationNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterReplicationNetworkPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterReplicationNetworkPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1297,7 +1313,7 @@ CreateHyperflexClusterReplicationNetworkPolicy Create a 'hyperflex.ClusterReplic
 func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicy(ctx _context.Context) ApiCreateHyperflexClusterReplicationNetworkPolicyRequest {
 	return ApiCreateHyperflexClusterReplicationNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1414,13 +1430,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicyExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1437,11 +1453,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicyExec
 }
 
 type ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                                _context.Context
+	ApiService                                         *HyperflexApiService
 	hyperflexClusterReplicationNetworkPolicyDeployment *HyperflexClusterReplicationNetworkPolicyDeployment
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                            *string
+	ifNoneMatch                                        *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicyDeployment&#39; resource to create.
@@ -1449,11 +1465,13 @@ func (r ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest) Hype
 	r.hyperflexClusterReplicationNetworkPolicyDeployment = &hyperflexClusterReplicationNetworkPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1473,7 +1491,7 @@ CreateHyperflexClusterReplicationNetworkPolicyDeployment Create a 'hyperflex.Clu
 func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicyDeployment(ctx _context.Context) ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	return ApiCreateHyperflexClusterReplicationNetworkPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1590,13 +1608,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicyDepl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1613,11 +1631,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterReplicationNetworkPolicyDepl
 }
 
 type ApiCreateHyperflexClusterStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
 	hyperflexClusterStoragePolicy *HyperflexClusterStoragePolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;hyperflex.ClusterStoragePolicy&#39; resource to create.
@@ -1625,11 +1643,13 @@ func (r ApiCreateHyperflexClusterStoragePolicyRequest) HyperflexClusterStoragePo
 	r.hyperflexClusterStoragePolicy = &hyperflexClusterStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexClusterStoragePolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexClusterStoragePolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexClusterStoragePolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexClusterStoragePolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1649,7 +1669,7 @@ CreateHyperflexClusterStoragePolicy Create a 'hyperflex.ClusterStoragePolicy' re
 func (a *HyperflexApiService) CreateHyperflexClusterStoragePolicy(ctx _context.Context) ApiCreateHyperflexClusterStoragePolicyRequest {
 	return ApiCreateHyperflexClusterStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1766,13 +1786,13 @@ func (a *HyperflexApiService) CreateHyperflexClusterStoragePolicyExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1789,11 +1809,11 @@ func (a *HyperflexApiService) CreateHyperflexClusterStoragePolicyExecute(r ApiCr
 }
 
 type ApiCreateHyperflexExtFcStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
 	hyperflexExtFcStoragePolicy *HyperflexExtFcStoragePolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;hyperflex.ExtFcStoragePolicy&#39; resource to create.
@@ -1801,11 +1821,13 @@ func (r ApiCreateHyperflexExtFcStoragePolicyRequest) HyperflexExtFcStoragePolicy
 	r.hyperflexExtFcStoragePolicy = &hyperflexExtFcStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexExtFcStoragePolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexExtFcStoragePolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexExtFcStoragePolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexExtFcStoragePolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -1825,7 +1847,7 @@ CreateHyperflexExtFcStoragePolicy Create a 'hyperflex.ExtFcStoragePolicy' resour
 func (a *HyperflexApiService) CreateHyperflexExtFcStoragePolicy(ctx _context.Context) ApiCreateHyperflexExtFcStoragePolicyRequest {
 	return ApiCreateHyperflexExtFcStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1942,13 +1964,13 @@ func (a *HyperflexApiService) CreateHyperflexExtFcStoragePolicyExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1965,11 +1987,11 @@ func (a *HyperflexApiService) CreateHyperflexExtFcStoragePolicyExecute(r ApiCrea
 }
 
 type ApiCreateHyperflexExtIscsiStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
 	hyperflexExtIscsiStoragePolicy *HyperflexExtIscsiStoragePolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;hyperflex.ExtIscsiStoragePolicy&#39; resource to create.
@@ -1977,11 +1999,13 @@ func (r ApiCreateHyperflexExtIscsiStoragePolicyRequest) HyperflexExtIscsiStorage
 	r.hyperflexExtIscsiStoragePolicy = &hyperflexExtIscsiStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexExtIscsiStoragePolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexExtIscsiStoragePolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexExtIscsiStoragePolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexExtIscsiStoragePolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2001,7 +2025,7 @@ CreateHyperflexExtIscsiStoragePolicy Create a 'hyperflex.ExtIscsiStoragePolicy' 
 func (a *HyperflexApiService) CreateHyperflexExtIscsiStoragePolicy(ctx _context.Context) ApiCreateHyperflexExtIscsiStoragePolicyRequest {
 	return ApiCreateHyperflexExtIscsiStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2118,13 +2142,13 @@ func (a *HyperflexApiService) CreateHyperflexExtIscsiStoragePolicyExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2141,11 +2165,11 @@ func (a *HyperflexApiService) CreateHyperflexExtIscsiStoragePolicyExecute(r ApiC
 }
 
 type ApiCreateHyperflexFeatureLimitExternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
 	hyperflexFeatureLimitExternal *HyperflexFeatureLimitExternal
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;hyperflex.FeatureLimitExternal&#39; resource to create.
@@ -2153,11 +2177,13 @@ func (r ApiCreateHyperflexFeatureLimitExternalRequest) HyperflexFeatureLimitExte
 	r.hyperflexFeatureLimitExternal = &hyperflexFeatureLimitExternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexFeatureLimitExternalRequest) IfMatch(ifMatch string) ApiCreateHyperflexFeatureLimitExternalRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexFeatureLimitExternalRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexFeatureLimitExternalRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2177,7 +2203,7 @@ CreateHyperflexFeatureLimitExternal Create a 'hyperflex.FeatureLimitExternal' re
 func (a *HyperflexApiService) CreateHyperflexFeatureLimitExternal(ctx _context.Context) ApiCreateHyperflexFeatureLimitExternalRequest {
 	return ApiCreateHyperflexFeatureLimitExternalRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2294,13 +2320,13 @@ func (a *HyperflexApiService) CreateHyperflexFeatureLimitExternalExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2317,11 +2343,11 @@ func (a *HyperflexApiService) CreateHyperflexFeatureLimitExternalExecute(r ApiCr
 }
 
 type ApiCreateHyperflexFeatureLimitInternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
 	hyperflexFeatureLimitInternal *HyperflexFeatureLimitInternal
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                       *string
+	ifNoneMatch                   *string
 }
 
 // The &#39;hyperflex.FeatureLimitInternal&#39; resource to create.
@@ -2329,11 +2355,13 @@ func (r ApiCreateHyperflexFeatureLimitInternalRequest) HyperflexFeatureLimitInte
 	r.hyperflexFeatureLimitInternal = &hyperflexFeatureLimitInternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexFeatureLimitInternalRequest) IfMatch(ifMatch string) ApiCreateHyperflexFeatureLimitInternalRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexFeatureLimitInternalRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexFeatureLimitInternalRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2353,7 +2381,7 @@ CreateHyperflexFeatureLimitInternal Create a 'hyperflex.FeatureLimitInternal' re
 func (a *HyperflexApiService) CreateHyperflexFeatureLimitInternal(ctx _context.Context) ApiCreateHyperflexFeatureLimitInternalRequest {
 	return ApiCreateHyperflexFeatureLimitInternalRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2470,13 +2498,13 @@ func (a *HyperflexApiService) CreateHyperflexFeatureLimitInternalExecute(r ApiCr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2493,11 +2521,11 @@ func (a *HyperflexApiService) CreateHyperflexFeatureLimitInternalExecute(r ApiCr
 }
 
 type ApiCreateHyperflexHealthCheckDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
 	hyperflexHealthCheckDefinition *HyperflexHealthCheckDefinition
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;hyperflex.HealthCheckDefinition&#39; resource to create.
@@ -2505,11 +2533,13 @@ func (r ApiCreateHyperflexHealthCheckDefinitionRequest) HyperflexHealthCheckDefi
 	r.hyperflexHealthCheckDefinition = &hyperflexHealthCheckDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexHealthCheckDefinitionRequest) IfMatch(ifMatch string) ApiCreateHyperflexHealthCheckDefinitionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexHealthCheckDefinitionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexHealthCheckDefinitionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2529,7 +2559,7 @@ CreateHyperflexHealthCheckDefinition Create a 'hyperflex.HealthCheckDefinition' 
 func (a *HyperflexApiService) CreateHyperflexHealthCheckDefinition(ctx _context.Context) ApiCreateHyperflexHealthCheckDefinitionRequest {
 	return ApiCreateHyperflexHealthCheckDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2646,13 +2676,13 @@ func (a *HyperflexApiService) CreateHyperflexHealthCheckDefinitionExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2669,11 +2699,11 @@ func (a *HyperflexApiService) CreateHyperflexHealthCheckDefinitionExecute(r ApiC
 }
 
 type ApiCreateHyperflexHealthCheckPackageChecksumRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
 	hyperflexHealthCheckPackageChecksum *HyperflexHealthCheckPackageChecksum
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;hyperflex.HealthCheckPackageChecksum&#39; resource to create.
@@ -2681,11 +2711,13 @@ func (r ApiCreateHyperflexHealthCheckPackageChecksumRequest) HyperflexHealthChec
 	r.hyperflexHealthCheckPackageChecksum = &hyperflexHealthCheckPackageChecksum
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexHealthCheckPackageChecksumRequest) IfMatch(ifMatch string) ApiCreateHyperflexHealthCheckPackageChecksumRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexHealthCheckPackageChecksumRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexHealthCheckPackageChecksumRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2705,7 +2737,7 @@ CreateHyperflexHealthCheckPackageChecksum Create a 'hyperflex.HealthCheckPackage
 func (a *HyperflexApiService) CreateHyperflexHealthCheckPackageChecksum(ctx _context.Context) ApiCreateHyperflexHealthCheckPackageChecksumRequest {
 	return ApiCreateHyperflexHealthCheckPackageChecksumRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2822,13 +2854,13 @@ func (a *HyperflexApiService) CreateHyperflexHealthCheckPackageChecksumExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2845,11 +2877,11 @@ func (a *HyperflexApiService) CreateHyperflexHealthCheckPackageChecksumExecute(r
 }
 
 type ApiCreateHyperflexHxdpVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
 	hyperflexHxdpVersion *HyperflexHxdpVersion
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;hyperflex.HxdpVersion&#39; resource to create.
@@ -2857,11 +2889,13 @@ func (r ApiCreateHyperflexHxdpVersionRequest) HyperflexHxdpVersion(hyperflexHxdp
 	r.hyperflexHxdpVersion = &hyperflexHxdpVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexHxdpVersionRequest) IfMatch(ifMatch string) ApiCreateHyperflexHxdpVersionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexHxdpVersionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexHxdpVersionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -2881,7 +2915,7 @@ CreateHyperflexHxdpVersion Create a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) CreateHyperflexHxdpVersion(ctx _context.Context) ApiCreateHyperflexHxdpVersionRequest {
 	return ApiCreateHyperflexHxdpVersionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2998,13 +3032,13 @@ func (a *HyperflexApiService) CreateHyperflexHxdpVersionExecute(r ApiCreateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3021,11 +3055,11 @@ func (a *HyperflexApiService) CreateHyperflexHxdpVersionExecute(r ApiCreateHyper
 }
 
 type ApiCreateHyperflexKeyEncryptionKeyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
 	hyperflexKeyEncryptionKey *HyperflexKeyEncryptionKey
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;hyperflex.KeyEncryptionKey&#39; resource to create.
@@ -3033,11 +3067,13 @@ func (r ApiCreateHyperflexKeyEncryptionKeyRequest) HyperflexKeyEncryptionKey(hyp
 	r.hyperflexKeyEncryptionKey = &hyperflexKeyEncryptionKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexKeyEncryptionKeyRequest) IfMatch(ifMatch string) ApiCreateHyperflexKeyEncryptionKeyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexKeyEncryptionKeyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexKeyEncryptionKeyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3057,7 +3093,7 @@ CreateHyperflexKeyEncryptionKey Create a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) CreateHyperflexKeyEncryptionKey(ctx _context.Context) ApiCreateHyperflexKeyEncryptionKeyRequest {
 	return ApiCreateHyperflexKeyEncryptionKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3210,13 @@ func (a *HyperflexApiService) CreateHyperflexKeyEncryptionKeyExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3233,11 @@ func (a *HyperflexApiService) CreateHyperflexKeyEncryptionKeyExecute(r ApiCreate
 }
 
 type ApiCreateHyperflexLocalCredentialPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
 	hyperflexLocalCredentialPolicy *HyperflexLocalCredentialPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;hyperflex.LocalCredentialPolicy&#39; resource to create.
@@ -3209,11 +3245,13 @@ func (r ApiCreateHyperflexLocalCredentialPolicyRequest) HyperflexLocalCredential
 	r.hyperflexLocalCredentialPolicy = &hyperflexLocalCredentialPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexLocalCredentialPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexLocalCredentialPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexLocalCredentialPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexLocalCredentialPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3233,7 +3271,7 @@ CreateHyperflexLocalCredentialPolicy Create a 'hyperflex.LocalCredentialPolicy' 
 func (a *HyperflexApiService) CreateHyperflexLocalCredentialPolicy(ctx _context.Context) ApiCreateHyperflexLocalCredentialPolicyRequest {
 	return ApiCreateHyperflexLocalCredentialPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3350,13 +3388,13 @@ func (a *HyperflexApiService) CreateHyperflexLocalCredentialPolicyExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3373,11 +3411,11 @@ func (a *HyperflexApiService) CreateHyperflexLocalCredentialPolicyExecute(r ApiC
 }
 
 type ApiCreateHyperflexNodeConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
 	hyperflexNodeConfigPolicy *HyperflexNodeConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;hyperflex.NodeConfigPolicy&#39; resource to create.
@@ -3385,11 +3423,13 @@ func (r ApiCreateHyperflexNodeConfigPolicyRequest) HyperflexNodeConfigPolicy(hyp
 	r.hyperflexNodeConfigPolicy = &hyperflexNodeConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexNodeConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexNodeConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexNodeConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexNodeConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3409,7 +3449,7 @@ CreateHyperflexNodeConfigPolicy Create a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) CreateHyperflexNodeConfigPolicy(ctx _context.Context) ApiCreateHyperflexNodeConfigPolicyRequest {
 	return ApiCreateHyperflexNodeConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3526,13 +3566,13 @@ func (a *HyperflexApiService) CreateHyperflexNodeConfigPolicyExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3549,11 +3589,11 @@ func (a *HyperflexApiService) CreateHyperflexNodeConfigPolicyExecute(r ApiCreate
 }
 
 type ApiCreateHyperflexNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
 	hyperflexNodeProfile *HyperflexNodeProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;hyperflex.NodeProfile&#39; resource to create.
@@ -3561,11 +3601,13 @@ func (r ApiCreateHyperflexNodeProfileRequest) HyperflexNodeProfile(hyperflexNode
 	r.hyperflexNodeProfile = &hyperflexNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexNodeProfileRequest) IfMatch(ifMatch string) ApiCreateHyperflexNodeProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexNodeProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexNodeProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3585,7 +3627,7 @@ CreateHyperflexNodeProfile Create a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) CreateHyperflexNodeProfile(ctx _context.Context) ApiCreateHyperflexNodeProfileRequest {
 	return ApiCreateHyperflexNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3702,13 +3744,13 @@ func (a *HyperflexApiService) CreateHyperflexNodeProfileExecute(r ApiCreateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3725,11 +3767,11 @@ func (a *HyperflexApiService) CreateHyperflexNodeProfileExecute(r ApiCreateHyper
 }
 
 type ApiCreateHyperflexProxySettingPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
 	hyperflexProxySettingPolicy *HyperflexProxySettingPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;hyperflex.ProxySettingPolicy&#39; resource to create.
@@ -3737,11 +3779,13 @@ func (r ApiCreateHyperflexProxySettingPolicyRequest) HyperflexProxySettingPolicy
 	r.hyperflexProxySettingPolicy = &hyperflexProxySettingPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexProxySettingPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexProxySettingPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexProxySettingPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexProxySettingPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3761,7 +3805,7 @@ CreateHyperflexProxySettingPolicy Create a 'hyperflex.ProxySettingPolicy' resour
 func (a *HyperflexApiService) CreateHyperflexProxySettingPolicy(ctx _context.Context) ApiCreateHyperflexProxySettingPolicyRequest {
 	return ApiCreateHyperflexProxySettingPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3878,13 +3922,13 @@ func (a *HyperflexApiService) CreateHyperflexProxySettingPolicyExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3901,11 +3945,11 @@ func (a *HyperflexApiService) CreateHyperflexProxySettingPolicyExecute(r ApiCrea
 }
 
 type ApiCreateHyperflexServerFirmwareVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
 	hyperflexServerFirmwareVersion *HyperflexServerFirmwareVersion
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersion&#39; resource to create.
@@ -3913,11 +3957,13 @@ func (r ApiCreateHyperflexServerFirmwareVersionRequest) HyperflexServerFirmwareV
 	r.hyperflexServerFirmwareVersion = &hyperflexServerFirmwareVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexServerFirmwareVersionRequest) IfMatch(ifMatch string) ApiCreateHyperflexServerFirmwareVersionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexServerFirmwareVersionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexServerFirmwareVersionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -3937,7 +3983,7 @@ CreateHyperflexServerFirmwareVersion Create a 'hyperflex.ServerFirmwareVersion' 
 func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersion(ctx _context.Context) ApiCreateHyperflexServerFirmwareVersionRequest {
 	return ApiCreateHyperflexServerFirmwareVersionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4054,13 +4100,13 @@ func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersionExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4077,11 +4123,11 @@ func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersionExecute(r ApiC
 }
 
 type ApiCreateHyperflexServerFirmwareVersionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
 	hyperflexServerFirmwareVersionEntry *HyperflexServerFirmwareVersionEntry
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                             *string
+	ifNoneMatch                         *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersionEntry&#39; resource to create.
@@ -4089,11 +4135,13 @@ func (r ApiCreateHyperflexServerFirmwareVersionEntryRequest) HyperflexServerFirm
 	r.hyperflexServerFirmwareVersionEntry = &hyperflexServerFirmwareVersionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexServerFirmwareVersionEntryRequest) IfMatch(ifMatch string) ApiCreateHyperflexServerFirmwareVersionEntryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexServerFirmwareVersionEntryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexServerFirmwareVersionEntryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4113,7 +4161,7 @@ CreateHyperflexServerFirmwareVersionEntry Create a 'hyperflex.ServerFirmwareVers
 func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersionEntry(ctx _context.Context) ApiCreateHyperflexServerFirmwareVersionEntryRequest {
 	return ApiCreateHyperflexServerFirmwareVersionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4230,13 +4278,13 @@ func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersionEntryExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4253,11 +4301,11 @@ func (a *HyperflexApiService) CreateHyperflexServerFirmwareVersionEntryExecute(r
 }
 
 type ApiCreateHyperflexServerModelRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
 	hyperflexServerModel *HyperflexServerModel
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch              *string
+	ifNoneMatch          *string
 }
 
 // The &#39;hyperflex.ServerModel&#39; resource to create.
@@ -4265,11 +4313,13 @@ func (r ApiCreateHyperflexServerModelRequest) HyperflexServerModel(hyperflexServ
 	r.hyperflexServerModel = &hyperflexServerModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexServerModelRequest) IfMatch(ifMatch string) ApiCreateHyperflexServerModelRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexServerModelRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexServerModelRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4289,7 +4339,7 @@ CreateHyperflexServerModel Create a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) CreateHyperflexServerModel(ctx _context.Context) ApiCreateHyperflexServerModelRequest {
 	return ApiCreateHyperflexServerModelRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4406,13 +4456,13 @@ func (a *HyperflexApiService) CreateHyperflexServerModelExecute(r ApiCreateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4429,11 +4479,11 @@ func (a *HyperflexApiService) CreateHyperflexServerModelExecute(r ApiCreateHyper
 }
 
 type ApiCreateHyperflexServiceAuthTokenRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
 	hyperflexServiceAuthToken *HyperflexServiceAuthToken
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;hyperflex.ServiceAuthToken&#39; resource to create.
@@ -4441,11 +4491,13 @@ func (r ApiCreateHyperflexServiceAuthTokenRequest) HyperflexServiceAuthToken(hyp
 	r.hyperflexServiceAuthToken = &hyperflexServiceAuthToken
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexServiceAuthTokenRequest) IfMatch(ifMatch string) ApiCreateHyperflexServiceAuthTokenRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexServiceAuthTokenRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexServiceAuthTokenRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4465,7 +4517,7 @@ CreateHyperflexServiceAuthToken Create a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) CreateHyperflexServiceAuthToken(ctx _context.Context) ApiCreateHyperflexServiceAuthTokenRequest {
 	return ApiCreateHyperflexServiceAuthTokenRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4582,13 +4634,13 @@ func (a *HyperflexApiService) CreateHyperflexServiceAuthTokenExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4605,11 +4657,11 @@ func (a *HyperflexApiService) CreateHyperflexServiceAuthTokenExecute(r ApiCreate
 }
 
 type ApiCreateHyperflexSoftwareDistributionComponentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
 	hyperflexSoftwareDistributionComponent *HyperflexSoftwareDistributionComponent
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                                *string
+	ifNoneMatch                            *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionComponent&#39; resource to create.
@@ -4617,11 +4669,13 @@ func (r ApiCreateHyperflexSoftwareDistributionComponentRequest) HyperflexSoftwar
 	r.hyperflexSoftwareDistributionComponent = &hyperflexSoftwareDistributionComponent
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexSoftwareDistributionComponentRequest) IfMatch(ifMatch string) ApiCreateHyperflexSoftwareDistributionComponentRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexSoftwareDistributionComponentRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexSoftwareDistributionComponentRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4641,7 +4695,7 @@ CreateHyperflexSoftwareDistributionComponent Create a 'hyperflex.SoftwareDistrib
 func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionComponent(ctx _context.Context) ApiCreateHyperflexSoftwareDistributionComponentRequest {
 	return ApiCreateHyperflexSoftwareDistributionComponentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4758,13 +4812,13 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionComponentExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4781,11 +4835,11 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionComponentExecut
 }
 
 type ApiCreateHyperflexSoftwareDistributionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                _context.Context
+	ApiService                         *HyperflexApiService
 	hyperflexSoftwareDistributionEntry *HyperflexSoftwareDistributionEntry
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                            *string
+	ifNoneMatch                        *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionEntry&#39; resource to create.
@@ -4793,11 +4847,13 @@ func (r ApiCreateHyperflexSoftwareDistributionEntryRequest) HyperflexSoftwareDis
 	r.hyperflexSoftwareDistributionEntry = &hyperflexSoftwareDistributionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexSoftwareDistributionEntryRequest) IfMatch(ifMatch string) ApiCreateHyperflexSoftwareDistributionEntryRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexSoftwareDistributionEntryRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexSoftwareDistributionEntryRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4817,7 +4873,7 @@ CreateHyperflexSoftwareDistributionEntry Create a 'hyperflex.SoftwareDistributio
 func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionEntry(ctx _context.Context) ApiCreateHyperflexSoftwareDistributionEntryRequest {
 	return ApiCreateHyperflexSoftwareDistributionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4934,13 +4990,13 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionEntryExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4957,11 +5013,11 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionEntryExecute(r 
 }
 
 type ApiCreateHyperflexSoftwareDistributionVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                                  _context.Context
+	ApiService                           *HyperflexApiService
 	hyperflexSoftwareDistributionVersion *HyperflexSoftwareDistributionVersion
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                              *string
+	ifNoneMatch                          *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionVersion&#39; resource to create.
@@ -4969,11 +5025,13 @@ func (r ApiCreateHyperflexSoftwareDistributionVersionRequest) HyperflexSoftwareD
 	r.hyperflexSoftwareDistributionVersion = &hyperflexSoftwareDistributionVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexSoftwareDistributionVersionRequest) IfMatch(ifMatch string) ApiCreateHyperflexSoftwareDistributionVersionRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexSoftwareDistributionVersionRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexSoftwareDistributionVersionRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -4993,7 +5051,7 @@ CreateHyperflexSoftwareDistributionVersion Create a 'hyperflex.SoftwareDistribut
 func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionVersion(ctx _context.Context) ApiCreateHyperflexSoftwareDistributionVersionRequest {
 	return ApiCreateHyperflexSoftwareDistributionVersionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5110,13 +5168,13 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionVersionExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5133,11 +5191,11 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareDistributionVersionExecute(
 }
 
 type ApiCreateHyperflexSoftwareVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
 	hyperflexSoftwareVersionPolicy *HyperflexSoftwareVersionPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                        *string
+	ifNoneMatch                    *string
 }
 
 // The &#39;hyperflex.SoftwareVersionPolicy&#39; resource to create.
@@ -5145,11 +5203,13 @@ func (r ApiCreateHyperflexSoftwareVersionPolicyRequest) HyperflexSoftwareVersion
 	r.hyperflexSoftwareVersionPolicy = &hyperflexSoftwareVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexSoftwareVersionPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexSoftwareVersionPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexSoftwareVersionPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexSoftwareVersionPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -5169,7 +5229,7 @@ CreateHyperflexSoftwareVersionPolicy Create a 'hyperflex.SoftwareVersionPolicy' 
 func (a *HyperflexApiService) CreateHyperflexSoftwareVersionPolicy(ctx _context.Context) ApiCreateHyperflexSoftwareVersionPolicyRequest {
 	return ApiCreateHyperflexSoftwareVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5286,13 +5346,13 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareVersionPolicyExecute(r ApiC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5309,11 +5369,11 @@ func (a *HyperflexApiService) CreateHyperflexSoftwareVersionPolicyExecute(r ApiC
 }
 
 type ApiCreateHyperflexSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                      _context.Context
+	ApiService               *HyperflexApiService
 	hyperflexSysConfigPolicy *HyperflexSysConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                  *string
+	ifNoneMatch              *string
 }
 
 // The &#39;hyperflex.SysConfigPolicy&#39; resource to create.
@@ -5321,11 +5381,13 @@ func (r ApiCreateHyperflexSysConfigPolicyRequest) HyperflexSysConfigPolicy(hyper
 	r.hyperflexSysConfigPolicy = &hyperflexSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexSysConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexSysConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexSysConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -5345,7 +5407,7 @@ CreateHyperflexSysConfigPolicy Create a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) CreateHyperflexSysConfigPolicy(ctx _context.Context) ApiCreateHyperflexSysConfigPolicyRequest {
 	return ApiCreateHyperflexSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5462,13 +5524,13 @@ func (a *HyperflexApiService) CreateHyperflexSysConfigPolicyExecute(r ApiCreateH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5485,11 +5547,11 @@ func (a *HyperflexApiService) CreateHyperflexSysConfigPolicyExecute(r ApiCreateH
 }
 
 type ApiCreateHyperflexUcsmConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
 	hyperflexUcsmConfigPolicy *HyperflexUcsmConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                   *string
+	ifNoneMatch               *string
 }
 
 // The &#39;hyperflex.UcsmConfigPolicy&#39; resource to create.
@@ -5497,11 +5559,13 @@ func (r ApiCreateHyperflexUcsmConfigPolicyRequest) HyperflexUcsmConfigPolicy(hyp
 	r.hyperflexUcsmConfigPolicy = &hyperflexUcsmConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexUcsmConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexUcsmConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexUcsmConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexUcsmConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -5521,7 +5585,7 @@ CreateHyperflexUcsmConfigPolicy Create a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) CreateHyperflexUcsmConfigPolicy(ctx _context.Context) ApiCreateHyperflexUcsmConfigPolicyRequest {
 	return ApiCreateHyperflexUcsmConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5638,13 +5702,13 @@ func (a *HyperflexApiService) CreateHyperflexUcsmConfigPolicyExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5661,11 +5725,11 @@ func (a *HyperflexApiService) CreateHyperflexUcsmConfigPolicyExecute(r ApiCreate
 }
 
 type ApiCreateHyperflexVcenterConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
 	hyperflexVcenterConfigPolicy *HyperflexVcenterConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;hyperflex.VcenterConfigPolicy&#39; resource to create.
@@ -5673,11 +5737,13 @@ func (r ApiCreateHyperflexVcenterConfigPolicyRequest) HyperflexVcenterConfigPoli
 	r.hyperflexVcenterConfigPolicy = &hyperflexVcenterConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexVcenterConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateHyperflexVcenterConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexVcenterConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexVcenterConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -5697,7 +5763,7 @@ CreateHyperflexVcenterConfigPolicy Create a 'hyperflex.VcenterConfigPolicy' reso
 func (a *HyperflexApiService) CreateHyperflexVcenterConfigPolicy(ctx _context.Context) ApiCreateHyperflexVcenterConfigPolicyRequest {
 	return ApiCreateHyperflexVcenterConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5814,13 +5880,13 @@ func (a *HyperflexApiService) CreateHyperflexVcenterConfigPolicyExecute(r ApiCre
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5837,11 +5903,11 @@ func (a *HyperflexApiService) CreateHyperflexVcenterConfigPolicyExecute(r ApiCre
 }
 
 type ApiCreateHyperflexVmImportOperationRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                        _context.Context
+	ApiService                 *HyperflexApiService
 	hyperflexVmImportOperation *HyperflexVmImportOperation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;hyperflex.VmImportOperation&#39; resource to create.
@@ -5849,11 +5915,13 @@ func (r ApiCreateHyperflexVmImportOperationRequest) HyperflexVmImportOperation(h
 	r.hyperflexVmImportOperation = &hyperflexVmImportOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexVmImportOperationRequest) IfMatch(ifMatch string) ApiCreateHyperflexVmImportOperationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexVmImportOperationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexVmImportOperationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -5873,7 +5941,7 @@ CreateHyperflexVmImportOperation Create a 'hyperflex.VmImportOperation' resource
 func (a *HyperflexApiService) CreateHyperflexVmImportOperation(ctx _context.Context) ApiCreateHyperflexVmImportOperationRequest {
 	return ApiCreateHyperflexVmImportOperationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -5990,13 +6058,13 @@ func (a *HyperflexApiService) CreateHyperflexVmImportOperationExecute(r ApiCreat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6013,11 +6081,11 @@ func (a *HyperflexApiService) CreateHyperflexVmImportOperationExecute(r ApiCreat
 }
 
 type ApiCreateHyperflexVmRestoreOperationRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
 	hyperflexVmRestoreOperation *HyperflexVmRestoreOperation
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                     *string
+	ifNoneMatch                 *string
 }
 
 // The &#39;hyperflex.VmRestoreOperation&#39; resource to create.
@@ -6025,11 +6093,13 @@ func (r ApiCreateHyperflexVmRestoreOperationRequest) HyperflexVmRestoreOperation
 	r.hyperflexVmRestoreOperation = &hyperflexVmRestoreOperation
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateHyperflexVmRestoreOperationRequest) IfMatch(ifMatch string) ApiCreateHyperflexVmRestoreOperationRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateHyperflexVmRestoreOperationRequest) IfNoneMatch(ifNoneMatch string) ApiCreateHyperflexVmRestoreOperationRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -6049,7 +6119,7 @@ CreateHyperflexVmRestoreOperation Create a 'hyperflex.VmRestoreOperation' resour
 func (a *HyperflexApiService) CreateHyperflexVmRestoreOperation(ctx _context.Context) ApiCreateHyperflexVmRestoreOperationRequest {
 	return ApiCreateHyperflexVmRestoreOperationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -6166,13 +6236,13 @@ func (a *HyperflexApiService) CreateHyperflexVmRestoreOperationExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6189,11 +6259,10 @@ func (a *HyperflexApiService) CreateHyperflexVmRestoreOperationExecute(r ApiCrea
 }
 
 type ApiDeleteHyperflexAppCatalogRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexAppCatalogRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexAppCatalogExecute(r)
@@ -6209,8 +6278,8 @@ DeleteHyperflexAppCatalog Delete a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) DeleteHyperflexAppCatalog(ctx _context.Context, moid string) ApiDeleteHyperflexAppCatalogRequest {
 	return ApiDeleteHyperflexAppCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6315,13 +6384,13 @@ func (a *HyperflexApiService) DeleteHyperflexAppCatalogExecute(r ApiDeleteHyperf
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6329,11 +6398,10 @@ func (a *HyperflexApiService) DeleteHyperflexAppCatalogExecute(r ApiDeleteHyperf
 }
 
 type ApiDeleteHyperflexAutoSupportPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexAutoSupportPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexAutoSupportPolicyExecute(r)
@@ -6349,8 +6417,8 @@ DeleteHyperflexAutoSupportPolicy Delete a 'hyperflex.AutoSupportPolicy' resource
 func (a *HyperflexApiService) DeleteHyperflexAutoSupportPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexAutoSupportPolicyRequest {
 	return ApiDeleteHyperflexAutoSupportPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6455,13 +6523,13 @@ func (a *HyperflexApiService) DeleteHyperflexAutoSupportPolicyExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6469,11 +6537,10 @@ func (a *HyperflexApiService) DeleteHyperflexAutoSupportPolicyExecute(r ApiDelet
 }
 
 type ApiDeleteHyperflexBackupClusterRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexBackupClusterRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexBackupClusterExecute(r)
@@ -6489,8 +6556,8 @@ DeleteHyperflexBackupCluster Delete a 'hyperflex.BackupCluster' resource.
 func (a *HyperflexApiService) DeleteHyperflexBackupCluster(ctx _context.Context, moid string) ApiDeleteHyperflexBackupClusterRequest {
 	return ApiDeleteHyperflexBackupClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6595,13 +6662,13 @@ func (a *HyperflexApiService) DeleteHyperflexBackupClusterExecute(r ApiDeleteHyp
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6609,11 +6676,10 @@ func (a *HyperflexApiService) DeleteHyperflexBackupClusterExecute(r ApiDeleteHyp
 }
 
 type ApiDeleteHyperflexCapabilityInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexCapabilityInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexCapabilityInfoExecute(r)
@@ -6629,8 +6695,8 @@ DeleteHyperflexCapabilityInfo Delete a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) DeleteHyperflexCapabilityInfo(ctx _context.Context, moid string) ApiDeleteHyperflexCapabilityInfoRequest {
 	return ApiDeleteHyperflexCapabilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6735,13 +6801,13 @@ func (a *HyperflexApiService) DeleteHyperflexCapabilityInfoExecute(r ApiDeleteHy
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6749,11 +6815,10 @@ func (a *HyperflexApiService) DeleteHyperflexCapabilityInfoExecute(r ApiDeleteHy
 }
 
 type ApiDeleteHyperflexClusterBackupPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterBackupPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterBackupPolicyExecute(r)
@@ -6769,8 +6834,8 @@ DeleteHyperflexClusterBackupPolicy Delete a 'hyperflex.ClusterBackupPolicy' reso
 func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexClusterBackupPolicyRequest {
 	return ApiDeleteHyperflexClusterBackupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6875,13 +6940,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyExecute(r ApiDel
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -6889,11 +6954,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyExecute(r ApiDel
 }
 
 type ApiDeleteHyperflexClusterBackupPolicyDeploymentRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterBackupPolicyDeploymentRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterBackupPolicyDeploymentExecute(r)
@@ -6909,8 +6973,8 @@ DeleteHyperflexClusterBackupPolicyDeployment Delete a 'hyperflex.ClusterBackupPo
 func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyDeployment(ctx _context.Context, moid string) ApiDeleteHyperflexClusterBackupPolicyDeploymentRequest {
 	return ApiDeleteHyperflexClusterBackupPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7015,13 +7079,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyDeploymentExecut
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7029,11 +7093,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyDeploymentExecut
 }
 
 type ApiDeleteHyperflexClusterBackupPolicyInventoryRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterBackupPolicyInventoryRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterBackupPolicyInventoryExecute(r)
@@ -7049,8 +7112,8 @@ DeleteHyperflexClusterBackupPolicyInventory Delete a 'hyperflex.ClusterBackupPol
 func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyInventory(ctx _context.Context, moid string) ApiDeleteHyperflexClusterBackupPolicyInventoryRequest {
 	return ApiDeleteHyperflexClusterBackupPolicyInventoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7155,13 +7218,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyInventoryExecute
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7169,11 +7232,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterBackupPolicyInventoryExecute
 }
 
 type ApiDeleteHyperflexClusterNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterNetworkPolicyExecute(r)
@@ -7189,8 +7251,8 @@ DeleteHyperflexClusterNetworkPolicy Delete a 'hyperflex.ClusterNetworkPolicy' re
 func (a *HyperflexApiService) DeleteHyperflexClusterNetworkPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexClusterNetworkPolicyRequest {
 	return ApiDeleteHyperflexClusterNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7295,13 +7357,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterNetworkPolicyExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7309,11 +7371,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterNetworkPolicyExecute(r ApiDe
 }
 
 type ApiDeleteHyperflexClusterProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterProfileExecute(r)
@@ -7329,8 +7390,8 @@ DeleteHyperflexClusterProfile Delete a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) DeleteHyperflexClusterProfile(ctx _context.Context, moid string) ApiDeleteHyperflexClusterProfileRequest {
 	return ApiDeleteHyperflexClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7435,13 +7496,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterProfileExecute(r ApiDeleteHy
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7449,11 +7510,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterProfileExecute(r ApiDeleteHy
 }
 
 type ApiDeleteHyperflexClusterReplicationNetworkPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterReplicationNetworkPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterReplicationNetworkPolicyExecute(r)
@@ -7469,8 +7529,8 @@ DeleteHyperflexClusterReplicationNetworkPolicy Delete a 'hyperflex.ClusterReplic
 func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexClusterReplicationNetworkPolicyRequest {
 	return ApiDeleteHyperflexClusterReplicationNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7575,13 +7635,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicyExec
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7589,11 +7649,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicyExec
 }
 
 type ApiDeleteHyperflexClusterReplicationNetworkPolicyDeploymentRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterReplicationNetworkPolicyDeploymentRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterReplicationNetworkPolicyDeploymentExecute(r)
@@ -7609,8 +7668,8 @@ DeleteHyperflexClusterReplicationNetworkPolicyDeployment Delete a 'hyperflex.Clu
 func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicyDeployment(ctx _context.Context, moid string) ApiDeleteHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	return ApiDeleteHyperflexClusterReplicationNetworkPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7715,13 +7774,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicyDepl
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7729,11 +7788,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterReplicationNetworkPolicyDepl
 }
 
 type ApiDeleteHyperflexClusterStoragePolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexClusterStoragePolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexClusterStoragePolicyExecute(r)
@@ -7749,8 +7807,8 @@ DeleteHyperflexClusterStoragePolicy Delete a 'hyperflex.ClusterStoragePolicy' re
 func (a *HyperflexApiService) DeleteHyperflexClusterStoragePolicy(ctx _context.Context, moid string) ApiDeleteHyperflexClusterStoragePolicyRequest {
 	return ApiDeleteHyperflexClusterStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7855,13 +7913,13 @@ func (a *HyperflexApiService) DeleteHyperflexClusterStoragePolicyExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -7869,11 +7927,10 @@ func (a *HyperflexApiService) DeleteHyperflexClusterStoragePolicyExecute(r ApiDe
 }
 
 type ApiDeleteHyperflexExtFcStoragePolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexExtFcStoragePolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexExtFcStoragePolicyExecute(r)
@@ -7889,8 +7946,8 @@ DeleteHyperflexExtFcStoragePolicy Delete a 'hyperflex.ExtFcStoragePolicy' resour
 func (a *HyperflexApiService) DeleteHyperflexExtFcStoragePolicy(ctx _context.Context, moid string) ApiDeleteHyperflexExtFcStoragePolicyRequest {
 	return ApiDeleteHyperflexExtFcStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -7995,13 +8052,13 @@ func (a *HyperflexApiService) DeleteHyperflexExtFcStoragePolicyExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8009,11 +8066,10 @@ func (a *HyperflexApiService) DeleteHyperflexExtFcStoragePolicyExecute(r ApiDele
 }
 
 type ApiDeleteHyperflexExtIscsiStoragePolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexExtIscsiStoragePolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexExtIscsiStoragePolicyExecute(r)
@@ -8029,8 +8085,8 @@ DeleteHyperflexExtIscsiStoragePolicy Delete a 'hyperflex.ExtIscsiStoragePolicy' 
 func (a *HyperflexApiService) DeleteHyperflexExtIscsiStoragePolicy(ctx _context.Context, moid string) ApiDeleteHyperflexExtIscsiStoragePolicyRequest {
 	return ApiDeleteHyperflexExtIscsiStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8135,13 +8191,13 @@ func (a *HyperflexApiService) DeleteHyperflexExtIscsiStoragePolicyExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8149,11 +8205,10 @@ func (a *HyperflexApiService) DeleteHyperflexExtIscsiStoragePolicyExecute(r ApiD
 }
 
 type ApiDeleteHyperflexFeatureLimitExternalRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexFeatureLimitExternalRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexFeatureLimitExternalExecute(r)
@@ -8169,8 +8224,8 @@ DeleteHyperflexFeatureLimitExternal Delete a 'hyperflex.FeatureLimitExternal' re
 func (a *HyperflexApiService) DeleteHyperflexFeatureLimitExternal(ctx _context.Context, moid string) ApiDeleteHyperflexFeatureLimitExternalRequest {
 	return ApiDeleteHyperflexFeatureLimitExternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8275,13 +8330,13 @@ func (a *HyperflexApiService) DeleteHyperflexFeatureLimitExternalExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8289,11 +8344,10 @@ func (a *HyperflexApiService) DeleteHyperflexFeatureLimitExternalExecute(r ApiDe
 }
 
 type ApiDeleteHyperflexFeatureLimitInternalRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexFeatureLimitInternalRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexFeatureLimitInternalExecute(r)
@@ -8309,8 +8363,8 @@ DeleteHyperflexFeatureLimitInternal Delete a 'hyperflex.FeatureLimitInternal' re
 func (a *HyperflexApiService) DeleteHyperflexFeatureLimitInternal(ctx _context.Context, moid string) ApiDeleteHyperflexFeatureLimitInternalRequest {
 	return ApiDeleteHyperflexFeatureLimitInternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8415,13 +8469,13 @@ func (a *HyperflexApiService) DeleteHyperflexFeatureLimitInternalExecute(r ApiDe
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8429,11 +8483,10 @@ func (a *HyperflexApiService) DeleteHyperflexFeatureLimitInternalExecute(r ApiDe
 }
 
 type ApiDeleteHyperflexHealthCheckDefinitionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexHealthCheckDefinitionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexHealthCheckDefinitionExecute(r)
@@ -8449,8 +8502,8 @@ DeleteHyperflexHealthCheckDefinition Delete a 'hyperflex.HealthCheckDefinition' 
 func (a *HyperflexApiService) DeleteHyperflexHealthCheckDefinition(ctx _context.Context, moid string) ApiDeleteHyperflexHealthCheckDefinitionRequest {
 	return ApiDeleteHyperflexHealthCheckDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8555,13 +8608,13 @@ func (a *HyperflexApiService) DeleteHyperflexHealthCheckDefinitionExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8569,11 +8622,10 @@ func (a *HyperflexApiService) DeleteHyperflexHealthCheckDefinitionExecute(r ApiD
 }
 
 type ApiDeleteHyperflexHealthCheckPackageChecksumRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexHealthCheckPackageChecksumRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexHealthCheckPackageChecksumExecute(r)
@@ -8589,8 +8641,8 @@ DeleteHyperflexHealthCheckPackageChecksum Delete a 'hyperflex.HealthCheckPackage
 func (a *HyperflexApiService) DeleteHyperflexHealthCheckPackageChecksum(ctx _context.Context, moid string) ApiDeleteHyperflexHealthCheckPackageChecksumRequest {
 	return ApiDeleteHyperflexHealthCheckPackageChecksumRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8695,13 +8747,13 @@ func (a *HyperflexApiService) DeleteHyperflexHealthCheckPackageChecksumExecute(r
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8709,11 +8761,10 @@ func (a *HyperflexApiService) DeleteHyperflexHealthCheckPackageChecksumExecute(r
 }
 
 type ApiDeleteHyperflexHxdpVersionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexHxdpVersionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexHxdpVersionExecute(r)
@@ -8729,8 +8780,8 @@ DeleteHyperflexHxdpVersion Delete a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) DeleteHyperflexHxdpVersion(ctx _context.Context, moid string) ApiDeleteHyperflexHxdpVersionRequest {
 	return ApiDeleteHyperflexHxdpVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8835,13 +8886,13 @@ func (a *HyperflexApiService) DeleteHyperflexHxdpVersionExecute(r ApiDeleteHyper
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8849,11 +8900,10 @@ func (a *HyperflexApiService) DeleteHyperflexHxdpVersionExecute(r ApiDeleteHyper
 }
 
 type ApiDeleteHyperflexKeyEncryptionKeyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexKeyEncryptionKeyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexKeyEncryptionKeyExecute(r)
@@ -8869,8 +8919,8 @@ DeleteHyperflexKeyEncryptionKey Delete a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) DeleteHyperflexKeyEncryptionKey(ctx _context.Context, moid string) ApiDeleteHyperflexKeyEncryptionKeyRequest {
 	return ApiDeleteHyperflexKeyEncryptionKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -8975,13 +9025,13 @@ func (a *HyperflexApiService) DeleteHyperflexKeyEncryptionKeyExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -8989,11 +9039,10 @@ func (a *HyperflexApiService) DeleteHyperflexKeyEncryptionKeyExecute(r ApiDelete
 }
 
 type ApiDeleteHyperflexLocalCredentialPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexLocalCredentialPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexLocalCredentialPolicyExecute(r)
@@ -9009,8 +9058,8 @@ DeleteHyperflexLocalCredentialPolicy Delete a 'hyperflex.LocalCredentialPolicy' 
 func (a *HyperflexApiService) DeleteHyperflexLocalCredentialPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexLocalCredentialPolicyRequest {
 	return ApiDeleteHyperflexLocalCredentialPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9115,13 +9164,13 @@ func (a *HyperflexApiService) DeleteHyperflexLocalCredentialPolicyExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9129,11 +9178,10 @@ func (a *HyperflexApiService) DeleteHyperflexLocalCredentialPolicyExecute(r ApiD
 }
 
 type ApiDeleteHyperflexNodeConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexNodeConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexNodeConfigPolicyExecute(r)
@@ -9149,8 +9197,8 @@ DeleteHyperflexNodeConfigPolicy Delete a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) DeleteHyperflexNodeConfigPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexNodeConfigPolicyRequest {
 	return ApiDeleteHyperflexNodeConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9255,13 +9303,13 @@ func (a *HyperflexApiService) DeleteHyperflexNodeConfigPolicyExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9269,11 +9317,10 @@ func (a *HyperflexApiService) DeleteHyperflexNodeConfigPolicyExecute(r ApiDelete
 }
 
 type ApiDeleteHyperflexNodeProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexNodeProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexNodeProfileExecute(r)
@@ -9289,8 +9336,8 @@ DeleteHyperflexNodeProfile Delete a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) DeleteHyperflexNodeProfile(ctx _context.Context, moid string) ApiDeleteHyperflexNodeProfileRequest {
 	return ApiDeleteHyperflexNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9395,13 +9442,13 @@ func (a *HyperflexApiService) DeleteHyperflexNodeProfileExecute(r ApiDeleteHyper
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9409,11 +9456,10 @@ func (a *HyperflexApiService) DeleteHyperflexNodeProfileExecute(r ApiDeleteHyper
 }
 
 type ApiDeleteHyperflexProxySettingPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexProxySettingPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexProxySettingPolicyExecute(r)
@@ -9429,8 +9475,8 @@ DeleteHyperflexProxySettingPolicy Delete a 'hyperflex.ProxySettingPolicy' resour
 func (a *HyperflexApiService) DeleteHyperflexProxySettingPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexProxySettingPolicyRequest {
 	return ApiDeleteHyperflexProxySettingPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9535,13 +9581,13 @@ func (a *HyperflexApiService) DeleteHyperflexProxySettingPolicyExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9549,11 +9595,10 @@ func (a *HyperflexApiService) DeleteHyperflexProxySettingPolicyExecute(r ApiDele
 }
 
 type ApiDeleteHyperflexServerFirmwareVersionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexServerFirmwareVersionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexServerFirmwareVersionExecute(r)
@@ -9569,8 +9614,8 @@ DeleteHyperflexServerFirmwareVersion Delete a 'hyperflex.ServerFirmwareVersion' 
 func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersion(ctx _context.Context, moid string) ApiDeleteHyperflexServerFirmwareVersionRequest {
 	return ApiDeleteHyperflexServerFirmwareVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9675,13 +9720,13 @@ func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersionExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9689,11 +9734,10 @@ func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersionExecute(r ApiD
 }
 
 type ApiDeleteHyperflexServerFirmwareVersionEntryRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexServerFirmwareVersionEntryRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexServerFirmwareVersionEntryExecute(r)
@@ -9709,8 +9753,8 @@ DeleteHyperflexServerFirmwareVersionEntry Delete a 'hyperflex.ServerFirmwareVers
 func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersionEntry(ctx _context.Context, moid string) ApiDeleteHyperflexServerFirmwareVersionEntryRequest {
 	return ApiDeleteHyperflexServerFirmwareVersionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9815,13 +9859,13 @@ func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersionEntryExecute(r
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9829,11 +9873,10 @@ func (a *HyperflexApiService) DeleteHyperflexServerFirmwareVersionEntryExecute(r
 }
 
 type ApiDeleteHyperflexServerModelRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexServerModelRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexServerModelExecute(r)
@@ -9849,8 +9892,8 @@ DeleteHyperflexServerModel Delete a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) DeleteHyperflexServerModel(ctx _context.Context, moid string) ApiDeleteHyperflexServerModelRequest {
 	return ApiDeleteHyperflexServerModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -9955,13 +9998,13 @@ func (a *HyperflexApiService) DeleteHyperflexServerModelExecute(r ApiDeleteHyper
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -9969,11 +10012,10 @@ func (a *HyperflexApiService) DeleteHyperflexServerModelExecute(r ApiDeleteHyper
 }
 
 type ApiDeleteHyperflexServiceAuthTokenRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexServiceAuthTokenRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexServiceAuthTokenExecute(r)
@@ -9989,8 +10031,8 @@ DeleteHyperflexServiceAuthToken Delete a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) DeleteHyperflexServiceAuthToken(ctx _context.Context, moid string) ApiDeleteHyperflexServiceAuthTokenRequest {
 	return ApiDeleteHyperflexServiceAuthTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10095,13 +10137,13 @@ func (a *HyperflexApiService) DeleteHyperflexServiceAuthTokenExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10109,11 +10151,10 @@ func (a *HyperflexApiService) DeleteHyperflexServiceAuthTokenExecute(r ApiDelete
 }
 
 type ApiDeleteHyperflexSoftwareDistributionComponentRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexSoftwareDistributionComponentRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexSoftwareDistributionComponentExecute(r)
@@ -10129,8 +10170,8 @@ DeleteHyperflexSoftwareDistributionComponent Delete a 'hyperflex.SoftwareDistrib
 func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionComponent(ctx _context.Context, moid string) ApiDeleteHyperflexSoftwareDistributionComponentRequest {
 	return ApiDeleteHyperflexSoftwareDistributionComponentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10235,13 +10276,13 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionComponentExecut
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10249,11 +10290,10 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionComponentExecut
 }
 
 type ApiDeleteHyperflexSoftwareDistributionEntryRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexSoftwareDistributionEntryRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexSoftwareDistributionEntryExecute(r)
@@ -10269,8 +10309,8 @@ DeleteHyperflexSoftwareDistributionEntry Delete a 'hyperflex.SoftwareDistributio
 func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionEntry(ctx _context.Context, moid string) ApiDeleteHyperflexSoftwareDistributionEntryRequest {
 	return ApiDeleteHyperflexSoftwareDistributionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10375,13 +10415,13 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionEntryExecute(r 
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10389,11 +10429,10 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionEntryExecute(r 
 }
 
 type ApiDeleteHyperflexSoftwareDistributionVersionRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexSoftwareDistributionVersionRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexSoftwareDistributionVersionExecute(r)
@@ -10409,8 +10448,8 @@ DeleteHyperflexSoftwareDistributionVersion Delete a 'hyperflex.SoftwareDistribut
 func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionVersion(ctx _context.Context, moid string) ApiDeleteHyperflexSoftwareDistributionVersionRequest {
 	return ApiDeleteHyperflexSoftwareDistributionVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10515,13 +10554,13 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionVersionExecute(
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10529,11 +10568,10 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareDistributionVersionExecute(
 }
 
 type ApiDeleteHyperflexSoftwareVersionPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexSoftwareVersionPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexSoftwareVersionPolicyExecute(r)
@@ -10549,8 +10587,8 @@ DeleteHyperflexSoftwareVersionPolicy Delete a 'hyperflex.SoftwareVersionPolicy' 
 func (a *HyperflexApiService) DeleteHyperflexSoftwareVersionPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexSoftwareVersionPolicyRequest {
 	return ApiDeleteHyperflexSoftwareVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10655,13 +10693,13 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareVersionPolicyExecute(r ApiD
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10669,11 +10707,10 @@ func (a *HyperflexApiService) DeleteHyperflexSoftwareVersionPolicyExecute(r ApiD
 }
 
 type ApiDeleteHyperflexSysConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexSysConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexSysConfigPolicyExecute(r)
@@ -10689,8 +10726,8 @@ DeleteHyperflexSysConfigPolicy Delete a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) DeleteHyperflexSysConfigPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexSysConfigPolicyRequest {
 	return ApiDeleteHyperflexSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10795,13 +10832,13 @@ func (a *HyperflexApiService) DeleteHyperflexSysConfigPolicyExecute(r ApiDeleteH
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10809,11 +10846,10 @@ func (a *HyperflexApiService) DeleteHyperflexSysConfigPolicyExecute(r ApiDeleteH
 }
 
 type ApiDeleteHyperflexUcsmConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexUcsmConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexUcsmConfigPolicyExecute(r)
@@ -10829,8 +10865,8 @@ DeleteHyperflexUcsmConfigPolicy Delete a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) DeleteHyperflexUcsmConfigPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexUcsmConfigPolicyRequest {
 	return ApiDeleteHyperflexUcsmConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -10935,13 +10971,13 @@ func (a *HyperflexApiService) DeleteHyperflexUcsmConfigPolicyExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -10949,11 +10985,10 @@ func (a *HyperflexApiService) DeleteHyperflexUcsmConfigPolicyExecute(r ApiDelete
 }
 
 type ApiDeleteHyperflexVcenterConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexVcenterConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexVcenterConfigPolicyExecute(r)
@@ -10969,8 +11004,8 @@ DeleteHyperflexVcenterConfigPolicy Delete a 'hyperflex.VcenterConfigPolicy' reso
 func (a *HyperflexApiService) DeleteHyperflexVcenterConfigPolicy(ctx _context.Context, moid string) ApiDeleteHyperflexVcenterConfigPolicyRequest {
 	return ApiDeleteHyperflexVcenterConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11075,13 +11110,13 @@ func (a *HyperflexApiService) DeleteHyperflexVcenterConfigPolicyExecute(r ApiDel
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -11089,11 +11124,10 @@ func (a *HyperflexApiService) DeleteHyperflexVcenterConfigPolicyExecute(r ApiDel
 }
 
 type ApiDeleteHyperflexVmBackupInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexVmBackupInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexVmBackupInfoExecute(r)
@@ -11109,8 +11143,8 @@ DeleteHyperflexVmBackupInfo Delete a 'hyperflex.VmBackupInfo' resource.
 func (a *HyperflexApiService) DeleteHyperflexVmBackupInfo(ctx _context.Context, moid string) ApiDeleteHyperflexVmBackupInfoRequest {
 	return ApiDeleteHyperflexVmBackupInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11215,13 +11249,13 @@ func (a *HyperflexApiService) DeleteHyperflexVmBackupInfoExecute(r ApiDeleteHype
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -11229,11 +11263,10 @@ func (a *HyperflexApiService) DeleteHyperflexVmBackupInfoExecute(r ApiDeleteHype
 }
 
 type ApiDeleteHyperflexVmImportOperationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexVmImportOperationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexVmImportOperationExecute(r)
@@ -11249,8 +11282,8 @@ DeleteHyperflexVmImportOperation Delete a 'hyperflex.VmImportOperation' resource
 func (a *HyperflexApiService) DeleteHyperflexVmImportOperation(ctx _context.Context, moid string) ApiDeleteHyperflexVmImportOperationRequest {
 	return ApiDeleteHyperflexVmImportOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11355,13 +11388,13 @@ func (a *HyperflexApiService) DeleteHyperflexVmImportOperationExecute(r ApiDelet
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -11369,11 +11402,10 @@ func (a *HyperflexApiService) DeleteHyperflexVmImportOperationExecute(r ApiDelet
 }
 
 type ApiDeleteHyperflexVmRestoreOperationRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexVmRestoreOperationRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexVmRestoreOperationExecute(r)
@@ -11389,8 +11421,8 @@ DeleteHyperflexVmRestoreOperation Delete a 'hyperflex.VmRestoreOperation' resour
 func (a *HyperflexApiService) DeleteHyperflexVmRestoreOperation(ctx _context.Context, moid string) ApiDeleteHyperflexVmRestoreOperationRequest {
 	return ApiDeleteHyperflexVmRestoreOperationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11495,13 +11527,13 @@ func (a *HyperflexApiService) DeleteHyperflexVmRestoreOperationExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -11509,11 +11541,10 @@ func (a *HyperflexApiService) DeleteHyperflexVmRestoreOperationExecute(r ApiDele
 }
 
 type ApiDeleteHyperflexVmSnapshotInfoRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteHyperflexVmSnapshotInfoRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteHyperflexVmSnapshotInfoExecute(r)
@@ -11529,8 +11560,8 @@ DeleteHyperflexVmSnapshotInfo Delete a 'hyperflex.VmSnapshotInfo' resource.
 func (a *HyperflexApiService) DeleteHyperflexVmSnapshotInfo(ctx _context.Context, moid string) ApiDeleteHyperflexVmSnapshotInfoRequest {
 	return ApiDeleteHyperflexVmSnapshotInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11635,13 +11666,13 @@ func (a *HyperflexApiService) DeleteHyperflexVmSnapshotInfoExecute(r ApiDeleteHy
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -11649,11 +11680,10 @@ func (a *HyperflexApiService) DeleteHyperflexVmSnapshotInfoExecute(r ApiDeleteHy
 }
 
 type ApiGetHyperflexAlarmByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexAlarmByMoidRequest) Execute() (HyperflexAlarm, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexAlarmByMoidExecute(r)
@@ -11669,8 +11699,8 @@ GetHyperflexAlarmByMoid Read a 'hyperflex.Alarm' resource.
 func (a *HyperflexApiService) GetHyperflexAlarmByMoid(ctx _context.Context, moid string) ApiGetHyperflexAlarmByMoidRequest {
 	return ApiGetHyperflexAlarmByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -11777,13 +11807,13 @@ func (a *HyperflexApiService) GetHyperflexAlarmByMoidExecute(r ApiGetHyperflexAl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -11800,19 +11830,19 @@ func (a *HyperflexApiService) GetHyperflexAlarmByMoidExecute(r ApiGetHyperflexAl
 }
 
 type ApiGetHyperflexAlarmListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -11820,51 +11850,61 @@ func (r ApiGetHyperflexAlarmListRequest) Filter(filter string) ApiGetHyperflexAl
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexAlarmListRequest) Orderby(orderby string) ApiGetHyperflexAlarmListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexAlarmListRequest) Top(top int32) ApiGetHyperflexAlarmListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexAlarmListRequest) Skip(skip int32) ApiGetHyperflexAlarmListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexAlarmListRequest) Select_(select_ string) ApiGetHyperflexAlarmListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexAlarmListRequest) Expand(expand string) ApiGetHyperflexAlarmListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexAlarmListRequest) Apply(apply string) ApiGetHyperflexAlarmListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexAlarmListRequest) Count(count bool) ApiGetHyperflexAlarmListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexAlarmListRequest) Inlinecount(inlinecount string) ApiGetHyperflexAlarmListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexAlarmListRequest) At(at string) ApiGetHyperflexAlarmListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexAlarmListRequest) Tags(tags string) ApiGetHyperflexAlarmListRequest {
 	r.tags = &tags
@@ -11884,7 +11924,7 @@ GetHyperflexAlarmList Read a 'hyperflex.Alarm' resource.
 func (a *HyperflexApiService) GetHyperflexAlarmList(ctx _context.Context) ApiGetHyperflexAlarmListRequest {
 	return ApiGetHyperflexAlarmListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12023,13 +12063,13 @@ func (a *HyperflexApiService) GetHyperflexAlarmListExecute(r ApiGetHyperflexAlar
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12046,11 +12086,10 @@ func (a *HyperflexApiService) GetHyperflexAlarmListExecute(r ApiGetHyperflexAlar
 }
 
 type ApiGetHyperflexAppCatalogByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexAppCatalogByMoidRequest) Execute() (HyperflexAppCatalog, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexAppCatalogByMoidExecute(r)
@@ -12066,8 +12105,8 @@ GetHyperflexAppCatalogByMoid Read a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) GetHyperflexAppCatalogByMoid(ctx _context.Context, moid string) ApiGetHyperflexAppCatalogByMoidRequest {
 	return ApiGetHyperflexAppCatalogByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12174,13 +12213,13 @@ func (a *HyperflexApiService) GetHyperflexAppCatalogByMoidExecute(r ApiGetHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12197,19 +12236,19 @@ func (a *HyperflexApiService) GetHyperflexAppCatalogByMoidExecute(r ApiGetHyperf
 }
 
 type ApiGetHyperflexAppCatalogListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12217,51 +12256,61 @@ func (r ApiGetHyperflexAppCatalogListRequest) Filter(filter string) ApiGetHyperf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexAppCatalogListRequest) Orderby(orderby string) ApiGetHyperflexAppCatalogListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexAppCatalogListRequest) Top(top int32) ApiGetHyperflexAppCatalogListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexAppCatalogListRequest) Skip(skip int32) ApiGetHyperflexAppCatalogListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexAppCatalogListRequest) Select_(select_ string) ApiGetHyperflexAppCatalogListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexAppCatalogListRequest) Expand(expand string) ApiGetHyperflexAppCatalogListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexAppCatalogListRequest) Apply(apply string) ApiGetHyperflexAppCatalogListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexAppCatalogListRequest) Count(count bool) ApiGetHyperflexAppCatalogListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexAppCatalogListRequest) Inlinecount(inlinecount string) ApiGetHyperflexAppCatalogListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexAppCatalogListRequest) At(at string) ApiGetHyperflexAppCatalogListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexAppCatalogListRequest) Tags(tags string) ApiGetHyperflexAppCatalogListRequest {
 	r.tags = &tags
@@ -12281,7 +12330,7 @@ GetHyperflexAppCatalogList Read a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) GetHyperflexAppCatalogList(ctx _context.Context) ApiGetHyperflexAppCatalogListRequest {
 	return ApiGetHyperflexAppCatalogListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12420,13 +12469,13 @@ func (a *HyperflexApiService) GetHyperflexAppCatalogListExecute(r ApiGetHyperfle
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12443,11 +12492,10 @@ func (a *HyperflexApiService) GetHyperflexAppCatalogListExecute(r ApiGetHyperfle
 }
 
 type ApiGetHyperflexAutoSupportPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexAutoSupportPolicyByMoidRequest) Execute() (HyperflexAutoSupportPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexAutoSupportPolicyByMoidExecute(r)
@@ -12463,8 +12511,8 @@ GetHyperflexAutoSupportPolicyByMoid Read a 'hyperflex.AutoSupportPolicy' resourc
 func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexAutoSupportPolicyByMoidRequest {
 	return ApiGetHyperflexAutoSupportPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12571,13 +12619,13 @@ func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12594,19 +12642,19 @@ func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyByMoidExecute(r ApiGe
 }
 
 type ApiGetHyperflexAutoSupportPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -12614,51 +12662,61 @@ func (r ApiGetHyperflexAutoSupportPolicyListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Orderby(orderby string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Top(top int32) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Skip(skip int32) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Select_(select_ string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Expand(expand string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Apply(apply string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Count(count bool) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) At(at string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexAutoSupportPolicyListRequest) Tags(tags string) ApiGetHyperflexAutoSupportPolicyListRequest {
 	r.tags = &tags
@@ -12678,7 +12736,7 @@ GetHyperflexAutoSupportPolicyList Read a 'hyperflex.AutoSupportPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyList(ctx _context.Context) ApiGetHyperflexAutoSupportPolicyListRequest {
 	return ApiGetHyperflexAutoSupportPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -12817,13 +12875,13 @@ func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyListExecute(r ApiGetH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12840,11 +12898,10 @@ func (a *HyperflexApiService) GetHyperflexAutoSupportPolicyListExecute(r ApiGetH
 }
 
 type ApiGetHyperflexBackupClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexBackupClusterByMoidRequest) Execute() (HyperflexBackupCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexBackupClusterByMoidExecute(r)
@@ -12860,8 +12917,8 @@ GetHyperflexBackupClusterByMoid Read a 'hyperflex.BackupCluster' resource.
 func (a *HyperflexApiService) GetHyperflexBackupClusterByMoid(ctx _context.Context, moid string) ApiGetHyperflexBackupClusterByMoidRequest {
 	return ApiGetHyperflexBackupClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -12968,13 +13025,13 @@ func (a *HyperflexApiService) GetHyperflexBackupClusterByMoidExecute(r ApiGetHyp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -12991,19 +13048,19 @@ func (a *HyperflexApiService) GetHyperflexBackupClusterByMoidExecute(r ApiGetHyp
 }
 
 type ApiGetHyperflexBackupClusterListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13011,51 +13068,61 @@ func (r ApiGetHyperflexBackupClusterListRequest) Filter(filter string) ApiGetHyp
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexBackupClusterListRequest) Orderby(orderby string) ApiGetHyperflexBackupClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexBackupClusterListRequest) Top(top int32) ApiGetHyperflexBackupClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexBackupClusterListRequest) Skip(skip int32) ApiGetHyperflexBackupClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexBackupClusterListRequest) Select_(select_ string) ApiGetHyperflexBackupClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexBackupClusterListRequest) Expand(expand string) ApiGetHyperflexBackupClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexBackupClusterListRequest) Apply(apply string) ApiGetHyperflexBackupClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexBackupClusterListRequest) Count(count bool) ApiGetHyperflexBackupClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexBackupClusterListRequest) Inlinecount(inlinecount string) ApiGetHyperflexBackupClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexBackupClusterListRequest) At(at string) ApiGetHyperflexBackupClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexBackupClusterListRequest) Tags(tags string) ApiGetHyperflexBackupClusterListRequest {
 	r.tags = &tags
@@ -13075,7 +13142,7 @@ GetHyperflexBackupClusterList Read a 'hyperflex.BackupCluster' resource.
 func (a *HyperflexApiService) GetHyperflexBackupClusterList(ctx _context.Context) ApiGetHyperflexBackupClusterListRequest {
 	return ApiGetHyperflexBackupClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13214,13 +13281,13 @@ func (a *HyperflexApiService) GetHyperflexBackupClusterListExecute(r ApiGetHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13237,11 +13304,10 @@ func (a *HyperflexApiService) GetHyperflexBackupClusterListExecute(r ApiGetHyper
 }
 
 type ApiGetHyperflexCapabilityInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexCapabilityInfoByMoidRequest) Execute() (HyperflexCapabilityInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexCapabilityInfoByMoidExecute(r)
@@ -13257,8 +13323,8 @@ GetHyperflexCapabilityInfoByMoid Read a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) GetHyperflexCapabilityInfoByMoid(ctx _context.Context, moid string) ApiGetHyperflexCapabilityInfoByMoidRequest {
 	return ApiGetHyperflexCapabilityInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13365,13 +13431,13 @@ func (a *HyperflexApiService) GetHyperflexCapabilityInfoByMoidExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13388,19 +13454,19 @@ func (a *HyperflexApiService) GetHyperflexCapabilityInfoByMoidExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexCapabilityInfoListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13408,51 +13474,61 @@ func (r ApiGetHyperflexCapabilityInfoListRequest) Filter(filter string) ApiGetHy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Orderby(orderby string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Top(top int32) ApiGetHyperflexCapabilityInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Skip(skip int32) ApiGetHyperflexCapabilityInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Select_(select_ string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Expand(expand string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Apply(apply string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Count(count bool) ApiGetHyperflexCapabilityInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Inlinecount(inlinecount string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexCapabilityInfoListRequest) At(at string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexCapabilityInfoListRequest) Tags(tags string) ApiGetHyperflexCapabilityInfoListRequest {
 	r.tags = &tags
@@ -13472,7 +13548,7 @@ GetHyperflexCapabilityInfoList Read a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) GetHyperflexCapabilityInfoList(ctx _context.Context) ApiGetHyperflexCapabilityInfoListRequest {
 	return ApiGetHyperflexCapabilityInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -13611,13 +13687,13 @@ func (a *HyperflexApiService) GetHyperflexCapabilityInfoListExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13634,11 +13710,10 @@ func (a *HyperflexApiService) GetHyperflexCapabilityInfoListExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexClusterBackupPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterBackupPolicyByMoidRequest) Execute() (HyperflexClusterBackupPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterBackupPolicyByMoidExecute(r)
@@ -13654,8 +13729,8 @@ GetHyperflexClusterBackupPolicyByMoid Read a 'hyperflex.ClusterBackupPolicy' res
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterBackupPolicyByMoidRequest {
 	return ApiGetHyperflexClusterBackupPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13762,13 +13837,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13785,11 +13860,10 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyByMoidExecute(r Api
 }
 
 type ApiGetHyperflexClusterBackupPolicyDeploymentByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentByMoidRequest) Execute() (HyperflexClusterBackupPolicyDeployment, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterBackupPolicyDeploymentByMoidExecute(r)
@@ -13805,8 +13879,8 @@ GetHyperflexClusterBackupPolicyDeploymentByMoid Read a 'hyperflex.ClusterBackupP
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterBackupPolicyDeploymentByMoidRequest {
 	return ApiGetHyperflexClusterBackupPolicyDeploymentByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -13913,13 +13987,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -13936,19 +14010,19 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentByMoidExe
 }
 
 type ApiGetHyperflexClusterBackupPolicyDeploymentListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -13956,51 +14030,61 @@ func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Filter(filter s
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Orderby(orderby string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Top(top int32) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Skip(skip int32) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Select_(select_ string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Expand(expand string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Apply(apply string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Count(count bool) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) At(at string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterBackupPolicyDeploymentListRequest) Tags(tags string) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	r.tags = &tags
@@ -14020,7 +14104,7 @@ GetHyperflexClusterBackupPolicyDeploymentList Read a 'hyperflex.ClusterBackupPol
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentList(ctx _context.Context) ApiGetHyperflexClusterBackupPolicyDeploymentListRequest {
 	return ApiGetHyperflexClusterBackupPolicyDeploymentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14159,13 +14243,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14182,11 +14266,10 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyDeploymentListExecu
 }
 
 type ApiGetHyperflexClusterBackupPolicyInventoryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterBackupPolicyInventoryByMoidRequest) Execute() (HyperflexClusterBackupPolicyInventory, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterBackupPolicyInventoryByMoidExecute(r)
@@ -14202,8 +14285,8 @@ GetHyperflexClusterBackupPolicyInventoryByMoid Read a 'hyperflex.ClusterBackupPo
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterBackupPolicyInventoryByMoidRequest {
 	return ApiGetHyperflexClusterBackupPolicyInventoryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14310,13 +14393,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryByMoidExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14333,19 +14416,19 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryByMoidExec
 }
 
 type ApiGetHyperflexClusterBackupPolicyInventoryListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14353,51 +14436,61 @@ func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Orderby(orderby string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Top(top int32) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Skip(skip int32) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Select_(select_ string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Expand(expand string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Apply(apply string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Count(count bool) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) At(at string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterBackupPolicyInventoryListRequest) Tags(tags string) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	r.tags = &tags
@@ -14417,7 +14510,7 @@ GetHyperflexClusterBackupPolicyInventoryList Read a 'hyperflex.ClusterBackupPoli
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryList(ctx _context.Context) ApiGetHyperflexClusterBackupPolicyInventoryListRequest {
 	return ApiGetHyperflexClusterBackupPolicyInventoryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14556,13 +14649,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryListExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14579,19 +14672,19 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyInventoryListExecut
 }
 
 type ApiGetHyperflexClusterBackupPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -14599,51 +14692,61 @@ func (r ApiGetHyperflexClusterBackupPolicyListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Orderby(orderby string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Top(top int32) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Skip(skip int32) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Select_(select_ string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Expand(expand string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Apply(apply string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Count(count bool) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) At(at string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterBackupPolicyListRequest) Tags(tags string) ApiGetHyperflexClusterBackupPolicyListRequest {
 	r.tags = &tags
@@ -14663,7 +14766,7 @@ GetHyperflexClusterBackupPolicyList Read a 'hyperflex.ClusterBackupPolicy' resou
 func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyList(ctx _context.Context) ApiGetHyperflexClusterBackupPolicyListRequest {
 	return ApiGetHyperflexClusterBackupPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -14802,13 +14905,13 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14825,11 +14928,10 @@ func (a *HyperflexApiService) GetHyperflexClusterBackupPolicyListExecute(r ApiGe
 }
 
 type ApiGetHyperflexClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterByMoidRequest) Execute() (HyperflexCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterByMoidExecute(r)
@@ -14845,8 +14947,8 @@ GetHyperflexClusterByMoid Read a 'hyperflex.Cluster' resource.
 func (a *HyperflexApiService) GetHyperflexClusterByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterByMoidRequest {
 	return ApiGetHyperflexClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -14953,13 +15055,13 @@ func (a *HyperflexApiService) GetHyperflexClusterByMoidExecute(r ApiGetHyperflex
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -14976,11 +15078,10 @@ func (a *HyperflexApiService) GetHyperflexClusterByMoidExecute(r ApiGetHyperflex
 }
 
 type ApiGetHyperflexClusterHealthCheckExecutionSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotByMoidRequest) Execute() (HyperflexClusterHealthCheckExecutionSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterHealthCheckExecutionSnapshotByMoidExecute(r)
@@ -14996,8 +15097,8 @@ GetHyperflexClusterHealthCheckExecutionSnapshotByMoid Read a 'hyperflex.ClusterH
 func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotByMoidRequest {
 	return ApiGetHyperflexClusterHealthCheckExecutionSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15104,13 +15205,13 @@ func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotByM
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15127,19 +15228,19 @@ func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotByM
 }
 
 type ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15147,51 +15248,61 @@ func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Filter(fi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Orderby(orderby string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Top(top int32) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Skip(skip int32) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Select_(select_ string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Expand(expand string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Apply(apply string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Count(count bool) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) At(at string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest) Tags(tags string) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	r.tags = &tags
@@ -15211,7 +15322,7 @@ GetHyperflexClusterHealthCheckExecutionSnapshotList Read a 'hyperflex.ClusterHea
 func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotList(ctx _context.Context) ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest {
 	return ApiGetHyperflexClusterHealthCheckExecutionSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15350,13 +15461,13 @@ func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotLis
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15373,19 +15484,19 @@ func (a *HyperflexApiService) GetHyperflexClusterHealthCheckExecutionSnapshotLis
 }
 
 type ApiGetHyperflexClusterListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15393,51 +15504,61 @@ func (r ApiGetHyperflexClusterListRequest) Filter(filter string) ApiGetHyperflex
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterListRequest) Orderby(orderby string) ApiGetHyperflexClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterListRequest) Top(top int32) ApiGetHyperflexClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterListRequest) Skip(skip int32) ApiGetHyperflexClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterListRequest) Select_(select_ string) ApiGetHyperflexClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterListRequest) Expand(expand string) ApiGetHyperflexClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterListRequest) Apply(apply string) ApiGetHyperflexClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterListRequest) Count(count bool) ApiGetHyperflexClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterListRequest) At(at string) ApiGetHyperflexClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterListRequest) Tags(tags string) ApiGetHyperflexClusterListRequest {
 	r.tags = &tags
@@ -15457,7 +15578,7 @@ GetHyperflexClusterList Read a 'hyperflex.Cluster' resource.
 func (a *HyperflexApiService) GetHyperflexClusterList(ctx _context.Context) ApiGetHyperflexClusterListRequest {
 	return ApiGetHyperflexClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15596,13 +15717,13 @@ func (a *HyperflexApiService) GetHyperflexClusterListExecute(r ApiGetHyperflexCl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15619,11 +15740,10 @@ func (a *HyperflexApiService) GetHyperflexClusterListExecute(r ApiGetHyperflexCl
 }
 
 type ApiGetHyperflexClusterNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterNetworkPolicyByMoidRequest) Execute() (HyperflexClusterNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterNetworkPolicyByMoidExecute(r)
@@ -15639,8 +15759,8 @@ GetHyperflexClusterNetworkPolicyByMoid Read a 'hyperflex.ClusterNetworkPolicy' r
 func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterNetworkPolicyByMoidRequest {
 	return ApiGetHyperflexClusterNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -15747,13 +15867,13 @@ func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -15770,19 +15890,19 @@ func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexClusterNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -15790,51 +15910,61 @@ func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Orderby(orderby string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Top(top int32) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Skip(skip int32) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Select_(select_ string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Expand(expand string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Apply(apply string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Count(count bool) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) At(at string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterNetworkPolicyListRequest) Tags(tags string) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	r.tags = &tags
@@ -15854,7 +15984,7 @@ GetHyperflexClusterNetworkPolicyList Read a 'hyperflex.ClusterNetworkPolicy' res
 func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyList(ctx _context.Context) ApiGetHyperflexClusterNetworkPolicyListRequest {
 	return ApiGetHyperflexClusterNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -15993,13 +16123,13 @@ func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16016,11 +16146,10 @@ func (a *HyperflexApiService) GetHyperflexClusterNetworkPolicyListExecute(r ApiG
 }
 
 type ApiGetHyperflexClusterProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterProfileByMoidRequest) Execute() (HyperflexClusterProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterProfileByMoidExecute(r)
@@ -16036,8 +16165,8 @@ GetHyperflexClusterProfileByMoid Read a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) GetHyperflexClusterProfileByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterProfileByMoidRequest {
 	return ApiGetHyperflexClusterProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16144,13 +16273,13 @@ func (a *HyperflexApiService) GetHyperflexClusterProfileByMoidExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16167,19 +16296,19 @@ func (a *HyperflexApiService) GetHyperflexClusterProfileByMoidExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexClusterProfileListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16187,51 +16316,61 @@ func (r ApiGetHyperflexClusterProfileListRequest) Filter(filter string) ApiGetHy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterProfileListRequest) Orderby(orderby string) ApiGetHyperflexClusterProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterProfileListRequest) Top(top int32) ApiGetHyperflexClusterProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterProfileListRequest) Skip(skip int32) ApiGetHyperflexClusterProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterProfileListRequest) Select_(select_ string) ApiGetHyperflexClusterProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterProfileListRequest) Expand(expand string) ApiGetHyperflexClusterProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterProfileListRequest) Apply(apply string) ApiGetHyperflexClusterProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterProfileListRequest) Count(count bool) ApiGetHyperflexClusterProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterProfileListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterProfileListRequest) At(at string) ApiGetHyperflexClusterProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterProfileListRequest) Tags(tags string) ApiGetHyperflexClusterProfileListRequest {
 	r.tags = &tags
@@ -16251,7 +16390,7 @@ GetHyperflexClusterProfileList Read a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) GetHyperflexClusterProfileList(ctx _context.Context) ApiGetHyperflexClusterProfileListRequest {
 	return ApiGetHyperflexClusterProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16390,13 +16529,13 @@ func (a *HyperflexApiService) GetHyperflexClusterProfileListExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16413,11 +16552,10 @@ func (a *HyperflexApiService) GetHyperflexClusterProfileListExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexClusterReplicationNetworkPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyByMoidRequest) Execute() (HyperflexClusterReplicationNetworkPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterReplicationNetworkPolicyByMoidExecute(r)
@@ -16433,8 +16571,8 @@ GetHyperflexClusterReplicationNetworkPolicyByMoid Read a 'hyperflex.ClusterRepli
 func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterReplicationNetworkPolicyByMoidRequest {
 	return ApiGetHyperflexClusterReplicationNetworkPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16541,13 +16679,13 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyByMoidE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16564,11 +16702,10 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyByMoidE
 }
 
 type ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentByMoidRequest) Execute() (HyperflexClusterReplicationNetworkPolicyDeployment, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterReplicationNetworkPolicyDeploymentByMoidExecute(r)
@@ -16584,8 +16721,8 @@ GetHyperflexClusterReplicationNetworkPolicyDeploymentByMoid Read a 'hyperflex.Cl
 func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploymentByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentByMoidRequest {
 	return ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -16692,13 +16829,13 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploym
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16715,19 +16852,19 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploym
 }
 
 type ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16735,51 +16872,61 @@ func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Fil
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Orderby(orderby string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Top(top int32) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Skip(skip int32) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Select_(select_ string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Expand(expand string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Apply(apply string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Count(count bool) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) At(at string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest) Tags(tags string) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	r.tags = &tags
@@ -16799,7 +16946,7 @@ GetHyperflexClusterReplicationNetworkPolicyDeploymentList Read a 'hyperflex.Clus
 func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploymentList(ctx _context.Context) ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest {
 	return ApiGetHyperflexClusterReplicationNetworkPolicyDeploymentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -16938,13 +17085,13 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploym
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -16961,19 +17108,19 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyDeploym
 }
 
 type ApiGetHyperflexClusterReplicationNetworkPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -16981,51 +17128,61 @@ func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Filter(filter
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Orderby(orderby string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Top(top int32) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Skip(skip int32) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Select_(select_ string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Expand(expand string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Apply(apply string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Count(count bool) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) At(at string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterReplicationNetworkPolicyListRequest) Tags(tags string) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	r.tags = &tags
@@ -17045,7 +17202,7 @@ GetHyperflexClusterReplicationNetworkPolicyList Read a 'hyperflex.ClusterReplica
 func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyList(ctx _context.Context) ApiGetHyperflexClusterReplicationNetworkPolicyListRequest {
 	return ApiGetHyperflexClusterReplicationNetworkPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17184,13 +17341,13 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyListExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17207,11 +17364,10 @@ func (a *HyperflexApiService) GetHyperflexClusterReplicationNetworkPolicyListExe
 }
 
 type ApiGetHyperflexClusterStoragePolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexClusterStoragePolicyByMoidRequest) Execute() (HyperflexClusterStoragePolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexClusterStoragePolicyByMoidExecute(r)
@@ -17227,8 +17383,8 @@ GetHyperflexClusterStoragePolicyByMoid Read a 'hyperflex.ClusterStoragePolicy' r
 func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexClusterStoragePolicyByMoidRequest {
 	return ApiGetHyperflexClusterStoragePolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17335,13 +17491,13 @@ func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17358,19 +17514,19 @@ func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexClusterStoragePolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17378,51 +17534,61 @@ func (r ApiGetHyperflexClusterStoragePolicyListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Orderby(orderby string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Top(top int32) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Skip(skip int32) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Select_(select_ string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Expand(expand string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Apply(apply string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Count(count bool) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) At(at string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexClusterStoragePolicyListRequest) Tags(tags string) ApiGetHyperflexClusterStoragePolicyListRequest {
 	r.tags = &tags
@@ -17442,7 +17608,7 @@ GetHyperflexClusterStoragePolicyList Read a 'hyperflex.ClusterStoragePolicy' res
 func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyList(ctx _context.Context) ApiGetHyperflexClusterStoragePolicyListRequest {
 	return ApiGetHyperflexClusterStoragePolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -17581,13 +17747,13 @@ func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17604,11 +17770,10 @@ func (a *HyperflexApiService) GetHyperflexClusterStoragePolicyListExecute(r ApiG
 }
 
 type ApiGetHyperflexConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexConfigResultByMoidRequest) Execute() (HyperflexConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexConfigResultByMoidExecute(r)
@@ -17624,8 +17789,8 @@ GetHyperflexConfigResultByMoid Read a 'hyperflex.ConfigResult' resource.
 func (a *HyperflexApiService) GetHyperflexConfigResultByMoid(ctx _context.Context, moid string) ApiGetHyperflexConfigResultByMoidRequest {
 	return ApiGetHyperflexConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17732,13 +17897,13 @@ func (a *HyperflexApiService) GetHyperflexConfigResultByMoidExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17755,11 +17920,10 @@ func (a *HyperflexApiService) GetHyperflexConfigResultByMoidExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexConfigResultEntryByMoidRequest) Execute() (HyperflexConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexConfigResultEntryByMoidExecute(r)
@@ -17775,8 +17939,8 @@ GetHyperflexConfigResultEntryByMoid Read a 'hyperflex.ConfigResultEntry' resourc
 func (a *HyperflexApiService) GetHyperflexConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetHyperflexConfigResultEntryByMoidRequest {
 	return ApiGetHyperflexConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -17883,13 +18047,13 @@ func (a *HyperflexApiService) GetHyperflexConfigResultEntryByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -17906,19 +18070,19 @@ func (a *HyperflexApiService) GetHyperflexConfigResultEntryByMoidExecute(r ApiGe
 }
 
 type ApiGetHyperflexConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -17926,51 +18090,61 @@ func (r ApiGetHyperflexConfigResultEntryListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Orderby(orderby string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Top(top int32) ApiGetHyperflexConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Skip(skip int32) ApiGetHyperflexConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Select_(select_ string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Expand(expand string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Apply(apply string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Count(count bool) ApiGetHyperflexConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexConfigResultEntryListRequest) At(at string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexConfigResultEntryListRequest) Tags(tags string) ApiGetHyperflexConfigResultEntryListRequest {
 	r.tags = &tags
@@ -17990,7 +18164,7 @@ GetHyperflexConfigResultEntryList Read a 'hyperflex.ConfigResultEntry' resource.
 func (a *HyperflexApiService) GetHyperflexConfigResultEntryList(ctx _context.Context) ApiGetHyperflexConfigResultEntryListRequest {
 	return ApiGetHyperflexConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18129,13 +18303,13 @@ func (a *HyperflexApiService) GetHyperflexConfigResultEntryListExecute(r ApiGetH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18152,19 +18326,19 @@ func (a *HyperflexApiService) GetHyperflexConfigResultEntryListExecute(r ApiGetH
 }
 
 type ApiGetHyperflexConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18172,51 +18346,61 @@ func (r ApiGetHyperflexConfigResultListRequest) Filter(filter string) ApiGetHype
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexConfigResultListRequest) Orderby(orderby string) ApiGetHyperflexConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexConfigResultListRequest) Top(top int32) ApiGetHyperflexConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexConfigResultListRequest) Skip(skip int32) ApiGetHyperflexConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexConfigResultListRequest) Select_(select_ string) ApiGetHyperflexConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexConfigResultListRequest) Expand(expand string) ApiGetHyperflexConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexConfigResultListRequest) Apply(apply string) ApiGetHyperflexConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexConfigResultListRequest) Count(count bool) ApiGetHyperflexConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexConfigResultListRequest) Inlinecount(inlinecount string) ApiGetHyperflexConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexConfigResultListRequest) At(at string) ApiGetHyperflexConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexConfigResultListRequest) Tags(tags string) ApiGetHyperflexConfigResultListRequest {
 	r.tags = &tags
@@ -18236,7 +18420,7 @@ GetHyperflexConfigResultList Read a 'hyperflex.ConfigResult' resource.
 func (a *HyperflexApiService) GetHyperflexConfigResultList(ctx _context.Context) ApiGetHyperflexConfigResultListRequest {
 	return ApiGetHyperflexConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18375,13 +18559,13 @@ func (a *HyperflexApiService) GetHyperflexConfigResultListExecute(r ApiGetHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18398,11 +18582,10 @@ func (a *HyperflexApiService) GetHyperflexConfigResultListExecute(r ApiGetHyperf
 }
 
 type ApiGetHyperflexDataProtectionPeerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexDataProtectionPeerByMoidRequest) Execute() (HyperflexDataProtectionPeer, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexDataProtectionPeerByMoidExecute(r)
@@ -18418,8 +18601,8 @@ GetHyperflexDataProtectionPeerByMoid Read a 'hyperflex.DataProtectionPeer' resou
 func (a *HyperflexApiService) GetHyperflexDataProtectionPeerByMoid(ctx _context.Context, moid string) ApiGetHyperflexDataProtectionPeerByMoidRequest {
 	return ApiGetHyperflexDataProtectionPeerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18526,13 +18709,13 @@ func (a *HyperflexApiService) GetHyperflexDataProtectionPeerByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18549,19 +18732,19 @@ func (a *HyperflexApiService) GetHyperflexDataProtectionPeerByMoidExecute(r ApiG
 }
 
 type ApiGetHyperflexDataProtectionPeerListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18569,51 +18752,61 @@ func (r ApiGetHyperflexDataProtectionPeerListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Orderby(orderby string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Top(top int32) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Skip(skip int32) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Select_(select_ string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Expand(expand string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Apply(apply string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Count(count bool) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Inlinecount(inlinecount string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) At(at string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexDataProtectionPeerListRequest) Tags(tags string) ApiGetHyperflexDataProtectionPeerListRequest {
 	r.tags = &tags
@@ -18633,7 +18826,7 @@ GetHyperflexDataProtectionPeerList Read a 'hyperflex.DataProtectionPeer' resourc
 func (a *HyperflexApiService) GetHyperflexDataProtectionPeerList(ctx _context.Context) ApiGetHyperflexDataProtectionPeerListRequest {
 	return ApiGetHyperflexDataProtectionPeerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -18772,13 +18965,13 @@ func (a *HyperflexApiService) GetHyperflexDataProtectionPeerListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18795,11 +18988,10 @@ func (a *HyperflexApiService) GetHyperflexDataProtectionPeerListExecute(r ApiGet
 }
 
 type ApiGetHyperflexDatastoreStatisticByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexDatastoreStatisticByMoidRequest) Execute() (HyperflexDatastoreStatistic, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexDatastoreStatisticByMoidExecute(r)
@@ -18815,8 +19007,8 @@ GetHyperflexDatastoreStatisticByMoid Read a 'hyperflex.DatastoreStatistic' resou
 func (a *HyperflexApiService) GetHyperflexDatastoreStatisticByMoid(ctx _context.Context, moid string) ApiGetHyperflexDatastoreStatisticByMoidRequest {
 	return ApiGetHyperflexDatastoreStatisticByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -18923,13 +19115,13 @@ func (a *HyperflexApiService) GetHyperflexDatastoreStatisticByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -18946,19 +19138,19 @@ func (a *HyperflexApiService) GetHyperflexDatastoreStatisticByMoidExecute(r ApiG
 }
 
 type ApiGetHyperflexDatastoreStatisticListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -18966,51 +19158,61 @@ func (r ApiGetHyperflexDatastoreStatisticListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Orderby(orderby string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Top(top int32) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Skip(skip int32) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Select_(select_ string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Expand(expand string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Apply(apply string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Count(count bool) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Inlinecount(inlinecount string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) At(at string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexDatastoreStatisticListRequest) Tags(tags string) ApiGetHyperflexDatastoreStatisticListRequest {
 	r.tags = &tags
@@ -19030,7 +19232,7 @@ GetHyperflexDatastoreStatisticList Read a 'hyperflex.DatastoreStatistic' resourc
 func (a *HyperflexApiService) GetHyperflexDatastoreStatisticList(ctx _context.Context) ApiGetHyperflexDatastoreStatisticListRequest {
 	return ApiGetHyperflexDatastoreStatisticListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19169,13 +19371,13 @@ func (a *HyperflexApiService) GetHyperflexDatastoreStatisticListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19192,11 +19394,10 @@ func (a *HyperflexApiService) GetHyperflexDatastoreStatisticListExecute(r ApiGet
 }
 
 type ApiGetHyperflexDevicePackageDownloadStateByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexDevicePackageDownloadStateByMoidRequest) Execute() (HyperflexDevicePackageDownloadState, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexDevicePackageDownloadStateByMoidExecute(r)
@@ -19212,8 +19413,8 @@ GetHyperflexDevicePackageDownloadStateByMoid Read a 'hyperflex.DevicePackageDown
 func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateByMoid(ctx _context.Context, moid string) ApiGetHyperflexDevicePackageDownloadStateByMoidRequest {
 	return ApiGetHyperflexDevicePackageDownloadStateByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19320,13 +19521,13 @@ func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19343,19 +19544,19 @@ func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateByMoidExecut
 }
 
 type ApiGetHyperflexDevicePackageDownloadStateListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19363,51 +19564,61 @@ func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Orderby(orderby string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Top(top int32) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Skip(skip int32) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Select_(select_ string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Expand(expand string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Apply(apply string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Count(count bool) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Inlinecount(inlinecount string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) At(at string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexDevicePackageDownloadStateListRequest) Tags(tags string) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	r.tags = &tags
@@ -19427,7 +19638,7 @@ GetHyperflexDevicePackageDownloadStateList Read a 'hyperflex.DevicePackageDownlo
 func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateList(ctx _context.Context) ApiGetHyperflexDevicePackageDownloadStateListRequest {
 	return ApiGetHyperflexDevicePackageDownloadStateListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19566,13 +19777,13 @@ func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19589,11 +19800,10 @@ func (a *HyperflexApiService) GetHyperflexDevicePackageDownloadStateListExecute(
 }
 
 type ApiGetHyperflexDriveByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexDriveByMoidRequest) Execute() (HyperflexDrive, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexDriveByMoidExecute(r)
@@ -19609,8 +19819,8 @@ GetHyperflexDriveByMoid Read a 'hyperflex.Drive' resource.
 func (a *HyperflexApiService) GetHyperflexDriveByMoid(ctx _context.Context, moid string) ApiGetHyperflexDriveByMoidRequest {
 	return ApiGetHyperflexDriveByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -19717,13 +19927,13 @@ func (a *HyperflexApiService) GetHyperflexDriveByMoidExecute(r ApiGetHyperflexDr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19740,19 +19950,19 @@ func (a *HyperflexApiService) GetHyperflexDriveByMoidExecute(r ApiGetHyperflexDr
 }
 
 type ApiGetHyperflexDriveListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -19760,51 +19970,61 @@ func (r ApiGetHyperflexDriveListRequest) Filter(filter string) ApiGetHyperflexDr
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexDriveListRequest) Orderby(orderby string) ApiGetHyperflexDriveListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexDriveListRequest) Top(top int32) ApiGetHyperflexDriveListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexDriveListRequest) Skip(skip int32) ApiGetHyperflexDriveListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexDriveListRequest) Select_(select_ string) ApiGetHyperflexDriveListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexDriveListRequest) Expand(expand string) ApiGetHyperflexDriveListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexDriveListRequest) Apply(apply string) ApiGetHyperflexDriveListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexDriveListRequest) Count(count bool) ApiGetHyperflexDriveListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexDriveListRequest) Inlinecount(inlinecount string) ApiGetHyperflexDriveListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexDriveListRequest) At(at string) ApiGetHyperflexDriveListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexDriveListRequest) Tags(tags string) ApiGetHyperflexDriveListRequest {
 	r.tags = &tags
@@ -19824,7 +20044,7 @@ GetHyperflexDriveList Read a 'hyperflex.Drive' resource.
 func (a *HyperflexApiService) GetHyperflexDriveList(ctx _context.Context) ApiGetHyperflexDriveListRequest {
 	return ApiGetHyperflexDriveListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -19963,13 +20183,13 @@ func (a *HyperflexApiService) GetHyperflexDriveListExecute(r ApiGetHyperflexDriv
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -19986,11 +20206,10 @@ func (a *HyperflexApiService) GetHyperflexDriveListExecute(r ApiGetHyperflexDriv
 }
 
 type ApiGetHyperflexEncryptionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexEncryptionByMoidRequest) Execute() (HyperflexEncryption, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexEncryptionByMoidExecute(r)
@@ -20006,8 +20225,8 @@ GetHyperflexEncryptionByMoid Read a 'hyperflex.Encryption' resource.
 func (a *HyperflexApiService) GetHyperflexEncryptionByMoid(ctx _context.Context, moid string) ApiGetHyperflexEncryptionByMoidRequest {
 	return ApiGetHyperflexEncryptionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20114,13 +20333,13 @@ func (a *HyperflexApiService) GetHyperflexEncryptionByMoidExecute(r ApiGetHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20137,19 +20356,19 @@ func (a *HyperflexApiService) GetHyperflexEncryptionByMoidExecute(r ApiGetHyperf
 }
 
 type ApiGetHyperflexEncryptionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20157,51 +20376,61 @@ func (r ApiGetHyperflexEncryptionListRequest) Filter(filter string) ApiGetHyperf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexEncryptionListRequest) Orderby(orderby string) ApiGetHyperflexEncryptionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexEncryptionListRequest) Top(top int32) ApiGetHyperflexEncryptionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexEncryptionListRequest) Skip(skip int32) ApiGetHyperflexEncryptionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexEncryptionListRequest) Select_(select_ string) ApiGetHyperflexEncryptionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexEncryptionListRequest) Expand(expand string) ApiGetHyperflexEncryptionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexEncryptionListRequest) Apply(apply string) ApiGetHyperflexEncryptionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexEncryptionListRequest) Count(count bool) ApiGetHyperflexEncryptionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexEncryptionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexEncryptionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexEncryptionListRequest) At(at string) ApiGetHyperflexEncryptionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexEncryptionListRequest) Tags(tags string) ApiGetHyperflexEncryptionListRequest {
 	r.tags = &tags
@@ -20221,7 +20450,7 @@ GetHyperflexEncryptionList Read a 'hyperflex.Encryption' resource.
 func (a *HyperflexApiService) GetHyperflexEncryptionList(ctx _context.Context) ApiGetHyperflexEncryptionListRequest {
 	return ApiGetHyperflexEncryptionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20360,13 +20589,13 @@ func (a *HyperflexApiService) GetHyperflexEncryptionListExecute(r ApiGetHyperfle
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20383,11 +20612,10 @@ func (a *HyperflexApiService) GetHyperflexEncryptionListExecute(r ApiGetHyperfle
 }
 
 type ApiGetHyperflexExtFcStoragePolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexExtFcStoragePolicyByMoidRequest) Execute() (HyperflexExtFcStoragePolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexExtFcStoragePolicyByMoidExecute(r)
@@ -20403,8 +20631,8 @@ GetHyperflexExtFcStoragePolicyByMoid Read a 'hyperflex.ExtFcStoragePolicy' resou
 func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexExtFcStoragePolicyByMoidRequest {
 	return ApiGetHyperflexExtFcStoragePolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20511,13 +20739,13 @@ func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20534,19 +20762,19 @@ func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyByMoidExecute(r ApiG
 }
 
 type ApiGetHyperflexExtFcStoragePolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20554,51 +20782,61 @@ func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Orderby(orderby string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Top(top int32) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Skip(skip int32) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Select_(select_ string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Expand(expand string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Apply(apply string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Count(count bool) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) At(at string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexExtFcStoragePolicyListRequest) Tags(tags string) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	r.tags = &tags
@@ -20618,7 +20856,7 @@ GetHyperflexExtFcStoragePolicyList Read a 'hyperflex.ExtFcStoragePolicy' resourc
 func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyList(ctx _context.Context) ApiGetHyperflexExtFcStoragePolicyListRequest {
 	return ApiGetHyperflexExtFcStoragePolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -20757,13 +20995,13 @@ func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20780,11 +21018,10 @@ func (a *HyperflexApiService) GetHyperflexExtFcStoragePolicyListExecute(r ApiGet
 }
 
 type ApiGetHyperflexExtIscsiStoragePolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexExtIscsiStoragePolicyByMoidRequest) Execute() (HyperflexExtIscsiStoragePolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexExtIscsiStoragePolicyByMoidExecute(r)
@@ -20800,8 +21037,8 @@ GetHyperflexExtIscsiStoragePolicyByMoid Read a 'hyperflex.ExtIscsiStoragePolicy'
 func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexExtIscsiStoragePolicyByMoidRequest {
 	return ApiGetHyperflexExtIscsiStoragePolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -20908,13 +21145,13 @@ func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -20931,19 +21168,19 @@ func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyByMoidExecute(r A
 }
 
 type ApiGetHyperflexExtIscsiStoragePolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -20951,51 +21188,61 @@ func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Orderby(orderby string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Top(top int32) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Skip(skip int32) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Select_(select_ string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Expand(expand string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Apply(apply string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Count(count bool) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) At(at string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexExtIscsiStoragePolicyListRequest) Tags(tags string) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	r.tags = &tags
@@ -21015,7 +21262,7 @@ GetHyperflexExtIscsiStoragePolicyList Read a 'hyperflex.ExtIscsiStoragePolicy' r
 func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyList(ctx _context.Context) ApiGetHyperflexExtIscsiStoragePolicyListRequest {
 	return ApiGetHyperflexExtIscsiStoragePolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21154,13 +21401,13 @@ func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21177,11 +21424,10 @@ func (a *HyperflexApiService) GetHyperflexExtIscsiStoragePolicyListExecute(r Api
 }
 
 type ApiGetHyperflexFeatureLimitExternalByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexFeatureLimitExternalByMoidRequest) Execute() (HyperflexFeatureLimitExternal, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexFeatureLimitExternalByMoidExecute(r)
@@ -21197,8 +21443,8 @@ GetHyperflexFeatureLimitExternalByMoid Read a 'hyperflex.FeatureLimitExternal' r
 func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalByMoid(ctx _context.Context, moid string) ApiGetHyperflexFeatureLimitExternalByMoidRequest {
 	return ApiGetHyperflexFeatureLimitExternalByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21305,13 +21551,13 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21328,19 +21574,19 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexFeatureLimitExternalListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21348,51 +21594,61 @@ func (r ApiGetHyperflexFeatureLimitExternalListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Orderby(orderby string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Top(top int32) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Skip(skip int32) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Select_(select_ string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Expand(expand string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Apply(apply string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Count(count bool) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Inlinecount(inlinecount string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) At(at string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexFeatureLimitExternalListRequest) Tags(tags string) ApiGetHyperflexFeatureLimitExternalListRequest {
 	r.tags = &tags
@@ -21412,7 +21668,7 @@ GetHyperflexFeatureLimitExternalList Read a 'hyperflex.FeatureLimitExternal' res
 func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalList(ctx _context.Context) ApiGetHyperflexFeatureLimitExternalListRequest {
 	return ApiGetHyperflexFeatureLimitExternalListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21551,13 +21807,13 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21574,11 +21830,10 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitExternalListExecute(r ApiG
 }
 
 type ApiGetHyperflexFeatureLimitInternalByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexFeatureLimitInternalByMoidRequest) Execute() (HyperflexFeatureLimitInternal, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexFeatureLimitInternalByMoidExecute(r)
@@ -21594,8 +21849,8 @@ GetHyperflexFeatureLimitInternalByMoid Read a 'hyperflex.FeatureLimitInternal' r
 func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalByMoid(ctx _context.Context, moid string) ApiGetHyperflexFeatureLimitInternalByMoidRequest {
 	return ApiGetHyperflexFeatureLimitInternalByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -21702,13 +21957,13 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21725,19 +21980,19 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexFeatureLimitInternalListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -21745,51 +22000,61 @@ func (r ApiGetHyperflexFeatureLimitInternalListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Orderby(orderby string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Top(top int32) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Skip(skip int32) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Select_(select_ string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Expand(expand string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Apply(apply string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Count(count bool) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Inlinecount(inlinecount string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) At(at string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexFeatureLimitInternalListRequest) Tags(tags string) ApiGetHyperflexFeatureLimitInternalListRequest {
 	r.tags = &tags
@@ -21809,7 +22074,7 @@ GetHyperflexFeatureLimitInternalList Read a 'hyperflex.FeatureLimitInternal' res
 func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalList(ctx _context.Context) ApiGetHyperflexFeatureLimitInternalListRequest {
 	return ApiGetHyperflexFeatureLimitInternalListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -21948,13 +22213,13 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -21971,11 +22236,10 @@ func (a *HyperflexApiService) GetHyperflexFeatureLimitInternalListExecute(r ApiG
 }
 
 type ApiGetHyperflexHealthByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHealthByMoidRequest) Execute() (HyperflexHealth, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHealthByMoidExecute(r)
@@ -21991,8 +22255,8 @@ GetHyperflexHealthByMoid Read a 'hyperflex.Health' resource.
 func (a *HyperflexApiService) GetHyperflexHealthByMoid(ctx _context.Context, moid string) ApiGetHyperflexHealthByMoidRequest {
 	return ApiGetHyperflexHealthByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22099,13 +22363,13 @@ func (a *HyperflexApiService) GetHyperflexHealthByMoidExecute(r ApiGetHyperflexH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22122,11 +22386,10 @@ func (a *HyperflexApiService) GetHyperflexHealthByMoidExecute(r ApiGetHyperflexH
 }
 
 type ApiGetHyperflexHealthCheckDefinitionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHealthCheckDefinitionByMoidRequest) Execute() (HyperflexHealthCheckDefinition, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHealthCheckDefinitionByMoidExecute(r)
@@ -22142,8 +22405,8 @@ GetHyperflexHealthCheckDefinitionByMoid Read a 'hyperflex.HealthCheckDefinition'
 func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionByMoid(ctx _context.Context, moid string) ApiGetHyperflexHealthCheckDefinitionByMoidRequest {
 	return ApiGetHyperflexHealthCheckDefinitionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22250,13 +22513,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22273,19 +22536,19 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionByMoidExecute(r A
 }
 
 type ApiGetHyperflexHealthCheckDefinitionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22293,51 +22556,61 @@ func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Orderby(orderby string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Top(top int32) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Skip(skip int32) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Select_(select_ string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Expand(expand string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Apply(apply string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Count(count bool) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) At(at string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHealthCheckDefinitionListRequest) Tags(tags string) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	r.tags = &tags
@@ -22357,7 +22630,7 @@ GetHyperflexHealthCheckDefinitionList Read a 'hyperflex.HealthCheckDefinition' r
 func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionList(ctx _context.Context) ApiGetHyperflexHealthCheckDefinitionListRequest {
 	return ApiGetHyperflexHealthCheckDefinitionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22496,13 +22769,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22519,11 +22792,10 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckDefinitionListExecute(r Api
 }
 
 type ApiGetHyperflexHealthCheckExecutionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHealthCheckExecutionByMoidRequest) Execute() (HyperflexHealthCheckExecution, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHealthCheckExecutionByMoidExecute(r)
@@ -22539,8 +22811,8 @@ GetHyperflexHealthCheckExecutionByMoid Read a 'hyperflex.HealthCheckExecution' r
 func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionByMoid(ctx _context.Context, moid string) ApiGetHyperflexHealthCheckExecutionByMoidRequest {
 	return ApiGetHyperflexHealthCheckExecutionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -22647,13 +22919,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22670,19 +22942,19 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexHealthCheckExecutionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -22690,51 +22962,61 @@ func (r ApiGetHyperflexHealthCheckExecutionListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Orderby(orderby string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Top(top int32) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Skip(skip int32) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Select_(select_ string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Expand(expand string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Apply(apply string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Count(count bool) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) At(at string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHealthCheckExecutionListRequest) Tags(tags string) ApiGetHyperflexHealthCheckExecutionListRequest {
 	r.tags = &tags
@@ -22754,7 +23036,7 @@ GetHyperflexHealthCheckExecutionList Read a 'hyperflex.HealthCheckExecution' res
 func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionList(ctx _context.Context) ApiGetHyperflexHealthCheckExecutionListRequest {
 	return ApiGetHyperflexHealthCheckExecutionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -22893,13 +23175,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -22916,11 +23198,10 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionListExecute(r ApiG
 }
 
 type ApiGetHyperflexHealthCheckExecutionSnapshotByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotByMoidRequest) Execute() (HyperflexHealthCheckExecutionSnapshot, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHealthCheckExecutionSnapshotByMoidExecute(r)
@@ -22936,8 +23217,8 @@ GetHyperflexHealthCheckExecutionSnapshotByMoid Read a 'hyperflex.HealthCheckExec
 func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotByMoid(ctx _context.Context, moid string) ApiGetHyperflexHealthCheckExecutionSnapshotByMoidRequest {
 	return ApiGetHyperflexHealthCheckExecutionSnapshotByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23044,13 +23325,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotByMoidExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23067,19 +23348,19 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotByMoidExec
 }
 
 type ApiGetHyperflexHealthCheckExecutionSnapshotListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23087,51 +23368,61 @@ func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Filter(filter st
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Orderby(orderby string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Top(top int32) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Skip(skip int32) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Select_(select_ string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Expand(expand string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Apply(apply string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Count(count bool) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) At(at string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHealthCheckExecutionSnapshotListRequest) Tags(tags string) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	r.tags = &tags
@@ -23151,7 +23442,7 @@ GetHyperflexHealthCheckExecutionSnapshotList Read a 'hyperflex.HealthCheckExecut
 func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotList(ctx _context.Context) ApiGetHyperflexHealthCheckExecutionSnapshotListRequest {
 	return ApiGetHyperflexHealthCheckExecutionSnapshotListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23290,13 +23581,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotListExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23313,11 +23604,10 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckExecutionSnapshotListExecut
 }
 
 type ApiGetHyperflexHealthCheckPackageChecksumByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHealthCheckPackageChecksumByMoidRequest) Execute() (HyperflexHealthCheckPackageChecksum, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHealthCheckPackageChecksumByMoidExecute(r)
@@ -23333,8 +23623,8 @@ GetHyperflexHealthCheckPackageChecksumByMoid Read a 'hyperflex.HealthCheckPackag
 func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumByMoid(ctx _context.Context, moid string) ApiGetHyperflexHealthCheckPackageChecksumByMoidRequest {
 	return ApiGetHyperflexHealthCheckPackageChecksumByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -23441,13 +23731,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23464,19 +23754,19 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumByMoidExecut
 }
 
 type ApiGetHyperflexHealthCheckPackageChecksumListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23484,51 +23774,61 @@ func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Orderby(orderby string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Top(top int32) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Skip(skip int32) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Select_(select_ string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Expand(expand string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Apply(apply string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Count(count bool) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) At(at string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHealthCheckPackageChecksumListRequest) Tags(tags string) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	r.tags = &tags
@@ -23548,7 +23848,7 @@ GetHyperflexHealthCheckPackageChecksumList Read a 'hyperflex.HealthCheckPackageC
 func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumList(ctx _context.Context) ApiGetHyperflexHealthCheckPackageChecksumListRequest {
 	return ApiGetHyperflexHealthCheckPackageChecksumListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23687,13 +23987,13 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23710,19 +24010,19 @@ func (a *HyperflexApiService) GetHyperflexHealthCheckPackageChecksumListExecute(
 }
 
 type ApiGetHyperflexHealthListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -23730,51 +24030,61 @@ func (r ApiGetHyperflexHealthListRequest) Filter(filter string) ApiGetHyperflexH
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHealthListRequest) Orderby(orderby string) ApiGetHyperflexHealthListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHealthListRequest) Top(top int32) ApiGetHyperflexHealthListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHealthListRequest) Skip(skip int32) ApiGetHyperflexHealthListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHealthListRequest) Select_(select_ string) ApiGetHyperflexHealthListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHealthListRequest) Expand(expand string) ApiGetHyperflexHealthListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHealthListRequest) Apply(apply string) ApiGetHyperflexHealthListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHealthListRequest) Count(count bool) ApiGetHyperflexHealthListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHealthListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHealthListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHealthListRequest) At(at string) ApiGetHyperflexHealthListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHealthListRequest) Tags(tags string) ApiGetHyperflexHealthListRequest {
 	r.tags = &tags
@@ -23794,7 +24104,7 @@ GetHyperflexHealthList Read a 'hyperflex.Health' resource.
 func (a *HyperflexApiService) GetHyperflexHealthList(ctx _context.Context) ApiGetHyperflexHealthListRequest {
 	return ApiGetHyperflexHealthListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -23933,13 +24243,13 @@ func (a *HyperflexApiService) GetHyperflexHealthListExecute(r ApiGetHyperflexHea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -23956,11 +24266,10 @@ func (a *HyperflexApiService) GetHyperflexHealthListExecute(r ApiGetHyperflexHea
 }
 
 type ApiGetHyperflexHxdpVersionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHxdpVersionByMoidRequest) Execute() (HyperflexHxdpVersion, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHxdpVersionByMoidExecute(r)
@@ -23976,8 +24285,8 @@ GetHyperflexHxdpVersionByMoid Read a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) GetHyperflexHxdpVersionByMoid(ctx _context.Context, moid string) ApiGetHyperflexHxdpVersionByMoidRequest {
 	return ApiGetHyperflexHxdpVersionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24084,13 +24393,13 @@ func (a *HyperflexApiService) GetHyperflexHxdpVersionByMoidExecute(r ApiGetHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24107,19 +24416,19 @@ func (a *HyperflexApiService) GetHyperflexHxdpVersionByMoidExecute(r ApiGetHyper
 }
 
 type ApiGetHyperflexHxdpVersionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -24127,51 +24436,61 @@ func (r ApiGetHyperflexHxdpVersionListRequest) Filter(filter string) ApiGetHyper
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHxdpVersionListRequest) Orderby(orderby string) ApiGetHyperflexHxdpVersionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHxdpVersionListRequest) Top(top int32) ApiGetHyperflexHxdpVersionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHxdpVersionListRequest) Skip(skip int32) ApiGetHyperflexHxdpVersionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHxdpVersionListRequest) Select_(select_ string) ApiGetHyperflexHxdpVersionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHxdpVersionListRequest) Expand(expand string) ApiGetHyperflexHxdpVersionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHxdpVersionListRequest) Apply(apply string) ApiGetHyperflexHxdpVersionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHxdpVersionListRequest) Count(count bool) ApiGetHyperflexHxdpVersionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHxdpVersionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHxdpVersionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHxdpVersionListRequest) At(at string) ApiGetHyperflexHxdpVersionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHxdpVersionListRequest) Tags(tags string) ApiGetHyperflexHxdpVersionListRequest {
 	r.tags = &tags
@@ -24191,7 +24510,7 @@ GetHyperflexHxdpVersionList Read a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) GetHyperflexHxdpVersionList(ctx _context.Context) ApiGetHyperflexHxdpVersionListRequest {
 	return ApiGetHyperflexHxdpVersionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -24330,13 +24649,13 @@ func (a *HyperflexApiService) GetHyperflexHxdpVersionListExecute(r ApiGetHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24353,11 +24672,10 @@ func (a *HyperflexApiService) GetHyperflexHxdpVersionListExecute(r ApiGetHyperfl
 }
 
 type ApiGetHyperflexHypervisorHostByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHypervisorHostByMoidRequest) Execute() (HyperflexHypervisorHost, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHypervisorHostByMoidExecute(r)
@@ -24373,8 +24691,8 @@ GetHyperflexHypervisorHostByMoid Read a 'hyperflex.HypervisorHost' resource.
 func (a *HyperflexApiService) GetHyperflexHypervisorHostByMoid(ctx _context.Context, moid string) ApiGetHyperflexHypervisorHostByMoidRequest {
 	return ApiGetHyperflexHypervisorHostByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24481,13 +24799,13 @@ func (a *HyperflexApiService) GetHyperflexHypervisorHostByMoidExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24504,19 +24822,19 @@ func (a *HyperflexApiService) GetHyperflexHypervisorHostByMoidExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexHypervisorHostListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -24524,51 +24842,61 @@ func (r ApiGetHyperflexHypervisorHostListRequest) Filter(filter string) ApiGetHy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHypervisorHostListRequest) Orderby(orderby string) ApiGetHyperflexHypervisorHostListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHypervisorHostListRequest) Top(top int32) ApiGetHyperflexHypervisorHostListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHypervisorHostListRequest) Skip(skip int32) ApiGetHyperflexHypervisorHostListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHypervisorHostListRequest) Select_(select_ string) ApiGetHyperflexHypervisorHostListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHypervisorHostListRequest) Expand(expand string) ApiGetHyperflexHypervisorHostListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHypervisorHostListRequest) Apply(apply string) ApiGetHyperflexHypervisorHostListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHypervisorHostListRequest) Count(count bool) ApiGetHyperflexHypervisorHostListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHypervisorHostListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHypervisorHostListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHypervisorHostListRequest) At(at string) ApiGetHyperflexHypervisorHostListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHypervisorHostListRequest) Tags(tags string) ApiGetHyperflexHypervisorHostListRequest {
 	r.tags = &tags
@@ -24588,7 +24916,7 @@ GetHyperflexHypervisorHostList Read a 'hyperflex.HypervisorHost' resource.
 func (a *HyperflexApiService) GetHyperflexHypervisorHostList(ctx _context.Context) ApiGetHyperflexHypervisorHostListRequest {
 	return ApiGetHyperflexHypervisorHostListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -24727,13 +25055,13 @@ func (a *HyperflexApiService) GetHyperflexHypervisorHostListExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24750,11 +25078,10 @@ func (a *HyperflexApiService) GetHyperflexHypervisorHostListExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexHypervisorVirtualMachineByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexHypervisorVirtualMachineByMoidRequest) Execute() (HyperflexHypervisorVirtualMachine, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexHypervisorVirtualMachineByMoidExecute(r)
@@ -24770,8 +25097,8 @@ GetHyperflexHypervisorVirtualMachineByMoid Read a 'hyperflex.HypervisorVirtualMa
 func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineByMoid(ctx _context.Context, moid string) ApiGetHyperflexHypervisorVirtualMachineByMoidRequest {
 	return ApiGetHyperflexHypervisorVirtualMachineByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -24878,13 +25205,13 @@ func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineByMoidExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -24901,19 +25228,19 @@ func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineByMoidExecute(
 }
 
 type ApiGetHyperflexHypervisorVirtualMachineListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -24921,51 +25248,61 @@ func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Filter(filter string
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Orderby(orderby string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Top(top int32) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Skip(skip int32) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Select_(select_ string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Expand(expand string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Apply(apply string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Count(count bool) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Inlinecount(inlinecount string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) At(at string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexHypervisorVirtualMachineListRequest) Tags(tags string) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	r.tags = &tags
@@ -24985,7 +25322,7 @@ GetHyperflexHypervisorVirtualMachineList Read a 'hyperflex.HypervisorVirtualMach
 func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineList(ctx _context.Context) ApiGetHyperflexHypervisorVirtualMachineListRequest {
 	return ApiGetHyperflexHypervisorVirtualMachineListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -25124,13 +25461,13 @@ func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineListExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25147,11 +25484,10 @@ func (a *HyperflexApiService) GetHyperflexHypervisorVirtualMachineListExecute(r 
 }
 
 type ApiGetHyperflexKeyEncryptionKeyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexKeyEncryptionKeyByMoidRequest) Execute() (HyperflexKeyEncryptionKey, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexKeyEncryptionKeyByMoidExecute(r)
@@ -25167,8 +25503,8 @@ GetHyperflexKeyEncryptionKeyByMoid Read a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyByMoid(ctx _context.Context, moid string) ApiGetHyperflexKeyEncryptionKeyByMoidRequest {
 	return ApiGetHyperflexKeyEncryptionKeyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25275,13 +25611,13 @@ func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25298,19 +25634,19 @@ func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexKeyEncryptionKeyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -25318,51 +25654,61 @@ func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Orderby(orderby string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Top(top int32) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Skip(skip int32) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Select_(select_ string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Expand(expand string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Apply(apply string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Count(count bool) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) At(at string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexKeyEncryptionKeyListRequest) Tags(tags string) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	r.tags = &tags
@@ -25382,7 +25728,7 @@ GetHyperflexKeyEncryptionKeyList Read a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyList(ctx _context.Context) ApiGetHyperflexKeyEncryptionKeyListRequest {
 	return ApiGetHyperflexKeyEncryptionKeyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -25521,13 +25867,13 @@ func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25544,11 +25890,10 @@ func (a *HyperflexApiService) GetHyperflexKeyEncryptionKeyListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexLicenseByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexLicenseByMoidRequest) Execute() (HyperflexLicense, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexLicenseByMoidExecute(r)
@@ -25564,8 +25909,8 @@ GetHyperflexLicenseByMoid Read a 'hyperflex.License' resource.
 func (a *HyperflexApiService) GetHyperflexLicenseByMoid(ctx _context.Context, moid string) ApiGetHyperflexLicenseByMoidRequest {
 	return ApiGetHyperflexLicenseByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -25672,13 +26017,13 @@ func (a *HyperflexApiService) GetHyperflexLicenseByMoidExecute(r ApiGetHyperflex
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25695,19 +26040,19 @@ func (a *HyperflexApiService) GetHyperflexLicenseByMoidExecute(r ApiGetHyperflex
 }
 
 type ApiGetHyperflexLicenseListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -25715,51 +26060,61 @@ func (r ApiGetHyperflexLicenseListRequest) Filter(filter string) ApiGetHyperflex
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexLicenseListRequest) Orderby(orderby string) ApiGetHyperflexLicenseListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexLicenseListRequest) Top(top int32) ApiGetHyperflexLicenseListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexLicenseListRequest) Skip(skip int32) ApiGetHyperflexLicenseListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexLicenseListRequest) Select_(select_ string) ApiGetHyperflexLicenseListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexLicenseListRequest) Expand(expand string) ApiGetHyperflexLicenseListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexLicenseListRequest) Apply(apply string) ApiGetHyperflexLicenseListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexLicenseListRequest) Count(count bool) ApiGetHyperflexLicenseListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexLicenseListRequest) Inlinecount(inlinecount string) ApiGetHyperflexLicenseListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexLicenseListRequest) At(at string) ApiGetHyperflexLicenseListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexLicenseListRequest) Tags(tags string) ApiGetHyperflexLicenseListRequest {
 	r.tags = &tags
@@ -25779,7 +26134,7 @@ GetHyperflexLicenseList Read a 'hyperflex.License' resource.
 func (a *HyperflexApiService) GetHyperflexLicenseList(ctx _context.Context) ApiGetHyperflexLicenseListRequest {
 	return ApiGetHyperflexLicenseListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -25918,13 +26273,13 @@ func (a *HyperflexApiService) GetHyperflexLicenseListExecute(r ApiGetHyperflexLi
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -25941,11 +26296,10 @@ func (a *HyperflexApiService) GetHyperflexLicenseListExecute(r ApiGetHyperflexLi
 }
 
 type ApiGetHyperflexLocalCredentialPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexLocalCredentialPolicyByMoidRequest) Execute() (HyperflexLocalCredentialPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexLocalCredentialPolicyByMoidExecute(r)
@@ -25961,8 +26315,8 @@ GetHyperflexLocalCredentialPolicyByMoid Read a 'hyperflex.LocalCredentialPolicy'
 func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexLocalCredentialPolicyByMoidRequest {
 	return ApiGetHyperflexLocalCredentialPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26069,13 +26423,13 @@ func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26092,19 +26446,19 @@ func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyByMoidExecute(r A
 }
 
 type ApiGetHyperflexLocalCredentialPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -26112,51 +26466,61 @@ func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Orderby(orderby string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Top(top int32) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Skip(skip int32) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Select_(select_ string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Expand(expand string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Apply(apply string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Count(count bool) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) At(at string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexLocalCredentialPolicyListRequest) Tags(tags string) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	r.tags = &tags
@@ -26176,7 +26540,7 @@ GetHyperflexLocalCredentialPolicyList Read a 'hyperflex.LocalCredentialPolicy' r
 func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyList(ctx _context.Context) ApiGetHyperflexLocalCredentialPolicyListRequest {
 	return ApiGetHyperflexLocalCredentialPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -26315,13 +26679,13 @@ func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26338,11 +26702,10 @@ func (a *HyperflexApiService) GetHyperflexLocalCredentialPolicyListExecute(r Api
 }
 
 type ApiGetHyperflexNodeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexNodeByMoidRequest) Execute() (HyperflexNode, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexNodeByMoidExecute(r)
@@ -26358,8 +26721,8 @@ GetHyperflexNodeByMoid Read a 'hyperflex.Node' resource.
 func (a *HyperflexApiService) GetHyperflexNodeByMoid(ctx _context.Context, moid string) ApiGetHyperflexNodeByMoidRequest {
 	return ApiGetHyperflexNodeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26466,13 +26829,13 @@ func (a *HyperflexApiService) GetHyperflexNodeByMoidExecute(r ApiGetHyperflexNod
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26489,11 +26852,10 @@ func (a *HyperflexApiService) GetHyperflexNodeByMoidExecute(r ApiGetHyperflexNod
 }
 
 type ApiGetHyperflexNodeConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexNodeConfigPolicyByMoidRequest) Execute() (HyperflexNodeConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexNodeConfigPolicyByMoidExecute(r)
@@ -26509,8 +26871,8 @@ GetHyperflexNodeConfigPolicyByMoid Read a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexNodeConfigPolicyByMoidRequest {
 	return ApiGetHyperflexNodeConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -26617,13 +26979,13 @@ func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26640,19 +27002,19 @@ func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexNodeConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -26660,51 +27022,61 @@ func (r ApiGetHyperflexNodeConfigPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Orderby(orderby string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Top(top int32) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Skip(skip int32) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Select_(select_ string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Expand(expand string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Apply(apply string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Count(count bool) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) At(at string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexNodeConfigPolicyListRequest) Tags(tags string) ApiGetHyperflexNodeConfigPolicyListRequest {
 	r.tags = &tags
@@ -26724,7 +27096,7 @@ GetHyperflexNodeConfigPolicyList Read a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyList(ctx _context.Context) ApiGetHyperflexNodeConfigPolicyListRequest {
 	return ApiGetHyperflexNodeConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -26863,13 +27235,13 @@ func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -26886,19 +27258,19 @@ func (a *HyperflexApiService) GetHyperflexNodeConfigPolicyListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexNodeListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -26906,51 +27278,61 @@ func (r ApiGetHyperflexNodeListRequest) Filter(filter string) ApiGetHyperflexNod
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexNodeListRequest) Orderby(orderby string) ApiGetHyperflexNodeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexNodeListRequest) Top(top int32) ApiGetHyperflexNodeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexNodeListRequest) Skip(skip int32) ApiGetHyperflexNodeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexNodeListRequest) Select_(select_ string) ApiGetHyperflexNodeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexNodeListRequest) Expand(expand string) ApiGetHyperflexNodeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexNodeListRequest) Apply(apply string) ApiGetHyperflexNodeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexNodeListRequest) Count(count bool) ApiGetHyperflexNodeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexNodeListRequest) Inlinecount(inlinecount string) ApiGetHyperflexNodeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexNodeListRequest) At(at string) ApiGetHyperflexNodeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexNodeListRequest) Tags(tags string) ApiGetHyperflexNodeListRequest {
 	r.tags = &tags
@@ -26970,7 +27352,7 @@ GetHyperflexNodeList Read a 'hyperflex.Node' resource.
 func (a *HyperflexApiService) GetHyperflexNodeList(ctx _context.Context) ApiGetHyperflexNodeListRequest {
 	return ApiGetHyperflexNodeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -27109,13 +27491,13 @@ func (a *HyperflexApiService) GetHyperflexNodeListExecute(r ApiGetHyperflexNodeL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27132,11 +27514,10 @@ func (a *HyperflexApiService) GetHyperflexNodeListExecute(r ApiGetHyperflexNodeL
 }
 
 type ApiGetHyperflexNodeProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexNodeProfileByMoidRequest) Execute() (HyperflexNodeProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexNodeProfileByMoidExecute(r)
@@ -27152,8 +27533,8 @@ GetHyperflexNodeProfileByMoid Read a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) GetHyperflexNodeProfileByMoid(ctx _context.Context, moid string) ApiGetHyperflexNodeProfileByMoidRequest {
 	return ApiGetHyperflexNodeProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27260,13 +27641,13 @@ func (a *HyperflexApiService) GetHyperflexNodeProfileByMoidExecute(r ApiGetHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27283,19 +27664,19 @@ func (a *HyperflexApiService) GetHyperflexNodeProfileByMoidExecute(r ApiGetHyper
 }
 
 type ApiGetHyperflexNodeProfileListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -27303,51 +27684,61 @@ func (r ApiGetHyperflexNodeProfileListRequest) Filter(filter string) ApiGetHyper
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexNodeProfileListRequest) Orderby(orderby string) ApiGetHyperflexNodeProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexNodeProfileListRequest) Top(top int32) ApiGetHyperflexNodeProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexNodeProfileListRequest) Skip(skip int32) ApiGetHyperflexNodeProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexNodeProfileListRequest) Select_(select_ string) ApiGetHyperflexNodeProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexNodeProfileListRequest) Expand(expand string) ApiGetHyperflexNodeProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexNodeProfileListRequest) Apply(apply string) ApiGetHyperflexNodeProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexNodeProfileListRequest) Count(count bool) ApiGetHyperflexNodeProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexNodeProfileListRequest) Inlinecount(inlinecount string) ApiGetHyperflexNodeProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexNodeProfileListRequest) At(at string) ApiGetHyperflexNodeProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexNodeProfileListRequest) Tags(tags string) ApiGetHyperflexNodeProfileListRequest {
 	r.tags = &tags
@@ -27367,7 +27758,7 @@ GetHyperflexNodeProfileList Read a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) GetHyperflexNodeProfileList(ctx _context.Context) ApiGetHyperflexNodeProfileListRequest {
 	return ApiGetHyperflexNodeProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -27506,13 +27897,13 @@ func (a *HyperflexApiService) GetHyperflexNodeProfileListExecute(r ApiGetHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27529,11 +27920,10 @@ func (a *HyperflexApiService) GetHyperflexNodeProfileListExecute(r ApiGetHyperfl
 }
 
 type ApiGetHyperflexProtectedClusterByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexProtectedClusterByMoidRequest) Execute() (HyperflexProtectedCluster, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexProtectedClusterByMoidExecute(r)
@@ -27549,8 +27939,8 @@ GetHyperflexProtectedClusterByMoid Read a 'hyperflex.ProtectedCluster' resource.
 func (a *HyperflexApiService) GetHyperflexProtectedClusterByMoid(ctx _context.Context, moid string) ApiGetHyperflexProtectedClusterByMoidRequest {
 	return ApiGetHyperflexProtectedClusterByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -27657,13 +28047,13 @@ func (a *HyperflexApiService) GetHyperflexProtectedClusterByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27680,19 +28070,19 @@ func (a *HyperflexApiService) GetHyperflexProtectedClusterByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexProtectedClusterListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -27700,51 +28090,61 @@ func (r ApiGetHyperflexProtectedClusterListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexProtectedClusterListRequest) Orderby(orderby string) ApiGetHyperflexProtectedClusterListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexProtectedClusterListRequest) Top(top int32) ApiGetHyperflexProtectedClusterListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexProtectedClusterListRequest) Skip(skip int32) ApiGetHyperflexProtectedClusterListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexProtectedClusterListRequest) Select_(select_ string) ApiGetHyperflexProtectedClusterListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexProtectedClusterListRequest) Expand(expand string) ApiGetHyperflexProtectedClusterListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexProtectedClusterListRequest) Apply(apply string) ApiGetHyperflexProtectedClusterListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexProtectedClusterListRequest) Count(count bool) ApiGetHyperflexProtectedClusterListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexProtectedClusterListRequest) Inlinecount(inlinecount string) ApiGetHyperflexProtectedClusterListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexProtectedClusterListRequest) At(at string) ApiGetHyperflexProtectedClusterListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexProtectedClusterListRequest) Tags(tags string) ApiGetHyperflexProtectedClusterListRequest {
 	r.tags = &tags
@@ -27764,7 +28164,7 @@ GetHyperflexProtectedClusterList Read a 'hyperflex.ProtectedCluster' resource.
 func (a *HyperflexApiService) GetHyperflexProtectedClusterList(ctx _context.Context) ApiGetHyperflexProtectedClusterListRequest {
 	return ApiGetHyperflexProtectedClusterListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -27903,13 +28303,13 @@ func (a *HyperflexApiService) GetHyperflexProtectedClusterListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -27926,11 +28326,10 @@ func (a *HyperflexApiService) GetHyperflexProtectedClusterListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexProxySettingPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexProxySettingPolicyByMoidRequest) Execute() (HyperflexProxySettingPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexProxySettingPolicyByMoidExecute(r)
@@ -27946,8 +28345,8 @@ GetHyperflexProxySettingPolicyByMoid Read a 'hyperflex.ProxySettingPolicy' resou
 func (a *HyperflexApiService) GetHyperflexProxySettingPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexProxySettingPolicyByMoidRequest {
 	return ApiGetHyperflexProxySettingPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28054,13 +28453,13 @@ func (a *HyperflexApiService) GetHyperflexProxySettingPolicyByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28077,19 +28476,19 @@ func (a *HyperflexApiService) GetHyperflexProxySettingPolicyByMoidExecute(r ApiG
 }
 
 type ApiGetHyperflexProxySettingPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -28097,51 +28496,61 @@ func (r ApiGetHyperflexProxySettingPolicyListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Orderby(orderby string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Top(top int32) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Skip(skip int32) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Select_(select_ string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Expand(expand string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Apply(apply string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Count(count bool) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) At(at string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexProxySettingPolicyListRequest) Tags(tags string) ApiGetHyperflexProxySettingPolicyListRequest {
 	r.tags = &tags
@@ -28161,7 +28570,7 @@ GetHyperflexProxySettingPolicyList Read a 'hyperflex.ProxySettingPolicy' resourc
 func (a *HyperflexApiService) GetHyperflexProxySettingPolicyList(ctx _context.Context) ApiGetHyperflexProxySettingPolicyListRequest {
 	return ApiGetHyperflexProxySettingPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -28300,13 +28709,13 @@ func (a *HyperflexApiService) GetHyperflexProxySettingPolicyListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28323,11 +28732,10 @@ func (a *HyperflexApiService) GetHyperflexProxySettingPolicyListExecute(r ApiGet
 }
 
 type ApiGetHyperflexServerFirmwareVersionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexServerFirmwareVersionByMoidRequest) Execute() (HyperflexServerFirmwareVersion, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexServerFirmwareVersionByMoidExecute(r)
@@ -28343,8 +28751,8 @@ GetHyperflexServerFirmwareVersionByMoid Read a 'hyperflex.ServerFirmwareVersion'
 func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionByMoid(ctx _context.Context, moid string) ApiGetHyperflexServerFirmwareVersionByMoidRequest {
 	return ApiGetHyperflexServerFirmwareVersionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28451,13 +28859,13 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28474,11 +28882,10 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionByMoidExecute(r A
 }
 
 type ApiGetHyperflexServerFirmwareVersionEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexServerFirmwareVersionEntryByMoidRequest) Execute() (HyperflexServerFirmwareVersionEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexServerFirmwareVersionEntryByMoidExecute(r)
@@ -28494,8 +28901,8 @@ GetHyperflexServerFirmwareVersionEntryByMoid Read a 'hyperflex.ServerFirmwareVer
 func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryByMoid(ctx _context.Context, moid string) ApiGetHyperflexServerFirmwareVersionEntryByMoidRequest {
 	return ApiGetHyperflexServerFirmwareVersionEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -28602,13 +29009,13 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryByMoidExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28625,19 +29032,19 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryByMoidExecut
 }
 
 type ApiGetHyperflexServerFirmwareVersionEntryListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -28645,51 +29052,61 @@ func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Orderby(orderby string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Top(top int32) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Skip(skip int32) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Select_(select_ string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Expand(expand string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Apply(apply string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Count(count bool) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Inlinecount(inlinecount string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) At(at string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexServerFirmwareVersionEntryListRequest) Tags(tags string) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	r.tags = &tags
@@ -28709,7 +29126,7 @@ GetHyperflexServerFirmwareVersionEntryList Read a 'hyperflex.ServerFirmwareVersi
 func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryList(ctx _context.Context) ApiGetHyperflexServerFirmwareVersionEntryListRequest {
 	return ApiGetHyperflexServerFirmwareVersionEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -28848,13 +29265,13 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryListExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -28871,19 +29288,19 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionEntryListExecute(
 }
 
 type ApiGetHyperflexServerFirmwareVersionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -28891,51 +29308,61 @@ func (r ApiGetHyperflexServerFirmwareVersionListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Orderby(orderby string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Top(top int32) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Skip(skip int32) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Select_(select_ string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Expand(expand string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Apply(apply string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Count(count bool) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) At(at string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexServerFirmwareVersionListRequest) Tags(tags string) ApiGetHyperflexServerFirmwareVersionListRequest {
 	r.tags = &tags
@@ -28955,7 +29382,7 @@ GetHyperflexServerFirmwareVersionList Read a 'hyperflex.ServerFirmwareVersion' r
 func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionList(ctx _context.Context) ApiGetHyperflexServerFirmwareVersionListRequest {
 	return ApiGetHyperflexServerFirmwareVersionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -29094,13 +29521,13 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29117,11 +29544,10 @@ func (a *HyperflexApiService) GetHyperflexServerFirmwareVersionListExecute(r Api
 }
 
 type ApiGetHyperflexServerModelByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexServerModelByMoidRequest) Execute() (HyperflexServerModel, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexServerModelByMoidExecute(r)
@@ -29137,8 +29563,8 @@ GetHyperflexServerModelByMoid Read a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) GetHyperflexServerModelByMoid(ctx _context.Context, moid string) ApiGetHyperflexServerModelByMoidRequest {
 	return ApiGetHyperflexServerModelByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29245,13 +29671,13 @@ func (a *HyperflexApiService) GetHyperflexServerModelByMoidExecute(r ApiGetHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29268,19 +29694,19 @@ func (a *HyperflexApiService) GetHyperflexServerModelByMoidExecute(r ApiGetHyper
 }
 
 type ApiGetHyperflexServerModelListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -29288,51 +29714,61 @@ func (r ApiGetHyperflexServerModelListRequest) Filter(filter string) ApiGetHyper
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexServerModelListRequest) Orderby(orderby string) ApiGetHyperflexServerModelListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexServerModelListRequest) Top(top int32) ApiGetHyperflexServerModelListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexServerModelListRequest) Skip(skip int32) ApiGetHyperflexServerModelListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexServerModelListRequest) Select_(select_ string) ApiGetHyperflexServerModelListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexServerModelListRequest) Expand(expand string) ApiGetHyperflexServerModelListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexServerModelListRequest) Apply(apply string) ApiGetHyperflexServerModelListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexServerModelListRequest) Count(count bool) ApiGetHyperflexServerModelListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexServerModelListRequest) Inlinecount(inlinecount string) ApiGetHyperflexServerModelListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexServerModelListRequest) At(at string) ApiGetHyperflexServerModelListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexServerModelListRequest) Tags(tags string) ApiGetHyperflexServerModelListRequest {
 	r.tags = &tags
@@ -29352,7 +29788,7 @@ GetHyperflexServerModelList Read a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) GetHyperflexServerModelList(ctx _context.Context) ApiGetHyperflexServerModelListRequest {
 	return ApiGetHyperflexServerModelListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -29491,13 +29927,13 @@ func (a *HyperflexApiService) GetHyperflexServerModelListExecute(r ApiGetHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29514,11 +29950,10 @@ func (a *HyperflexApiService) GetHyperflexServerModelListExecute(r ApiGetHyperfl
 }
 
 type ApiGetHyperflexServiceAuthTokenByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexServiceAuthTokenByMoidRequest) Execute() (HyperflexServiceAuthToken, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexServiceAuthTokenByMoidExecute(r)
@@ -29534,8 +29969,8 @@ GetHyperflexServiceAuthTokenByMoid Read a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) GetHyperflexServiceAuthTokenByMoid(ctx _context.Context, moid string) ApiGetHyperflexServiceAuthTokenByMoidRequest {
 	return ApiGetHyperflexServiceAuthTokenByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -29642,13 +30077,13 @@ func (a *HyperflexApiService) GetHyperflexServiceAuthTokenByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29665,19 +30100,19 @@ func (a *HyperflexApiService) GetHyperflexServiceAuthTokenByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexServiceAuthTokenListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -29685,51 +30120,61 @@ func (r ApiGetHyperflexServiceAuthTokenListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Orderby(orderby string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Top(top int32) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Skip(skip int32) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Select_(select_ string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Expand(expand string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Apply(apply string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Count(count bool) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Inlinecount(inlinecount string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) At(at string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexServiceAuthTokenListRequest) Tags(tags string) ApiGetHyperflexServiceAuthTokenListRequest {
 	r.tags = &tags
@@ -29749,7 +30194,7 @@ GetHyperflexServiceAuthTokenList Read a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) GetHyperflexServiceAuthTokenList(ctx _context.Context) ApiGetHyperflexServiceAuthTokenListRequest {
 	return ApiGetHyperflexServiceAuthTokenListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -29888,13 +30333,13 @@ func (a *HyperflexApiService) GetHyperflexServiceAuthTokenListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -29911,11 +30356,10 @@ func (a *HyperflexApiService) GetHyperflexServiceAuthTokenListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexSoftwareDistributionComponentByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexSoftwareDistributionComponentByMoidRequest) Execute() (HyperflexSoftwareDistributionComponent, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexSoftwareDistributionComponentByMoidExecute(r)
@@ -29931,8 +30375,8 @@ GetHyperflexSoftwareDistributionComponentByMoid Read a 'hyperflex.SoftwareDistri
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentByMoid(ctx _context.Context, moid string) ApiGetHyperflexSoftwareDistributionComponentByMoidRequest {
 	return ApiGetHyperflexSoftwareDistributionComponentByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30039,13 +30483,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentByMoidExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30062,19 +30506,19 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentByMoidExe
 }
 
 type ApiGetHyperflexSoftwareDistributionComponentListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -30082,51 +30526,61 @@ func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Filter(filter s
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Orderby(orderby string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Top(top int32) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Skip(skip int32) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Select_(select_ string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Expand(expand string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Apply(apply string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Count(count bool) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Inlinecount(inlinecount string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) At(at string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexSoftwareDistributionComponentListRequest) Tags(tags string) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	r.tags = &tags
@@ -30146,7 +30600,7 @@ GetHyperflexSoftwareDistributionComponentList Read a 'hyperflex.SoftwareDistribu
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentList(ctx _context.Context) ApiGetHyperflexSoftwareDistributionComponentListRequest {
 	return ApiGetHyperflexSoftwareDistributionComponentListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -30285,13 +30739,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentListExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30308,11 +30762,10 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionComponentListExecu
 }
 
 type ApiGetHyperflexSoftwareDistributionEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexSoftwareDistributionEntryByMoidRequest) Execute() (HyperflexSoftwareDistributionEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexSoftwareDistributionEntryByMoidExecute(r)
@@ -30328,8 +30781,8 @@ GetHyperflexSoftwareDistributionEntryByMoid Read a 'hyperflex.SoftwareDistributi
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryByMoid(ctx _context.Context, moid string) ApiGetHyperflexSoftwareDistributionEntryByMoidRequest {
 	return ApiGetHyperflexSoftwareDistributionEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30436,13 +30889,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryByMoidExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30459,19 +30912,19 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryByMoidExecute
 }
 
 type ApiGetHyperflexSoftwareDistributionEntryListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -30479,51 +30932,61 @@ func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Orderby(orderby string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Top(top int32) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Skip(skip int32) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Select_(select_ string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Expand(expand string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Apply(apply string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Count(count bool) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Inlinecount(inlinecount string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) At(at string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexSoftwareDistributionEntryListRequest) Tags(tags string) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	r.tags = &tags
@@ -30543,7 +31006,7 @@ GetHyperflexSoftwareDistributionEntryList Read a 'hyperflex.SoftwareDistribution
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryList(ctx _context.Context) ApiGetHyperflexSoftwareDistributionEntryListRequest {
 	return ApiGetHyperflexSoftwareDistributionEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -30682,13 +31145,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryListExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30705,11 +31168,10 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionEntryListExecute(r
 }
 
 type ApiGetHyperflexSoftwareDistributionVersionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexSoftwareDistributionVersionByMoidRequest) Execute() (HyperflexSoftwareDistributionVersion, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexSoftwareDistributionVersionByMoidExecute(r)
@@ -30725,8 +31187,8 @@ GetHyperflexSoftwareDistributionVersionByMoid Read a 'hyperflex.SoftwareDistribu
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionByMoid(ctx _context.Context, moid string) ApiGetHyperflexSoftwareDistributionVersionByMoidRequest {
 	return ApiGetHyperflexSoftwareDistributionVersionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -30833,13 +31295,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionByMoidExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -30856,19 +31318,19 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionByMoidExecu
 }
 
 type ApiGetHyperflexSoftwareDistributionVersionListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -30876,51 +31338,61 @@ func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Filter(filter str
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Orderby(orderby string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Top(top int32) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Skip(skip int32) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Select_(select_ string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Expand(expand string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Apply(apply string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Count(count bool) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Inlinecount(inlinecount string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) At(at string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexSoftwareDistributionVersionListRequest) Tags(tags string) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	r.tags = &tags
@@ -30940,7 +31412,7 @@ GetHyperflexSoftwareDistributionVersionList Read a 'hyperflex.SoftwareDistributi
 func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionList(ctx _context.Context) ApiGetHyperflexSoftwareDistributionVersionListRequest {
 	return ApiGetHyperflexSoftwareDistributionVersionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -31079,13 +31551,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionListExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31102,11 +31574,10 @@ func (a *HyperflexApiService) GetHyperflexSoftwareDistributionVersionListExecute
 }
 
 type ApiGetHyperflexSoftwareVersionPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexSoftwareVersionPolicyByMoidRequest) Execute() (HyperflexSoftwareVersionPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexSoftwareVersionPolicyByMoidExecute(r)
@@ -31122,8 +31593,8 @@ GetHyperflexSoftwareVersionPolicyByMoid Read a 'hyperflex.SoftwareVersionPolicy'
 func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexSoftwareVersionPolicyByMoidRequest {
 	return ApiGetHyperflexSoftwareVersionPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31230,13 +31701,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyByMoidExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31253,19 +31724,19 @@ func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyByMoidExecute(r A
 }
 
 type ApiGetHyperflexSoftwareVersionPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -31273,51 +31744,61 @@ func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Filter(filter string) A
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Orderby(orderby string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Top(top int32) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Skip(skip int32) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Select_(select_ string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Expand(expand string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Apply(apply string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Count(count bool) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) At(at string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexSoftwareVersionPolicyListRequest) Tags(tags string) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	r.tags = &tags
@@ -31337,7 +31818,7 @@ GetHyperflexSoftwareVersionPolicyList Read a 'hyperflex.SoftwareVersionPolicy' r
 func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyList(ctx _context.Context) ApiGetHyperflexSoftwareVersionPolicyListRequest {
 	return ApiGetHyperflexSoftwareVersionPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -31476,13 +31957,13 @@ func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyListExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31499,11 +31980,10 @@ func (a *HyperflexApiService) GetHyperflexSoftwareVersionPolicyListExecute(r Api
 }
 
 type ApiGetHyperflexStorageContainerByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexStorageContainerByMoidRequest) Execute() (HyperflexStorageContainer, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexStorageContainerByMoidExecute(r)
@@ -31519,8 +31999,8 @@ GetHyperflexStorageContainerByMoid Read a 'hyperflex.StorageContainer' resource.
 func (a *HyperflexApiService) GetHyperflexStorageContainerByMoid(ctx _context.Context, moid string) ApiGetHyperflexStorageContainerByMoidRequest {
 	return ApiGetHyperflexStorageContainerByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -31627,13 +32107,13 @@ func (a *HyperflexApiService) GetHyperflexStorageContainerByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31650,19 +32130,19 @@ func (a *HyperflexApiService) GetHyperflexStorageContainerByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexStorageContainerListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -31670,51 +32150,61 @@ func (r ApiGetHyperflexStorageContainerListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexStorageContainerListRequest) Orderby(orderby string) ApiGetHyperflexStorageContainerListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexStorageContainerListRequest) Top(top int32) ApiGetHyperflexStorageContainerListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexStorageContainerListRequest) Skip(skip int32) ApiGetHyperflexStorageContainerListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexStorageContainerListRequest) Select_(select_ string) ApiGetHyperflexStorageContainerListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexStorageContainerListRequest) Expand(expand string) ApiGetHyperflexStorageContainerListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexStorageContainerListRequest) Apply(apply string) ApiGetHyperflexStorageContainerListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexStorageContainerListRequest) Count(count bool) ApiGetHyperflexStorageContainerListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexStorageContainerListRequest) Inlinecount(inlinecount string) ApiGetHyperflexStorageContainerListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexStorageContainerListRequest) At(at string) ApiGetHyperflexStorageContainerListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexStorageContainerListRequest) Tags(tags string) ApiGetHyperflexStorageContainerListRequest {
 	r.tags = &tags
@@ -31734,7 +32224,7 @@ GetHyperflexStorageContainerList Read a 'hyperflex.StorageContainer' resource.
 func (a *HyperflexApiService) GetHyperflexStorageContainerList(ctx _context.Context) ApiGetHyperflexStorageContainerListRequest {
 	return ApiGetHyperflexStorageContainerListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -31873,13 +32363,13 @@ func (a *HyperflexApiService) GetHyperflexStorageContainerListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -31896,11 +32386,10 @@ func (a *HyperflexApiService) GetHyperflexStorageContainerListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexSysConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexSysConfigPolicyByMoidRequest) Execute() (HyperflexSysConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexSysConfigPolicyByMoidExecute(r)
@@ -31916,8 +32405,8 @@ GetHyperflexSysConfigPolicyByMoid Read a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexSysConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexSysConfigPolicyByMoidRequest {
 	return ApiGetHyperflexSysConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32024,13 +32513,13 @@ func (a *HyperflexApiService) GetHyperflexSysConfigPolicyByMoidExecute(r ApiGetH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32047,19 +32536,19 @@ func (a *HyperflexApiService) GetHyperflexSysConfigPolicyByMoidExecute(r ApiGetH
 }
 
 type ApiGetHyperflexSysConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -32067,51 +32556,61 @@ func (r ApiGetHyperflexSysConfigPolicyListRequest) Filter(filter string) ApiGetH
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Orderby(orderby string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Top(top int32) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Skip(skip int32) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Select_(select_ string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Expand(expand string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Apply(apply string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Count(count bool) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) At(at string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexSysConfigPolicyListRequest) Tags(tags string) ApiGetHyperflexSysConfigPolicyListRequest {
 	r.tags = &tags
@@ -32131,7 +32630,7 @@ GetHyperflexSysConfigPolicyList Read a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexSysConfigPolicyList(ctx _context.Context) ApiGetHyperflexSysConfigPolicyListRequest {
 	return ApiGetHyperflexSysConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -32270,13 +32769,13 @@ func (a *HyperflexApiService) GetHyperflexSysConfigPolicyListExecute(r ApiGetHyp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32293,11 +32792,10 @@ func (a *HyperflexApiService) GetHyperflexSysConfigPolicyListExecute(r ApiGetHyp
 }
 
 type ApiGetHyperflexUcsmConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexUcsmConfigPolicyByMoidRequest) Execute() (HyperflexUcsmConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexUcsmConfigPolicyByMoidExecute(r)
@@ -32313,8 +32811,8 @@ GetHyperflexUcsmConfigPolicyByMoid Read a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexUcsmConfigPolicyByMoidRequest {
 	return ApiGetHyperflexUcsmConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32421,13 +32919,13 @@ func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32444,19 +32942,19 @@ func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyByMoidExecute(r ApiGet
 }
 
 type ApiGetHyperflexUcsmConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -32464,51 +32962,61 @@ func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Orderby(orderby string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Top(top int32) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Skip(skip int32) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Select_(select_ string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Expand(expand string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Apply(apply string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Count(count bool) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) At(at string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexUcsmConfigPolicyListRequest) Tags(tags string) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	r.tags = &tags
@@ -32528,7 +33036,7 @@ GetHyperflexUcsmConfigPolicyList Read a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyList(ctx _context.Context) ApiGetHyperflexUcsmConfigPolicyListRequest {
 	return ApiGetHyperflexUcsmConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -32667,13 +33175,13 @@ func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyListExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32690,11 +33198,10 @@ func (a *HyperflexApiService) GetHyperflexUcsmConfigPolicyListExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexVcenterConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVcenterConfigPolicyByMoidRequest) Execute() (HyperflexVcenterConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVcenterConfigPolicyByMoidExecute(r)
@@ -32710,8 +33217,8 @@ GetHyperflexVcenterConfigPolicyByMoid Read a 'hyperflex.VcenterConfigPolicy' res
 func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetHyperflexVcenterConfigPolicyByMoidRequest {
 	return ApiGetHyperflexVcenterConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -32818,13 +33325,13 @@ func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -32841,19 +33348,19 @@ func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyByMoidExecute(r Api
 }
 
 type ApiGetHyperflexVcenterConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -32861,51 +33368,61 @@ func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Orderby(orderby string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Top(top int32) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Skip(skip int32) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Select_(select_ string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Expand(expand string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Apply(apply string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Count(count bool) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) At(at string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVcenterConfigPolicyListRequest) Tags(tags string) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	r.tags = &tags
@@ -32925,7 +33442,7 @@ GetHyperflexVcenterConfigPolicyList Read a 'hyperflex.VcenterConfigPolicy' resou
 func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyList(ctx _context.Context) ApiGetHyperflexVcenterConfigPolicyListRequest {
 	return ApiGetHyperflexVcenterConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -33064,13 +33581,13 @@ func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33087,11 +33604,10 @@ func (a *HyperflexApiService) GetHyperflexVcenterConfigPolicyListExecute(r ApiGe
 }
 
 type ApiGetHyperflexVmBackupInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVmBackupInfoByMoidRequest) Execute() (HyperflexVmBackupInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVmBackupInfoByMoidExecute(r)
@@ -33107,8 +33623,8 @@ GetHyperflexVmBackupInfoByMoid Read a 'hyperflex.VmBackupInfo' resource.
 func (a *HyperflexApiService) GetHyperflexVmBackupInfoByMoid(ctx _context.Context, moid string) ApiGetHyperflexVmBackupInfoByMoidRequest {
 	return ApiGetHyperflexVmBackupInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33215,13 +33731,13 @@ func (a *HyperflexApiService) GetHyperflexVmBackupInfoByMoidExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33238,19 +33754,19 @@ func (a *HyperflexApiService) GetHyperflexVmBackupInfoByMoidExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexVmBackupInfoListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -33258,51 +33774,61 @@ func (r ApiGetHyperflexVmBackupInfoListRequest) Filter(filter string) ApiGetHype
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Orderby(orderby string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Top(top int32) ApiGetHyperflexVmBackupInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Skip(skip int32) ApiGetHyperflexVmBackupInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Select_(select_ string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Expand(expand string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Apply(apply string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Count(count bool) ApiGetHyperflexVmBackupInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVmBackupInfoListRequest) At(at string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVmBackupInfoListRequest) Tags(tags string) ApiGetHyperflexVmBackupInfoListRequest {
 	r.tags = &tags
@@ -33322,7 +33848,7 @@ GetHyperflexVmBackupInfoList Read a 'hyperflex.VmBackupInfo' resource.
 func (a *HyperflexApiService) GetHyperflexVmBackupInfoList(ctx _context.Context) ApiGetHyperflexVmBackupInfoListRequest {
 	return ApiGetHyperflexVmBackupInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -33461,13 +33987,13 @@ func (a *HyperflexApiService) GetHyperflexVmBackupInfoListExecute(r ApiGetHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33484,11 +34010,10 @@ func (a *HyperflexApiService) GetHyperflexVmBackupInfoListExecute(r ApiGetHyperf
 }
 
 type ApiGetHyperflexVmImportOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVmImportOperationByMoidRequest) Execute() (HyperflexVmImportOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVmImportOperationByMoidExecute(r)
@@ -33504,8 +34029,8 @@ GetHyperflexVmImportOperationByMoid Read a 'hyperflex.VmImportOperation' resourc
 func (a *HyperflexApiService) GetHyperflexVmImportOperationByMoid(ctx _context.Context, moid string) ApiGetHyperflexVmImportOperationByMoidRequest {
 	return ApiGetHyperflexVmImportOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -33612,13 +34137,13 @@ func (a *HyperflexApiService) GetHyperflexVmImportOperationByMoidExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33635,19 +34160,19 @@ func (a *HyperflexApiService) GetHyperflexVmImportOperationByMoidExecute(r ApiGe
 }
 
 type ApiGetHyperflexVmImportOperationListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -33655,51 +34180,61 @@ func (r ApiGetHyperflexVmImportOperationListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVmImportOperationListRequest) Orderby(orderby string) ApiGetHyperflexVmImportOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVmImportOperationListRequest) Top(top int32) ApiGetHyperflexVmImportOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVmImportOperationListRequest) Skip(skip int32) ApiGetHyperflexVmImportOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVmImportOperationListRequest) Select_(select_ string) ApiGetHyperflexVmImportOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVmImportOperationListRequest) Expand(expand string) ApiGetHyperflexVmImportOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVmImportOperationListRequest) Apply(apply string) ApiGetHyperflexVmImportOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVmImportOperationListRequest) Count(count bool) ApiGetHyperflexVmImportOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVmImportOperationListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVmImportOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVmImportOperationListRequest) At(at string) ApiGetHyperflexVmImportOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVmImportOperationListRequest) Tags(tags string) ApiGetHyperflexVmImportOperationListRequest {
 	r.tags = &tags
@@ -33719,7 +34254,7 @@ GetHyperflexVmImportOperationList Read a 'hyperflex.VmImportOperation' resource.
 func (a *HyperflexApiService) GetHyperflexVmImportOperationList(ctx _context.Context) ApiGetHyperflexVmImportOperationListRequest {
 	return ApiGetHyperflexVmImportOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -33858,13 +34393,13 @@ func (a *HyperflexApiService) GetHyperflexVmImportOperationListExecute(r ApiGetH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -33881,11 +34416,10 @@ func (a *HyperflexApiService) GetHyperflexVmImportOperationListExecute(r ApiGetH
 }
 
 type ApiGetHyperflexVmRestoreOperationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVmRestoreOperationByMoidRequest) Execute() (HyperflexVmRestoreOperation, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVmRestoreOperationByMoidExecute(r)
@@ -33901,8 +34435,8 @@ GetHyperflexVmRestoreOperationByMoid Read a 'hyperflex.VmRestoreOperation' resou
 func (a *HyperflexApiService) GetHyperflexVmRestoreOperationByMoid(ctx _context.Context, moid string) ApiGetHyperflexVmRestoreOperationByMoidRequest {
 	return ApiGetHyperflexVmRestoreOperationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34009,13 +34543,13 @@ func (a *HyperflexApiService) GetHyperflexVmRestoreOperationByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34032,19 +34566,19 @@ func (a *HyperflexApiService) GetHyperflexVmRestoreOperationByMoidExecute(r ApiG
 }
 
 type ApiGetHyperflexVmRestoreOperationListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -34052,51 +34586,61 @@ func (r ApiGetHyperflexVmRestoreOperationListRequest) Filter(filter string) ApiG
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Orderby(orderby string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Top(top int32) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Skip(skip int32) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Select_(select_ string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Expand(expand string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Apply(apply string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Count(count bool) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) At(at string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVmRestoreOperationListRequest) Tags(tags string) ApiGetHyperflexVmRestoreOperationListRequest {
 	r.tags = &tags
@@ -34116,7 +34660,7 @@ GetHyperflexVmRestoreOperationList Read a 'hyperflex.VmRestoreOperation' resourc
 func (a *HyperflexApiService) GetHyperflexVmRestoreOperationList(ctx _context.Context) ApiGetHyperflexVmRestoreOperationListRequest {
 	return ApiGetHyperflexVmRestoreOperationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -34255,13 +34799,13 @@ func (a *HyperflexApiService) GetHyperflexVmRestoreOperationListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34278,11 +34822,10 @@ func (a *HyperflexApiService) GetHyperflexVmRestoreOperationListExecute(r ApiGet
 }
 
 type ApiGetHyperflexVmSnapshotInfoByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVmSnapshotInfoByMoidRequest) Execute() (HyperflexVmSnapshotInfo, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVmSnapshotInfoByMoidExecute(r)
@@ -34298,8 +34841,8 @@ GetHyperflexVmSnapshotInfoByMoid Read a 'hyperflex.VmSnapshotInfo' resource.
 func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoByMoid(ctx _context.Context, moid string) ApiGetHyperflexVmSnapshotInfoByMoidRequest {
 	return ApiGetHyperflexVmSnapshotInfoByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34406,13 +34949,13 @@ func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoByMoidExecute(r ApiGetHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34429,19 +34972,19 @@ func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoByMoidExecute(r ApiGetHy
 }
 
 type ApiGetHyperflexVmSnapshotInfoListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -34449,51 +34992,61 @@ func (r ApiGetHyperflexVmSnapshotInfoListRequest) Filter(filter string) ApiGetHy
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Orderby(orderby string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Top(top int32) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Skip(skip int32) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Select_(select_ string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Expand(expand string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Apply(apply string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Count(count bool) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) At(at string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVmSnapshotInfoListRequest) Tags(tags string) ApiGetHyperflexVmSnapshotInfoListRequest {
 	r.tags = &tags
@@ -34513,7 +35066,7 @@ GetHyperflexVmSnapshotInfoList Read a 'hyperflex.VmSnapshotInfo' resource.
 func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoList(ctx _context.Context) ApiGetHyperflexVmSnapshotInfoListRequest {
 	return ApiGetHyperflexVmSnapshotInfoListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -34652,13 +35205,13 @@ func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoListExecute(r ApiGetHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34675,11 +35228,10 @@ func (a *HyperflexApiService) GetHyperflexVmSnapshotInfoListExecute(r ApiGetHype
 }
 
 type ApiGetHyperflexVolumeByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexVolumeByMoidRequest) Execute() (HyperflexVolume, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexVolumeByMoidExecute(r)
@@ -34695,8 +35247,8 @@ GetHyperflexVolumeByMoid Read a 'hyperflex.Volume' resource.
 func (a *HyperflexApiService) GetHyperflexVolumeByMoid(ctx _context.Context, moid string) ApiGetHyperflexVolumeByMoidRequest {
 	return ApiGetHyperflexVolumeByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -34803,13 +35355,13 @@ func (a *HyperflexApiService) GetHyperflexVolumeByMoidExecute(r ApiGetHyperflexV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -34826,19 +35378,19 @@ func (a *HyperflexApiService) GetHyperflexVolumeByMoidExecute(r ApiGetHyperflexV
 }
 
 type ApiGetHyperflexVolumeListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -34846,51 +35398,61 @@ func (r ApiGetHyperflexVolumeListRequest) Filter(filter string) ApiGetHyperflexV
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexVolumeListRequest) Orderby(orderby string) ApiGetHyperflexVolumeListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexVolumeListRequest) Top(top int32) ApiGetHyperflexVolumeListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexVolumeListRequest) Skip(skip int32) ApiGetHyperflexVolumeListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexVolumeListRequest) Select_(select_ string) ApiGetHyperflexVolumeListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexVolumeListRequest) Expand(expand string) ApiGetHyperflexVolumeListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexVolumeListRequest) Apply(apply string) ApiGetHyperflexVolumeListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexVolumeListRequest) Count(count bool) ApiGetHyperflexVolumeListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexVolumeListRequest) Inlinecount(inlinecount string) ApiGetHyperflexVolumeListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexVolumeListRequest) At(at string) ApiGetHyperflexVolumeListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexVolumeListRequest) Tags(tags string) ApiGetHyperflexVolumeListRequest {
 	r.tags = &tags
@@ -34910,7 +35472,7 @@ GetHyperflexVolumeList Read a 'hyperflex.Volume' resource.
 func (a *HyperflexApiService) GetHyperflexVolumeList(ctx _context.Context) ApiGetHyperflexVolumeListRequest {
 	return ApiGetHyperflexVolumeListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -35049,13 +35611,13 @@ func (a *HyperflexApiService) GetHyperflexVolumeListExecute(r ApiGetHyperflexVol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35072,11 +35634,10 @@ func (a *HyperflexApiService) GetHyperflexVolumeListExecute(r ApiGetHyperflexVol
 }
 
 type ApiGetHyperflexWitnessConfigurationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *HyperflexApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetHyperflexWitnessConfigurationByMoidRequest) Execute() (HyperflexWitnessConfiguration, *_nethttp.Response, error) {
 	return r.ApiService.GetHyperflexWitnessConfigurationByMoidExecute(r)
@@ -35092,8 +35653,8 @@ GetHyperflexWitnessConfigurationByMoid Read a 'hyperflex.WitnessConfiguration' r
 func (a *HyperflexApiService) GetHyperflexWitnessConfigurationByMoid(ctx _context.Context, moid string) ApiGetHyperflexWitnessConfigurationByMoidRequest {
 	return ApiGetHyperflexWitnessConfigurationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35200,13 +35761,13 @@ func (a *HyperflexApiService) GetHyperflexWitnessConfigurationByMoidExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35223,19 +35784,19 @@ func (a *HyperflexApiService) GetHyperflexWitnessConfigurationByMoidExecute(r Ap
 }
 
 type ApiGetHyperflexWitnessConfigurationListRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *HyperflexApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -35243,51 +35804,61 @@ func (r ApiGetHyperflexWitnessConfigurationListRequest) Filter(filter string) Ap
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Orderby(orderby string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Top(top int32) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Skip(skip int32) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Select_(select_ string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Expand(expand string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Apply(apply string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Count(count bool) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Inlinecount(inlinecount string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) At(at string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetHyperflexWitnessConfigurationListRequest) Tags(tags string) ApiGetHyperflexWitnessConfigurationListRequest {
 	r.tags = &tags
@@ -35307,7 +35878,7 @@ GetHyperflexWitnessConfigurationList Read a 'hyperflex.WitnessConfiguration' res
 func (a *HyperflexApiService) GetHyperflexWitnessConfigurationList(ctx _context.Context) ApiGetHyperflexWitnessConfigurationListRequest {
 	return ApiGetHyperflexWitnessConfigurationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -35446,13 +36017,13 @@ func (a *HyperflexApiService) GetHyperflexWitnessConfigurationListExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35469,11 +36040,11 @@ func (a *HyperflexApiService) GetHyperflexWitnessConfigurationListExecute(r ApiG
 }
 
 type ApiPatchHyperflexAppCatalogRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *HyperflexApiService
+	moid                string
 	hyperflexAppCatalog *HyperflexAppCatalog
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;hyperflex.AppCatalog&#39; resource to update.
@@ -35481,6 +36052,7 @@ func (r ApiPatchHyperflexAppCatalogRequest) HyperflexAppCatalog(hyperflexAppCata
 	r.hyperflexAppCatalog = &hyperflexAppCatalog
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexAppCatalogRequest) IfMatch(ifMatch string) ApiPatchHyperflexAppCatalogRequest {
 	r.ifMatch = &ifMatch
@@ -35501,8 +36073,8 @@ PatchHyperflexAppCatalog Update a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) PatchHyperflexAppCatalog(ctx _context.Context, moid string) ApiPatchHyperflexAppCatalogRequest {
 	return ApiPatchHyperflexAppCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35617,13 +36189,13 @@ func (a *HyperflexApiService) PatchHyperflexAppCatalogExecute(r ApiPatchHyperfle
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35640,11 +36212,11 @@ func (a *HyperflexApiService) PatchHyperflexAppCatalogExecute(r ApiPatchHyperfle
 }
 
 type ApiPatchHyperflexAutoSupportPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *HyperflexApiService
+	moid                       string
 	hyperflexAutoSupportPolicy *HyperflexAutoSupportPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;hyperflex.AutoSupportPolicy&#39; resource to update.
@@ -35652,6 +36224,7 @@ func (r ApiPatchHyperflexAutoSupportPolicyRequest) HyperflexAutoSupportPolicy(hy
 	r.hyperflexAutoSupportPolicy = &hyperflexAutoSupportPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexAutoSupportPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexAutoSupportPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -35672,8 +36245,8 @@ PatchHyperflexAutoSupportPolicy Update a 'hyperflex.AutoSupportPolicy' resource.
 func (a *HyperflexApiService) PatchHyperflexAutoSupportPolicy(ctx _context.Context, moid string) ApiPatchHyperflexAutoSupportPolicyRequest {
 	return ApiPatchHyperflexAutoSupportPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35788,13 +36361,13 @@ func (a *HyperflexApiService) PatchHyperflexAutoSupportPolicyExecute(r ApiPatchH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35811,11 +36384,11 @@ func (a *HyperflexApiService) PatchHyperflexAutoSupportPolicyExecute(r ApiPatchH
 }
 
 type ApiPatchHyperflexCapabilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexCapabilityInfo *HyperflexCapabilityInfo
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.CapabilityInfo&#39; resource to update.
@@ -35823,6 +36396,7 @@ func (r ApiPatchHyperflexCapabilityInfoRequest) HyperflexCapabilityInfo(hyperfle
 	r.hyperflexCapabilityInfo = &hyperflexCapabilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexCapabilityInfoRequest) IfMatch(ifMatch string) ApiPatchHyperflexCapabilityInfoRequest {
 	r.ifMatch = &ifMatch
@@ -35843,8 +36417,8 @@ PatchHyperflexCapabilityInfo Update a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) PatchHyperflexCapabilityInfo(ctx _context.Context, moid string) ApiPatchHyperflexCapabilityInfoRequest {
 	return ApiPatchHyperflexCapabilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -35959,13 +36533,13 @@ func (a *HyperflexApiService) PatchHyperflexCapabilityInfoExecute(r ApiPatchHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -35982,11 +36556,11 @@ func (a *HyperflexApiService) PatchHyperflexCapabilityInfoExecute(r ApiPatchHype
 }
 
 type ApiPatchHyperflexClusterRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *HyperflexApiService
+	moid             string
 	hyperflexCluster *HyperflexCluster
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;hyperflex.Cluster&#39; resource to update.
@@ -35994,6 +36568,7 @@ func (r ApiPatchHyperflexClusterRequest) HyperflexCluster(hyperflexCluster Hyper
 	r.hyperflexCluster = &hyperflexCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterRequest {
 	r.ifMatch = &ifMatch
@@ -36014,8 +36589,8 @@ PatchHyperflexCluster Update a 'hyperflex.Cluster' resource.
 func (a *HyperflexApiService) PatchHyperflexCluster(ctx _context.Context, moid string) ApiPatchHyperflexClusterRequest {
 	return ApiPatchHyperflexClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36130,13 +36705,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterExecute(r ApiPatchHyperflexCl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36153,11 +36728,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterExecute(r ApiPatchHyperflexCl
 }
 
 type ApiPatchHyperflexClusterBackupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
+	moid                         string
 	hyperflexClusterBackupPolicy *HyperflexClusterBackupPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicy&#39; resource to update.
@@ -36165,6 +36740,7 @@ func (r ApiPatchHyperflexClusterBackupPolicyRequest) HyperflexClusterBackupPolic
 	r.hyperflexClusterBackupPolicy = &hyperflexClusterBackupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterBackupPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterBackupPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -36185,8 +36761,8 @@ PatchHyperflexClusterBackupPolicy Update a 'hyperflex.ClusterBackupPolicy' resou
 func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicy(ctx _context.Context, moid string) ApiPatchHyperflexClusterBackupPolicyRequest {
 	return ApiPatchHyperflexClusterBackupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36301,13 +36877,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicyExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36324,11 +36900,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicyExecute(r ApiPatc
 }
 
 type ApiPatchHyperflexClusterBackupPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
+	moid                                   string
 	hyperflexClusterBackupPolicyDeployment *HyperflexClusterBackupPolicyDeployment
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicyDeployment&#39; resource to update.
@@ -36336,6 +36912,7 @@ func (r ApiPatchHyperflexClusterBackupPolicyDeploymentRequest) HyperflexClusterB
 	r.hyperflexClusterBackupPolicyDeployment = &hyperflexClusterBackupPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterBackupPolicyDeploymentRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterBackupPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
@@ -36356,8 +36933,8 @@ PatchHyperflexClusterBackupPolicyDeployment Update a 'hyperflex.ClusterBackupPol
 func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicyDeployment(ctx _context.Context, moid string) ApiPatchHyperflexClusterBackupPolicyDeploymentRequest {
 	return ApiPatchHyperflexClusterBackupPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36472,13 +37049,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicyDeploymentExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36495,11 +37072,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterBackupPolicyDeploymentExecute
 }
 
 type ApiPatchHyperflexClusterNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexClusterNetworkPolicy *HyperflexClusterNetworkPolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.ClusterNetworkPolicy&#39; resource to update.
@@ -36507,6 +37084,7 @@ func (r ApiPatchHyperflexClusterNetworkPolicyRequest) HyperflexClusterNetworkPol
 	r.hyperflexClusterNetworkPolicy = &hyperflexClusterNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -36527,8 +37105,8 @@ PatchHyperflexClusterNetworkPolicy Update a 'hyperflex.ClusterNetworkPolicy' res
 func (a *HyperflexApiService) PatchHyperflexClusterNetworkPolicy(ctx _context.Context, moid string) ApiPatchHyperflexClusterNetworkPolicyRequest {
 	return ApiPatchHyperflexClusterNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36643,13 +37221,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterNetworkPolicyExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36666,11 +37244,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterNetworkPolicyExecute(r ApiPat
 }
 
 type ApiPatchHyperflexClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexClusterProfile *HyperflexClusterProfile
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.ClusterProfile&#39; resource to update.
@@ -36678,6 +37256,7 @@ func (r ApiPatchHyperflexClusterProfileRequest) HyperflexClusterProfile(hyperfle
 	r.hyperflexClusterProfile = &hyperflexClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterProfileRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -36698,8 +37277,8 @@ PatchHyperflexClusterProfile Update a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) PatchHyperflexClusterProfile(ctx _context.Context, moid string) ApiPatchHyperflexClusterProfileRequest {
 	return ApiPatchHyperflexClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36814,13 +37393,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterProfileExecute(r ApiPatchHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -36837,11 +37416,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterProfileExecute(r ApiPatchHype
 }
 
 type ApiPatchHyperflexClusterReplicationNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                      _context.Context
+	ApiService                               *HyperflexApiService
+	moid                                     string
 	hyperflexClusterReplicationNetworkPolicy *HyperflexClusterReplicationNetworkPolicy
-	ifMatch *string
+	ifMatch                                  *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicy&#39; resource to update.
@@ -36849,6 +37428,7 @@ func (r ApiPatchHyperflexClusterReplicationNetworkPolicyRequest) HyperflexCluste
 	r.hyperflexClusterReplicationNetworkPolicy = &hyperflexClusterReplicationNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterReplicationNetworkPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterReplicationNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -36869,8 +37449,8 @@ PatchHyperflexClusterReplicationNetworkPolicy Update a 'hyperflex.ClusterReplica
 func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicy(ctx _context.Context, moid string) ApiPatchHyperflexClusterReplicationNetworkPolicyRequest {
 	return ApiPatchHyperflexClusterReplicationNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -36985,13 +37565,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicyExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37008,11 +37588,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicyExecu
 }
 
 type ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                                _context.Context
+	ApiService                                         *HyperflexApiService
+	moid                                               string
 	hyperflexClusterReplicationNetworkPolicyDeployment *HyperflexClusterReplicationNetworkPolicyDeployment
-	ifMatch *string
+	ifMatch                                            *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicyDeployment&#39; resource to update.
@@ -37020,6 +37600,7 @@ func (r ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest) Hyper
 	r.hyperflexClusterReplicationNetworkPolicyDeployment = &hyperflexClusterReplicationNetworkPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
@@ -37040,8 +37621,8 @@ PatchHyperflexClusterReplicationNetworkPolicyDeployment Update a 'hyperflex.Clus
 func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicyDeployment(ctx _context.Context, moid string) ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	return ApiPatchHyperflexClusterReplicationNetworkPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37156,13 +37737,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicyDeplo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37179,11 +37760,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterReplicationNetworkPolicyDeplo
 }
 
 type ApiPatchHyperflexClusterStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexClusterStoragePolicy *HyperflexClusterStoragePolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.ClusterStoragePolicy&#39; resource to update.
@@ -37191,6 +37772,7 @@ func (r ApiPatchHyperflexClusterStoragePolicyRequest) HyperflexClusterStoragePol
 	r.hyperflexClusterStoragePolicy = &hyperflexClusterStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexClusterStoragePolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexClusterStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -37211,8 +37793,8 @@ PatchHyperflexClusterStoragePolicy Update a 'hyperflex.ClusterStoragePolicy' res
 func (a *HyperflexApiService) PatchHyperflexClusterStoragePolicy(ctx _context.Context, moid string) ApiPatchHyperflexClusterStoragePolicyRequest {
 	return ApiPatchHyperflexClusterStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37327,13 +37909,13 @@ func (a *HyperflexApiService) PatchHyperflexClusterStoragePolicyExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37350,11 +37932,11 @@ func (a *HyperflexApiService) PatchHyperflexClusterStoragePolicyExecute(r ApiPat
 }
 
 type ApiPatchHyperflexExtFcStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
+	moid                        string
 	hyperflexExtFcStoragePolicy *HyperflexExtFcStoragePolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;hyperflex.ExtFcStoragePolicy&#39; resource to update.
@@ -37362,6 +37944,7 @@ func (r ApiPatchHyperflexExtFcStoragePolicyRequest) HyperflexExtFcStoragePolicy(
 	r.hyperflexExtFcStoragePolicy = &hyperflexExtFcStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexExtFcStoragePolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexExtFcStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -37382,8 +37965,8 @@ PatchHyperflexExtFcStoragePolicy Update a 'hyperflex.ExtFcStoragePolicy' resourc
 func (a *HyperflexApiService) PatchHyperflexExtFcStoragePolicy(ctx _context.Context, moid string) ApiPatchHyperflexExtFcStoragePolicyRequest {
 	return ApiPatchHyperflexExtFcStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37498,13 +38081,13 @@ func (a *HyperflexApiService) PatchHyperflexExtFcStoragePolicyExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37521,11 +38104,11 @@ func (a *HyperflexApiService) PatchHyperflexExtFcStoragePolicyExecute(r ApiPatch
 }
 
 type ApiPatchHyperflexExtIscsiStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexExtIscsiStoragePolicy *HyperflexExtIscsiStoragePolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.ExtIscsiStoragePolicy&#39; resource to update.
@@ -37533,6 +38116,7 @@ func (r ApiPatchHyperflexExtIscsiStoragePolicyRequest) HyperflexExtIscsiStorageP
 	r.hyperflexExtIscsiStoragePolicy = &hyperflexExtIscsiStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexExtIscsiStoragePolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexExtIscsiStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -37553,8 +38137,8 @@ PatchHyperflexExtIscsiStoragePolicy Update a 'hyperflex.ExtIscsiStoragePolicy' r
 func (a *HyperflexApiService) PatchHyperflexExtIscsiStoragePolicy(ctx _context.Context, moid string) ApiPatchHyperflexExtIscsiStoragePolicyRequest {
 	return ApiPatchHyperflexExtIscsiStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37669,13 +38253,13 @@ func (a *HyperflexApiService) PatchHyperflexExtIscsiStoragePolicyExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37692,11 +38276,11 @@ func (a *HyperflexApiService) PatchHyperflexExtIscsiStoragePolicyExecute(r ApiPa
 }
 
 type ApiPatchHyperflexFeatureLimitExternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexFeatureLimitExternal *HyperflexFeatureLimitExternal
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.FeatureLimitExternal&#39; resource to update.
@@ -37704,6 +38288,7 @@ func (r ApiPatchHyperflexFeatureLimitExternalRequest) HyperflexFeatureLimitExter
 	r.hyperflexFeatureLimitExternal = &hyperflexFeatureLimitExternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexFeatureLimitExternalRequest) IfMatch(ifMatch string) ApiPatchHyperflexFeatureLimitExternalRequest {
 	r.ifMatch = &ifMatch
@@ -37724,8 +38309,8 @@ PatchHyperflexFeatureLimitExternal Update a 'hyperflex.FeatureLimitExternal' res
 func (a *HyperflexApiService) PatchHyperflexFeatureLimitExternal(ctx _context.Context, moid string) ApiPatchHyperflexFeatureLimitExternalRequest {
 	return ApiPatchHyperflexFeatureLimitExternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -37840,13 +38425,13 @@ func (a *HyperflexApiService) PatchHyperflexFeatureLimitExternalExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -37863,11 +38448,11 @@ func (a *HyperflexApiService) PatchHyperflexFeatureLimitExternalExecute(r ApiPat
 }
 
 type ApiPatchHyperflexFeatureLimitInternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexFeatureLimitInternal *HyperflexFeatureLimitInternal
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.FeatureLimitInternal&#39; resource to update.
@@ -37875,6 +38460,7 @@ func (r ApiPatchHyperflexFeatureLimitInternalRequest) HyperflexFeatureLimitInter
 	r.hyperflexFeatureLimitInternal = &hyperflexFeatureLimitInternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexFeatureLimitInternalRequest) IfMatch(ifMatch string) ApiPatchHyperflexFeatureLimitInternalRequest {
 	r.ifMatch = &ifMatch
@@ -37895,8 +38481,8 @@ PatchHyperflexFeatureLimitInternal Update a 'hyperflex.FeatureLimitInternal' res
 func (a *HyperflexApiService) PatchHyperflexFeatureLimitInternal(ctx _context.Context, moid string) ApiPatchHyperflexFeatureLimitInternalRequest {
 	return ApiPatchHyperflexFeatureLimitInternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38011,13 +38597,13 @@ func (a *HyperflexApiService) PatchHyperflexFeatureLimitInternalExecute(r ApiPat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38034,11 +38620,11 @@ func (a *HyperflexApiService) PatchHyperflexFeatureLimitInternalExecute(r ApiPat
 }
 
 type ApiPatchHyperflexHealthCheckDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexHealthCheckDefinition *HyperflexHealthCheckDefinition
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.HealthCheckDefinition&#39; resource to update.
@@ -38046,6 +38632,7 @@ func (r ApiPatchHyperflexHealthCheckDefinitionRequest) HyperflexHealthCheckDefin
 	r.hyperflexHealthCheckDefinition = &hyperflexHealthCheckDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexHealthCheckDefinitionRequest) IfMatch(ifMatch string) ApiPatchHyperflexHealthCheckDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -38066,8 +38653,8 @@ PatchHyperflexHealthCheckDefinition Update a 'hyperflex.HealthCheckDefinition' r
 func (a *HyperflexApiService) PatchHyperflexHealthCheckDefinition(ctx _context.Context, moid string) ApiPatchHyperflexHealthCheckDefinitionRequest {
 	return ApiPatchHyperflexHealthCheckDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38182,13 +38769,13 @@ func (a *HyperflexApiService) PatchHyperflexHealthCheckDefinitionExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38205,11 +38792,11 @@ func (a *HyperflexApiService) PatchHyperflexHealthCheckDefinitionExecute(r ApiPa
 }
 
 type ApiPatchHyperflexHealthCheckPackageChecksumRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
+	moid                                string
 	hyperflexHealthCheckPackageChecksum *HyperflexHealthCheckPackageChecksum
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;hyperflex.HealthCheckPackageChecksum&#39; resource to update.
@@ -38217,6 +38804,7 @@ func (r ApiPatchHyperflexHealthCheckPackageChecksumRequest) HyperflexHealthCheck
 	r.hyperflexHealthCheckPackageChecksum = &hyperflexHealthCheckPackageChecksum
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexHealthCheckPackageChecksumRequest) IfMatch(ifMatch string) ApiPatchHyperflexHealthCheckPackageChecksumRequest {
 	r.ifMatch = &ifMatch
@@ -38237,8 +38825,8 @@ PatchHyperflexHealthCheckPackageChecksum Update a 'hyperflex.HealthCheckPackageC
 func (a *HyperflexApiService) PatchHyperflexHealthCheckPackageChecksum(ctx _context.Context, moid string) ApiPatchHyperflexHealthCheckPackageChecksumRequest {
 	return ApiPatchHyperflexHealthCheckPackageChecksumRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38353,13 +38941,13 @@ func (a *HyperflexApiService) PatchHyperflexHealthCheckPackageChecksumExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38376,11 +38964,11 @@ func (a *HyperflexApiService) PatchHyperflexHealthCheckPackageChecksumExecute(r 
 }
 
 type ApiPatchHyperflexHxdpVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexHxdpVersion *HyperflexHxdpVersion
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.HxdpVersion&#39; resource to update.
@@ -38388,6 +38976,7 @@ func (r ApiPatchHyperflexHxdpVersionRequest) HyperflexHxdpVersion(hyperflexHxdpV
 	r.hyperflexHxdpVersion = &hyperflexHxdpVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexHxdpVersionRequest) IfMatch(ifMatch string) ApiPatchHyperflexHxdpVersionRequest {
 	r.ifMatch = &ifMatch
@@ -38408,8 +38997,8 @@ PatchHyperflexHxdpVersion Update a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) PatchHyperflexHxdpVersion(ctx _context.Context, moid string) ApiPatchHyperflexHxdpVersionRequest {
 	return ApiPatchHyperflexHxdpVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38524,13 +39113,13 @@ func (a *HyperflexApiService) PatchHyperflexHxdpVersionExecute(r ApiPatchHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38547,11 +39136,11 @@ func (a *HyperflexApiService) PatchHyperflexHxdpVersionExecute(r ApiPatchHyperfl
 }
 
 type ApiPatchHyperflexHypervisorHostRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexHypervisorHost *HyperflexHypervisorHost
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.HypervisorHost&#39; resource to update.
@@ -38559,6 +39148,7 @@ func (r ApiPatchHyperflexHypervisorHostRequest) HyperflexHypervisorHost(hyperfle
 	r.hyperflexHypervisorHost = &hyperflexHypervisorHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexHypervisorHostRequest) IfMatch(ifMatch string) ApiPatchHyperflexHypervisorHostRequest {
 	r.ifMatch = &ifMatch
@@ -38579,8 +39169,8 @@ PatchHyperflexHypervisorHost Update a 'hyperflex.HypervisorHost' resource.
 func (a *HyperflexApiService) PatchHyperflexHypervisorHost(ctx _context.Context, moid string) ApiPatchHyperflexHypervisorHostRequest {
 	return ApiPatchHyperflexHypervisorHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38695,13 +39285,13 @@ func (a *HyperflexApiService) PatchHyperflexHypervisorHostExecute(r ApiPatchHype
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38718,11 +39308,11 @@ func (a *HyperflexApiService) PatchHyperflexHypervisorHostExecute(r ApiPatchHype
 }
 
 type ApiPatchHyperflexHypervisorVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *HyperflexApiService
+	moid                              string
 	hyperflexHypervisorVirtualMachine *HyperflexHypervisorVirtualMachine
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;hyperflex.HypervisorVirtualMachine&#39; resource to update.
@@ -38730,6 +39320,7 @@ func (r ApiPatchHyperflexHypervisorVirtualMachineRequest) HyperflexHypervisorVir
 	r.hyperflexHypervisorVirtualMachine = &hyperflexHypervisorVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexHypervisorVirtualMachineRequest) IfMatch(ifMatch string) ApiPatchHyperflexHypervisorVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -38750,8 +39341,8 @@ PatchHyperflexHypervisorVirtualMachine Update a 'hyperflex.HypervisorVirtualMach
 func (a *HyperflexApiService) PatchHyperflexHypervisorVirtualMachine(ctx _context.Context, moid string) ApiPatchHyperflexHypervisorVirtualMachineRequest {
 	return ApiPatchHyperflexHypervisorVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -38866,13 +39457,13 @@ func (a *HyperflexApiService) PatchHyperflexHypervisorVirtualMachineExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -38889,11 +39480,11 @@ func (a *HyperflexApiService) PatchHyperflexHypervisorVirtualMachineExecute(r Ap
 }
 
 type ApiPatchHyperflexKeyEncryptionKeyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexKeyEncryptionKey *HyperflexKeyEncryptionKey
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.KeyEncryptionKey&#39; resource to update.
@@ -38901,6 +39492,7 @@ func (r ApiPatchHyperflexKeyEncryptionKeyRequest) HyperflexKeyEncryptionKey(hype
 	r.hyperflexKeyEncryptionKey = &hyperflexKeyEncryptionKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexKeyEncryptionKeyRequest) IfMatch(ifMatch string) ApiPatchHyperflexKeyEncryptionKeyRequest {
 	r.ifMatch = &ifMatch
@@ -38921,8 +39513,8 @@ PatchHyperflexKeyEncryptionKey Update a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) PatchHyperflexKeyEncryptionKey(ctx _context.Context, moid string) ApiPatchHyperflexKeyEncryptionKeyRequest {
 	return ApiPatchHyperflexKeyEncryptionKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39037,13 +39629,13 @@ func (a *HyperflexApiService) PatchHyperflexKeyEncryptionKeyExecute(r ApiPatchHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39060,11 +39652,11 @@ func (a *HyperflexApiService) PatchHyperflexKeyEncryptionKeyExecute(r ApiPatchHy
 }
 
 type ApiPatchHyperflexLocalCredentialPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexLocalCredentialPolicy *HyperflexLocalCredentialPolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.LocalCredentialPolicy&#39; resource to update.
@@ -39072,6 +39664,7 @@ func (r ApiPatchHyperflexLocalCredentialPolicyRequest) HyperflexLocalCredentialP
 	r.hyperflexLocalCredentialPolicy = &hyperflexLocalCredentialPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexLocalCredentialPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexLocalCredentialPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -39092,8 +39685,8 @@ PatchHyperflexLocalCredentialPolicy Update a 'hyperflex.LocalCredentialPolicy' r
 func (a *HyperflexApiService) PatchHyperflexLocalCredentialPolicy(ctx _context.Context, moid string) ApiPatchHyperflexLocalCredentialPolicyRequest {
 	return ApiPatchHyperflexLocalCredentialPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39208,13 +39801,13 @@ func (a *HyperflexApiService) PatchHyperflexLocalCredentialPolicyExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39231,11 +39824,11 @@ func (a *HyperflexApiService) PatchHyperflexLocalCredentialPolicyExecute(r ApiPa
 }
 
 type ApiPatchHyperflexNodeConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexNodeConfigPolicy *HyperflexNodeConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.NodeConfigPolicy&#39; resource to update.
@@ -39243,6 +39836,7 @@ func (r ApiPatchHyperflexNodeConfigPolicyRequest) HyperflexNodeConfigPolicy(hype
 	r.hyperflexNodeConfigPolicy = &hyperflexNodeConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexNodeConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexNodeConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -39263,8 +39857,8 @@ PatchHyperflexNodeConfigPolicy Update a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) PatchHyperflexNodeConfigPolicy(ctx _context.Context, moid string) ApiPatchHyperflexNodeConfigPolicyRequest {
 	return ApiPatchHyperflexNodeConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39379,13 +39973,13 @@ func (a *HyperflexApiService) PatchHyperflexNodeConfigPolicyExecute(r ApiPatchHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39402,11 +39996,11 @@ func (a *HyperflexApiService) PatchHyperflexNodeConfigPolicyExecute(r ApiPatchHy
 }
 
 type ApiPatchHyperflexNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexNodeProfile *HyperflexNodeProfile
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.NodeProfile&#39; resource to update.
@@ -39414,6 +40008,7 @@ func (r ApiPatchHyperflexNodeProfileRequest) HyperflexNodeProfile(hyperflexNodeP
 	r.hyperflexNodeProfile = &hyperflexNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexNodeProfileRequest) IfMatch(ifMatch string) ApiPatchHyperflexNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -39434,8 +40029,8 @@ PatchHyperflexNodeProfile Update a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) PatchHyperflexNodeProfile(ctx _context.Context, moid string) ApiPatchHyperflexNodeProfileRequest {
 	return ApiPatchHyperflexNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39550,13 +40145,13 @@ func (a *HyperflexApiService) PatchHyperflexNodeProfileExecute(r ApiPatchHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39573,11 +40168,11 @@ func (a *HyperflexApiService) PatchHyperflexNodeProfileExecute(r ApiPatchHyperfl
 }
 
 type ApiPatchHyperflexProxySettingPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
+	moid                        string
 	hyperflexProxySettingPolicy *HyperflexProxySettingPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;hyperflex.ProxySettingPolicy&#39; resource to update.
@@ -39585,6 +40180,7 @@ func (r ApiPatchHyperflexProxySettingPolicyRequest) HyperflexProxySettingPolicy(
 	r.hyperflexProxySettingPolicy = &hyperflexProxySettingPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexProxySettingPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexProxySettingPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -39605,8 +40201,8 @@ PatchHyperflexProxySettingPolicy Update a 'hyperflex.ProxySettingPolicy' resourc
 func (a *HyperflexApiService) PatchHyperflexProxySettingPolicy(ctx _context.Context, moid string) ApiPatchHyperflexProxySettingPolicyRequest {
 	return ApiPatchHyperflexProxySettingPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39721,13 +40317,13 @@ func (a *HyperflexApiService) PatchHyperflexProxySettingPolicyExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39744,11 +40340,11 @@ func (a *HyperflexApiService) PatchHyperflexProxySettingPolicyExecute(r ApiPatch
 }
 
 type ApiPatchHyperflexServerFirmwareVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexServerFirmwareVersion *HyperflexServerFirmwareVersion
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersion&#39; resource to update.
@@ -39756,6 +40352,7 @@ func (r ApiPatchHyperflexServerFirmwareVersionRequest) HyperflexServerFirmwareVe
 	r.hyperflexServerFirmwareVersion = &hyperflexServerFirmwareVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexServerFirmwareVersionRequest) IfMatch(ifMatch string) ApiPatchHyperflexServerFirmwareVersionRequest {
 	r.ifMatch = &ifMatch
@@ -39776,8 +40373,8 @@ PatchHyperflexServerFirmwareVersion Update a 'hyperflex.ServerFirmwareVersion' r
 func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersion(ctx _context.Context, moid string) ApiPatchHyperflexServerFirmwareVersionRequest {
 	return ApiPatchHyperflexServerFirmwareVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -39892,13 +40489,13 @@ func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersionExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -39915,11 +40512,11 @@ func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersionExecute(r ApiPa
 }
 
 type ApiPatchHyperflexServerFirmwareVersionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
+	moid                                string
 	hyperflexServerFirmwareVersionEntry *HyperflexServerFirmwareVersionEntry
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersionEntry&#39; resource to update.
@@ -39927,6 +40524,7 @@ func (r ApiPatchHyperflexServerFirmwareVersionEntryRequest) HyperflexServerFirmw
 	r.hyperflexServerFirmwareVersionEntry = &hyperflexServerFirmwareVersionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexServerFirmwareVersionEntryRequest) IfMatch(ifMatch string) ApiPatchHyperflexServerFirmwareVersionEntryRequest {
 	r.ifMatch = &ifMatch
@@ -39947,8 +40545,8 @@ PatchHyperflexServerFirmwareVersionEntry Update a 'hyperflex.ServerFirmwareVersi
 func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersionEntry(ctx _context.Context, moid string) ApiPatchHyperflexServerFirmwareVersionEntryRequest {
 	return ApiPatchHyperflexServerFirmwareVersionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40063,13 +40661,13 @@ func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersionEntryExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40086,11 +40684,11 @@ func (a *HyperflexApiService) PatchHyperflexServerFirmwareVersionEntryExecute(r 
 }
 
 type ApiPatchHyperflexServerModelRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexServerModel *HyperflexServerModel
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.ServerModel&#39; resource to update.
@@ -40098,6 +40696,7 @@ func (r ApiPatchHyperflexServerModelRequest) HyperflexServerModel(hyperflexServe
 	r.hyperflexServerModel = &hyperflexServerModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexServerModelRequest) IfMatch(ifMatch string) ApiPatchHyperflexServerModelRequest {
 	r.ifMatch = &ifMatch
@@ -40118,8 +40717,8 @@ PatchHyperflexServerModel Update a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) PatchHyperflexServerModel(ctx _context.Context, moid string) ApiPatchHyperflexServerModelRequest {
 	return ApiPatchHyperflexServerModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40234,13 +40833,13 @@ func (a *HyperflexApiService) PatchHyperflexServerModelExecute(r ApiPatchHyperfl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40257,11 +40856,11 @@ func (a *HyperflexApiService) PatchHyperflexServerModelExecute(r ApiPatchHyperfl
 }
 
 type ApiPatchHyperflexServiceAuthTokenRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexServiceAuthToken *HyperflexServiceAuthToken
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.ServiceAuthToken&#39; resource to update.
@@ -40269,6 +40868,7 @@ func (r ApiPatchHyperflexServiceAuthTokenRequest) HyperflexServiceAuthToken(hype
 	r.hyperflexServiceAuthToken = &hyperflexServiceAuthToken
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexServiceAuthTokenRequest) IfMatch(ifMatch string) ApiPatchHyperflexServiceAuthTokenRequest {
 	r.ifMatch = &ifMatch
@@ -40289,8 +40889,8 @@ PatchHyperflexServiceAuthToken Update a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) PatchHyperflexServiceAuthToken(ctx _context.Context, moid string) ApiPatchHyperflexServiceAuthTokenRequest {
 	return ApiPatchHyperflexServiceAuthTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40405,13 +41005,13 @@ func (a *HyperflexApiService) PatchHyperflexServiceAuthTokenExecute(r ApiPatchHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40428,11 +41028,11 @@ func (a *HyperflexApiService) PatchHyperflexServiceAuthTokenExecute(r ApiPatchHy
 }
 
 type ApiPatchHyperflexSoftwareDistributionComponentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
+	moid                                   string
 	hyperflexSoftwareDistributionComponent *HyperflexSoftwareDistributionComponent
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionComponent&#39; resource to update.
@@ -40440,6 +41040,7 @@ func (r ApiPatchHyperflexSoftwareDistributionComponentRequest) HyperflexSoftware
 	r.hyperflexSoftwareDistributionComponent = &hyperflexSoftwareDistributionComponent
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexSoftwareDistributionComponentRequest) IfMatch(ifMatch string) ApiPatchHyperflexSoftwareDistributionComponentRequest {
 	r.ifMatch = &ifMatch
@@ -40460,8 +41061,8 @@ PatchHyperflexSoftwareDistributionComponent Update a 'hyperflex.SoftwareDistribu
 func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionComponent(ctx _context.Context, moid string) ApiPatchHyperflexSoftwareDistributionComponentRequest {
 	return ApiPatchHyperflexSoftwareDistributionComponentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40576,13 +41177,13 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionComponentExecute
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40599,11 +41200,11 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionComponentExecute
 }
 
 type ApiPatchHyperflexSoftwareDistributionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *HyperflexApiService
+	moid                               string
 	hyperflexSoftwareDistributionEntry *HyperflexSoftwareDistributionEntry
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionEntry&#39; resource to update.
@@ -40611,6 +41212,7 @@ func (r ApiPatchHyperflexSoftwareDistributionEntryRequest) HyperflexSoftwareDist
 	r.hyperflexSoftwareDistributionEntry = &hyperflexSoftwareDistributionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexSoftwareDistributionEntryRequest) IfMatch(ifMatch string) ApiPatchHyperflexSoftwareDistributionEntryRequest {
 	r.ifMatch = &ifMatch
@@ -40631,8 +41233,8 @@ PatchHyperflexSoftwareDistributionEntry Update a 'hyperflex.SoftwareDistribution
 func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionEntry(ctx _context.Context, moid string) ApiPatchHyperflexSoftwareDistributionEntryRequest {
 	return ApiPatchHyperflexSoftwareDistributionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40747,13 +41349,13 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionEntryExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40770,11 +41372,11 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionEntryExecute(r A
 }
 
 type ApiPatchHyperflexSoftwareDistributionVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *HyperflexApiService
+	moid                                 string
 	hyperflexSoftwareDistributionVersion *HyperflexSoftwareDistributionVersion
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionVersion&#39; resource to update.
@@ -40782,6 +41384,7 @@ func (r ApiPatchHyperflexSoftwareDistributionVersionRequest) HyperflexSoftwareDi
 	r.hyperflexSoftwareDistributionVersion = &hyperflexSoftwareDistributionVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexSoftwareDistributionVersionRequest) IfMatch(ifMatch string) ApiPatchHyperflexSoftwareDistributionVersionRequest {
 	r.ifMatch = &ifMatch
@@ -40802,8 +41405,8 @@ PatchHyperflexSoftwareDistributionVersion Update a 'hyperflex.SoftwareDistributi
 func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionVersion(ctx _context.Context, moid string) ApiPatchHyperflexSoftwareDistributionVersionRequest {
 	return ApiPatchHyperflexSoftwareDistributionVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -40918,13 +41521,13 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionVersionExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -40941,11 +41544,11 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareDistributionVersionExecute(r
 }
 
 type ApiPatchHyperflexSoftwareVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexSoftwareVersionPolicy *HyperflexSoftwareVersionPolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.SoftwareVersionPolicy&#39; resource to update.
@@ -40953,6 +41556,7 @@ func (r ApiPatchHyperflexSoftwareVersionPolicyRequest) HyperflexSoftwareVersionP
 	r.hyperflexSoftwareVersionPolicy = &hyperflexSoftwareVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexSoftwareVersionPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexSoftwareVersionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -40973,8 +41577,8 @@ PatchHyperflexSoftwareVersionPolicy Update a 'hyperflex.SoftwareVersionPolicy' r
 func (a *HyperflexApiService) PatchHyperflexSoftwareVersionPolicy(ctx _context.Context, moid string) ApiPatchHyperflexSoftwareVersionPolicyRequest {
 	return ApiPatchHyperflexSoftwareVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41089,13 +41693,13 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareVersionPolicyExecute(r ApiPa
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41112,11 +41716,11 @@ func (a *HyperflexApiService) PatchHyperflexSoftwareVersionPolicyExecute(r ApiPa
 }
 
 type ApiPatchHyperflexStorageContainerRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexStorageContainer *HyperflexStorageContainer
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.StorageContainer&#39; resource to update.
@@ -41124,6 +41728,7 @@ func (r ApiPatchHyperflexStorageContainerRequest) HyperflexStorageContainer(hype
 	r.hyperflexStorageContainer = &hyperflexStorageContainer
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexStorageContainerRequest) IfMatch(ifMatch string) ApiPatchHyperflexStorageContainerRequest {
 	r.ifMatch = &ifMatch
@@ -41144,8 +41749,8 @@ PatchHyperflexStorageContainer Update a 'hyperflex.StorageContainer' resource.
 func (a *HyperflexApiService) PatchHyperflexStorageContainer(ctx _context.Context, moid string) ApiPatchHyperflexStorageContainerRequest {
 	return ApiPatchHyperflexStorageContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41260,13 +41865,13 @@ func (a *HyperflexApiService) PatchHyperflexStorageContainerExecute(r ApiPatchHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41283,11 +41888,11 @@ func (a *HyperflexApiService) PatchHyperflexStorageContainerExecute(r ApiPatchHy
 }
 
 type ApiPatchHyperflexSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *HyperflexApiService
+	moid                     string
 	hyperflexSysConfigPolicy *HyperflexSysConfigPolicy
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;hyperflex.SysConfigPolicy&#39; resource to update.
@@ -41295,6 +41900,7 @@ func (r ApiPatchHyperflexSysConfigPolicyRequest) HyperflexSysConfigPolicy(hyperf
 	r.hyperflexSysConfigPolicy = &hyperflexSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexSysConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -41315,8 +41921,8 @@ PatchHyperflexSysConfigPolicy Update a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) PatchHyperflexSysConfigPolicy(ctx _context.Context, moid string) ApiPatchHyperflexSysConfigPolicyRequest {
 	return ApiPatchHyperflexSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41431,13 +42037,13 @@ func (a *HyperflexApiService) PatchHyperflexSysConfigPolicyExecute(r ApiPatchHyp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41454,11 +42060,11 @@ func (a *HyperflexApiService) PatchHyperflexSysConfigPolicyExecute(r ApiPatchHyp
 }
 
 type ApiPatchHyperflexUcsmConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexUcsmConfigPolicy *HyperflexUcsmConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.UcsmConfigPolicy&#39; resource to update.
@@ -41466,6 +42072,7 @@ func (r ApiPatchHyperflexUcsmConfigPolicyRequest) HyperflexUcsmConfigPolicy(hype
 	r.hyperflexUcsmConfigPolicy = &hyperflexUcsmConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexUcsmConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexUcsmConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -41486,8 +42093,8 @@ PatchHyperflexUcsmConfigPolicy Update a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) PatchHyperflexUcsmConfigPolicy(ctx _context.Context, moid string) ApiPatchHyperflexUcsmConfigPolicyRequest {
 	return ApiPatchHyperflexUcsmConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41602,13 +42209,13 @@ func (a *HyperflexApiService) PatchHyperflexUcsmConfigPolicyExecute(r ApiPatchHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41625,11 +42232,11 @@ func (a *HyperflexApiService) PatchHyperflexUcsmConfigPolicyExecute(r ApiPatchHy
 }
 
 type ApiPatchHyperflexVcenterConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
+	moid                         string
 	hyperflexVcenterConfigPolicy *HyperflexVcenterConfigPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;hyperflex.VcenterConfigPolicy&#39; resource to update.
@@ -41637,6 +42244,7 @@ func (r ApiPatchHyperflexVcenterConfigPolicyRequest) HyperflexVcenterConfigPolic
 	r.hyperflexVcenterConfigPolicy = &hyperflexVcenterConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexVcenterConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchHyperflexVcenterConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -41657,8 +42265,8 @@ PatchHyperflexVcenterConfigPolicy Update a 'hyperflex.VcenterConfigPolicy' resou
 func (a *HyperflexApiService) PatchHyperflexVcenterConfigPolicy(ctx _context.Context, moid string) ApiPatchHyperflexVcenterConfigPolicyRequest {
 	return ApiPatchHyperflexVcenterConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41773,13 +42381,13 @@ func (a *HyperflexApiService) PatchHyperflexVcenterConfigPolicyExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41796,11 +42404,11 @@ func (a *HyperflexApiService) PatchHyperflexVcenterConfigPolicyExecute(r ApiPatc
 }
 
 type ApiPatchHyperflexVolumeRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *HyperflexApiService
+	moid            string
 	hyperflexVolume *HyperflexVolume
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;hyperflex.Volume&#39; resource to update.
@@ -41808,6 +42416,7 @@ func (r ApiPatchHyperflexVolumeRequest) HyperflexVolume(hyperflexVolume Hyperfle
 	r.hyperflexVolume = &hyperflexVolume
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchHyperflexVolumeRequest) IfMatch(ifMatch string) ApiPatchHyperflexVolumeRequest {
 	r.ifMatch = &ifMatch
@@ -41828,8 +42437,8 @@ PatchHyperflexVolume Update a 'hyperflex.Volume' resource.
 func (a *HyperflexApiService) PatchHyperflexVolume(ctx _context.Context, moid string) ApiPatchHyperflexVolumeRequest {
 	return ApiPatchHyperflexVolumeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -41944,13 +42553,13 @@ func (a *HyperflexApiService) PatchHyperflexVolumeExecute(r ApiPatchHyperflexVol
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -41967,11 +42576,11 @@ func (a *HyperflexApiService) PatchHyperflexVolumeExecute(r ApiPatchHyperflexVol
 }
 
 type ApiUpdateHyperflexAppCatalogRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                 _context.Context
+	ApiService          *HyperflexApiService
+	moid                string
 	hyperflexAppCatalog *HyperflexAppCatalog
-	ifMatch *string
+	ifMatch             *string
 }
 
 // The &#39;hyperflex.AppCatalog&#39; resource to update.
@@ -41979,6 +42588,7 @@ func (r ApiUpdateHyperflexAppCatalogRequest) HyperflexAppCatalog(hyperflexAppCat
 	r.hyperflexAppCatalog = &hyperflexAppCatalog
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexAppCatalogRequest) IfMatch(ifMatch string) ApiUpdateHyperflexAppCatalogRequest {
 	r.ifMatch = &ifMatch
@@ -41999,8 +42609,8 @@ UpdateHyperflexAppCatalog Update a 'hyperflex.AppCatalog' resource.
 func (a *HyperflexApiService) UpdateHyperflexAppCatalog(ctx _context.Context, moid string) ApiUpdateHyperflexAppCatalogRequest {
 	return ApiUpdateHyperflexAppCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42115,13 +42725,13 @@ func (a *HyperflexApiService) UpdateHyperflexAppCatalogExecute(r ApiUpdateHyperf
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42138,11 +42748,11 @@ func (a *HyperflexApiService) UpdateHyperflexAppCatalogExecute(r ApiUpdateHyperf
 }
 
 type ApiUpdateHyperflexAutoSupportPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *HyperflexApiService
+	moid                       string
 	hyperflexAutoSupportPolicy *HyperflexAutoSupportPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;hyperflex.AutoSupportPolicy&#39; resource to update.
@@ -42150,6 +42760,7 @@ func (r ApiUpdateHyperflexAutoSupportPolicyRequest) HyperflexAutoSupportPolicy(h
 	r.hyperflexAutoSupportPolicy = &hyperflexAutoSupportPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexAutoSupportPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexAutoSupportPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -42170,8 +42781,8 @@ UpdateHyperflexAutoSupportPolicy Update a 'hyperflex.AutoSupportPolicy' resource
 func (a *HyperflexApiService) UpdateHyperflexAutoSupportPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexAutoSupportPolicyRequest {
 	return ApiUpdateHyperflexAutoSupportPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42286,13 +42897,13 @@ func (a *HyperflexApiService) UpdateHyperflexAutoSupportPolicyExecute(r ApiUpdat
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42309,11 +42920,11 @@ func (a *HyperflexApiService) UpdateHyperflexAutoSupportPolicyExecute(r ApiUpdat
 }
 
 type ApiUpdateHyperflexCapabilityInfoRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexCapabilityInfo *HyperflexCapabilityInfo
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.CapabilityInfo&#39; resource to update.
@@ -42321,6 +42932,7 @@ func (r ApiUpdateHyperflexCapabilityInfoRequest) HyperflexCapabilityInfo(hyperfl
 	r.hyperflexCapabilityInfo = &hyperflexCapabilityInfo
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexCapabilityInfoRequest) IfMatch(ifMatch string) ApiUpdateHyperflexCapabilityInfoRequest {
 	r.ifMatch = &ifMatch
@@ -42341,8 +42953,8 @@ UpdateHyperflexCapabilityInfo Update a 'hyperflex.CapabilityInfo' resource.
 func (a *HyperflexApiService) UpdateHyperflexCapabilityInfo(ctx _context.Context, moid string) ApiUpdateHyperflexCapabilityInfoRequest {
 	return ApiUpdateHyperflexCapabilityInfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42457,13 +43069,13 @@ func (a *HyperflexApiService) UpdateHyperflexCapabilityInfoExecute(r ApiUpdateHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42480,11 +43092,11 @@ func (a *HyperflexApiService) UpdateHyperflexCapabilityInfoExecute(r ApiUpdateHy
 }
 
 type ApiUpdateHyperflexClusterRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx              _context.Context
+	ApiService       *HyperflexApiService
+	moid             string
 	hyperflexCluster *HyperflexCluster
-	ifMatch *string
+	ifMatch          *string
 }
 
 // The &#39;hyperflex.Cluster&#39; resource to update.
@@ -42492,6 +43104,7 @@ func (r ApiUpdateHyperflexClusterRequest) HyperflexCluster(hyperflexCluster Hype
 	r.hyperflexCluster = &hyperflexCluster
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterRequest {
 	r.ifMatch = &ifMatch
@@ -42512,8 +43125,8 @@ UpdateHyperflexCluster Update a 'hyperflex.Cluster' resource.
 func (a *HyperflexApiService) UpdateHyperflexCluster(ctx _context.Context, moid string) ApiUpdateHyperflexClusterRequest {
 	return ApiUpdateHyperflexClusterRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42628,13 +43241,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterExecute(r ApiUpdateHyperflex
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42651,11 +43264,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterExecute(r ApiUpdateHyperflex
 }
 
 type ApiUpdateHyperflexClusterBackupPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
+	moid                         string
 	hyperflexClusterBackupPolicy *HyperflexClusterBackupPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicy&#39; resource to update.
@@ -42663,6 +43276,7 @@ func (r ApiUpdateHyperflexClusterBackupPolicyRequest) HyperflexClusterBackupPoli
 	r.hyperflexClusterBackupPolicy = &hyperflexClusterBackupPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterBackupPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterBackupPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -42683,8 +43297,8 @@ UpdateHyperflexClusterBackupPolicy Update a 'hyperflex.ClusterBackupPolicy' reso
 func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexClusterBackupPolicyRequest {
 	return ApiUpdateHyperflexClusterBackupPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42799,13 +43413,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicyExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42822,11 +43436,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicyExecute(r ApiUpd
 }
 
 type ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
+	moid                                   string
 	hyperflexClusterBackupPolicyDeployment *HyperflexClusterBackupPolicyDeployment
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;hyperflex.ClusterBackupPolicyDeployment&#39; resource to update.
@@ -42834,6 +43448,7 @@ func (r ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest) HyperflexCluster
 	r.hyperflexClusterBackupPolicyDeployment = &hyperflexClusterBackupPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
@@ -42854,8 +43469,8 @@ UpdateHyperflexClusterBackupPolicyDeployment Update a 'hyperflex.ClusterBackupPo
 func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicyDeployment(ctx _context.Context, moid string) ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest {
 	return ApiUpdateHyperflexClusterBackupPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -42970,13 +43585,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicyDeploymentExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -42993,11 +43608,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterBackupPolicyDeploymentExecut
 }
 
 type ApiUpdateHyperflexClusterNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexClusterNetworkPolicy *HyperflexClusterNetworkPolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.ClusterNetworkPolicy&#39; resource to update.
@@ -43005,6 +43620,7 @@ func (r ApiUpdateHyperflexClusterNetworkPolicyRequest) HyperflexClusterNetworkPo
 	r.hyperflexClusterNetworkPolicy = &hyperflexClusterNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -43025,8 +43641,8 @@ UpdateHyperflexClusterNetworkPolicy Update a 'hyperflex.ClusterNetworkPolicy' re
 func (a *HyperflexApiService) UpdateHyperflexClusterNetworkPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexClusterNetworkPolicyRequest {
 	return ApiUpdateHyperflexClusterNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43141,13 +43757,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterNetworkPolicyExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -43164,11 +43780,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterNetworkPolicyExecute(r ApiUp
 }
 
 type ApiUpdateHyperflexClusterProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexClusterProfile *HyperflexClusterProfile
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.ClusterProfile&#39; resource to update.
@@ -43176,6 +43792,7 @@ func (r ApiUpdateHyperflexClusterProfileRequest) HyperflexClusterProfile(hyperfl
 	r.hyperflexClusterProfile = &hyperflexClusterProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterProfileRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterProfileRequest {
 	r.ifMatch = &ifMatch
@@ -43196,8 +43813,8 @@ UpdateHyperflexClusterProfile Update a 'hyperflex.ClusterProfile' resource.
 func (a *HyperflexApiService) UpdateHyperflexClusterProfile(ctx _context.Context, moid string) ApiUpdateHyperflexClusterProfileRequest {
 	return ApiUpdateHyperflexClusterProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43312,13 +43929,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterProfileExecute(r ApiUpdateHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -43335,11 +43952,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterProfileExecute(r ApiUpdateHy
 }
 
 type ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                      _context.Context
+	ApiService                               *HyperflexApiService
+	moid                                     string
 	hyperflexClusterReplicationNetworkPolicy *HyperflexClusterReplicationNetworkPolicy
-	ifMatch *string
+	ifMatch                                  *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicy&#39; resource to update.
@@ -43347,6 +43964,7 @@ func (r ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest) HyperflexClust
 	r.hyperflexClusterReplicationNetworkPolicy = &hyperflexClusterReplicationNetworkPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -43367,8 +43985,8 @@ UpdateHyperflexClusterReplicationNetworkPolicy Update a 'hyperflex.ClusterReplic
 func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest {
 	return ApiUpdateHyperflexClusterReplicationNetworkPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43483,13 +44101,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicyExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -43506,11 +44124,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicyExec
 }
 
 type ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                                _context.Context
+	ApiService                                         *HyperflexApiService
+	moid                                               string
 	hyperflexClusterReplicationNetworkPolicyDeployment *HyperflexClusterReplicationNetworkPolicyDeployment
-	ifMatch *string
+	ifMatch                                            *string
 }
 
 // The &#39;hyperflex.ClusterReplicationNetworkPolicyDeployment&#39; resource to update.
@@ -43518,6 +44136,7 @@ func (r ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest) Hype
 	r.hyperflexClusterReplicationNetworkPolicyDeployment = &hyperflexClusterReplicationNetworkPolicyDeployment
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	r.ifMatch = &ifMatch
@@ -43538,8 +44157,8 @@ UpdateHyperflexClusterReplicationNetworkPolicyDeployment Update a 'hyperflex.Clu
 func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicyDeployment(ctx _context.Context, moid string) ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest {
 	return ApiUpdateHyperflexClusterReplicationNetworkPolicyDeploymentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43654,13 +44273,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicyDepl
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -43677,11 +44296,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterReplicationNetworkPolicyDepl
 }
 
 type ApiUpdateHyperflexClusterStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexClusterStoragePolicy *HyperflexClusterStoragePolicy
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.ClusterStoragePolicy&#39; resource to update.
@@ -43689,6 +44308,7 @@ func (r ApiUpdateHyperflexClusterStoragePolicyRequest) HyperflexClusterStoragePo
 	r.hyperflexClusterStoragePolicy = &hyperflexClusterStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexClusterStoragePolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexClusterStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -43709,8 +44329,8 @@ UpdateHyperflexClusterStoragePolicy Update a 'hyperflex.ClusterStoragePolicy' re
 func (a *HyperflexApiService) UpdateHyperflexClusterStoragePolicy(ctx _context.Context, moid string) ApiUpdateHyperflexClusterStoragePolicyRequest {
 	return ApiUpdateHyperflexClusterStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43825,13 +44445,13 @@ func (a *HyperflexApiService) UpdateHyperflexClusterStoragePolicyExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -43848,11 +44468,11 @@ func (a *HyperflexApiService) UpdateHyperflexClusterStoragePolicyExecute(r ApiUp
 }
 
 type ApiUpdateHyperflexExtFcStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
+	moid                        string
 	hyperflexExtFcStoragePolicy *HyperflexExtFcStoragePolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;hyperflex.ExtFcStoragePolicy&#39; resource to update.
@@ -43860,6 +44480,7 @@ func (r ApiUpdateHyperflexExtFcStoragePolicyRequest) HyperflexExtFcStoragePolicy
 	r.hyperflexExtFcStoragePolicy = &hyperflexExtFcStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexExtFcStoragePolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexExtFcStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -43880,8 +44501,8 @@ UpdateHyperflexExtFcStoragePolicy Update a 'hyperflex.ExtFcStoragePolicy' resour
 func (a *HyperflexApiService) UpdateHyperflexExtFcStoragePolicy(ctx _context.Context, moid string) ApiUpdateHyperflexExtFcStoragePolicyRequest {
 	return ApiUpdateHyperflexExtFcStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -43996,13 +44617,13 @@ func (a *HyperflexApiService) UpdateHyperflexExtFcStoragePolicyExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44019,11 +44640,11 @@ func (a *HyperflexApiService) UpdateHyperflexExtFcStoragePolicyExecute(r ApiUpda
 }
 
 type ApiUpdateHyperflexExtIscsiStoragePolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexExtIscsiStoragePolicy *HyperflexExtIscsiStoragePolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.ExtIscsiStoragePolicy&#39; resource to update.
@@ -44031,6 +44652,7 @@ func (r ApiUpdateHyperflexExtIscsiStoragePolicyRequest) HyperflexExtIscsiStorage
 	r.hyperflexExtIscsiStoragePolicy = &hyperflexExtIscsiStoragePolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexExtIscsiStoragePolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexExtIscsiStoragePolicyRequest {
 	r.ifMatch = &ifMatch
@@ -44051,8 +44673,8 @@ UpdateHyperflexExtIscsiStoragePolicy Update a 'hyperflex.ExtIscsiStoragePolicy' 
 func (a *HyperflexApiService) UpdateHyperflexExtIscsiStoragePolicy(ctx _context.Context, moid string) ApiUpdateHyperflexExtIscsiStoragePolicyRequest {
 	return ApiUpdateHyperflexExtIscsiStoragePolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -44167,13 +44789,13 @@ func (a *HyperflexApiService) UpdateHyperflexExtIscsiStoragePolicyExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44190,11 +44812,11 @@ func (a *HyperflexApiService) UpdateHyperflexExtIscsiStoragePolicyExecute(r ApiU
 }
 
 type ApiUpdateHyperflexFeatureLimitExternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexFeatureLimitExternal *HyperflexFeatureLimitExternal
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.FeatureLimitExternal&#39; resource to update.
@@ -44202,6 +44824,7 @@ func (r ApiUpdateHyperflexFeatureLimitExternalRequest) HyperflexFeatureLimitExte
 	r.hyperflexFeatureLimitExternal = &hyperflexFeatureLimitExternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexFeatureLimitExternalRequest) IfMatch(ifMatch string) ApiUpdateHyperflexFeatureLimitExternalRequest {
 	r.ifMatch = &ifMatch
@@ -44222,8 +44845,8 @@ UpdateHyperflexFeatureLimitExternal Update a 'hyperflex.FeatureLimitExternal' re
 func (a *HyperflexApiService) UpdateHyperflexFeatureLimitExternal(ctx _context.Context, moid string) ApiUpdateHyperflexFeatureLimitExternalRequest {
 	return ApiUpdateHyperflexFeatureLimitExternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -44338,13 +44961,13 @@ func (a *HyperflexApiService) UpdateHyperflexFeatureLimitExternalExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44361,11 +44984,11 @@ func (a *HyperflexApiService) UpdateHyperflexFeatureLimitExternalExecute(r ApiUp
 }
 
 type ApiUpdateHyperflexFeatureLimitInternalRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                           _context.Context
+	ApiService                    *HyperflexApiService
+	moid                          string
 	hyperflexFeatureLimitInternal *HyperflexFeatureLimitInternal
-	ifMatch *string
+	ifMatch                       *string
 }
 
 // The &#39;hyperflex.FeatureLimitInternal&#39; resource to update.
@@ -44373,6 +44996,7 @@ func (r ApiUpdateHyperflexFeatureLimitInternalRequest) HyperflexFeatureLimitInte
 	r.hyperflexFeatureLimitInternal = &hyperflexFeatureLimitInternal
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexFeatureLimitInternalRequest) IfMatch(ifMatch string) ApiUpdateHyperflexFeatureLimitInternalRequest {
 	r.ifMatch = &ifMatch
@@ -44393,8 +45017,8 @@ UpdateHyperflexFeatureLimitInternal Update a 'hyperflex.FeatureLimitInternal' re
 func (a *HyperflexApiService) UpdateHyperflexFeatureLimitInternal(ctx _context.Context, moid string) ApiUpdateHyperflexFeatureLimitInternalRequest {
 	return ApiUpdateHyperflexFeatureLimitInternalRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -44509,13 +45133,13 @@ func (a *HyperflexApiService) UpdateHyperflexFeatureLimitInternalExecute(r ApiUp
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44532,11 +45156,11 @@ func (a *HyperflexApiService) UpdateHyperflexFeatureLimitInternalExecute(r ApiUp
 }
 
 type ApiUpdateHyperflexHealthCheckDefinitionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexHealthCheckDefinition *HyperflexHealthCheckDefinition
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.HealthCheckDefinition&#39; resource to update.
@@ -44544,6 +45168,7 @@ func (r ApiUpdateHyperflexHealthCheckDefinitionRequest) HyperflexHealthCheckDefi
 	r.hyperflexHealthCheckDefinition = &hyperflexHealthCheckDefinition
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexHealthCheckDefinitionRequest) IfMatch(ifMatch string) ApiUpdateHyperflexHealthCheckDefinitionRequest {
 	r.ifMatch = &ifMatch
@@ -44564,8 +45189,8 @@ UpdateHyperflexHealthCheckDefinition Update a 'hyperflex.HealthCheckDefinition' 
 func (a *HyperflexApiService) UpdateHyperflexHealthCheckDefinition(ctx _context.Context, moid string) ApiUpdateHyperflexHealthCheckDefinitionRequest {
 	return ApiUpdateHyperflexHealthCheckDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -44680,13 +45305,13 @@ func (a *HyperflexApiService) UpdateHyperflexHealthCheckDefinitionExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44703,11 +45328,11 @@ func (a *HyperflexApiService) UpdateHyperflexHealthCheckDefinitionExecute(r ApiU
 }
 
 type ApiUpdateHyperflexHealthCheckPackageChecksumRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
+	moid                                string
 	hyperflexHealthCheckPackageChecksum *HyperflexHealthCheckPackageChecksum
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;hyperflex.HealthCheckPackageChecksum&#39; resource to update.
@@ -44715,6 +45340,7 @@ func (r ApiUpdateHyperflexHealthCheckPackageChecksumRequest) HyperflexHealthChec
 	r.hyperflexHealthCheckPackageChecksum = &hyperflexHealthCheckPackageChecksum
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexHealthCheckPackageChecksumRequest) IfMatch(ifMatch string) ApiUpdateHyperflexHealthCheckPackageChecksumRequest {
 	r.ifMatch = &ifMatch
@@ -44735,8 +45361,8 @@ UpdateHyperflexHealthCheckPackageChecksum Update a 'hyperflex.HealthCheckPackage
 func (a *HyperflexApiService) UpdateHyperflexHealthCheckPackageChecksum(ctx _context.Context, moid string) ApiUpdateHyperflexHealthCheckPackageChecksumRequest {
 	return ApiUpdateHyperflexHealthCheckPackageChecksumRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -44851,13 +45477,13 @@ func (a *HyperflexApiService) UpdateHyperflexHealthCheckPackageChecksumExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -44874,11 +45500,11 @@ func (a *HyperflexApiService) UpdateHyperflexHealthCheckPackageChecksumExecute(r
 }
 
 type ApiUpdateHyperflexHxdpVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexHxdpVersion *HyperflexHxdpVersion
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.HxdpVersion&#39; resource to update.
@@ -44886,6 +45512,7 @@ func (r ApiUpdateHyperflexHxdpVersionRequest) HyperflexHxdpVersion(hyperflexHxdp
 	r.hyperflexHxdpVersion = &hyperflexHxdpVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexHxdpVersionRequest) IfMatch(ifMatch string) ApiUpdateHyperflexHxdpVersionRequest {
 	r.ifMatch = &ifMatch
@@ -44906,8 +45533,8 @@ UpdateHyperflexHxdpVersion Update a 'hyperflex.HxdpVersion' resource.
 func (a *HyperflexApiService) UpdateHyperflexHxdpVersion(ctx _context.Context, moid string) ApiUpdateHyperflexHxdpVersionRequest {
 	return ApiUpdateHyperflexHxdpVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45022,13 +45649,13 @@ func (a *HyperflexApiService) UpdateHyperflexHxdpVersionExecute(r ApiUpdateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45045,11 +45672,11 @@ func (a *HyperflexApiService) UpdateHyperflexHxdpVersionExecute(r ApiUpdateHyper
 }
 
 type ApiUpdateHyperflexHypervisorHostRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                     _context.Context
+	ApiService              *HyperflexApiService
+	moid                    string
 	hyperflexHypervisorHost *HyperflexHypervisorHost
-	ifMatch *string
+	ifMatch                 *string
 }
 
 // The &#39;hyperflex.HypervisorHost&#39; resource to update.
@@ -45057,6 +45684,7 @@ func (r ApiUpdateHyperflexHypervisorHostRequest) HyperflexHypervisorHost(hyperfl
 	r.hyperflexHypervisorHost = &hyperflexHypervisorHost
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexHypervisorHostRequest) IfMatch(ifMatch string) ApiUpdateHyperflexHypervisorHostRequest {
 	r.ifMatch = &ifMatch
@@ -45077,8 +45705,8 @@ UpdateHyperflexHypervisorHost Update a 'hyperflex.HypervisorHost' resource.
 func (a *HyperflexApiService) UpdateHyperflexHypervisorHost(ctx _context.Context, moid string) ApiUpdateHyperflexHypervisorHostRequest {
 	return ApiUpdateHyperflexHypervisorHostRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45193,13 +45821,13 @@ func (a *HyperflexApiService) UpdateHyperflexHypervisorHostExecute(r ApiUpdateHy
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45216,11 +45844,11 @@ func (a *HyperflexApiService) UpdateHyperflexHypervisorHostExecute(r ApiUpdateHy
 }
 
 type ApiUpdateHyperflexHypervisorVirtualMachineRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                               _context.Context
+	ApiService                        *HyperflexApiService
+	moid                              string
 	hyperflexHypervisorVirtualMachine *HyperflexHypervisorVirtualMachine
-	ifMatch *string
+	ifMatch                           *string
 }
 
 // The &#39;hyperflex.HypervisorVirtualMachine&#39; resource to update.
@@ -45228,6 +45856,7 @@ func (r ApiUpdateHyperflexHypervisorVirtualMachineRequest) HyperflexHypervisorVi
 	r.hyperflexHypervisorVirtualMachine = &hyperflexHypervisorVirtualMachine
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexHypervisorVirtualMachineRequest) IfMatch(ifMatch string) ApiUpdateHyperflexHypervisorVirtualMachineRequest {
 	r.ifMatch = &ifMatch
@@ -45248,8 +45877,8 @@ UpdateHyperflexHypervisorVirtualMachine Update a 'hyperflex.HypervisorVirtualMac
 func (a *HyperflexApiService) UpdateHyperflexHypervisorVirtualMachine(ctx _context.Context, moid string) ApiUpdateHyperflexHypervisorVirtualMachineRequest {
 	return ApiUpdateHyperflexHypervisorVirtualMachineRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45364,13 +45993,13 @@ func (a *HyperflexApiService) UpdateHyperflexHypervisorVirtualMachineExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45387,11 +46016,11 @@ func (a *HyperflexApiService) UpdateHyperflexHypervisorVirtualMachineExecute(r A
 }
 
 type ApiUpdateHyperflexKeyEncryptionKeyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexKeyEncryptionKey *HyperflexKeyEncryptionKey
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.KeyEncryptionKey&#39; resource to update.
@@ -45399,6 +46028,7 @@ func (r ApiUpdateHyperflexKeyEncryptionKeyRequest) HyperflexKeyEncryptionKey(hyp
 	r.hyperflexKeyEncryptionKey = &hyperflexKeyEncryptionKey
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexKeyEncryptionKeyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexKeyEncryptionKeyRequest {
 	r.ifMatch = &ifMatch
@@ -45419,8 +46049,8 @@ UpdateHyperflexKeyEncryptionKey Update a 'hyperflex.KeyEncryptionKey' resource.
 func (a *HyperflexApiService) UpdateHyperflexKeyEncryptionKey(ctx _context.Context, moid string) ApiUpdateHyperflexKeyEncryptionKeyRequest {
 	return ApiUpdateHyperflexKeyEncryptionKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45535,13 +46165,13 @@ func (a *HyperflexApiService) UpdateHyperflexKeyEncryptionKeyExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45558,11 +46188,11 @@ func (a *HyperflexApiService) UpdateHyperflexKeyEncryptionKeyExecute(r ApiUpdate
 }
 
 type ApiUpdateHyperflexLocalCredentialPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexLocalCredentialPolicy *HyperflexLocalCredentialPolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.LocalCredentialPolicy&#39; resource to update.
@@ -45570,6 +46200,7 @@ func (r ApiUpdateHyperflexLocalCredentialPolicyRequest) HyperflexLocalCredential
 	r.hyperflexLocalCredentialPolicy = &hyperflexLocalCredentialPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexLocalCredentialPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexLocalCredentialPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -45590,8 +46221,8 @@ UpdateHyperflexLocalCredentialPolicy Update a 'hyperflex.LocalCredentialPolicy' 
 func (a *HyperflexApiService) UpdateHyperflexLocalCredentialPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexLocalCredentialPolicyRequest {
 	return ApiUpdateHyperflexLocalCredentialPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45706,13 +46337,13 @@ func (a *HyperflexApiService) UpdateHyperflexLocalCredentialPolicyExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45729,11 +46360,11 @@ func (a *HyperflexApiService) UpdateHyperflexLocalCredentialPolicyExecute(r ApiU
 }
 
 type ApiUpdateHyperflexNodeConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexNodeConfigPolicy *HyperflexNodeConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.NodeConfigPolicy&#39; resource to update.
@@ -45741,6 +46372,7 @@ func (r ApiUpdateHyperflexNodeConfigPolicyRequest) HyperflexNodeConfigPolicy(hyp
 	r.hyperflexNodeConfigPolicy = &hyperflexNodeConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexNodeConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexNodeConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -45761,8 +46393,8 @@ UpdateHyperflexNodeConfigPolicy Update a 'hyperflex.NodeConfigPolicy' resource.
 func (a *HyperflexApiService) UpdateHyperflexNodeConfigPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexNodeConfigPolicyRequest {
 	return ApiUpdateHyperflexNodeConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -45877,13 +46509,13 @@ func (a *HyperflexApiService) UpdateHyperflexNodeConfigPolicyExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -45900,11 +46532,11 @@ func (a *HyperflexApiService) UpdateHyperflexNodeConfigPolicyExecute(r ApiUpdate
 }
 
 type ApiUpdateHyperflexNodeProfileRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexNodeProfile *HyperflexNodeProfile
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.NodeProfile&#39; resource to update.
@@ -45912,6 +46544,7 @@ func (r ApiUpdateHyperflexNodeProfileRequest) HyperflexNodeProfile(hyperflexNode
 	r.hyperflexNodeProfile = &hyperflexNodeProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexNodeProfileRequest) IfMatch(ifMatch string) ApiUpdateHyperflexNodeProfileRequest {
 	r.ifMatch = &ifMatch
@@ -45932,8 +46565,8 @@ UpdateHyperflexNodeProfile Update a 'hyperflex.NodeProfile' resource.
 func (a *HyperflexApiService) UpdateHyperflexNodeProfile(ctx _context.Context, moid string) ApiUpdateHyperflexNodeProfileRequest {
 	return ApiUpdateHyperflexNodeProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46048,13 +46681,13 @@ func (a *HyperflexApiService) UpdateHyperflexNodeProfileExecute(r ApiUpdateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46071,11 +46704,11 @@ func (a *HyperflexApiService) UpdateHyperflexNodeProfileExecute(r ApiUpdateHyper
 }
 
 type ApiUpdateHyperflexProxySettingPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                         _context.Context
+	ApiService                  *HyperflexApiService
+	moid                        string
 	hyperflexProxySettingPolicy *HyperflexProxySettingPolicy
-	ifMatch *string
+	ifMatch                     *string
 }
 
 // The &#39;hyperflex.ProxySettingPolicy&#39; resource to update.
@@ -46083,6 +46716,7 @@ func (r ApiUpdateHyperflexProxySettingPolicyRequest) HyperflexProxySettingPolicy
 	r.hyperflexProxySettingPolicy = &hyperflexProxySettingPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexProxySettingPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexProxySettingPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -46103,8 +46737,8 @@ UpdateHyperflexProxySettingPolicy Update a 'hyperflex.ProxySettingPolicy' resour
 func (a *HyperflexApiService) UpdateHyperflexProxySettingPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexProxySettingPolicyRequest {
 	return ApiUpdateHyperflexProxySettingPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46219,13 +46853,13 @@ func (a *HyperflexApiService) UpdateHyperflexProxySettingPolicyExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46242,11 +46876,11 @@ func (a *HyperflexApiService) UpdateHyperflexProxySettingPolicyExecute(r ApiUpda
 }
 
 type ApiUpdateHyperflexServerFirmwareVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexServerFirmwareVersion *HyperflexServerFirmwareVersion
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersion&#39; resource to update.
@@ -46254,6 +46888,7 @@ func (r ApiUpdateHyperflexServerFirmwareVersionRequest) HyperflexServerFirmwareV
 	r.hyperflexServerFirmwareVersion = &hyperflexServerFirmwareVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexServerFirmwareVersionRequest) IfMatch(ifMatch string) ApiUpdateHyperflexServerFirmwareVersionRequest {
 	r.ifMatch = &ifMatch
@@ -46274,8 +46909,8 @@ UpdateHyperflexServerFirmwareVersion Update a 'hyperflex.ServerFirmwareVersion' 
 func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersion(ctx _context.Context, moid string) ApiUpdateHyperflexServerFirmwareVersionRequest {
 	return ApiUpdateHyperflexServerFirmwareVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46390,13 +47025,13 @@ func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersionExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46413,11 +47048,11 @@ func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersionExecute(r ApiU
 }
 
 type ApiUpdateHyperflexServerFirmwareVersionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *HyperflexApiService
+	moid                                string
 	hyperflexServerFirmwareVersionEntry *HyperflexServerFirmwareVersionEntry
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;hyperflex.ServerFirmwareVersionEntry&#39; resource to update.
@@ -46425,6 +47060,7 @@ func (r ApiUpdateHyperflexServerFirmwareVersionEntryRequest) HyperflexServerFirm
 	r.hyperflexServerFirmwareVersionEntry = &hyperflexServerFirmwareVersionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexServerFirmwareVersionEntryRequest) IfMatch(ifMatch string) ApiUpdateHyperflexServerFirmwareVersionEntryRequest {
 	r.ifMatch = &ifMatch
@@ -46445,8 +47081,8 @@ UpdateHyperflexServerFirmwareVersionEntry Update a 'hyperflex.ServerFirmwareVers
 func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersionEntry(ctx _context.Context, moid string) ApiUpdateHyperflexServerFirmwareVersionEntryRequest {
 	return ApiUpdateHyperflexServerFirmwareVersionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46561,13 +47197,13 @@ func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersionEntryExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46584,11 +47220,11 @@ func (a *HyperflexApiService) UpdateHyperflexServerFirmwareVersionEntryExecute(r
 }
 
 type ApiUpdateHyperflexServerModelRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                  _context.Context
+	ApiService           *HyperflexApiService
+	moid                 string
 	hyperflexServerModel *HyperflexServerModel
-	ifMatch *string
+	ifMatch              *string
 }
 
 // The &#39;hyperflex.ServerModel&#39; resource to update.
@@ -46596,6 +47232,7 @@ func (r ApiUpdateHyperflexServerModelRequest) HyperflexServerModel(hyperflexServ
 	r.hyperflexServerModel = &hyperflexServerModel
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexServerModelRequest) IfMatch(ifMatch string) ApiUpdateHyperflexServerModelRequest {
 	r.ifMatch = &ifMatch
@@ -46616,8 +47253,8 @@ UpdateHyperflexServerModel Update a 'hyperflex.ServerModel' resource.
 func (a *HyperflexApiService) UpdateHyperflexServerModel(ctx _context.Context, moid string) ApiUpdateHyperflexServerModelRequest {
 	return ApiUpdateHyperflexServerModelRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46732,13 +47369,13 @@ func (a *HyperflexApiService) UpdateHyperflexServerModelExecute(r ApiUpdateHyper
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46755,11 +47392,11 @@ func (a *HyperflexApiService) UpdateHyperflexServerModelExecute(r ApiUpdateHyper
 }
 
 type ApiUpdateHyperflexServiceAuthTokenRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexServiceAuthToken *HyperflexServiceAuthToken
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.ServiceAuthToken&#39; resource to update.
@@ -46767,6 +47404,7 @@ func (r ApiUpdateHyperflexServiceAuthTokenRequest) HyperflexServiceAuthToken(hyp
 	r.hyperflexServiceAuthToken = &hyperflexServiceAuthToken
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexServiceAuthTokenRequest) IfMatch(ifMatch string) ApiUpdateHyperflexServiceAuthTokenRequest {
 	r.ifMatch = &ifMatch
@@ -46787,8 +47425,8 @@ UpdateHyperflexServiceAuthToken Update a 'hyperflex.ServiceAuthToken' resource.
 func (a *HyperflexApiService) UpdateHyperflexServiceAuthToken(ctx _context.Context, moid string) ApiUpdateHyperflexServiceAuthTokenRequest {
 	return ApiUpdateHyperflexServiceAuthTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -46903,13 +47541,13 @@ func (a *HyperflexApiService) UpdateHyperflexServiceAuthTokenExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -46926,11 +47564,11 @@ func (a *HyperflexApiService) UpdateHyperflexServiceAuthTokenExecute(r ApiUpdate
 }
 
 type ApiUpdateHyperflexSoftwareDistributionComponentRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                    _context.Context
+	ApiService                             *HyperflexApiService
+	moid                                   string
 	hyperflexSoftwareDistributionComponent *HyperflexSoftwareDistributionComponent
-	ifMatch *string
+	ifMatch                                *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionComponent&#39; resource to update.
@@ -46938,6 +47576,7 @@ func (r ApiUpdateHyperflexSoftwareDistributionComponentRequest) HyperflexSoftwar
 	r.hyperflexSoftwareDistributionComponent = &hyperflexSoftwareDistributionComponent
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexSoftwareDistributionComponentRequest) IfMatch(ifMatch string) ApiUpdateHyperflexSoftwareDistributionComponentRequest {
 	r.ifMatch = &ifMatch
@@ -46958,8 +47597,8 @@ UpdateHyperflexSoftwareDistributionComponent Update a 'hyperflex.SoftwareDistrib
 func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionComponent(ctx _context.Context, moid string) ApiUpdateHyperflexSoftwareDistributionComponentRequest {
 	return ApiUpdateHyperflexSoftwareDistributionComponentRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47074,13 +47713,13 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionComponentExecut
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47097,11 +47736,11 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionComponentExecut
 }
 
 type ApiUpdateHyperflexSoftwareDistributionEntryRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *HyperflexApiService
+	moid                               string
 	hyperflexSoftwareDistributionEntry *HyperflexSoftwareDistributionEntry
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionEntry&#39; resource to update.
@@ -47109,6 +47748,7 @@ func (r ApiUpdateHyperflexSoftwareDistributionEntryRequest) HyperflexSoftwareDis
 	r.hyperflexSoftwareDistributionEntry = &hyperflexSoftwareDistributionEntry
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexSoftwareDistributionEntryRequest) IfMatch(ifMatch string) ApiUpdateHyperflexSoftwareDistributionEntryRequest {
 	r.ifMatch = &ifMatch
@@ -47129,8 +47769,8 @@ UpdateHyperflexSoftwareDistributionEntry Update a 'hyperflex.SoftwareDistributio
 func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionEntry(ctx _context.Context, moid string) ApiUpdateHyperflexSoftwareDistributionEntryRequest {
 	return ApiUpdateHyperflexSoftwareDistributionEntryRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47245,13 +47885,13 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionEntryExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47268,11 +47908,11 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionEntryExecute(r 
 }
 
 type ApiUpdateHyperflexSoftwareDistributionVersionRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                                  _context.Context
+	ApiService                           *HyperflexApiService
+	moid                                 string
 	hyperflexSoftwareDistributionVersion *HyperflexSoftwareDistributionVersion
-	ifMatch *string
+	ifMatch                              *string
 }
 
 // The &#39;hyperflex.SoftwareDistributionVersion&#39; resource to update.
@@ -47280,6 +47920,7 @@ func (r ApiUpdateHyperflexSoftwareDistributionVersionRequest) HyperflexSoftwareD
 	r.hyperflexSoftwareDistributionVersion = &hyperflexSoftwareDistributionVersion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexSoftwareDistributionVersionRequest) IfMatch(ifMatch string) ApiUpdateHyperflexSoftwareDistributionVersionRequest {
 	r.ifMatch = &ifMatch
@@ -47300,8 +47941,8 @@ UpdateHyperflexSoftwareDistributionVersion Update a 'hyperflex.SoftwareDistribut
 func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionVersion(ctx _context.Context, moid string) ApiUpdateHyperflexSoftwareDistributionVersionRequest {
 	return ApiUpdateHyperflexSoftwareDistributionVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47416,13 +48057,13 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionVersionExecute(
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47439,11 +48080,11 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareDistributionVersionExecute(
 }
 
 type ApiUpdateHyperflexSoftwareVersionPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                            _context.Context
+	ApiService                     *HyperflexApiService
+	moid                           string
 	hyperflexSoftwareVersionPolicy *HyperflexSoftwareVersionPolicy
-	ifMatch *string
+	ifMatch                        *string
 }
 
 // The &#39;hyperflex.SoftwareVersionPolicy&#39; resource to update.
@@ -47451,6 +48092,7 @@ func (r ApiUpdateHyperflexSoftwareVersionPolicyRequest) HyperflexSoftwareVersion
 	r.hyperflexSoftwareVersionPolicy = &hyperflexSoftwareVersionPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexSoftwareVersionPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexSoftwareVersionPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -47471,8 +48113,8 @@ UpdateHyperflexSoftwareVersionPolicy Update a 'hyperflex.SoftwareVersionPolicy' 
 func (a *HyperflexApiService) UpdateHyperflexSoftwareVersionPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexSoftwareVersionPolicyRequest {
 	return ApiUpdateHyperflexSoftwareVersionPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47587,13 +48229,13 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareVersionPolicyExecute(r ApiU
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47610,11 +48252,11 @@ func (a *HyperflexApiService) UpdateHyperflexSoftwareVersionPolicyExecute(r ApiU
 }
 
 type ApiUpdateHyperflexStorageContainerRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexStorageContainer *HyperflexStorageContainer
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.StorageContainer&#39; resource to update.
@@ -47622,6 +48264,7 @@ func (r ApiUpdateHyperflexStorageContainerRequest) HyperflexStorageContainer(hyp
 	r.hyperflexStorageContainer = &hyperflexStorageContainer
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexStorageContainerRequest) IfMatch(ifMatch string) ApiUpdateHyperflexStorageContainerRequest {
 	r.ifMatch = &ifMatch
@@ -47642,8 +48285,8 @@ UpdateHyperflexStorageContainer Update a 'hyperflex.StorageContainer' resource.
 func (a *HyperflexApiService) UpdateHyperflexStorageContainer(ctx _context.Context, moid string) ApiUpdateHyperflexStorageContainerRequest {
 	return ApiUpdateHyperflexStorageContainerRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47758,13 +48401,13 @@ func (a *HyperflexApiService) UpdateHyperflexStorageContainerExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47781,11 +48424,11 @@ func (a *HyperflexApiService) UpdateHyperflexStorageContainerExecute(r ApiUpdate
 }
 
 type ApiUpdateHyperflexSysConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                      _context.Context
+	ApiService               *HyperflexApiService
+	moid                     string
 	hyperflexSysConfigPolicy *HyperflexSysConfigPolicy
-	ifMatch *string
+	ifMatch                  *string
 }
 
 // The &#39;hyperflex.SysConfigPolicy&#39; resource to update.
@@ -47793,6 +48436,7 @@ func (r ApiUpdateHyperflexSysConfigPolicyRequest) HyperflexSysConfigPolicy(hyper
 	r.hyperflexSysConfigPolicy = &hyperflexSysConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexSysConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexSysConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -47813,8 +48457,8 @@ UpdateHyperflexSysConfigPolicy Update a 'hyperflex.SysConfigPolicy' resource.
 func (a *HyperflexApiService) UpdateHyperflexSysConfigPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexSysConfigPolicyRequest {
 	return ApiUpdateHyperflexSysConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -47929,13 +48573,13 @@ func (a *HyperflexApiService) UpdateHyperflexSysConfigPolicyExecute(r ApiUpdateH
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -47952,11 +48596,11 @@ func (a *HyperflexApiService) UpdateHyperflexSysConfigPolicyExecute(r ApiUpdateH
 }
 
 type ApiUpdateHyperflexUcsmConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                       _context.Context
+	ApiService                *HyperflexApiService
+	moid                      string
 	hyperflexUcsmConfigPolicy *HyperflexUcsmConfigPolicy
-	ifMatch *string
+	ifMatch                   *string
 }
 
 // The &#39;hyperflex.UcsmConfigPolicy&#39; resource to update.
@@ -47964,6 +48608,7 @@ func (r ApiUpdateHyperflexUcsmConfigPolicyRequest) HyperflexUcsmConfigPolicy(hyp
 	r.hyperflexUcsmConfigPolicy = &hyperflexUcsmConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexUcsmConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexUcsmConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -47984,8 +48629,8 @@ UpdateHyperflexUcsmConfigPolicy Update a 'hyperflex.UcsmConfigPolicy' resource.
 func (a *HyperflexApiService) UpdateHyperflexUcsmConfigPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexUcsmConfigPolicyRequest {
 	return ApiUpdateHyperflexUcsmConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -48100,13 +48745,13 @@ func (a *HyperflexApiService) UpdateHyperflexUcsmConfigPolicyExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -48123,11 +48768,11 @@ func (a *HyperflexApiService) UpdateHyperflexUcsmConfigPolicyExecute(r ApiUpdate
 }
 
 type ApiUpdateHyperflexVcenterConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *HyperflexApiService
+	moid                         string
 	hyperflexVcenterConfigPolicy *HyperflexVcenterConfigPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;hyperflex.VcenterConfigPolicy&#39; resource to update.
@@ -48135,6 +48780,7 @@ func (r ApiUpdateHyperflexVcenterConfigPolicyRequest) HyperflexVcenterConfigPoli
 	r.hyperflexVcenterConfigPolicy = &hyperflexVcenterConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexVcenterConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateHyperflexVcenterConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -48155,8 +48801,8 @@ UpdateHyperflexVcenterConfigPolicy Update a 'hyperflex.VcenterConfigPolicy' reso
 func (a *HyperflexApiService) UpdateHyperflexVcenterConfigPolicy(ctx _context.Context, moid string) ApiUpdateHyperflexVcenterConfigPolicyRequest {
 	return ApiUpdateHyperflexVcenterConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -48271,13 +48917,13 @@ func (a *HyperflexApiService) UpdateHyperflexVcenterConfigPolicyExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -48294,11 +48940,11 @@ func (a *HyperflexApiService) UpdateHyperflexVcenterConfigPolicyExecute(r ApiUpd
 }
 
 type ApiUpdateHyperflexVolumeRequest struct {
-	ctx _context.Context
-	ApiService *HyperflexApiService
-	moid string
+	ctx             _context.Context
+	ApiService      *HyperflexApiService
+	moid            string
 	hyperflexVolume *HyperflexVolume
-	ifMatch *string
+	ifMatch         *string
 }
 
 // The &#39;hyperflex.Volume&#39; resource to update.
@@ -48306,6 +48952,7 @@ func (r ApiUpdateHyperflexVolumeRequest) HyperflexVolume(hyperflexVolume Hyperfl
 	r.hyperflexVolume = &hyperflexVolume
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateHyperflexVolumeRequest) IfMatch(ifMatch string) ApiUpdateHyperflexVolumeRequest {
 	r.ifMatch = &ifMatch
@@ -48326,8 +48973,8 @@ UpdateHyperflexVolume Update a 'hyperflex.Volume' resource.
 func (a *HyperflexApiService) UpdateHyperflexVolume(ctx _context.Context, moid string) ApiUpdateHyperflexVolumeRequest {
 	return ApiUpdateHyperflexVolumeRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -48442,13 +49089,13 @@ func (a *HyperflexApiService) UpdateHyperflexVolumeExecute(r ApiUpdateHyperflexV
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

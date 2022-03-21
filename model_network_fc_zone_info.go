@@ -31,10 +31,10 @@ type NetworkFcZoneInfo struct {
 	// The number of Fibre Channel zones defined on a Fabric Interconnect.
 	ZoneCount *int64 `json:"ZoneCount,omitempty"`
 	// The maximum number of Fibre Channel zones allowed on a Fabric Interconnect.
-	ZoneLimit *int64 `json:"ZoneLimit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ZoneLimit            *int64                               `json:"ZoneLimit,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	NetworkElement       *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *NetworkFcZoneInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkFcZoneInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *NetworkFcZoneInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkFcZoneInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -393,10 +393,10 @@ func (o *NetworkFcZoneInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The number of Fibre Channel zones defined on a Fabric Interconnect.
 		ZoneCount *int64 `json:"ZoneCount,omitempty"`
 		// The maximum number of Fibre Channel zones allowed on a Fabric Interconnect.
-		ZoneLimit *int64 `json:"ZoneLimit,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		NetworkElement *NetworkElementRelationship `json:"NetworkElement,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		ZoneLimit           *int64                               `json:"ZoneLimit,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		NetworkElement      *NetworkElementRelationship          `json:"NetworkElement,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varNetworkFcZoneInfoWithoutEmbeddedStruct := NetworkFcZoneInfoWithoutEmbeddedStruct{}
@@ -499,5 +499,3 @@ func (v *NullableNetworkFcZoneInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

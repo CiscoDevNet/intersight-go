@@ -18,32 +18,31 @@ import (
 
 // ResourcepoolLeaseResourceResponse - The response body of a HTTP GET request for the 'resourcepool.LeaseResource' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'resourcepool.LeaseResource' resources.
 type ResourcepoolLeaseResourceResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform          *MoAggregateTransform
+	MoDocumentCount               *MoDocumentCount
+	MoTagSummary                  *MoTagSummary
 	ResourcepoolLeaseResourceList *ResourcepoolLeaseResourceList
 }
 
 // MoAggregateTransformAsResourcepoolLeaseResourceResponse is a convenience function that returns MoAggregateTransform wrapped in ResourcepoolLeaseResourceResponse
 func MoAggregateTransformAsResourcepoolLeaseResourceResponse(v *MoAggregateTransform) ResourcepoolLeaseResourceResponse {
-	return ResourcepoolLeaseResourceResponse{ MoAggregateTransform: v}
+	return ResourcepoolLeaseResourceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsResourcepoolLeaseResourceResponse is a convenience function that returns MoDocumentCount wrapped in ResourcepoolLeaseResourceResponse
 func MoDocumentCountAsResourcepoolLeaseResourceResponse(v *MoDocumentCount) ResourcepoolLeaseResourceResponse {
-	return ResourcepoolLeaseResourceResponse{ MoDocumentCount: v}
+	return ResourcepoolLeaseResourceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsResourcepoolLeaseResourceResponse is a convenience function that returns MoTagSummary wrapped in ResourcepoolLeaseResourceResponse
 func MoTagSummaryAsResourcepoolLeaseResourceResponse(v *MoTagSummary) ResourcepoolLeaseResourceResponse {
-	return ResourcepoolLeaseResourceResponse{ MoTagSummary: v}
+	return ResourcepoolLeaseResourceResponse{MoTagSummary: v}
 }
 
 // ResourcepoolLeaseResourceListAsResourcepoolLeaseResourceResponse is a convenience function that returns ResourcepoolLeaseResourceList wrapped in ResourcepoolLeaseResourceResponse
 func ResourcepoolLeaseResourceListAsResourcepoolLeaseResourceResponse(v *ResourcepoolLeaseResourceList) ResourcepoolLeaseResourceResponse {
-	return ResourcepoolLeaseResourceResponse{ ResourcepoolLeaseResourceList: v}
+	return ResourcepoolLeaseResourceResponse{ResourcepoolLeaseResourceList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourcepoolLeaseResourceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ResourcepoolLeaseResourceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourcepoolLeaseResourceResponse) GetActualInstance() (interface{}) {
+func (obj *ResourcepoolLeaseResourceResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableResourcepoolLeaseResourceResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

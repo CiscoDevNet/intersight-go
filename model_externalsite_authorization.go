@@ -33,8 +33,8 @@ type ExternalsiteAuthorization struct {
 	// The repository type to which this authorization will be requested. Cisco is the only available repository today. * `cisco` - Cisco as an external site from where the resources like image will be downloaded.
 	RepositoryType *string `json:"RepositoryType,omitempty"`
 	// The username that has permission to download the image from external repository like cisco.com.
-	UserId *string `json:"UserId,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	UserId               *string                 `json:"UserId,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *ExternalsiteAuthorization) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ExternalsiteAuthorization) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *ExternalsiteAuthorization) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ExternalsiteAuthorization) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -364,7 +364,7 @@ func (o *ExternalsiteAuthorization) UnmarshalJSON(bytes []byte) (err error) {
 		// The repository type to which this authorization will be requested. Cisco is the only available repository today. * `cisco` - Cisco as an external site from where the resources like image will be downloaded.
 		RepositoryType *string `json:"RepositoryType,omitempty"`
 		// The username that has permission to download the image from external repository like cisco.com.
-		UserId *string `json:"UserId,omitempty"`
+		UserId  *string                 `json:"UserId,omitempty"`
 		Account *IamAccountRelationship `json:"Account,omitempty"`
 	}
 
@@ -466,5 +466,3 @@ func (v *NullableExternalsiteAuthorization) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

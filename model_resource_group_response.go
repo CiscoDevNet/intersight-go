@@ -19,31 +19,30 @@ import (
 // ResourceGroupResponse - The response body of a HTTP GET request for the 'resource.Group' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'resource.Group' resources.
 type ResourceGroupResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
-	ResourceGroupList *ResourceGroupList
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
+	ResourceGroupList    *ResourceGroupList
 }
 
 // MoAggregateTransformAsResourceGroupResponse is a convenience function that returns MoAggregateTransform wrapped in ResourceGroupResponse
 func MoAggregateTransformAsResourceGroupResponse(v *MoAggregateTransform) ResourceGroupResponse {
-	return ResourceGroupResponse{ MoAggregateTransform: v}
+	return ResourceGroupResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsResourceGroupResponse is a convenience function that returns MoDocumentCount wrapped in ResourceGroupResponse
 func MoDocumentCountAsResourceGroupResponse(v *MoDocumentCount) ResourceGroupResponse {
-	return ResourceGroupResponse{ MoDocumentCount: v}
+	return ResourceGroupResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsResourceGroupResponse is a convenience function that returns MoTagSummary wrapped in ResourceGroupResponse
 func MoTagSummaryAsResourceGroupResponse(v *MoTagSummary) ResourceGroupResponse {
-	return ResourceGroupResponse{ MoTagSummary: v}
+	return ResourceGroupResponse{MoTagSummary: v}
 }
 
 // ResourceGroupListAsResourceGroupResponse is a convenience function that returns ResourceGroupList wrapped in ResourceGroupResponse
 func ResourceGroupListAsResourceGroupResponse(v *ResourceGroupList) ResourceGroupResponse {
-	return ResourceGroupResponse{ ResourceGroupList: v}
+	return ResourceGroupResponse{ResourceGroupList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourceGroupResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src ResourceGroupResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourceGroupResponse) GetActualInstance() (interface{}) {
+func (obj *ResourceGroupResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableResourceGroupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

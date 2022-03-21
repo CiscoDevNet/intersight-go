@@ -57,7 +57,7 @@ type NiaapiSoftwareEolAllOf struct {
 	// The URL of this migration notice.
 	MigrationUrl *string `json:"MigrationUrl,omitempty"`
 	// Software end of life notice URL link to the notice webpage.
-	SoftwareEolUrl *string `json:"SoftwareEolUrl,omitempty"`
+	SoftwareEolUrl       *string `json:"SoftwareEolUrl,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -95,7 +95,7 @@ func (o *NiaapiSoftwareEolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiSoftwareEolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -119,7 +119,7 @@ func (o *NiaapiSoftwareEolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiSoftwareEolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -847,5 +847,3 @@ func (v *NullableNiaapiSoftwareEolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

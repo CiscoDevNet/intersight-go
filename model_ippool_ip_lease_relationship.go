@@ -19,19 +19,18 @@ import (
 // IppoolIpLeaseRelationship - A relationship to the 'ippool.IpLease' resource, or the expanded 'ippool.IpLease' resource, or the 'null' value.
 type IppoolIpLeaseRelationship struct {
 	IppoolIpLease *IppoolIpLease
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // IppoolIpLeaseAsIppoolIpLeaseRelationship is a convenience function that returns IppoolIpLease wrapped in IppoolIpLeaseRelationship
 func IppoolIpLeaseAsIppoolIpLeaseRelationship(v *IppoolIpLease) IppoolIpLeaseRelationship {
-	return IppoolIpLeaseRelationship{ IppoolIpLease: v}
+	return IppoolIpLeaseRelationship{IppoolIpLease: v}
 }
 
 // MoMoRefAsIppoolIpLeaseRelationship is a convenience function that returns MoMoRef wrapped in IppoolIpLeaseRelationship
 func MoMoRefAsIppoolIpLeaseRelationship(v *MoMoRef) IppoolIpLeaseRelationship {
-	return IppoolIpLeaseRelationship{ MoMoRef: v}
+	return IppoolIpLeaseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IppoolIpLeaseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IppoolIpLeaseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IppoolIpLeaseRelationship) GetActualInstance() (interface{}) {
+func (obj *IppoolIpLeaseRelationship) GetActualInstance() interface{} {
 	if obj.IppoolIpLease != nil {
 		return obj.IppoolIpLease
 	}
@@ -137,5 +136,3 @@ func (v *NullableIppoolIpLeaseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

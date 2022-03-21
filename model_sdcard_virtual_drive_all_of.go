@@ -22,7 +22,7 @@ type SdcardVirtualDriveAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Enable the respective virtual drive to be available to the host.
-	Enable *bool `json:"Enable,omitempty"`
+	Enable               *bool `json:"Enable,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -60,7 +60,7 @@ func (o *SdcardVirtualDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *SdcardVirtualDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -84,7 +84,7 @@ func (o *SdcardVirtualDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *SdcardVirtualDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -200,5 +200,3 @@ func (v *NullableSdcardVirtualDriveAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

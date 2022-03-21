@@ -20,8 +20,8 @@ type HyperflexServerModelEntryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Constraint NullableHyperflexAppSettingConstraint `json:"Constraint,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	Constraint           NullableHyperflexAppSettingConstraint `json:"Constraint,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *HyperflexServerModelEntryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModelEntryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *HyperflexServerModelEntryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerModelEntryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -111,7 +111,7 @@ func (o *HyperflexServerModelEntryAllOf) GetConstraint() HyperflexAppSettingCons
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexServerModelEntryAllOf) GetConstraintOk() (*HyperflexAppSettingConstraint, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Constraint.Get(), o.Constraint.IsSet()
@@ -130,6 +130,7 @@ func (o *HyperflexServerModelEntryAllOf) HasConstraint() bool {
 func (o *HyperflexServerModelEntryAllOf) SetConstraint(v HyperflexAppSettingConstraint) {
 	o.Constraint.Set(&v)
 }
+
 // SetConstraintNil sets the value for Constraint to be an explicit nil
 func (o *HyperflexServerModelEntryAllOf) SetConstraintNil() {
 	o.Constraint.Set(nil)
@@ -213,5 +214,3 @@ func (v *NullableHyperflexServerModelEntryAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

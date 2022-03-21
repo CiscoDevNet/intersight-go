@@ -20,11 +20,11 @@ type MacpoolPoolAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	MacBlocks []MacpoolBlock `json:"MacBlocks,omitempty"`
+	ObjectType string         `json:"ObjectType"`
+	MacBlocks  []MacpoolBlock `json:"MacBlocks,omitempty"`
 	// An array of relationships to macpoolIdBlock resources.
-	BlockHeads []MacpoolIdBlockRelationship `json:"BlockHeads,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	BlockHeads           []MacpoolIdBlockRelationship          `json:"BlockHeads,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *MacpoolPoolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolPoolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *MacpoolPoolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MacpoolPoolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -103,7 +103,7 @@ func (o *MacpoolPoolAllOf) SetObjectType(v string) {
 
 // GetMacBlocks returns the MacBlocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MacpoolPoolAllOf) GetMacBlocks() []MacpoolBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []MacpoolBlock
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *MacpoolPoolAllOf) SetMacBlocks(v []MacpoolBlock) {
 
 // GetBlockHeads returns the BlockHeads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MacpoolPoolAllOf) GetBlockHeads() []MacpoolIdBlockRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MacpoolIdBlockRelationship
 		return ret
 	}
@@ -280,5 +280,3 @@ func (v *NullableMacpoolPoolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

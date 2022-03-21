@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // VirtualizationBaseVirtualMachine Common attributes of a virtual machine managed by a  hypervisor. Serves as a base class for all concrete virtual machine types. A virtual machine (VM) is what a user and applications interact with. A VM usually runs a guest OS and applications run on the guest OS.
@@ -26,23 +26,23 @@ type VirtualizationBaseVirtualMachine struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// Time when this VM booted up.
-	BootTime *time.Time `json:"BootTime,omitempty"`
+	BootTime *time.Time                `json:"BootTime,omitempty"`
 	Capacity NullableInfraHardwareInfo `json:"Capacity,omitempty"`
 	// Average CPU utilization percentage derived as a ratio of CPU used to CPU allocated. The value is calculated whenever inventory is performed.
-	CpuUtilization *float32 `json:"CpuUtilization,omitempty"`
-	GuestInfo NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
+	CpuUtilization *float32                        `json:"CpuUtilization,omitempty"`
+	GuestInfo      NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
 	// Type of hypervisor where the virtual machine is hosted for example ESXi. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 	HypervisorType *string `json:"HypervisorType,omitempty"`
 	// The internally generated identity of this VM. This entity is not manipulated by users. It aids in uniquely identifying the virtual machine object. For VMware, this is MOR (managed object reference).
-	Identity *string `json:"Identity,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	Identity       *string                              `json:"Identity,omitempty"`
+	IpAddress      []string                             `json:"IpAddress,omitempty"`
 	MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
 	// Average memory utilization percentage derived as a ratio of memory used to available memory. The value is calculated whenever inventory is performed.
 	MemoryUtilization *float32 `json:"MemoryUtilization,omitempty"`
 	// User-provided name to identify the virtual machine.
 	Name *string `json:"Name,omitempty"`
 	// Power state of the virtual machine. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
-	PowerState *string `json:"PowerState,omitempty"`
+	PowerState        *string                               `json:"PowerState,omitempty"`
 	ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
 	// Cloud platform, where the virtual machine is launched. * `Unknown` - Cloud provider is not known. * `VMwarevSphere` - Cloud provider named VMware vSphere. * `AmazonWebServices` - Cloud provider named Amazon Web Services. * `MicrosoftAzure` - Cloud provider named Microsoft Azure. * `GoogleCloudPlatform` - Cloud provider named Google Cloud Platform. * `CiscoIntersightWorkloadEngine` - Cloud provider named Cisco Intersight Workload Engine.
 	Provider *string `json:"Provider,omitempty"`
@@ -51,7 +51,7 @@ type VirtualizationBaseVirtualMachine struct {
 	// The uuid of this virtual machine. The uuid is internally generated and not user specified.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Time when this virtualmachine is created.
-	VmCreationTime *time.Time `json:"VmCreationTime,omitempty"`
+	VmCreationTime       *time.Time `json:"VmCreationTime,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -105,7 +105,7 @@ func (o *VirtualizationBaseVirtualMachine) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualMachine) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -129,7 +129,7 @@ func (o *VirtualizationBaseVirtualMachine) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseVirtualMachine) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -185,7 +185,7 @@ func (o *VirtualizationBaseVirtualMachine) GetCapacity() InfraHardwareInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachine) GetCapacityOk() (*InfraHardwareInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Capacity.Get(), o.Capacity.IsSet()
@@ -204,6 +204,7 @@ func (o *VirtualizationBaseVirtualMachine) HasCapacity() bool {
 func (o *VirtualizationBaseVirtualMachine) SetCapacity(v InfraHardwareInfo) {
 	o.Capacity.Set(&v)
 }
+
 // SetCapacityNil sets the value for Capacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachine) SetCapacityNil() {
 	o.Capacity.Set(nil)
@@ -259,7 +260,7 @@ func (o *VirtualizationBaseVirtualMachine) GetGuestInfo() VirtualizationGuestInf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachine) GetGuestInfoOk() (*VirtualizationGuestInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.GuestInfo.Get(), o.GuestInfo.IsSet()
@@ -278,6 +279,7 @@ func (o *VirtualizationBaseVirtualMachine) HasGuestInfo() bool {
 func (o *VirtualizationBaseVirtualMachine) SetGuestInfo(v VirtualizationGuestInfo) {
 	o.GuestInfo.Set(&v)
 }
+
 // SetGuestInfoNil sets the value for GuestInfo to be an explicit nil
 func (o *VirtualizationBaseVirtualMachine) SetGuestInfoNil() {
 	o.GuestInfo.Set(nil)
@@ -354,7 +356,7 @@ func (o *VirtualizationBaseVirtualMachine) SetIdentity(v string) {
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationBaseVirtualMachine) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -398,7 +400,7 @@ func (o *VirtualizationBaseVirtualMachine) GetMemoryCapacity() VirtualizationMem
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachine) GetMemoryCapacityOk() (*VirtualizationMemoryCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryCapacity.Get(), o.MemoryCapacity.IsSet()
@@ -417,6 +419,7 @@ func (o *VirtualizationBaseVirtualMachine) HasMemoryCapacity() bool {
 func (o *VirtualizationBaseVirtualMachine) SetMemoryCapacity(v VirtualizationMemoryCapacity) {
 	o.MemoryCapacity.Set(&v)
 }
+
 // SetMemoryCapacityNil sets the value for MemoryCapacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachine) SetMemoryCapacityNil() {
 	o.MemoryCapacity.Set(nil)
@@ -536,7 +539,7 @@ func (o *VirtualizationBaseVirtualMachine) GetProcessorCapacity() Virtualization
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseVirtualMachine) GetProcessorCapacityOk() (*VirtualizationComputeCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProcessorCapacity.Get(), o.ProcessorCapacity.IsSet()
@@ -555,6 +558,7 @@ func (o *VirtualizationBaseVirtualMachine) HasProcessorCapacity() bool {
 func (o *VirtualizationBaseVirtualMachine) SetProcessorCapacity(v VirtualizationComputeCapacity) {
 	o.ProcessorCapacity.Set(&v)
 }
+
 // SetProcessorCapacityNil sets the value for ProcessorCapacity to be an explicit nil
 func (o *VirtualizationBaseVirtualMachine) SetProcessorCapacityNil() {
 	o.ProcessorCapacity.Set(nil)
@@ -772,23 +776,23 @@ func (o *VirtualizationBaseVirtualMachine) UnmarshalJSON(bytes []byte) (err erro
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ObjectType string `json:"ObjectType"`
 		// Time when this VM booted up.
-		BootTime *time.Time `json:"BootTime,omitempty"`
+		BootTime *time.Time                `json:"BootTime,omitempty"`
 		Capacity NullableInfraHardwareInfo `json:"Capacity,omitempty"`
 		// Average CPU utilization percentage derived as a ratio of CPU used to CPU allocated. The value is calculated whenever inventory is performed.
-		CpuUtilization *float32 `json:"CpuUtilization,omitempty"`
-		GuestInfo NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
+		CpuUtilization *float32                        `json:"CpuUtilization,omitempty"`
+		GuestInfo      NullableVirtualizationGuestInfo `json:"GuestInfo,omitempty"`
 		// Type of hypervisor where the virtual machine is hosted for example ESXi. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 		HypervisorType *string `json:"HypervisorType,omitempty"`
 		// The internally generated identity of this VM. This entity is not manipulated by users. It aids in uniquely identifying the virtual machine object. For VMware, this is MOR (managed object reference).
-		Identity *string `json:"Identity,omitempty"`
-		IpAddress []string `json:"IpAddress,omitempty"`
+		Identity       *string                              `json:"Identity,omitempty"`
+		IpAddress      []string                             `json:"IpAddress,omitempty"`
 		MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
 		// Average memory utilization percentage derived as a ratio of memory used to available memory. The value is calculated whenever inventory is performed.
 		MemoryUtilization *float32 `json:"MemoryUtilization,omitempty"`
 		// User-provided name to identify the virtual machine.
 		Name *string `json:"Name,omitempty"`
 		// Power state of the virtual machine. * `Unknown` - The entity's power state is unknown. * `PoweringOn` - The entity is powering on. * `PoweredOn` - The entity is powered on. * `PoweringOff` - The entity is powering off. * `PoweredOff` - The entity is powered down. * `StandBy` - The entity is in standby mode. * `Paused` - The entity is in pause state. * `Rebooting` - The entity reboot is in progress. * `` - The entity's power state is not available.
-		PowerState *string `json:"PowerState,omitempty"`
+		PowerState        *string                               `json:"PowerState,omitempty"`
 		ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
 		// Cloud platform, where the virtual machine is launched. * `Unknown` - Cloud provider is not known. * `VMwarevSphere` - Cloud provider named VMware vSphere. * `AmazonWebServices` - Cloud provider named Amazon Web Services. * `MicrosoftAzure` - Cloud provider named Microsoft Azure. * `GoogleCloudPlatform` - Cloud provider named Google Cloud Platform. * `CiscoIntersightWorkloadEngine` - Cloud provider named Cisco Intersight Workload Engine.
 		Provider *string `json:"Provider,omitempty"`
@@ -918,5 +922,3 @@ func (v *NullableVirtualizationBaseVirtualMachine) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

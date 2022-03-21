@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ApplianceUpgrade Upgrade tracks the Intersight Appliance's software upgrades. Intersight Appliance's upgrade service automatically creates an Upgrade managed object when there is a pending software upgrade. User may modify an active Upgrade managed object to reset the software upgrade start time. However, user may not be able to postpone an upgrade beyond the limit enforced by the upgrade grace period set in the software manifest.
@@ -28,9 +28,9 @@ type ApplianceUpgrade struct {
 	// Indicates if the software upgrade is active or not.
 	Active *bool `json:"Active,omitempty"`
 	// Indicates that the request was automatically created by the system.
-	AutoCreated *bool `json:"AutoCreated,omitempty"`
-	CompletedPhases []OnpremUpgradePhase `json:"CompletedPhases,omitempty"`
-	CurrentPhase NullableOnpremUpgradePhase `json:"CurrentPhase,omitempty"`
+	AutoCreated     *bool                      `json:"AutoCreated,omitempty"`
+	CompletedPhases []OnpremUpgradePhase       `json:"CompletedPhases,omitempty"`
+	CurrentPhase    NullableOnpremUpgradePhase `json:"CurrentPhase,omitempty"`
 	// Description of the software upgrade.
 	Description *string `json:"Description,omitempty"`
 	// Elapsed time in seconds during the software upgrade.
@@ -44,25 +44,25 @@ type ApplianceUpgrade struct {
 	// Track if software upgrade is upgrading or rolling back.
 	IsRollingBack *bool `json:"IsRollingBack,omitempty"`
 	// Indicates if the upgrade is triggered by user or due to schedule.
-	IsUserTriggered *bool `json:"IsUserTriggered,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	IsUserTriggered *bool    `json:"IsUserTriggered,omitempty"`
+	Messages        []string `json:"Messages,omitempty"`
 	// Track if rollback is needed.
-	RollbackNeeded *bool `json:"RollbackNeeded,omitempty"`
+	RollbackNeeded *bool                `json:"RollbackNeeded,omitempty"`
 	RollbackPhases []OnpremUpgradePhase `json:"RollbackPhases,omitempty"`
 	// Status of the Intersight Appliance's software rollback status.
-	RollbackStatus *string `json:"RollbackStatus,omitempty"`
-	Services []string `json:"Services,omitempty"`
+	RollbackStatus *string  `json:"RollbackStatus,omitempty"`
+	Services       []string `json:"Services,omitempty"`
 	// Start date of the software upgrade. UI can modify startTime to re-schedule an upgrade.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// Status of the Intersight Appliance's software upgrade.
 	Status *string `json:"Status,omitempty"`
 	// TotalPhase represents the total number of the upgradePhases for one upgrade.
-	TotalPhases *int64 `json:"TotalPhases,omitempty"`
-	UiPackages []string `json:"UiPackages,omitempty"`
+	TotalPhases *int64   `json:"TotalPhases,omitempty"`
+	UiPackages  []string `json:"UiPackages,omitempty"`
 	// Software upgrade manifest's version.
-	Version *string `json:"Version,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
-	ImageBundle *ApplianceImageBundleRelationship `json:"ImageBundle,omitempty"`
+	Version              *string                           `json:"Version,omitempty"`
+	Account              *IamAccountRelationship           `json:"Account,omitempty"`
+	ImageBundle          *ApplianceImageBundleRelationship `json:"ImageBundle,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -108,7 +108,7 @@ func (o *ApplianceUpgrade) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgrade) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -132,7 +132,7 @@ func (o *ApplianceUpgrade) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceUpgrade) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -209,7 +209,7 @@ func (o *ApplianceUpgrade) SetAutoCreated(v bool) {
 
 // GetCompletedPhases returns the CompletedPhases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceUpgrade) GetCompletedPhases() []OnpremUpgradePhase {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremUpgradePhase
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *ApplianceUpgrade) GetCurrentPhase() OnpremUpgradePhase {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplianceUpgrade) GetCurrentPhaseOk() (*OnpremUpgradePhase, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CurrentPhase.Get(), o.CurrentPhase.IsSet()
@@ -272,6 +272,7 @@ func (o *ApplianceUpgrade) HasCurrentPhase() bool {
 func (o *ApplianceUpgrade) SetCurrentPhase(v OnpremUpgradePhase) {
 	o.CurrentPhase.Set(&v)
 }
+
 // SetCurrentPhaseNil sets the value for CurrentPhase to be an explicit nil
 func (o *ApplianceUpgrade) SetCurrentPhaseNil() {
 	o.CurrentPhase.Set(nil)
@@ -508,7 +509,7 @@ func (o *ApplianceUpgrade) SetIsUserTriggered(v bool) {
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceUpgrade) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -573,7 +574,7 @@ func (o *ApplianceUpgrade) SetRollbackNeeded(v bool) {
 
 // GetRollbackPhases returns the RollbackPhases field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceUpgrade) GetRollbackPhases() []OnpremUpgradePhase {
-	if o == nil  {
+	if o == nil {
 		var ret []OnpremUpgradePhase
 		return ret
 	}
@@ -638,7 +639,7 @@ func (o *ApplianceUpgrade) SetRollbackStatus(v string) {
 
 // GetServices returns the Services field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceUpgrade) GetServices() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -767,7 +768,7 @@ func (o *ApplianceUpgrade) SetTotalPhases(v int64) {
 
 // GetUiPackages returns the UiPackages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceUpgrade) GetUiPackages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -996,9 +997,9 @@ func (o *ApplianceUpgrade) UnmarshalJSON(bytes []byte) (err error) {
 		// Indicates if the software upgrade is active or not.
 		Active *bool `json:"Active,omitempty"`
 		// Indicates that the request was automatically created by the system.
-		AutoCreated *bool `json:"AutoCreated,omitempty"`
-		CompletedPhases []OnpremUpgradePhase `json:"CompletedPhases,omitempty"`
-		CurrentPhase NullableOnpremUpgradePhase `json:"CurrentPhase,omitempty"`
+		AutoCreated     *bool                      `json:"AutoCreated,omitempty"`
+		CompletedPhases []OnpremUpgradePhase       `json:"CompletedPhases,omitempty"`
+		CurrentPhase    NullableOnpremUpgradePhase `json:"CurrentPhase,omitempty"`
 		// Description of the software upgrade.
 		Description *string `json:"Description,omitempty"`
 		// Elapsed time in seconds during the software upgrade.
@@ -1012,24 +1013,24 @@ func (o *ApplianceUpgrade) UnmarshalJSON(bytes []byte) (err error) {
 		// Track if software upgrade is upgrading or rolling back.
 		IsRollingBack *bool `json:"IsRollingBack,omitempty"`
 		// Indicates if the upgrade is triggered by user or due to schedule.
-		IsUserTriggered *bool `json:"IsUserTriggered,omitempty"`
-		Messages []string `json:"Messages,omitempty"`
+		IsUserTriggered *bool    `json:"IsUserTriggered,omitempty"`
+		Messages        []string `json:"Messages,omitempty"`
 		// Track if rollback is needed.
-		RollbackNeeded *bool `json:"RollbackNeeded,omitempty"`
+		RollbackNeeded *bool                `json:"RollbackNeeded,omitempty"`
 		RollbackPhases []OnpremUpgradePhase `json:"RollbackPhases,omitempty"`
 		// Status of the Intersight Appliance's software rollback status.
-		RollbackStatus *string `json:"RollbackStatus,omitempty"`
-		Services []string `json:"Services,omitempty"`
+		RollbackStatus *string  `json:"RollbackStatus,omitempty"`
+		Services       []string `json:"Services,omitempty"`
 		// Start date of the software upgrade. UI can modify startTime to re-schedule an upgrade.
 		StartTime *time.Time `json:"StartTime,omitempty"`
 		// Status of the Intersight Appliance's software upgrade.
 		Status *string `json:"Status,omitempty"`
 		// TotalPhase represents the total number of the upgradePhases for one upgrade.
-		TotalPhases *int64 `json:"TotalPhases,omitempty"`
-		UiPackages []string `json:"UiPackages,omitempty"`
+		TotalPhases *int64   `json:"TotalPhases,omitempty"`
+		UiPackages  []string `json:"UiPackages,omitempty"`
 		// Software upgrade manifest's version.
-		Version *string `json:"Version,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Version     *string                           `json:"Version,omitempty"`
+		Account     *IamAccountRelationship           `json:"Account,omitempty"`
 		ImageBundle *ApplianceImageBundleRelationship `json:"ImageBundle,omitempty"`
 	}
 
@@ -1165,5 +1166,3 @@ func (v *NullableApplianceUpgrade) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

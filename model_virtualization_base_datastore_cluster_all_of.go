@@ -20,8 +20,8 @@ type VirtualizationBaseDatastoreClusterAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	Capacity NullableVirtualizationStorageCapacity `json:"Capacity,omitempty"`
+	ObjectType string                                `json:"ObjectType"`
+	Capacity   NullableVirtualizationStorageCapacity `json:"Capacity,omitempty"`
 	// Number of datastores present in this datastore cluster.
 	DatastoreCount *int64 `json:"DatastoreCount,omitempty"`
 	// Number of hosts attached to or supported-by this datastore cluster.
@@ -33,7 +33,7 @@ type VirtualizationBaseDatastoreClusterAllOf struct {
 	// Type of the Datastore Cluster. * `Unknown` - The nature of the file system is unknown. * `VMFS` - It is a Virtual Machine Filesystem. * `NFS` - It is a Network File System. * `vSAN` - It is a virtual Storage Area Network file system. * `VirtualVolume` - A Virtual Volume datastore represents a storage container in a hypervisor server.
 	Type *string `json:"Type,omitempty"`
 	// Number of virtual machines relying on (using) this datastore cluster.
-	VmCount *int64 `json:"VmCount,omitempty"`
+	VmCount              *int64 `json:"VmCount,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *VirtualizationBaseDatastoreClusterAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseDatastoreClusterAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *VirtualizationBaseDatastoreClusterAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseDatastoreClusterAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -127,7 +127,7 @@ func (o *VirtualizationBaseDatastoreClusterAllOf) GetCapacity() VirtualizationSt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseDatastoreClusterAllOf) GetCapacityOk() (*VirtualizationStorageCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Capacity.Get(), o.Capacity.IsSet()
@@ -146,6 +146,7 @@ func (o *VirtualizationBaseDatastoreClusterAllOf) HasCapacity() bool {
 func (o *VirtualizationBaseDatastoreClusterAllOf) SetCapacity(v VirtualizationStorageCapacity) {
 	o.Capacity.Set(&v)
 }
+
 // SetCapacityNil sets the value for Capacity to be an explicit nil
 func (o *VirtualizationBaseDatastoreClusterAllOf) SetCapacityNil() {
 	o.Capacity.Set(nil)
@@ -445,5 +446,3 @@ func (v *NullableVirtualizationBaseDatastoreClusterAllOf) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

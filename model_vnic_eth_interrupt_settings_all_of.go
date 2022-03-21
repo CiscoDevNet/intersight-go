@@ -28,7 +28,7 @@ type VnicEthInterruptSettingsAllOf struct {
 	// The number of interrupt resources to allocate. Typical value is be equal to the number of completion queue resources.
 	Count *int64 `json:"Count,omitempty"`
 	// Preferred driver interrupt mode. This can be one of the following:- MSIx - Message Signaled Interrupts (MSI) with the optional extension. MSI  - MSI only. INTx - PCI INTx interrupts. MSIx is the recommended option. * `MSIx` - Message Signaled Interrupt (MSI) mechanism with the optional extension (MSIx). MSIx is the recommended and default option. * `MSI` - Message Signaled Interrupt (MSI) mechanism that treats messages as interrupts. * `INTx` - Line-based interrupt (INTx) mechanism similar to the one used in Legacy systems.
-	Mode *string `json:"Mode,omitempty"`
+	Mode                 *string `json:"Mode,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *VnicEthInterruptSettingsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthInterruptSettingsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *VnicEthInterruptSettingsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicEthInterruptSettingsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -334,5 +334,3 @@ func (v *NullableVnicEthInterruptSettingsAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

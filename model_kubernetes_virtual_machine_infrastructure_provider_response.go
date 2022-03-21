@@ -19,31 +19,30 @@ import (
 // KubernetesVirtualMachineInfrastructureProviderResponse - The response body of a HTTP GET request for the 'kubernetes.VirtualMachineInfrastructureProvider' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.VirtualMachineInfrastructureProvider' resources.
 type KubernetesVirtualMachineInfrastructureProviderResponse struct {
 	KubernetesVirtualMachineInfrastructureProviderList *KubernetesVirtualMachineInfrastructureProviderList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                               *MoAggregateTransform
+	MoDocumentCount                                    *MoDocumentCount
+	MoTagSummary                                       *MoTagSummary
 }
 
 // KubernetesVirtualMachineInfrastructureProviderListAsKubernetesVirtualMachineInfrastructureProviderResponse is a convenience function that returns KubernetesVirtualMachineInfrastructureProviderList wrapped in KubernetesVirtualMachineInfrastructureProviderResponse
 func KubernetesVirtualMachineInfrastructureProviderListAsKubernetesVirtualMachineInfrastructureProviderResponse(v *KubernetesVirtualMachineInfrastructureProviderList) KubernetesVirtualMachineInfrastructureProviderResponse {
-	return KubernetesVirtualMachineInfrastructureProviderResponse{ KubernetesVirtualMachineInfrastructureProviderList: v}
+	return KubernetesVirtualMachineInfrastructureProviderResponse{KubernetesVirtualMachineInfrastructureProviderList: v}
 }
 
 // MoAggregateTransformAsKubernetesVirtualMachineInfrastructureProviderResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesVirtualMachineInfrastructureProviderResponse
 func MoAggregateTransformAsKubernetesVirtualMachineInfrastructureProviderResponse(v *MoAggregateTransform) KubernetesVirtualMachineInfrastructureProviderResponse {
-	return KubernetesVirtualMachineInfrastructureProviderResponse{ MoAggregateTransform: v}
+	return KubernetesVirtualMachineInfrastructureProviderResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesVirtualMachineInfrastructureProviderResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesVirtualMachineInfrastructureProviderResponse
 func MoDocumentCountAsKubernetesVirtualMachineInfrastructureProviderResponse(v *MoDocumentCount) KubernetesVirtualMachineInfrastructureProviderResponse {
-	return KubernetesVirtualMachineInfrastructureProviderResponse{ MoDocumentCount: v}
+	return KubernetesVirtualMachineInfrastructureProviderResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesVirtualMachineInfrastructureProviderResponse is a convenience function that returns MoTagSummary wrapped in KubernetesVirtualMachineInfrastructureProviderResponse
 func MoTagSummaryAsKubernetesVirtualMachineInfrastructureProviderResponse(v *MoTagSummary) KubernetesVirtualMachineInfrastructureProviderResponse {
-	return KubernetesVirtualMachineInfrastructureProviderResponse{ MoTagSummary: v}
+	return KubernetesVirtualMachineInfrastructureProviderResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesVirtualMachineInfrastructureProviderResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesVirtualMachineInfrastructureProviderResponse) MarshalJSON() 
 }
 
 // Get the actual instance
-func (obj *KubernetesVirtualMachineInfrastructureProviderResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesVirtualMachineInfrastructureProviderResponse) GetActualInstance() interface{} {
 	if obj.KubernetesVirtualMachineInfrastructureProviderList != nil {
 		return obj.KubernetesVirtualMachineInfrastructureProviderList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesVirtualMachineInfrastructureProviderResponse) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

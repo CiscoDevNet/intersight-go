@@ -19,31 +19,30 @@ import (
 // IpmioverlanPolicyResponse - The response body of a HTTP GET request for the 'ipmioverlan.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ipmioverlan.Policy' resources.
 type IpmioverlanPolicyResponse struct {
 	IpmioverlanPolicyList *IpmioverlanPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // IpmioverlanPolicyListAsIpmioverlanPolicyResponse is a convenience function that returns IpmioverlanPolicyList wrapped in IpmioverlanPolicyResponse
 func IpmioverlanPolicyListAsIpmioverlanPolicyResponse(v *IpmioverlanPolicyList) IpmioverlanPolicyResponse {
-	return IpmioverlanPolicyResponse{ IpmioverlanPolicyList: v}
+	return IpmioverlanPolicyResponse{IpmioverlanPolicyList: v}
 }
 
 // MoAggregateTransformAsIpmioverlanPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in IpmioverlanPolicyResponse
 func MoAggregateTransformAsIpmioverlanPolicyResponse(v *MoAggregateTransform) IpmioverlanPolicyResponse {
-	return IpmioverlanPolicyResponse{ MoAggregateTransform: v}
+	return IpmioverlanPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsIpmioverlanPolicyResponse is a convenience function that returns MoDocumentCount wrapped in IpmioverlanPolicyResponse
 func MoDocumentCountAsIpmioverlanPolicyResponse(v *MoDocumentCount) IpmioverlanPolicyResponse {
-	return IpmioverlanPolicyResponse{ MoDocumentCount: v}
+	return IpmioverlanPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsIpmioverlanPolicyResponse is a convenience function that returns MoTagSummary wrapped in IpmioverlanPolicyResponse
 func MoTagSummaryAsIpmioverlanPolicyResponse(v *MoTagSummary) IpmioverlanPolicyResponse {
-	return IpmioverlanPolicyResponse{ MoTagSummary: v}
+	return IpmioverlanPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IpmioverlanPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src IpmioverlanPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IpmioverlanPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *IpmioverlanPolicyResponse) GetActualInstance() interface{} {
 	if obj.IpmioverlanPolicyList != nil {
 		return obj.IpmioverlanPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableIpmioverlanPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

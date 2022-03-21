@@ -23,7 +23,7 @@ type TechsupportmanagementCollectionControlPolicyList struct {
 	// The total number of 'techsupportmanagement.CollectionControlPolicy' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'techsupportmanagement.CollectionControlPolicy' resources matching the request.
-	Results []TechsupportmanagementCollectionControlPolicy `json:"Results,omitempty"`
+	Results              []TechsupportmanagementCollectionControlPolicy `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *TechsupportmanagementCollectionControlPolicyList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TechsupportmanagementCollectionControlPolicyList) GetResults() []TechsupportmanagementCollectionControlPolicy {
-	if o == nil  {
+	if o == nil {
 		var ret []TechsupportmanagementCollectionControlPolicy
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableTechsupportmanagementCollectionControlPolicyList) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

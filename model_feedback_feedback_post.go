@@ -23,9 +23,9 @@ type FeedbackFeedbackPost struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	FeedbackData NullableFeedbackFeedbackData `json:"FeedbackData,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	ObjectType           string                       `json:"ObjectType"`
+	FeedbackData         NullableFeedbackFeedbackData `json:"FeedbackData,omitempty"`
+	Account              *IamAccountRelationship      `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *FeedbackFeedbackPost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackPost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *FeedbackFeedbackPost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FeedbackFeedbackPost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *FeedbackFeedbackPost) GetFeedbackData() FeedbackFeedbackData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FeedbackFeedbackPost) GetFeedbackDataOk() (*FeedbackFeedbackData, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FeedbackData.Get(), o.FeedbackData.IsSet()
@@ -134,6 +134,7 @@ func (o *FeedbackFeedbackPost) HasFeedbackData() bool {
 func (o *FeedbackFeedbackPost) SetFeedbackData(v FeedbackFeedbackData) {
 	o.FeedbackData.Set(&v)
 }
+
 // SetFeedbackDataNil sets the value for FeedbackData to be an explicit nil
 func (o *FeedbackFeedbackPost) SetFeedbackDataNil() {
 	o.FeedbackData.Set(nil)
@@ -211,9 +212,9 @@ func (o *FeedbackFeedbackPost) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType   string                       `json:"ObjectType"`
 		FeedbackData NullableFeedbackFeedbackData `json:"FeedbackData,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Account      *IamAccountRelationship      `json:"Account,omitempty"`
 	}
 
 	varFeedbackFeedbackPostWithoutEmbeddedStruct := FeedbackFeedbackPostWithoutEmbeddedStruct{}
@@ -306,5 +307,3 @@ func (v *NullableFeedbackFeedbackPost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

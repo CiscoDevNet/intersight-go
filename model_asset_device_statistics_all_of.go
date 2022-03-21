@@ -34,9 +34,9 @@ type AssetDeviceStatisticsAllOf struct {
 	// Defines the average proportion of resources used by the device within the cluster. example in a cluster having 3 nodes, the membershipRatio of each node is 1/3 or 0.33. It is specified only for HyperFlex based devices.
 	MembershipRatio *float32 `json:"MembershipRatio,omitempty"`
 	// Memory Reliability, availability and serviceability (RAS) factor.
-	MemoryMirroringFactor *float32 `json:"MemoryMirroringFactor,omitempty"`
-	VmHost NullableAssetVmHost `json:"VmHost,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MemoryMirroringFactor *float32            `json:"MemoryMirroringFactor,omitempty"`
+	VmHost                NullableAssetVmHost `json:"VmHost,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _AssetDeviceStatisticsAllOf AssetDeviceStatisticsAllOf
@@ -77,7 +77,7 @@ func (o *AssetDeviceStatisticsAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceStatisticsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *AssetDeviceStatisticsAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetDeviceStatisticsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -349,7 +349,7 @@ func (o *AssetDeviceStatisticsAllOf) GetVmHost() AssetVmHost {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetDeviceStatisticsAllOf) GetVmHostOk() (*AssetVmHost, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmHost.Get(), o.VmHost.IsSet()
@@ -368,6 +368,7 @@ func (o *AssetDeviceStatisticsAllOf) HasVmHost() bool {
 func (o *AssetDeviceStatisticsAllOf) SetVmHost(v AssetVmHost) {
 	o.VmHost.Set(&v)
 }
+
 // SetVmHostNil sets the value for VmHost to be an explicit nil
 func (o *AssetDeviceStatisticsAllOf) SetVmHostNil() {
 	o.VmHost.Set(nil)
@@ -479,5 +480,3 @@ func (v *NullableAssetDeviceStatisticsAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

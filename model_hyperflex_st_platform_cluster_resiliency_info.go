@@ -25,8 +25,8 @@ type HyperflexStPlatformClusterResiliencyInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The number of persistent storage device failures tolerable before the storage cluster becomes offline.
-	HddFailuresTolerable *int64 `json:"HddFailuresTolerable,omitempty"`
-	Messages []string `json:"Messages,omitempty"`
+	HddFailuresTolerable *int64   `json:"HddFailuresTolerable,omitempty"`
+	Messages             []string `json:"Messages,omitempty"`
 	// The current message describing the auto-healing process of the cluster.
 	MessagesIterator interface{} `json:"MessagesIterator,omitempty"`
 	// The number of elements in the messages collection.
@@ -36,7 +36,7 @@ type HyperflexStPlatformClusterResiliencyInfo struct {
 	// The number of caching device failures tolerable before the storage cluster becomes offline.
 	SsdFailuresTolerable *int64 `json:"SsdFailuresTolerable,omitempty"`
 	// The resiliency state of the cluster. The resiliency status is 'HEALTHY' if there are no failures and the storage cluster is fully operational. The resiliency status is 'WARNING' when the cluster has experienced failures that may adversely affect the cluster. It is 'UNKNOWN' if the cluster is offline or if the state cannot be determined.
-	State *string `json:"State,omitempty"`
+	State                *string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *HyperflexStPlatformClusterResiliencyInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStPlatformClusterResiliencyInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *HyperflexStPlatformClusterResiliencyInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexStPlatformClusterResiliencyInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -147,7 +147,7 @@ func (o *HyperflexStPlatformClusterResiliencyInfo) SetHddFailuresTolerable(v int
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStPlatformClusterResiliencyInfo) GetMessages() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *HyperflexStPlatformClusterResiliencyInfo) SetMessages(v []string) {
 
 // GetMessagesIterator returns the MessagesIterator field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexStPlatformClusterResiliencyInfo) GetMessagesIterator() interface{} {
-	if o == nil  {
+	if o == nil {
 		var ret interface{}
 		return ret
 	}
@@ -391,8 +391,8 @@ func (o *HyperflexStPlatformClusterResiliencyInfo) UnmarshalJSON(bytes []byte) (
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The number of persistent storage device failures tolerable before the storage cluster becomes offline.
-		HddFailuresTolerable *int64 `json:"HddFailuresTolerable,omitempty"`
-		Messages []string `json:"Messages,omitempty"`
+		HddFailuresTolerable *int64   `json:"HddFailuresTolerable,omitempty"`
+		Messages             []string `json:"Messages,omitempty"`
 		// The current message describing the auto-healing process of the cluster.
 		MessagesIterator interface{} `json:"MessagesIterator,omitempty"`
 		// The number of elements in the messages collection.
@@ -505,5 +505,3 @@ func (v *NullableHyperflexStPlatformClusterResiliencyInfo) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,14 +24,13 @@ type IamRoleRelationship struct {
 
 // IamRoleAsIamRoleRelationship is a convenience function that returns IamRole wrapped in IamRoleRelationship
 func IamRoleAsIamRoleRelationship(v *IamRole) IamRoleRelationship {
-	return IamRoleRelationship{ IamRole: v}
+	return IamRoleRelationship{IamRole: v}
 }
 
 // MoMoRefAsIamRoleRelationship is a convenience function that returns MoMoRef wrapped in IamRoleRelationship
 func MoMoRefAsIamRoleRelationship(v *MoMoRef) IamRoleRelationship {
-	return IamRoleRelationship{ MoMoRef: v}
+	return IamRoleRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamRoleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamRoleRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamRoleRelationship) GetActualInstance() (interface{}) {
+func (obj *IamRoleRelationship) GetActualInstance() interface{} {
 	if obj.IamRole != nil {
 		return obj.IamRole
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamRoleRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

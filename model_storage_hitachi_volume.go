@@ -23,7 +23,7 @@ type StorageHitachiVolume struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string   `json:"ObjectType"`
 	Attributes []string `json:"Attributes,omitempty"`
 	// CLPR (Cache Logical Partition) number of this volume.
 	ClprId *int64 `json:"ClprId,omitempty"`
@@ -44,7 +44,7 @@ type StorageHitachiVolume struct {
 	// Number of paths set for the volume.
 	NumOfPaths *int64 `json:"NumOfPaths,omitempty"`
 	// NVM subsystem ID on storage system.
-	NvmSubsystemId *string `json:"NvmSubsystemId,omitempty"`
+	NvmSubsystemId *string  `json:"NvmSubsystemId,omitempty"`
 	ParityGroupIds []string `json:"ParityGroupIds,omitempty"`
 	// ID of the pool with which the volume is associated.
 	PoolId *string `json:"PoolId,omitempty"`
@@ -53,12 +53,12 @@ type StorageHitachiVolume struct {
 	// RAID type drive configuration.
 	RaidType *string `json:"RaidType,omitempty"`
 	// Status information of the volume. * `N/A` - The volume status is not available. * `NML` - The volume is in normal status. * `BLK` - The volume is in blocked state. * `BSY` - The volume status is being changed. * `Unknown` - The volume status is unknown (not supported).
-	Status *string `json:"Status,omitempty"`
-	Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
+	Status *string                          `json:"Status,omitempty"`
+	Array  *StorageHitachiArrayRelationship `json:"Array,omitempty"`
 	// An array of relationships to storageHitachiParityGroup resources.
-	ParityGroups []StorageHitachiParityGroupRelationship `json:"ParityGroups,omitempty"`
-	Pool *StorageHitachiPoolRelationship `json:"Pool,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ParityGroups         []StorageHitachiParityGroupRelationship `json:"ParityGroups,omitempty"`
+	Pool                 *StorageHitachiPoolRelationship         `json:"Pool,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *StorageHitachiVolume) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiVolume) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *StorageHitachiVolume) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiVolume) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -137,7 +137,7 @@ func (o *StorageHitachiVolume) SetObjectType(v string) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageHitachiVolume) GetAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -490,7 +490,7 @@ func (o *StorageHitachiVolume) SetNvmSubsystemId(v string) {
 
 // GetParityGroupIds returns the ParityGroupIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageHitachiVolume) GetParityGroupIds() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -683,7 +683,7 @@ func (o *StorageHitachiVolume) SetArray(v StorageHitachiArrayRelationship) {
 
 // GetParityGroups returns the ParityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageHitachiVolume) GetParityGroups() []StorageHitachiParityGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageHitachiParityGroupRelationship
 		return ret
 	}
@@ -867,7 +867,7 @@ func (o *StorageHitachiVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string   `json:"ObjectType"`
 		Attributes []string `json:"Attributes,omitempty"`
 		// CLPR (Cache Logical Partition) number of this volume.
 		ClprId *int64 `json:"ClprId,omitempty"`
@@ -888,7 +888,7 @@ func (o *StorageHitachiVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// Number of paths set for the volume.
 		NumOfPaths *int64 `json:"NumOfPaths,omitempty"`
 		// NVM subsystem ID on storage system.
-		NvmSubsystemId *string `json:"NvmSubsystemId,omitempty"`
+		NvmSubsystemId *string  `json:"NvmSubsystemId,omitempty"`
 		ParityGroupIds []string `json:"ParityGroupIds,omitempty"`
 		// ID of the pool with which the volume is associated.
 		PoolId *string `json:"PoolId,omitempty"`
@@ -897,12 +897,12 @@ func (o *StorageHitachiVolume) UnmarshalJSON(bytes []byte) (err error) {
 		// RAID type drive configuration.
 		RaidType *string `json:"RaidType,omitempty"`
 		// Status information of the volume. * `N/A` - The volume status is not available. * `NML` - The volume is in normal status. * `BLK` - The volume is in blocked state. * `BSY` - The volume status is being changed. * `Unknown` - The volume status is unknown (not supported).
-		Status *string `json:"Status,omitempty"`
-		Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
+		Status *string                          `json:"Status,omitempty"`
+		Array  *StorageHitachiArrayRelationship `json:"Array,omitempty"`
 		// An array of relationships to storageHitachiParityGroup resources.
-		ParityGroups []StorageHitachiParityGroupRelationship `json:"ParityGroups,omitempty"`
-		Pool *StorageHitachiPoolRelationship `json:"Pool,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		ParityGroups     []StorageHitachiParityGroupRelationship `json:"ParityGroups,omitempty"`
+		Pool             *StorageHitachiPoolRelationship         `json:"Pool,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship    `json:"RegisteredDevice,omitempty"`
 	}
 
 	varStorageHitachiVolumeWithoutEmbeddedStruct := StorageHitachiVolumeWithoutEmbeddedStruct{}
@@ -1031,5 +1031,3 @@ func (v *NullableStorageHitachiVolume) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

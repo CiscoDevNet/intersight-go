@@ -31,7 +31,7 @@ type VirtualizationVmDisk struct {
 	// Disk name associated with virtual machine.
 	Name *string `json:"Name,omitempty"`
 	// Type of the Disk (hdd, cdrom). * `hdd` - Allows the virtual machine to mount disk from hard disk drive (hdd) image. * `cdrom` - Allows the virtual machine to mount disk from compact disk (cd) image.
-	Type *string `json:"Type,omitempty"`
+	Type        *string                           `json:"Type,omitempty"`
 	VirtualDisk NullableVirtualizationVdiskConfig `json:"VirtualDisk,omitempty"`
 	// Virtual disk reference name.
 	VirtualDiskReference *string `json:"VirtualDiskReference,omitempty"`
@@ -76,7 +76,7 @@ func (o *VirtualizationVmDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *VirtualizationVmDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -252,7 +252,7 @@ func (o *VirtualizationVmDisk) GetVirtualDisk() VirtualizationVdiskConfig {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmDisk) GetVirtualDiskOk() (*VirtualizationVdiskConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VirtualDisk.Get(), o.VirtualDisk.IsSet()
@@ -271,6 +271,7 @@ func (o *VirtualizationVmDisk) HasVirtualDisk() bool {
 func (o *VirtualizationVmDisk) SetVirtualDisk(v VirtualizationVdiskConfig) {
 	o.VirtualDisk.Set(&v)
 }
+
 // SetVirtualDiskNil sets the value for VirtualDisk to be an explicit nil
 func (o *VirtualizationVmDisk) SetVirtualDiskNil() {
 	o.VirtualDisk.Set(nil)
@@ -368,7 +369,7 @@ func (o *VirtualizationVmDisk) UnmarshalJSON(bytes []byte) (err error) {
 		// Disk name associated with virtual machine.
 		Name *string `json:"Name,omitempty"`
 		// Type of the Disk (hdd, cdrom). * `hdd` - Allows the virtual machine to mount disk from hard disk drive (hdd) image. * `cdrom` - Allows the virtual machine to mount disk from compact disk (cd) image.
-		Type *string `json:"Type,omitempty"`
+		Type        *string                           `json:"Type,omitempty"`
 		VirtualDisk NullableVirtualizationVdiskConfig `json:"VirtualDisk,omitempty"`
 		// Virtual disk reference name.
 		VirtualDiskReference *string `json:"VirtualDiskReference,omitempty"`
@@ -472,5 +473,3 @@ func (v *NullableVirtualizationVmDisk) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

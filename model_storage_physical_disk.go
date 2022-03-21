@@ -121,18 +121,18 @@ type StoragePhysicalDisk struct {
 	// The number of write errors that are permitted while accessing the drive/card.
 	WriteErrorCountThreshold *int64 `json:"WriteErrorCountThreshold,omitempty"`
 	// Number of IO Errors that occured while writing data to the disk.
-	WriteIoErrorCount *int64 `json:"WriteIoErrorCount,omitempty"`
+	WriteIoErrorCount   *int64                           `json:"WriteIoErrorCount,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+	LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 	// An array of relationships to storagePhysicalDiskExtension resources.
 	PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	RegisteredDevice       *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to firmwareRunningFirmware resources.
 	RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 	// An array of relationships to storageSasPort resources.
-	SasPorts []StorageSasPortRelationship `json:"SasPorts,omitempty"`
-	StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
-	StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+	SasPorts             []StorageSasPortRelationship   `json:"SasPorts,omitempty"`
+	StorageController    *StorageControllerRelationship `json:"StorageController,omitempty"`
+	StorageEnclosure     *StorageEnclosureRelationship  `json:"StorageEnclosure,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -174,7 +174,7 @@ func (o *StoragePhysicalDisk) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDisk) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -198,7 +198,7 @@ func (o *StoragePhysicalDisk) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StoragePhysicalDisk) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1843,7 +1843,7 @@ func (o *StoragePhysicalDisk) SetLocatorLed(v EquipmentLocatorLedRelationship) {
 
 // GetPhysicalDiskExtensions returns the PhysicalDiskExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDisk) GetPhysicalDiskExtensions() []StoragePhysicalDiskExtensionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StoragePhysicalDiskExtensionRelationship
 		return ret
 	}
@@ -1908,7 +1908,7 @@ func (o *StoragePhysicalDisk) SetRegisteredDevice(v AssetDeviceRegistrationRelat
 
 // GetRunningFirmware returns the RunningFirmware field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDisk) GetRunningFirmware() []FirmwareRunningFirmwareRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FirmwareRunningFirmwareRelationship
 		return ret
 	}
@@ -1941,7 +1941,7 @@ func (o *StoragePhysicalDisk) SetRunningFirmware(v []FirmwareRunningFirmwareRela
 
 // GetSasPorts returns the SasPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StoragePhysicalDisk) GetSasPorts() []StorageSasPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageSasPortRelationship
 		return ret
 	}
@@ -2334,18 +2334,18 @@ func (o *StoragePhysicalDisk) UnmarshalJSON(bytes []byte) (err error) {
 		// The number of write errors that are permitted while accessing the drive/card.
 		WriteErrorCountThreshold *int64 `json:"WriteErrorCountThreshold,omitempty"`
 		// Number of IO Errors that occured while writing data to the disk.
-		WriteIoErrorCount *int64 `json:"WriteIoErrorCount,omitempty"`
+		WriteIoErrorCount   *int64                           `json:"WriteIoErrorCount,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		LocatorLed *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
+		LocatorLed          *EquipmentLocatorLedRelationship `json:"LocatorLed,omitempty"`
 		// An array of relationships to storagePhysicalDiskExtension resources.
 		PhysicalDiskExtensions []StoragePhysicalDiskExtensionRelationship `json:"PhysicalDiskExtensions,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice       *AssetDeviceRegistrationRelationship       `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to firmwareRunningFirmware resources.
 		RunningFirmware []FirmwareRunningFirmwareRelationship `json:"RunningFirmware,omitempty"`
 		// An array of relationships to storageSasPort resources.
-		SasPorts []StorageSasPortRelationship `json:"SasPorts,omitempty"`
+		SasPorts          []StorageSasPortRelationship   `json:"SasPorts,omitempty"`
 		StorageController *StorageControllerRelationship `json:"StorageController,omitempty"`
-		StorageEnclosure *StorageEnclosureRelationship `json:"StorageEnclosure,omitempty"`
+		StorageEnclosure  *StorageEnclosureRelationship  `json:"StorageEnclosure,omitempty"`
 	}
 
 	varStoragePhysicalDiskWithoutEmbeddedStruct := StoragePhysicalDiskWithoutEmbeddedStruct{}
@@ -2548,5 +2548,3 @@ func (v *NullableStoragePhysicalDisk) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

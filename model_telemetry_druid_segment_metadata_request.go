@@ -18,20 +18,20 @@ import (
 // TelemetryDruidSegmentMetadataRequest Time boundary queries return the earliest and latest data points of a data set.
 type TelemetryDruidSegmentMetadataRequest struct {
 	// null
-	QueryType string `json:"queryType"`
+	QueryType  string                   `json:"queryType"`
 	DataSource TelemetryDruidDataSource `json:"dataSource"`
 	// A JSON Object representing ISO-8601 Intervals. This defines the time ranges to run the query over. If an interval is not specified, the query will use a default interval that spans a configurable period before the end time of the most recent segment.
 	Intervals *[]string `json:"intervals,omitempty"`
 	// A JSON Object representing what columns should be included in the result. Defaults to \"all\".
 	ToInclude *map[string]interface{} `json:"toInclude,omitempty"`
 	// Merge all individual segment metadata results into a single result.
-	Merge *bool `json:"merge,omitempty"`
+	Merge   *bool                       `json:"merge,omitempty"`
 	Context *TelemetryDruidQueryContext `json:"context,omitempty"`
 	// A list of Strings specifying what column properties (e.g. cardinality, size) should be calculated and returned in the result. Defaults to [\"cardinality\", \"interval\", \"minmax\"], but can be overridden with using the segment metadata query config. * cardinality - in the result will return the estimated floor of cardinality for each column. Only relevant for dimension columns. * minmax - Estimated min/max values for each column. Only relevant for dimension columns. * size - in the result will contain the estimated total segment byte size as if the data were stored in text format. * intervals - in the result will contain the list of intervals associated with the queried segments. * timestampSpec - in the result will contain timestampSpec of data stored in segments. This can be null if timestampSpec of segments was unknown or unmergeable (if merging is enabled). * queryGranularity - in the result will contain query granularity of data stored in segments. This can be null if query granularity of segments was unknown or unmergeable (if merging is enabled). * aggregators - in the result will contain the list of aggregators usable for querying metric columns. This may be null if the aggregators are unknown or unmergeable (if merging is enabled). Merging can be strict or lenient. The form of the result is a map of column name to aggregator. * rollup - in the result is true/false/null. When merging is enabled, if some are rollup, others are not, result is null.
 	AnalysisTypes *[]string `json:"analysisTypes,omitempty"`
 	// If true, and if the \"aggregators\" analysisType is enabled, aggregators will be merged leniently.
 	LenientAggregatorMerge *bool `json:"lenientAggregatorMerge,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties   map[string]interface{}
 }
 
 type _TelemetryDruidSegmentMetadataRequest TelemetryDruidSegmentMetadataRequest
@@ -68,7 +68,7 @@ func (o *TelemetryDruidSegmentMetadataRequest) GetQueryType() string {
 // GetQueryTypeOk returns a tuple with the QueryType field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSegmentMetadataRequest) GetQueryTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.QueryType, true
@@ -92,7 +92,7 @@ func (o *TelemetryDruidSegmentMetadataRequest) GetDataSource() TelemetryDruidDat
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidSegmentMetadataRequest) GetDataSourceOk() (*TelemetryDruidDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -388,5 +388,3 @@ func (v *NullableTelemetryDruidSegmentMetadataRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppEthernetPortRelationship - A relationship to the 'storage.NetAppEthernetPort' resource, or the expanded 'storage.NetAppEthernetPort' resource, or the 'null' value.
 type StorageNetAppEthernetPortRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 	StorageNetAppEthernetPort *StorageNetAppEthernetPort
 }
 
 // MoMoRefAsStorageNetAppEthernetPortRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppEthernetPortRelationship
 func MoMoRefAsStorageNetAppEthernetPortRelationship(v *MoMoRef) StorageNetAppEthernetPortRelationship {
-	return StorageNetAppEthernetPortRelationship{ MoMoRef: v}
+	return StorageNetAppEthernetPortRelationship{MoMoRef: v}
 }
 
 // StorageNetAppEthernetPortAsStorageNetAppEthernetPortRelationship is a convenience function that returns StorageNetAppEthernetPort wrapped in StorageNetAppEthernetPortRelationship
 func StorageNetAppEthernetPortAsStorageNetAppEthernetPortRelationship(v *StorageNetAppEthernetPort) StorageNetAppEthernetPortRelationship {
-	return StorageNetAppEthernetPortRelationship{ StorageNetAppEthernetPort: v}
+	return StorageNetAppEthernetPortRelationship{StorageNetAppEthernetPort: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppEthernetPortRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppEthernetPortRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppEthernetPortRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppEthernetPortRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppEthernetPortRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

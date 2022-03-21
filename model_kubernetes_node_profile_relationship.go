@@ -19,19 +19,18 @@ import (
 // KubernetesNodeProfileRelationship - A relationship to the 'kubernetes.NodeProfile' resource, or the expanded 'kubernetes.NodeProfile' resource, or the 'null' value.
 type KubernetesNodeProfileRelationship struct {
 	KubernetesNodeProfile *KubernetesNodeProfile
-	MoMoRef *MoMoRef
+	MoMoRef               *MoMoRef
 }
 
 // KubernetesNodeProfileAsKubernetesNodeProfileRelationship is a convenience function that returns KubernetesNodeProfile wrapped in KubernetesNodeProfileRelationship
 func KubernetesNodeProfileAsKubernetesNodeProfileRelationship(v *KubernetesNodeProfile) KubernetesNodeProfileRelationship {
-	return KubernetesNodeProfileRelationship{ KubernetesNodeProfile: v}
+	return KubernetesNodeProfileRelationship{KubernetesNodeProfile: v}
 }
 
 // MoMoRefAsKubernetesNodeProfileRelationship is a convenience function that returns MoMoRef wrapped in KubernetesNodeProfileRelationship
 func MoMoRefAsKubernetesNodeProfileRelationship(v *MoMoRef) KubernetesNodeProfileRelationship {
-	return KubernetesNodeProfileRelationship{ MoMoRef: v}
+	return KubernetesNodeProfileRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesNodeProfileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src KubernetesNodeProfileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *KubernetesNodeProfileRelationship) GetActualInstance() (interface{}) {
+func (obj *KubernetesNodeProfileRelationship) GetActualInstance() interface{} {
 	if obj.KubernetesNodeProfile != nil {
 		return obj.KubernetesNodeProfile
 	}
@@ -137,5 +136,3 @@ func (v *NullableKubernetesNodeProfileRelationship) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,11 +29,11 @@ type VmediaPolicy struct {
 	// If enabled, allows encryption of all Virtual Media communications. Please note that this is no longer applicable for servers running versions 4.2 and above.
 	Encryption *bool `json:"Encryption,omitempty"`
 	// If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host.
-	LowPowerUsb *bool `json:"LowPowerUsb,omitempty"`
-	Mappings []VmediaMapping `json:"Mappings,omitempty"`
+	LowPowerUsb  *bool                                 `json:"LowPowerUsb,omitempty"`
+	Mappings     []VmediaMapping                       `json:"Mappings,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *VmediaPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VmediaPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *VmediaPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VmediaPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -220,7 +220,7 @@ func (o *VmediaPolicy) SetLowPowerUsb(v bool) {
 
 // GetMappings returns the Mappings field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VmediaPolicy) GetMappings() []VmediaMapping {
-	if o == nil  {
+	if o == nil {
 		var ret []VmediaMapping
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *VmediaPolicy) SetOrganization(v OrganizationOrganizationRelationship) {
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VmediaPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -369,8 +369,8 @@ func (o *VmediaPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// If enabled, allows encryption of all Virtual Media communications. Please note that this is no longer applicable for servers running versions 4.2 and above.
 		Encryption *bool `json:"Encryption,omitempty"`
 		// If enabled, the virtual drives appear on the boot selection menu after mapping the image and rebooting the host.
-		LowPowerUsb *bool `json:"LowPowerUsb,omitempty"`
-		Mappings []VmediaMapping `json:"Mappings,omitempty"`
+		LowPowerUsb  *bool                                 `json:"LowPowerUsb,omitempty"`
+		Mappings     []VmediaMapping                       `json:"Mappings,omitempty"`
 		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
@@ -474,5 +474,3 @@ func (v *NullableVmediaPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

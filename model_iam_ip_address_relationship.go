@@ -19,19 +19,18 @@ import (
 // IamIpAddressRelationship - A relationship to the 'iam.IpAddress' resource, or the expanded 'iam.IpAddress' resource, or the 'null' value.
 type IamIpAddressRelationship struct {
 	IamIpAddress *IamIpAddress
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IamIpAddressAsIamIpAddressRelationship is a convenience function that returns IamIpAddress wrapped in IamIpAddressRelationship
 func IamIpAddressAsIamIpAddressRelationship(v *IamIpAddress) IamIpAddressRelationship {
-	return IamIpAddressRelationship{ IamIpAddress: v}
+	return IamIpAddressRelationship{IamIpAddress: v}
 }
 
 // MoMoRefAsIamIpAddressRelationship is a convenience function that returns MoMoRef wrapped in IamIpAddressRelationship
 func MoMoRefAsIamIpAddressRelationship(v *MoMoRef) IamIpAddressRelationship {
-	return IamIpAddressRelationship{ MoMoRef: v}
+	return IamIpAddressRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamIpAddressRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamIpAddressRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamIpAddressRelationship) GetActualInstance() (interface{}) {
+func (obj *IamIpAddressRelationship) GetActualInstance() interface{} {
 	if obj.IamIpAddress != nil {
 		return obj.IamIpAddress
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamIpAddressRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

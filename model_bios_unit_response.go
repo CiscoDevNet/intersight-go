@@ -18,32 +18,31 @@ import (
 
 // BiosUnitResponse - The response body of a HTTP GET request for the 'bios.Unit' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'bios.Unit' resources.
 type BiosUnitResponse struct {
-	BiosUnitList *BiosUnitList
+	BiosUnitList         *BiosUnitList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BiosUnitListAsBiosUnitResponse is a convenience function that returns BiosUnitList wrapped in BiosUnitResponse
 func BiosUnitListAsBiosUnitResponse(v *BiosUnitList) BiosUnitResponse {
-	return BiosUnitResponse{ BiosUnitList: v}
+	return BiosUnitResponse{BiosUnitList: v}
 }
 
 // MoAggregateTransformAsBiosUnitResponse is a convenience function that returns MoAggregateTransform wrapped in BiosUnitResponse
 func MoAggregateTransformAsBiosUnitResponse(v *MoAggregateTransform) BiosUnitResponse {
-	return BiosUnitResponse{ MoAggregateTransform: v}
+	return BiosUnitResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBiosUnitResponse is a convenience function that returns MoDocumentCount wrapped in BiosUnitResponse
 func MoDocumentCountAsBiosUnitResponse(v *MoDocumentCount) BiosUnitResponse {
-	return BiosUnitResponse{ MoDocumentCount: v}
+	return BiosUnitResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBiosUnitResponse is a convenience function that returns MoTagSummary wrapped in BiosUnitResponse
 func MoTagSummaryAsBiosUnitResponse(v *MoTagSummary) BiosUnitResponse {
-	return BiosUnitResponse{ MoTagSummary: v}
+	return BiosUnitResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BiosUnitResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BiosUnitResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BiosUnitResponse) GetActualInstance() (interface{}) {
+func (obj *BiosUnitResponse) GetActualInstance() interface{} {
 	if obj.BiosUnitList != nil {
 		return obj.BiosUnitList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBiosUnitResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

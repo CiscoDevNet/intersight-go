@@ -46,7 +46,7 @@ type VmediaMappingAllOf struct {
 	// Username to log in to the remote server.
 	Username *string `json:"Username,omitempty"`
 	// Identity of the image for Virtual Media mapping.
-	VolumeName *string `json:"VolumeName,omitempty"`
+	VolumeName           *string `json:"VolumeName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -100,7 +100,7 @@ func (o *VmediaMappingAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VmediaMappingAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -124,7 +124,7 @@ func (o *VmediaMappingAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VmediaMappingAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -672,5 +672,3 @@ func (v *NullableVmediaMappingAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

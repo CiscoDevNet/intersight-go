@@ -18,32 +18,31 @@ import (
 
 // EtherHostPortResponse - The response body of a HTTP GET request for the 'ether.HostPort' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'ether.HostPort' resources.
 type EtherHostPortResponse struct {
-	EtherHostPortList *EtherHostPortList
+	EtherHostPortList    *EtherHostPortList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // EtherHostPortListAsEtherHostPortResponse is a convenience function that returns EtherHostPortList wrapped in EtherHostPortResponse
 func EtherHostPortListAsEtherHostPortResponse(v *EtherHostPortList) EtherHostPortResponse {
-	return EtherHostPortResponse{ EtherHostPortList: v}
+	return EtherHostPortResponse{EtherHostPortList: v}
 }
 
 // MoAggregateTransformAsEtherHostPortResponse is a convenience function that returns MoAggregateTransform wrapped in EtherHostPortResponse
 func MoAggregateTransformAsEtherHostPortResponse(v *MoAggregateTransform) EtherHostPortResponse {
-	return EtherHostPortResponse{ MoAggregateTransform: v}
+	return EtherHostPortResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEtherHostPortResponse is a convenience function that returns MoDocumentCount wrapped in EtherHostPortResponse
 func MoDocumentCountAsEtherHostPortResponse(v *MoDocumentCount) EtherHostPortResponse {
-	return EtherHostPortResponse{ MoDocumentCount: v}
+	return EtherHostPortResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEtherHostPortResponse is a convenience function that returns MoTagSummary wrapped in EtherHostPortResponse
 func MoTagSummaryAsEtherHostPortResponse(v *MoTagSummary) EtherHostPortResponse {
-	return EtherHostPortResponse{ MoTagSummary: v}
+	return EtherHostPortResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EtherHostPortResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EtherHostPortResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EtherHostPortResponse) GetActualInstance() (interface{}) {
+func (obj *EtherHostPortResponse) GetActualInstance() interface{} {
 	if obj.EtherHostPortList != nil {
 		return obj.EtherHostPortList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEtherHostPortResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

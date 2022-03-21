@@ -29,11 +29,11 @@ var (
 type MemoryApiService service
 
 type ApiCreateMemoryPersistentMemoryPolicyRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
+	ctx                          _context.Context
+	ApiService                   *MemoryApiService
 	memoryPersistentMemoryPolicy *MemoryPersistentMemoryPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;memory.PersistentMemoryPolicy&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateMemoryPersistentMemoryPolicyRequest) MemoryPersistentMemoryPoli
 	r.memoryPersistentMemoryPolicy = &memoryPersistentMemoryPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateMemoryPersistentMemoryPolicyRequest) IfMatch(ifMatch string) ApiCreateMemoryPersistentMemoryPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateMemoryPersistentMemoryPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateMemoryPersistentMemoryPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateMemoryPersistentMemoryPolicy Create a 'memory.PersistentMemoryPolicy' reso
 func (a *MemoryApiService) CreateMemoryPersistentMemoryPolicy(ctx _context.Context) ApiCreateMemoryPersistentMemoryPolicyRequest {
 	return ApiCreateMemoryPersistentMemoryPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *MemoryApiService) CreateMemoryPersistentMemoryPolicyExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,10 @@ func (a *MemoryApiService) CreateMemoryPersistentMemoryPolicyExecute(r ApiCreate
 }
 
 type ApiDeleteMemoryPersistentMemoryPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteMemoryPersistentMemoryPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteMemoryPersistentMemoryPolicyExecute(r)
@@ -225,8 +226,8 @@ DeleteMemoryPersistentMemoryPolicy Delete a 'memory.PersistentMemoryPolicy' reso
 func (a *MemoryApiService) DeleteMemoryPersistentMemoryPolicy(ctx _context.Context, moid string) ApiDeleteMemoryPersistentMemoryPolicyRequest {
 	return ApiDeleteMemoryPersistentMemoryPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -331,13 +332,13 @@ func (a *MemoryApiService) DeleteMemoryPersistentMemoryPolicyExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -345,11 +346,10 @@ func (a *MemoryApiService) DeleteMemoryPersistentMemoryPolicyExecute(r ApiDelete
 }
 
 type ApiGetMemoryArrayByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryArrayByMoidRequest) Execute() (MemoryArray, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryArrayByMoidExecute(r)
@@ -365,8 +365,8 @@ GetMemoryArrayByMoid Read a 'memory.Array' resource.
 func (a *MemoryApiService) GetMemoryArrayByMoid(ctx _context.Context, moid string) ApiGetMemoryArrayByMoidRequest {
 	return ApiGetMemoryArrayByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -473,13 +473,13 @@ func (a *MemoryApiService) GetMemoryArrayByMoidExecute(r ApiGetMemoryArrayByMoid
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -496,19 +496,19 @@ func (a *MemoryApiService) GetMemoryArrayByMoidExecute(r ApiGetMemoryArrayByMoid
 }
 
 type ApiGetMemoryArrayListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -516,51 +516,61 @@ func (r ApiGetMemoryArrayListRequest) Filter(filter string) ApiGetMemoryArrayLis
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryArrayListRequest) Orderby(orderby string) ApiGetMemoryArrayListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryArrayListRequest) Top(top int32) ApiGetMemoryArrayListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryArrayListRequest) Skip(skip int32) ApiGetMemoryArrayListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryArrayListRequest) Select_(select_ string) ApiGetMemoryArrayListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryArrayListRequest) Expand(expand string) ApiGetMemoryArrayListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryArrayListRequest) Apply(apply string) ApiGetMemoryArrayListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryArrayListRequest) Count(count bool) ApiGetMemoryArrayListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryArrayListRequest) Inlinecount(inlinecount string) ApiGetMemoryArrayListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryArrayListRequest) At(at string) ApiGetMemoryArrayListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryArrayListRequest) Tags(tags string) ApiGetMemoryArrayListRequest {
 	r.tags = &tags
@@ -580,7 +590,7 @@ GetMemoryArrayList Read a 'memory.Array' resource.
 func (a *MemoryApiService) GetMemoryArrayList(ctx _context.Context) ApiGetMemoryArrayListRequest {
 	return ApiGetMemoryArrayListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -719,13 +729,13 @@ func (a *MemoryApiService) GetMemoryArrayListExecute(r ApiGetMemoryArrayListRequ
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -742,11 +752,10 @@ func (a *MemoryApiService) GetMemoryArrayListExecute(r ApiGetMemoryArrayListRequ
 }
 
 type ApiGetMemoryPersistentMemoryConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryConfigResultByMoidRequest) Execute() (MemoryPersistentMemoryConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryConfigResultByMoidExecute(r)
@@ -762,8 +771,8 @@ GetMemoryPersistentMemoryConfigResultByMoid Read a 'memory.PersistentMemoryConfi
 func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryConfigResultByMoidRequest {
 	return ApiGetMemoryPersistentMemoryConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -870,13 +879,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultByMoidExecute(r 
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -893,19 +902,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultByMoidExecute(r 
 }
 
 type ApiGetMemoryPersistentMemoryConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -913,51 +922,61 @@ func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Filter(filter strin
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Top(top int32) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Count(count bool) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) At(at string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryConfigResultListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	r.tags = &tags
@@ -977,7 +996,7 @@ GetMemoryPersistentMemoryConfigResultList Read a 'memory.PersistentMemoryConfigR
 func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultList(ctx _context.Context) ApiGetMemoryPersistentMemoryConfigResultListRequest {
 	return ApiGetMemoryPersistentMemoryConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1116,13 +1135,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultListExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1139,11 +1158,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigResultListExecute(r Ap
 }
 
 type ApiGetMemoryPersistentMemoryConfigurationByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryConfigurationByMoidRequest) Execute() (MemoryPersistentMemoryConfiguration, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryConfigurationByMoidExecute(r)
@@ -1159,8 +1177,8 @@ GetMemoryPersistentMemoryConfigurationByMoid Read a 'memory.PersistentMemoryConf
 func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryConfigurationByMoidRequest {
 	return ApiGetMemoryPersistentMemoryConfigurationByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1267,13 +1285,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationByMoidExecute(r
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1290,19 +1308,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationByMoidExecute(r
 }
 
 type ApiGetMemoryPersistentMemoryConfigurationListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1310,51 +1328,61 @@ func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Filter(filter stri
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Top(top int32) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Count(count bool) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) At(at string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryConfigurationListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	r.tags = &tags
@@ -1374,7 +1402,7 @@ GetMemoryPersistentMemoryConfigurationList Read a 'memory.PersistentMemoryConfig
 func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationList(ctx _context.Context) ApiGetMemoryPersistentMemoryConfigurationListRequest {
 	return ApiGetMemoryPersistentMemoryConfigurationListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1513,13 +1541,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationListExecute(r A
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1536,11 +1564,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryConfigurationListExecute(r A
 }
 
 type ApiGetMemoryPersistentMemoryNamespaceByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryNamespaceByMoidRequest) Execute() (MemoryPersistentMemoryNamespace, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryNamespaceByMoidExecute(r)
@@ -1556,8 +1583,8 @@ GetMemoryPersistentMemoryNamespaceByMoid Read a 'memory.PersistentMemoryNamespac
 func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryNamespaceByMoidRequest {
 	return ApiGetMemoryPersistentMemoryNamespaceByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1664,13 +1691,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceByMoidExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1687,11 +1714,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceByMoidExecute(r Api
 }
 
 type ApiGetMemoryPersistentMemoryNamespaceConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultByMoidRequest) Execute() (MemoryPersistentMemoryNamespaceConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryNamespaceConfigResultByMoidExecute(r)
@@ -1707,8 +1733,8 @@ GetMemoryPersistentMemoryNamespaceConfigResultByMoid Read a 'memory.PersistentMe
 func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryNamespaceConfigResultByMoidRequest {
 	return ApiGetMemoryPersistentMemoryNamespaceConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1815,13 +1841,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultByMoidE
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1838,19 +1864,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultByMoidE
 }
 
 type ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1858,51 +1884,61 @@ func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Filter(fil
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Top(top int32) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Count(count bool) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) At(at string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	r.tags = &tags
@@ -1922,7 +1958,7 @@ GetMemoryPersistentMemoryNamespaceConfigResultList Read a 'memory.PersistentMemo
 func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultList(ctx _context.Context) ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest {
 	return ApiGetMemoryPersistentMemoryNamespaceConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2061,13 +2097,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultListExe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2084,19 +2120,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceConfigResultListExe
 }
 
 type ApiGetMemoryPersistentMemoryNamespaceListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2104,51 +2140,61 @@ func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Filter(filter string) 
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Top(top int32) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Count(count bool) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) At(at string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryNamespaceListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	r.tags = &tags
@@ -2168,7 +2214,7 @@ GetMemoryPersistentMemoryNamespaceList Read a 'memory.PersistentMemoryNamespace'
 func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceList(ctx _context.Context) ApiGetMemoryPersistentMemoryNamespaceListRequest {
 	return ApiGetMemoryPersistentMemoryNamespaceListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2307,13 +2353,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceListExecute(r ApiGe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2330,11 +2376,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryNamespaceListExecute(r ApiGe
 }
 
 type ApiGetMemoryPersistentMemoryPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryPolicyByMoidRequest) Execute() (MemoryPersistentMemoryPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryPolicyByMoidExecute(r)
@@ -2350,8 +2395,8 @@ GetMemoryPersistentMemoryPolicyByMoid Read a 'memory.PersistentMemoryPolicy' res
 func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryPolicyByMoidRequest {
 	return ApiGetMemoryPersistentMemoryPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2458,13 +2503,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2481,19 +2526,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyByMoidExecute(r ApiGet
 }
 
 type ApiGetMemoryPersistentMemoryPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2501,51 +2546,61 @@ func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Top(top int32) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Count(count bool) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) At(at string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryPolicyListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	r.tags = &tags
@@ -2565,7 +2620,7 @@ GetMemoryPersistentMemoryPolicyList Read a 'memory.PersistentMemoryPolicy' resou
 func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyList(ctx _context.Context) ApiGetMemoryPersistentMemoryPolicyListRequest {
 	return ApiGetMemoryPersistentMemoryPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2704,13 +2759,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyListExecute(r ApiGetMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2727,11 +2782,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryPolicyListExecute(r ApiGetMe
 }
 
 type ApiGetMemoryPersistentMemoryRegionByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryRegionByMoidRequest) Execute() (MemoryPersistentMemoryRegion, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryRegionByMoidExecute(r)
@@ -2747,8 +2801,8 @@ GetMemoryPersistentMemoryRegionByMoid Read a 'memory.PersistentMemoryRegion' res
 func (a *MemoryApiService) GetMemoryPersistentMemoryRegionByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryRegionByMoidRequest {
 	return ApiGetMemoryPersistentMemoryRegionByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2855,13 +2909,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryRegionByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2878,19 +2932,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryRegionByMoidExecute(r ApiGet
 }
 
 type ApiGetMemoryPersistentMemoryRegionListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2898,51 +2952,61 @@ func (r ApiGetMemoryPersistentMemoryRegionListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Top(top int32) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Count(count bool) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) At(at string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryRegionListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryRegionListRequest {
 	r.tags = &tags
@@ -2962,7 +3026,7 @@ GetMemoryPersistentMemoryRegionList Read a 'memory.PersistentMemoryRegion' resou
 func (a *MemoryApiService) GetMemoryPersistentMemoryRegionList(ctx _context.Context) ApiGetMemoryPersistentMemoryRegionListRequest {
 	return ApiGetMemoryPersistentMemoryRegionListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3101,13 +3165,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryRegionListExecute(r ApiGetMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3124,11 +3188,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryRegionListExecute(r ApiGetMe
 }
 
 type ApiGetMemoryPersistentMemoryUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryPersistentMemoryUnitByMoidRequest) Execute() (MemoryPersistentMemoryUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryPersistentMemoryUnitByMoidExecute(r)
@@ -3144,8 +3207,8 @@ GetMemoryPersistentMemoryUnitByMoid Read a 'memory.PersistentMemoryUnit' resourc
 func (a *MemoryApiService) GetMemoryPersistentMemoryUnitByMoid(ctx _context.Context, moid string) ApiGetMemoryPersistentMemoryUnitByMoidRequest {
 	return ApiGetMemoryPersistentMemoryUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3252,13 +3315,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryUnitByMoidExecute(r ApiGetMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3275,19 +3338,19 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryUnitByMoidExecute(r ApiGetMe
 }
 
 type ApiGetMemoryPersistentMemoryUnitListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3295,51 +3358,61 @@ func (r ApiGetMemoryPersistentMemoryUnitListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Orderby(orderby string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Top(top int32) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Skip(skip int32) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Select_(select_ string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Expand(expand string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Apply(apply string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Count(count bool) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Inlinecount(inlinecount string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) At(at string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryPersistentMemoryUnitListRequest) Tags(tags string) ApiGetMemoryPersistentMemoryUnitListRequest {
 	r.tags = &tags
@@ -3359,7 +3432,7 @@ GetMemoryPersistentMemoryUnitList Read a 'memory.PersistentMemoryUnit' resource.
 func (a *MemoryApiService) GetMemoryPersistentMemoryUnitList(ctx _context.Context) ApiGetMemoryPersistentMemoryUnitListRequest {
 	return ApiGetMemoryPersistentMemoryUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3498,13 +3571,13 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryUnitListExecute(r ApiGetMemo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3521,11 +3594,10 @@ func (a *MemoryApiService) GetMemoryPersistentMemoryUnitListExecute(r ApiGetMemo
 }
 
 type ApiGetMemoryUnitByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetMemoryUnitByMoidRequest) Execute() (MemoryUnit, *_nethttp.Response, error) {
 	return r.ApiService.GetMemoryUnitByMoidExecute(r)
@@ -3541,8 +3613,8 @@ GetMemoryUnitByMoid Read a 'memory.Unit' resource.
 func (a *MemoryApiService) GetMemoryUnitByMoid(ctx _context.Context, moid string) ApiGetMemoryUnitByMoidRequest {
 	return ApiGetMemoryUnitByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3649,13 +3721,13 @@ func (a *MemoryApiService) GetMemoryUnitByMoidExecute(r ApiGetMemoryUnitByMoidRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3672,19 +3744,19 @@ func (a *MemoryApiService) GetMemoryUnitByMoidExecute(r ApiGetMemoryUnitByMoidRe
 }
 
 type ApiGetMemoryUnitListRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3692,51 +3764,61 @@ func (r ApiGetMemoryUnitListRequest) Filter(filter string) ApiGetMemoryUnitListR
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetMemoryUnitListRequest) Orderby(orderby string) ApiGetMemoryUnitListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetMemoryUnitListRequest) Top(top int32) ApiGetMemoryUnitListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetMemoryUnitListRequest) Skip(skip int32) ApiGetMemoryUnitListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetMemoryUnitListRequest) Select_(select_ string) ApiGetMemoryUnitListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetMemoryUnitListRequest) Expand(expand string) ApiGetMemoryUnitListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetMemoryUnitListRequest) Apply(apply string) ApiGetMemoryUnitListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetMemoryUnitListRequest) Count(count bool) ApiGetMemoryUnitListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetMemoryUnitListRequest) Inlinecount(inlinecount string) ApiGetMemoryUnitListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetMemoryUnitListRequest) At(at string) ApiGetMemoryUnitListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetMemoryUnitListRequest) Tags(tags string) ApiGetMemoryUnitListRequest {
 	r.tags = &tags
@@ -3756,7 +3838,7 @@ GetMemoryUnitList Read a 'memory.Unit' resource.
 func (a *MemoryApiService) GetMemoryUnitList(ctx _context.Context) ApiGetMemoryUnitListRequest {
 	return ApiGetMemoryUnitListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3895,13 +3977,13 @@ func (a *MemoryApiService) GetMemoryUnitListExecute(r ApiGetMemoryUnitListReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3918,11 +4000,11 @@ func (a *MemoryApiService) GetMemoryUnitListExecute(r ApiGetMemoryUnitListReques
 }
 
 type ApiPatchMemoryArrayRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	moid        string
 	memoryArray *MemoryArray
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;memory.Array&#39; resource to update.
@@ -3930,6 +4012,7 @@ func (r ApiPatchMemoryArrayRequest) MemoryArray(memoryArray MemoryArray) ApiPatc
 	r.memoryArray = &memoryArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryArrayRequest) IfMatch(ifMatch string) ApiPatchMemoryArrayRequest {
 	r.ifMatch = &ifMatch
@@ -3950,8 +4033,8 @@ PatchMemoryArray Update a 'memory.Array' resource.
 func (a *MemoryApiService) PatchMemoryArray(ctx _context.Context, moid string) ApiPatchMemoryArrayRequest {
 	return ApiPatchMemoryArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4066,13 +4149,13 @@ func (a *MemoryApiService) PatchMemoryArrayExecute(r ApiPatchMemoryArrayRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4089,11 +4172,11 @@ func (a *MemoryApiService) PatchMemoryArrayExecute(r ApiPatchMemoryArrayRequest)
 }
 
 type ApiPatchMemoryPersistentMemoryConfigResultRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *MemoryApiService
+	moid                               string
 	memoryPersistentMemoryConfigResult *MemoryPersistentMemoryConfigResult
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;memory.PersistentMemoryConfigResult&#39; resource to update.
@@ -4101,6 +4184,7 @@ func (r ApiPatchMemoryPersistentMemoryConfigResultRequest) MemoryPersistentMemor
 	r.memoryPersistentMemoryConfigResult = &memoryPersistentMemoryConfigResult
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryConfigResultRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryConfigResultRequest {
 	r.ifMatch = &ifMatch
@@ -4121,8 +4205,8 @@ PatchMemoryPersistentMemoryConfigResult Update a 'memory.PersistentMemoryConfigR
 func (a *MemoryApiService) PatchMemoryPersistentMemoryConfigResult(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryConfigResultRequest {
 	return ApiPatchMemoryPersistentMemoryConfigResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4237,13 +4321,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryConfigResultExecute(r ApiP
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4260,11 +4344,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryConfigResultExecute(r ApiP
 }
 
 type ApiPatchMemoryPersistentMemoryConfigurationRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *MemoryApiService
+	moid                                string
 	memoryPersistentMemoryConfiguration *MemoryPersistentMemoryConfiguration
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;memory.PersistentMemoryConfiguration&#39; resource to update.
@@ -4272,6 +4356,7 @@ func (r ApiPatchMemoryPersistentMemoryConfigurationRequest) MemoryPersistentMemo
 	r.memoryPersistentMemoryConfiguration = &memoryPersistentMemoryConfiguration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryConfigurationRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryConfigurationRequest {
 	r.ifMatch = &ifMatch
@@ -4292,8 +4377,8 @@ PatchMemoryPersistentMemoryConfiguration Update a 'memory.PersistentMemoryConfig
 func (a *MemoryApiService) PatchMemoryPersistentMemoryConfiguration(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryConfigurationRequest {
 	return ApiPatchMemoryPersistentMemoryConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4408,13 +4493,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryConfigurationExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4431,11 +4516,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryConfigurationExecute(r Api
 }
 
 type ApiPatchMemoryPersistentMemoryNamespaceRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *MemoryApiService
+	moid                            string
 	memoryPersistentMemoryNamespace *MemoryPersistentMemoryNamespace
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;memory.PersistentMemoryNamespace&#39; resource to update.
@@ -4443,6 +4528,7 @@ func (r ApiPatchMemoryPersistentMemoryNamespaceRequest) MemoryPersistentMemoryNa
 	r.memoryPersistentMemoryNamespace = &memoryPersistentMemoryNamespace
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryNamespaceRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryNamespaceRequest {
 	r.ifMatch = &ifMatch
@@ -4463,8 +4549,8 @@ PatchMemoryPersistentMemoryNamespace Update a 'memory.PersistentMemoryNamespace'
 func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespace(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryNamespaceRequest {
 	return ApiPatchMemoryPersistentMemoryNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4579,13 +4665,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespaceExecute(r ApiPatc
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4602,11 +4688,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespaceExecute(r ApiPatc
 }
 
 type ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *MemoryApiService
+	moid                                        string
 	memoryPersistentMemoryNamespaceConfigResult *MemoryPersistentMemoryNamespaceConfigResult
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;memory.PersistentMemoryNamespaceConfigResult&#39; resource to update.
@@ -4614,6 +4700,7 @@ func (r ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest) MemoryPersis
 	r.memoryPersistentMemoryNamespaceConfigResult = &memoryPersistentMemoryNamespaceConfigResult
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest {
 	r.ifMatch = &ifMatch
@@ -4634,8 +4721,8 @@ PatchMemoryPersistentMemoryNamespaceConfigResult Update a 'memory.PersistentMemo
 func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespaceConfigResult(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest {
 	return ApiPatchMemoryPersistentMemoryNamespaceConfigResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4750,13 +4837,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespaceConfigResultExecu
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4773,11 +4860,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryNamespaceConfigResultExecu
 }
 
 type ApiPatchMemoryPersistentMemoryPolicyRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *MemoryApiService
+	moid                         string
 	memoryPersistentMemoryPolicy *MemoryPersistentMemoryPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;memory.PersistentMemoryPolicy&#39; resource to update.
@@ -4785,6 +4872,7 @@ func (r ApiPatchMemoryPersistentMemoryPolicyRequest) MemoryPersistentMemoryPolic
 	r.memoryPersistentMemoryPolicy = &memoryPersistentMemoryPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryPolicyRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -4805,8 +4893,8 @@ PatchMemoryPersistentMemoryPolicy Update a 'memory.PersistentMemoryPolicy' resou
 func (a *MemoryApiService) PatchMemoryPersistentMemoryPolicy(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryPolicyRequest {
 	return ApiPatchMemoryPersistentMemoryPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4921,13 +5009,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryPolicyExecute(r ApiPatchMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4944,11 +5032,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryPolicyExecute(r ApiPatchMe
 }
 
 type ApiPatchMemoryPersistentMemoryRegionRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *MemoryApiService
+	moid                         string
 	memoryPersistentMemoryRegion *MemoryPersistentMemoryRegion
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;memory.PersistentMemoryRegion&#39; resource to update.
@@ -4956,6 +5044,7 @@ func (r ApiPatchMemoryPersistentMemoryRegionRequest) MemoryPersistentMemoryRegio
 	r.memoryPersistentMemoryRegion = &memoryPersistentMemoryRegion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryRegionRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryRegionRequest {
 	r.ifMatch = &ifMatch
@@ -4976,8 +5065,8 @@ PatchMemoryPersistentMemoryRegion Update a 'memory.PersistentMemoryRegion' resou
 func (a *MemoryApiService) PatchMemoryPersistentMemoryRegion(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryRegionRequest {
 	return ApiPatchMemoryPersistentMemoryRegionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5092,13 +5181,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryRegionExecute(r ApiPatchMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5115,11 +5204,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryRegionExecute(r ApiPatchMe
 }
 
 type ApiPatchMemoryPersistentMemoryUnitRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *MemoryApiService
+	moid                       string
 	memoryPersistentMemoryUnit *MemoryPersistentMemoryUnit
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;memory.PersistentMemoryUnit&#39; resource to update.
@@ -5127,6 +5216,7 @@ func (r ApiPatchMemoryPersistentMemoryUnitRequest) MemoryPersistentMemoryUnit(me
 	r.memoryPersistentMemoryUnit = &memoryPersistentMemoryUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryPersistentMemoryUnitRequest) IfMatch(ifMatch string) ApiPatchMemoryPersistentMemoryUnitRequest {
 	r.ifMatch = &ifMatch
@@ -5147,8 +5237,8 @@ PatchMemoryPersistentMemoryUnit Update a 'memory.PersistentMemoryUnit' resource.
 func (a *MemoryApiService) PatchMemoryPersistentMemoryUnit(ctx _context.Context, moid string) ApiPatchMemoryPersistentMemoryUnitRequest {
 	return ApiPatchMemoryPersistentMemoryUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5263,13 +5353,13 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryUnitExecute(r ApiPatchMemo
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5286,11 +5376,11 @@ func (a *MemoryApiService) PatchMemoryPersistentMemoryUnitExecute(r ApiPatchMemo
 }
 
 type ApiPatchMemoryUnitRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 	memoryUnit *MemoryUnit
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;memory.Unit&#39; resource to update.
@@ -5298,6 +5388,7 @@ func (r ApiPatchMemoryUnitRequest) MemoryUnit(memoryUnit MemoryUnit) ApiPatchMem
 	r.memoryUnit = &memoryUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchMemoryUnitRequest) IfMatch(ifMatch string) ApiPatchMemoryUnitRequest {
 	r.ifMatch = &ifMatch
@@ -5318,8 +5409,8 @@ PatchMemoryUnit Update a 'memory.Unit' resource.
 func (a *MemoryApiService) PatchMemoryUnit(ctx _context.Context, moid string) ApiPatchMemoryUnitRequest {
 	return ApiPatchMemoryUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5434,13 +5525,13 @@ func (a *MemoryApiService) PatchMemoryUnitExecute(r ApiPatchMemoryUnitRequest) (
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5457,11 +5548,11 @@ func (a *MemoryApiService) PatchMemoryUnitExecute(r ApiPatchMemoryUnitRequest) (
 }
 
 type ApiUpdateMemoryArrayRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx         _context.Context
+	ApiService  *MemoryApiService
+	moid        string
 	memoryArray *MemoryArray
-	ifMatch *string
+	ifMatch     *string
 }
 
 // The &#39;memory.Array&#39; resource to update.
@@ -5469,6 +5560,7 @@ func (r ApiUpdateMemoryArrayRequest) MemoryArray(memoryArray MemoryArray) ApiUpd
 	r.memoryArray = &memoryArray
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryArrayRequest) IfMatch(ifMatch string) ApiUpdateMemoryArrayRequest {
 	r.ifMatch = &ifMatch
@@ -5489,8 +5581,8 @@ UpdateMemoryArray Update a 'memory.Array' resource.
 func (a *MemoryApiService) UpdateMemoryArray(ctx _context.Context, moid string) ApiUpdateMemoryArrayRequest {
 	return ApiUpdateMemoryArrayRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5605,13 +5697,13 @@ func (a *MemoryApiService) UpdateMemoryArrayExecute(r ApiUpdateMemoryArrayReques
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5628,11 +5720,11 @@ func (a *MemoryApiService) UpdateMemoryArrayExecute(r ApiUpdateMemoryArrayReques
 }
 
 type ApiUpdateMemoryPersistentMemoryConfigResultRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                _context.Context
+	ApiService                         *MemoryApiService
+	moid                               string
 	memoryPersistentMemoryConfigResult *MemoryPersistentMemoryConfigResult
-	ifMatch *string
+	ifMatch                            *string
 }
 
 // The &#39;memory.PersistentMemoryConfigResult&#39; resource to update.
@@ -5640,6 +5732,7 @@ func (r ApiUpdateMemoryPersistentMemoryConfigResultRequest) MemoryPersistentMemo
 	r.memoryPersistentMemoryConfigResult = &memoryPersistentMemoryConfigResult
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryConfigResultRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryConfigResultRequest {
 	r.ifMatch = &ifMatch
@@ -5660,8 +5753,8 @@ UpdateMemoryPersistentMemoryConfigResult Update a 'memory.PersistentMemoryConfig
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfigResult(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryConfigResultRequest {
 	return ApiUpdateMemoryPersistentMemoryConfigResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5776,13 +5869,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfigResultExecute(r Api
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5799,11 +5892,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfigResultExecute(r Api
 }
 
 type ApiUpdateMemoryPersistentMemoryConfigurationRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                 _context.Context
+	ApiService                          *MemoryApiService
+	moid                                string
 	memoryPersistentMemoryConfiguration *MemoryPersistentMemoryConfiguration
-	ifMatch *string
+	ifMatch                             *string
 }
 
 // The &#39;memory.PersistentMemoryConfiguration&#39; resource to update.
@@ -5811,6 +5904,7 @@ func (r ApiUpdateMemoryPersistentMemoryConfigurationRequest) MemoryPersistentMem
 	r.memoryPersistentMemoryConfiguration = &memoryPersistentMemoryConfiguration
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryConfigurationRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryConfigurationRequest {
 	r.ifMatch = &ifMatch
@@ -5831,8 +5925,8 @@ UpdateMemoryPersistentMemoryConfiguration Update a 'memory.PersistentMemoryConfi
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfiguration(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryConfigurationRequest {
 	return ApiUpdateMemoryPersistentMemoryConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5947,13 +6041,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfigurationExecute(r Ap
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5970,11 +6064,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryConfigurationExecute(r Ap
 }
 
 type ApiUpdateMemoryPersistentMemoryNamespaceRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                             _context.Context
+	ApiService                      *MemoryApiService
+	moid                            string
 	memoryPersistentMemoryNamespace *MemoryPersistentMemoryNamespace
-	ifMatch *string
+	ifMatch                         *string
 }
 
 // The &#39;memory.PersistentMemoryNamespace&#39; resource to update.
@@ -5982,6 +6076,7 @@ func (r ApiUpdateMemoryPersistentMemoryNamespaceRequest) MemoryPersistentMemoryN
 	r.memoryPersistentMemoryNamespace = &memoryPersistentMemoryNamespace
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryNamespaceRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryNamespaceRequest {
 	r.ifMatch = &ifMatch
@@ -6002,8 +6097,8 @@ UpdateMemoryPersistentMemoryNamespace Update a 'memory.PersistentMemoryNamespace
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespace(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryNamespaceRequest {
 	return ApiUpdateMemoryPersistentMemoryNamespaceRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6118,13 +6213,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespaceExecute(r ApiUpd
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6141,11 +6236,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespaceExecute(r ApiUpd
 }
 
 type ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                                         _context.Context
+	ApiService                                  *MemoryApiService
+	moid                                        string
 	memoryPersistentMemoryNamespaceConfigResult *MemoryPersistentMemoryNamespaceConfigResult
-	ifMatch *string
+	ifMatch                                     *string
 }
 
 // The &#39;memory.PersistentMemoryNamespaceConfigResult&#39; resource to update.
@@ -6153,6 +6248,7 @@ func (r ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest) MemoryPersi
 	r.memoryPersistentMemoryNamespaceConfigResult = &memoryPersistentMemoryNamespaceConfigResult
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest {
 	r.ifMatch = &ifMatch
@@ -6173,8 +6269,8 @@ UpdateMemoryPersistentMemoryNamespaceConfigResult Update a 'memory.PersistentMem
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespaceConfigResult(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest {
 	return ApiUpdateMemoryPersistentMemoryNamespaceConfigResultRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6289,13 +6385,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespaceConfigResultExec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6312,11 +6408,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryNamespaceConfigResultExec
 }
 
 type ApiUpdateMemoryPersistentMemoryPolicyRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *MemoryApiService
+	moid                         string
 	memoryPersistentMemoryPolicy *MemoryPersistentMemoryPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;memory.PersistentMemoryPolicy&#39; resource to update.
@@ -6324,6 +6420,7 @@ func (r ApiUpdateMemoryPersistentMemoryPolicyRequest) MemoryPersistentMemoryPoli
 	r.memoryPersistentMemoryPolicy = &memoryPersistentMemoryPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryPolicyRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -6344,8 +6441,8 @@ UpdateMemoryPersistentMemoryPolicy Update a 'memory.PersistentMemoryPolicy' reso
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryPolicy(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryPolicyRequest {
 	return ApiUpdateMemoryPersistentMemoryPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6460,13 +6557,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryPolicyExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6483,11 +6580,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryPolicyExecute(r ApiUpdate
 }
 
 type ApiUpdateMemoryPersistentMemoryRegionRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *MemoryApiService
+	moid                         string
 	memoryPersistentMemoryRegion *MemoryPersistentMemoryRegion
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;memory.PersistentMemoryRegion&#39; resource to update.
@@ -6495,6 +6592,7 @@ func (r ApiUpdateMemoryPersistentMemoryRegionRequest) MemoryPersistentMemoryRegi
 	r.memoryPersistentMemoryRegion = &memoryPersistentMemoryRegion
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryRegionRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryRegionRequest {
 	r.ifMatch = &ifMatch
@@ -6515,8 +6613,8 @@ UpdateMemoryPersistentMemoryRegion Update a 'memory.PersistentMemoryRegion' reso
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryRegion(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryRegionRequest {
 	return ApiUpdateMemoryPersistentMemoryRegionRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6631,13 +6729,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryRegionExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6654,11 +6752,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryRegionExecute(r ApiUpdate
 }
 
 type ApiUpdateMemoryPersistentMemoryUnitRequest struct {
-	ctx _context.Context
-	ApiService *MemoryApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *MemoryApiService
+	moid                       string
 	memoryPersistentMemoryUnit *MemoryPersistentMemoryUnit
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;memory.PersistentMemoryUnit&#39; resource to update.
@@ -6666,6 +6764,7 @@ func (r ApiUpdateMemoryPersistentMemoryUnitRequest) MemoryPersistentMemoryUnit(m
 	r.memoryPersistentMemoryUnit = &memoryPersistentMemoryUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryPersistentMemoryUnitRequest) IfMatch(ifMatch string) ApiUpdateMemoryPersistentMemoryUnitRequest {
 	r.ifMatch = &ifMatch
@@ -6686,8 +6785,8 @@ UpdateMemoryPersistentMemoryUnit Update a 'memory.PersistentMemoryUnit' resource
 func (a *MemoryApiService) UpdateMemoryPersistentMemoryUnit(ctx _context.Context, moid string) ApiUpdateMemoryPersistentMemoryUnitRequest {
 	return ApiUpdateMemoryPersistentMemoryUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6802,13 +6901,13 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryUnitExecute(r ApiUpdateMe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -6825,11 +6924,11 @@ func (a *MemoryApiService) UpdateMemoryPersistentMemoryUnitExecute(r ApiUpdateMe
 }
 
 type ApiUpdateMemoryUnitRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *MemoryApiService
-	moid string
+	moid       string
 	memoryUnit *MemoryUnit
-	ifMatch *string
+	ifMatch    *string
 }
 
 // The &#39;memory.Unit&#39; resource to update.
@@ -6837,6 +6936,7 @@ func (r ApiUpdateMemoryUnitRequest) MemoryUnit(memoryUnit MemoryUnit) ApiUpdateM
 	r.memoryUnit = &memoryUnit
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateMemoryUnitRequest) IfMatch(ifMatch string) ApiUpdateMemoryUnitRequest {
 	r.ifMatch = &ifMatch
@@ -6857,8 +6957,8 @@ UpdateMemoryUnit Update a 'memory.Unit' resource.
 func (a *MemoryApiService) UpdateMemoryUnit(ctx _context.Context, moid string) ApiUpdateMemoryUnitRequest {
 	return ApiUpdateMemoryUnitRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -6973,13 +7073,13 @@ func (a *MemoryApiService) UpdateMemoryUnitExecute(r ApiUpdateMemoryUnitRequest)
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

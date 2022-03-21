@@ -26,7 +26,7 @@ type MoMoRef struct {
 	// An OData $filter expression which describes the REST resource to be referenced. This field may be set instead of 'moid' by clients. 1. If 'moid' is set this field is ignored. 1. If 'selector' is set and 'moid' is empty/absent from the request, Intersight determines the Moid of the resource matching the filter expression and populates it in the MoRef that is part of the object instance being inserted/updated to fulfill the REST request. An error is returned if the filter matches zero or more than one REST resource. An example filter string is: Serial eq '3AA8B7T11'.
 	Selector *string `json:"Selector,omitempty"`
 	// A URL to an instance of the 'mo.MoRef' class.
-	Link *string `json:"link,omitempty"`
+	Link                 *string `json:"link,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *MoMoRef) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MoMoRef) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *MoMoRef) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MoMoRef) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -278,5 +278,3 @@ func (v *NullableMoMoRef) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // AssetDeploymentDeviceResponse - The response body of a HTTP GET request for the 'asset.DeploymentDevice' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'asset.DeploymentDevice' resources.
 type AssetDeploymentDeviceResponse struct {
 	AssetDeploymentDeviceList *AssetDeploymentDeviceList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 }
 
 // AssetDeploymentDeviceListAsAssetDeploymentDeviceResponse is a convenience function that returns AssetDeploymentDeviceList wrapped in AssetDeploymentDeviceResponse
 func AssetDeploymentDeviceListAsAssetDeploymentDeviceResponse(v *AssetDeploymentDeviceList) AssetDeploymentDeviceResponse {
-	return AssetDeploymentDeviceResponse{ AssetDeploymentDeviceList: v}
+	return AssetDeploymentDeviceResponse{AssetDeploymentDeviceList: v}
 }
 
 // MoAggregateTransformAsAssetDeploymentDeviceResponse is a convenience function that returns MoAggregateTransform wrapped in AssetDeploymentDeviceResponse
 func MoAggregateTransformAsAssetDeploymentDeviceResponse(v *MoAggregateTransform) AssetDeploymentDeviceResponse {
-	return AssetDeploymentDeviceResponse{ MoAggregateTransform: v}
+	return AssetDeploymentDeviceResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAssetDeploymentDeviceResponse is a convenience function that returns MoDocumentCount wrapped in AssetDeploymentDeviceResponse
 func MoDocumentCountAsAssetDeploymentDeviceResponse(v *MoDocumentCount) AssetDeploymentDeviceResponse {
-	return AssetDeploymentDeviceResponse{ MoDocumentCount: v}
+	return AssetDeploymentDeviceResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAssetDeploymentDeviceResponse is a convenience function that returns MoTagSummary wrapped in AssetDeploymentDeviceResponse
 func MoTagSummaryAsAssetDeploymentDeviceResponse(v *MoTagSummary) AssetDeploymentDeviceResponse {
-	return AssetDeploymentDeviceResponse{ MoTagSummary: v}
+	return AssetDeploymentDeviceResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeploymentDeviceResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AssetDeploymentDeviceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetDeploymentDeviceResponse) GetActualInstance() (interface{}) {
+func (obj *AssetDeploymentDeviceResponse) GetActualInstance() interface{} {
 	if obj.AssetDeploymentDeviceList != nil {
 		return obj.AssetDeploymentDeviceList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAssetDeploymentDeviceResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

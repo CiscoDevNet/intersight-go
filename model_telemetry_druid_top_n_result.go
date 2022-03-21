@@ -21,7 +21,7 @@ type TelemetryDruidTopNResult struct {
 	// The ISO 8601 timestamp.
 	Timestamp *time.Time `json:"timestamp,omitempty"`
 	// A sorted list of dimension values
-	Result *[]map[string]interface{} `json:"result,omitempty"`
+	Result               *[]map[string]interface{} `json:"result,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -177,5 +177,3 @@ func (v *NullableTelemetryDruidTopNResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

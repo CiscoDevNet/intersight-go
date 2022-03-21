@@ -20,10 +20,10 @@ type RecoveryConfigResultAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                             `json:"ObjectType"`
 	BackupProfile *RecoveryBackupProfileRelationship `json:"BackupProfile,omitempty"`
 	// An array of relationships to recoveryConfigResultEntry resources.
-	ResultEntries []RecoveryConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
+	ResultEntries        []RecoveryConfigResultEntryRelationship `json:"ResultEntries,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *RecoveryConfigResultAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryConfigResultAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *RecoveryConfigResultAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *RecoveryConfigResultAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *RecoveryConfigResultAllOf) SetBackupProfile(v RecoveryBackupProfileRela
 
 // GetResultEntries returns the ResultEntries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RecoveryConfigResultAllOf) GetResultEntries() []RecoveryConfigResultEntryRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []RecoveryConfigResultEntryRelationship
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableRecoveryConfigResultAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

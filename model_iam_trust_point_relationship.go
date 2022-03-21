@@ -19,19 +19,18 @@ import (
 // IamTrustPointRelationship - A relationship to the 'iam.TrustPoint' resource, or the expanded 'iam.TrustPoint' resource, or the 'null' value.
 type IamTrustPointRelationship struct {
 	IamTrustPoint *IamTrustPoint
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // IamTrustPointAsIamTrustPointRelationship is a convenience function that returns IamTrustPoint wrapped in IamTrustPointRelationship
 func IamTrustPointAsIamTrustPointRelationship(v *IamTrustPoint) IamTrustPointRelationship {
-	return IamTrustPointRelationship{ IamTrustPoint: v}
+	return IamTrustPointRelationship{IamTrustPoint: v}
 }
 
 // MoMoRefAsIamTrustPointRelationship is a convenience function that returns MoMoRef wrapped in IamTrustPointRelationship
 func MoMoRefAsIamTrustPointRelationship(v *MoMoRef) IamTrustPointRelationship {
-	return IamTrustPointRelationship{ MoMoRef: v}
+	return IamTrustPointRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamTrustPointRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamTrustPointRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamTrustPointRelationship) GetActualInstance() (interface{}) {
+func (obj *IamTrustPointRelationship) GetActualInstance() interface{} {
 	if obj.IamTrustPoint != nil {
 		return obj.IamTrustPoint
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamTrustPointRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,8 +31,8 @@ type FabricPortMode struct {
 	// Starting range of the Port Identifier.
 	PortIdStart *int64 `json:"PortIdStart,omitempty"`
 	// Slot Identifier of the switch.
-	SlotId *int64 `json:"SlotId,omitempty"`
-	PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
+	SlotId               *int64                        `json:"SlotId,omitempty"`
+	PortPolicy           *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *FabricPortMode) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricPortMode) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *FabricPortMode) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricPortMode) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -325,7 +325,7 @@ func (o *FabricPortMode) UnmarshalJSON(bytes []byte) (err error) {
 		// Starting range of the Port Identifier.
 		PortIdStart *int64 `json:"PortIdStart,omitempty"`
 		// Slot Identifier of the switch.
-		SlotId *int64 `json:"SlotId,omitempty"`
+		SlotId     *int64                        `json:"SlotId,omitempty"`
 		PortPolicy *FabricPortPolicyRelationship `json:"PortPolicy,omitempty"`
 	}
 
@@ -425,5 +425,3 @@ func (v *NullableFabricPortMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

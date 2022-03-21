@@ -19,31 +19,30 @@ import (
 // EquipmentIoCardOperationResponse - The response body of a HTTP GET request for the 'equipment.IoCardOperation' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'equipment.IoCardOperation' resources.
 type EquipmentIoCardOperationResponse struct {
 	EquipmentIoCardOperationList *EquipmentIoCardOperationList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform         *MoAggregateTransform
+	MoDocumentCount              *MoDocumentCount
+	MoTagSummary                 *MoTagSummary
 }
 
 // EquipmentIoCardOperationListAsEquipmentIoCardOperationResponse is a convenience function that returns EquipmentIoCardOperationList wrapped in EquipmentIoCardOperationResponse
 func EquipmentIoCardOperationListAsEquipmentIoCardOperationResponse(v *EquipmentIoCardOperationList) EquipmentIoCardOperationResponse {
-	return EquipmentIoCardOperationResponse{ EquipmentIoCardOperationList: v}
+	return EquipmentIoCardOperationResponse{EquipmentIoCardOperationList: v}
 }
 
 // MoAggregateTransformAsEquipmentIoCardOperationResponse is a convenience function that returns MoAggregateTransform wrapped in EquipmentIoCardOperationResponse
 func MoAggregateTransformAsEquipmentIoCardOperationResponse(v *MoAggregateTransform) EquipmentIoCardOperationResponse {
-	return EquipmentIoCardOperationResponse{ MoAggregateTransform: v}
+	return EquipmentIoCardOperationResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsEquipmentIoCardOperationResponse is a convenience function that returns MoDocumentCount wrapped in EquipmentIoCardOperationResponse
 func MoDocumentCountAsEquipmentIoCardOperationResponse(v *MoDocumentCount) EquipmentIoCardOperationResponse {
-	return EquipmentIoCardOperationResponse{ MoDocumentCount: v}
+	return EquipmentIoCardOperationResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsEquipmentIoCardOperationResponse is a convenience function that returns MoTagSummary wrapped in EquipmentIoCardOperationResponse
 func MoTagSummaryAsEquipmentIoCardOperationResponse(v *MoTagSummary) EquipmentIoCardOperationResponse {
-	return EquipmentIoCardOperationResponse{ MoTagSummary: v}
+	return EquipmentIoCardOperationResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentIoCardOperationResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src EquipmentIoCardOperationResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentIoCardOperationResponse) GetActualInstance() (interface{}) {
+func (obj *EquipmentIoCardOperationResponse) GetActualInstance() interface{} {
 	if obj.EquipmentIoCardOperationList != nil {
 		return obj.EquipmentIoCardOperationList
 	}
@@ -184,5 +183,3 @@ func (v *NullableEquipmentIoCardOperationResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

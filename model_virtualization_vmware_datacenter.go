@@ -37,9 +37,9 @@ type VirtualizationVmwareDatacenter struct {
 	// Count of all virtual machines (VMs) associated with this DC.
 	VmCount *int64 `json:"VmCount,omitempty"`
 	// Count of all virtual machines templates associated with this DC.
-	VmTemplateCount *int64 `json:"VmTemplateCount,omitempty"`
-	HypervisorManager *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
-	ParentFolder *VirtualizationVmwareFolderRelationship `json:"ParentFolder,omitempty"`
+	VmTemplateCount      *int64                                   `json:"VmTemplateCount,omitempty"`
+	HypervisorManager    *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
+	ParentFolder         *VirtualizationVmwareFolderRelationship  `json:"ParentFolder,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *VirtualizationVmwareDatacenter) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatacenter) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *VirtualizationVmwareDatacenter) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareDatacenter) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -474,9 +474,9 @@ func (o *VirtualizationVmwareDatacenter) UnmarshalJSON(bytes []byte) (err error)
 		// Count of all virtual machines (VMs) associated with this DC.
 		VmCount *int64 `json:"VmCount,omitempty"`
 		// Count of all virtual machines templates associated with this DC.
-		VmTemplateCount *int64 `json:"VmTemplateCount,omitempty"`
+		VmTemplateCount   *int64                                   `json:"VmTemplateCount,omitempty"`
 		HypervisorManager *VirtualizationVmwareVcenterRelationship `json:"HypervisorManager,omitempty"`
-		ParentFolder *VirtualizationVmwareFolderRelationship `json:"ParentFolder,omitempty"`
+		ParentFolder      *VirtualizationVmwareFolderRelationship  `json:"ParentFolder,omitempty"`
 	}
 
 	varVirtualizationVmwareDatacenterWithoutEmbeddedStruct := VirtualizationVmwareDatacenterWithoutEmbeddedStruct{}
@@ -583,5 +583,3 @@ func (v *NullableVirtualizationVmwareDatacenter) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

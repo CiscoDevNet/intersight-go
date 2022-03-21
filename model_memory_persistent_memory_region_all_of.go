@@ -38,13 +38,13 @@ type MemoryPersistentMemoryRegionAllOf struct {
 	// Socket Memory ID of the Persistent Memory Region.
 	SocketMemoryId *string `json:"SocketMemoryId,omitempty"`
 	// Total capacity in GiB of the Persistent Memory Region.
-	TotalCapacity *string `json:"TotalCapacity,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
+	TotalCapacity                       *string                                          `json:"TotalCapacity,omitempty"`
+	InventoryDeviceInfo                 *InventoryDeviceInfoRelationship                 `json:"InventoryDeviceInfo,omitempty"`
 	MemoryPersistentMemoryConfiguration *MemoryPersistentMemoryConfigurationRelationship `json:"MemoryPersistentMemoryConfiguration,omitempty"`
 	// An array of relationships to memoryPersistentMemoryNamespace resources.
 	PersistentMemoryNamespaces []MemoryPersistentMemoryNamespaceRelationship `json:"PersistentMemoryNamespaces,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RegisteredDevice           *AssetDeviceRegistrationRelationship          `json:"RegisteredDevice,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _MemoryPersistentMemoryRegionAllOf MemoryPersistentMemoryRegionAllOf
@@ -85,7 +85,7 @@ func (o *MemoryPersistentMemoryRegionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryRegionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -109,7 +109,7 @@ func (o *MemoryPersistentMemoryRegionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryRegionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -474,7 +474,7 @@ func (o *MemoryPersistentMemoryRegionAllOf) SetMemoryPersistentMemoryConfigurati
 
 // GetPersistentMemoryNamespaces returns the PersistentMemoryNamespaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryPersistentMemoryRegionAllOf) GetPersistentMemoryNamespaces() []MemoryPersistentMemoryNamespaceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryNamespaceRelationship
 		return ret
 	}
@@ -658,5 +658,3 @@ func (v *NullableMemoryPersistentMemoryRegionAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

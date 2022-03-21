@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppVolumeRelationship - A relationship to the 'storage.NetAppVolume' resource, or the expanded 'storage.NetAppVolume' resource, or the 'null' value.
 type StorageNetAppVolumeRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	StorageNetAppVolume *StorageNetAppVolume
 }
 
 // MoMoRefAsStorageNetAppVolumeRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppVolumeRelationship
 func MoMoRefAsStorageNetAppVolumeRelationship(v *MoMoRef) StorageNetAppVolumeRelationship {
-	return StorageNetAppVolumeRelationship{ MoMoRef: v}
+	return StorageNetAppVolumeRelationship{MoMoRef: v}
 }
 
 // StorageNetAppVolumeAsStorageNetAppVolumeRelationship is a convenience function that returns StorageNetAppVolume wrapped in StorageNetAppVolumeRelationship
 func StorageNetAppVolumeAsStorageNetAppVolumeRelationship(v *StorageNetAppVolume) StorageNetAppVolumeRelationship {
-	return StorageNetAppVolumeRelationship{ StorageNetAppVolume: v}
+	return StorageNetAppVolumeRelationship{StorageNetAppVolume: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppVolumeRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppVolumeRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppVolumeRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppVolumeRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppVolumeRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // CommHttpProxyPolicyResponse - The response body of a HTTP GET request for the 'comm.HttpProxyPolicy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'comm.HttpProxyPolicy' resources.
 type CommHttpProxyPolicyResponse struct {
 	CommHttpProxyPolicyList *CommHttpProxyPolicyList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 }
 
 // CommHttpProxyPolicyListAsCommHttpProxyPolicyResponse is a convenience function that returns CommHttpProxyPolicyList wrapped in CommHttpProxyPolicyResponse
 func CommHttpProxyPolicyListAsCommHttpProxyPolicyResponse(v *CommHttpProxyPolicyList) CommHttpProxyPolicyResponse {
-	return CommHttpProxyPolicyResponse{ CommHttpProxyPolicyList: v}
+	return CommHttpProxyPolicyResponse{CommHttpProxyPolicyList: v}
 }
 
 // MoAggregateTransformAsCommHttpProxyPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in CommHttpProxyPolicyResponse
 func MoAggregateTransformAsCommHttpProxyPolicyResponse(v *MoAggregateTransform) CommHttpProxyPolicyResponse {
-	return CommHttpProxyPolicyResponse{ MoAggregateTransform: v}
+	return CommHttpProxyPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCommHttpProxyPolicyResponse is a convenience function that returns MoDocumentCount wrapped in CommHttpProxyPolicyResponse
 func MoDocumentCountAsCommHttpProxyPolicyResponse(v *MoDocumentCount) CommHttpProxyPolicyResponse {
-	return CommHttpProxyPolicyResponse{ MoDocumentCount: v}
+	return CommHttpProxyPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCommHttpProxyPolicyResponse is a convenience function that returns MoTagSummary wrapped in CommHttpProxyPolicyResponse
 func MoTagSummaryAsCommHttpProxyPolicyResponse(v *MoTagSummary) CommHttpProxyPolicyResponse {
-	return CommHttpProxyPolicyResponse{ MoTagSummary: v}
+	return CommHttpProxyPolicyResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CommHttpProxyPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CommHttpProxyPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CommHttpProxyPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *CommHttpProxyPolicyResponse) GetActualInstance() interface{} {
 	if obj.CommHttpProxyPolicyList != nil {
 		return obj.CommHttpProxyPolicyList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCommHttpProxyPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

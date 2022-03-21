@@ -28,7 +28,7 @@ type HyperflexHxLinkDtAllOf struct {
 	// HTTP verb that this HyperFlex link DT is referring to. * `POST` - HTTP verb POST for this task definition. * `GET` - HTTP verb GET for this task definition. * `PUT` - HTTP verb PUT for this task definition. * `DELETE` - HTTP verb DELETE for this task definition.
 	Method *string `json:"Method,omitempty"`
 	// Relationship of  link to this resource.
-	Rel *string `json:"Rel,omitempty"`
+	Rel                  *string `json:"Rel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *HyperflexHxLinkDtAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxLinkDtAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *HyperflexHxLinkDtAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexHxLinkDtAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -318,5 +318,3 @@ func (v *NullableHyperflexHxLinkDtAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

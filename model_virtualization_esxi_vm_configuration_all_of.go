@@ -22,9 +22,9 @@ type VirtualizationEsxiVmConfigurationAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Specify annotation (optional) for the virtual machine.
-	Annotation *string `json:"Annotation,omitempty"`
-	Compute NullableVirtualizationEsxiVmComputeConfiguration `json:"Compute,omitempty"`
-	Customspec NullableVirtualizationBaseCustomSpec `json:"Customspec,omitempty"`
+	Annotation *string                                          `json:"Annotation,omitempty"`
+	Compute    NullableVirtualizationEsxiVmComputeConfiguration `json:"Compute,omitempty"`
+	Customspec NullableVirtualizationBaseCustomSpec             `json:"Customspec,omitempty"`
 	// Datacenter where virtual machine is deployed.
 	Datacenter *string `json:"Datacenter,omitempty"`
 	// Folder where virtual machine is deployed.
@@ -32,11 +32,11 @@ type VirtualizationEsxiVmConfigurationAllOf struct {
 	// Image path of OVA (The image can be from any location).
 	Image *string `json:"Image,omitempty"`
 	// The full inventory path as reported by virtual center (vCenter). Used by some of the operations to uniquely identify the VM. Inventory path is set internally based on notifications from the inventory service or some other internal channels.
-	InventoryPath *string `json:"InventoryPath,omitempty"`
-	Network NullableVirtualizationEsxiVmNetworkConfiguration `json:"Network,omitempty"`
-	Storage NullableVirtualizationEsxiVmStorageConfiguration `json:"Storage,omitempty"`
+	InventoryPath *string                                          `json:"InventoryPath,omitempty"`
+	Network       NullableVirtualizationEsxiVmNetworkConfiguration `json:"Network,omitempty"`
+	Storage       NullableVirtualizationEsxiVmStorageConfiguration `json:"Storage,omitempty"`
 	// Template to be used for clone.
-	Template *string `json:"Template,omitempty"`
+	Template             *string `json:"Template,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -158,7 +158,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetCompute() VirtualizationEsxi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetComputeOk() (*VirtualizationEsxiVmComputeConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Compute.Get(), o.Compute.IsSet()
@@ -177,6 +177,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) HasCompute() bool {
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetCompute(v VirtualizationEsxiVmComputeConfiguration) {
 	o.Compute.Set(&v)
 }
+
 // SetComputeNil sets the value for Compute to be an explicit nil
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetComputeNil() {
 	o.Compute.Set(nil)
@@ -200,7 +201,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetCustomspec() VirtualizationB
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetCustomspecOk() (*VirtualizationBaseCustomSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Customspec.Get(), o.Customspec.IsSet()
@@ -219,6 +220,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) HasCustomspec() bool {
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetCustomspec(v VirtualizationBaseCustomSpec) {
 	o.Customspec.Set(&v)
 }
+
 // SetCustomspecNil sets the value for Customspec to be an explicit nil
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetCustomspecNil() {
 	o.Customspec.Set(nil)
@@ -370,7 +372,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetNetwork() VirtualizationEsxi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetNetworkOk() (*VirtualizationEsxiVmNetworkConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Network.Get(), o.Network.IsSet()
@@ -389,6 +391,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) HasNetwork() bool {
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetNetwork(v VirtualizationEsxiVmNetworkConfiguration) {
 	o.Network.Set(&v)
 }
+
 // SetNetworkNil sets the value for Network to be an explicit nil
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetNetworkNil() {
 	o.Network.Set(nil)
@@ -412,7 +415,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) GetStorage() VirtualizationEsxi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationEsxiVmConfigurationAllOf) GetStorageOk() (*VirtualizationEsxiVmStorageConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Storage.Get(), o.Storage.IsSet()
@@ -431,6 +434,7 @@ func (o *VirtualizationEsxiVmConfigurationAllOf) HasStorage() bool {
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetStorage(v VirtualizationEsxiVmStorageConfiguration) {
 	o.Storage.Set(&v)
 }
+
 // SetStorageNil sets the value for Storage to be an explicit nil
 func (o *VirtualizationEsxiVmConfigurationAllOf) SetStorageNil() {
 	o.Storage.Set(nil)
@@ -582,5 +586,3 @@ func (v *NullableVirtualizationEsxiVmConfigurationAllOf) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

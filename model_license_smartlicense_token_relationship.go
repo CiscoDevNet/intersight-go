@@ -19,19 +19,18 @@ import (
 // LicenseSmartlicenseTokenRelationship - A relationship to the 'license.SmartlicenseToken' resource, or the expanded 'license.SmartlicenseToken' resource, or the 'null' value.
 type LicenseSmartlicenseTokenRelationship struct {
 	LicenseSmartlicenseToken *LicenseSmartlicenseToken
-	MoMoRef *MoMoRef
+	MoMoRef                  *MoMoRef
 }
 
 // LicenseSmartlicenseTokenAsLicenseSmartlicenseTokenRelationship is a convenience function that returns LicenseSmartlicenseToken wrapped in LicenseSmartlicenseTokenRelationship
 func LicenseSmartlicenseTokenAsLicenseSmartlicenseTokenRelationship(v *LicenseSmartlicenseToken) LicenseSmartlicenseTokenRelationship {
-	return LicenseSmartlicenseTokenRelationship{ LicenseSmartlicenseToken: v}
+	return LicenseSmartlicenseTokenRelationship{LicenseSmartlicenseToken: v}
 }
 
 // MoMoRefAsLicenseSmartlicenseTokenRelationship is a convenience function that returns MoMoRef wrapped in LicenseSmartlicenseTokenRelationship
 func MoMoRefAsLicenseSmartlicenseTokenRelationship(v *MoMoRef) LicenseSmartlicenseTokenRelationship {
-	return LicenseSmartlicenseTokenRelationship{ MoMoRef: v}
+	return LicenseSmartlicenseTokenRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LicenseSmartlicenseTokenRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src LicenseSmartlicenseTokenRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LicenseSmartlicenseTokenRelationship) GetActualInstance() (interface{}) {
+func (obj *LicenseSmartlicenseTokenRelationship) GetActualInstance() interface{} {
 	if obj.LicenseSmartlicenseToken != nil {
 		return obj.LicenseSmartlicenseToken
 	}
@@ -137,5 +136,3 @@ func (v *NullableLicenseSmartlicenseTokenRelationship) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

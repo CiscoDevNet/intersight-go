@@ -41,11 +41,11 @@ type NetworkconfigPolicy struct {
 	// IP address of the primary DNS server.
 	PreferredIpv4dnsServer *string `json:"PreferredIpv4dnsServer,omitempty"`
 	// IP address of the primary DNS server.
-	PreferredIpv6dnsServer *string `json:"PreferredIpv6dnsServer,omitempty"`
-	ApplianceAccount *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	PreferredIpv6dnsServer *string                               `json:"PreferredIpv6dnsServer,omitempty"`
+	ApplianceAccount       *IamAccountRelationship               `json:"ApplianceAccount,omitempty"`
+	Organization           *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to policyAbstractConfigProfile resources.
-	Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
+	Profiles             []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *NetworkconfigPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NetworkconfigPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *NetworkconfigPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NetworkconfigPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -476,7 +476,7 @@ func (o *NetworkconfigPolicy) SetOrganization(v OrganizationOrganizationRelation
 
 // GetProfiles returns the Profiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkconfigPolicy) GetProfiles() []PolicyAbstractConfigProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []PolicyAbstractConfigProfileRelationship
 		return ret
 	}
@@ -590,9 +590,9 @@ func (o *NetworkconfigPolicy) UnmarshalJSON(bytes []byte) (err error) {
 		// IP address of the primary DNS server.
 		PreferredIpv4dnsServer *string `json:"PreferredIpv4dnsServer,omitempty"`
 		// IP address of the primary DNS server.
-		PreferredIpv6dnsServer *string `json:"PreferredIpv6dnsServer,omitempty"`
-		ApplianceAccount *IamAccountRelationship `json:"ApplianceAccount,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		PreferredIpv6dnsServer *string                               `json:"PreferredIpv6dnsServer,omitempty"`
+		ApplianceAccount       *IamAccountRelationship               `json:"ApplianceAccount,omitempty"`
+		Organization           *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 		// An array of relationships to policyAbstractConfigProfile resources.
 		Profiles []PolicyAbstractConfigProfileRelationship `json:"Profiles,omitempty"`
 	}
@@ -707,5 +707,3 @@ func (v *NullableNetworkconfigPolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,17 +25,17 @@ type VirtualizationIweVirtualMachineNetworkInterface struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Operating system assigned name for network interface.
-	InterfaceName *string `json:"InterfaceName,omitempty"`
-	IpAddress []string `json:"IpAddress,omitempty"`
+	InterfaceName *string  `json:"InterfaceName,omitempty"`
+	IpAddress     []string `json:"IpAddress,omitempty"`
 	// Primary IP address of the network interface.
 	PrimaryIpAddress *string `json:"PrimaryIpAddress,omitempty"`
 	// Current status of virtual network interface status. * `Up` - Virtual network interface is up and running. * `Down` - Virtual network interface is down and not running.
 	Status *string `json:"Status,omitempty"`
 	// A reference to the virtual machine where this network object is attached to.
-	VirtualMachineName *string `json:"VirtualMachineName,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	Network *VirtualizationIweNetworkRelationship `json:"Network,omitempty"`
-	VirtualMachine *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	VirtualMachineName   *string                                      `json:"VirtualMachineName,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship        `json:"Cluster,omitempty"`
+	Network              *VirtualizationIweNetworkRelationship        `json:"Network,omitempty"`
+	VirtualMachine       *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *VirtualizationIweVirtualMachineNetworkInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualMachineNetworkInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *VirtualizationIweVirtualMachineNetworkInterface) GetObjectType() string
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualMachineNetworkInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -152,7 +152,7 @@ func (o *VirtualizationIweVirtualMachineNetworkInterface) SetInterfaceName(v str
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachineNetworkInterface) GetIpAddress() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -430,17 +430,17 @@ func (o *VirtualizationIweVirtualMachineNetworkInterface) UnmarshalJSON(bytes []
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Operating system assigned name for network interface.
-		InterfaceName *string `json:"InterfaceName,omitempty"`
-		IpAddress []string `json:"IpAddress,omitempty"`
+		InterfaceName *string  `json:"InterfaceName,omitempty"`
+		IpAddress     []string `json:"IpAddress,omitempty"`
 		// Primary IP address of the network interface.
 		PrimaryIpAddress *string `json:"PrimaryIpAddress,omitempty"`
 		// Current status of virtual network interface status. * `Up` - Virtual network interface is up and running. * `Down` - Virtual network interface is down and not running.
 		Status *string `json:"Status,omitempty"`
 		// A reference to the virtual machine where this network object is attached to.
-		VirtualMachineName *string `json:"VirtualMachineName,omitempty"`
-		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-		Network *VirtualizationIweNetworkRelationship `json:"Network,omitempty"`
-		VirtualMachine *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+		VirtualMachineName *string                                      `json:"VirtualMachineName,omitempty"`
+		Cluster            *VirtualizationIweClusterRelationship        `json:"Cluster,omitempty"`
+		Network            *VirtualizationIweNetworkRelationship        `json:"Network,omitempty"`
+		VirtualMachine     *VirtualizationIweVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	}
 
 	varVirtualizationIweVirtualMachineNetworkInterfaceWithoutEmbeddedStruct := VirtualizationIweVirtualMachineNetworkInterfaceWithoutEmbeddedStruct{}
@@ -545,5 +545,3 @@ func (v *NullableVirtualizationIweVirtualMachineNetworkInterface) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

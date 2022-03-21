@@ -18,32 +18,31 @@ import (
 
 // NetworkconfigPolicyResponse - The response body of a HTTP GET request for the 'networkconfig.Policy' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'networkconfig.Policy' resources.
 type NetworkconfigPolicyResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform    *MoAggregateTransform
+	MoDocumentCount         *MoDocumentCount
+	MoTagSummary            *MoTagSummary
 	NetworkconfigPolicyList *NetworkconfigPolicyList
 }
 
 // MoAggregateTransformAsNetworkconfigPolicyResponse is a convenience function that returns MoAggregateTransform wrapped in NetworkconfigPolicyResponse
 func MoAggregateTransformAsNetworkconfigPolicyResponse(v *MoAggregateTransform) NetworkconfigPolicyResponse {
-	return NetworkconfigPolicyResponse{ MoAggregateTransform: v}
+	return NetworkconfigPolicyResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNetworkconfigPolicyResponse is a convenience function that returns MoDocumentCount wrapped in NetworkconfigPolicyResponse
 func MoDocumentCountAsNetworkconfigPolicyResponse(v *MoDocumentCount) NetworkconfigPolicyResponse {
-	return NetworkconfigPolicyResponse{ MoDocumentCount: v}
+	return NetworkconfigPolicyResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNetworkconfigPolicyResponse is a convenience function that returns MoTagSummary wrapped in NetworkconfigPolicyResponse
 func MoTagSummaryAsNetworkconfigPolicyResponse(v *MoTagSummary) NetworkconfigPolicyResponse {
-	return NetworkconfigPolicyResponse{ MoTagSummary: v}
+	return NetworkconfigPolicyResponse{MoTagSummary: v}
 }
 
 // NetworkconfigPolicyListAsNetworkconfigPolicyResponse is a convenience function that returns NetworkconfigPolicyList wrapped in NetworkconfigPolicyResponse
 func NetworkconfigPolicyListAsNetworkconfigPolicyResponse(v *NetworkconfigPolicyList) NetworkconfigPolicyResponse {
-	return NetworkconfigPolicyResponse{ NetworkconfigPolicyList: v}
+	return NetworkconfigPolicyResponse{NetworkconfigPolicyList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NetworkconfigPolicyResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NetworkconfigPolicyResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NetworkconfigPolicyResponse) GetActualInstance() (interface{}) {
+func (obj *NetworkconfigPolicyResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNetworkconfigPolicyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

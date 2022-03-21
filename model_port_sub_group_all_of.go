@@ -26,10 +26,10 @@ type PortSubGroupAllOf struct {
 	// An array of relationships to etherPhysicalPort resources.
 	EthernetPorts []EtherPhysicalPortRelationship `json:"EthernetPorts,omitempty"`
 	// An array of relationships to fcPhysicalPort resources.
-	FcPorts []FcPhysicalPortRelationship `json:"FcPorts,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	PortGroup *PortGroupRelationship `json:"PortGroup,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	FcPorts              []FcPhysicalPortRelationship         `json:"FcPorts,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	PortGroup            *PortGroupRelationship               `json:"PortGroup,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *PortSubGroupAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PortSubGroupAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *PortSubGroupAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PortSubGroupAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -140,7 +140,7 @@ func (o *PortSubGroupAllOf) SetTransport(v string) {
 
 // GetEthernetPorts returns the EthernetPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PortSubGroupAllOf) GetEthernetPorts() []EtherPhysicalPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []EtherPhysicalPortRelationship
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *PortSubGroupAllOf) SetEthernetPorts(v []EtherPhysicalPortRelationship) 
 
 // GetFcPorts returns the FcPorts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PortSubGroupAllOf) GetFcPorts() []FcPhysicalPortRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []FcPhysicalPortRelationship
 		return ret
 	}
@@ -393,5 +393,3 @@ func (v *NullablePortSubGroupAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // FabricPcOperationResponse - The response body of a HTTP GET request for the 'fabric.PcOperation' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'fabric.PcOperation' resources.
 type FabricPcOperationResponse struct {
 	FabricPcOperationList *FabricPcOperationList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform  *MoAggregateTransform
+	MoDocumentCount       *MoDocumentCount
+	MoTagSummary          *MoTagSummary
 }
 
 // FabricPcOperationListAsFabricPcOperationResponse is a convenience function that returns FabricPcOperationList wrapped in FabricPcOperationResponse
 func FabricPcOperationListAsFabricPcOperationResponse(v *FabricPcOperationList) FabricPcOperationResponse {
-	return FabricPcOperationResponse{ FabricPcOperationList: v}
+	return FabricPcOperationResponse{FabricPcOperationList: v}
 }
 
 // MoAggregateTransformAsFabricPcOperationResponse is a convenience function that returns MoAggregateTransform wrapped in FabricPcOperationResponse
 func MoAggregateTransformAsFabricPcOperationResponse(v *MoAggregateTransform) FabricPcOperationResponse {
-	return FabricPcOperationResponse{ MoAggregateTransform: v}
+	return FabricPcOperationResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsFabricPcOperationResponse is a convenience function that returns MoDocumentCount wrapped in FabricPcOperationResponse
 func MoDocumentCountAsFabricPcOperationResponse(v *MoDocumentCount) FabricPcOperationResponse {
-	return FabricPcOperationResponse{ MoDocumentCount: v}
+	return FabricPcOperationResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsFabricPcOperationResponse is a convenience function that returns MoTagSummary wrapped in FabricPcOperationResponse
 func MoTagSummaryAsFabricPcOperationResponse(v *MoTagSummary) FabricPcOperationResponse {
-	return FabricPcOperationResponse{ MoTagSummary: v}
+	return FabricPcOperationResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FabricPcOperationResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src FabricPcOperationResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FabricPcOperationResponse) GetActualInstance() (interface{}) {
+func (obj *FabricPcOperationResponse) GetActualInstance() interface{} {
 	if obj.FabricPcOperationList != nil {
 		return obj.FabricPcOperationList
 	}
@@ -184,5 +183,3 @@ func (v *NullableFabricPcOperationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

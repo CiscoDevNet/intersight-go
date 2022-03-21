@@ -42,8 +42,8 @@ type NiatelemetryNiaInventoryAllOf struct {
 	// Type of device being inventoried. This determines whether the device is a controller, leaf or spine.
 	DeviceType *string `json:"DeviceType,omitempty"`
 	// Returns the device up time.
-	DeviceUpTime *int64 `json:"DeviceUpTime,omitempty"`
-	Disk NullableNiatelemetryDiskinfo `json:"Disk,omitempty"`
+	DeviceUpTime *int64                       `json:"DeviceUpTime,omitempty"`
+	Disk         NullableNiatelemetryDiskinfo `json:"Disk,omitempty"`
 	// Dn for the inventories present.
 	Dn *string `json:"Dn,omitempty"`
 	// Name of the fabric of the device being inventoried.
@@ -51,8 +51,8 @@ type NiatelemetryNiaInventoryAllOf struct {
 	// Number of fabric extendors utilized.
 	FexCount *int64 `json:"FexCount,omitempty"`
 	// Number of appliances as physical device that are wired into the cluster.
-	InfraWiNodeCount *int64 `json:"InfraWiNodeCount,omitempty"`
-	Interface []NiatelemetryInterfaceElement `json:"Interface,omitempty"`
+	InfraWiNodeCount *int64                         `json:"InfraWiNodeCount,omitempty"`
+	Interface        []NiatelemetryInterfaceElement `json:"Interface,omitempty"`
 	// The IP address of the device being inventoried.
 	IpAddress *string `json:"IpAddress,omitempty"`
 	// Flag to specify if the node is virtual.
@@ -76,17 +76,17 @@ type NiatelemetryNiaInventoryAllOf struct {
 	// Memory usage of device being inventoried. This determines the percentage of memory resources used.
 	Memory *int64 `json:"Memory,omitempty"`
 	// The ID of the device being inventoried.
-	NodeId *string `json:"NodeId,omitempty"`
-	NxosBgpEvpn NullableNiatelemetryNxosBgpEvpn `json:"NxosBgpEvpn,omitempty"`
-	NxosBgpMvpn NullableNiatelemetryNxosBgpMvpn `json:"NxosBgpMvpn,omitempty"`
+	NodeId               *string                              `json:"NodeId,omitempty"`
+	NxosBgpEvpn          NullableNiatelemetryNxosBgpEvpn      `json:"NxosBgpEvpn,omitempty"`
+	NxosBgpMvpn          NullableNiatelemetryNxosBgpMvpn      `json:"NxosBgpMvpn,omitempty"`
 	NxosBootflashDetails NullableNiatelemetryBootflashDetails `json:"NxosBootflashDetails,omitempty"`
 	// Returns the status of dci interface configured.
-	NxosDciInterfaceStatus *string `json:"NxosDciInterfaceStatus,omitempty"`
-	NxosInterfaceBrief NullableNiatelemetryInterface `json:"NxosInterfaceBrief,omitempty"`
+	NxosDciInterfaceStatus *string                       `json:"NxosDciInterfaceStatus,omitempty"`
+	NxosInterfaceBrief     NullableNiatelemetryInterface `json:"NxosInterfaceBrief,omitempty"`
 	// Returns the value of the nxosNveInterface field.
-	NxosNveInterfaceStatus *string `json:"NxosNveInterfaceStatus,omitempty"`
-	NxosNvePacketCounters NullableNiatelemetryNvePacketCounters `json:"NxosNvePacketCounters,omitempty"`
-	NxosNveVni NullableNiatelemetryNveVni `json:"NxosNveVni,omitempty"`
+	NxosNveInterfaceStatus *string                               `json:"NxosNveInterfaceStatus,omitempty"`
+	NxosNvePacketCounters  NullableNiatelemetryNvePacketCounters `json:"NxosNvePacketCounters,omitempty"`
+	NxosNveVni             NullableNiatelemetryNveVni            `json:"NxosNveVni,omitempty"`
 	// Total number of ospf neighbors per switch in DCNM.
 	NxosOspfNeighbors *int64 `json:"NxosOspfNeighbors,omitempty"`
 	// Total number of pim neighbors per switch in DCNM.
@@ -94,8 +94,8 @@ type NiatelemetryNiaInventoryAllOf struct {
 	// Returns the value of the nxosTelnet field.
 	NxosTelnet *string `json:"NxosTelnet,omitempty"`
 	// Total number of routes configured in the DCNM.
-	NxosTotalRoutes *int64 `json:"NxosTotalRoutes,omitempty"`
-	NxosVtp NullableNiatelemetryNxosVtp `json:"NxosVtp,omitempty"`
+	NxosTotalRoutes *int64                      `json:"NxosTotalRoutes,omitempty"`
+	NxosVtp         NullableNiatelemetryNxosVtp `json:"NxosVtp,omitempty"`
 	// Type of record DCNM / APIC / SE. This determines the type of platform where inventory was collected.
 	RecordType *string `json:"RecordType,omitempty"`
 	// Version of record being pushed. This determines what was the API version for data available from the device.
@@ -117,10 +117,10 @@ type NiatelemetryNiaInventoryAllOf struct {
 	// The amount of time that the device being inventoried been up.
 	SystemUpTime *string `json:"SystemUpTime,omitempty"`
 	// Software version of device being inventoried. The various software version values for each device are available on cisco.com.
-	Version *string `json:"Version,omitempty"`
-	VniStatus []NiatelemetryVniStatus `json:"VniStatus,omitempty"`
-	LicenseState *NiatelemetryNiaLicenseStateRelationship `json:"LicenseState,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Version              *string                                  `json:"Version,omitempty"`
+	VniStatus            []NiatelemetryVniStatus                  `json:"VniStatus,omitempty"`
+	LicenseState         *NiatelemetryNiaLicenseStateRelationship `json:"LicenseState,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -162,7 +162,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -186,7 +186,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -562,7 +562,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetDisk() NiatelemetryDiskinfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetDiskOk() (*NiatelemetryDiskinfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Disk.Get(), o.Disk.IsSet()
@@ -581,6 +581,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasDisk() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetDisk(v NiatelemetryDiskinfo) {
 	o.Disk.Set(&v)
 }
+
 // SetDiskNil sets the value for Disk to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetDiskNil() {
 	o.Disk.Set(nil)
@@ -721,7 +722,7 @@ func (o *NiatelemetryNiaInventoryAllOf) SetInfraWiNodeCount(v int64) {
 
 // GetInterface returns the Interface field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryAllOf) GetInterface() []NiatelemetryInterfaceElement {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryInterfaceElement
 		return ret
 	}
@@ -1149,7 +1150,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosBgpEvpn() NiatelemetryNxosBgpEvpn
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosBgpEvpnOk() (*NiatelemetryNxosBgpEvpn, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosBgpEvpn.Get(), o.NxosBgpEvpn.IsSet()
@@ -1168,6 +1169,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosBgpEvpn() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBgpEvpn(v NiatelemetryNxosBgpEvpn) {
 	o.NxosBgpEvpn.Set(&v)
 }
+
 // SetNxosBgpEvpnNil sets the value for NxosBgpEvpn to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBgpEvpnNil() {
 	o.NxosBgpEvpn.Set(nil)
@@ -1191,7 +1193,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosBgpMvpn() NiatelemetryNxosBgpMvpn
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosBgpMvpnOk() (*NiatelemetryNxosBgpMvpn, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosBgpMvpn.Get(), o.NxosBgpMvpn.IsSet()
@@ -1210,6 +1212,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosBgpMvpn() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBgpMvpn(v NiatelemetryNxosBgpMvpn) {
 	o.NxosBgpMvpn.Set(&v)
 }
+
 // SetNxosBgpMvpnNil sets the value for NxosBgpMvpn to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBgpMvpnNil() {
 	o.NxosBgpMvpn.Set(nil)
@@ -1233,7 +1236,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosBootflashDetails() NiatelemetryBo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosBootflashDetailsOk() (*NiatelemetryBootflashDetails, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosBootflashDetails.Get(), o.NxosBootflashDetails.IsSet()
@@ -1252,6 +1255,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosBootflashDetails() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBootflashDetails(v NiatelemetryBootflashDetails) {
 	o.NxosBootflashDetails.Set(&v)
 }
+
 // SetNxosBootflashDetailsNil sets the value for NxosBootflashDetails to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosBootflashDetailsNil() {
 	o.NxosBootflashDetails.Set(nil)
@@ -1307,7 +1311,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosInterfaceBrief() NiatelemetryInte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosInterfaceBriefOk() (*NiatelemetryInterface, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosInterfaceBrief.Get(), o.NxosInterfaceBrief.IsSet()
@@ -1326,6 +1330,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosInterfaceBrief() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosInterfaceBrief(v NiatelemetryInterface) {
 	o.NxosInterfaceBrief.Set(&v)
 }
+
 // SetNxosInterfaceBriefNil sets the value for NxosInterfaceBrief to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosInterfaceBriefNil() {
 	o.NxosInterfaceBrief.Set(nil)
@@ -1381,7 +1386,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosNvePacketCounters() NiatelemetryN
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosNvePacketCountersOk() (*NiatelemetryNvePacketCounters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosNvePacketCounters.Get(), o.NxosNvePacketCounters.IsSet()
@@ -1400,6 +1405,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosNvePacketCounters() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosNvePacketCounters(v NiatelemetryNvePacketCounters) {
 	o.NxosNvePacketCounters.Set(&v)
 }
+
 // SetNxosNvePacketCountersNil sets the value for NxosNvePacketCounters to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosNvePacketCountersNil() {
 	o.NxosNvePacketCounters.Set(nil)
@@ -1423,7 +1429,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosNveVni() NiatelemetryNveVni {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosNveVniOk() (*NiatelemetryNveVni, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosNveVni.Get(), o.NxosNveVni.IsSet()
@@ -1442,6 +1448,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosNveVni() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosNveVni(v NiatelemetryNveVni) {
 	o.NxosNveVni.Set(&v)
 }
+
 // SetNxosNveVniNil sets the value for NxosNveVni to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosNveVniNil() {
 	o.NxosNveVni.Set(nil)
@@ -1593,7 +1600,7 @@ func (o *NiatelemetryNiaInventoryAllOf) GetNxosVtp() NiatelemetryNxosVtp {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NiatelemetryNiaInventoryAllOf) GetNxosVtpOk() (*NiatelemetryNxosVtp, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NxosVtp.Get(), o.NxosVtp.IsSet()
@@ -1612,6 +1619,7 @@ func (o *NiatelemetryNiaInventoryAllOf) HasNxosVtp() bool {
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosVtp(v NiatelemetryNxosVtp) {
 	o.NxosVtp.Set(&v)
 }
+
 // SetNxosVtpNil sets the value for NxosVtp to be an explicit nil
 func (o *NiatelemetryNiaInventoryAllOf) SetNxosVtpNil() {
 	o.NxosVtp.Set(nil)
@@ -1976,7 +1984,7 @@ func (o *NiatelemetryNiaInventoryAllOf) SetVersion(v string) {
 
 // GetVniStatus returns the VniStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryAllOf) GetVniStatus() []NiatelemetryVniStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryVniStatus
 		return ret
 	}
@@ -2364,5 +2372,3 @@ func (v *NullableNiatelemetryNiaInventoryAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

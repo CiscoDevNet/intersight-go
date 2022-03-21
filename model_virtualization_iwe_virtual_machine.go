@@ -23,24 +23,24 @@ type VirtualizationIweVirtualMachine struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType        string          `json:"ObjectType"`
 	AffinitySelectors []InfraMetaData `json:"AffinitySelectors,omitempty"`
 	// Denotes age or life time of the VM in nano seconds.
-	Age *string `json:"Age,omitempty"`
-	AntiAffinitySelectors []InfraMetaData `json:"AntiAffinitySelectors,omitempty"`
-	Disks []VirtualizationVmDisk `json:"Disks,omitempty"`
+	Age                   *string                `json:"Age,omitempty"`
+	AntiAffinitySelectors []InfraMetaData        `json:"AntiAffinitySelectors,omitempty"`
+	Disks                 []VirtualizationVmDisk `json:"Disks,omitempty"`
 	// Reason of the failure when VM is in failed state.
-	FailureReason *string `json:"FailureReason,omitempty"`
-	Interfaces []VirtualizationVmInterface `json:"Interfaces,omitempty"`
-	Labels []InfraMetaData `json:"Labels,omitempty"`
+	FailureReason *string                     `json:"FailureReason,omitempty"`
+	Interfaces    []VirtualizationVmInterface `json:"Interfaces,omitempty"`
+	Labels        []InfraMetaData             `json:"Labels,omitempty"`
 	// Number network interfaces associated with the virtual machine.
 	NetworkCount *int64 `json:"NetworkCount,omitempty"`
 	// Denotes the VM start timestamp.
 	StartTime *string `json:"StartTime,omitempty"`
 	// Status of virtual machine. * `Unknown` - Virtual machine state is not available. * `Running` - Virtual machine is running normally. * `Stopped` - Virtual machine has been stopped. * `WaitForLaunch` - Virtual machine is wating to be launched. * `Paused` - Virtual machine is currently paused. * `ImportInProgress` - Virtual machine image is being imported into the platform. * `ImportFailed` - Virtual machine image import operation failed. * `DiskCloneInProgress` - Disk clone operation for the virtual machine is in progress. * `DiskCloneFailed` - Disk clone operation for the virtual machine failed. * `DiskCreateInProgress` - Disk create operation for the virtual machine is in progress. * `DiskCreateFailed` - Disk create operation for the virtual machine failed. * `Processing` - Virtual machine is being created. * `UnSchedulable` - Virtual machine cannot be scheduled to run, either due to insufficient resources or failure to match affinity specifications. * `Failed` - Some virtual machine operation has failed. More information is available as part of the results of the operation. * `Warning` - CPU/Memory utilisation for the virtual machine has crossed the threshold value. * `` - Virtual machine status is not available.
-	Status *string `json:"Status,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
+	Status               *string                               `json:"Status,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+	Host                 *VirtualizationIweHostRelationship    `json:"Host,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *VirtualizationIweVirtualMachine) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualMachine) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *VirtualizationIweVirtualMachine) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweVirtualMachine) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -131,7 +131,7 @@ func (o *VirtualizationIweVirtualMachine) SetObjectType(v string) {
 
 // GetAffinitySelectors returns the AffinitySelectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachine) GetAffinitySelectors() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *VirtualizationIweVirtualMachine) SetAge(v string) {
 
 // GetAntiAffinitySelectors returns the AntiAffinitySelectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachine) GetAntiAffinitySelectors() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *VirtualizationIweVirtualMachine) SetAntiAffinitySelectors(v []InfraMeta
 
 // GetDisks returns the Disks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachine) GetDisks() []VirtualizationVmDisk {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmDisk
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *VirtualizationIweVirtualMachine) SetFailureReason(v string) {
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachine) GetInterfaces() []VirtualizationVmInterface {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmInterface
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *VirtualizationIweVirtualMachine) SetInterfaces(v []VirtualizationVmInte
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweVirtualMachine) GetLabels() []InfraMetaData {
-	if o == nil  {
+	if o == nil {
 		var ret []InfraMetaData
 		return ret
 	}
@@ -583,24 +583,24 @@ func (o *VirtualizationIweVirtualMachine) UnmarshalJSON(bytes []byte) (err error
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType        string          `json:"ObjectType"`
 		AffinitySelectors []InfraMetaData `json:"AffinitySelectors,omitempty"`
 		// Denotes age or life time of the VM in nano seconds.
-		Age *string `json:"Age,omitempty"`
-		AntiAffinitySelectors []InfraMetaData `json:"AntiAffinitySelectors,omitempty"`
-		Disks []VirtualizationVmDisk `json:"Disks,omitempty"`
+		Age                   *string                `json:"Age,omitempty"`
+		AntiAffinitySelectors []InfraMetaData        `json:"AntiAffinitySelectors,omitempty"`
+		Disks                 []VirtualizationVmDisk `json:"Disks,omitempty"`
 		// Reason of the failure when VM is in failed state.
-		FailureReason *string `json:"FailureReason,omitempty"`
-		Interfaces []VirtualizationVmInterface `json:"Interfaces,omitempty"`
-		Labels []InfraMetaData `json:"Labels,omitempty"`
+		FailureReason *string                     `json:"FailureReason,omitempty"`
+		Interfaces    []VirtualizationVmInterface `json:"Interfaces,omitempty"`
+		Labels        []InfraMetaData             `json:"Labels,omitempty"`
 		// Number network interfaces associated with the virtual machine.
 		NetworkCount *int64 `json:"NetworkCount,omitempty"`
 		// Denotes the VM start timestamp.
 		StartTime *string `json:"StartTime,omitempty"`
 		// Status of virtual machine. * `Unknown` - Virtual machine state is not available. * `Running` - Virtual machine is running normally. * `Stopped` - Virtual machine has been stopped. * `WaitForLaunch` - Virtual machine is wating to be launched. * `Paused` - Virtual machine is currently paused. * `ImportInProgress` - Virtual machine image is being imported into the platform. * `ImportFailed` - Virtual machine image import operation failed. * `DiskCloneInProgress` - Disk clone operation for the virtual machine is in progress. * `DiskCloneFailed` - Disk clone operation for the virtual machine failed. * `DiskCreateInProgress` - Disk create operation for the virtual machine is in progress. * `DiskCreateFailed` - Disk create operation for the virtual machine failed. * `Processing` - Virtual machine is being created. * `UnSchedulable` - Virtual machine cannot be scheduled to run, either due to insufficient resources or failure to match affinity specifications. * `Failed` - Some virtual machine operation has failed. More information is available as part of the results of the operation. * `Warning` - CPU/Memory utilisation for the virtual machine has crossed the threshold value. * `` - Virtual machine status is not available.
-		Status *string `json:"Status,omitempty"`
+		Status  *string                               `json:"Status,omitempty"`
 		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-		Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
+		Host    *VirtualizationIweHostRelationship    `json:"Host,omitempty"`
 	}
 
 	varVirtualizationIweVirtualMachineWithoutEmbeddedStruct := VirtualizationIweVirtualMachineWithoutEmbeddedStruct{}
@@ -713,5 +713,3 @@ func (v *NullableVirtualizationIweVirtualMachine) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

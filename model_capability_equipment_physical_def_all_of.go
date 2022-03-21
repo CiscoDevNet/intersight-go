@@ -34,7 +34,7 @@ type CapabilityEquipmentPhysicalDefAllOf struct {
 	// Weight information for a Switch/Fabric-Interconnect.
 	Weight *float32 `json:"Weight,omitempty"`
 	// Width information for a Switch/Fabric-Interconnect.
-	Width *float32 `json:"Width,omitempty"`
+	Width                *float32 `json:"Width,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CapabilityEquipmentPhysicalDefAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEquipmentPhysicalDefAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CapabilityEquipmentPhysicalDefAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CapabilityEquipmentPhysicalDefAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -432,5 +432,3 @@ func (v *NullableCapabilityEquipmentPhysicalDefAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,7 +25,7 @@ type ComputeBaseCluster struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ObjectType string `json:"ObjectType"`
 	// An array of relationships to storageBaseCluster resources.
-	StorageClusters []StorageBaseClusterRelationship `json:"StorageClusters,omitempty"`
+	StorageClusters      []StorageBaseClusterRelationship `json:"StorageClusters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -63,7 +63,7 @@ func (o *ComputeBaseCluster) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBaseCluster) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -87,7 +87,7 @@ func (o *ComputeBaseCluster) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeBaseCluster) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -100,7 +100,7 @@ func (o *ComputeBaseCluster) SetObjectType(v string) {
 
 // GetStorageClusters returns the StorageClusters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ComputeBaseCluster) GetStorageClusters() []StorageBaseClusterRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageBaseClusterRelationship
 		return ret
 	}
@@ -256,5 +256,3 @@ func (v *NullableComputeBaseCluster) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -24,11 +24,11 @@ type ApplianceDataExportPolicyAllOf struct {
 	// Status of the data collection mode. If the value is 'true', then data collection is enabled.
 	Enable *bool `json:"Enable,omitempty"`
 	// Name of the Data Export Policy.
-	Name *string `json:"Name,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Name         *string                                `json:"Name,omitempty"`
+	Account      *IamAccountRelationship                `json:"Account,omitempty"`
 	ParentConfig *ApplianceDataExportPolicyRelationship `json:"ParentConfig,omitempty"`
 	// An array of relationships to applianceDataExportPolicy resources.
-	SubConfigs []ApplianceDataExportPolicyRelationship `json:"SubConfigs,omitempty"`
+	SubConfigs           []ApplianceDataExportPolicyRelationship `json:"SubConfigs,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *ApplianceDataExportPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDataExportPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *ApplianceDataExportPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceDataExportPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -235,7 +235,7 @@ func (o *ApplianceDataExportPolicyAllOf) SetParentConfig(v ApplianceDataExportPo
 
 // GetSubConfigs returns the SubConfigs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceDataExportPolicyAllOf) GetSubConfigs() []ApplianceDataExportPolicyRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceDataExportPolicyRelationship
 		return ret
 	}
@@ -355,5 +355,3 @@ func (v *NullableApplianceDataExportPolicyAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

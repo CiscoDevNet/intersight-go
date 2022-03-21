@@ -18,20 +18,19 @@ import (
 
 // SessionAbstractSessionRelationship - A relationship to the 'session.AbstractSession' resource, or the expanded 'session.AbstractSession' resource, or the 'null' value.
 type SessionAbstractSessionRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 	SessionAbstractSession *SessionAbstractSession
 }
 
 // MoMoRefAsSessionAbstractSessionRelationship is a convenience function that returns MoMoRef wrapped in SessionAbstractSessionRelationship
 func MoMoRefAsSessionAbstractSessionRelationship(v *MoMoRef) SessionAbstractSessionRelationship {
-	return SessionAbstractSessionRelationship{ MoMoRef: v}
+	return SessionAbstractSessionRelationship{MoMoRef: v}
 }
 
 // SessionAbstractSessionAsSessionAbstractSessionRelationship is a convenience function that returns SessionAbstractSession wrapped in SessionAbstractSessionRelationship
 func SessionAbstractSessionAsSessionAbstractSessionRelationship(v *SessionAbstractSession) SessionAbstractSessionRelationship {
-	return SessionAbstractSessionRelationship{ SessionAbstractSession: v}
+	return SessionAbstractSessionRelationship{SessionAbstractSession: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SessionAbstractSessionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src SessionAbstractSessionRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SessionAbstractSessionRelationship) GetActualInstance() (interface{}) {
+func (obj *SessionAbstractSessionRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableSessionAbstractSessionRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

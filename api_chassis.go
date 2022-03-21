@@ -29,11 +29,11 @@ var (
 type ChassisApiService service
 
 type ApiCreateChassisConfigImportRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
+	ctx                 _context.Context
+	ApiService          *ChassisApiService
 	chassisConfigImport *ChassisConfigImport
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch             *string
+	ifNoneMatch         *string
 }
 
 // The &#39;chassis.ConfigImport&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateChassisConfigImportRequest) ChassisConfigImport(chassisConfigIm
 	r.chassisConfigImport = &chassisConfigImport
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateChassisConfigImportRequest) IfMatch(ifMatch string) ApiCreateChassisConfigImportRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateChassisConfigImportRequest) IfNoneMatch(ifNoneMatch string) ApiCreateChassisConfigImportRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateChassisConfigImport Create a 'chassis.ConfigImport' resource.
 func (a *ChassisApiService) CreateChassisConfigImport(ctx _context.Context) ApiCreateChassisConfigImportRequest {
 	return ApiCreateChassisConfigImportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *ChassisApiService) CreateChassisConfigImportExecute(r ApiCreateChassisC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *ChassisApiService) CreateChassisConfigImportExecute(r ApiCreateChassisC
 }
 
 type ApiCreateChassisProfileRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
+	ctx            _context.Context
+	ApiService     *ChassisApiService
 	chassisProfile *ChassisProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch        *string
+	ifNoneMatch    *string
 }
 
 // The &#39;chassis.Profile&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateChassisProfileRequest) ChassisProfile(chassisProfile ChassisPro
 	r.chassisProfile = &chassisProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateChassisProfileRequest) IfMatch(ifMatch string) ApiCreateChassisProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateChassisProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateChassisProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateChassisProfile Create a 'chassis.Profile' resource.
 func (a *ChassisApiService) CreateChassisProfile(ctx _context.Context) ApiCreateChassisProfileRequest {
 	return ApiCreateChassisProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *ChassisApiService) CreateChassisProfileExecute(r ApiCreateChassisProfil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,10 @@ func (a *ChassisApiService) CreateChassisProfileExecute(r ApiCreateChassisProfil
 }
 
 type ApiDeleteChassisProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteChassisProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteChassisProfileExecute(r)
@@ -401,8 +404,8 @@ DeleteChassisProfile Delete a 'chassis.Profile' resource.
 func (a *ChassisApiService) DeleteChassisProfile(ctx _context.Context, moid string) ApiDeleteChassisProfileRequest {
 	return ApiDeleteChassisProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -507,13 +510,13 @@ func (a *ChassisApiService) DeleteChassisProfileExecute(r ApiDeleteChassisProfil
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -521,11 +524,10 @@ func (a *ChassisApiService) DeleteChassisProfileExecute(r ApiDeleteChassisProfil
 }
 
 type ApiGetChassisConfigChangeDetailByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisConfigChangeDetailByMoidRequest) Execute() (ChassisConfigChangeDetail, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisConfigChangeDetailByMoidExecute(r)
@@ -541,8 +543,8 @@ GetChassisConfigChangeDetailByMoid Read a 'chassis.ConfigChangeDetail' resource.
 func (a *ChassisApiService) GetChassisConfigChangeDetailByMoid(ctx _context.Context, moid string) ApiGetChassisConfigChangeDetailByMoidRequest {
 	return ApiGetChassisConfigChangeDetailByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -649,13 +651,13 @@ func (a *ChassisApiService) GetChassisConfigChangeDetailByMoidExecute(r ApiGetCh
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -672,19 +674,19 @@ func (a *ChassisApiService) GetChassisConfigChangeDetailByMoidExecute(r ApiGetCh
 }
 
 type ApiGetChassisConfigChangeDetailListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -692,51 +694,61 @@ func (r ApiGetChassisConfigChangeDetailListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisConfigChangeDetailListRequest) Orderby(orderby string) ApiGetChassisConfigChangeDetailListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisConfigChangeDetailListRequest) Top(top int32) ApiGetChassisConfigChangeDetailListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisConfigChangeDetailListRequest) Skip(skip int32) ApiGetChassisConfigChangeDetailListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisConfigChangeDetailListRequest) Select_(select_ string) ApiGetChassisConfigChangeDetailListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisConfigChangeDetailListRequest) Expand(expand string) ApiGetChassisConfigChangeDetailListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisConfigChangeDetailListRequest) Apply(apply string) ApiGetChassisConfigChangeDetailListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisConfigChangeDetailListRequest) Count(count bool) ApiGetChassisConfigChangeDetailListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisConfigChangeDetailListRequest) Inlinecount(inlinecount string) ApiGetChassisConfigChangeDetailListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisConfigChangeDetailListRequest) At(at string) ApiGetChassisConfigChangeDetailListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisConfigChangeDetailListRequest) Tags(tags string) ApiGetChassisConfigChangeDetailListRequest {
 	r.tags = &tags
@@ -756,7 +768,7 @@ GetChassisConfigChangeDetailList Read a 'chassis.ConfigChangeDetail' resource.
 func (a *ChassisApiService) GetChassisConfigChangeDetailList(ctx _context.Context) ApiGetChassisConfigChangeDetailListRequest {
 	return ApiGetChassisConfigChangeDetailListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -895,13 +907,13 @@ func (a *ChassisApiService) GetChassisConfigChangeDetailListExecute(r ApiGetChas
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -918,11 +930,10 @@ func (a *ChassisApiService) GetChassisConfigChangeDetailListExecute(r ApiGetChas
 }
 
 type ApiGetChassisConfigImportByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisConfigImportByMoidRequest) Execute() (ChassisConfigImport, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisConfigImportByMoidExecute(r)
@@ -938,8 +949,8 @@ GetChassisConfigImportByMoid Read a 'chassis.ConfigImport' resource.
 func (a *ChassisApiService) GetChassisConfigImportByMoid(ctx _context.Context, moid string) ApiGetChassisConfigImportByMoidRequest {
 	return ApiGetChassisConfigImportByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1046,13 +1057,13 @@ func (a *ChassisApiService) GetChassisConfigImportByMoidExecute(r ApiGetChassisC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1069,19 +1080,19 @@ func (a *ChassisApiService) GetChassisConfigImportByMoidExecute(r ApiGetChassisC
 }
 
 type ApiGetChassisConfigImportListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1089,51 +1100,61 @@ func (r ApiGetChassisConfigImportListRequest) Filter(filter string) ApiGetChassi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisConfigImportListRequest) Orderby(orderby string) ApiGetChassisConfigImportListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisConfigImportListRequest) Top(top int32) ApiGetChassisConfigImportListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisConfigImportListRequest) Skip(skip int32) ApiGetChassisConfigImportListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisConfigImportListRequest) Select_(select_ string) ApiGetChassisConfigImportListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisConfigImportListRequest) Expand(expand string) ApiGetChassisConfigImportListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisConfigImportListRequest) Apply(apply string) ApiGetChassisConfigImportListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisConfigImportListRequest) Count(count bool) ApiGetChassisConfigImportListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisConfigImportListRequest) Inlinecount(inlinecount string) ApiGetChassisConfigImportListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisConfigImportListRequest) At(at string) ApiGetChassisConfigImportListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisConfigImportListRequest) Tags(tags string) ApiGetChassisConfigImportListRequest {
 	r.tags = &tags
@@ -1153,7 +1174,7 @@ GetChassisConfigImportList Read a 'chassis.ConfigImport' resource.
 func (a *ChassisApiService) GetChassisConfigImportList(ctx _context.Context) ApiGetChassisConfigImportListRequest {
 	return ApiGetChassisConfigImportListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1292,13 +1313,13 @@ func (a *ChassisApiService) GetChassisConfigImportListExecute(r ApiGetChassisCon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1315,11 +1336,10 @@ func (a *ChassisApiService) GetChassisConfigImportListExecute(r ApiGetChassisCon
 }
 
 type ApiGetChassisConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisConfigResultByMoidRequest) Execute() (ChassisConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisConfigResultByMoidExecute(r)
@@ -1335,8 +1355,8 @@ GetChassisConfigResultByMoid Read a 'chassis.ConfigResult' resource.
 func (a *ChassisApiService) GetChassisConfigResultByMoid(ctx _context.Context, moid string) ApiGetChassisConfigResultByMoidRequest {
 	return ApiGetChassisConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1443,13 +1463,13 @@ func (a *ChassisApiService) GetChassisConfigResultByMoidExecute(r ApiGetChassisC
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1466,11 +1486,10 @@ func (a *ChassisApiService) GetChassisConfigResultByMoidExecute(r ApiGetChassisC
 }
 
 type ApiGetChassisConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisConfigResultEntryByMoidRequest) Execute() (ChassisConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisConfigResultEntryByMoidExecute(r)
@@ -1486,8 +1505,8 @@ GetChassisConfigResultEntryByMoid Read a 'chassis.ConfigResultEntry' resource.
 func (a *ChassisApiService) GetChassisConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetChassisConfigResultEntryByMoidRequest {
 	return ApiGetChassisConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1594,13 +1613,13 @@ func (a *ChassisApiService) GetChassisConfigResultEntryByMoidExecute(r ApiGetCha
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1617,19 +1636,19 @@ func (a *ChassisApiService) GetChassisConfigResultEntryByMoidExecute(r ApiGetCha
 }
 
 type ApiGetChassisConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1637,51 +1656,61 @@ func (r ApiGetChassisConfigResultEntryListRequest) Filter(filter string) ApiGetC
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisConfigResultEntryListRequest) Orderby(orderby string) ApiGetChassisConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisConfigResultEntryListRequest) Top(top int32) ApiGetChassisConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisConfigResultEntryListRequest) Skip(skip int32) ApiGetChassisConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisConfigResultEntryListRequest) Select_(select_ string) ApiGetChassisConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisConfigResultEntryListRequest) Expand(expand string) ApiGetChassisConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisConfigResultEntryListRequest) Apply(apply string) ApiGetChassisConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisConfigResultEntryListRequest) Count(count bool) ApiGetChassisConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetChassisConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisConfigResultEntryListRequest) At(at string) ApiGetChassisConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisConfigResultEntryListRequest) Tags(tags string) ApiGetChassisConfigResultEntryListRequest {
 	r.tags = &tags
@@ -1701,7 +1730,7 @@ GetChassisConfigResultEntryList Read a 'chassis.ConfigResultEntry' resource.
 func (a *ChassisApiService) GetChassisConfigResultEntryList(ctx _context.Context) ApiGetChassisConfigResultEntryListRequest {
 	return ApiGetChassisConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1840,13 +1869,13 @@ func (a *ChassisApiService) GetChassisConfigResultEntryListExecute(r ApiGetChass
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1863,19 +1892,19 @@ func (a *ChassisApiService) GetChassisConfigResultEntryListExecute(r ApiGetChass
 }
 
 type ApiGetChassisConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1883,51 +1912,61 @@ func (r ApiGetChassisConfigResultListRequest) Filter(filter string) ApiGetChassi
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisConfigResultListRequest) Orderby(orderby string) ApiGetChassisConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisConfigResultListRequest) Top(top int32) ApiGetChassisConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisConfigResultListRequest) Skip(skip int32) ApiGetChassisConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisConfigResultListRequest) Select_(select_ string) ApiGetChassisConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisConfigResultListRequest) Expand(expand string) ApiGetChassisConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisConfigResultListRequest) Apply(apply string) ApiGetChassisConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisConfigResultListRequest) Count(count bool) ApiGetChassisConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisConfigResultListRequest) Inlinecount(inlinecount string) ApiGetChassisConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisConfigResultListRequest) At(at string) ApiGetChassisConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisConfigResultListRequest) Tags(tags string) ApiGetChassisConfigResultListRequest {
 	r.tags = &tags
@@ -1947,7 +1986,7 @@ GetChassisConfigResultList Read a 'chassis.ConfigResult' resource.
 func (a *ChassisApiService) GetChassisConfigResultList(ctx _context.Context) ApiGetChassisConfigResultListRequest {
 	return ApiGetChassisConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2086,13 +2125,13 @@ func (a *ChassisApiService) GetChassisConfigResultListExecute(r ApiGetChassisCon
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2109,11 +2148,10 @@ func (a *ChassisApiService) GetChassisConfigResultListExecute(r ApiGetChassisCon
 }
 
 type ApiGetChassisIomProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisIomProfileByMoidRequest) Execute() (ChassisIomProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisIomProfileByMoidExecute(r)
@@ -2129,8 +2167,8 @@ GetChassisIomProfileByMoid Read a 'chassis.IomProfile' resource.
 func (a *ChassisApiService) GetChassisIomProfileByMoid(ctx _context.Context, moid string) ApiGetChassisIomProfileByMoidRequest {
 	return ApiGetChassisIomProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2237,13 +2275,13 @@ func (a *ChassisApiService) GetChassisIomProfileByMoidExecute(r ApiGetChassisIom
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2260,19 +2298,19 @@ func (a *ChassisApiService) GetChassisIomProfileByMoidExecute(r ApiGetChassisIom
 }
 
 type ApiGetChassisIomProfileListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2280,51 +2318,61 @@ func (r ApiGetChassisIomProfileListRequest) Filter(filter string) ApiGetChassisI
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisIomProfileListRequest) Orderby(orderby string) ApiGetChassisIomProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisIomProfileListRequest) Top(top int32) ApiGetChassisIomProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisIomProfileListRequest) Skip(skip int32) ApiGetChassisIomProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisIomProfileListRequest) Select_(select_ string) ApiGetChassisIomProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisIomProfileListRequest) Expand(expand string) ApiGetChassisIomProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisIomProfileListRequest) Apply(apply string) ApiGetChassisIomProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisIomProfileListRequest) Count(count bool) ApiGetChassisIomProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisIomProfileListRequest) Inlinecount(inlinecount string) ApiGetChassisIomProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisIomProfileListRequest) At(at string) ApiGetChassisIomProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisIomProfileListRequest) Tags(tags string) ApiGetChassisIomProfileListRequest {
 	r.tags = &tags
@@ -2344,7 +2392,7 @@ GetChassisIomProfileList Read a 'chassis.IomProfile' resource.
 func (a *ChassisApiService) GetChassisIomProfileList(ctx _context.Context) ApiGetChassisIomProfileListRequest {
 	return ApiGetChassisIomProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2483,13 +2531,13 @@ func (a *ChassisApiService) GetChassisIomProfileListExecute(r ApiGetChassisIomPr
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2506,11 +2554,10 @@ func (a *ChassisApiService) GetChassisIomProfileListExecute(r ApiGetChassisIomPr
 }
 
 type ApiGetChassisProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *ChassisApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetChassisProfileByMoidRequest) Execute() (ChassisProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetChassisProfileByMoidExecute(r)
@@ -2526,8 +2573,8 @@ GetChassisProfileByMoid Read a 'chassis.Profile' resource.
 func (a *ChassisApiService) GetChassisProfileByMoid(ctx _context.Context, moid string) ApiGetChassisProfileByMoidRequest {
 	return ApiGetChassisProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2634,13 +2681,13 @@ func (a *ChassisApiService) GetChassisProfileByMoidExecute(r ApiGetChassisProfil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2657,19 +2704,19 @@ func (a *ChassisApiService) GetChassisProfileByMoidExecute(r ApiGetChassisProfil
 }
 
 type ApiGetChassisProfileListRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *ChassisApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2677,51 +2724,61 @@ func (r ApiGetChassisProfileListRequest) Filter(filter string) ApiGetChassisProf
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetChassisProfileListRequest) Orderby(orderby string) ApiGetChassisProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetChassisProfileListRequest) Top(top int32) ApiGetChassisProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetChassisProfileListRequest) Skip(skip int32) ApiGetChassisProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetChassisProfileListRequest) Select_(select_ string) ApiGetChassisProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetChassisProfileListRequest) Expand(expand string) ApiGetChassisProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetChassisProfileListRequest) Apply(apply string) ApiGetChassisProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetChassisProfileListRequest) Count(count bool) ApiGetChassisProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetChassisProfileListRequest) Inlinecount(inlinecount string) ApiGetChassisProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetChassisProfileListRequest) At(at string) ApiGetChassisProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetChassisProfileListRequest) Tags(tags string) ApiGetChassisProfileListRequest {
 	r.tags = &tags
@@ -2741,7 +2798,7 @@ GetChassisProfileList Read a 'chassis.Profile' resource.
 func (a *ChassisApiService) GetChassisProfileList(ctx _context.Context) ApiGetChassisProfileListRequest {
 	return ApiGetChassisProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2880,13 +2937,13 @@ func (a *ChassisApiService) GetChassisProfileListExecute(r ApiGetChassisProfileL
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2903,11 +2960,11 @@ func (a *ChassisApiService) GetChassisProfileListExecute(r ApiGetChassisProfileL
 }
 
 type ApiPatchChassisProfileRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *ChassisApiService
+	moid           string
 	chassisProfile *ChassisProfile
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;chassis.Profile&#39; resource to update.
@@ -2915,6 +2972,7 @@ func (r ApiPatchChassisProfileRequest) ChassisProfile(chassisProfile ChassisProf
 	r.chassisProfile = &chassisProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchChassisProfileRequest) IfMatch(ifMatch string) ApiPatchChassisProfileRequest {
 	r.ifMatch = &ifMatch
@@ -2935,8 +2993,8 @@ PatchChassisProfile Update a 'chassis.Profile' resource.
 func (a *ChassisApiService) PatchChassisProfile(ctx _context.Context, moid string) ApiPatchChassisProfileRequest {
 	return ApiPatchChassisProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3051,13 +3109,13 @@ func (a *ChassisApiService) PatchChassisProfileExecute(r ApiPatchChassisProfileR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3074,11 +3132,11 @@ func (a *ChassisApiService) PatchChassisProfileExecute(r ApiPatchChassisProfileR
 }
 
 type ApiUpdateChassisProfileRequest struct {
-	ctx _context.Context
-	ApiService *ChassisApiService
-	moid string
+	ctx            _context.Context
+	ApiService     *ChassisApiService
+	moid           string
 	chassisProfile *ChassisProfile
-	ifMatch *string
+	ifMatch        *string
 }
 
 // The &#39;chassis.Profile&#39; resource to update.
@@ -3086,6 +3144,7 @@ func (r ApiUpdateChassisProfileRequest) ChassisProfile(chassisProfile ChassisPro
 	r.chassisProfile = &chassisProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateChassisProfileRequest) IfMatch(ifMatch string) ApiUpdateChassisProfileRequest {
 	r.ifMatch = &ifMatch
@@ -3106,8 +3165,8 @@ UpdateChassisProfile Update a 'chassis.Profile' resource.
 func (a *ChassisApiService) UpdateChassisProfile(ctx _context.Context, moid string) ApiUpdateChassisProfileRequest {
 	return ApiUpdateChassisProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3222,13 +3281,13 @@ func (a *ChassisApiService) UpdateChassisProfileExecute(r ApiUpdateChassisProfil
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

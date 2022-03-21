@@ -19,31 +19,30 @@ import (
 // KubernetesBaremetalNodeProfileResponse - The response body of a HTTP GET request for the 'kubernetes.BaremetalNodeProfile' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'kubernetes.BaremetalNodeProfile' resources.
 type KubernetesBaremetalNodeProfileResponse struct {
 	KubernetesBaremetalNodeProfileList *KubernetesBaremetalNodeProfileList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 }
 
 // KubernetesBaremetalNodeProfileListAsKubernetesBaremetalNodeProfileResponse is a convenience function that returns KubernetesBaremetalNodeProfileList wrapped in KubernetesBaremetalNodeProfileResponse
 func KubernetesBaremetalNodeProfileListAsKubernetesBaremetalNodeProfileResponse(v *KubernetesBaremetalNodeProfileList) KubernetesBaremetalNodeProfileResponse {
-	return KubernetesBaremetalNodeProfileResponse{ KubernetesBaremetalNodeProfileList: v}
+	return KubernetesBaremetalNodeProfileResponse{KubernetesBaremetalNodeProfileList: v}
 }
 
 // MoAggregateTransformAsKubernetesBaremetalNodeProfileResponse is a convenience function that returns MoAggregateTransform wrapped in KubernetesBaremetalNodeProfileResponse
 func MoAggregateTransformAsKubernetesBaremetalNodeProfileResponse(v *MoAggregateTransform) KubernetesBaremetalNodeProfileResponse {
-	return KubernetesBaremetalNodeProfileResponse{ MoAggregateTransform: v}
+	return KubernetesBaremetalNodeProfileResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsKubernetesBaremetalNodeProfileResponse is a convenience function that returns MoDocumentCount wrapped in KubernetesBaremetalNodeProfileResponse
 func MoDocumentCountAsKubernetesBaremetalNodeProfileResponse(v *MoDocumentCount) KubernetesBaremetalNodeProfileResponse {
-	return KubernetesBaremetalNodeProfileResponse{ MoDocumentCount: v}
+	return KubernetesBaremetalNodeProfileResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsKubernetesBaremetalNodeProfileResponse is a convenience function that returns MoTagSummary wrapped in KubernetesBaremetalNodeProfileResponse
 func MoTagSummaryAsKubernetesBaremetalNodeProfileResponse(v *MoTagSummary) KubernetesBaremetalNodeProfileResponse {
-	return KubernetesBaremetalNodeProfileResponse{ MoTagSummary: v}
+	return KubernetesBaremetalNodeProfileResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *KubernetesBaremetalNodeProfileResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src KubernetesBaremetalNodeProfileResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *KubernetesBaremetalNodeProfileResponse) GetActualInstance() (interface{}) {
+func (obj *KubernetesBaremetalNodeProfileResponse) GetActualInstance() interface{} {
 	if obj.KubernetesBaremetalNodeProfileList != nil {
 		return obj.KubernetesBaremetalNodeProfileList
 	}
@@ -184,5 +183,3 @@ func (v *NullableKubernetesBaremetalNodeProfileResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

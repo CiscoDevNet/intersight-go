@@ -23,15 +23,15 @@ type WorkflowWorkflowCtx struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	InitiatorCtx NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
-	TargetCtxList []WorkflowTargetContext `json:"TargetCtxList,omitempty"`
+	ObjectType    string                           `json:"ObjectType"`
+	InitiatorCtx  NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
+	TargetCtxList []WorkflowTargetContext          `json:"TargetCtxList,omitempty"`
 	// The name of workflowMeta of the workflow running.
 	WorkflowMetaName *string `json:"WorkflowMetaName,omitempty"`
 	// The subtype of the workflow.
 	WorkflowSubtype *string `json:"WorkflowSubtype,omitempty"`
 	// Type of the workflow being started. This can be any string for client services to distinguish workflow by type.
-	WorkflowType *string `json:"WorkflowType,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *WorkflowWorkflowCtx) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowCtx) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *WorkflowWorkflowCtx) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowWorkflowCtx) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -121,7 +121,7 @@ func (o *WorkflowWorkflowCtx) GetInitiatorCtx() WorkflowInitiatorContext {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowWorkflowCtx) GetInitiatorCtxOk() (*WorkflowInitiatorContext, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.InitiatorCtx.Get(), o.InitiatorCtx.IsSet()
@@ -140,6 +140,7 @@ func (o *WorkflowWorkflowCtx) HasInitiatorCtx() bool {
 func (o *WorkflowWorkflowCtx) SetInitiatorCtx(v WorkflowInitiatorContext) {
 	o.InitiatorCtx.Set(&v)
 }
+
 // SetInitiatorCtxNil sets the value for InitiatorCtx to be an explicit nil
 func (o *WorkflowWorkflowCtx) SetInitiatorCtxNil() {
 	o.InitiatorCtx.Set(nil)
@@ -152,7 +153,7 @@ func (o *WorkflowWorkflowCtx) UnsetInitiatorCtx() {
 
 // GetTargetCtxList returns the TargetCtxList field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowWorkflowCtx) GetTargetCtxList() []WorkflowTargetContext {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowTargetContext
 		return ret
 	}
@@ -323,9 +324,9 @@ func (o *WorkflowWorkflowCtx) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		InitiatorCtx NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
-		TargetCtxList []WorkflowTargetContext `json:"TargetCtxList,omitempty"`
+		ObjectType    string                           `json:"ObjectType"`
+		InitiatorCtx  NullableWorkflowInitiatorContext `json:"InitiatorCtx,omitempty"`
+		TargetCtxList []WorkflowTargetContext          `json:"TargetCtxList,omitempty"`
 		// The name of workflowMeta of the workflow running.
 		WorkflowMetaName *string `json:"WorkflowMetaName,omitempty"`
 		// The subtype of the workflow.
@@ -430,5 +431,3 @@ func (v *NullableWorkflowWorkflowCtx) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

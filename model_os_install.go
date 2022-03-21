@@ -25,13 +25,13 @@ type OsInstall struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// The name of the OS install configuration.
-	Name *string `json:"Name,omitempty"`
-	ConfigurationFile *OsConfigurationFileRelationship `json:"ConfigurationFile,omitempty"`
-	Image *SoftwarerepositoryOperatingSystemFileRelationship `json:"Image,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	OsduImage *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
-	Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-	WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+	Name                 *string                                                      `json:"Name,omitempty"`
+	ConfigurationFile    *OsConfigurationFileRelationship                             `json:"ConfigurationFile,omitempty"`
+	Image                *SoftwarerepositoryOperatingSystemFileRelationship           `json:"Image,omitempty"`
+	Organization         *OrganizationOrganizationRelationship                        `json:"Organization,omitempty"`
+	OsduImage            *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
+	Server               *ComputePhysicalRelationship                                 `json:"Server,omitempty"`
+	WorkflowInfo         *WorkflowWorkflowInfoRelationship                            `json:"WorkflowInfo,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *OsInstall) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsInstall) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *OsInstall) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsInstall) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -386,13 +386,13 @@ func (o *OsInstall) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// The name of the OS install configuration.
-		Name *string `json:"Name,omitempty"`
-		ConfigurationFile *OsConfigurationFileRelationship `json:"ConfigurationFile,omitempty"`
-		Image *SoftwarerepositoryOperatingSystemFileRelationship `json:"Image,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		OsduImage *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
-		Server *ComputePhysicalRelationship `json:"Server,omitempty"`
-		WorkflowInfo *WorkflowWorkflowInfoRelationship `json:"WorkflowInfo,omitempty"`
+		Name              *string                                                      `json:"Name,omitempty"`
+		ConfigurationFile *OsConfigurationFileRelationship                             `json:"ConfigurationFile,omitempty"`
+		Image             *SoftwarerepositoryOperatingSystemFileRelationship           `json:"Image,omitempty"`
+		Organization      *OrganizationOrganizationRelationship                        `json:"Organization,omitempty"`
+		OsduImage         *FirmwareServerConfigurationUtilityDistributableRelationship `json:"OsduImage,omitempty"`
+		Server            *ComputePhysicalRelationship                                 `json:"Server,omitempty"`
+		WorkflowInfo      *WorkflowWorkflowInfoRelationship                            `json:"WorkflowInfo,omitempty"`
 	}
 
 	varOsInstallWithoutEmbeddedStruct := OsInstallWithoutEmbeddedStruct{}
@@ -495,5 +495,3 @@ func (v *NullableOsInstall) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

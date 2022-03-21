@@ -20,7 +20,7 @@ type TelemetryDruidDimensionTopNMetricSpecAllOf struct {
 	// Specifies the sorting order. It can be one of the following values. \"lexicographic\", \"alphanumeric\", \"numeric\", \"strlen\". * lexicographic - Sorts values by converting Strings to their UTF-8 byte array representations and comparing lexicographically, byte-by-byte. * alphanumeric - Suitable for strings with both numeric and non-numeric content, e.g. \"file12 sorts after file2\". See https://github.com/amjjd/java-alphanum for more details on how this ordering sorts values. This ordering is not suitable for numbers with decimal points or negative numbers. * numeric - Sorts values as numbers, supports integers and floating point values. Negative values are supported. This sorting order will try to parse all string values as numbers. Unparseable values are treated as nulls, and nulls precede numbers. When comparing two unparseable values (e.g., \"hello\" and \"world\"), this ordering will sort by comparing the unparsed strings lexicographically. * strlen - Sorts values by the their string lengths. When there is a tie, this comparator falls back to using the String compareTo method. * version - Sorts values as versions, e.g. \"10.0 sorts after 9.0\", \"1.0.0-SNAPSHOT sorts after 1.0.0\".
 	Ordering *string `json:"ordering,omitempty"`
 	// The starting point of the sort. For example, if a previousStop value is 'b', all values before 'b' are discarded. This field can be used to paginate through all the dimension values.
-	PreviousStop *string `json:"previousStop,omitempty"`
+	PreviousStop         *string `json:"previousStop,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -180,5 +180,3 @@ func (v *NullableTelemetryDruidDimensionTopNMetricSpecAllOf) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // AdapterUnitResponse - The response body of a HTTP GET request for the 'adapter.Unit' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'adapter.Unit' resources.
 type AdapterUnitResponse struct {
-	AdapterUnitList *AdapterUnitList
+	AdapterUnitList      *AdapterUnitList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // AdapterUnitListAsAdapterUnitResponse is a convenience function that returns AdapterUnitList wrapped in AdapterUnitResponse
 func AdapterUnitListAsAdapterUnitResponse(v *AdapterUnitList) AdapterUnitResponse {
-	return AdapterUnitResponse{ AdapterUnitList: v}
+	return AdapterUnitResponse{AdapterUnitList: v}
 }
 
 // MoAggregateTransformAsAdapterUnitResponse is a convenience function that returns MoAggregateTransform wrapped in AdapterUnitResponse
 func MoAggregateTransformAsAdapterUnitResponse(v *MoAggregateTransform) AdapterUnitResponse {
-	return AdapterUnitResponse{ MoAggregateTransform: v}
+	return AdapterUnitResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAdapterUnitResponse is a convenience function that returns MoDocumentCount wrapped in AdapterUnitResponse
 func MoDocumentCountAsAdapterUnitResponse(v *MoDocumentCount) AdapterUnitResponse {
-	return AdapterUnitResponse{ MoDocumentCount: v}
+	return AdapterUnitResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAdapterUnitResponse is a convenience function that returns MoTagSummary wrapped in AdapterUnitResponse
 func MoTagSummaryAsAdapterUnitResponse(v *MoTagSummary) AdapterUnitResponse {
-	return AdapterUnitResponse{ MoTagSummary: v}
+	return AdapterUnitResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AdapterUnitResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AdapterUnitResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AdapterUnitResponse) GetActualInstance() (interface{}) {
+func (obj *AdapterUnitResponse) GetActualInstance() interface{} {
 	if obj.AdapterUnitList != nil {
 		return obj.AdapterUnitList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAdapterUnitResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,7 +29,7 @@ type OsValidationInformation struct {
 	// The status of the validation step. * `NotValidated` - The validation not started. * `Valid` - The step status marked as valid when respective step validation condition is successful. * `Invalid` - The step status marked as invalid when respective step validation condition is failed. * `InProgress` - The validation is in progress.
 	Status *string `json:"Status,omitempty"`
 	// The validation step name. * `OS Install Schema Validation` - The step to validate the CSV file schema. * `OS Image Validation` - The Operating System Image parameter validation step. * `SCU Image Validation` - The SCU Image parameter validation step. * `Configuration source and file validation` - The Configuration Source and Configuration file validation step. * `Server level data validation` - The server level parameters validation.
-	StepName *string `json:"StepName,omitempty"`
+	StepName             *string `json:"StepName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *OsValidationInformation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsValidationInformation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *OsValidationInformation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsValidationInformation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -341,5 +341,3 @@ func (v *NullableOsValidationInformation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

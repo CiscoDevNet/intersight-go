@@ -20,30 +20,29 @@ import (
 type BulkExportedItemResponse struct {
 	BulkExportedItemList *BulkExportedItemList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // BulkExportedItemListAsBulkExportedItemResponse is a convenience function that returns BulkExportedItemList wrapped in BulkExportedItemResponse
 func BulkExportedItemListAsBulkExportedItemResponse(v *BulkExportedItemList) BulkExportedItemResponse {
-	return BulkExportedItemResponse{ BulkExportedItemList: v}
+	return BulkExportedItemResponse{BulkExportedItemList: v}
 }
 
 // MoAggregateTransformAsBulkExportedItemResponse is a convenience function that returns MoAggregateTransform wrapped in BulkExportedItemResponse
 func MoAggregateTransformAsBulkExportedItemResponse(v *MoAggregateTransform) BulkExportedItemResponse {
-	return BulkExportedItemResponse{ MoAggregateTransform: v}
+	return BulkExportedItemResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsBulkExportedItemResponse is a convenience function that returns MoDocumentCount wrapped in BulkExportedItemResponse
 func MoDocumentCountAsBulkExportedItemResponse(v *MoDocumentCount) BulkExportedItemResponse {
-	return BulkExportedItemResponse{ MoDocumentCount: v}
+	return BulkExportedItemResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsBulkExportedItemResponse is a convenience function that returns MoTagSummary wrapped in BulkExportedItemResponse
 func MoTagSummaryAsBulkExportedItemResponse(v *MoTagSummary) BulkExportedItemResponse {
-	return BulkExportedItemResponse{ MoTagSummary: v}
+	return BulkExportedItemResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BulkExportedItemResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src BulkExportedItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BulkExportedItemResponse) GetActualInstance() (interface{}) {
+func (obj *BulkExportedItemResponse) GetActualInstance() interface{} {
 	if obj.BulkExportedItemList != nil {
 		return obj.BulkExportedItemList
 	}
@@ -184,5 +183,3 @@ func (v *NullableBulkExportedItemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

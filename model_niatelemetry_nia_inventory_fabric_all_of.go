@@ -64,10 +64,10 @@ type NiatelemetryNiaInventoryFabricAllOf struct {
 	// Returns total number of leafs in the fabric.
 	LeafCount *int64 `json:"LeafCount,omitempty"`
 	// Link state routing details on the fabric.
-	LinkStateRouting *string `json:"LinkStateRouting,omitempty"`
-	LogicalLinks []NiatelemetryLogicalLink `json:"LogicalLinks,omitempty"`
+	LinkStateRouting *string                   `json:"LinkStateRouting,omitempty"`
+	LogicalLinks     []NiatelemetryLogicalLink `json:"LogicalLinks,omitempty"`
 	// No of networks deployed on a fabric.
-	NetworkDeploymentCount *int64 `json:"NetworkDeploymentCount,omitempty"`
+	NetworkDeploymentCount  *int64                         `json:"NetworkDeploymentCount,omitempty"`
 	NetworkDeploymentStatus []NiatelemetryDeploymentStatus `json:"NetworkDeploymentStatus,omitempty"`
 	// NTP server IP List on the fabric.
 	NtpServerIpList *string `json:"NtpServerIpList,omitempty"`
@@ -98,12 +98,12 @@ type NiatelemetryNiaInventoryFabricAllOf struct {
 	// VLAN to VNI mappings configured in the DCNM.
 	VlanVniMappings *string `json:"VlanVniMappings,omitempty"`
 	// Count number of IP addresses configured in the DCNM networks.
-	VniIpCount *int64 `json:"VniIpCount,omitempty"`
+	VniIpCount *int64                   `json:"VniIpCount,omitempty"`
 	VpcDetails []NiatelemetryVpcDetails `json:"VpcDetails,omitempty"`
 	// No of vrfs deployed on a fabric.
-	VrfDeploymentCount *int64 `json:"VrfDeploymentCount,omitempty"`
-	VrfDeploymentStatus []NiatelemetryDeploymentStatus `json:"VrfDeploymentStatus,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VrfDeploymentCount   *int64                               `json:"VrfDeploymentCount,omitempty"`
+	VrfDeploymentStatus  []NiatelemetryDeploymentStatus       `json:"VrfDeploymentStatus,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -145,7 +145,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -169,7 +169,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -886,7 +886,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) SetLinkStateRouting(v string) {
 
 // GetLogicalLinks returns the LogicalLinks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetLogicalLinks() []NiatelemetryLogicalLink {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryLogicalLink
 		return ret
 	}
@@ -951,7 +951,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) SetNetworkDeploymentCount(v int64)
 
 // GetNetworkDeploymentStatus returns the NetworkDeploymentStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetNetworkDeploymentStatus() []NiatelemetryDeploymentStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryDeploymentStatus
 		return ret
 	}
@@ -1464,7 +1464,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) SetVniIpCount(v int64) {
 
 // GetVpcDetails returns the VpcDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetVpcDetails() []NiatelemetryVpcDetails {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryVpcDetails
 		return ret
 	}
@@ -1529,7 +1529,7 @@ func (o *NiatelemetryNiaInventoryFabricAllOf) SetVrfDeploymentCount(v int64) {
 
 // GetVrfDeploymentStatus returns the VrfDeploymentStatus field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiatelemetryNiaInventoryFabricAllOf) GetVrfDeploymentStatus() []NiatelemetryDeploymentStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []NiatelemetryDeploymentStatus
 		return ret
 	}
@@ -1837,5 +1837,3 @@ func (v *NullableNiatelemetryNiaInventoryFabricAllOf) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

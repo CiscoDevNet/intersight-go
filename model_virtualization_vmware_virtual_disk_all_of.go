@@ -38,7 +38,7 @@ type VirtualizationVmwareVirtualDiskAllOf struct {
 	// Unique identifier of the LUN accessed by the raw disk mapping (RDM).
 	LunUuid *string `json:"LunUuid,omitempty"`
 	// Serial ID of the storage device.
-	Serial *string `json:"Serial,omitempty"`
+	Serial *string                                `json:"Serial,omitempty"`
 	Shares NullableVirtualizationVmwareSharesInfo `json:"Shares,omitempty"`
 	// Sharing mode of the virtual disk. * `sharingNone` - The virtual disk is not shared. * `sharingMultiWriter` - The virtual disk is shared between multiple virtual machines.
 	Sharing *string `json:"Sharing,omitempty"`
@@ -55,9 +55,9 @@ type VirtualizationVmwareVirtualDiskAllOf struct {
 	// Path of the virtual disk.
 	VirtualDiskPath *string `json:"VirtualDiskPath,omitempty"`
 	// Identity of the virtual machine where the virtual disk is created.
-	VmIdentity *string `json:"VmIdentity,omitempty"`
-	Datastore *VirtualizationVmwareDatastoreRelationship `json:"Datastore,omitempty"`
-	VirtualMachine *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
+	VmIdentity           *string                                         `json:"VmIdentity,omitempty"`
+	Datastore            *VirtualizationVmwareDatastoreRelationship      `json:"Datastore,omitempty"`
+	VirtualMachine       *VirtualizationVmwareVirtualMachineRelationship `json:"VirtualMachine,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -119,7 +119,7 @@ func (o *VirtualizationVmwareVirtualDiskAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualDiskAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -143,7 +143,7 @@ func (o *VirtualizationVmwareVirtualDiskAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVirtualDiskAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -455,7 +455,7 @@ func (o *VirtualizationVmwareVirtualDiskAllOf) GetShares() VirtualizationVmwareS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVmwareVirtualDiskAllOf) GetSharesOk() (*VirtualizationVmwareSharesInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shares.Get(), o.Shares.IsSet()
@@ -474,6 +474,7 @@ func (o *VirtualizationVmwareVirtualDiskAllOf) HasShares() bool {
 func (o *VirtualizationVmwareVirtualDiskAllOf) SetShares(v VirtualizationVmwareSharesInfo) {
 	o.Shares.Set(&v)
 }
+
 // SetSharesNil sets the value for Shares to be an explicit nil
 func (o *VirtualizationVmwareVirtualDiskAllOf) SetSharesNil() {
 	o.Shares.Set(nil)
@@ -953,5 +954,3 @@ func (v *NullableVirtualizationVmwareVirtualDiskAllOf) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

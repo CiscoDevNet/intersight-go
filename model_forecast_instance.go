@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // ForecastInstance Entity representing forecast result for instance of managed object, ie, data source.
@@ -26,7 +26,7 @@ type ForecastInstance struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Action to be triggered on forecast instance. Default value is None. * `None` - The Enum value None represents that no action is triggered on the forecast Instance managed object. * `Evaluate` - The Enum value Evaluate represents that a re-evaluation of the forecast needs to be triggered.
-	Action *string `json:"Action,omitempty"`
+	Action   *string   `json:"Action,omitempty"`
 	AltModel []float32 `json:"AltModel,omitempty"`
 	// The time interval (in days) for the data to be used for computing forecast model.
 	DataInterval *int64 `json:"DataInterval,omitempty"`
@@ -41,12 +41,12 @@ type ForecastInstance struct {
 	// The name of the metric for which regression model is generated.
 	MetricName *string `json:"MetricName,omitempty"`
 	// The minimum number of days the HyperFlex cluster should be up for computing forecast.
-	MinDaysForForecast *int64 `json:"MinDaysForForecast,omitempty"`
-	Model NullableForecastModel `json:"Model,omitempty"`
+	MinDaysForForecast *int64                `json:"MinDaysForForecast,omitempty"`
+	Model              NullableForecastModel `json:"Model,omitempty"`
 	// The number of days remaining before the device reaches the specified threshold for the metric as defined in definition.
-	ThresholdDays *int64 `json:"ThresholdDays,omitempty"`
-	ForecastDef *ForecastDefinitionRelationship `json:"ForecastDef,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ThresholdDays        *int64                               `json:"ThresholdDays,omitempty"`
+	ForecastDef          *ForecastDefinitionRelationship      `json:"ForecastDef,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -96,7 +96,7 @@ func (o *ForecastInstance) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ForecastInstance) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -120,7 +120,7 @@ func (o *ForecastInstance) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ForecastInstance) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -165,7 +165,7 @@ func (o *ForecastInstance) SetAction(v string) {
 
 // GetAltModel returns the AltModel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ForecastInstance) GetAltModel() []float32 {
-	if o == nil  {
+	if o == nil {
 		var ret []float32
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *ForecastInstance) GetModel() ForecastModel {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ForecastInstance) GetModelOk() (*ForecastModel, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Model.Get(), o.Model.IsSet()
@@ -452,6 +452,7 @@ func (o *ForecastInstance) HasModel() bool {
 func (o *ForecastInstance) SetModel(v ForecastModel) {
 	o.Model.Set(&v)
 }
+
 // SetModelNil sets the value for Model to be an explicit nil
 func (o *ForecastInstance) SetModelNil() {
 	o.Model.Set(nil)
@@ -628,7 +629,7 @@ func (o *ForecastInstance) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Action to be triggered on forecast instance. Default value is None. * `None` - The Enum value None represents that no action is triggered on the forecast Instance managed object. * `Evaluate` - The Enum value Evaluate represents that a re-evaluation of the forecast needs to be triggered.
-		Action *string `json:"Action,omitempty"`
+		Action   *string   `json:"Action,omitempty"`
 		AltModel []float32 `json:"AltModel,omitempty"`
 		// The time interval (in days) for the data to be used for computing forecast model.
 		DataInterval *int64 `json:"DataInterval,omitempty"`
@@ -643,11 +644,11 @@ func (o *ForecastInstance) UnmarshalJSON(bytes []byte) (err error) {
 		// The name of the metric for which regression model is generated.
 		MetricName *string `json:"MetricName,omitempty"`
 		// The minimum number of days the HyperFlex cluster should be up for computing forecast.
-		MinDaysForForecast *int64 `json:"MinDaysForForecast,omitempty"`
-		Model NullableForecastModel `json:"Model,omitempty"`
+		MinDaysForForecast *int64                `json:"MinDaysForForecast,omitempty"`
+		Model              NullableForecastModel `json:"Model,omitempty"`
 		// The number of days remaining before the device reaches the specified threshold for the metric as defined in definition.
-		ThresholdDays *int64 `json:"ThresholdDays,omitempty"`
-		ForecastDef *ForecastDefinitionRelationship `json:"ForecastDef,omitempty"`
+		ThresholdDays    *int64                               `json:"ThresholdDays,omitempty"`
+		ForecastDef      *ForecastDefinitionRelationship      `json:"ForecastDef,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -763,5 +764,3 @@ func (v *NullableForecastInstance) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

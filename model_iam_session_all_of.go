@@ -21,7 +21,7 @@ type IamSessionAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType         string                  `json:"ObjectType"`
 	AccountPermissions []IamAccountPermissions `json:"AccountPermissions,omitempty"`
 	// Expiration time for the session.
 	Expiration *time.Time `json:"Expiration,omitempty"`
@@ -34,9 +34,9 @@ type IamSessionAllOf struct {
 	// The last login time for user.
 	LastLoginTime *time.Time `json:"LastLoginTime,omitempty"`
 	// Session token shared with the user agent which is used to identify the user session when API requests are received to perform authorization.
-	SessionId *string `json:"SessionId,omitempty"`
-	Permission *IamPermissionRelationship `json:"Permission,omitempty"`
-	User *IamUserRelationship `json:"User,omitempty"`
+	SessionId            *string                    `json:"SessionId,omitempty"`
+	Permission           *IamPermissionRelationship `json:"Permission,omitempty"`
+	User                 *IamUserRelationship       `json:"User,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -78,7 +78,7 @@ func (o *IamSessionAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamSessionAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -102,7 +102,7 @@ func (o *IamSessionAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamSessionAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -115,7 +115,7 @@ func (o *IamSessionAllOf) SetObjectType(v string) {
 
 // GetAccountPermissions returns the AccountPermissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamSessionAllOf) GetAccountPermissions() []IamAccountPermissions {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAccountPermissions
 		return ret
 	}
@@ -507,5 +507,3 @@ func (v *NullableIamSessionAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,12 +20,12 @@ type KubernetesNodeAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	NodeAddresses []KubernetesNodeAddress `json:"NodeAddresses,omitempty"`
-	NodeInfo NullableKubernetesNodeInfo `json:"NodeInfo,omitempty"`
-	NodeSpec NullableKubernetesNodeSpec `json:"NodeSpec,omitempty"`
-	NodeStatuses []KubernetesNodeStatus `json:"NodeStatuses,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	ObjectType           string                               `json:"ObjectType"`
+	NodeAddresses        []KubernetesNodeAddress              `json:"NodeAddresses,omitempty"`
+	NodeInfo             NullableKubernetesNodeInfo           `json:"NodeInfo,omitempty"`
+	NodeSpec             NullableKubernetesNodeSpec           `json:"NodeSpec,omitempty"`
+	NodeStatuses         []KubernetesNodeStatus               `json:"NodeStatuses,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *KubernetesNodeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *KubernetesNodeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesNodeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -104,7 +104,7 @@ func (o *KubernetesNodeAllOf) SetObjectType(v string) {
 
 // GetNodeAddresses returns the NodeAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNodeAllOf) GetNodeAddresses() []KubernetesNodeAddress {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeAddress
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *KubernetesNodeAllOf) GetNodeInfo() KubernetesNodeInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesNodeAllOf) GetNodeInfoOk() (*KubernetesNodeInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NodeInfo.Get(), o.NodeInfo.IsSet()
@@ -167,6 +167,7 @@ func (o *KubernetesNodeAllOf) HasNodeInfo() bool {
 func (o *KubernetesNodeAllOf) SetNodeInfo(v KubernetesNodeInfo) {
 	o.NodeInfo.Set(&v)
 }
+
 // SetNodeInfoNil sets the value for NodeInfo to be an explicit nil
 func (o *KubernetesNodeAllOf) SetNodeInfoNil() {
 	o.NodeInfo.Set(nil)
@@ -190,7 +191,7 @@ func (o *KubernetesNodeAllOf) GetNodeSpec() KubernetesNodeSpec {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesNodeAllOf) GetNodeSpecOk() (*KubernetesNodeSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.NodeSpec.Get(), o.NodeSpec.IsSet()
@@ -209,6 +210,7 @@ func (o *KubernetesNodeAllOf) HasNodeSpec() bool {
 func (o *KubernetesNodeAllOf) SetNodeSpec(v KubernetesNodeSpec) {
 	o.NodeSpec.Set(&v)
 }
+
 // SetNodeSpecNil sets the value for NodeSpec to be an explicit nil
 func (o *KubernetesNodeAllOf) SetNodeSpecNil() {
 	o.NodeSpec.Set(nil)
@@ -221,7 +223,7 @@ func (o *KubernetesNodeAllOf) UnsetNodeSpec() {
 
 // GetNodeStatuses returns the NodeStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesNodeAllOf) GetNodeStatuses() []KubernetesNodeStatus {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesNodeStatus
 		return ret
 	}
@@ -373,5 +375,3 @@ func (v *NullableKubernetesNodeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

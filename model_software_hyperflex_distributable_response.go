@@ -18,32 +18,31 @@ import (
 
 // SoftwareHyperflexDistributableResponse - The response body of a HTTP GET request for the 'software.HyperflexDistributable' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'software.HyperflexDistributable' resources.
 type SoftwareHyperflexDistributableResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform               *MoAggregateTransform
+	MoDocumentCount                    *MoDocumentCount
+	MoTagSummary                       *MoTagSummary
 	SoftwareHyperflexDistributableList *SoftwareHyperflexDistributableList
 }
 
 // MoAggregateTransformAsSoftwareHyperflexDistributableResponse is a convenience function that returns MoAggregateTransform wrapped in SoftwareHyperflexDistributableResponse
 func MoAggregateTransformAsSoftwareHyperflexDistributableResponse(v *MoAggregateTransform) SoftwareHyperflexDistributableResponse {
-	return SoftwareHyperflexDistributableResponse{ MoAggregateTransform: v}
+	return SoftwareHyperflexDistributableResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsSoftwareHyperflexDistributableResponse is a convenience function that returns MoDocumentCount wrapped in SoftwareHyperflexDistributableResponse
 func MoDocumentCountAsSoftwareHyperflexDistributableResponse(v *MoDocumentCount) SoftwareHyperflexDistributableResponse {
-	return SoftwareHyperflexDistributableResponse{ MoDocumentCount: v}
+	return SoftwareHyperflexDistributableResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsSoftwareHyperflexDistributableResponse is a convenience function that returns MoTagSummary wrapped in SoftwareHyperflexDistributableResponse
 func MoTagSummaryAsSoftwareHyperflexDistributableResponse(v *MoTagSummary) SoftwareHyperflexDistributableResponse {
-	return SoftwareHyperflexDistributableResponse{ MoTagSummary: v}
+	return SoftwareHyperflexDistributableResponse{MoTagSummary: v}
 }
 
 // SoftwareHyperflexDistributableListAsSoftwareHyperflexDistributableResponse is a convenience function that returns SoftwareHyperflexDistributableList wrapped in SoftwareHyperflexDistributableResponse
 func SoftwareHyperflexDistributableListAsSoftwareHyperflexDistributableResponse(v *SoftwareHyperflexDistributableList) SoftwareHyperflexDistributableResponse {
-	return SoftwareHyperflexDistributableResponse{ SoftwareHyperflexDistributableList: v}
+	return SoftwareHyperflexDistributableResponse{SoftwareHyperflexDistributableList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SoftwareHyperflexDistributableResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src SoftwareHyperflexDistributableResponse) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *SoftwareHyperflexDistributableResponse) GetActualInstance() (interface{}) {
+func (obj *SoftwareHyperflexDistributableResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableSoftwareHyperflexDistributableResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

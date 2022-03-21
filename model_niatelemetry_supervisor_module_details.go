@@ -37,8 +37,8 @@ type NiatelemetrySupervisorModuleDetails struct {
 	// Serial number of the supervisor module.
 	Serial *string `json:"Serial,omitempty"`
 	// Name of the APIC site from which this data is being collected.
-	SiteName *string `json:"SiteName,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	SiteName             *string                              `json:"SiteName,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *NiatelemetrySupervisorModuleDetails) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySupervisorModuleDetails) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *NiatelemetrySupervisorModuleDetails) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetrySupervisorModuleDetails) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -438,7 +438,7 @@ func (o *NiatelemetrySupervisorModuleDetails) UnmarshalJSON(bytes []byte) (err e
 		// Serial number of the supervisor module.
 		Serial *string `json:"Serial,omitempty"`
 		// Name of the APIC site from which this data is being collected.
-		SiteName *string `json:"SiteName,omitempty"`
+		SiteName         *string                              `json:"SiteName,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -544,5 +544,3 @@ func (v *NullableNiatelemetrySupervisorModuleDetails) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,31 +19,30 @@ import (
 // StorageNetAppLunResponse - The response body of a HTTP GET request for the 'storage.NetAppLun' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.NetAppLun' resources.
 type StorageNetAppLunResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 	StorageNetAppLunList *StorageNetAppLunList
 }
 
 // MoAggregateTransformAsStorageNetAppLunResponse is a convenience function that returns MoAggregateTransform wrapped in StorageNetAppLunResponse
 func MoAggregateTransformAsStorageNetAppLunResponse(v *MoAggregateTransform) StorageNetAppLunResponse {
-	return StorageNetAppLunResponse{ MoAggregateTransform: v}
+	return StorageNetAppLunResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageNetAppLunResponse is a convenience function that returns MoDocumentCount wrapped in StorageNetAppLunResponse
 func MoDocumentCountAsStorageNetAppLunResponse(v *MoDocumentCount) StorageNetAppLunResponse {
-	return StorageNetAppLunResponse{ MoDocumentCount: v}
+	return StorageNetAppLunResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageNetAppLunResponse is a convenience function that returns MoTagSummary wrapped in StorageNetAppLunResponse
 func MoTagSummaryAsStorageNetAppLunResponse(v *MoTagSummary) StorageNetAppLunResponse {
-	return StorageNetAppLunResponse{ MoTagSummary: v}
+	return StorageNetAppLunResponse{MoTagSummary: v}
 }
 
 // StorageNetAppLunListAsStorageNetAppLunResponse is a convenience function that returns StorageNetAppLunList wrapped in StorageNetAppLunResponse
 func StorageNetAppLunListAsStorageNetAppLunResponse(v *StorageNetAppLunList) StorageNetAppLunResponse {
-	return StorageNetAppLunResponse{ StorageNetAppLunList: v}
+	return StorageNetAppLunResponse{StorageNetAppLunList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppLunResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageNetAppLunResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppLunResponse) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppLunResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageNetAppLunResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

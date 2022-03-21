@@ -20,7 +20,7 @@ type TelemetryDruidNumericTopNMetricSpec struct {
 	// The dimension spec type.
 	Type string `json:"type"`
 	// The name of the metric to sort topN results.
-	Metric string `json:"metric"`
+	Metric               string `json:"metric"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ func (o *TelemetryDruidNumericTopNMetricSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidNumericTopNMetricSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -82,7 +82,7 @@ func (o *TelemetryDruidNumericTopNMetricSpec) GetMetric() string {
 // GetMetricOk returns a tuple with the Metric field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidNumericTopNMetricSpec) GetMetricOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Metric, true
@@ -162,5 +162,3 @@ func (v *NullableTelemetryDruidNumericTopNMetricSpec) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

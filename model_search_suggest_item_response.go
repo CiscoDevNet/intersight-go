@@ -18,20 +18,19 @@ import (
 
 // SearchSuggestItemResponse - The response body of a HTTP GET request for the 'search.SuggesthItem' resource.
 type SearchSuggestItemResponse struct {
-	MoDocumentCount *MoDocumentCount
+	MoDocumentCount       *MoDocumentCount
 	SearchSuggestItemList *SearchSuggestItemList
 }
 
 // MoDocumentCountAsSearchSuggestItemResponse is a convenience function that returns MoDocumentCount wrapped in SearchSuggestItemResponse
 func MoDocumentCountAsSearchSuggestItemResponse(v *MoDocumentCount) SearchSuggestItemResponse {
-	return SearchSuggestItemResponse{ MoDocumentCount: v}
+	return SearchSuggestItemResponse{MoDocumentCount: v}
 }
 
 // SearchSuggestItemListAsSearchSuggestItemResponse is a convenience function that returns SearchSuggestItemList wrapped in SearchSuggestItemResponse
 func SearchSuggestItemListAsSearchSuggestItemResponse(v *SearchSuggestItemList) SearchSuggestItemResponse {
-	return SearchSuggestItemResponse{ SearchSuggestItemList: v}
+	return SearchSuggestItemResponse{SearchSuggestItemList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SearchSuggestItemResponse) UnmarshalJSON(data []byte) error {
@@ -84,7 +83,7 @@ func (src SearchSuggestItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SearchSuggestItemResponse) GetActualInstance() (interface{}) {
+func (obj *SearchSuggestItemResponse) GetActualInstance() interface{} {
 	if obj.MoDocumentCount != nil {
 		return obj.MoDocumentCount
 	}
@@ -132,5 +131,3 @@ func (v *NullableSearchSuggestItemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

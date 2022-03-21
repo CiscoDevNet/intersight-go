@@ -18,32 +18,31 @@ import (
 
 // NiatelemetrySyslogSysMsgFacFilterResponse - The response body of a HTTP GET request for the 'niatelemetry.SyslogSysMsgFacFilter' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.SyslogSysMsgFacFilter' resources.
 type NiatelemetrySyslogSysMsgFacFilterResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform                  *MoAggregateTransform
+	MoDocumentCount                       *MoDocumentCount
+	MoTagSummary                          *MoTagSummary
 	NiatelemetrySyslogSysMsgFacFilterList *NiatelemetrySyslogSysMsgFacFilterList
 }
 
 // MoAggregateTransformAsNiatelemetrySyslogSysMsgFacFilterResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetrySyslogSysMsgFacFilterResponse
 func MoAggregateTransformAsNiatelemetrySyslogSysMsgFacFilterResponse(v *MoAggregateTransform) NiatelemetrySyslogSysMsgFacFilterResponse {
-	return NiatelemetrySyslogSysMsgFacFilterResponse{ MoAggregateTransform: v}
+	return NiatelemetrySyslogSysMsgFacFilterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetrySyslogSysMsgFacFilterResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetrySyslogSysMsgFacFilterResponse
 func MoDocumentCountAsNiatelemetrySyslogSysMsgFacFilterResponse(v *MoDocumentCount) NiatelemetrySyslogSysMsgFacFilterResponse {
-	return NiatelemetrySyslogSysMsgFacFilterResponse{ MoDocumentCount: v}
+	return NiatelemetrySyslogSysMsgFacFilterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetrySyslogSysMsgFacFilterResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetrySyslogSysMsgFacFilterResponse
 func MoTagSummaryAsNiatelemetrySyslogSysMsgFacFilterResponse(v *MoTagSummary) NiatelemetrySyslogSysMsgFacFilterResponse {
-	return NiatelemetrySyslogSysMsgFacFilterResponse{ MoTagSummary: v}
+	return NiatelemetrySyslogSysMsgFacFilterResponse{MoTagSummary: v}
 }
 
 // NiatelemetrySyslogSysMsgFacFilterListAsNiatelemetrySyslogSysMsgFacFilterResponse is a convenience function that returns NiatelemetrySyslogSysMsgFacFilterList wrapped in NiatelemetrySyslogSysMsgFacFilterResponse
 func NiatelemetrySyslogSysMsgFacFilterListAsNiatelemetrySyslogSysMsgFacFilterResponse(v *NiatelemetrySyslogSysMsgFacFilterList) NiatelemetrySyslogSysMsgFacFilterResponse {
-	return NiatelemetrySyslogSysMsgFacFilterResponse{ NiatelemetrySyslogSysMsgFacFilterList: v}
+	return NiatelemetrySyslogSysMsgFacFilterResponse{NiatelemetrySyslogSysMsgFacFilterList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetrySyslogSysMsgFacFilterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetrySyslogSysMsgFacFilterResponse) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *NiatelemetrySyslogSysMsgFacFilterResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetrySyslogSysMsgFacFilterResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetrySyslogSysMsgFacFilterResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

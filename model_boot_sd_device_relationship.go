@@ -19,19 +19,18 @@ import (
 // BootSdDeviceRelationship - A relationship to the 'boot.SdDevice' resource, or the expanded 'boot.SdDevice' resource, or the 'null' value.
 type BootSdDeviceRelationship struct {
 	BootSdDevice *BootSdDevice
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // BootSdDeviceAsBootSdDeviceRelationship is a convenience function that returns BootSdDevice wrapped in BootSdDeviceRelationship
 func BootSdDeviceAsBootSdDeviceRelationship(v *BootSdDevice) BootSdDeviceRelationship {
-	return BootSdDeviceRelationship{ BootSdDevice: v}
+	return BootSdDeviceRelationship{BootSdDevice: v}
 }
 
 // MoMoRefAsBootSdDeviceRelationship is a convenience function that returns MoMoRef wrapped in BootSdDeviceRelationship
 func MoMoRefAsBootSdDeviceRelationship(v *MoMoRef) BootSdDeviceRelationship {
-	return BootSdDeviceRelationship{ MoMoRef: v}
+	return BootSdDeviceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BootSdDeviceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src BootSdDeviceRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *BootSdDeviceRelationship) GetActualInstance() (interface{}) {
+func (obj *BootSdDeviceRelationship) GetActualInstance() interface{} {
 	if obj.BootSdDevice != nil {
 		return obj.BootSdDevice
 	}
@@ -137,5 +136,3 @@ func (v *NullableBootSdDeviceRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,22 +23,22 @@ type VirtualizationBaseHost struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	CpuInfo NullableVirtualizationCpuInfo `json:"CpuInfo,omitempty"`
-	HardwareInfo NullableInfraHardwareInfo `json:"HardwareInfo,omitempty"`
+	ObjectType   string                        `json:"ObjectType"`
+	CpuInfo      NullableVirtualizationCpuInfo `json:"CpuInfo,omitempty"`
+	HardwareInfo NullableInfraHardwareInfo     `json:"HardwareInfo,omitempty"`
 	// Identifies the broad type of the underlying hypervisor. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 	HypervisorType *string `json:"HypervisorType,omitempty"`
 	// The internally generated identity of this host. This entity is not manipulated by users. It aids in uniquely identifying the datacenter object. For VMware, this is an MOR (managed object reference).
 	Identity *string `json:"Identity,omitempty"`
 	// Is this host in maintenance mode. Set to true or false.
-	MaintenanceMode *bool `json:"MaintenanceMode,omitempty"`
-	MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
+	MaintenanceMode *bool                                `json:"MaintenanceMode,omitempty"`
+	MemoryCapacity  NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
 	// Commercial model information about this hardware.
 	Model *string `json:"Model,omitempty"`
 	// Name of this host supplied by user. It is not the identity of the host. The name is subject to user manipulations.
-	Name *string `json:"Name,omitempty"`
+	Name              *string                               `json:"Name,omitempty"`
 	ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
-	ProductInfo NullableVirtualizationProductInfo `json:"ProductInfo,omitempty"`
+	ProductInfo       NullableVirtualizationProductInfo     `json:"ProductInfo,omitempty"`
 	// Serial number of this host (internally generated).
 	Serial *string `json:"Serial,omitempty"`
 	// Host health status, as reported by the hypervisor platform. * `Unknown` - Entity status is unknown. * `Degraded` - State is degraded, and might impact normal operation of the entity. * `Critical` - Entity is in a critical state, impacting operations. * `Ok` - Entity status is in a stable state, operating normally.
@@ -48,7 +48,7 @@ type VirtualizationBaseHost struct {
 	// Universally unique identity of this host (example b3d4483b-5560-9342-8309-b486c9236610). Internally generated.
 	Uuid *string `json:"Uuid,omitempty"`
 	// Commercial vendor details of this hardware.
-	Vendor *string `json:"Vendor,omitempty"`
+	Vendor               *string `json:"Vendor,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *VirtualizationBaseHost) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseHost) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *VirtualizationBaseHost) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBaseHost) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -142,7 +142,7 @@ func (o *VirtualizationBaseHost) GetCpuInfo() VirtualizationCpuInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseHost) GetCpuInfoOk() (*VirtualizationCpuInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CpuInfo.Get(), o.CpuInfo.IsSet()
@@ -161,6 +161,7 @@ func (o *VirtualizationBaseHost) HasCpuInfo() bool {
 func (o *VirtualizationBaseHost) SetCpuInfo(v VirtualizationCpuInfo) {
 	o.CpuInfo.Set(&v)
 }
+
 // SetCpuInfoNil sets the value for CpuInfo to be an explicit nil
 func (o *VirtualizationBaseHost) SetCpuInfoNil() {
 	o.CpuInfo.Set(nil)
@@ -184,7 +185,7 @@ func (o *VirtualizationBaseHost) GetHardwareInfo() InfraHardwareInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseHost) GetHardwareInfoOk() (*InfraHardwareInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HardwareInfo.Get(), o.HardwareInfo.IsSet()
@@ -203,6 +204,7 @@ func (o *VirtualizationBaseHost) HasHardwareInfo() bool {
 func (o *VirtualizationBaseHost) SetHardwareInfo(v InfraHardwareInfo) {
 	o.HardwareInfo.Set(&v)
 }
+
 // SetHardwareInfoNil sets the value for HardwareInfo to be an explicit nil
 func (o *VirtualizationBaseHost) SetHardwareInfoNil() {
 	o.HardwareInfo.Set(nil)
@@ -322,7 +324,7 @@ func (o *VirtualizationBaseHost) GetMemoryCapacity() VirtualizationMemoryCapacit
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseHost) GetMemoryCapacityOk() (*VirtualizationMemoryCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MemoryCapacity.Get(), o.MemoryCapacity.IsSet()
@@ -341,6 +343,7 @@ func (o *VirtualizationBaseHost) HasMemoryCapacity() bool {
 func (o *VirtualizationBaseHost) SetMemoryCapacity(v VirtualizationMemoryCapacity) {
 	o.MemoryCapacity.Set(&v)
 }
+
 // SetMemoryCapacityNil sets the value for MemoryCapacity to be an explicit nil
 func (o *VirtualizationBaseHost) SetMemoryCapacityNil() {
 	o.MemoryCapacity.Set(nil)
@@ -428,7 +431,7 @@ func (o *VirtualizationBaseHost) GetProcessorCapacity() VirtualizationComputeCap
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseHost) GetProcessorCapacityOk() (*VirtualizationComputeCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProcessorCapacity.Get(), o.ProcessorCapacity.IsSet()
@@ -447,6 +450,7 @@ func (o *VirtualizationBaseHost) HasProcessorCapacity() bool {
 func (o *VirtualizationBaseHost) SetProcessorCapacity(v VirtualizationComputeCapacity) {
 	o.ProcessorCapacity.Set(&v)
 }
+
 // SetProcessorCapacityNil sets the value for ProcessorCapacity to be an explicit nil
 func (o *VirtualizationBaseHost) SetProcessorCapacityNil() {
 	o.ProcessorCapacity.Set(nil)
@@ -470,7 +474,7 @@ func (o *VirtualizationBaseHost) GetProductInfo() VirtualizationProductInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationBaseHost) GetProductInfoOk() (*VirtualizationProductInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProductInfo.Get(), o.ProductInfo.IsSet()
@@ -489,6 +493,7 @@ func (o *VirtualizationBaseHost) HasProductInfo() bool {
 func (o *VirtualizationBaseHost) SetProductInfo(v VirtualizationProductInfo) {
 	o.ProductInfo.Set(&v)
 }
+
 // SetProductInfoNil sets the value for ProductInfo to be an explicit nil
 func (o *VirtualizationBaseHost) SetProductInfoNil() {
 	o.ProductInfo.Set(nil)
@@ -733,22 +738,22 @@ func (o *VirtualizationBaseHost) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
-		CpuInfo NullableVirtualizationCpuInfo `json:"CpuInfo,omitempty"`
-		HardwareInfo NullableInfraHardwareInfo `json:"HardwareInfo,omitempty"`
+		ObjectType   string                        `json:"ObjectType"`
+		CpuInfo      NullableVirtualizationCpuInfo `json:"CpuInfo,omitempty"`
+		HardwareInfo NullableInfraHardwareInfo     `json:"HardwareInfo,omitempty"`
 		// Identifies the broad type of the underlying hypervisor. * `ESXi` - The hypervisor running on the HyperFlex cluster is a Vmware ESXi hypervisor of any version. * `HyperFlexAp` - The hypervisor of the virtualization platform is Cisco HyperFlex Application Platform. * `IWE` - The hypervisor of the virtualization platform is Cisco Intersight Workload Engine. * `Hyper-V` - The hypervisor running on the HyperFlex cluster is Microsoft Hyper-V. * `Unknown` - The hypervisor running on the HyperFlex cluster is not known.
 		HypervisorType *string `json:"HypervisorType,omitempty"`
 		// The internally generated identity of this host. This entity is not manipulated by users. It aids in uniquely identifying the datacenter object. For VMware, this is an MOR (managed object reference).
 		Identity *string `json:"Identity,omitempty"`
 		// Is this host in maintenance mode. Set to true or false.
-		MaintenanceMode *bool `json:"MaintenanceMode,omitempty"`
-		MemoryCapacity NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
+		MaintenanceMode *bool                                `json:"MaintenanceMode,omitempty"`
+		MemoryCapacity  NullableVirtualizationMemoryCapacity `json:"MemoryCapacity,omitempty"`
 		// Commercial model information about this hardware.
 		Model *string `json:"Model,omitempty"`
 		// Name of this host supplied by user. It is not the identity of the host. The name is subject to user manipulations.
-		Name *string `json:"Name,omitempty"`
+		Name              *string                               `json:"Name,omitempty"`
 		ProcessorCapacity NullableVirtualizationComputeCapacity `json:"ProcessorCapacity,omitempty"`
-		ProductInfo NullableVirtualizationProductInfo `json:"ProductInfo,omitempty"`
+		ProductInfo       NullableVirtualizationProductInfo     `json:"ProductInfo,omitempty"`
 		// Serial number of this host (internally generated).
 		Serial *string `json:"Serial,omitempty"`
 		// Host health status, as reported by the hypervisor platform. * `Unknown` - Entity status is unknown. * `Degraded` - State is degraded, and might impact normal operation of the entity. * `Critical` - Entity is in a critical state, impacting operations. * `Ok` - Entity status is in a stable state, operating normally.
@@ -877,5 +882,3 @@ func (v *NullableVirtualizationBaseHost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

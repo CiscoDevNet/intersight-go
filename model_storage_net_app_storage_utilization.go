@@ -27,7 +27,7 @@ type StorageNetAppStorageUtilization struct {
 	// Total logical used capacity, represented in bytes.
 	LogicalUsed *int64 `json:"LogicalUsed,omitempty"`
 	// Total savings capacity, represented in bytes.
-	Savings *int64 `json:"Savings,omitempty"`
+	Savings              *int64 `json:"Savings,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *StorageNetAppStorageUtilization) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageUtilization) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *StorageNetAppStorageUtilization) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppStorageUtilization) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableStorageNetAppStorageUtilization) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

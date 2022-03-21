@@ -26,11 +26,11 @@ type ApplianceFileSystemStatusAllOf struct {
 	// Mount point of this file system.
 	Mountpoint *string `json:"Mountpoint,omitempty"`
 	// Operational status of the file system. Operational status is based on the result of the status checks. If result of any check is Critical, then its value is Impaired. Otherwise, if result of any check is Warning, then its value is AttentionNeeded. If all checks are OK, then its value is Operational. * `Unknown` - Operational status of the Intersight Appliance entity is Unknown. * `Operational` - Operational status of the Intersight Appliance entity is Operational. * `Impaired` - Operational status of the Intersight Appliance entity is Impaired. * `AttentionNeeded` - Operational status of the Intersight Appliance entity is AttentionNeeded.
-	OperationalStatus *string `json:"OperationalStatus,omitempty"`
-	StatusChecks []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
+	OperationalStatus *string                `json:"OperationalStatus,omitempty"`
+	StatusChecks      []ApplianceStatusCheck `json:"StatusChecks,omitempty"`
 	// Percentage of the file system capacity currently in use.
-	Usage *float32 `json:"Usage,omitempty"`
-	NodeStatus *ApplianceNodeStatusRelationship `json:"NodeStatus,omitempty"`
+	Usage                *float32                         `json:"Usage,omitempty"`
+	NodeStatus           *ApplianceNodeStatusRelationship `json:"NodeStatus,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *ApplianceFileSystemStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceFileSystemStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *ApplianceFileSystemStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ApplianceFileSystemStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -205,7 +205,7 @@ func (o *ApplianceFileSystemStatusAllOf) SetOperationalStatus(v string) {
 
 // GetStatusChecks returns the StatusChecks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApplianceFileSystemStatusAllOf) GetStatusChecks() []ApplianceStatusCheck {
-	if o == nil  {
+	if o == nil {
 		var ret []ApplianceStatusCheck
 		return ret
 	}
@@ -393,5 +393,3 @@ func (v *NullableApplianceFileSystemStatusAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

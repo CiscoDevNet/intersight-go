@@ -20,14 +20,14 @@ type HyperflexServerFirmwareVersionEntryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                                `json:"ObjectType"`
 	Constraint NullableHyperflexAppSettingConstraint `json:"Constraint,omitempty"`
 	// The server platform type that is applicable for the server firmware bundle version. * `M5` - M5 generation of UCS server. * `M3` - M3 generation of UCS server. * `M4` - M4 generation of UCS server. * `M6` - M6 generation of UCS server.
 	ServerPlatform *string `json:"ServerPlatform,omitempty"`
 	// The server firmware bundle version.
-	Version *string `json:"Version,omitempty"`
+	Version               *string                                     `json:"Version,omitempty"`
 	ServerFirmwareVersion *HyperflexServerFirmwareVersionRelationship `json:"ServerFirmwareVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties  map[string]interface{}
 }
 
 type _HyperflexServerFirmwareVersionEntryAllOf HyperflexServerFirmwareVersionEntryAllOf
@@ -72,7 +72,7 @@ func (o *HyperflexServerFirmwareVersionEntryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersionEntryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *HyperflexServerFirmwareVersionEntryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexServerFirmwareVersionEntryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -120,7 +120,7 @@ func (o *HyperflexServerFirmwareVersionEntryAllOf) GetConstraint() HyperflexAppS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexServerFirmwareVersionEntryAllOf) GetConstraintOk() (*HyperflexAppSettingConstraint, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Constraint.Get(), o.Constraint.IsSet()
@@ -139,6 +139,7 @@ func (o *HyperflexServerFirmwareVersionEntryAllOf) HasConstraint() bool {
 func (o *HyperflexServerFirmwareVersionEntryAllOf) SetConstraint(v HyperflexAppSettingConstraint) {
 	o.Constraint.Set(&v)
 }
+
 // SetConstraintNil sets the value for Constraint to be an explicit nil
 func (o *HyperflexServerFirmwareVersionEntryAllOf) SetConstraintNil() {
 	o.Constraint.Set(nil)
@@ -330,5 +331,3 @@ func (v *NullableHyperflexServerFirmwareVersionEntryAllOf) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

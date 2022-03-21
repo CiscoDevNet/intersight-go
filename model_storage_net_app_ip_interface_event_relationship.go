@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppIpInterfaceEventRelationship - A relationship to the 'storage.NetAppIpInterfaceEvent' resource, or the expanded 'storage.NetAppIpInterfaceEvent' resource, or the 'null' value.
 type StorageNetAppIpInterfaceEventRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                       *MoMoRef
 	StorageNetAppIpInterfaceEvent *StorageNetAppIpInterfaceEvent
 }
 
 // MoMoRefAsStorageNetAppIpInterfaceEventRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppIpInterfaceEventRelationship
 func MoMoRefAsStorageNetAppIpInterfaceEventRelationship(v *MoMoRef) StorageNetAppIpInterfaceEventRelationship {
-	return StorageNetAppIpInterfaceEventRelationship{ MoMoRef: v}
+	return StorageNetAppIpInterfaceEventRelationship{MoMoRef: v}
 }
 
 // StorageNetAppIpInterfaceEventAsStorageNetAppIpInterfaceEventRelationship is a convenience function that returns StorageNetAppIpInterfaceEvent wrapped in StorageNetAppIpInterfaceEventRelationship
 func StorageNetAppIpInterfaceEventAsStorageNetAppIpInterfaceEventRelationship(v *StorageNetAppIpInterfaceEvent) StorageNetAppIpInterfaceEventRelationship {
-	return StorageNetAppIpInterfaceEventRelationship{ StorageNetAppIpInterfaceEvent: v}
+	return StorageNetAppIpInterfaceEventRelationship{StorageNetAppIpInterfaceEvent: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppIpInterfaceEventRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppIpInterfaceEventRelationship) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *StorageNetAppIpInterfaceEventRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppIpInterfaceEventRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppIpInterfaceEventRelationship) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

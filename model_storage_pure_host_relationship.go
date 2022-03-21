@@ -18,20 +18,19 @@ import (
 
 // StoragePureHostRelationship - A relationship to the 'storage.PureHost' resource, or the expanded 'storage.PureHost' resource, or the 'null' value.
 type StoragePureHostRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef         *MoMoRef
 	StoragePureHost *StoragePureHost
 }
 
 // MoMoRefAsStoragePureHostRelationship is a convenience function that returns MoMoRef wrapped in StoragePureHostRelationship
 func MoMoRefAsStoragePureHostRelationship(v *MoMoRef) StoragePureHostRelationship {
-	return StoragePureHostRelationship{ MoMoRef: v}
+	return StoragePureHostRelationship{MoMoRef: v}
 }
 
 // StoragePureHostAsStoragePureHostRelationship is a convenience function that returns StoragePureHost wrapped in StoragePureHostRelationship
 func StoragePureHostAsStoragePureHostRelationship(v *StoragePureHost) StoragePureHostRelationship {
-	return StoragePureHostRelationship{ StoragePureHost: v}
+	return StoragePureHostRelationship{StoragePureHost: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StoragePureHostRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StoragePureHostRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StoragePureHostRelationship) GetActualInstance() (interface{}) {
+func (obj *StoragePureHostRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStoragePureHostRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

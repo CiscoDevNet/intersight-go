@@ -19,19 +19,18 @@ import (
 // CapabilityCapabilityRelationship - A relationship to the 'capability.Capability' resource, or the expanded 'capability.Capability' resource, or the 'null' value.
 type CapabilityCapabilityRelationship struct {
 	CapabilityCapability *CapabilityCapability
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // CapabilityCapabilityAsCapabilityCapabilityRelationship is a convenience function that returns CapabilityCapability wrapped in CapabilityCapabilityRelationship
 func CapabilityCapabilityAsCapabilityCapabilityRelationship(v *CapabilityCapability) CapabilityCapabilityRelationship {
-	return CapabilityCapabilityRelationship{ CapabilityCapability: v}
+	return CapabilityCapabilityRelationship{CapabilityCapability: v}
 }
 
 // MoMoRefAsCapabilityCapabilityRelationship is a convenience function that returns MoMoRef wrapped in CapabilityCapabilityRelationship
 func MoMoRefAsCapabilityCapabilityRelationship(v *MoMoRef) CapabilityCapabilityRelationship {
-	return CapabilityCapabilityRelationship{ MoMoRef: v}
+	return CapabilityCapabilityRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilityCapabilityRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CapabilityCapabilityRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CapabilityCapabilityRelationship) GetActualInstance() (interface{}) {
+func (obj *CapabilityCapabilityRelationship) GetActualInstance() interface{} {
 	if obj.CapabilityCapability != nil {
 		return obj.CapabilityCapability
 	}
@@ -137,5 +136,3 @@ func (v *NullableCapabilityCapabilityRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

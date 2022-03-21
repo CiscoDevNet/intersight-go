@@ -25,12 +25,12 @@ type PkixDistinguishedName struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A required component that identifies a person or an object.
-	CommonName *string `json:"CommonName,omitempty"`
-	Country []string `json:"Country,omitempty"`
-	Locality []string `json:"Locality,omitempty"`
-	Organization []string `json:"Organization,omitempty"`
-	OrganizationalUnit []string `json:"OrganizationalUnit,omitempty"`
-	State []string `json:"State,omitempty"`
+	CommonName           *string  `json:"CommonName,omitempty"`
+	Country              []string `json:"Country,omitempty"`
+	Locality             []string `json:"Locality,omitempty"`
+	Organization         []string `json:"Organization,omitempty"`
+	OrganizationalUnit   []string `json:"OrganizationalUnit,omitempty"`
+	State                []string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *PkixDistinguishedName) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PkixDistinguishedName) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *PkixDistinguishedName) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PkixDistinguishedName) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -141,7 +141,7 @@ func (o *PkixDistinguishedName) SetCommonName(v string) {
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedName) GetCountry() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *PkixDistinguishedName) SetCountry(v []string) {
 
 // GetLocality returns the Locality field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedName) GetLocality() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *PkixDistinguishedName) SetLocality(v []string) {
 
 // GetOrganization returns the Organization field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedName) GetOrganization() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *PkixDistinguishedName) SetOrganization(v []string) {
 
 // GetOrganizationalUnit returns the OrganizationalUnit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedName) GetOrganizationalUnit() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *PkixDistinguishedName) SetOrganizationalUnit(v []string) {
 
 // GetState returns the State field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PkixDistinguishedName) GetState() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -353,12 +353,12 @@ func (o *PkixDistinguishedName) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// A required component that identifies a person or an object.
-		CommonName *string `json:"CommonName,omitempty"`
-		Country []string `json:"Country,omitempty"`
-		Locality []string `json:"Locality,omitempty"`
-		Organization []string `json:"Organization,omitempty"`
+		CommonName         *string  `json:"CommonName,omitempty"`
+		Country            []string `json:"Country,omitempty"`
+		Locality           []string `json:"Locality,omitempty"`
+		Organization       []string `json:"Organization,omitempty"`
 		OrganizationalUnit []string `json:"OrganizationalUnit,omitempty"`
-		State []string `json:"State,omitempty"`
+		State              []string `json:"State,omitempty"`
 	}
 
 	varPkixDistinguishedNameWithoutEmbeddedStruct := PkixDistinguishedNameWithoutEmbeddedStruct{}
@@ -459,5 +459,3 @@ func (v *NullablePkixDistinguishedName) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

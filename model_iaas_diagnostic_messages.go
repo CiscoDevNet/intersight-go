@@ -39,8 +39,8 @@ type IaasDiagnosticMessages struct {
 	// Status of the given alert.
 	Status *string `json:"Status,omitempty"`
 	// Status Id of the given alert.
-	StatusId *string `json:"StatusId,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	StatusId             *string                              `json:"StatusId,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *IaasDiagnosticMessages) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasDiagnosticMessages) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *IaasDiagnosticMessages) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasDiagnosticMessages) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -477,7 +477,7 @@ func (o *IaasDiagnosticMessages) UnmarshalJSON(bytes []byte) (err error) {
 		// Status of the given alert.
 		Status *string `json:"Status,omitempty"`
 		// Status Id of the given alert.
-		StatusId *string `json:"StatusId,omitempty"`
+		StatusId         *string                              `json:"StatusId,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
@@ -585,5 +585,3 @@ func (v *NullableIaasDiagnosticMessages) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // StorageNetAppAggregateRelationship - A relationship to the 'storage.NetAppAggregate' resource, or the expanded 'storage.NetAppAggregate' resource, or the 'null' value.
 type StorageNetAppAggregateRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                *MoMoRef
 	StorageNetAppAggregate *StorageNetAppAggregate
 }
 
 // MoMoRefAsStorageNetAppAggregateRelationship is a convenience function that returns MoMoRef wrapped in StorageNetAppAggregateRelationship
 func MoMoRefAsStorageNetAppAggregateRelationship(v *MoMoRef) StorageNetAppAggregateRelationship {
-	return StorageNetAppAggregateRelationship{ MoMoRef: v}
+	return StorageNetAppAggregateRelationship{MoMoRef: v}
 }
 
 // StorageNetAppAggregateAsStorageNetAppAggregateRelationship is a convenience function that returns StorageNetAppAggregate wrapped in StorageNetAppAggregateRelationship
 func StorageNetAppAggregateAsStorageNetAppAggregateRelationship(v *StorageNetAppAggregate) StorageNetAppAggregateRelationship {
-	return StorageNetAppAggregateRelationship{ StorageNetAppAggregate: v}
+	return StorageNetAppAggregateRelationship{StorageNetAppAggregate: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppAggregateRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageNetAppAggregateRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppAggregateRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppAggregateRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageNetAppAggregateRelationship) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

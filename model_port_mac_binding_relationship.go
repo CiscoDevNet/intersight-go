@@ -18,20 +18,19 @@ import (
 
 // PortMacBindingRelationship - A relationship to the 'port.MacBinding' resource, or the expanded 'port.MacBinding' resource, or the 'null' value.
 type PortMacBindingRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 	PortMacBinding *PortMacBinding
 }
 
 // MoMoRefAsPortMacBindingRelationship is a convenience function that returns MoMoRef wrapped in PortMacBindingRelationship
 func MoMoRefAsPortMacBindingRelationship(v *MoMoRef) PortMacBindingRelationship {
-	return PortMacBindingRelationship{ MoMoRef: v}
+	return PortMacBindingRelationship{MoMoRef: v}
 }
 
 // PortMacBindingAsPortMacBindingRelationship is a convenience function that returns PortMacBinding wrapped in PortMacBindingRelationship
 func PortMacBindingAsPortMacBindingRelationship(v *PortMacBinding) PortMacBindingRelationship {
-	return PortMacBindingRelationship{ PortMacBinding: v}
+	return PortMacBindingRelationship{PortMacBinding: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PortMacBindingRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src PortMacBindingRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PortMacBindingRelationship) GetActualInstance() (interface{}) {
+func (obj *PortMacBindingRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullablePortMacBindingRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

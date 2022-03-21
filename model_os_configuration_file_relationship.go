@@ -18,20 +18,19 @@ import (
 
 // OsConfigurationFileRelationship - A relationship to the 'os.ConfigurationFile' resource, or the expanded 'os.ConfigurationFile' resource, or the 'null' value.
 type OsConfigurationFileRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	OsConfigurationFile *OsConfigurationFile
 }
 
 // MoMoRefAsOsConfigurationFileRelationship is a convenience function that returns MoMoRef wrapped in OsConfigurationFileRelationship
 func MoMoRefAsOsConfigurationFileRelationship(v *MoMoRef) OsConfigurationFileRelationship {
-	return OsConfigurationFileRelationship{ MoMoRef: v}
+	return OsConfigurationFileRelationship{MoMoRef: v}
 }
 
 // OsConfigurationFileAsOsConfigurationFileRelationship is a convenience function that returns OsConfigurationFile wrapped in OsConfigurationFileRelationship
 func OsConfigurationFileAsOsConfigurationFileRelationship(v *OsConfigurationFile) OsConfigurationFileRelationship {
-	return OsConfigurationFileRelationship{ OsConfigurationFile: v}
+	return OsConfigurationFileRelationship{OsConfigurationFile: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OsConfigurationFileRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src OsConfigurationFileRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OsConfigurationFileRelationship) GetActualInstance() (interface{}) {
+func (obj *OsConfigurationFileRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableOsConfigurationFileRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

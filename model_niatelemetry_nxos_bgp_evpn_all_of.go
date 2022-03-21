@@ -26,7 +26,7 @@ type NiatelemetryNxosBgpEvpnAllOf struct {
 	// Returns the BGP EVPN total networks.
 	TotalNetworks *int64 `json:"TotalNetworks,omitempty"`
 	// Returns the BGP EVPN total paths.
-	TotalPaths *int64 `json:"TotalPaths,omitempty"`
+	TotalPaths           *int64 `json:"TotalPaths,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *NiatelemetryNxosBgpEvpnAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNxosBgpEvpnAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *NiatelemetryNxosBgpEvpnAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiatelemetryNxosBgpEvpnAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -280,5 +280,3 @@ func (v *NullableNiatelemetryNxosBgpEvpnAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

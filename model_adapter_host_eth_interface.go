@@ -35,7 +35,7 @@ type AdapterHostEthInterface struct {
 	// Mac address of the Host Ethernet Interface.
 	MacAddress *string `json:"MacAddress,omitempty"`
 	// Name of Host Ethernet Interface.
-	Name *string `json:"Name,omitempty"`
+	Name       *string  `json:"Name,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// Operability status of Host Ethernet Channel Interface.
 	Operability *string `json:"Operability,omitempty"`
@@ -48,10 +48,10 @@ type AdapterHostEthInterface struct {
 	// Virtualization Preference of the Host Ethernet Interface indicating if virtualization is enabled or not.
 	VirtualizationPreference *string `json:"VirtualizationPreference,omitempty"`
 	// The Virtual Ethernet Interface DN connected to the Host Ethernet Interface.
-	VnicDn *string `json:"VnicDn,omitempty"`
-	AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	VnicDn               *string                              `json:"VnicDn,omitempty"`
+	AdapterUnit          *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -93,7 +93,7 @@ func (o *AdapterHostEthInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostEthInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -117,7 +117,7 @@ func (o *AdapterHostEthInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterHostEthInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -322,7 +322,7 @@ func (o *AdapterHostEthInterface) SetName(v string) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterHostEthInterface) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -730,7 +730,7 @@ func (o *AdapterHostEthInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// Mac address of the Host Ethernet Interface.
 		MacAddress *string `json:"MacAddress,omitempty"`
 		// Name of Host Ethernet Interface.
-		Name *string `json:"Name,omitempty"`
+		Name       *string  `json:"Name,omitempty"`
 		OperReason []string `json:"OperReason,omitempty"`
 		// Operability status of Host Ethernet Channel Interface.
 		Operability *string `json:"Operability,omitempty"`
@@ -743,10 +743,10 @@ func (o *AdapterHostEthInterface) UnmarshalJSON(bytes []byte) (err error) {
 		// Virtualization Preference of the Host Ethernet Interface indicating if virtualization is enabled or not.
 		VirtualizationPreference *string `json:"VirtualizationPreference,omitempty"`
 		// The Virtual Ethernet Interface DN connected to the Host Ethernet Interface.
-		VnicDn *string `json:"VnicDn,omitempty"`
-		AdapterUnit *AdapterUnitRelationship `json:"AdapterUnit,omitempty"`
-		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		VnicDn              *string                              `json:"VnicDn,omitempty"`
+		AdapterUnit         *AdapterUnitRelationship             `json:"AdapterUnit,omitempty"`
+		InventoryDeviceInfo *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+		RegisteredDevice    *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	}
 
 	varAdapterHostEthInterfaceWithoutEmbeddedStruct := AdapterHostEthInterfaceWithoutEmbeddedStruct{}
@@ -867,5 +867,3 @@ func (v *NullableAdapterHostEthInterface) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

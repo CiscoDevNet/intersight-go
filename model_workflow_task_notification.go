@@ -63,7 +63,7 @@ type WorkflowTaskNotification struct {
 	// The type of the workflow task.
 	WorkflowTaskType *string `json:"WorkflowTaskType,omitempty"`
 	// The type of workflow containing this scheduled task.
-	WorkflowType *string `json:"WorkflowType,omitempty"`
+	WorkflowType         *string `json:"WorkflowType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -105,7 +105,7 @@ func (o *WorkflowTaskNotification) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskNotification) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -129,7 +129,7 @@ func (o *WorkflowTaskNotification) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTaskNotification) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -1038,5 +1038,3 @@ func (v *NullableWorkflowTaskNotification) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -37,7 +37,7 @@ type ConvergedinfraHealthCheckDefinition struct {
 	// Name of the health check definition.
 	Name *string `json:"Name,omitempty"`
 	// Static information detailing the possible remediation actions that can be taken to remedy the health check failure.
-	SuggestedResolution *string `json:"SuggestedResolution,omitempty"`
+	SuggestedResolution  *string `json:"SuggestedResolution,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -83,7 +83,7 @@ func (o *ConvergedinfraHealthCheckDefinition) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraHealthCheckDefinition) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -107,7 +107,7 @@ func (o *ConvergedinfraHealthCheckDefinition) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraHealthCheckDefinition) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -509,5 +509,3 @@ func (v *NullableConvergedinfraHealthCheckDefinition) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

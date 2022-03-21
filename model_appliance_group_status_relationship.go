@@ -19,19 +19,18 @@ import (
 // ApplianceGroupStatusRelationship - A relationship to the 'appliance.GroupStatus' resource, or the expanded 'appliance.GroupStatus' resource, or the 'null' value.
 type ApplianceGroupStatusRelationship struct {
 	ApplianceGroupStatus *ApplianceGroupStatus
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // ApplianceGroupStatusAsApplianceGroupStatusRelationship is a convenience function that returns ApplianceGroupStatus wrapped in ApplianceGroupStatusRelationship
 func ApplianceGroupStatusAsApplianceGroupStatusRelationship(v *ApplianceGroupStatus) ApplianceGroupStatusRelationship {
-	return ApplianceGroupStatusRelationship{ ApplianceGroupStatus: v}
+	return ApplianceGroupStatusRelationship{ApplianceGroupStatus: v}
 }
 
 // MoMoRefAsApplianceGroupStatusRelationship is a convenience function that returns MoMoRef wrapped in ApplianceGroupStatusRelationship
 func MoMoRefAsApplianceGroupStatusRelationship(v *MoMoRef) ApplianceGroupStatusRelationship {
-	return ApplianceGroupStatusRelationship{ MoMoRef: v}
+	return ApplianceGroupStatusRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceGroupStatusRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ApplianceGroupStatusRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceGroupStatusRelationship) GetActualInstance() (interface{}) {
+func (obj *ApplianceGroupStatusRelationship) GetActualInstance() interface{} {
 	if obj.ApplianceGroupStatus != nil {
 		return obj.ApplianceGroupStatus
 	}
@@ -137,5 +136,3 @@ func (v *NullableApplianceGroupStatusRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,32 +18,31 @@ import (
 
 // NiatelemetryNiaFeatureUsageResponse - The response body of a HTTP GET request for the 'niatelemetry.NiaFeatureUsage' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'niatelemetry.NiaFeatureUsage' resources.
 type NiatelemetryNiaFeatureUsageResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	NiatelemetryNiaFeatureUsageList *NiatelemetryNiaFeatureUsageList
 }
 
 // MoAggregateTransformAsNiatelemetryNiaFeatureUsageResponse is a convenience function that returns MoAggregateTransform wrapped in NiatelemetryNiaFeatureUsageResponse
 func MoAggregateTransformAsNiatelemetryNiaFeatureUsageResponse(v *MoAggregateTransform) NiatelemetryNiaFeatureUsageResponse {
-	return NiatelemetryNiaFeatureUsageResponse{ MoAggregateTransform: v}
+	return NiatelemetryNiaFeatureUsageResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsNiatelemetryNiaFeatureUsageResponse is a convenience function that returns MoDocumentCount wrapped in NiatelemetryNiaFeatureUsageResponse
 func MoDocumentCountAsNiatelemetryNiaFeatureUsageResponse(v *MoDocumentCount) NiatelemetryNiaFeatureUsageResponse {
-	return NiatelemetryNiaFeatureUsageResponse{ MoDocumentCount: v}
+	return NiatelemetryNiaFeatureUsageResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsNiatelemetryNiaFeatureUsageResponse is a convenience function that returns MoTagSummary wrapped in NiatelemetryNiaFeatureUsageResponse
 func MoTagSummaryAsNiatelemetryNiaFeatureUsageResponse(v *MoTagSummary) NiatelemetryNiaFeatureUsageResponse {
-	return NiatelemetryNiaFeatureUsageResponse{ MoTagSummary: v}
+	return NiatelemetryNiaFeatureUsageResponse{MoTagSummary: v}
 }
 
 // NiatelemetryNiaFeatureUsageListAsNiatelemetryNiaFeatureUsageResponse is a convenience function that returns NiatelemetryNiaFeatureUsageList wrapped in NiatelemetryNiaFeatureUsageResponse
 func NiatelemetryNiaFeatureUsageListAsNiatelemetryNiaFeatureUsageResponse(v *NiatelemetryNiaFeatureUsageList) NiatelemetryNiaFeatureUsageResponse {
-	return NiatelemetryNiaFeatureUsageResponse{ NiatelemetryNiaFeatureUsageList: v}
+	return NiatelemetryNiaFeatureUsageResponse{NiatelemetryNiaFeatureUsageList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *NiatelemetryNiaFeatureUsageResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src NiatelemetryNiaFeatureUsageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *NiatelemetryNiaFeatureUsageResponse) GetActualInstance() (interface{}) {
+func (obj *NiatelemetryNiaFeatureUsageResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableNiatelemetryNiaFeatureUsageResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

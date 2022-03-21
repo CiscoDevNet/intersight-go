@@ -20,7 +20,7 @@ type CloudAwsVirtualMachineListAllOf struct {
 	// The total number of 'cloud.AwsVirtualMachine' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'cloud.AwsVirtualMachine' resources matching the request.
-	Results []CloudAwsVirtualMachine `json:"Results,omitempty"`
+	Results              []CloudAwsVirtualMachine `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *CloudAwsVirtualMachineListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudAwsVirtualMachineListAllOf) GetResults() []CloudAwsVirtualMachine {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudAwsVirtualMachine
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableCloudAwsVirtualMachineListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

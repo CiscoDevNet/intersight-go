@@ -24,7 +24,7 @@ type AssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf struct {
 	// Port that Microsoft SQL Server Browser listens for incoming requests for SQL Server resources and provides information about SQL Server instances that are installed on the computer. When this port is specified, Database will be communicated through the Browser Service with this port instead of default SQLServer port.
 	BrowserServicePort *int64 `json:"BrowserServicePort,omitempty"`
 	// Active Directory domain, if required for this account.
-	FullDomainName *string `json:"FullDomainName,omitempty"`
+	FullDomainName       *string `json:"FullDomainName,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -66,7 +66,7 @@ func (o *AssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf) GetClassId() stri
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -90,7 +90,7 @@ func (o *AssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf) GetObjectType() s
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -242,5 +242,3 @@ func (v *NullableAssetWorkloadOptimizerMicrosoftSqlServerOptionsAllOf) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

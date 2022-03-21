@@ -18,8 +18,8 @@ import (
 // TelemetryDruidInvertedTopNMetricSpec Sort dimension values in inverted order, i.e inverts the order of the delegate metric spec. It can be used to sort the values in ascending order.
 type TelemetryDruidInvertedTopNMetricSpec struct {
 	// The dimension spec type.
-	Type string `json:"type"`
-	Metric TelemetryDruidTopNMetricSpec `json:"metric"`
+	Type                 string                       `json:"type"`
+	Metric               TelemetryDruidTopNMetricSpec `json:"metric"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,7 +57,7 @@ func (o *TelemetryDruidInvertedTopNMetricSpec) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInvertedTopNMetricSpec) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -81,7 +81,7 @@ func (o *TelemetryDruidInvertedTopNMetricSpec) GetMetric() TelemetryDruidTopNMet
 // GetMetricOk returns a tuple with the Metric field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidInvertedTopNMetricSpec) GetMetricOk() (*TelemetryDruidTopNMetricSpec, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Metric, true
@@ -161,5 +161,3 @@ func (v *NullableTelemetryDruidInvertedTopNMetricSpec) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -31,7 +31,7 @@ type VirtualizationVmwareVmCpuShareInfo struct {
 	// Guaranteed minimum allocation of CPU resource (MHz).
 	CpuReservation *int64 `json:"CpuReservation,omitempty"`
 	// Shows the relative importance of a VM. There is no unit for this value. It is a relative measure based on the settings for other resource pools. For more information, see VMware documentation.
-	CpuShares *int64 `json:"CpuShares,omitempty"`
+	CpuShares            *int64 `json:"CpuShares,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *VirtualizationVmwareVmCpuShareInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmCpuShareInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *VirtualizationVmwareVmCpuShareInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareVmCpuShareInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -382,5 +382,3 @@ func (v *NullableVirtualizationVmwareVmCpuShareInfo) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

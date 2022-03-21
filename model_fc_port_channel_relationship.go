@@ -19,19 +19,18 @@ import (
 // FcPortChannelRelationship - A relationship to the 'fc.PortChannel' resource, or the expanded 'fc.PortChannel' resource, or the 'null' value.
 type FcPortChannelRelationship struct {
 	FcPortChannel *FcPortChannel
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // FcPortChannelAsFcPortChannelRelationship is a convenience function that returns FcPortChannel wrapped in FcPortChannelRelationship
 func FcPortChannelAsFcPortChannelRelationship(v *FcPortChannel) FcPortChannelRelationship {
-	return FcPortChannelRelationship{ FcPortChannel: v}
+	return FcPortChannelRelationship{FcPortChannel: v}
 }
 
 // MoMoRefAsFcPortChannelRelationship is a convenience function that returns MoMoRef wrapped in FcPortChannelRelationship
 func MoMoRefAsFcPortChannelRelationship(v *MoMoRef) FcPortChannelRelationship {
-	return FcPortChannelRelationship{ MoMoRef: v}
+	return FcPortChannelRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FcPortChannelRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FcPortChannelRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FcPortChannelRelationship) GetActualInstance() (interface{}) {
+func (obj *FcPortChannelRelationship) GetActualInstance() interface{} {
 	if obj.FcPortChannel != nil {
 		return obj.FcPortChannel
 	}
@@ -137,5 +136,3 @@ func (v *NullableFcPortChannelRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

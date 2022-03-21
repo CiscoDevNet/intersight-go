@@ -33,7 +33,7 @@ type AssetPrivateKeyCredential struct {
 	// The private key used to authenticate with a managed target. The corresponding public key needs to be added in the auth list of the remote endpoint.
 	PrivateKey *string `json:"PrivateKey,omitempty"`
 	// The username used to authenticate with a managed target.
-	Username *string `json:"Username,omitempty"`
+	Username             *string `json:"Username,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *AssetPrivateKeyCredential) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetPrivateKeyCredential) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *AssetPrivateKeyCredential) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetPrivateKeyCredential) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -423,5 +423,3 @@ func (v *NullableAssetPrivateKeyCredential) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

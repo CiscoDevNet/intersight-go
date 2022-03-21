@@ -18,20 +18,19 @@ import (
 
 // StorageBaseClusterRelationship - A relationship to the 'storage.BaseCluster' resource, or the expanded 'storage.BaseCluster' resource, or the 'null' value.
 type StorageBaseClusterRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef            *MoMoRef
 	StorageBaseCluster *StorageBaseCluster
 }
 
 // MoMoRefAsStorageBaseClusterRelationship is a convenience function that returns MoMoRef wrapped in StorageBaseClusterRelationship
 func MoMoRefAsStorageBaseClusterRelationship(v *MoMoRef) StorageBaseClusterRelationship {
-	return StorageBaseClusterRelationship{ MoMoRef: v}
+	return StorageBaseClusterRelationship{MoMoRef: v}
 }
 
 // StorageBaseClusterAsStorageBaseClusterRelationship is a convenience function that returns StorageBaseCluster wrapped in StorageBaseClusterRelationship
 func StorageBaseClusterAsStorageBaseClusterRelationship(v *StorageBaseCluster) StorageBaseClusterRelationship {
-	return StorageBaseClusterRelationship{ StorageBaseCluster: v}
+	return StorageBaseClusterRelationship{StorageBaseCluster: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageBaseClusterRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageBaseClusterRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageBaseClusterRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageBaseClusterRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageBaseClusterRelationship) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

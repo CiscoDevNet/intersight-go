@@ -29,7 +29,7 @@ type UcsdBackupInfoAllOf struct {
 	// Backup server where backup images are maintained.
 	BackupServerIp *string `json:"BackupServerIp,omitempty"`
 	// Size of the backup image in bytes.
-	BackupSize *int64 `json:"BackupSize,omitempty"`
+	BackupSize *int64              `json:"BackupSize,omitempty"`
 	Connectors []UcsdConnectorPack `json:"Connectors,omitempty"`
 	// Time taken for the backup to be completed.
 	Duration *int64 `json:"Duration,omitempty"`
@@ -52,7 +52,7 @@ type UcsdBackupInfoAllOf struct {
 	// Start time of backup when it got initiated.
 	StartTime *time.Time `json:"StartTime,omitempty"`
 	// Current status of Backup current.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -94,7 +94,7 @@ func (o *UcsdBackupInfoAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *UcsdBackupInfoAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -118,7 +118,7 @@ func (o *UcsdBackupInfoAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *UcsdBackupInfoAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -259,7 +259,7 @@ func (o *UcsdBackupInfoAllOf) SetBackupSize(v int64) {
 
 // GetConnectors returns the Connectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UcsdBackupInfoAllOf) GetConnectors() []UcsdConnectorPack {
-	if o == nil  {
+	if o == nil {
 		var ret []UcsdConnectorPack
 		return ret
 	}
@@ -775,5 +775,3 @@ func (v *NullableUcsdBackupInfoAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

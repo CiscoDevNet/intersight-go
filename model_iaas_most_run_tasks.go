@@ -31,8 +31,8 @@ type IaasMostRunTasks struct {
 	// Name of the task executed in UCSD.
 	TaskName *string `json:"TaskName,omitempty"`
 	// Type of the task whether it is system task or custom task.
-	TaskType *string `json:"TaskType,omitempty"`
-	Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+	TaskType             *string                   `json:"TaskType,omitempty"`
+	Guid                 *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *IaasMostRunTasks) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IaasMostRunTasks) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *IaasMostRunTasks) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IaasMostRunTasks) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -321,8 +321,8 @@ func (o *IaasMostRunTasks) UnmarshalJSON(bytes []byte) (err error) {
 		// Name of the task executed in UCSD.
 		TaskName *string `json:"TaskName,omitempty"`
 		// Type of the task whether it is system task or custom task.
-		TaskType *string `json:"TaskType,omitempty"`
-		Guid *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
+		TaskType *string                   `json:"TaskType,omitempty"`
+		Guid     *IaasUcsdInfoRelationship `json:"Guid,omitempty"`
 	}
 
 	varIaasMostRunTasksWithoutEmbeddedStruct := IaasMostRunTasksWithoutEmbeddedStruct{}
@@ -421,5 +421,3 @@ func (v *NullableIaasMostRunTasks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

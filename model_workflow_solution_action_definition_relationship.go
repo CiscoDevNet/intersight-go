@@ -18,20 +18,19 @@ import (
 
 // WorkflowSolutionActionDefinitionRelationship - A relationship to the 'workflow.SolutionActionDefinition' resource, or the expanded 'workflow.SolutionActionDefinition' resource, or the 'null' value.
 type WorkflowSolutionActionDefinitionRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef                          *MoMoRef
 	WorkflowSolutionActionDefinition *WorkflowSolutionActionDefinition
 }
 
 // MoMoRefAsWorkflowSolutionActionDefinitionRelationship is a convenience function that returns MoMoRef wrapped in WorkflowSolutionActionDefinitionRelationship
 func MoMoRefAsWorkflowSolutionActionDefinitionRelationship(v *MoMoRef) WorkflowSolutionActionDefinitionRelationship {
-	return WorkflowSolutionActionDefinitionRelationship{ MoMoRef: v}
+	return WorkflowSolutionActionDefinitionRelationship{MoMoRef: v}
 }
 
 // WorkflowSolutionActionDefinitionAsWorkflowSolutionActionDefinitionRelationship is a convenience function that returns WorkflowSolutionActionDefinition wrapped in WorkflowSolutionActionDefinitionRelationship
 func WorkflowSolutionActionDefinitionAsWorkflowSolutionActionDefinitionRelationship(v *WorkflowSolutionActionDefinition) WorkflowSolutionActionDefinitionRelationship {
-	return WorkflowSolutionActionDefinitionRelationship{ WorkflowSolutionActionDefinition: v}
+	return WorkflowSolutionActionDefinitionRelationship{WorkflowSolutionActionDefinition: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowSolutionActionDefinitionRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src WorkflowSolutionActionDefinitionRelationship) MarshalJSON() ([]byte, e
 }
 
 // Get the actual instance
-func (obj *WorkflowSolutionActionDefinitionRelationship) GetActualInstance() (interface{}) {
+func (obj *WorkflowSolutionActionDefinitionRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableWorkflowSolutionActionDefinitionRelationship) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

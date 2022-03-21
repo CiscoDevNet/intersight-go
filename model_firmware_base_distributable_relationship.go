@@ -19,19 +19,18 @@ import (
 // FirmwareBaseDistributableRelationship - A relationship to the 'firmware.BaseDistributable' resource, or the expanded 'firmware.BaseDistributable' resource, or the 'null' value.
 type FirmwareBaseDistributableRelationship struct {
 	FirmwareBaseDistributable *FirmwareBaseDistributable
-	MoMoRef *MoMoRef
+	MoMoRef                   *MoMoRef
 }
 
 // FirmwareBaseDistributableAsFirmwareBaseDistributableRelationship is a convenience function that returns FirmwareBaseDistributable wrapped in FirmwareBaseDistributableRelationship
 func FirmwareBaseDistributableAsFirmwareBaseDistributableRelationship(v *FirmwareBaseDistributable) FirmwareBaseDistributableRelationship {
-	return FirmwareBaseDistributableRelationship{ FirmwareBaseDistributable: v}
+	return FirmwareBaseDistributableRelationship{FirmwareBaseDistributable: v}
 }
 
 // MoMoRefAsFirmwareBaseDistributableRelationship is a convenience function that returns MoMoRef wrapped in FirmwareBaseDistributableRelationship
 func MoMoRefAsFirmwareBaseDistributableRelationship(v *MoMoRef) FirmwareBaseDistributableRelationship {
-	return FirmwareBaseDistributableRelationship{ MoMoRef: v}
+	return FirmwareBaseDistributableRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *FirmwareBaseDistributableRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src FirmwareBaseDistributableRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *FirmwareBaseDistributableRelationship) GetActualInstance() (interface{}) {
+func (obj *FirmwareBaseDistributableRelationship) GetActualInstance() interface{} {
 	if obj.FirmwareBaseDistributable != nil {
 		return obj.FirmwareBaseDistributable
 	}
@@ -137,5 +136,3 @@ func (v *NullableFirmwareBaseDistributableRelationship) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

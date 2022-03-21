@@ -27,7 +27,7 @@ type NiaapiSoftwareRegex struct {
 	// Regular Expression pattern used to reconginze the version string.
 	Regex *string `json:"Regex,omitempty"`
 	// Software release. A set of Software releases seperated by comma which can be recongized by according Regex pattern.
-	SoftwareVersion *string `json:"SoftwareVersion,omitempty"`
+	SoftwareVersion      *string `json:"SoftwareVersion,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -69,7 +69,7 @@ func (o *NiaapiSoftwareRegex) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiSoftwareRegex) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -93,7 +93,7 @@ func (o *NiaapiSoftwareRegex) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *NiaapiSoftwareRegex) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -300,5 +300,3 @@ func (v *NullableNiaapiSoftwareRegex) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

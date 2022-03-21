@@ -19,19 +19,18 @@ import (
 // EquipmentSharedIoModuleRelationship - A relationship to the 'equipment.SharedIoModule' resource, or the expanded 'equipment.SharedIoModule' resource, or the 'null' value.
 type EquipmentSharedIoModuleRelationship struct {
 	EquipmentSharedIoModule *EquipmentSharedIoModule
-	MoMoRef *MoMoRef
+	MoMoRef                 *MoMoRef
 }
 
 // EquipmentSharedIoModuleAsEquipmentSharedIoModuleRelationship is a convenience function that returns EquipmentSharedIoModule wrapped in EquipmentSharedIoModuleRelationship
 func EquipmentSharedIoModuleAsEquipmentSharedIoModuleRelationship(v *EquipmentSharedIoModule) EquipmentSharedIoModuleRelationship {
-	return EquipmentSharedIoModuleRelationship{ EquipmentSharedIoModule: v}
+	return EquipmentSharedIoModuleRelationship{EquipmentSharedIoModule: v}
 }
 
 // MoMoRefAsEquipmentSharedIoModuleRelationship is a convenience function that returns MoMoRef wrapped in EquipmentSharedIoModuleRelationship
 func MoMoRefAsEquipmentSharedIoModuleRelationship(v *MoMoRef) EquipmentSharedIoModuleRelationship {
-	return EquipmentSharedIoModuleRelationship{ MoMoRef: v}
+	return EquipmentSharedIoModuleRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentSharedIoModuleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentSharedIoModuleRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentSharedIoModuleRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentSharedIoModuleRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentSharedIoModule != nil {
 		return obj.EquipmentSharedIoModule
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentSharedIoModuleRelationship) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

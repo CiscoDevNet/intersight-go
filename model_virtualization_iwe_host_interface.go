@@ -23,14 +23,14 @@ type VirtualizationIweHostInterface struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	BondState NullableVirtualizationBondState `json:"BondState,omitempty"`
+	ObjectType string                          `json:"ObjectType"`
+	BondState  NullableVirtualizationBondState `json:"BondState,omitempty"`
 	// The UUID of the host to which this interface belongs to.
 	HostName *string `json:"HostName,omitempty"`
 	// The UUID of the host to which this interface belongs to.
 	HostUuid *string `json:"HostUuid,omitempty"`
 	// A hint of the interface type, such as \"ovs-bond\", \"device\", \"openvswitch\".
-	IfType *string `json:"IfType,omitempty"`
+	IfType      *string  `json:"IfType,omitempty"`
 	IpAddresses []string `json:"IpAddresses,omitempty"`
 	// Link state information such as \"up\", \"down\". * `unknown` - The interface line is unknown. * `up` - The interface line is up. * `down` - The interface line is down. * `degraded` - For a bond/team interface, not all member interface is up.
 	LinkState *string `json:"LinkState,omitempty"`
@@ -41,11 +41,11 @@ type VirtualizationIweHostInterface struct {
 	// The name of the host to which this interface belongs to.
 	Name *string `json:"Name,omitempty"`
 	// A list of vlans allowed on this interface.
-	Vlans *string `json:"Vlans,omitempty"`
-	Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
-	DvUplink *VirtualizationIweDvUplinkRelationship `json:"DvUplink,omitempty"`
-	Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
-	Network *VirtualizationIweNetworkRelationship `json:"Network,omitempty"`
+	Vlans                *string                                `json:"Vlans,omitempty"`
+	Cluster              *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
+	DvUplink             *VirtualizationIweDvUplinkRelationship `json:"DvUplink,omitempty"`
+	Host                 *VirtualizationIweHostRelationship     `json:"Host,omitempty"`
+	Network              *VirtualizationIweNetworkRelationship  `json:"Network,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *VirtualizationIweHostInterface) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostInterface) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *VirtualizationIweHostInterface) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationIweHostInterface) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *VirtualizationIweHostInterface) GetBondState() VirtualizationBondState 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationIweHostInterface) GetBondStateOk() (*VirtualizationBondState, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BondState.Get(), o.BondState.IsSet()
@@ -158,6 +158,7 @@ func (o *VirtualizationIweHostInterface) HasBondState() bool {
 func (o *VirtualizationIweHostInterface) SetBondState(v VirtualizationBondState) {
 	o.BondState.Set(&v)
 }
+
 // SetBondStateNil sets the value for BondState to be an explicit nil
 func (o *VirtualizationIweHostInterface) SetBondStateNil() {
 	o.BondState.Set(nil)
@@ -266,7 +267,7 @@ func (o *VirtualizationIweHostInterface) SetIfType(v string) {
 
 // GetIpAddresses returns the IpAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationIweHostInterface) GetIpAddresses() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -656,14 +657,14 @@ func (o *VirtualizationIweHostInterface) UnmarshalJSON(bytes []byte) (err error)
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		BondState NullableVirtualizationBondState `json:"BondState,omitempty"`
+		ObjectType string                          `json:"ObjectType"`
+		BondState  NullableVirtualizationBondState `json:"BondState,omitempty"`
 		// The UUID of the host to which this interface belongs to.
 		HostName *string `json:"HostName,omitempty"`
 		// The UUID of the host to which this interface belongs to.
 		HostUuid *string `json:"HostUuid,omitempty"`
 		// A hint of the interface type, such as \"ovs-bond\", \"device\", \"openvswitch\".
-		IfType *string `json:"IfType,omitempty"`
+		IfType      *string  `json:"IfType,omitempty"`
 		IpAddresses []string `json:"IpAddresses,omitempty"`
 		// Link state information such as \"up\", \"down\". * `unknown` - The interface line is unknown. * `up` - The interface line is up. * `down` - The interface line is down. * `degraded` - For a bond/team interface, not all member interface is up.
 		LinkState *string `json:"LinkState,omitempty"`
@@ -674,11 +675,11 @@ func (o *VirtualizationIweHostInterface) UnmarshalJSON(bytes []byte) (err error)
 		// The name of the host to which this interface belongs to.
 		Name *string `json:"Name,omitempty"`
 		// A list of vlans allowed on this interface.
-		Vlans *string `json:"Vlans,omitempty"`
-		Cluster *VirtualizationIweClusterRelationship `json:"Cluster,omitempty"`
+		Vlans    *string                                `json:"Vlans,omitempty"`
+		Cluster  *VirtualizationIweClusterRelationship  `json:"Cluster,omitempty"`
 		DvUplink *VirtualizationIweDvUplinkRelationship `json:"DvUplink,omitempty"`
-		Host *VirtualizationIweHostRelationship `json:"Host,omitempty"`
-		Network *VirtualizationIweNetworkRelationship `json:"Network,omitempty"`
+		Host     *VirtualizationIweHostRelationship     `json:"Host,omitempty"`
+		Network  *VirtualizationIweNetworkRelationship  `json:"Network,omitempty"`
 	}
 
 	varVirtualizationIweHostInterfaceWithoutEmbeddedStruct := VirtualizationIweHostInterfaceWithoutEmbeddedStruct{}
@@ -795,5 +796,3 @@ func (v *NullableVirtualizationIweHostInterface) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

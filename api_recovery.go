@@ -29,11 +29,11 @@ var (
 type RecoveryApiService service
 
 type ApiCreateRecoveryBackupConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
+	ctx                        _context.Context
+	ApiService                 *RecoveryApiService
 	recoveryBackupConfigPolicy *RecoveryBackupConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                    *string
+	ifNoneMatch                *string
 }
 
 // The &#39;recovery.BackupConfigPolicy&#39; resource to create.
@@ -41,11 +41,13 @@ func (r ApiCreateRecoveryBackupConfigPolicyRequest) RecoveryBackupConfigPolicy(r
 	r.recoveryBackupConfigPolicy = &recoveryBackupConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateRecoveryBackupConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateRecoveryBackupConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateRecoveryBackupConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateRecoveryBackupConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -65,7 +67,7 @@ CreateRecoveryBackupConfigPolicy Create a 'recovery.BackupConfigPolicy' resource
 func (a *RecoveryApiService) CreateRecoveryBackupConfigPolicy(ctx _context.Context) ApiCreateRecoveryBackupConfigPolicyRequest {
 	return ApiCreateRecoveryBackupConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -182,13 +184,13 @@ func (a *RecoveryApiService) CreateRecoveryBackupConfigPolicyExecute(r ApiCreate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -205,11 +207,11 @@ func (a *RecoveryApiService) CreateRecoveryBackupConfigPolicyExecute(r ApiCreate
 }
 
 type ApiCreateRecoveryBackupProfileRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
+	ctx                   _context.Context
+	ApiService            *RecoveryApiService
 	recoveryBackupProfile *RecoveryBackupProfile
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch               *string
+	ifNoneMatch           *string
 }
 
 // The &#39;recovery.BackupProfile&#39; resource to create.
@@ -217,11 +219,13 @@ func (r ApiCreateRecoveryBackupProfileRequest) RecoveryBackupProfile(recoveryBac
 	r.recoveryBackupProfile = &recoveryBackupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateRecoveryBackupProfileRequest) IfMatch(ifMatch string) ApiCreateRecoveryBackupProfileRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateRecoveryBackupProfileRequest) IfNoneMatch(ifNoneMatch string) ApiCreateRecoveryBackupProfileRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -241,7 +245,7 @@ CreateRecoveryBackupProfile Create a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) CreateRecoveryBackupProfile(ctx _context.Context) ApiCreateRecoveryBackupProfileRequest {
 	return ApiCreateRecoveryBackupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -358,13 +362,13 @@ func (a *RecoveryApiService) CreateRecoveryBackupProfileExecute(r ApiCreateRecov
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -381,11 +385,11 @@ func (a *RecoveryApiService) CreateRecoveryBackupProfileExecute(r ApiCreateRecov
 }
 
 type ApiCreateRecoveryOnDemandBackupRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
+	ctx                    _context.Context
+	ApiService             *RecoveryApiService
 	recoveryOnDemandBackup *RecoveryOnDemandBackup
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                *string
+	ifNoneMatch            *string
 }
 
 // The &#39;recovery.OnDemandBackup&#39; resource to create.
@@ -393,11 +397,13 @@ func (r ApiCreateRecoveryOnDemandBackupRequest) RecoveryOnDemandBackup(recoveryO
 	r.recoveryOnDemandBackup = &recoveryOnDemandBackup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateRecoveryOnDemandBackupRequest) IfMatch(ifMatch string) ApiCreateRecoveryOnDemandBackupRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateRecoveryOnDemandBackupRequest) IfNoneMatch(ifNoneMatch string) ApiCreateRecoveryOnDemandBackupRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -417,7 +423,7 @@ CreateRecoveryOnDemandBackup Create a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) CreateRecoveryOnDemandBackup(ctx _context.Context) ApiCreateRecoveryOnDemandBackupRequest {
 	return ApiCreateRecoveryOnDemandBackupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -534,13 +540,13 @@ func (a *RecoveryApiService) CreateRecoveryOnDemandBackupExecute(r ApiCreateReco
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -557,11 +563,11 @@ func (a *RecoveryApiService) CreateRecoveryOnDemandBackupExecute(r ApiCreateReco
 }
 
 type ApiCreateRecoveryRestoreRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
+	ctx             _context.Context
+	ApiService      *RecoveryApiService
 	recoveryRestore *RecoveryRestore
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch         *string
+	ifNoneMatch     *string
 }
 
 // The &#39;recovery.Restore&#39; resource to create.
@@ -569,11 +575,13 @@ func (r ApiCreateRecoveryRestoreRequest) RecoveryRestore(recoveryRestore Recover
 	r.recoveryRestore = &recoveryRestore
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateRecoveryRestoreRequest) IfMatch(ifMatch string) ApiCreateRecoveryRestoreRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateRecoveryRestoreRequest) IfNoneMatch(ifNoneMatch string) ApiCreateRecoveryRestoreRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -593,7 +601,7 @@ CreateRecoveryRestore Create a 'recovery.Restore' resource.
 func (a *RecoveryApiService) CreateRecoveryRestore(ctx _context.Context) ApiCreateRecoveryRestoreRequest {
 	return ApiCreateRecoveryRestoreRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -710,13 +718,13 @@ func (a *RecoveryApiService) CreateRecoveryRestoreExecute(r ApiCreateRecoveryRes
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -733,11 +741,11 @@ func (a *RecoveryApiService) CreateRecoveryRestoreExecute(r ApiCreateRecoveryRes
 }
 
 type ApiCreateRecoveryScheduleConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
+	ctx                          _context.Context
+	ApiService                   *RecoveryApiService
 	recoveryScheduleConfigPolicy *RecoveryScheduleConfigPolicy
-	ifMatch *string
-	ifNoneMatch *string
+	ifMatch                      *string
+	ifNoneMatch                  *string
 }
 
 // The &#39;recovery.ScheduleConfigPolicy&#39; resource to create.
@@ -745,11 +753,13 @@ func (r ApiCreateRecoveryScheduleConfigPolicyRequest) RecoveryScheduleConfigPoli
 	r.recoveryScheduleConfigPolicy = &recoveryScheduleConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiCreateRecoveryScheduleConfigPolicyRequest) IfMatch(ifMatch string) ApiCreateRecoveryScheduleConfigPolicyRequest {
 	r.ifMatch = &ifMatch
 	return r
 }
+
 // For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn&#39;t happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource&#39;s ETag doesn&#39;t match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don&#39;t have to be identical byte for byte.
 func (r ApiCreateRecoveryScheduleConfigPolicyRequest) IfNoneMatch(ifNoneMatch string) ApiCreateRecoveryScheduleConfigPolicyRequest {
 	r.ifNoneMatch = &ifNoneMatch
@@ -769,7 +779,7 @@ CreateRecoveryScheduleConfigPolicy Create a 'recovery.ScheduleConfigPolicy' reso
 func (a *RecoveryApiService) CreateRecoveryScheduleConfigPolicy(ctx _context.Context) ApiCreateRecoveryScheduleConfigPolicyRequest {
 	return ApiCreateRecoveryScheduleConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -886,13 +896,13 @@ func (a *RecoveryApiService) CreateRecoveryScheduleConfigPolicyExecute(r ApiCrea
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -909,11 +919,10 @@ func (a *RecoveryApiService) CreateRecoveryScheduleConfigPolicyExecute(r ApiCrea
 }
 
 type ApiDeleteRecoveryBackupConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteRecoveryBackupConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteRecoveryBackupConfigPolicyExecute(r)
@@ -929,8 +938,8 @@ DeleteRecoveryBackupConfigPolicy Delete a 'recovery.BackupConfigPolicy' resource
 func (a *RecoveryApiService) DeleteRecoveryBackupConfigPolicy(ctx _context.Context, moid string) ApiDeleteRecoveryBackupConfigPolicyRequest {
 	return ApiDeleteRecoveryBackupConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1035,13 +1044,13 @@ func (a *RecoveryApiService) DeleteRecoveryBackupConfigPolicyExecute(r ApiDelete
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1049,11 +1058,10 @@ func (a *RecoveryApiService) DeleteRecoveryBackupConfigPolicyExecute(r ApiDelete
 }
 
 type ApiDeleteRecoveryBackupProfileRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteRecoveryBackupProfileRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteRecoveryBackupProfileExecute(r)
@@ -1069,8 +1077,8 @@ DeleteRecoveryBackupProfile Delete a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) DeleteRecoveryBackupProfile(ctx _context.Context, moid string) ApiDeleteRecoveryBackupProfileRequest {
 	return ApiDeleteRecoveryBackupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1175,13 +1183,13 @@ func (a *RecoveryApiService) DeleteRecoveryBackupProfileExecute(r ApiDeleteRecov
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1189,11 +1197,10 @@ func (a *RecoveryApiService) DeleteRecoveryBackupProfileExecute(r ApiDeleteRecov
 }
 
 type ApiDeleteRecoveryOnDemandBackupRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteRecoveryOnDemandBackupRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteRecoveryOnDemandBackupExecute(r)
@@ -1209,8 +1216,8 @@ DeleteRecoveryOnDemandBackup Delete a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) DeleteRecoveryOnDemandBackup(ctx _context.Context, moid string) ApiDeleteRecoveryOnDemandBackupRequest {
 	return ApiDeleteRecoveryOnDemandBackupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1315,13 +1322,13 @@ func (a *RecoveryApiService) DeleteRecoveryOnDemandBackupExecute(r ApiDeleteReco
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1329,11 +1336,10 @@ func (a *RecoveryApiService) DeleteRecoveryOnDemandBackupExecute(r ApiDeleteReco
 }
 
 type ApiDeleteRecoveryRestoreRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteRecoveryRestoreRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteRecoveryRestoreExecute(r)
@@ -1349,8 +1355,8 @@ DeleteRecoveryRestore Delete a 'recovery.Restore' resource.
 func (a *RecoveryApiService) DeleteRecoveryRestore(ctx _context.Context, moid string) ApiDeleteRecoveryRestoreRequest {
 	return ApiDeleteRecoveryRestoreRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1455,13 +1461,13 @@ func (a *RecoveryApiService) DeleteRecoveryRestoreExecute(r ApiDeleteRecoveryRes
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1469,11 +1475,10 @@ func (a *RecoveryApiService) DeleteRecoveryRestoreExecute(r ApiDeleteRecoveryRes
 }
 
 type ApiDeleteRecoveryScheduleConfigPolicyRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiDeleteRecoveryScheduleConfigPolicyRequest) Execute() (*_nethttp.Response, error) {
 	return r.ApiService.DeleteRecoveryScheduleConfigPolicyExecute(r)
@@ -1489,8 +1494,8 @@ DeleteRecoveryScheduleConfigPolicy Delete a 'recovery.ScheduleConfigPolicy' reso
 func (a *RecoveryApiService) DeleteRecoveryScheduleConfigPolicy(ctx _context.Context, moid string) ApiDeleteRecoveryScheduleConfigPolicyRequest {
 	return ApiDeleteRecoveryScheduleConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1595,13 +1600,13 @@ func (a *RecoveryApiService) DeleteRecoveryScheduleConfigPolicyExecute(r ApiDele
 			newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarHTTPResponse, newErr
 	}
 
@@ -1609,11 +1614,10 @@ func (a *RecoveryApiService) DeleteRecoveryScheduleConfigPolicyExecute(r ApiDele
 }
 
 type ApiGetRecoveryBackupConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryBackupConfigPolicyByMoidRequest) Execute() (RecoveryBackupConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryBackupConfigPolicyByMoidExecute(r)
@@ -1629,8 +1633,8 @@ GetRecoveryBackupConfigPolicyByMoid Read a 'recovery.BackupConfigPolicy' resourc
 func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetRecoveryBackupConfigPolicyByMoidRequest {
 	return ApiGetRecoveryBackupConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -1737,13 +1741,13 @@ func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyByMoidExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -1760,19 +1764,19 @@ func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyByMoidExecute(r ApiGet
 }
 
 type ApiGetRecoveryBackupConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -1780,51 +1784,61 @@ func (r ApiGetRecoveryBackupConfigPolicyListRequest) Filter(filter string) ApiGe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Orderby(orderby string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Top(top int32) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Skip(skip int32) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Select_(select_ string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Expand(expand string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Apply(apply string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Count(count bool) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) At(at string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryBackupConfigPolicyListRequest) Tags(tags string) ApiGetRecoveryBackupConfigPolicyListRequest {
 	r.tags = &tags
@@ -1844,7 +1858,7 @@ GetRecoveryBackupConfigPolicyList Read a 'recovery.BackupConfigPolicy' resource.
 func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyList(ctx _context.Context) ApiGetRecoveryBackupConfigPolicyListRequest {
 	return ApiGetRecoveryBackupConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1983,13 +1997,13 @@ func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyListExecute(r ApiGetRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2006,11 +2020,10 @@ func (a *RecoveryApiService) GetRecoveryBackupConfigPolicyListExecute(r ApiGetRe
 }
 
 type ApiGetRecoveryBackupProfileByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryBackupProfileByMoidRequest) Execute() (RecoveryBackupProfile, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryBackupProfileByMoidExecute(r)
@@ -2026,8 +2039,8 @@ GetRecoveryBackupProfileByMoid Read a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) GetRecoveryBackupProfileByMoid(ctx _context.Context, moid string) ApiGetRecoveryBackupProfileByMoidRequest {
 	return ApiGetRecoveryBackupProfileByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2134,13 +2147,13 @@ func (a *RecoveryApiService) GetRecoveryBackupProfileByMoidExecute(r ApiGetRecov
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2157,19 +2170,19 @@ func (a *RecoveryApiService) GetRecoveryBackupProfileByMoidExecute(r ApiGetRecov
 }
 
 type ApiGetRecoveryBackupProfileListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2177,51 +2190,61 @@ func (r ApiGetRecoveryBackupProfileListRequest) Filter(filter string) ApiGetReco
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryBackupProfileListRequest) Orderby(orderby string) ApiGetRecoveryBackupProfileListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryBackupProfileListRequest) Top(top int32) ApiGetRecoveryBackupProfileListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryBackupProfileListRequest) Skip(skip int32) ApiGetRecoveryBackupProfileListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryBackupProfileListRequest) Select_(select_ string) ApiGetRecoveryBackupProfileListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryBackupProfileListRequest) Expand(expand string) ApiGetRecoveryBackupProfileListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryBackupProfileListRequest) Apply(apply string) ApiGetRecoveryBackupProfileListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryBackupProfileListRequest) Count(count bool) ApiGetRecoveryBackupProfileListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryBackupProfileListRequest) Inlinecount(inlinecount string) ApiGetRecoveryBackupProfileListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryBackupProfileListRequest) At(at string) ApiGetRecoveryBackupProfileListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryBackupProfileListRequest) Tags(tags string) ApiGetRecoveryBackupProfileListRequest {
 	r.tags = &tags
@@ -2241,7 +2264,7 @@ GetRecoveryBackupProfileList Read a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) GetRecoveryBackupProfileList(ctx _context.Context) ApiGetRecoveryBackupProfileListRequest {
 	return ApiGetRecoveryBackupProfileListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2380,13 +2403,13 @@ func (a *RecoveryApiService) GetRecoveryBackupProfileListExecute(r ApiGetRecover
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2403,11 +2426,10 @@ func (a *RecoveryApiService) GetRecoveryBackupProfileListExecute(r ApiGetRecover
 }
 
 type ApiGetRecoveryConfigResultByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryConfigResultByMoidRequest) Execute() (RecoveryConfigResult, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryConfigResultByMoidExecute(r)
@@ -2423,8 +2445,8 @@ GetRecoveryConfigResultByMoid Read a 'recovery.ConfigResult' resource.
 func (a *RecoveryApiService) GetRecoveryConfigResultByMoid(ctx _context.Context, moid string) ApiGetRecoveryConfigResultByMoidRequest {
 	return ApiGetRecoveryConfigResultByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2531,13 +2553,13 @@ func (a *RecoveryApiService) GetRecoveryConfigResultByMoidExecute(r ApiGetRecove
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2554,11 +2576,10 @@ func (a *RecoveryApiService) GetRecoveryConfigResultByMoidExecute(r ApiGetRecove
 }
 
 type ApiGetRecoveryConfigResultEntryByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryConfigResultEntryByMoidRequest) Execute() (RecoveryConfigResultEntry, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryConfigResultEntryByMoidExecute(r)
@@ -2574,8 +2595,8 @@ GetRecoveryConfigResultEntryByMoid Read a 'recovery.ConfigResultEntry' resource.
 func (a *RecoveryApiService) GetRecoveryConfigResultEntryByMoid(ctx _context.Context, moid string) ApiGetRecoveryConfigResultEntryByMoidRequest {
 	return ApiGetRecoveryConfigResultEntryByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -2682,13 +2703,13 @@ func (a *RecoveryApiService) GetRecoveryConfigResultEntryByMoidExecute(r ApiGetR
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2705,19 +2726,19 @@ func (a *RecoveryApiService) GetRecoveryConfigResultEntryByMoidExecute(r ApiGetR
 }
 
 type ApiGetRecoveryConfigResultEntryListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2725,51 +2746,61 @@ func (r ApiGetRecoveryConfigResultEntryListRequest) Filter(filter string) ApiGet
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Orderby(orderby string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Top(top int32) ApiGetRecoveryConfigResultEntryListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Skip(skip int32) ApiGetRecoveryConfigResultEntryListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Select_(select_ string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Expand(expand string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Apply(apply string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Count(count bool) ApiGetRecoveryConfigResultEntryListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Inlinecount(inlinecount string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryConfigResultEntryListRequest) At(at string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryConfigResultEntryListRequest) Tags(tags string) ApiGetRecoveryConfigResultEntryListRequest {
 	r.tags = &tags
@@ -2789,7 +2820,7 @@ GetRecoveryConfigResultEntryList Read a 'recovery.ConfigResultEntry' resource.
 func (a *RecoveryApiService) GetRecoveryConfigResultEntryList(ctx _context.Context) ApiGetRecoveryConfigResultEntryListRequest {
 	return ApiGetRecoveryConfigResultEntryListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -2928,13 +2959,13 @@ func (a *RecoveryApiService) GetRecoveryConfigResultEntryListExecute(r ApiGetRec
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -2951,19 +2982,19 @@ func (a *RecoveryApiService) GetRecoveryConfigResultEntryListExecute(r ApiGetRec
 }
 
 type ApiGetRecoveryConfigResultListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -2971,51 +3002,61 @@ func (r ApiGetRecoveryConfigResultListRequest) Filter(filter string) ApiGetRecov
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryConfigResultListRequest) Orderby(orderby string) ApiGetRecoveryConfigResultListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryConfigResultListRequest) Top(top int32) ApiGetRecoveryConfigResultListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryConfigResultListRequest) Skip(skip int32) ApiGetRecoveryConfigResultListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryConfigResultListRequest) Select_(select_ string) ApiGetRecoveryConfigResultListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryConfigResultListRequest) Expand(expand string) ApiGetRecoveryConfigResultListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryConfigResultListRequest) Apply(apply string) ApiGetRecoveryConfigResultListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryConfigResultListRequest) Count(count bool) ApiGetRecoveryConfigResultListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryConfigResultListRequest) Inlinecount(inlinecount string) ApiGetRecoveryConfigResultListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryConfigResultListRequest) At(at string) ApiGetRecoveryConfigResultListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryConfigResultListRequest) Tags(tags string) ApiGetRecoveryConfigResultListRequest {
 	r.tags = &tags
@@ -3035,7 +3076,7 @@ GetRecoveryConfigResultList Read a 'recovery.ConfigResult' resource.
 func (a *RecoveryApiService) GetRecoveryConfigResultList(ctx _context.Context) ApiGetRecoveryConfigResultListRequest {
 	return ApiGetRecoveryConfigResultListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3174,13 +3215,13 @@ func (a *RecoveryApiService) GetRecoveryConfigResultListExecute(r ApiGetRecovery
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3197,11 +3238,10 @@ func (a *RecoveryApiService) GetRecoveryConfigResultListExecute(r ApiGetRecovery
 }
 
 type ApiGetRecoveryOnDemandBackupByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryOnDemandBackupByMoidRequest) Execute() (RecoveryOnDemandBackup, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryOnDemandBackupByMoidExecute(r)
@@ -3217,8 +3257,8 @@ GetRecoveryOnDemandBackupByMoid Read a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) GetRecoveryOnDemandBackupByMoid(ctx _context.Context, moid string) ApiGetRecoveryOnDemandBackupByMoidRequest {
 	return ApiGetRecoveryOnDemandBackupByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3325,13 +3365,13 @@ func (a *RecoveryApiService) GetRecoveryOnDemandBackupByMoidExecute(r ApiGetReco
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3348,19 +3388,19 @@ func (a *RecoveryApiService) GetRecoveryOnDemandBackupByMoidExecute(r ApiGetReco
 }
 
 type ApiGetRecoveryOnDemandBackupListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3368,51 +3408,61 @@ func (r ApiGetRecoveryOnDemandBackupListRequest) Filter(filter string) ApiGetRec
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Orderby(orderby string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Top(top int32) ApiGetRecoveryOnDemandBackupListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Skip(skip int32) ApiGetRecoveryOnDemandBackupListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Select_(select_ string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Expand(expand string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Apply(apply string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Count(count bool) ApiGetRecoveryOnDemandBackupListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Inlinecount(inlinecount string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryOnDemandBackupListRequest) At(at string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryOnDemandBackupListRequest) Tags(tags string) ApiGetRecoveryOnDemandBackupListRequest {
 	r.tags = &tags
@@ -3432,7 +3482,7 @@ GetRecoveryOnDemandBackupList Read a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) GetRecoveryOnDemandBackupList(ctx _context.Context) ApiGetRecoveryOnDemandBackupListRequest {
 	return ApiGetRecoveryOnDemandBackupListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3571,13 +3621,13 @@ func (a *RecoveryApiService) GetRecoveryOnDemandBackupListExecute(r ApiGetRecove
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3594,11 +3644,10 @@ func (a *RecoveryApiService) GetRecoveryOnDemandBackupListExecute(r ApiGetRecove
 }
 
 type ApiGetRecoveryRestoreByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryRestoreByMoidRequest) Execute() (RecoveryRestore, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryRestoreByMoidExecute(r)
@@ -3614,8 +3663,8 @@ GetRecoveryRestoreByMoid Read a 'recovery.Restore' resource.
 func (a *RecoveryApiService) GetRecoveryRestoreByMoid(ctx _context.Context, moid string) ApiGetRecoveryRestoreByMoidRequest {
 	return ApiGetRecoveryRestoreByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -3722,13 +3771,13 @@ func (a *RecoveryApiService) GetRecoveryRestoreByMoidExecute(r ApiGetRecoveryRes
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3745,19 +3794,19 @@ func (a *RecoveryApiService) GetRecoveryRestoreByMoidExecute(r ApiGetRecoveryRes
 }
 
 type ApiGetRecoveryRestoreListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -3765,51 +3814,61 @@ func (r ApiGetRecoveryRestoreListRequest) Filter(filter string) ApiGetRecoveryRe
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryRestoreListRequest) Orderby(orderby string) ApiGetRecoveryRestoreListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryRestoreListRequest) Top(top int32) ApiGetRecoveryRestoreListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryRestoreListRequest) Skip(skip int32) ApiGetRecoveryRestoreListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryRestoreListRequest) Select_(select_ string) ApiGetRecoveryRestoreListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryRestoreListRequest) Expand(expand string) ApiGetRecoveryRestoreListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryRestoreListRequest) Apply(apply string) ApiGetRecoveryRestoreListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryRestoreListRequest) Count(count bool) ApiGetRecoveryRestoreListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryRestoreListRequest) Inlinecount(inlinecount string) ApiGetRecoveryRestoreListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryRestoreListRequest) At(at string) ApiGetRecoveryRestoreListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryRestoreListRequest) Tags(tags string) ApiGetRecoveryRestoreListRequest {
 	r.tags = &tags
@@ -3829,7 +3888,7 @@ GetRecoveryRestoreList Read a 'recovery.Restore' resource.
 func (a *RecoveryApiService) GetRecoveryRestoreList(ctx _context.Context) ApiGetRecoveryRestoreListRequest {
 	return ApiGetRecoveryRestoreListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -3968,13 +4027,13 @@ func (a *RecoveryApiService) GetRecoveryRestoreListExecute(r ApiGetRecoveryResto
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -3991,11 +4050,10 @@ func (a *RecoveryApiService) GetRecoveryRestoreListExecute(r ApiGetRecoveryResto
 }
 
 type ApiGetRecoveryScheduleConfigPolicyByMoidRequest struct {
-	ctx _context.Context
+	ctx        _context.Context
 	ApiService *RecoveryApiService
-	moid string
+	moid       string
 }
-
 
 func (r ApiGetRecoveryScheduleConfigPolicyByMoidRequest) Execute() (RecoveryScheduleConfigPolicy, *_nethttp.Response, error) {
 	return r.ApiService.GetRecoveryScheduleConfigPolicyByMoidExecute(r)
@@ -4011,8 +4069,8 @@ GetRecoveryScheduleConfigPolicyByMoid Read a 'recovery.ScheduleConfigPolicy' res
 func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyByMoid(ctx _context.Context, moid string) ApiGetRecoveryScheduleConfigPolicyByMoidRequest {
 	return ApiGetRecoveryScheduleConfigPolicyByMoidRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4119,13 +4177,13 @@ func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyByMoidExecute(r ApiG
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4142,19 +4200,19 @@ func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyByMoidExecute(r ApiG
 }
 
 type ApiGetRecoveryScheduleConfigPolicyListRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	filter *string
-	orderby *string
-	top *int32
-	skip *int32
-	select_ *string
-	expand *string
-	apply *string
-	count *bool
+	ctx         _context.Context
+	ApiService  *RecoveryApiService
+	filter      *string
+	orderby     *string
+	top         *int32
+	skip        *int32
+	select_     *string
+	expand      *string
+	apply       *string
+	count       *bool
 	inlinecount *string
-	at *string
-	tags *string
+	at          *string
+	tags        *string
 }
 
 // Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false).
@@ -4162,51 +4220,61 @@ func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Filter(filter string) Api
 	r.filter = &filter
 	return r
 }
+
 // Determines what properties are used to sort the collection of resources.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Orderby(orderby string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.orderby = &orderby
 	return r
 }
+
 // Specifies the maximum number of resources to return in the response.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Top(top int32) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.top = &top
 	return r
 }
+
 // Specifies the number of resources to skip in the response.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Skip(skip int32) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.skip = &skip
 	return r
 }
+
 // Specifies a subset of properties to return.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Select_(select_ string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.select_ = &select_
 	return r
 }
+
 // Specify additional attributes or related resources to return in addition to the primary resources.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Expand(expand string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.expand = &expand
 	return r
 }
+
 // Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \&quot;$apply\&quot; query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e. the result of each transformation is the input to the next transformation. Supported aggregation methods are \&quot;aggregate\&quot; and \&quot;groupby\&quot;. The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Apply(apply string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.apply = &apply
 	return r
 }
+
 // The $count query specifies the service should return the count of the matching resources, instead of returning the resources.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Count(count bool) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.count = &count
 	return r
 }
+
 // The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Inlinecount(inlinecount string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.inlinecount = &inlinecount
 	return r
 }
+
 // Similar to \&quot;$filter\&quot;, but \&quot;at\&quot; is specifically used to filter versioning information properties for resources to return. A URI with an \&quot;at\&quot; Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) At(at string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.at = &at
 	return r
 }
+
 // The &#39;tags&#39; parameter is used to request a summary of the Tag utilization for this resource. When the &#39;tags&#39; parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key.
 func (r ApiGetRecoveryScheduleConfigPolicyListRequest) Tags(tags string) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	r.tags = &tags
@@ -4226,7 +4294,7 @@ GetRecoveryScheduleConfigPolicyList Read a 'recovery.ScheduleConfigPolicy' resou
 func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyList(ctx _context.Context) ApiGetRecoveryScheduleConfigPolicyListRequest {
 	return ApiGetRecoveryScheduleConfigPolicyListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4365,13 +4433,13 @@ func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyListExecute(r ApiGet
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4388,11 +4456,11 @@ func (a *RecoveryApiService) GetRecoveryScheduleConfigPolicyListExecute(r ApiGet
 }
 
 type ApiPatchRecoveryBackupConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *RecoveryApiService
+	moid                       string
 	recoveryBackupConfigPolicy *RecoveryBackupConfigPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;recovery.BackupConfigPolicy&#39; resource to update.
@@ -4400,6 +4468,7 @@ func (r ApiPatchRecoveryBackupConfigPolicyRequest) RecoveryBackupConfigPolicy(re
 	r.recoveryBackupConfigPolicy = &recoveryBackupConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchRecoveryBackupConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchRecoveryBackupConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -4420,8 +4489,8 @@ PatchRecoveryBackupConfigPolicy Update a 'recovery.BackupConfigPolicy' resource.
 func (a *RecoveryApiService) PatchRecoveryBackupConfigPolicy(ctx _context.Context, moid string) ApiPatchRecoveryBackupConfigPolicyRequest {
 	return ApiPatchRecoveryBackupConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4536,13 +4605,13 @@ func (a *RecoveryApiService) PatchRecoveryBackupConfigPolicyExecute(r ApiPatchRe
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4559,11 +4628,11 @@ func (a *RecoveryApiService) PatchRecoveryBackupConfigPolicyExecute(r ApiPatchRe
 }
 
 type ApiPatchRecoveryBackupProfileRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *RecoveryApiService
+	moid                  string
 	recoveryBackupProfile *RecoveryBackupProfile
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;recovery.BackupProfile&#39; resource to update.
@@ -4571,6 +4640,7 @@ func (r ApiPatchRecoveryBackupProfileRequest) RecoveryBackupProfile(recoveryBack
 	r.recoveryBackupProfile = &recoveryBackupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchRecoveryBackupProfileRequest) IfMatch(ifMatch string) ApiPatchRecoveryBackupProfileRequest {
 	r.ifMatch = &ifMatch
@@ -4591,8 +4661,8 @@ PatchRecoveryBackupProfile Update a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) PatchRecoveryBackupProfile(ctx _context.Context, moid string) ApiPatchRecoveryBackupProfileRequest {
 	return ApiPatchRecoveryBackupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4707,13 +4777,13 @@ func (a *RecoveryApiService) PatchRecoveryBackupProfileExecute(r ApiPatchRecover
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4730,11 +4800,11 @@ func (a *RecoveryApiService) PatchRecoveryBackupProfileExecute(r ApiPatchRecover
 }
 
 type ApiPatchRecoveryOnDemandBackupRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *RecoveryApiService
+	moid                   string
 	recoveryOnDemandBackup *RecoveryOnDemandBackup
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;recovery.OnDemandBackup&#39; resource to update.
@@ -4742,6 +4812,7 @@ func (r ApiPatchRecoveryOnDemandBackupRequest) RecoveryOnDemandBackup(recoveryOn
 	r.recoveryOnDemandBackup = &recoveryOnDemandBackup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchRecoveryOnDemandBackupRequest) IfMatch(ifMatch string) ApiPatchRecoveryOnDemandBackupRequest {
 	r.ifMatch = &ifMatch
@@ -4762,8 +4833,8 @@ PatchRecoveryOnDemandBackup Update a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) PatchRecoveryOnDemandBackup(ctx _context.Context, moid string) ApiPatchRecoveryOnDemandBackupRequest {
 	return ApiPatchRecoveryOnDemandBackupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -4878,13 +4949,13 @@ func (a *RecoveryApiService) PatchRecoveryOnDemandBackupExecute(r ApiPatchRecove
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -4901,11 +4972,11 @@ func (a *RecoveryApiService) PatchRecoveryOnDemandBackupExecute(r ApiPatchRecove
 }
 
 type ApiPatchRecoveryScheduleConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *RecoveryApiService
+	moid                         string
 	recoveryScheduleConfigPolicy *RecoveryScheduleConfigPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;recovery.ScheduleConfigPolicy&#39; resource to update.
@@ -4913,6 +4984,7 @@ func (r ApiPatchRecoveryScheduleConfigPolicyRequest) RecoveryScheduleConfigPolic
 	r.recoveryScheduleConfigPolicy = &recoveryScheduleConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiPatchRecoveryScheduleConfigPolicyRequest) IfMatch(ifMatch string) ApiPatchRecoveryScheduleConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -4933,8 +5005,8 @@ PatchRecoveryScheduleConfigPolicy Update a 'recovery.ScheduleConfigPolicy' resou
 func (a *RecoveryApiService) PatchRecoveryScheduleConfigPolicy(ctx _context.Context, moid string) ApiPatchRecoveryScheduleConfigPolicyRequest {
 	return ApiPatchRecoveryScheduleConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5049,13 +5121,13 @@ func (a *RecoveryApiService) PatchRecoveryScheduleConfigPolicyExecute(r ApiPatch
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5072,11 +5144,11 @@ func (a *RecoveryApiService) PatchRecoveryScheduleConfigPolicyExecute(r ApiPatch
 }
 
 type ApiUpdateRecoveryBackupConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                        _context.Context
+	ApiService                 *RecoveryApiService
+	moid                       string
 	recoveryBackupConfigPolicy *RecoveryBackupConfigPolicy
-	ifMatch *string
+	ifMatch                    *string
 }
 
 // The &#39;recovery.BackupConfigPolicy&#39; resource to update.
@@ -5084,6 +5156,7 @@ func (r ApiUpdateRecoveryBackupConfigPolicyRequest) RecoveryBackupConfigPolicy(r
 	r.recoveryBackupConfigPolicy = &recoveryBackupConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateRecoveryBackupConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateRecoveryBackupConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -5104,8 +5177,8 @@ UpdateRecoveryBackupConfigPolicy Update a 'recovery.BackupConfigPolicy' resource
 func (a *RecoveryApiService) UpdateRecoveryBackupConfigPolicy(ctx _context.Context, moid string) ApiUpdateRecoveryBackupConfigPolicyRequest {
 	return ApiUpdateRecoveryBackupConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5220,13 +5293,13 @@ func (a *RecoveryApiService) UpdateRecoveryBackupConfigPolicyExecute(r ApiUpdate
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5243,11 +5316,11 @@ func (a *RecoveryApiService) UpdateRecoveryBackupConfigPolicyExecute(r ApiUpdate
 }
 
 type ApiUpdateRecoveryBackupProfileRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                   _context.Context
+	ApiService            *RecoveryApiService
+	moid                  string
 	recoveryBackupProfile *RecoveryBackupProfile
-	ifMatch *string
+	ifMatch               *string
 }
 
 // The &#39;recovery.BackupProfile&#39; resource to update.
@@ -5255,6 +5328,7 @@ func (r ApiUpdateRecoveryBackupProfileRequest) RecoveryBackupProfile(recoveryBac
 	r.recoveryBackupProfile = &recoveryBackupProfile
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateRecoveryBackupProfileRequest) IfMatch(ifMatch string) ApiUpdateRecoveryBackupProfileRequest {
 	r.ifMatch = &ifMatch
@@ -5275,8 +5349,8 @@ UpdateRecoveryBackupProfile Update a 'recovery.BackupProfile' resource.
 func (a *RecoveryApiService) UpdateRecoveryBackupProfile(ctx _context.Context, moid string) ApiUpdateRecoveryBackupProfileRequest {
 	return ApiUpdateRecoveryBackupProfileRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5391,13 +5465,13 @@ func (a *RecoveryApiService) UpdateRecoveryBackupProfileExecute(r ApiUpdateRecov
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5414,11 +5488,11 @@ func (a *RecoveryApiService) UpdateRecoveryBackupProfileExecute(r ApiUpdateRecov
 }
 
 type ApiUpdateRecoveryOnDemandBackupRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                    _context.Context
+	ApiService             *RecoveryApiService
+	moid                   string
 	recoveryOnDemandBackup *RecoveryOnDemandBackup
-	ifMatch *string
+	ifMatch                *string
 }
 
 // The &#39;recovery.OnDemandBackup&#39; resource to update.
@@ -5426,6 +5500,7 @@ func (r ApiUpdateRecoveryOnDemandBackupRequest) RecoveryOnDemandBackup(recoveryO
 	r.recoveryOnDemandBackup = &recoveryOnDemandBackup
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateRecoveryOnDemandBackupRequest) IfMatch(ifMatch string) ApiUpdateRecoveryOnDemandBackupRequest {
 	r.ifMatch = &ifMatch
@@ -5446,8 +5521,8 @@ UpdateRecoveryOnDemandBackup Update a 'recovery.OnDemandBackup' resource.
 func (a *RecoveryApiService) UpdateRecoveryOnDemandBackup(ctx _context.Context, moid string) ApiUpdateRecoveryOnDemandBackupRequest {
 	return ApiUpdateRecoveryOnDemandBackupRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5562,13 +5637,13 @@ func (a *RecoveryApiService) UpdateRecoveryOnDemandBackupExecute(r ApiUpdateReco
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -5585,11 +5660,11 @@ func (a *RecoveryApiService) UpdateRecoveryOnDemandBackupExecute(r ApiUpdateReco
 }
 
 type ApiUpdateRecoveryScheduleConfigPolicyRequest struct {
-	ctx _context.Context
-	ApiService *RecoveryApiService
-	moid string
+	ctx                          _context.Context
+	ApiService                   *RecoveryApiService
+	moid                         string
 	recoveryScheduleConfigPolicy *RecoveryScheduleConfigPolicy
-	ifMatch *string
+	ifMatch                      *string
 }
 
 // The &#39;recovery.ScheduleConfigPolicy&#39; resource to update.
@@ -5597,6 +5672,7 @@ func (r ApiUpdateRecoveryScheduleConfigPolicyRequest) RecoveryScheduleConfigPoli
 	r.recoveryScheduleConfigPolicy = &recoveryScheduleConfigPolicy
 	return r
 }
+
 // For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request.
 func (r ApiUpdateRecoveryScheduleConfigPolicyRequest) IfMatch(ifMatch string) ApiUpdateRecoveryScheduleConfigPolicyRequest {
 	r.ifMatch = &ifMatch
@@ -5617,8 +5693,8 @@ UpdateRecoveryScheduleConfigPolicy Update a 'recovery.ScheduleConfigPolicy' reso
 func (a *RecoveryApiService) UpdateRecoveryScheduleConfigPolicy(ctx _context.Context, moid string) ApiUpdateRecoveryScheduleConfigPolicyRequest {
 	return ApiUpdateRecoveryScheduleConfigPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
-		moid: moid,
+		ctx:        ctx,
+		moid:       moid,
 	}
 }
 
@@ -5733,13 +5809,13 @@ func (a *RecoveryApiService) UpdateRecoveryScheduleConfigPolicyExecute(r ApiUpda
 			newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-			var v Error
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
+		var v Error
+		err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

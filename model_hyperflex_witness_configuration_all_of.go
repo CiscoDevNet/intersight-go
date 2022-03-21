@@ -32,8 +32,8 @@ type HyperflexWitnessConfigurationAllOf struct {
 	// The version of the custom witness server. Only applicable if custom witness has been enabled in the cluster, otherwise value is always empty.
 	Version *string `json:"Version,omitempty"`
 	// URL of the witness endpoint, including IP/host and path. Only applicable if custom witness has been enabled in the cluster, otherwise value is always empty.
-	WitnessUrl *string `json:"WitnessUrl,omitempty"`
-	Cluster *HyperflexClusterRelationship `json:"Cluster,omitempty"`
+	WitnessUrl           *string                       `json:"WitnessUrl,omitempty"`
+	Cluster              *HyperflexClusterRelationship `json:"Cluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *HyperflexWitnessConfigurationAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexWitnessConfigurationAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexWitnessConfigurationAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexWitnessConfigurationAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -431,5 +431,3 @@ func (v *NullableHyperflexWitnessConfigurationAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

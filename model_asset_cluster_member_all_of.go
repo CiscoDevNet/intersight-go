@@ -28,10 +28,10 @@ type AssetClusterMemberAllOf struct {
 	// The unique identity of the member within the cluster. The identity is retrieved from the platform and reported by the device connector at connection time.
 	MemberIdentity *string `json:"MemberIdentity,omitempty"`
 	// The member idenity of the cluster member through which this device is connected if applicable.
-	ParentClusterMemberIdentity *string `json:"ParentClusterMemberIdentity,omitempty"`
-	Sudi NullableAssetSudiInfo `json:"Sudi,omitempty"`
-	Device *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ParentClusterMemberIdentity *string                              `json:"ParentClusterMemberIdentity,omitempty"`
+	Sudi                        NullableAssetSudiInfo                `json:"Sudi,omitempty"`
+	Device                      *AssetDeviceRegistrationRelationship `json:"Device,omitempty"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _AssetClusterMemberAllOf AssetClusterMemberAllOf
@@ -72,7 +72,7 @@ func (o *AssetClusterMemberAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AssetClusterMemberAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *AssetClusterMemberAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AssetClusterMemberAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -248,7 +248,7 @@ func (o *AssetClusterMemberAllOf) GetSudi() AssetSudiInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AssetClusterMemberAllOf) GetSudiOk() (*AssetSudiInfo, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Sudi.Get(), o.Sudi.IsSet()
@@ -267,6 +267,7 @@ func (o *AssetClusterMemberAllOf) HasSudi() bool {
 func (o *AssetClusterMemberAllOf) SetSudi(v AssetSudiInfo) {
 	o.Sudi.Set(&v)
 }
+
 // SetSudiNil sets the value for Sudi to be an explicit nil
 func (o *AssetClusterMemberAllOf) SetSudiNil() {
 	o.Sudi.Set(nil)
@@ -402,5 +403,3 @@ func (v *NullableAssetClusterMemberAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

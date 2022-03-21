@@ -19,31 +19,30 @@ import (
 // UuidpoolUniverseResponse - The response body of a HTTP GET request for the 'uuidpool.Universe' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'uuidpool.Universe' resources.
 type UuidpoolUniverseResponse struct {
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 	UuidpoolUniverseList *UuidpoolUniverseList
 }
 
 // MoAggregateTransformAsUuidpoolUniverseResponse is a convenience function that returns MoAggregateTransform wrapped in UuidpoolUniverseResponse
 func MoAggregateTransformAsUuidpoolUniverseResponse(v *MoAggregateTransform) UuidpoolUniverseResponse {
-	return UuidpoolUniverseResponse{ MoAggregateTransform: v}
+	return UuidpoolUniverseResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsUuidpoolUniverseResponse is a convenience function that returns MoDocumentCount wrapped in UuidpoolUniverseResponse
 func MoDocumentCountAsUuidpoolUniverseResponse(v *MoDocumentCount) UuidpoolUniverseResponse {
-	return UuidpoolUniverseResponse{ MoDocumentCount: v}
+	return UuidpoolUniverseResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsUuidpoolUniverseResponse is a convenience function that returns MoTagSummary wrapped in UuidpoolUniverseResponse
 func MoTagSummaryAsUuidpoolUniverseResponse(v *MoTagSummary) UuidpoolUniverseResponse {
-	return UuidpoolUniverseResponse{ MoTagSummary: v}
+	return UuidpoolUniverseResponse{MoTagSummary: v}
 }
 
 // UuidpoolUniverseListAsUuidpoolUniverseResponse is a convenience function that returns UuidpoolUniverseList wrapped in UuidpoolUniverseResponse
 func UuidpoolUniverseListAsUuidpoolUniverseResponse(v *UuidpoolUniverseList) UuidpoolUniverseResponse {
-	return UuidpoolUniverseResponse{ UuidpoolUniverseList: v}
+	return UuidpoolUniverseResponse{UuidpoolUniverseList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UuidpoolUniverseResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src UuidpoolUniverseResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UuidpoolUniverseResponse) GetActualInstance() (interface{}) {
+func (obj *UuidpoolUniverseResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableUuidpoolUniverseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

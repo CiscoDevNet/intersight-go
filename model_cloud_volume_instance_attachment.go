@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // CloudVolumeInstanceAttachment Information about the volume attachments.
@@ -34,7 +34,7 @@ type CloudVolumeInstanceAttachment struct {
 	// ID of the virtual machine, the volume is attached to.
 	InstanceId *string `json:"InstanceId,omitempty"`
 	// The attachment state of the volume. * `UnRecognized` - Volume is in unrecognized state. * `Attached` - Volume is attached to the virtual machine. * `Attaching` - Volume is being attached to the virtual machine. * `Detaching` - Volume is being detached from the virtual machine.
-	State *string `json:"State,omitempty"`
+	State                *string `json:"State,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *CloudVolumeInstanceAttachment) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeInstanceAttachment) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -100,7 +100,7 @@ func (o *CloudVolumeInstanceAttachment) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudVolumeInstanceAttachment) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -424,5 +424,3 @@ func (v *NullableCloudVolumeInstanceAttachment) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

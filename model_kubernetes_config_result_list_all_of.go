@@ -20,7 +20,7 @@ type KubernetesConfigResultListAllOf struct {
 	// The total number of 'kubernetes.ConfigResult' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'kubernetes.ConfigResult' resources matching the request.
-	Results []KubernetesConfigResult `json:"Results,omitempty"`
+	Results              []KubernetesConfigResult `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *KubernetesConfigResultListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesConfigResultListAllOf) GetResults() []KubernetesConfigResult {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesConfigResult
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableKubernetesConfigResultListAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

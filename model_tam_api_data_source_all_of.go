@@ -22,8 +22,8 @@ type TamApiDataSourceAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Type of Intersight managed object used as data source.
-	MoType *string `json:"MoType,omitempty"`
-	Queries []TamQueryEntry `json:"Queries,omitempty"`
+	MoType               *string         `json:"MoType,omitempty"`
+	Queries              []TamQueryEntry `json:"Queries,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *TamApiDataSourceAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamApiDataSourceAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *TamApiDataSourceAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamApiDataSourceAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -134,7 +134,7 @@ func (o *TamApiDataSourceAllOf) SetMoType(v string) {
 
 // GetQueries returns the Queries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TamApiDataSourceAllOf) GetQueries() []TamQueryEntry {
-	if o == nil  {
+	if o == nil {
 		var ret []TamQueryEntry
 		return ret
 	}
@@ -242,5 +242,3 @@ func (v *NullableTamApiDataSourceAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

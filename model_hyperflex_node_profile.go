@@ -37,10 +37,10 @@ type HyperflexNodeProfile struct {
 	// IP address for Hypervisor management network.
 	HypervisorMgmtIp *string `json:"HypervisorMgmtIp,omitempty"`
 	// The role that this node performs in the HyperFlex cluster. * `Storage` - Cluster of storage nodes used to persist data. * `Compute` - Cluster of compute nodes used to execute business logic. * `Unknown` - This cluster type is Unknown. Expect Compute or Storage as valid values.
-	NodeRole *string `json:"NodeRole,omitempty"`
-	AssignedServer *ComputePhysicalRelationship `json:"AssignedServer,omitempty"`
-	ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
-	Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+	NodeRole             *string                              `json:"NodeRole,omitempty"`
+	AssignedServer       *ComputePhysicalRelationship         `json:"AssignedServer,omitempty"`
+	ClusterProfile       *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
+	Node                 *HyperflexNodeRelationship           `json:"Node,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *HyperflexNodeProfile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNodeProfile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *HyperflexNodeProfile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexNodeProfile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -514,10 +514,10 @@ func (o *HyperflexNodeProfile) UnmarshalJSON(bytes []byte) (err error) {
 		// IP address for Hypervisor management network.
 		HypervisorMgmtIp *string `json:"HypervisorMgmtIp,omitempty"`
 		// The role that this node performs in the HyperFlex cluster. * `Storage` - Cluster of storage nodes used to persist data. * `Compute` - Cluster of compute nodes used to execute business logic. * `Unknown` - This cluster type is Unknown. Expect Compute or Storage as valid values.
-		NodeRole *string `json:"NodeRole,omitempty"`
-		AssignedServer *ComputePhysicalRelationship `json:"AssignedServer,omitempty"`
+		NodeRole       *string                              `json:"NodeRole,omitempty"`
+		AssignedServer *ComputePhysicalRelationship         `json:"AssignedServer,omitempty"`
 		ClusterProfile *HyperflexClusterProfileRelationship `json:"ClusterProfile,omitempty"`
-		Node *HyperflexNodeRelationship `json:"Node,omitempty"`
+		Node           *HyperflexNodeRelationship           `json:"Node,omitempty"`
 	}
 
 	varHyperflexNodeProfileWithoutEmbeddedStruct := HyperflexNodeProfileWithoutEmbeddedStruct{}
@@ -626,5 +626,3 @@ func (v *NullableHyperflexNodeProfile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

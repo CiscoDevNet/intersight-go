@@ -40,12 +40,12 @@ type IamAccountAllOf struct {
 	// An array of relationships to iamPrivilegeSet resources.
 	PrivilegeSets []IamPrivilegeSetRelationship `json:"PrivilegeSets,omitempty"`
 	// An array of relationships to iamPrivilege resources.
-	Privileges []IamPrivilegeRelationship `json:"Privileges,omitempty"`
+	Privileges     []IamPrivilegeRelationship     `json:"Privileges,omitempty"`
 	ResourceLimits *IamResourceLimitsRelationship `json:"ResourceLimits,omitempty"`
 	// An array of relationships to iamRole resources.
-	Roles []IamRoleRelationship `json:"Roles,omitempty"`
-	SecurityHolder *IamSecurityHolderRelationship `json:"SecurityHolder,omitempty"`
-	SessionLimits *IamSessionLimitsRelationship `json:"SessionLimits,omitempty"`
+	Roles                []IamRoleRelationship          `json:"Roles,omitempty"`
+	SecurityHolder       *IamSecurityHolderRelationship `json:"SecurityHolder,omitempty"`
+	SessionLimits        *IamSessionLimitsRelationship  `json:"SessionLimits,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *IamAccountAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *IamAccountAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *IamAccountAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *IamAccountAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -188,7 +188,7 @@ func (o *IamAccountAllOf) SetStatus(v string) {
 
 // GetAppRegistrations returns the AppRegistrations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetAppRegistrations() []IamAppRegistrationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamAppRegistrationRelationship
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *IamAccountAllOf) SetAppRegistrations(v []IamAppRegistrationRelationship
 
 // GetDomainGroups returns the DomainGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetDomainGroups() []IamDomainGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamDomainGroupRelationship
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *IamAccountAllOf) SetDomainGroups(v []IamDomainGroupRelationship) {
 
 // GetEndPointRoles returns the EndPointRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetEndPointRoles() []IamEndPointRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamEndPointRoleRelationship
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *IamAccountAllOf) SetEndPointRoles(v []IamEndPointRoleRelationship) {
 
 // GetIdpreferences returns the Idpreferences field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetIdpreferences() []IamIdpReferenceRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamIdpReferenceRelationship
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *IamAccountAllOf) SetIdpreferences(v []IamIdpReferenceRelationship) {
 
 // GetIdps returns the Idps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetIdps() []IamIdpRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamIdpRelationship
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *IamAccountAllOf) SetIdps(v []IamIdpRelationship) {
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetPermissions() []IamPermissionRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPermissionRelationship
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *IamAccountAllOf) SetPermissions(v []IamPermissionRelationship) {
 
 // GetPrivilegeSets returns the PrivilegeSets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetPrivilegeSets() []IamPrivilegeSetRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeSetRelationship
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *IamAccountAllOf) SetPrivilegeSets(v []IamPrivilegeSetRelationship) {
 
 // GetPrivileges returns the Privileges field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetPrivileges() []IamPrivilegeRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamPrivilegeRelationship
 		return ret
 	}
@@ -484,7 +484,7 @@ func (o *IamAccountAllOf) SetResourceLimits(v IamResourceLimitsRelationship) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IamAccountAllOf) GetRoles() []IamRoleRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []IamRoleRelationship
 		return ret
 	}
@@ -704,5 +704,3 @@ func (v *NullableIamAccountAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

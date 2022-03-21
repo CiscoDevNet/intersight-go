@@ -19,19 +19,18 @@ import (
 // CondHclStatusDetailRelationship - A relationship to the 'cond.HclStatusDetail' resource, or the expanded 'cond.HclStatusDetail' resource, or the 'null' value.
 type CondHclStatusDetailRelationship struct {
 	CondHclStatusDetail *CondHclStatusDetail
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 }
 
 // CondHclStatusDetailAsCondHclStatusDetailRelationship is a convenience function that returns CondHclStatusDetail wrapped in CondHclStatusDetailRelationship
 func CondHclStatusDetailAsCondHclStatusDetailRelationship(v *CondHclStatusDetail) CondHclStatusDetailRelationship {
-	return CondHclStatusDetailRelationship{ CondHclStatusDetail: v}
+	return CondHclStatusDetailRelationship{CondHclStatusDetail: v}
 }
 
 // MoMoRefAsCondHclStatusDetailRelationship is a convenience function that returns MoMoRef wrapped in CondHclStatusDetailRelationship
 func MoMoRefAsCondHclStatusDetailRelationship(v *MoMoRef) CondHclStatusDetailRelationship {
-	return CondHclStatusDetailRelationship{ MoMoRef: v}
+	return CondHclStatusDetailRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CondHclStatusDetailRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src CondHclStatusDetailRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CondHclStatusDetailRelationship) GetActualInstance() (interface{}) {
+func (obj *CondHclStatusDetailRelationship) GetActualInstance() interface{} {
 	if obj.CondHclStatusDetail != nil {
 		return obj.CondHclStatusDetail
 	}
@@ -137,5 +136,3 @@ func (v *NullableCondHclStatusDetailRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

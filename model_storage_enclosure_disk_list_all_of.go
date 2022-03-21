@@ -20,7 +20,7 @@ type StorageEnclosureDiskListAllOf struct {
 	// The total number of 'storage.EnclosureDisk' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.EnclosureDisk' resources matching the request.
-	Results []StorageEnclosureDisk `json:"Results,omitempty"`
+	Results              []StorageEnclosureDisk `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *StorageEnclosureDiskListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageEnclosureDiskListAllOf) GetResults() []StorageEnclosureDisk {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageEnclosureDisk
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableStorageEnclosureDiskListAllOf) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

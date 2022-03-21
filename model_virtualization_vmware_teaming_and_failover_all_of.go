@@ -20,7 +20,7 @@ type VirtualizationVmwareTeamingAndFailoverAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType     string   `json:"ObjectType"`
 	ActiveAdapters []string `json:"ActiveAdapters,omitempty"`
 	// By default, a failback policy is enabled on a NIC team. If a failed physical NIC returns online, the network component sets the NIC back to active by replacing the standby NIC that took over its slot.
 	Failback *bool `json:"Failback,omitempty"`
@@ -31,8 +31,8 @@ type VirtualizationVmwareTeamingAndFailoverAllOf struct {
 	// Methods used by network component for failover detection. * `linkStatus` - This option detects failures such as removed cables and physical switch power failures. * `beaconProbing` - Sends out and listens for beacon probes on all NICs in the team, and uses this information, in addition to link status, to determine link failure. ESXi sends beacon packets every second.
 	NetworkFailureDetection *string `json:"NetworkFailureDetection,omitempty"`
 	// Determines how network traffic is distributed between the network adapters in a NIC team.
-	NotifySwitches *bool `json:"NotifySwitches,omitempty"`
-	StandbyAdapters []string `json:"StandbyAdapters,omitempty"`
+	NotifySwitches       *bool    `json:"NotifySwitches,omitempty"`
+	StandbyAdapters      []string `json:"StandbyAdapters,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -82,7 +82,7 @@ func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -106,7 +106,7 @@ func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *VirtualizationVmwareTeamingAndFailoverAllOf) SetObjectType(v string) {
 
 // GetActiveAdapters returns the ActiveAdapters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetActiveAdapters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *VirtualizationVmwareTeamingAndFailoverAllOf) SetNotifySwitches(v bool) 
 
 // GetStandbyAdapters returns the StandbyAdapters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareTeamingAndFailoverAllOf) GetStandbyAdapters() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -440,5 +440,3 @@ func (v *NullableVirtualizationVmwareTeamingAndFailoverAllOf) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

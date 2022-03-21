@@ -19,31 +19,30 @@ import (
 // HyperflexClusterProfileResponse - The response body of a HTTP GET request for the 'hyperflex.ClusterProfile' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'hyperflex.ClusterProfile' resources.
 type HyperflexClusterProfileResponse struct {
 	HyperflexClusterProfileList *HyperflexClusterProfileList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform        *MoAggregateTransform
+	MoDocumentCount             *MoDocumentCount
+	MoTagSummary                *MoTagSummary
 }
 
 // HyperflexClusterProfileListAsHyperflexClusterProfileResponse is a convenience function that returns HyperflexClusterProfileList wrapped in HyperflexClusterProfileResponse
 func HyperflexClusterProfileListAsHyperflexClusterProfileResponse(v *HyperflexClusterProfileList) HyperflexClusterProfileResponse {
-	return HyperflexClusterProfileResponse{ HyperflexClusterProfileList: v}
+	return HyperflexClusterProfileResponse{HyperflexClusterProfileList: v}
 }
 
 // MoAggregateTransformAsHyperflexClusterProfileResponse is a convenience function that returns MoAggregateTransform wrapped in HyperflexClusterProfileResponse
 func MoAggregateTransformAsHyperflexClusterProfileResponse(v *MoAggregateTransform) HyperflexClusterProfileResponse {
-	return HyperflexClusterProfileResponse{ MoAggregateTransform: v}
+	return HyperflexClusterProfileResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsHyperflexClusterProfileResponse is a convenience function that returns MoDocumentCount wrapped in HyperflexClusterProfileResponse
 func MoDocumentCountAsHyperflexClusterProfileResponse(v *MoDocumentCount) HyperflexClusterProfileResponse {
-	return HyperflexClusterProfileResponse{ MoDocumentCount: v}
+	return HyperflexClusterProfileResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsHyperflexClusterProfileResponse is a convenience function that returns MoTagSummary wrapped in HyperflexClusterProfileResponse
 func MoTagSummaryAsHyperflexClusterProfileResponse(v *MoTagSummary) HyperflexClusterProfileResponse {
-	return HyperflexClusterProfileResponse{ MoTagSummary: v}
+	return HyperflexClusterProfileResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexClusterProfileResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src HyperflexClusterProfileResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexClusterProfileResponse) GetActualInstance() (interface{}) {
+func (obj *HyperflexClusterProfileResponse) GetActualInstance() interface{} {
 	if obj.HyperflexClusterProfileList != nil {
 		return obj.HyperflexClusterProfileList
 	}
@@ -184,5 +183,3 @@ func (v *NullableHyperflexClusterProfileResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

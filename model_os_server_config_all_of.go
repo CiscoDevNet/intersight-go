@@ -20,16 +20,16 @@ type OsServerConfigAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AdditionalParameters []OsPlaceHolder `json:"AdditionalParameters,omitempty"`
-	Answers NullableOsAnswers `json:"Answers,omitempty"`
-	ErrorMsgs []string `json:"ErrorMsgs,omitempty"`
+	ObjectType           string            `json:"ObjectType"`
+	AdditionalParameters []OsPlaceHolder   `json:"AdditionalParameters,omitempty"`
+	Answers              NullableOsAnswers `json:"Answers,omitempty"`
+	ErrorMsgs            []string          `json:"ErrorMsgs,omitempty"`
 	// The target in which OS installation triggered, the value represented is StorageControllerID follwed by PhysicalDisk SerialNumber in case of Physcial disk or VirtualDriveId for virtual drive.
-	InstallTarget *string `json:"InstallTarget,omitempty"`
+	InstallTarget             *string                             `json:"InstallTarget,omitempty"`
 	OperatingSystemParameters NullableOsOperatingSystemParameters `json:"OperatingSystemParameters,omitempty"`
-	ProcessedInstallTarget NullableOsInstallTarget `json:"ProcessedInstallTarget,omitempty"`
+	ProcessedInstallTarget    NullableOsInstallTarget             `json:"ProcessedInstallTarget,omitempty"`
 	// The Serial Number of the server.
-	SerialNumber *string `json:"SerialNumber,omitempty"`
+	SerialNumber         *string `json:"SerialNumber,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *OsServerConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *OsServerConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *OsServerConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *OsServerConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -108,7 +108,7 @@ func (o *OsServerConfigAllOf) SetObjectType(v string) {
 
 // GetAdditionalParameters returns the AdditionalParameters field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsServerConfigAllOf) GetAdditionalParameters() []OsPlaceHolder {
-	if o == nil  {
+	if o == nil {
 		var ret []OsPlaceHolder
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *OsServerConfigAllOf) GetAnswers() OsAnswers {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsServerConfigAllOf) GetAnswersOk() (*OsAnswers, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Answers.Get(), o.Answers.IsSet()
@@ -171,6 +171,7 @@ func (o *OsServerConfigAllOf) HasAnswers() bool {
 func (o *OsServerConfigAllOf) SetAnswers(v OsAnswers) {
 	o.Answers.Set(&v)
 }
+
 // SetAnswersNil sets the value for Answers to be an explicit nil
 func (o *OsServerConfigAllOf) SetAnswersNil() {
 	o.Answers.Set(nil)
@@ -183,7 +184,7 @@ func (o *OsServerConfigAllOf) UnsetAnswers() {
 
 // GetErrorMsgs returns the ErrorMsgs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *OsServerConfigAllOf) GetErrorMsgs() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -259,7 +260,7 @@ func (o *OsServerConfigAllOf) GetOperatingSystemParameters() OsOperatingSystemPa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsServerConfigAllOf) GetOperatingSystemParametersOk() (*OsOperatingSystemParameters, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OperatingSystemParameters.Get(), o.OperatingSystemParameters.IsSet()
@@ -278,6 +279,7 @@ func (o *OsServerConfigAllOf) HasOperatingSystemParameters() bool {
 func (o *OsServerConfigAllOf) SetOperatingSystemParameters(v OsOperatingSystemParameters) {
 	o.OperatingSystemParameters.Set(&v)
 }
+
 // SetOperatingSystemParametersNil sets the value for OperatingSystemParameters to be an explicit nil
 func (o *OsServerConfigAllOf) SetOperatingSystemParametersNil() {
 	o.OperatingSystemParameters.Set(nil)
@@ -301,7 +303,7 @@ func (o *OsServerConfigAllOf) GetProcessedInstallTarget() OsInstallTarget {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OsServerConfigAllOf) GetProcessedInstallTargetOk() (*OsInstallTarget, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ProcessedInstallTarget.Get(), o.ProcessedInstallTarget.IsSet()
@@ -320,6 +322,7 @@ func (o *OsServerConfigAllOf) HasProcessedInstallTarget() bool {
 func (o *OsServerConfigAllOf) SetProcessedInstallTarget(v OsInstallTarget) {
 	o.ProcessedInstallTarget.Set(&v)
 }
+
 // SetProcessedInstallTargetNil sets the value for ProcessedInstallTarget to be an explicit nil
 func (o *OsServerConfigAllOf) SetProcessedInstallTargetNil() {
 	o.ProcessedInstallTarget.Set(nil)
@@ -459,5 +462,3 @@ func (v *NullableOsServerConfigAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

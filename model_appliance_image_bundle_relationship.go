@@ -19,19 +19,18 @@ import (
 // ApplianceImageBundleRelationship - A relationship to the 'appliance.ImageBundle' resource, or the expanded 'appliance.ImageBundle' resource, or the 'null' value.
 type ApplianceImageBundleRelationship struct {
 	ApplianceImageBundle *ApplianceImageBundle
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 }
 
 // ApplianceImageBundleAsApplianceImageBundleRelationship is a convenience function that returns ApplianceImageBundle wrapped in ApplianceImageBundleRelationship
 func ApplianceImageBundleAsApplianceImageBundleRelationship(v *ApplianceImageBundle) ApplianceImageBundleRelationship {
-	return ApplianceImageBundleRelationship{ ApplianceImageBundle: v}
+	return ApplianceImageBundleRelationship{ApplianceImageBundle: v}
 }
 
 // MoMoRefAsApplianceImageBundleRelationship is a convenience function that returns MoMoRef wrapped in ApplianceImageBundleRelationship
 func MoMoRefAsApplianceImageBundleRelationship(v *MoMoRef) ApplianceImageBundleRelationship {
-	return ApplianceImageBundleRelationship{ MoMoRef: v}
+	return ApplianceImageBundleRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ApplianceImageBundleRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ApplianceImageBundleRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ApplianceImageBundleRelationship) GetActualInstance() (interface{}) {
+func (obj *ApplianceImageBundleRelationship) GetActualInstance() interface{} {
 	if obj.ApplianceImageBundle != nil {
 		return obj.ApplianceImageBundle
 	}
@@ -137,5 +136,3 @@ func (v *NullableApplianceImageBundleRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

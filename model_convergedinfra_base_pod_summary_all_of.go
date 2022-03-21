@@ -20,8 +20,8 @@ type ConvergedinfraBasePodSummaryAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
-	AlarmSummary NullableConvergedinfraAlarmSummary `json:"AlarmSummary,omitempty"`
+	ObjectType        string                                  `json:"ObjectType"`
+	AlarmSummary      NullableConvergedinfraAlarmSummary      `json:"AlarmSummary,omitempty"`
 	ComplianceSummary NullableConvergedinfraComplianceSummary `json:"ComplianceSummary,omitempty"`
 	// Number of nodes associated with the pod.
 	NodeCount *int64 `json:"NodeCount,omitempty"`
@@ -30,7 +30,7 @@ type ConvergedinfraBasePodSummaryAllOf struct {
 	// The total storage capacity for this pod.
 	StorageCapacity *int64 `json:"StorageCapacity,omitempty"`
 	// The percentage storage utilization for this pod.
-	StorageUtilization *float32 `json:"StorageUtilization,omitempty"`
+	StorageUtilization   *float32 `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -72,7 +72,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraBasePodSummaryAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -96,7 +96,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ConvergedinfraBasePodSummaryAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -120,7 +120,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) GetAlarmSummary() ConvergedinfraAlar
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConvergedinfraBasePodSummaryAllOf) GetAlarmSummaryOk() (*ConvergedinfraAlarmSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AlarmSummary.Get(), o.AlarmSummary.IsSet()
@@ -139,6 +139,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) HasAlarmSummary() bool {
 func (o *ConvergedinfraBasePodSummaryAllOf) SetAlarmSummary(v ConvergedinfraAlarmSummary) {
 	o.AlarmSummary.Set(&v)
 }
+
 // SetAlarmSummaryNil sets the value for AlarmSummary to be an explicit nil
 func (o *ConvergedinfraBasePodSummaryAllOf) SetAlarmSummaryNil() {
 	o.AlarmSummary.Set(nil)
@@ -162,7 +163,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) GetComplianceSummary() Convergedinfr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConvergedinfraBasePodSummaryAllOf) GetComplianceSummaryOk() (*ConvergedinfraComplianceSummary, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ComplianceSummary.Get(), o.ComplianceSummary.IsSet()
@@ -181,6 +182,7 @@ func (o *ConvergedinfraBasePodSummaryAllOf) HasComplianceSummary() bool {
 func (o *ConvergedinfraBasePodSummaryAllOf) SetComplianceSummary(v ConvergedinfraComplianceSummary) {
 	o.ComplianceSummary.Set(&v)
 }
+
 // SetComplianceSummaryNil sets the value for ComplianceSummary to be an explicit nil
 func (o *ConvergedinfraBasePodSummaryAllOf) SetComplianceSummaryNil() {
 	o.ComplianceSummary.Set(nil)
@@ -412,5 +414,3 @@ func (v *NullableConvergedinfraBasePodSummaryAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

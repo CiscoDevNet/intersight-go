@@ -29,9 +29,9 @@ type KubernetesAciCniApic struct {
 	// The number of ACI CNI profiles configured for this APIC.
 	NumAciCniProfiles *int64 `json:"NumAciCniProfiles,omitempty"`
 	// An array of relationships to kubernetesAciCniProfile resources.
-	AciCniProfiles []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	AciCniProfiles       []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship  `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *KubernetesAciCniApic) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniApic) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *KubernetesAciCniApic) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAciCniApic) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -174,7 +174,7 @@ func (o *KubernetesAciCniApic) SetNumAciCniProfiles(v int64) {
 
 // GetAciCniProfiles returns the AciCniProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *KubernetesAciCniApic) GetAciCniProfiles() []KubernetesAciCniProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []KubernetesAciCniProfileRelationship
 		return ret
 	}
@@ -319,9 +319,9 @@ func (o *KubernetesAciCniApic) UnmarshalJSON(bytes []byte) (err error) {
 		// The number of ACI CNI profiles configured for this APIC.
 		NumAciCniProfiles *int64 `json:"NumAciCniProfiles,omitempty"`
 		// An array of relationships to kubernetesAciCniProfile resources.
-		AciCniProfiles []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		AciCniProfiles   []KubernetesAciCniProfileRelationship `json:"AciCniProfiles,omitempty"`
+		Organization     *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		RegisteredDevice *AssetDeviceRegistrationRelationship  `json:"RegisteredDevice,omitempty"`
 	}
 
 	varKubernetesAciCniApicWithoutEmbeddedStruct := KubernetesAciCniApicWithoutEmbeddedStruct{}
@@ -420,5 +420,3 @@ func (v *NullableKubernetesAciCniApic) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type FirmwareDirectDownloadAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                     `json:"ObjectType"`
 	HttpServer NullableFirmwareHttpServer `json:"HttpServer,omitempty"`
 	// Source type referring the image to be downloaded from CCO or from a local HTTPS server. * `cisco` - Image to be downloaded from Cisco software repository. * `localHttp` - Image to be downloaded from a https server.
 	ImageSource *string `json:"ImageSource,omitempty"`
@@ -31,7 +31,7 @@ type FirmwareDirectDownloadAllOf struct {
 	// Option to control the upgrade, e.g., sd_upgrade_mount_only - download the image into sd and upgrade wait for the server on-next boot. * `sd_upgrade_mount_only` - Direct upgrade SD upgrade mount only. * `sd_download_only` - Direct upgrade SD download only. * `sd_upgrade_only` - Direct upgrade SD upgrade only. * `sd_upgrade_full` - Direct upgrade SD upgrade full. * `download_only` - Direct upgrade image download only. * `upgrade_full` - The upgrade downloads or mounts the image, and reboots immediately for an upgrade. * `upgrade_mount_only` - The upgrade downloads or mounts the image. The upgrade happens in next reboot. * `chassis_upgrade_full` - Direct upgrade chassis upgrade full.
 	Upgradeoption *string `json:"Upgradeoption,omitempty"`
 	// Username as configured on the local https server.
-	Username *string `json:"Username,omitempty"`
+	Username             *string `json:"Username,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *FirmwareDirectDownloadAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDirectDownloadAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *FirmwareDirectDownloadAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FirmwareDirectDownloadAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -129,7 +129,7 @@ func (o *FirmwareDirectDownloadAllOf) GetHttpServer() FirmwareHttpServer {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FirmwareDirectDownloadAllOf) GetHttpServerOk() (*FirmwareHttpServer, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HttpServer.Get(), o.HttpServer.IsSet()
@@ -148,6 +148,7 @@ func (o *FirmwareDirectDownloadAllOf) HasHttpServer() bool {
 func (o *FirmwareDirectDownloadAllOf) SetHttpServer(v FirmwareHttpServer) {
 	o.HttpServer.Set(&v)
 }
+
 // SetHttpServerNil sets the value for HttpServer to be an explicit nil
 func (o *FirmwareDirectDownloadAllOf) SetHttpServerNil() {
 	o.HttpServer.Set(nil)
@@ -411,5 +412,3 @@ func (v *NullableFirmwareDirectDownloadAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

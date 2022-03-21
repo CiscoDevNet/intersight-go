@@ -28,7 +28,7 @@ type EquipmentFanAllOf struct {
 	// This field is used to identify the Fan Module to which this Fan belongs.
 	FanModuleId *int64 `json:"FanModuleId,omitempty"`
 	// Fan module Identifier for the fan.
-	ModuleId *int64 `json:"ModuleId,omitempty"`
+	ModuleId   *int64   `json:"ModuleId,omitempty"`
 	OperReason []string `json:"OperReason,omitempty"`
 	// This field is used to indicate this fan unit's operational state.
 	OperState *string `json:"OperState,omitempty"`
@@ -41,11 +41,11 @@ type EquipmentFanAllOf struct {
 	// Tray identifier for the fan module.
 	TrayId *int64 `json:"TrayId,omitempty"`
 	// This field identifies the Vendor ID for this Fan Unit.
-	Vid *string `json:"Vid,omitempty"`
-	EquipmentFanModule *EquipmentFanModuleRelationship `json:"EquipmentFanModule,omitempty"`
-	EquipmentFex *EquipmentFexRelationship `json:"EquipmentFex,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	Vid                  *string                              `json:"Vid,omitempty"`
+	EquipmentFanModule   *EquipmentFanModuleRelationship      `json:"EquipmentFanModule,omitempty"`
+	EquipmentFex         *EquipmentFexRelationship            `json:"EquipmentFex,omitempty"`
+	InventoryDeviceInfo  *InventoryDeviceInfoRelationship     `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -87,7 +87,7 @@ func (o *EquipmentFanAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -111,7 +111,7 @@ func (o *EquipmentFanAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *EquipmentFanAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -252,7 +252,7 @@ func (o *EquipmentFanAllOf) SetModuleId(v int64) {
 
 // GetOperReason returns the OperReason field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EquipmentFanAllOf) GetOperReason() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -732,5 +732,3 @@ func (v *NullableEquipmentFanAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

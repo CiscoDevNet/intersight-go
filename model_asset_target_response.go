@@ -18,32 +18,31 @@ import (
 
 // AssetTargetResponse - The response body of a HTTP GET request for the 'asset.Target' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'asset.Target' resources.
 type AssetTargetResponse struct {
-	AssetTargetList *AssetTargetList
+	AssetTargetList      *AssetTargetList
 	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoDocumentCount      *MoDocumentCount
+	MoTagSummary         *MoTagSummary
 }
 
 // AssetTargetListAsAssetTargetResponse is a convenience function that returns AssetTargetList wrapped in AssetTargetResponse
 func AssetTargetListAsAssetTargetResponse(v *AssetTargetList) AssetTargetResponse {
-	return AssetTargetResponse{ AssetTargetList: v}
+	return AssetTargetResponse{AssetTargetList: v}
 }
 
 // MoAggregateTransformAsAssetTargetResponse is a convenience function that returns MoAggregateTransform wrapped in AssetTargetResponse
 func MoAggregateTransformAsAssetTargetResponse(v *MoAggregateTransform) AssetTargetResponse {
-	return AssetTargetResponse{ MoAggregateTransform: v}
+	return AssetTargetResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsAssetTargetResponse is a convenience function that returns MoDocumentCount wrapped in AssetTargetResponse
 func MoDocumentCountAsAssetTargetResponse(v *MoDocumentCount) AssetTargetResponse {
-	return AssetTargetResponse{ MoDocumentCount: v}
+	return AssetTargetResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsAssetTargetResponse is a convenience function that returns MoTagSummary wrapped in AssetTargetResponse
 func MoTagSummaryAsAssetTargetResponse(v *MoTagSummary) AssetTargetResponse {
-	return AssetTargetResponse{ MoTagSummary: v}
+	return AssetTargetResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetTargetResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src AssetTargetResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AssetTargetResponse) GetActualInstance() (interface{}) {
+func (obj *AssetTargetResponse) GetActualInstance() interface{} {
 	if obj.AssetTargetList != nil {
 		return obj.AssetTargetList
 	}
@@ -184,5 +183,3 @@ func (v *NullableAssetTargetResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

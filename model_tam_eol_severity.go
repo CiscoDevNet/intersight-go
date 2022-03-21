@@ -25,7 +25,7 @@ type TamEolSeverity struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Severity level associated with an end-of-life (EOL) milestone advisory. * `info` - The end-of-life (EOL) milestone is at info level. * `critical` - The end-of-life (EOL) milestone is at critical level. It usually hints 'red' in a color-map. * `high` - The end-of-life (EOL) milestone is at high level. * `medium` - The end-of-life (EOL) milestone is at medium level.
-	Level *string `json:"Level,omitempty"`
+	Level                *string `json:"Level,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,7 +71,7 @@ func (o *TamEolSeverity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TamEolSeverity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *TamEolSeverity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TamEolSeverity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -263,5 +263,3 @@ func (v *NullableTamEolSeverity) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -27,14 +27,14 @@ type ResourceGroup struct {
 	// The informative description about the usage of this Resource Group.
 	Description *string `json:"Description,omitempty"`
 	// The name of this resource group.
-	Name *string `json:"Name,omitempty"`
+	Name                    *string                           `json:"Name,omitempty"`
 	PerTypeCombinedSelector []ResourcePerTypeCombinedSelector `json:"PerTypeCombinedSelector,omitempty"`
 	// Qualifier shall be used to specify if we want to organize resources using multiple resource group or single For an account, resource groups can be of only one of the above types. (Both the types are mutually exclusive for an account.). * `Allow-Selectors` - Resources will be added to resource groups based on ODATA filter. Multiple resource group can be created to organize resources. * `Allow-All` - All resources will become part of the Resource Group. Only one resource group can be created to organize resources.
-	Qualifier *string `json:"Qualifier,omitempty"`
-	Selectors []ResourceSelector `json:"Selectors,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	Qualifier *string                 `json:"Qualifier,omitempty"`
+	Selectors []ResourceSelector      `json:"Selectors,omitempty"`
+	Account   *IamAccountRelationship `json:"Account,omitempty"`
 	// An array of relationships to organizationOrganization resources.
-	Organizations []OrganizationOrganizationRelationship `json:"Organizations,omitempty"`
+	Organizations        []OrganizationOrganizationRelationship `json:"Organizations,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -80,7 +80,7 @@ func (o *ResourceGroup) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ResourceGroup) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -104,7 +104,7 @@ func (o *ResourceGroup) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ResourceGroup) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -181,7 +181,7 @@ func (o *ResourceGroup) SetName(v string) {
 
 // GetPerTypeCombinedSelector returns the PerTypeCombinedSelector field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceGroup) GetPerTypeCombinedSelector() []ResourcePerTypeCombinedSelector {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourcePerTypeCombinedSelector
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *ResourceGroup) SetQualifier(v string) {
 
 // GetSelectors returns the Selectors field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceGroup) GetSelectors() []ResourceSelector {
-	if o == nil  {
+	if o == nil {
 		var ret []ResourceSelector
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *ResourceGroup) SetAccount(v IamAccountRelationship) {
 
 // GetOrganizations returns the Organizations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ResourceGroup) GetOrganizations() []OrganizationOrganizationRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []OrganizationOrganizationRelationship
 		return ret
 	}
@@ -396,12 +396,12 @@ func (o *ResourceGroup) UnmarshalJSON(bytes []byte) (err error) {
 		// The informative description about the usage of this Resource Group.
 		Description *string `json:"Description,omitempty"`
 		// The name of this resource group.
-		Name *string `json:"Name,omitempty"`
+		Name                    *string                           `json:"Name,omitempty"`
 		PerTypeCombinedSelector []ResourcePerTypeCombinedSelector `json:"PerTypeCombinedSelector,omitempty"`
 		// Qualifier shall be used to specify if we want to organize resources using multiple resource group or single For an account, resource groups can be of only one of the above types. (Both the types are mutually exclusive for an account.). * `Allow-Selectors` - Resources will be added to resource groups based on ODATA filter. Multiple resource group can be created to organize resources. * `Allow-All` - All resources will become part of the Resource Group. Only one resource group can be created to organize resources.
-		Qualifier *string `json:"Qualifier,omitempty"`
-		Selectors []ResourceSelector `json:"Selectors,omitempty"`
-		Account *IamAccountRelationship `json:"Account,omitempty"`
+		Qualifier *string                 `json:"Qualifier,omitempty"`
+		Selectors []ResourceSelector      `json:"Selectors,omitempty"`
+		Account   *IamAccountRelationship `json:"Account,omitempty"`
 		// An array of relationships to organizationOrganization resources.
 		Organizations []OrganizationOrganizationRelationship `json:"Organizations,omitempty"`
 	}
@@ -506,5 +506,3 @@ func (v *NullableResourceGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

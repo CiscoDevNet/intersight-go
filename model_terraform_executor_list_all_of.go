@@ -20,7 +20,7 @@ type TerraformExecutorListAllOf struct {
 	// The total number of 'terraform.Executor' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'terraform.Executor' resources matching the request.
-	Results []TerraformExecutor `json:"Results,omitempty"`
+	Results              []TerraformExecutor `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *TerraformExecutorListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TerraformExecutorListAllOf) GetResults() []TerraformExecutor {
-	if o == nil  {
+	if o == nil {
 		var ret []TerraformExecutor
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableTerraformExecutorListAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

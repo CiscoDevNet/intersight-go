@@ -20,7 +20,7 @@ type VirtualizationVmwareVirtualMachineSnapshotListAllOf struct {
 	// The total number of 'virtualization.VmwareVirtualMachineSnapshot' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'virtualization.VmwareVirtualMachineSnapshot' resources matching the request.
-	Results []VirtualizationVmwareVirtualMachineSnapshot `json:"Results,omitempty"`
+	Results              []VirtualizationVmwareVirtualMachineSnapshot `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VirtualizationVmwareVirtualMachineSnapshotListAllOf) SetCount(v int32) 
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationVmwareVirtualMachineSnapshotListAllOf) GetResults() []VirtualizationVmwareVirtualMachineSnapshot {
-	if o == nil  {
+	if o == nil {
 		var ret []VirtualizationVmwareVirtualMachineSnapshot
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableVirtualizationVmwareVirtualMachineSnapshotListAllOf) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

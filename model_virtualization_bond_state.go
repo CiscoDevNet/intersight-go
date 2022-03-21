@@ -27,8 +27,8 @@ type VirtualizationBondState struct {
 	// The current active slave. For active-active mode, this field is empty.
 	ActiveSlave *string `json:"ActiveSlave,omitempty"`
 	// Bond mode, such as \"active-backup\", \"balance-slb\", \"balance-tcp\".
-	Mode *string `json:"Mode,omitempty"`
-	Slaves []string `json:"Slaves,omitempty"`
+	Mode                 *string  `json:"Mode,omitempty"`
+	Slaves               []string `json:"Slaves,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *VirtualizationBondState) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBondState) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *VirtualizationBondState) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationBondState) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -171,7 +171,7 @@ func (o *VirtualizationBondState) SetMode(v string) {
 
 // GetSlaves returns the Slaves field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualizationBondState) GetSlaves() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *VirtualizationBondState) UnmarshalJSON(bytes []byte) (err error) {
 		// The current active slave. For active-active mode, this field is empty.
 		ActiveSlave *string `json:"ActiveSlave,omitempty"`
 		// Bond mode, such as \"active-backup\", \"balance-slb\", \"balance-tcp\".
-		Mode *string `json:"Mode,omitempty"`
+		Mode   *string  `json:"Mode,omitempty"`
 		Slaves []string `json:"Slaves,omitempty"`
 	}
 
@@ -340,5 +340,3 @@ func (v *NullableVirtualizationBondState) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

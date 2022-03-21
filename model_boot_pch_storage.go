@@ -23,10 +23,10 @@ type BootPchStorage struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType string                 `json:"ObjectType"`
 	Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 	// The Logical Unit Number (LUN) of the device. It is the Virtual Drive number for Cisco UCS C-Series Servers. Virtual Drive number is found in storage inventory.
-	Lun *int64 `json:"Lun,omitempty"`
+	Lun                  *int64 `json:"Lun,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,7 +74,7 @@ func (o *BootPchStorage) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootPchStorage) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -98,7 +98,7 @@ func (o *BootPchStorage) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootPchStorage) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -122,7 +122,7 @@ func (o *BootPchStorage) GetBootloader() BootBootloader {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BootPchStorage) GetBootloaderOk() (*BootBootloader, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bootloader.Get(), o.Bootloader.IsSet()
@@ -141,6 +141,7 @@ func (o *BootPchStorage) HasBootloader() bool {
 func (o *BootPchStorage) SetBootloader(v BootBootloader) {
 	o.Bootloader.Set(&v)
 }
+
 // SetBootloaderNil sets the value for Bootloader to be an explicit nil
 func (o *BootPchStorage) SetBootloaderNil() {
 	o.Bootloader.Set(nil)
@@ -218,7 +219,7 @@ func (o *BootPchStorage) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                 `json:"ObjectType"`
 		Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 		// The Logical Unit Number (LUN) of the device. It is the Virtual Drive number for Cisco UCS C-Series Servers. Virtual Drive number is found in storage inventory.
 		Lun *int64 `json:"Lun,omitempty"`
@@ -314,5 +315,3 @@ func (v *NullableBootPchStorage) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

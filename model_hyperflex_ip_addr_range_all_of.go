@@ -25,13 +25,13 @@ type HyperflexIpAddrRangeAllOf struct {
 	// Deprecated
 	EndAddr *string `json:"EndAddr,omitempty"`
 	// The default gateway for the start and end IPv4 addresses.
-	Gateway *string `json:"Gateway,omitempty"`
+	Gateway      *string                `json:"Gateway,omitempty"`
 	IpAddrBlocks []CommIpV4AddressBlock `json:"IpAddrBlocks,omitempty"`
 	// The netmask specified in dot decimal notation. The start address, end address, and gateway must all be within the network specified by this netmask.
 	Netmask *string `json:"Netmask,omitempty"`
 	// The start IPv4 address of the range.
 	// Deprecated
-	StartAddr *string `json:"StartAddr,omitempty"`
+	StartAddr            *string `json:"StartAddr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *HyperflexIpAddrRangeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexIpAddrRangeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *HyperflexIpAddrRangeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexIpAddrRangeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -177,7 +177,7 @@ func (o *HyperflexIpAddrRangeAllOf) SetGateway(v string) {
 
 // GetIpAddrBlocks returns the IpAddrBlocks field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexIpAddrRangeAllOf) GetIpAddrBlocks() []CommIpV4AddressBlock {
-	if o == nil  {
+	if o == nil {
 		var ret []CommIpV4AddressBlock
 		return ret
 	}
@@ -364,5 +364,3 @@ func (v *NullableHyperflexIpAddrRangeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

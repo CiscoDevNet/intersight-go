@@ -25,17 +25,17 @@ type HyperflexClusterNetworkPolicy struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Enable or disable Jumbo Frames (MTU=9000). Jumbo Frames are used by Storage Network, VM Migration Network.
-	JumboFrame *bool `json:"JumboFrame,omitempty"`
-	KvmIpRange NullableHyperflexIpAddrRange `json:"KvmIpRange,omitempty"`
+	JumboFrame     *bool                               `json:"JumboFrame,omitempty"`
+	KvmIpRange     NullableHyperflexIpAddrRange        `json:"KvmIpRange,omitempty"`
 	MacPrefixRange NullableHyperflexMacAddrPrefixRange `json:"MacPrefixRange,omitempty"`
-	MgmtVlan NullableHyperflexNamedVlan `json:"MgmtVlan,omitempty"`
+	MgmtVlan       NullableHyperflexNamedVlan          `json:"MgmtVlan,omitempty"`
 	// Link speed of the server adapter port to the upstream switch. When the policy is attached to a cluster profile with EDGE management platform, the uplink speed can be '1G' or '10G+'. Use '10G+' for link speeds of 10G or above. When the policy is attached to a cluster profile with Fabric Interconnect management platform, the uplink speed can be 'default' only. * `default` - Current default value set on the hardware platform. * `1G` - A link speed of 1 gigabit per second. * `10G` - A link speed of 10 gigabits per second or above.
-	UplinkSpeed *string `json:"UplinkSpeed,omitempty"`
+	UplinkSpeed     *string                    `json:"UplinkSpeed,omitempty"`
 	VmMigrationVlan NullableHyperflexNamedVlan `json:"VmMigrationVlan,omitempty"`
-	VmNetworkVlans []HyperflexNamedVlan `json:"VmNetworkVlans,omitempty"`
+	VmNetworkVlans  []HyperflexNamedVlan       `json:"VmNetworkVlans,omitempty"`
 	// An array of relationships to hyperflexClusterProfile resources.
-	ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ClusterProfiles      []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *HyperflexClusterNetworkPolicy) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterNetworkPolicy) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -105,7 +105,7 @@ func (o *HyperflexClusterNetworkPolicy) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexClusterNetworkPolicy) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -161,7 +161,7 @@ func (o *HyperflexClusterNetworkPolicy) GetKvmIpRange() HyperflexIpAddrRange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterNetworkPolicy) GetKvmIpRangeOk() (*HyperflexIpAddrRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KvmIpRange.Get(), o.KvmIpRange.IsSet()
@@ -180,6 +180,7 @@ func (o *HyperflexClusterNetworkPolicy) HasKvmIpRange() bool {
 func (o *HyperflexClusterNetworkPolicy) SetKvmIpRange(v HyperflexIpAddrRange) {
 	o.KvmIpRange.Set(&v)
 }
+
 // SetKvmIpRangeNil sets the value for KvmIpRange to be an explicit nil
 func (o *HyperflexClusterNetworkPolicy) SetKvmIpRangeNil() {
 	o.KvmIpRange.Set(nil)
@@ -203,7 +204,7 @@ func (o *HyperflexClusterNetworkPolicy) GetMacPrefixRange() HyperflexMacAddrPref
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterNetworkPolicy) GetMacPrefixRangeOk() (*HyperflexMacAddrPrefixRange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MacPrefixRange.Get(), o.MacPrefixRange.IsSet()
@@ -222,6 +223,7 @@ func (o *HyperflexClusterNetworkPolicy) HasMacPrefixRange() bool {
 func (o *HyperflexClusterNetworkPolicy) SetMacPrefixRange(v HyperflexMacAddrPrefixRange) {
 	o.MacPrefixRange.Set(&v)
 }
+
 // SetMacPrefixRangeNil sets the value for MacPrefixRange to be an explicit nil
 func (o *HyperflexClusterNetworkPolicy) SetMacPrefixRangeNil() {
 	o.MacPrefixRange.Set(nil)
@@ -245,7 +247,7 @@ func (o *HyperflexClusterNetworkPolicy) GetMgmtVlan() HyperflexNamedVlan {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterNetworkPolicy) GetMgmtVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MgmtVlan.Get(), o.MgmtVlan.IsSet()
@@ -264,6 +266,7 @@ func (o *HyperflexClusterNetworkPolicy) HasMgmtVlan() bool {
 func (o *HyperflexClusterNetworkPolicy) SetMgmtVlan(v HyperflexNamedVlan) {
 	o.MgmtVlan.Set(&v)
 }
+
 // SetMgmtVlanNil sets the value for MgmtVlan to be an explicit nil
 func (o *HyperflexClusterNetworkPolicy) SetMgmtVlanNil() {
 	o.MgmtVlan.Set(nil)
@@ -319,7 +322,7 @@ func (o *HyperflexClusterNetworkPolicy) GetVmMigrationVlan() HyperflexNamedVlan 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexClusterNetworkPolicy) GetVmMigrationVlanOk() (*HyperflexNamedVlan, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmMigrationVlan.Get(), o.VmMigrationVlan.IsSet()
@@ -338,6 +341,7 @@ func (o *HyperflexClusterNetworkPolicy) HasVmMigrationVlan() bool {
 func (o *HyperflexClusterNetworkPolicy) SetVmMigrationVlan(v HyperflexNamedVlan) {
 	o.VmMigrationVlan.Set(&v)
 }
+
 // SetVmMigrationVlanNil sets the value for VmMigrationVlan to be an explicit nil
 func (o *HyperflexClusterNetworkPolicy) SetVmMigrationVlanNil() {
 	o.VmMigrationVlan.Set(nil)
@@ -350,7 +354,7 @@ func (o *HyperflexClusterNetworkPolicy) UnsetVmMigrationVlan() {
 
 // GetVmNetworkVlans returns the VmNetworkVlans field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterNetworkPolicy) GetVmNetworkVlans() []HyperflexNamedVlan {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexNamedVlan
 		return ret
 	}
@@ -383,7 +387,7 @@ func (o *HyperflexClusterNetworkPolicy) SetVmNetworkVlans(v []HyperflexNamedVlan
 
 // GetClusterProfiles returns the ClusterProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexClusterNetworkPolicy) GetClusterProfiles() []HyperflexClusterProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexClusterProfileRelationship
 		return ret
 	}
@@ -504,17 +508,17 @@ func (o *HyperflexClusterNetworkPolicy) UnmarshalJSON(bytes []byte) (err error) 
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Enable or disable Jumbo Frames (MTU=9000). Jumbo Frames are used by Storage Network, VM Migration Network.
-		JumboFrame *bool `json:"JumboFrame,omitempty"`
-		KvmIpRange NullableHyperflexIpAddrRange `json:"KvmIpRange,omitempty"`
+		JumboFrame     *bool                               `json:"JumboFrame,omitempty"`
+		KvmIpRange     NullableHyperflexIpAddrRange        `json:"KvmIpRange,omitempty"`
 		MacPrefixRange NullableHyperflexMacAddrPrefixRange `json:"MacPrefixRange,omitempty"`
-		MgmtVlan NullableHyperflexNamedVlan `json:"MgmtVlan,omitempty"`
+		MgmtVlan       NullableHyperflexNamedVlan          `json:"MgmtVlan,omitempty"`
 		// Link speed of the server adapter port to the upstream switch. When the policy is attached to a cluster profile with EDGE management platform, the uplink speed can be '1G' or '10G+'. Use '10G+' for link speeds of 10G or above. When the policy is attached to a cluster profile with Fabric Interconnect management platform, the uplink speed can be 'default' only. * `default` - Current default value set on the hardware platform. * `1G` - A link speed of 1 gigabit per second. * `10G` - A link speed of 10 gigabits per second or above.
-		UplinkSpeed *string `json:"UplinkSpeed,omitempty"`
+		UplinkSpeed     *string                    `json:"UplinkSpeed,omitempty"`
 		VmMigrationVlan NullableHyperflexNamedVlan `json:"VmMigrationVlan,omitempty"`
-		VmNetworkVlans []HyperflexNamedVlan `json:"VmNetworkVlans,omitempty"`
+		VmNetworkVlans  []HyperflexNamedVlan       `json:"VmNetworkVlans,omitempty"`
 		// An array of relationships to hyperflexClusterProfile resources.
 		ClusterProfiles []HyperflexClusterProfileRelationship `json:"ClusterProfiles,omitempty"`
-		Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+		Organization    *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	}
 
 	varHyperflexClusterNetworkPolicyWithoutEmbeddedStruct := HyperflexClusterNetworkPolicyWithoutEmbeddedStruct{}
@@ -621,5 +625,3 @@ func (v *NullableHyperflexClusterNetworkPolicy) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type VnicFcNetworkPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	VsanSettings NullableVnicVsanSettings `json:"VsanSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	VsanSettings         NullableVnicVsanSettings              `json:"VsanSettings,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *VnicFcNetworkPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcNetworkPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *VnicFcNetworkPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VnicFcNetworkPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *VnicFcNetworkPolicyAllOf) GetVsanSettings() VnicVsanSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VnicFcNetworkPolicyAllOf) GetVsanSettingsOk() (*VnicVsanSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VsanSettings.Get(), o.VsanSettings.IsSet()
@@ -131,6 +131,7 @@ func (o *VnicFcNetworkPolicyAllOf) HasVsanSettings() bool {
 func (o *VnicFcNetworkPolicyAllOf) SetVsanSettings(v VnicVsanSettings) {
 	o.VsanSettings.Set(&v)
 }
+
 // SetVsanSettingsNil sets the value for VsanSettings to be an explicit nil
 func (o *VnicFcNetworkPolicyAllOf) SetVsanSettingsNil() {
 	o.VsanSettings.Set(nil)
@@ -250,5 +251,3 @@ func (v *NullableVnicFcNetworkPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

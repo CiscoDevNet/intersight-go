@@ -19,19 +19,18 @@ import (
 // EquipmentTpmRelationship - A relationship to the 'equipment.Tpm' resource, or the expanded 'equipment.Tpm' resource, or the 'null' value.
 type EquipmentTpmRelationship struct {
 	EquipmentTpm *EquipmentTpm
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // EquipmentTpmAsEquipmentTpmRelationship is a convenience function that returns EquipmentTpm wrapped in EquipmentTpmRelationship
 func EquipmentTpmAsEquipmentTpmRelationship(v *EquipmentTpm) EquipmentTpmRelationship {
-	return EquipmentTpmRelationship{ EquipmentTpm: v}
+	return EquipmentTpmRelationship{EquipmentTpm: v}
 }
 
 // MoMoRefAsEquipmentTpmRelationship is a convenience function that returns MoMoRef wrapped in EquipmentTpmRelationship
 func MoMoRefAsEquipmentTpmRelationship(v *MoMoRef) EquipmentTpmRelationship {
-	return EquipmentTpmRelationship{ MoMoRef: v}
+	return EquipmentTpmRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *EquipmentTpmRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src EquipmentTpmRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *EquipmentTpmRelationship) GetActualInstance() (interface{}) {
+func (obj *EquipmentTpmRelationship) GetActualInstance() interface{} {
 	if obj.EquipmentTpm != nil {
 		return obj.EquipmentTpm
 	}
@@ -137,5 +136,3 @@ func (v *NullableEquipmentTpmRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -25,13 +25,13 @@ type WorkflowTargetProperty struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// A singleton value which will contain the path to connector object from the selected object.
-	ConnectorAttribute *string `json:"ConnectorAttribute,omitempty"`
+	ConnectorAttribute   *string  `json:"ConnectorAttribute,omitempty"`
 	ConstraintAttributes []string `json:"ConstraintAttributes,omitempty"`
-	DisplayAttributes []string `json:"DisplayAttributes,omitempty"`
+	DisplayAttributes    []string `json:"DisplayAttributes,omitempty"`
 	// Field to hold an Intersight API along with an optional filter to narrow down the search options for target device.
-	Selector *string `json:"Selector,omitempty"`
-	SelectorProperty NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
-	SupportedObjects []string `json:"SupportedObjects,omitempty"`
+	Selector             *string                          `json:"Selector,omitempty"`
+	SelectorProperty     NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
+	SupportedObjects     []string                         `json:"SupportedObjects,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *WorkflowTargetProperty) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTargetProperty) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *WorkflowTargetProperty) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowTargetProperty) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -142,7 +142,7 @@ func (o *WorkflowTargetProperty) SetConnectorAttribute(v string) {
 
 // GetConstraintAttributes returns the ConstraintAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetProperty) GetConstraintAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *WorkflowTargetProperty) SetConstraintAttributes(v []string) {
 
 // GetDisplayAttributes returns the DisplayAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetProperty) GetDisplayAttributes() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *WorkflowTargetProperty) GetSelectorProperty() WorkflowSelectorProperty 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WorkflowTargetProperty) GetSelectorPropertyOk() (*WorkflowSelectorProperty, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SelectorProperty.Get(), o.SelectorProperty.IsSet()
@@ -270,6 +270,7 @@ func (o *WorkflowTargetProperty) HasSelectorProperty() bool {
 func (o *WorkflowTargetProperty) SetSelectorProperty(v WorkflowSelectorProperty) {
 	o.SelectorProperty.Set(&v)
 }
+
 // SetSelectorPropertyNil sets the value for SelectorProperty to be an explicit nil
 func (o *WorkflowTargetProperty) SetSelectorPropertyNil() {
 	o.SelectorProperty.Set(nil)
@@ -282,7 +283,7 @@ func (o *WorkflowTargetProperty) UnsetSelectorProperty() {
 
 // GetSupportedObjects returns the SupportedObjects field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowTargetProperty) GetSupportedObjects() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -362,13 +363,13 @@ func (o *WorkflowTargetProperty) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// A singleton value which will contain the path to connector object from the selected object.
-		ConnectorAttribute *string `json:"ConnectorAttribute,omitempty"`
+		ConnectorAttribute   *string  `json:"ConnectorAttribute,omitempty"`
 		ConstraintAttributes []string `json:"ConstraintAttributes,omitempty"`
-		DisplayAttributes []string `json:"DisplayAttributes,omitempty"`
+		DisplayAttributes    []string `json:"DisplayAttributes,omitempty"`
 		// Field to hold an Intersight API along with an optional filter to narrow down the search options for target device.
-		Selector *string `json:"Selector,omitempty"`
+		Selector         *string                          `json:"Selector,omitempty"`
 		SelectorProperty NullableWorkflowSelectorProperty `json:"SelectorProperty,omitempty"`
-		SupportedObjects []string `json:"SupportedObjects,omitempty"`
+		SupportedObjects []string                         `json:"SupportedObjects,omitempty"`
 	}
 
 	varWorkflowTargetPropertyWithoutEmbeddedStruct := WorkflowTargetPropertyWithoutEmbeddedStruct{}
@@ -469,5 +470,3 @@ func (v *NullableWorkflowTargetProperty) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

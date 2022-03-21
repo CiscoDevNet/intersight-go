@@ -23,7 +23,7 @@ type StorageVirtualDriveExtensionList struct {
 	// The total number of 'storage.VirtualDriveExtension' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'storage.VirtualDriveExtension' resources matching the request.
-	Results []StorageVirtualDriveExtension `json:"Results,omitempty"`
+	Results              []StorageVirtualDriveExtension `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *StorageVirtualDriveExtensionList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageVirtualDriveExtensionList) GetResults() []StorageVirtualDriveExtension {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageVirtualDriveExtension
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableStorageVirtualDriveExtensionList) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

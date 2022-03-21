@@ -23,14 +23,14 @@ type HyperflexSnapshotPoint struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	ClusterEntityReference NullableHyperflexEntityReference `json:"ClusterEntityReference,omitempty"`
-	ReplicationStatus NullableHyperflexReplicationStatus `json:"ReplicationStatus,omitempty"`
-	SnapshotFiles NullableHyperflexSnapshotFiles `json:"SnapshotFiles,omitempty"`
-	SnapshotPointEntityReference NullableHyperflexEntityReference `json:"SnapshotPointEntityReference,omitempty"`
-	SnapshotStatus NullableHyperflexSnapshotStatus `json:"SnapshotStatus,omitempty"`
-	VmRuntimeInfo NullableHyperflexVirtualMachine `json:"VmRuntimeInfo,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ObjectType                   string                             `json:"ObjectType"`
+	ClusterEntityReference       NullableHyperflexEntityReference   `json:"ClusterEntityReference,omitempty"`
+	ReplicationStatus            NullableHyperflexReplicationStatus `json:"ReplicationStatus,omitempty"`
+	SnapshotFiles                NullableHyperflexSnapshotFiles     `json:"SnapshotFiles,omitempty"`
+	SnapshotPointEntityReference NullableHyperflexEntityReference   `json:"SnapshotPointEntityReference,omitempty"`
+	SnapshotStatus               NullableHyperflexSnapshotStatus    `json:"SnapshotStatus,omitempty"`
+	VmRuntimeInfo                NullableHyperflexVirtualMachine    `json:"VmRuntimeInfo,omitempty"`
+	AdditionalProperties         map[string]interface{}
 }
 
 type _HyperflexSnapshotPoint HyperflexSnapshotPoint
@@ -71,7 +71,7 @@ func (o *HyperflexSnapshotPoint) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSnapshotPoint) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -95,7 +95,7 @@ func (o *HyperflexSnapshotPoint) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexSnapshotPoint) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -119,7 +119,7 @@ func (o *HyperflexSnapshotPoint) GetClusterEntityReference() HyperflexEntityRefe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetClusterEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClusterEntityReference.Get(), o.ClusterEntityReference.IsSet()
@@ -138,6 +138,7 @@ func (o *HyperflexSnapshotPoint) HasClusterEntityReference() bool {
 func (o *HyperflexSnapshotPoint) SetClusterEntityReference(v HyperflexEntityReference) {
 	o.ClusterEntityReference.Set(&v)
 }
+
 // SetClusterEntityReferenceNil sets the value for ClusterEntityReference to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetClusterEntityReferenceNil() {
 	o.ClusterEntityReference.Set(nil)
@@ -161,7 +162,7 @@ func (o *HyperflexSnapshotPoint) GetReplicationStatus() HyperflexReplicationStat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetReplicationStatusOk() (*HyperflexReplicationStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ReplicationStatus.Get(), o.ReplicationStatus.IsSet()
@@ -180,6 +181,7 @@ func (o *HyperflexSnapshotPoint) HasReplicationStatus() bool {
 func (o *HyperflexSnapshotPoint) SetReplicationStatus(v HyperflexReplicationStatus) {
 	o.ReplicationStatus.Set(&v)
 }
+
 // SetReplicationStatusNil sets the value for ReplicationStatus to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetReplicationStatusNil() {
 	o.ReplicationStatus.Set(nil)
@@ -203,7 +205,7 @@ func (o *HyperflexSnapshotPoint) GetSnapshotFiles() HyperflexSnapshotFiles {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetSnapshotFilesOk() (*HyperflexSnapshotFiles, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SnapshotFiles.Get(), o.SnapshotFiles.IsSet()
@@ -222,6 +224,7 @@ func (o *HyperflexSnapshotPoint) HasSnapshotFiles() bool {
 func (o *HyperflexSnapshotPoint) SetSnapshotFiles(v HyperflexSnapshotFiles) {
 	o.SnapshotFiles.Set(&v)
 }
+
 // SetSnapshotFilesNil sets the value for SnapshotFiles to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetSnapshotFilesNil() {
 	o.SnapshotFiles.Set(nil)
@@ -245,7 +248,7 @@ func (o *HyperflexSnapshotPoint) GetSnapshotPointEntityReference() HyperflexEnti
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetSnapshotPointEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SnapshotPointEntityReference.Get(), o.SnapshotPointEntityReference.IsSet()
@@ -264,6 +267,7 @@ func (o *HyperflexSnapshotPoint) HasSnapshotPointEntityReference() bool {
 func (o *HyperflexSnapshotPoint) SetSnapshotPointEntityReference(v HyperflexEntityReference) {
 	o.SnapshotPointEntityReference.Set(&v)
 }
+
 // SetSnapshotPointEntityReferenceNil sets the value for SnapshotPointEntityReference to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetSnapshotPointEntityReferenceNil() {
 	o.SnapshotPointEntityReference.Set(nil)
@@ -287,7 +291,7 @@ func (o *HyperflexSnapshotPoint) GetSnapshotStatus() HyperflexSnapshotStatus {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetSnapshotStatusOk() (*HyperflexSnapshotStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SnapshotStatus.Get(), o.SnapshotStatus.IsSet()
@@ -306,6 +310,7 @@ func (o *HyperflexSnapshotPoint) HasSnapshotStatus() bool {
 func (o *HyperflexSnapshotPoint) SetSnapshotStatus(v HyperflexSnapshotStatus) {
 	o.SnapshotStatus.Set(&v)
 }
+
 // SetSnapshotStatusNil sets the value for SnapshotStatus to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetSnapshotStatusNil() {
 	o.SnapshotStatus.Set(nil)
@@ -329,7 +334,7 @@ func (o *HyperflexSnapshotPoint) GetVmRuntimeInfo() HyperflexVirtualMachine {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexSnapshotPoint) GetVmRuntimeInfoOk() (*HyperflexVirtualMachine, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmRuntimeInfo.Get(), o.VmRuntimeInfo.IsSet()
@@ -348,6 +353,7 @@ func (o *HyperflexSnapshotPoint) HasVmRuntimeInfo() bool {
 func (o *HyperflexSnapshotPoint) SetVmRuntimeInfo(v HyperflexVirtualMachine) {
 	o.VmRuntimeInfo.Set(&v)
 }
+
 // SetVmRuntimeInfoNil sets the value for VmRuntimeInfo to be an explicit nil
 func (o *HyperflexSnapshotPoint) SetVmRuntimeInfoNil() {
 	o.VmRuntimeInfo.Set(nil)
@@ -405,13 +411,13 @@ func (o *HyperflexSnapshotPoint) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		ClusterEntityReference NullableHyperflexEntityReference `json:"ClusterEntityReference,omitempty"`
-		ReplicationStatus NullableHyperflexReplicationStatus `json:"ReplicationStatus,omitempty"`
-		SnapshotFiles NullableHyperflexSnapshotFiles `json:"SnapshotFiles,omitempty"`
-		SnapshotPointEntityReference NullableHyperflexEntityReference `json:"SnapshotPointEntityReference,omitempty"`
-		SnapshotStatus NullableHyperflexSnapshotStatus `json:"SnapshotStatus,omitempty"`
-		VmRuntimeInfo NullableHyperflexVirtualMachine `json:"VmRuntimeInfo,omitempty"`
+		ObjectType                   string                             `json:"ObjectType"`
+		ClusterEntityReference       NullableHyperflexEntityReference   `json:"ClusterEntityReference,omitempty"`
+		ReplicationStatus            NullableHyperflexReplicationStatus `json:"ReplicationStatus,omitempty"`
+		SnapshotFiles                NullableHyperflexSnapshotFiles     `json:"SnapshotFiles,omitempty"`
+		SnapshotPointEntityReference NullableHyperflexEntityReference   `json:"SnapshotPointEntityReference,omitempty"`
+		SnapshotStatus               NullableHyperflexSnapshotStatus    `json:"SnapshotStatus,omitempty"`
+		VmRuntimeInfo                NullableHyperflexVirtualMachine    `json:"VmRuntimeInfo,omitempty"`
 	}
 
 	varHyperflexSnapshotPointWithoutEmbeddedStruct := HyperflexSnapshotPointWithoutEmbeddedStruct{}
@@ -512,5 +518,3 @@ func (v *NullableHyperflexSnapshotPoint) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

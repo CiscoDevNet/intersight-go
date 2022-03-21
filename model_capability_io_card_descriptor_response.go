@@ -19,31 +19,30 @@ import (
 // CapabilityIoCardDescriptorResponse - The response body of a HTTP GET request for the 'capability.IoCardDescriptor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'capability.IoCardDescriptor' resources.
 type CapabilityIoCardDescriptorResponse struct {
 	CapabilityIoCardDescriptorList *CapabilityIoCardDescriptorList
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform           *MoAggregateTransform
+	MoDocumentCount                *MoDocumentCount
+	MoTagSummary                   *MoTagSummary
 }
 
 // CapabilityIoCardDescriptorListAsCapabilityIoCardDescriptorResponse is a convenience function that returns CapabilityIoCardDescriptorList wrapped in CapabilityIoCardDescriptorResponse
 func CapabilityIoCardDescriptorListAsCapabilityIoCardDescriptorResponse(v *CapabilityIoCardDescriptorList) CapabilityIoCardDescriptorResponse {
-	return CapabilityIoCardDescriptorResponse{ CapabilityIoCardDescriptorList: v}
+	return CapabilityIoCardDescriptorResponse{CapabilityIoCardDescriptorList: v}
 }
 
 // MoAggregateTransformAsCapabilityIoCardDescriptorResponse is a convenience function that returns MoAggregateTransform wrapped in CapabilityIoCardDescriptorResponse
 func MoAggregateTransformAsCapabilityIoCardDescriptorResponse(v *MoAggregateTransform) CapabilityIoCardDescriptorResponse {
-	return CapabilityIoCardDescriptorResponse{ MoAggregateTransform: v}
+	return CapabilityIoCardDescriptorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsCapabilityIoCardDescriptorResponse is a convenience function that returns MoDocumentCount wrapped in CapabilityIoCardDescriptorResponse
 func MoDocumentCountAsCapabilityIoCardDescriptorResponse(v *MoDocumentCount) CapabilityIoCardDescriptorResponse {
-	return CapabilityIoCardDescriptorResponse{ MoDocumentCount: v}
+	return CapabilityIoCardDescriptorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsCapabilityIoCardDescriptorResponse is a convenience function that returns MoTagSummary wrapped in CapabilityIoCardDescriptorResponse
 func MoTagSummaryAsCapabilityIoCardDescriptorResponse(v *MoTagSummary) CapabilityIoCardDescriptorResponse {
-	return CapabilityIoCardDescriptorResponse{ MoTagSummary: v}
+	return CapabilityIoCardDescriptorResponse{MoTagSummary: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CapabilityIoCardDescriptorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src CapabilityIoCardDescriptorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *CapabilityIoCardDescriptorResponse) GetActualInstance() (interface{}) {
+func (obj *CapabilityIoCardDescriptorResponse) GetActualInstance() interface{} {
 	if obj.CapabilityIoCardDescriptorList != nil {
 		return obj.CapabilityIoCardDescriptorList
 	}
@@ -184,5 +183,3 @@ func (v *NullableCapabilityIoCardDescriptorResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

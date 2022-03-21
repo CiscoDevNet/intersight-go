@@ -18,20 +18,19 @@ import (
 
 // StorageStoragePolicyRelationship - A relationship to the 'storage.StoragePolicy' resource, or the expanded 'storage.StoragePolicy' resource, or the 'null' value.
 type StorageStoragePolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef              *MoMoRef
 	StorageStoragePolicy *StorageStoragePolicy
 }
 
 // MoMoRefAsStorageStoragePolicyRelationship is a convenience function that returns MoMoRef wrapped in StorageStoragePolicyRelationship
 func MoMoRefAsStorageStoragePolicyRelationship(v *MoMoRef) StorageStoragePolicyRelationship {
-	return StorageStoragePolicyRelationship{ MoMoRef: v}
+	return StorageStoragePolicyRelationship{MoMoRef: v}
 }
 
 // StorageStoragePolicyAsStorageStoragePolicyRelationship is a convenience function that returns StorageStoragePolicy wrapped in StorageStoragePolicyRelationship
 func StorageStoragePolicyAsStorageStoragePolicyRelationship(v *StorageStoragePolicy) StorageStoragePolicyRelationship {
-	return StorageStoragePolicyRelationship{ StorageStoragePolicy: v}
+	return StorageStoragePolicyRelationship{StorageStoragePolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageStoragePolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src StorageStoragePolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageStoragePolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *StorageStoragePolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableStorageStoragePolicyRelationship) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

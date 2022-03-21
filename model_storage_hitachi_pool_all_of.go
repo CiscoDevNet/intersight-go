@@ -40,9 +40,9 @@ type StorageHitachiPoolAllOf struct {
 	// Total capacity of the reserved page (bytes) of the DP volume that is related to the DP pool.
 	TotalReservedCapacity *int64 `json:"TotalReservedCapacity,omitempty"`
 	// The warning threshold set for the pool (%).
-	WarningThreshold *int64 `json:"WarningThreshold,omitempty"`
-	Array *StorageHitachiArrayRelationship `json:"Array,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	WarningThreshold     *int64                               `json:"WarningThreshold,omitempty"`
+	Array                *StorageHitachiArrayRelationship     `json:"Array,omitempty"`
+	RegisteredDevice     *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *StorageHitachiPoolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiPoolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *StorageHitachiPoolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageHitachiPoolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -620,5 +620,3 @@ func (v *NullableStorageHitachiPoolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

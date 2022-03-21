@@ -50,7 +50,7 @@ type CloudSkuVolumeTypeAllOf struct {
 	// The volume type like gp2 or st1.
 	Type *string `json:"Type,omitempty"`
 	// The units for measuring volume size.
-	VolumeSizeUnit *string `json:"VolumeSizeUnit,omitempty"`
+	VolumeSizeUnit       *string `json:"VolumeSizeUnit,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -92,7 +92,7 @@ func (o *CloudSkuVolumeTypeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuVolumeTypeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -116,7 +116,7 @@ func (o *CloudSkuVolumeTypeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudSkuVolumeTypeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -736,5 +736,3 @@ func (v *NullableCloudSkuVolumeTypeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

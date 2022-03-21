@@ -18,32 +18,31 @@ import (
 
 // VirtualizationIweDatacenterResponse - The response body of a HTTP GET request for the 'virtualization.IweDatacenter' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'virtualization.IweDatacenter' resources.
 type VirtualizationIweDatacenterResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform            *MoAggregateTransform
+	MoDocumentCount                 *MoDocumentCount
+	MoTagSummary                    *MoTagSummary
 	VirtualizationIweDatacenterList *VirtualizationIweDatacenterList
 }
 
 // MoAggregateTransformAsVirtualizationIweDatacenterResponse is a convenience function that returns MoAggregateTransform wrapped in VirtualizationIweDatacenterResponse
 func MoAggregateTransformAsVirtualizationIweDatacenterResponse(v *MoAggregateTransform) VirtualizationIweDatacenterResponse {
-	return VirtualizationIweDatacenterResponse{ MoAggregateTransform: v}
+	return VirtualizationIweDatacenterResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsVirtualizationIweDatacenterResponse is a convenience function that returns MoDocumentCount wrapped in VirtualizationIweDatacenterResponse
 func MoDocumentCountAsVirtualizationIweDatacenterResponse(v *MoDocumentCount) VirtualizationIweDatacenterResponse {
-	return VirtualizationIweDatacenterResponse{ MoDocumentCount: v}
+	return VirtualizationIweDatacenterResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsVirtualizationIweDatacenterResponse is a convenience function that returns MoTagSummary wrapped in VirtualizationIweDatacenterResponse
 func MoTagSummaryAsVirtualizationIweDatacenterResponse(v *MoTagSummary) VirtualizationIweDatacenterResponse {
-	return VirtualizationIweDatacenterResponse{ MoTagSummary: v}
+	return VirtualizationIweDatacenterResponse{MoTagSummary: v}
 }
 
 // VirtualizationIweDatacenterListAsVirtualizationIweDatacenterResponse is a convenience function that returns VirtualizationIweDatacenterList wrapped in VirtualizationIweDatacenterResponse
 func VirtualizationIweDatacenterListAsVirtualizationIweDatacenterResponse(v *VirtualizationIweDatacenterList) VirtualizationIweDatacenterResponse {
-	return VirtualizationIweDatacenterResponse{ VirtualizationIweDatacenterList: v}
+	return VirtualizationIweDatacenterResponse{VirtualizationIweDatacenterList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VirtualizationIweDatacenterResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src VirtualizationIweDatacenterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VirtualizationIweDatacenterResponse) GetActualInstance() (interface{}) {
+func (obj *VirtualizationIweDatacenterResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableVirtualizationIweDatacenterResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

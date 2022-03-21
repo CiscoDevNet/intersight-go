@@ -23,7 +23,7 @@ type CloudSkuNetworkTypeList struct {
 	// The total number of 'cloud.SkuNetworkType' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'cloud.SkuNetworkType' resources matching the request.
-	Results []CloudSkuNetworkType `json:"Results,omitempty"`
+	Results              []CloudSkuNetworkType `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -81,7 +81,7 @@ func (o *CloudSkuNetworkTypeList) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudSkuNetworkTypeList) GetResults() []CloudSkuNetworkType {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudSkuNetworkType
 		return ret
 	}
@@ -230,5 +230,3 @@ func (v *NullableCloudSkuNetworkTypeList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

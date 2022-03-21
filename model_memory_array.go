@@ -37,16 +37,16 @@ type MemoryArray struct {
 	// The maximum number of slots or sockets available for memory devices in the memory array.
 	MaxDevices *string `json:"MaxDevices,omitempty"`
 	// The power state indicator of the memory array.
-	OperPowerState *string `json:"OperPowerState,omitempty"`
-	ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-	ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-	ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
+	OperPowerState      *string                          `json:"OperPowerState,omitempty"`
+	ComputeBlade        *ComputeBladeRelationship        `json:"ComputeBlade,omitempty"`
+	ComputeBoard        *ComputeBoardRelationship        `json:"ComputeBoard,omitempty"`
+	ComputeRackUnit     *ComputeRackUnitRelationship     `json:"ComputeRackUnit,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to memoryPersistentMemoryUnit resources.
 	PersistentMemoryUnits []MemoryPersistentMemoryUnitRelationship `json:"PersistentMemoryUnits,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	RegisteredDevice      *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 	// An array of relationships to memoryUnit resources.
-	Units []MemoryUnitRelationship `json:"Units,omitempty"`
+	Units                []MemoryUnitRelationship `json:"Units,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *MemoryArray) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryArray) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *MemoryArray) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryArray) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -477,7 +477,7 @@ func (o *MemoryArray) SetInventoryDeviceInfo(v InventoryDeviceInfoRelationship) 
 
 // GetPersistentMemoryUnits returns the PersistentMemoryUnits field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryArray) GetPersistentMemoryUnits() []MemoryPersistentMemoryUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryPersistentMemoryUnitRelationship
 		return ret
 	}
@@ -542,7 +542,7 @@ func (o *MemoryArray) SetRegisteredDevice(v AssetDeviceRegistrationRelationship)
 
 // GetUnits returns the Units field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MemoryArray) GetUnits() []MemoryUnitRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []MemoryUnitRelationship
 		return ret
 	}
@@ -658,14 +658,14 @@ func (o *MemoryArray) UnmarshalJSON(bytes []byte) (err error) {
 		// The maximum number of slots or sockets available for memory devices in the memory array.
 		MaxDevices *string `json:"MaxDevices,omitempty"`
 		// The power state indicator of the memory array.
-		OperPowerState *string `json:"OperPowerState,omitempty"`
-		ComputeBlade *ComputeBladeRelationship `json:"ComputeBlade,omitempty"`
-		ComputeBoard *ComputeBoardRelationship `json:"ComputeBoard,omitempty"`
-		ComputeRackUnit *ComputeRackUnitRelationship `json:"ComputeRackUnit,omitempty"`
+		OperPowerState      *string                          `json:"OperPowerState,omitempty"`
+		ComputeBlade        *ComputeBladeRelationship        `json:"ComputeBlade,omitempty"`
+		ComputeBoard        *ComputeBoardRelationship        `json:"ComputeBoard,omitempty"`
+		ComputeRackUnit     *ComputeRackUnitRelationship     `json:"ComputeRackUnit,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to memoryPersistentMemoryUnit resources.
 		PersistentMemoryUnits []MemoryPersistentMemoryUnitRelationship `json:"PersistentMemoryUnits,omitempty"`
-		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		RegisteredDevice      *AssetDeviceRegistrationRelationship     `json:"RegisteredDevice,omitempty"`
 		// An array of relationships to memoryUnit resources.
 		Units []MemoryUnitRelationship `json:"Units,omitempty"`
 	}
@@ -784,5 +784,3 @@ func (v *NullableMemoryArray) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

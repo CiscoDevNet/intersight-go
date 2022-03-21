@@ -19,19 +19,18 @@ import (
 // AssetDeviceContractInformationRelationship - A relationship to the 'asset.DeviceContractInformation' resource, or the expanded 'asset.DeviceContractInformation' resource, or the 'null' value.
 type AssetDeviceContractInformationRelationship struct {
 	AssetDeviceContractInformation *AssetDeviceContractInformation
-	MoMoRef *MoMoRef
+	MoMoRef                        *MoMoRef
 }
 
 // AssetDeviceContractInformationAsAssetDeviceContractInformationRelationship is a convenience function that returns AssetDeviceContractInformation wrapped in AssetDeviceContractInformationRelationship
 func AssetDeviceContractInformationAsAssetDeviceContractInformationRelationship(v *AssetDeviceContractInformation) AssetDeviceContractInformationRelationship {
-	return AssetDeviceContractInformationRelationship{ AssetDeviceContractInformation: v}
+	return AssetDeviceContractInformationRelationship{AssetDeviceContractInformation: v}
 }
 
 // MoMoRefAsAssetDeviceContractInformationRelationship is a convenience function that returns MoMoRef wrapped in AssetDeviceContractInformationRelationship
 func MoMoRefAsAssetDeviceContractInformationRelationship(v *MoMoRef) AssetDeviceContractInformationRelationship {
-	return AssetDeviceContractInformationRelationship{ MoMoRef: v}
+	return AssetDeviceContractInformationRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AssetDeviceContractInformationRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src AssetDeviceContractInformationRelationship) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *AssetDeviceContractInformationRelationship) GetActualInstance() (interface{}) {
+func (obj *AssetDeviceContractInformationRelationship) GetActualInstance() interface{} {
 	if obj.AssetDeviceContractInformation != nil {
 		return obj.AssetDeviceContractInformation
 	}
@@ -137,5 +136,3 @@ func (v *NullableAssetDeviceContractInformationRelationship) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

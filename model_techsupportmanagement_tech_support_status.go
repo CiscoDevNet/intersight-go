@@ -13,9 +13,9 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"reflect"
 	"strings"
+	"time"
 )
 
 // TechsupportmanagementTechSupportStatus The techsupport collection status.
@@ -38,12 +38,12 @@ type TechsupportmanagementTechSupportStatus struct {
 	// Status of techsupport collection. Valid values are Pending, CollectionInProgress, CollectionFailed, CollectionComplete, UploadPending, UploadInProgress, UploadPartsComplete, UploadFailed and Completed. The final status will be either CollectionFailed or UploadFailed if there is a failure and Completed if the request completed successfully and the file was uploaded to Intersight Storage Service. All the remaining status values indicates the progress of techsupport collection.
 	Status *string `json:"Status,omitempty"`
 	// The Url to download the techsupport file.
-	TechsupportDownloadUrl *string `json:"TechsupportDownloadUrl,omitempty"`
-	ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
-	DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-	OriginResource *MoBaseMoRelationship `json:"OriginResource,omitempty"`
-	TechSupportRequest *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TechsupportDownloadUrl *string                                             `json:"TechsupportDownloadUrl,omitempty"`
+	ClusterMember          *AssetClusterMemberRelationship                     `json:"ClusterMember,omitempty"`
+	DeviceRegistration     *AssetDeviceRegistrationRelationship                `json:"DeviceRegistration,omitempty"`
+	OriginResource         *MoBaseMoRelationship                               `json:"OriginResource,omitempty"`
+	TechSupportRequest     *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _TechsupportmanagementTechSupportStatus TechsupportmanagementTechSupportStatus
@@ -84,7 +84,7 @@ func (o *TechsupportmanagementTechSupportStatus) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementTechSupportStatus) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *TechsupportmanagementTechSupportStatus) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *TechsupportmanagementTechSupportStatus) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -547,11 +547,11 @@ func (o *TechsupportmanagementTechSupportStatus) UnmarshalJSON(bytes []byte) (er
 		// Status of techsupport collection. Valid values are Pending, CollectionInProgress, CollectionFailed, CollectionComplete, UploadPending, UploadInProgress, UploadPartsComplete, UploadFailed and Completed. The final status will be either CollectionFailed or UploadFailed if there is a failure and Completed if the request completed successfully and the file was uploaded to Intersight Storage Service. All the remaining status values indicates the progress of techsupport collection.
 		Status *string `json:"Status,omitempty"`
 		// The Url to download the techsupport file.
-		TechsupportDownloadUrl *string `json:"TechsupportDownloadUrl,omitempty"`
-		ClusterMember *AssetClusterMemberRelationship `json:"ClusterMember,omitempty"`
-		DeviceRegistration *AssetDeviceRegistrationRelationship `json:"DeviceRegistration,omitempty"`
-		OriginResource *MoBaseMoRelationship `json:"OriginResource,omitempty"`
-		TechSupportRequest *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
+		TechsupportDownloadUrl *string                                             `json:"TechsupportDownloadUrl,omitempty"`
+		ClusterMember          *AssetClusterMemberRelationship                     `json:"ClusterMember,omitempty"`
+		DeviceRegistration     *AssetDeviceRegistrationRelationship                `json:"DeviceRegistration,omitempty"`
+		OriginResource         *MoBaseMoRelationship                               `json:"OriginResource,omitempty"`
+		TechSupportRequest     *TechsupportmanagementTechSupportBundleRelationship `json:"TechSupportRequest,omitempty"`
 	}
 
 	varTechsupportmanagementTechSupportStatusWithoutEmbeddedStruct := TechsupportmanagementTechSupportStatusWithoutEmbeddedStruct{}
@@ -662,5 +662,3 @@ func (v *NullableTechsupportmanagementTechSupportStatus) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

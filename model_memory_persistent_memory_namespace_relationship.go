@@ -19,19 +19,18 @@ import (
 // MemoryPersistentMemoryNamespaceRelationship - A relationship to the 'memory.PersistentMemoryNamespace' resource, or the expanded 'memory.PersistentMemoryNamespace' resource, or the 'null' value.
 type MemoryPersistentMemoryNamespaceRelationship struct {
 	MemoryPersistentMemoryNamespace *MemoryPersistentMemoryNamespace
-	MoMoRef *MoMoRef
+	MoMoRef                         *MoMoRef
 }
 
 // MemoryPersistentMemoryNamespaceAsMemoryPersistentMemoryNamespaceRelationship is a convenience function that returns MemoryPersistentMemoryNamespace wrapped in MemoryPersistentMemoryNamespaceRelationship
 func MemoryPersistentMemoryNamespaceAsMemoryPersistentMemoryNamespaceRelationship(v *MemoryPersistentMemoryNamespace) MemoryPersistentMemoryNamespaceRelationship {
-	return MemoryPersistentMemoryNamespaceRelationship{ MemoryPersistentMemoryNamespace: v}
+	return MemoryPersistentMemoryNamespaceRelationship{MemoryPersistentMemoryNamespace: v}
 }
 
 // MoMoRefAsMemoryPersistentMemoryNamespaceRelationship is a convenience function that returns MoMoRef wrapped in MemoryPersistentMemoryNamespaceRelationship
 func MoMoRefAsMemoryPersistentMemoryNamespaceRelationship(v *MoMoRef) MemoryPersistentMemoryNamespaceRelationship {
-	return MemoryPersistentMemoryNamespaceRelationship{ MoMoRef: v}
+	return MemoryPersistentMemoryNamespaceRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *MemoryPersistentMemoryNamespaceRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src MemoryPersistentMemoryNamespaceRelationship) MarshalJSON() ([]byte, er
 }
 
 // Get the actual instance
-func (obj *MemoryPersistentMemoryNamespaceRelationship) GetActualInstance() (interface{}) {
+func (obj *MemoryPersistentMemoryNamespaceRelationship) GetActualInstance() interface{} {
 	if obj.MemoryPersistentMemoryNamespace != nil {
 		return obj.MemoryPersistentMemoryNamespace
 	}
@@ -137,5 +136,3 @@ func (v *NullableMemoryPersistentMemoryNamespaceRelationship) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

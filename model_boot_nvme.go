@@ -23,8 +23,8 @@ type BootNvme struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
+	ObjectType           string                 `json:"ObjectType"`
+	Bootloader           NullableBootBootloader `json:"Bootloader,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *BootNvme) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *BootNvme) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *BootNvme) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *BootNvme) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *BootNvme) GetBootloader() BootBootloader {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BootNvme) GetBootloaderOk() (*BootBootloader, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Bootloader.Get(), o.Bootloader.IsSet()
@@ -135,6 +135,7 @@ func (o *BootNvme) HasBootloader() bool {
 func (o *BootNvme) SetBootloader(v BootBootloader) {
 	o.Bootloader.Set(&v)
 }
+
 // SetBootloaderNil sets the value for Bootloader to be an explicit nil
 func (o *BootNvme) SetBootloaderNil() {
 	o.Bootloader.Set(nil)
@@ -177,7 +178,7 @@ func (o *BootNvme) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType string                 `json:"ObjectType"`
 		Bootloader NullableBootBootloader `json:"Bootloader,omitempty"`
 	}
 
@@ -269,5 +270,3 @@ func (v *NullableBootNvme) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

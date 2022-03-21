@@ -24,8 +24,8 @@ type KvmTunneledKvmPolicyAllOf struct {
 	// Enable or Disable configuration of tunneled KVM for a specific account.
 	TunneledKvmConfiguration *bool `json:"TunneledKvmConfiguration,omitempty"`
 	// Enable or Disable launching tunneled KVM for a specific account.
-	TunneledKvmLaunch *bool `json:"TunneledKvmLaunch,omitempty"`
-	Account *IamAccountRelationship `json:"Account,omitempty"`
+	TunneledKvmLaunch    *bool                   `json:"TunneledKvmLaunch,omitempty"`
+	Account              *IamAccountRelationship `json:"Account,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *KvmTunneledKvmPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KvmTunneledKvmPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *KvmTunneledKvmPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KvmTunneledKvmPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -287,5 +287,3 @@ func (v *NullableKvmTunneledKvmPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

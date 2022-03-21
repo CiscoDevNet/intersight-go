@@ -20,10 +20,10 @@ type KubernetesAddonPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	AddonConfiguration NullableKubernetesAddonConfiguration `json:"AddonConfiguration,omitempty"`
-	AddonDefinition *KubernetesAddonDefinitionRelationship `json:"AddonDefinition,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType           string                                 `json:"ObjectType"`
+	AddonConfiguration   NullableKubernetesAddonConfiguration   `json:"AddonConfiguration,omitempty"`
+	AddonDefinition      *KubernetesAddonDefinitionRelationship `json:"AddonDefinition,omitempty"`
+	Organization         *OrganizationOrganizationRelationship  `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *KubernetesAddonPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *KubernetesAddonPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *KubernetesAddonPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -113,7 +113,7 @@ func (o *KubernetesAddonPolicyAllOf) GetAddonConfiguration() KubernetesAddonConf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KubernetesAddonPolicyAllOf) GetAddonConfigurationOk() (*KubernetesAddonConfiguration, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AddonConfiguration.Get(), o.AddonConfiguration.IsSet()
@@ -132,6 +132,7 @@ func (o *KubernetesAddonPolicyAllOf) HasAddonConfiguration() bool {
 func (o *KubernetesAddonPolicyAllOf) SetAddonConfiguration(v KubernetesAddonConfiguration) {
 	o.AddonConfiguration.Set(&v)
 }
+
 // SetAddonConfigurationNil sets the value for AddonConfiguration to be an explicit nil
 func (o *KubernetesAddonPolicyAllOf) SetAddonConfigurationNil() {
 	o.AddonConfiguration.Set(nil)
@@ -287,5 +288,3 @@ func (v *NullableKubernetesAddonPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

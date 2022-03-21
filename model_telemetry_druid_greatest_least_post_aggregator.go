@@ -22,7 +22,7 @@ type TelemetryDruidGreatestLeastPostAggregator struct {
 	// Fields processed by post aggregator
 	Fields *[]TelemetryDruidPostAggregator `json:"fields,omitempty"`
 	// Output name for the post-aggregator.
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -59,7 +59,7 @@ func (o *TelemetryDruidGreatestLeastPostAggregator) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *TelemetryDruidGreatestLeastPostAggregator) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -207,5 +207,3 @@ func (v *NullableTelemetryDruidGreatestLeastPostAggregator) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,20 +18,19 @@ import (
 
 // VnicFcNetworkPolicyRelationship - A relationship to the 'vnic.FcNetworkPolicy' resource, or the expanded 'vnic.FcNetworkPolicy' resource, or the 'null' value.
 type VnicFcNetworkPolicyRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef             *MoMoRef
 	VnicFcNetworkPolicy *VnicFcNetworkPolicy
 }
 
 // MoMoRefAsVnicFcNetworkPolicyRelationship is a convenience function that returns MoMoRef wrapped in VnicFcNetworkPolicyRelationship
 func MoMoRefAsVnicFcNetworkPolicyRelationship(v *MoMoRef) VnicFcNetworkPolicyRelationship {
-	return VnicFcNetworkPolicyRelationship{ MoMoRef: v}
+	return VnicFcNetworkPolicyRelationship{MoMoRef: v}
 }
 
 // VnicFcNetworkPolicyAsVnicFcNetworkPolicyRelationship is a convenience function that returns VnicFcNetworkPolicy wrapped in VnicFcNetworkPolicyRelationship
 func VnicFcNetworkPolicyAsVnicFcNetworkPolicyRelationship(v *VnicFcNetworkPolicy) VnicFcNetworkPolicyRelationship {
-	return VnicFcNetworkPolicyRelationship{ VnicFcNetworkPolicy: v}
+	return VnicFcNetworkPolicyRelationship{VnicFcNetworkPolicy: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *VnicFcNetworkPolicyRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src VnicFcNetworkPolicyRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VnicFcNetworkPolicyRelationship) GetActualInstance() (interface{}) {
+func (obj *VnicFcNetworkPolicyRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableVnicFcNetworkPolicyRelationship) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -23,7 +23,7 @@ type CloudBaseSku struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-	ObjectType string `json:"ObjectType"`
+	ObjectType       string                  `json:"ObjectType"`
 	CustomAttributes []CloudCustomAttributes `json:"CustomAttributes,omitempty"`
 	// Any additional description for the instance type.
 	Description *string `json:"Description,omitempty"`
@@ -40,8 +40,8 @@ type CloudBaseSku struct {
 	// Property to identify the family of service that the sku belongs to.
 	ServiceFamily *string `json:"ServiceFamily,omitempty"`
 	// Any display name for the ServiceCategory if available.
-	ServiceName *string `json:"ServiceName,omitempty"`
-	Target *AssetTargetRelationship `json:"Target,omitempty"`
+	ServiceName          *string                  `json:"ServiceName,omitempty"`
+	Target               *AssetTargetRelationship `json:"Target,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -91,7 +91,7 @@ func (o *CloudBaseSku) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseSku) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -115,7 +115,7 @@ func (o *CloudBaseSku) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *CloudBaseSku) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -128,7 +128,7 @@ func (o *CloudBaseSku) SetObjectType(v string) {
 
 // GetCustomAttributes returns the CustomAttributes field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CloudBaseSku) GetCustomAttributes() []CloudCustomAttributes {
-	if o == nil  {
+	if o == nil {
 		var ret []CloudCustomAttributes
 		return ret
 	}
@@ -506,7 +506,7 @@ func (o *CloudBaseSku) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. The enum values provides the list of concrete types that can be instantiated from this abstract type.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property. The enum values provides the list of concrete types that can be instantiated from this abstract type.
-		ObjectType string `json:"ObjectType"`
+		ObjectType       string                  `json:"ObjectType"`
 		CustomAttributes []CloudCustomAttributes `json:"CustomAttributes,omitempty"`
 		// Any additional description for the instance type.
 		Description *string `json:"Description,omitempty"`
@@ -523,8 +523,8 @@ func (o *CloudBaseSku) UnmarshalJSON(bytes []byte) (err error) {
 		// Property to identify the family of service that the sku belongs to.
 		ServiceFamily *string `json:"ServiceFamily,omitempty"`
 		// Any display name for the ServiceCategory if available.
-		ServiceName *string `json:"ServiceName,omitempty"`
-		Target *AssetTargetRelationship `json:"Target,omitempty"`
+		ServiceName *string                  `json:"ServiceName,omitempty"`
+		Target      *AssetTargetRelationship `json:"Target,omitempty"`
 	}
 
 	varCloudBaseSkuWithoutEmbeddedStruct := CloudBaseSkuWithoutEmbeddedStruct{}
@@ -633,5 +633,3 @@ func (v *NullableCloudBaseSku) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

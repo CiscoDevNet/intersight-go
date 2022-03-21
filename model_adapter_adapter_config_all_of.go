@@ -20,13 +20,13 @@ type AdapterAdapterConfigAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	DceInterfaceSettings []AdapterDceInterfaceSettings `json:"DceInterfaceSettings,omitempty"`
-	EthSettings NullableAdapterEthSettings `json:"EthSettings,omitempty"`
-	FcSettings NullableAdapterFcSettings `json:"FcSettings,omitempty"`
-	PortChannelSettings NullableAdapterPortChannelSettings `json:"PortChannelSettings,omitempty"`
+	ObjectType           string                             `json:"ObjectType"`
+	DceInterfaceSettings []AdapterDceInterfaceSettings      `json:"DceInterfaceSettings,omitempty"`
+	EthSettings          NullableAdapterEthSettings         `json:"EthSettings,omitempty"`
+	FcSettings           NullableAdapterFcSettings          `json:"FcSettings,omitempty"`
+	PortChannelSettings  NullableAdapterPortChannelSettings `json:"PortChannelSettings,omitempty"`
 	// PCIe slot where the VIC adapter is installed. Supported values are (1-15) and MLOM.
-	SlotId *string `json:"SlotId,omitempty"`
+	SlotId               *string `json:"SlotId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *AdapterAdapterConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *AdapterAdapterConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *AdapterAdapterConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *AdapterAdapterConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -105,7 +105,7 @@ func (o *AdapterAdapterConfigAllOf) SetObjectType(v string) {
 
 // GetDceInterfaceSettings returns the DceInterfaceSettings field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AdapterAdapterConfigAllOf) GetDceInterfaceSettings() []AdapterDceInterfaceSettings {
-	if o == nil  {
+	if o == nil {
 		var ret []AdapterDceInterfaceSettings
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AdapterAdapterConfigAllOf) GetEthSettings() AdapterEthSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdapterAdapterConfigAllOf) GetEthSettingsOk() (*AdapterEthSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EthSettings.Get(), o.EthSettings.IsSet()
@@ -168,6 +168,7 @@ func (o *AdapterAdapterConfigAllOf) HasEthSettings() bool {
 func (o *AdapterAdapterConfigAllOf) SetEthSettings(v AdapterEthSettings) {
 	o.EthSettings.Set(&v)
 }
+
 // SetEthSettingsNil sets the value for EthSettings to be an explicit nil
 func (o *AdapterAdapterConfigAllOf) SetEthSettingsNil() {
 	o.EthSettings.Set(nil)
@@ -191,7 +192,7 @@ func (o *AdapterAdapterConfigAllOf) GetFcSettings() AdapterFcSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdapterAdapterConfigAllOf) GetFcSettingsOk() (*AdapterFcSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FcSettings.Get(), o.FcSettings.IsSet()
@@ -210,6 +211,7 @@ func (o *AdapterAdapterConfigAllOf) HasFcSettings() bool {
 func (o *AdapterAdapterConfigAllOf) SetFcSettings(v AdapterFcSettings) {
 	o.FcSettings.Set(&v)
 }
+
 // SetFcSettingsNil sets the value for FcSettings to be an explicit nil
 func (o *AdapterAdapterConfigAllOf) SetFcSettingsNil() {
 	o.FcSettings.Set(nil)
@@ -233,7 +235,7 @@ func (o *AdapterAdapterConfigAllOf) GetPortChannelSettings() AdapterPortChannelS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdapterAdapterConfigAllOf) GetPortChannelSettingsOk() (*AdapterPortChannelSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PortChannelSettings.Get(), o.PortChannelSettings.IsSet()
@@ -252,6 +254,7 @@ func (o *AdapterAdapterConfigAllOf) HasPortChannelSettings() bool {
 func (o *AdapterAdapterConfigAllOf) SetPortChannelSettings(v AdapterPortChannelSettings) {
 	o.PortChannelSettings.Set(&v)
 }
+
 // SetPortChannelSettingsNil sets the value for PortChannelSettings to be an explicit nil
 func (o *AdapterAdapterConfigAllOf) SetPortChannelSettingsNil() {
 	o.PortChannelSettings.Set(nil)
@@ -383,5 +386,3 @@ func (v *NullableAdapterAdapterConfigAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

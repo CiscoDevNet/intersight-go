@@ -32,10 +32,10 @@ type VirtualizationVdiskConfigAllOf struct {
 	// Source file path associated with virtual machine disk.
 	SourceFilePath *string `json:"SourceFilePath,omitempty"`
 	// Source disk name from where the clone is done.
-	SourceVirtualDisk *string `json:"SourceVirtualDisk,omitempty"`
-	Status NullableVirtualizationDiskStatus `json:"Status,omitempty"`
+	SourceVirtualDisk *string                          `json:"SourceVirtualDisk,omitempty"`
+	Status            NullableVirtualizationDiskStatus `json:"Status,omitempty"`
 	// UUID of the virtual disk.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid                 *string `json:"Uuid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *VirtualizationVdiskConfigAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVdiskConfigAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -101,7 +101,7 @@ func (o *VirtualizationVdiskConfigAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *VirtualizationVdiskConfigAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -317,7 +317,7 @@ func (o *VirtualizationVdiskConfigAllOf) GetStatus() VirtualizationDiskStatus {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualizationVdiskConfigAllOf) GetStatusOk() (*VirtualizationDiskStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
@@ -336,6 +336,7 @@ func (o *VirtualizationVdiskConfigAllOf) HasStatus() bool {
 func (o *VirtualizationVdiskConfigAllOf) SetStatus(v VirtualizationDiskStatus) {
 	o.Status.Set(&v)
 }
+
 // SetStatusNil sets the value for Status to be an explicit nil
 func (o *VirtualizationVdiskConfigAllOf) SetStatusNil() {
 	o.Status.Set(nil)
@@ -479,5 +480,3 @@ func (v *NullableVirtualizationVdiskConfigAllOf) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

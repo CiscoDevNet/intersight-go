@@ -18,32 +18,31 @@ import (
 
 // WorkflowAnsibleBatchExecutorResponse - The response body of a HTTP GET request for the 'workflow.AnsibleBatchExecutor' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'workflow.AnsibleBatchExecutor' resources.
 type WorkflowAnsibleBatchExecutorResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform             *MoAggregateTransform
+	MoDocumentCount                  *MoDocumentCount
+	MoTagSummary                     *MoTagSummary
 	WorkflowAnsibleBatchExecutorList *WorkflowAnsibleBatchExecutorList
 }
 
 // MoAggregateTransformAsWorkflowAnsibleBatchExecutorResponse is a convenience function that returns MoAggregateTransform wrapped in WorkflowAnsibleBatchExecutorResponse
 func MoAggregateTransformAsWorkflowAnsibleBatchExecutorResponse(v *MoAggregateTransform) WorkflowAnsibleBatchExecutorResponse {
-	return WorkflowAnsibleBatchExecutorResponse{ MoAggregateTransform: v}
+	return WorkflowAnsibleBatchExecutorResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsWorkflowAnsibleBatchExecutorResponse is a convenience function that returns MoDocumentCount wrapped in WorkflowAnsibleBatchExecutorResponse
 func MoDocumentCountAsWorkflowAnsibleBatchExecutorResponse(v *MoDocumentCount) WorkflowAnsibleBatchExecutorResponse {
-	return WorkflowAnsibleBatchExecutorResponse{ MoDocumentCount: v}
+	return WorkflowAnsibleBatchExecutorResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsWorkflowAnsibleBatchExecutorResponse is a convenience function that returns MoTagSummary wrapped in WorkflowAnsibleBatchExecutorResponse
 func MoTagSummaryAsWorkflowAnsibleBatchExecutorResponse(v *MoTagSummary) WorkflowAnsibleBatchExecutorResponse {
-	return WorkflowAnsibleBatchExecutorResponse{ MoTagSummary: v}
+	return WorkflowAnsibleBatchExecutorResponse{MoTagSummary: v}
 }
 
 // WorkflowAnsibleBatchExecutorListAsWorkflowAnsibleBatchExecutorResponse is a convenience function that returns WorkflowAnsibleBatchExecutorList wrapped in WorkflowAnsibleBatchExecutorResponse
 func WorkflowAnsibleBatchExecutorListAsWorkflowAnsibleBatchExecutorResponse(v *WorkflowAnsibleBatchExecutorList) WorkflowAnsibleBatchExecutorResponse {
-	return WorkflowAnsibleBatchExecutorResponse{ WorkflowAnsibleBatchExecutorList: v}
+	return WorkflowAnsibleBatchExecutorResponse{WorkflowAnsibleBatchExecutorList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowAnsibleBatchExecutorResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src WorkflowAnsibleBatchExecutorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *WorkflowAnsibleBatchExecutorResponse) GetActualInstance() (interface{}) {
+func (obj *WorkflowAnsibleBatchExecutorResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableWorkflowAnsibleBatchExecutorResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

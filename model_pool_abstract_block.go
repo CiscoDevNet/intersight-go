@@ -27,7 +27,7 @@ type PoolAbstractBlock struct {
 	// Free IDs that can be allocated in this block.
 	FreeBlockCount *int64 `json:"FreeBlockCount,omitempty"`
 	// Moving counter to allocate the next identifier.
-	NextIdAllocator *int64 `json:"NextIdAllocator,omitempty"`
+	NextIdAllocator      *int64 `json:"NextIdAllocator,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -65,7 +65,7 @@ func (o *PoolAbstractBlock) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *PoolAbstractBlock) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -89,7 +89,7 @@ func (o *PoolAbstractBlock) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *PoolAbstractBlock) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -296,5 +296,3 @@ func (v *NullablePoolAbstractBlock) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -56,11 +56,11 @@ type StorageFlexUtilPhysicalDriveAllOf struct {
 	// Write error count of the FlexUtil Physical Drive.
 	WriteErrorCount *string `json:"WriteErrorCount,omitempty"`
 	// Write error threshold for FlexUtil Physical Drive.
-	WriteErrorThreshold *string `json:"WriteErrorThreshold,omitempty"`
-	InventoryDeviceInfo *InventoryDeviceInfoRelationship `json:"InventoryDeviceInfo,omitempty"`
-	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	WriteErrorThreshold       *string                                `json:"WriteErrorThreshold,omitempty"`
+	InventoryDeviceInfo       *InventoryDeviceInfoRelationship       `json:"InventoryDeviceInfo,omitempty"`
+	RegisteredDevice          *AssetDeviceRegistrationRelationship   `json:"RegisteredDevice,omitempty"`
 	StorageFlexUtilController *StorageFlexUtilControllerRelationship `json:"StorageFlexUtilController,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties      map[string]interface{}
 }
 
 type _StorageFlexUtilPhysicalDriveAllOf StorageFlexUtilPhysicalDriveAllOf
@@ -101,7 +101,7 @@ func (o *StorageFlexUtilPhysicalDriveAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilPhysicalDriveAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -125,7 +125,7 @@ func (o *StorageFlexUtilPhysicalDriveAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageFlexUtilPhysicalDriveAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -961,5 +961,3 @@ func (v *NullableStorageFlexUtilPhysicalDriveAllOf) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

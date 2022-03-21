@@ -24,16 +24,16 @@ type HyperflexReplicationStatusAllOf struct {
 	// Number of bytes currently replicated.
 	BytesReplicated *int64 `json:"BytesReplicated,omitempty"`
 	// Replication end time for this snapshot.
-	EndTime *int64 `json:"EndTime,omitempty"`
-	Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+	EndTime             *int64                           `json:"EndTime,omitempty"`
+	Error               NullableHyperflexErrorStack      `json:"Error,omitempty"`
 	PackEntityReference NullableHyperflexEntityReference `json:"PackEntityReference,omitempty"`
 	// Completion percentage for the replication job.
-	PctComplete *int64 `json:"PctComplete,omitempty"`
-	RpoStatus NullableHyperflexRpoStatus `json:"RpoStatus,omitempty"`
+	PctComplete *int64                     `json:"PctComplete,omitempty"`
+	RpoStatus   NullableHyperflexRpoStatus `json:"RpoStatus,omitempty"`
 	// Replication start time for this snapshot.
 	StartTime *int64 `json:"StartTime,omitempty"`
 	// Current replication state for a particular snapshot. * `NONE` - Snapshot replication state is none. * `SUCCESS` - Snapshot completed successfully. * `FAILED` - Snapshot failed replication status code. * `PAUSED` - Snapshot replication paused status code. * `IN_USE` - Snapshot replica in use status code. * `STARTING` - Snapshot replication starting. * `REPLICATING` - Snapshot replication in progress.
-	Status *string `json:"Status,omitempty"`
+	Status               *string `json:"Status,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *HyperflexReplicationStatusAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationStatusAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *HyperflexReplicationStatusAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexReplicationStatusAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -187,7 +187,7 @@ func (o *HyperflexReplicationStatusAllOf) GetError() HyperflexErrorStack {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationStatusAllOf) GetErrorOk() (*HyperflexErrorStack, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -206,6 +206,7 @@ func (o *HyperflexReplicationStatusAllOf) HasError() bool {
 func (o *HyperflexReplicationStatusAllOf) SetError(v HyperflexErrorStack) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *HyperflexReplicationStatusAllOf) SetErrorNil() {
 	o.Error.Set(nil)
@@ -229,7 +230,7 @@ func (o *HyperflexReplicationStatusAllOf) GetPackEntityReference() HyperflexEnti
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationStatusAllOf) GetPackEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PackEntityReference.Get(), o.PackEntityReference.IsSet()
@@ -248,6 +249,7 @@ func (o *HyperflexReplicationStatusAllOf) HasPackEntityReference() bool {
 func (o *HyperflexReplicationStatusAllOf) SetPackEntityReference(v HyperflexEntityReference) {
 	o.PackEntityReference.Set(&v)
 }
+
 // SetPackEntityReferenceNil sets the value for PackEntityReference to be an explicit nil
 func (o *HyperflexReplicationStatusAllOf) SetPackEntityReferenceNil() {
 	o.PackEntityReference.Set(nil)
@@ -303,7 +305,7 @@ func (o *HyperflexReplicationStatusAllOf) GetRpoStatus() HyperflexRpoStatus {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexReplicationStatusAllOf) GetRpoStatusOk() (*HyperflexRpoStatus, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RpoStatus.Get(), o.RpoStatus.IsSet()
@@ -322,6 +324,7 @@ func (o *HyperflexReplicationStatusAllOf) HasRpoStatus() bool {
 func (o *HyperflexReplicationStatusAllOf) SetRpoStatus(v HyperflexRpoStatus) {
 	o.RpoStatus.Set(&v)
 }
+
 // SetRpoStatusNil sets the value for RpoStatus to be an explicit nil
 func (o *HyperflexReplicationStatusAllOf) SetRpoStatusNil() {
 	o.RpoStatus.Set(nil)
@@ -497,5 +500,3 @@ func (v *NullableHyperflexReplicationStatusAllOf) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

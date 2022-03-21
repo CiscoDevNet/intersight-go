@@ -20,20 +20,20 @@ type ChassisProfileAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType    string                     `json:"ObjectType"`
 	ConfigChanges NullablePolicyConfigChange `json:"ConfigChanges,omitempty"`
 	// The platform for which the chassis profile is applicable. It can either be a chassis that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight. * `FIAttached` - Chassis which are connected to a Fabric Interconnect that is managed by Intersight.
-	TargetPlatform *string `json:"TargetPlatform,omitempty"`
-	AssignedChassis *EquipmentChassisRelationship `json:"AssignedChassis,omitempty"`
+	TargetPlatform    *string                       `json:"TargetPlatform,omitempty"`
+	AssignedChassis   *EquipmentChassisRelationship `json:"AssignedChassis,omitempty"`
 	AssociatedChassis *EquipmentChassisRelationship `json:"AssociatedChassis,omitempty"`
 	// An array of relationships to chassisConfigChangeDetail resources.
 	ConfigChangeDetails []ChassisConfigChangeDetailRelationship `json:"ConfigChangeDetails,omitempty"`
-	ConfigResult *ChassisConfigResultRelationship `json:"ConfigResult,omitempty"`
+	ConfigResult        *ChassisConfigResultRelationship        `json:"ConfigResult,omitempty"`
 	// An array of relationships to chassisIomProfile resources.
-	IomProfiles []ChassisIomProfileRelationship `json:"IomProfiles,omitempty"`
+	IomProfiles  []ChassisIomProfileRelationship       `json:"IomProfiles,omitempty"`
 	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	// An array of relationships to workflowWorkflowInfo resources.
-	RunningWorkflows []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
+	RunningWorkflows     []WorkflowWorkflowInfoRelationship `json:"RunningWorkflows,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -79,7 +79,7 @@ func (o *ChassisProfileAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ChassisProfileAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -103,7 +103,7 @@ func (o *ChassisProfileAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ChassisProfileAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -127,7 +127,7 @@ func (o *ChassisProfileAllOf) GetConfigChanges() PolicyConfigChange {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChassisProfileAllOf) GetConfigChangesOk() (*PolicyConfigChange, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ConfigChanges.Get(), o.ConfigChanges.IsSet()
@@ -146,6 +146,7 @@ func (o *ChassisProfileAllOf) HasConfigChanges() bool {
 func (o *ChassisProfileAllOf) SetConfigChanges(v PolicyConfigChange) {
 	o.ConfigChanges.Set(&v)
 }
+
 // SetConfigChangesNil sets the value for ConfigChanges to be an explicit nil
 func (o *ChassisProfileAllOf) SetConfigChangesNil() {
 	o.ConfigChanges.Set(nil)
@@ -254,7 +255,7 @@ func (o *ChassisProfileAllOf) SetAssociatedChassis(v EquipmentChassisRelationshi
 
 // GetConfigChangeDetails returns the ConfigChangeDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChassisProfileAllOf) GetConfigChangeDetails() []ChassisConfigChangeDetailRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ChassisConfigChangeDetailRelationship
 		return ret
 	}
@@ -319,7 +320,7 @@ func (o *ChassisProfileAllOf) SetConfigResult(v ChassisConfigResultRelationship)
 
 // GetIomProfiles returns the IomProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChassisProfileAllOf) GetIomProfiles() []ChassisIomProfileRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []ChassisIomProfileRelationship
 		return ret
 	}
@@ -384,7 +385,7 @@ func (o *ChassisProfileAllOf) SetOrganization(v OrganizationOrganizationRelation
 
 // GetRunningWorkflows returns the RunningWorkflows field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChassisProfileAllOf) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowWorkflowInfoRelationship
 		return ret
 	}
@@ -520,5 +521,3 @@ func (v *NullableChassisProfileAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

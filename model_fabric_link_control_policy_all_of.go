@@ -20,9 +20,9 @@ type FabricLinkControlPolicyAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	UdldSettings NullableFabricUdldSettings `json:"UdldSettings,omitempty"`
-	Organization *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
+	ObjectType           string                                `json:"ObjectType"`
+	UdldSettings         NullableFabricUdldSettings            `json:"UdldSettings,omitempty"`
+	Organization         *OrganizationOrganizationRelationship `json:"Organization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ func (o *FabricLinkControlPolicyAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricLinkControlPolicyAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -88,7 +88,7 @@ func (o *FabricLinkControlPolicyAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricLinkControlPolicyAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -112,7 +112,7 @@ func (o *FabricLinkControlPolicyAllOf) GetUdldSettings() FabricUdldSettings {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FabricLinkControlPolicyAllOf) GetUdldSettingsOk() (*FabricUdldSettings, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UdldSettings.Get(), o.UdldSettings.IsSet()
@@ -131,6 +131,7 @@ func (o *FabricLinkControlPolicyAllOf) HasUdldSettings() bool {
 func (o *FabricLinkControlPolicyAllOf) SetUdldSettings(v FabricUdldSettings) {
 	o.UdldSettings.Set(&v)
 }
+
 // SetUdldSettingsNil sets the value for UdldSettings to be an explicit nil
 func (o *FabricLinkControlPolicyAllOf) SetUdldSettingsNil() {
 	o.UdldSettings.Set(nil)
@@ -250,5 +251,3 @@ func (v *NullableFabricLinkControlPolicyAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

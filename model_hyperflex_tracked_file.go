@@ -23,10 +23,10 @@ type HyperflexTrackedFile struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
-	FilePath NullableHyperflexFilePath `json:"FilePath,omitempty"`
+	ObjectType string                    `json:"ObjectType"`
+	FilePath   NullableHyperflexFilePath `json:"FilePath,omitempty"`
 	// File type for the tracked file.
-	FileType *string `json:"FileType,omitempty"`
+	FileType             *string `json:"FileType,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -68,7 +68,7 @@ func (o *HyperflexTrackedFile) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexTrackedFile) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -92,7 +92,7 @@ func (o *HyperflexTrackedFile) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexTrackedFile) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -116,7 +116,7 @@ func (o *HyperflexTrackedFile) GetFilePath() HyperflexFilePath {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexTrackedFile) GetFilePathOk() (*HyperflexFilePath, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.FilePath.Get(), o.FilePath.IsSet()
@@ -135,6 +135,7 @@ func (o *HyperflexTrackedFile) HasFilePath() bool {
 func (o *HyperflexTrackedFile) SetFilePath(v HyperflexFilePath) {
 	o.FilePath.Set(&v)
 }
+
 // SetFilePathNil sets the value for FilePath to be an explicit nil
 func (o *HyperflexTrackedFile) SetFilePathNil() {
 	o.FilePath.Set(nil)
@@ -212,8 +213,8 @@ func (o *HyperflexTrackedFile) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
-		FilePath NullableHyperflexFilePath `json:"FilePath,omitempty"`
+		ObjectType string                    `json:"ObjectType"`
+		FilePath   NullableHyperflexFilePath `json:"FilePath,omitempty"`
 		// File type for the tracked file.
 		FileType *string `json:"FileType,omitempty"`
 	}
@@ -308,5 +309,3 @@ func (v *NullableHyperflexTrackedFile) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

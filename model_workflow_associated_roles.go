@@ -25,10 +25,10 @@ type WorkflowAssociatedRoles struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Stores the identifier of the task definition for which the required roles are cached in the workflow definition. In the case of sub workflow tasks, this property stores the identifier of the workflow that is wrapped in the sub workflow task.
-	Moid *string `json:"Moid,omitempty"`
-	Roles []string `json:"Roles,omitempty"`
-	TaskNames []string `json:"TaskNames,omitempty"`
-	WorkflowRoles []WorkflowAssociatedRoles `json:"WorkflowRoles,omitempty"`
+	Moid                 *string                   `json:"Moid,omitempty"`
+	Roles                []string                  `json:"Roles,omitempty"`
+	TaskNames            []string                  `json:"TaskNames,omitempty"`
+	WorkflowRoles        []WorkflowAssociatedRoles `json:"WorkflowRoles,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,7 +70,7 @@ func (o *WorkflowAssociatedRoles) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAssociatedRoles) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -94,7 +94,7 @@ func (o *WorkflowAssociatedRoles) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowAssociatedRoles) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -139,7 +139,7 @@ func (o *WorkflowAssociatedRoles) SetMoid(v string) {
 
 // GetRoles returns the Roles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAssociatedRoles) GetRoles() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *WorkflowAssociatedRoles) SetRoles(v []string) {
 
 // GetTaskNames returns the TaskNames field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAssociatedRoles) GetTaskNames() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *WorkflowAssociatedRoles) SetTaskNames(v []string) {
 
 // GetWorkflowRoles returns the WorkflowRoles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WorkflowAssociatedRoles) GetWorkflowRoles() []WorkflowAssociatedRoles {
-	if o == nil  {
+	if o == nil {
 		var ret []WorkflowAssociatedRoles
 		return ret
 	}
@@ -279,9 +279,9 @@ func (o *WorkflowAssociatedRoles) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Stores the identifier of the task definition for which the required roles are cached in the workflow definition. In the case of sub workflow tasks, this property stores the identifier of the workflow that is wrapped in the sub workflow task.
-		Moid *string `json:"Moid,omitempty"`
-		Roles []string `json:"Roles,omitempty"`
-		TaskNames []string `json:"TaskNames,omitempty"`
+		Moid          *string                   `json:"Moid,omitempty"`
+		Roles         []string                  `json:"Roles,omitempty"`
+		TaskNames     []string                  `json:"TaskNames,omitempty"`
 		WorkflowRoles []WorkflowAssociatedRoles `json:"WorkflowRoles,omitempty"`
 	}
 
@@ -379,5 +379,3 @@ func (v *NullableWorkflowAssociatedRoles) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

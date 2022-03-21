@@ -20,7 +20,7 @@ type SoftwarerepositoryOperatingSystemFileListAllOf struct {
 	// The total number of 'softwarerepository.OperatingSystemFile' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
 	// The array of 'softwarerepository.OperatingSystemFile' resources matching the request.
-	Results []SoftwarerepositoryOperatingSystemFile `json:"Results,omitempty"`
+	Results              []SoftwarerepositoryOperatingSystemFile `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,7 +77,7 @@ func (o *SoftwarerepositoryOperatingSystemFileListAllOf) SetCount(v int32) {
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SoftwarerepositoryOperatingSystemFileListAllOf) GetResults() []SoftwarerepositoryOperatingSystemFile {
-	if o == nil  {
+	if o == nil {
 		var ret []SoftwarerepositoryOperatingSystemFile
 		return ret
 	}
@@ -177,5 +177,3 @@ func (v *NullableSoftwarerepositoryOperatingSystemFileListAllOf) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

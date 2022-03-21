@@ -27,7 +27,7 @@ type ComputeStorageControllerOperation struct {
 	// Administrative actions that can be performed on the Storage Controller. * `None` - No action on the selected Storage Controller. * `Import` - Import Foreign config action on the selected Storage Controller. * `Clear` - Clear Foreign config action on the selected Storage Controller. * `ClearConfig` - Clear Config action on the selected Storage Controller.
 	AdminAction *string `json:"AdminAction,omitempty"`
 	// Storage Controller Id of the server.
-	ControllerId *string `json:"ControllerId,omitempty"`
+	ControllerId         *string `json:"ControllerId,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -73,7 +73,7 @@ func (o *ComputeStorageControllerOperation) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageControllerOperation) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -97,7 +97,7 @@ func (o *ComputeStorageControllerOperation) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *ComputeStorageControllerOperation) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -304,5 +304,3 @@ func (v *NullableComputeStorageControllerOperation) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

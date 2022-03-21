@@ -29,7 +29,7 @@ type MemoryPersistentMemoryLocalSecurity struct {
 	// Indicates whether the value of the 'securePassphrase' property has been set.
 	IsSecurePassphraseSet *bool `json:"IsSecurePassphraseSet,omitempty"`
 	// Secure passphrase to be applied on the Persistent Memory Modules on the server. The allowed characters are a-z, A to Z, 0-9, and special characters =, \\u0021, &, \\#, $, %, +, ^, @, _, *, -.
-	SecurePassphrase *string `json:"SecurePassphrase,omitempty"`
+	SecurePassphrase     *string `json:"SecurePassphrase,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -75,7 +75,7 @@ func (o *MemoryPersistentMemoryLocalSecurity) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryLocalSecurity) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -99,7 +99,7 @@ func (o *MemoryPersistentMemoryLocalSecurity) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *MemoryPersistentMemoryLocalSecurity) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -345,5 +345,3 @@ func (v *NullableMemoryPersistentMemoryLocalSecurity) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

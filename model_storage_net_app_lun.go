@@ -23,7 +23,7 @@ type StorageNetAppLun struct {
 	// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 	ClassId string `json:"ClassId"`
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-	ObjectType string `json:"ObjectType"`
+	ObjectType            string                                  `json:"ObjectType"`
 	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 	// Unique identifier of Lun across data center.
 	Key *string `json:"Key,omitempty"`
@@ -38,13 +38,13 @@ type StorageNetAppLun struct {
 	// The administrative state of a LUN. * `offline` - The LUN is administratively offline, or a more detailed offline reason is not available. * `online` - The state of the LUN is online.
 	State *string `json:"State,omitempty"`
 	// Universally unique identifier of the LUN.
-	Uuid *string `json:"Uuid,omitempty"`
+	Uuid  *string                           `json:"Uuid,omitempty"`
 	Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 	// An array of relationships to storageNetAppLunEvent resources.
 	Events []StorageNetAppLunEventRelationship `json:"Events,omitempty"`
 	// An array of relationships to storageNetAppInitiatorGroup resources.
-	Host []StorageNetAppInitiatorGroupRelationship `json:"Host,omitempty"`
-	StorageContainer *StorageNetAppVolumeRelationship `json:"StorageContainer,omitempty"`
+	Host                 []StorageNetAppInitiatorGroupRelationship `json:"Host,omitempty"`
+	StorageContainer     *StorageNetAppVolumeRelationship          `json:"StorageContainer,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *StorageNetAppLun) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppLun) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *StorageNetAppLun) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageNetAppLun) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -411,7 +411,7 @@ func (o *StorageNetAppLun) SetArray(v StorageNetAppClusterRelationship) {
 
 // GetEvents returns the Events field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppLun) GetEvents() []StorageNetAppLunEventRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppLunEventRelationship
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *StorageNetAppLun) SetEvents(v []StorageNetAppLunEventRelationship) {
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *StorageNetAppLun) GetHost() []StorageNetAppInitiatorGroupRelationship {
-	if o == nil  {
+	if o == nil {
 		var ret []StorageNetAppInitiatorGroupRelationship
 		return ret
 	}
@@ -572,7 +572,7 @@ func (o *StorageNetAppLun) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data.
 		ClassId string `json:"ClassId"`
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
-		ObjectType string `json:"ObjectType"`
+		ObjectType            string                                  `json:"ObjectType"`
 		AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
 		// Unique identifier of Lun across data center.
 		Key *string `json:"Key,omitempty"`
@@ -587,13 +587,13 @@ func (o *StorageNetAppLun) UnmarshalJSON(bytes []byte) (err error) {
 		// The administrative state of a LUN. * `offline` - The LUN is administratively offline, or a more detailed offline reason is not available. * `online` - The state of the LUN is online.
 		State *string `json:"State,omitempty"`
 		// Universally unique identifier of the LUN.
-		Uuid *string `json:"Uuid,omitempty"`
+		Uuid  *string                           `json:"Uuid,omitempty"`
 		Array *StorageNetAppClusterRelationship `json:"Array,omitempty"`
 		// An array of relationships to storageNetAppLunEvent resources.
 		Events []StorageNetAppLunEventRelationship `json:"Events,omitempty"`
 		// An array of relationships to storageNetAppInitiatorGroup resources.
-		Host []StorageNetAppInitiatorGroupRelationship `json:"Host,omitempty"`
-		StorageContainer *StorageNetAppVolumeRelationship `json:"StorageContainer,omitempty"`
+		Host             []StorageNetAppInitiatorGroupRelationship `json:"Host,omitempty"`
+		StorageContainer *StorageNetAppVolumeRelationship          `json:"StorageContainer,omitempty"`
 	}
 
 	varStorageNetAppLunWithoutEmbeddedStruct := StorageNetAppLunWithoutEmbeddedStruct{}
@@ -706,5 +706,3 @@ func (v *NullableStorageNetAppLun) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

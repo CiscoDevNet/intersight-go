@@ -18,32 +18,31 @@ import (
 
 // StorageNetAppBaseDiskResponse - The response body of a HTTP GET request for the 'storage.NetAppBaseDisk' resource. The value may be one of the following types. 1. When 'tag' is specified in the URL query, the response schema     is a summary of the tag usage. 1. When '$apply' is specified in the URL query, the response schema     is dynamically-generated schema based on the $apply value. 1. When '$count' is specified in the URL query, the response is     a simple object providing the count of the resources. 1. In all other cases, the response is a list of 'storage.NetAppBaseDisk' resources.
 type StorageNetAppBaseDiskResponse struct {
-	MoAggregateTransform *MoAggregateTransform
-	MoDocumentCount *MoDocumentCount
-	MoTagSummary *MoTagSummary
+	MoAggregateTransform      *MoAggregateTransform
+	MoDocumentCount           *MoDocumentCount
+	MoTagSummary              *MoTagSummary
 	StorageNetAppBaseDiskList *StorageNetAppBaseDiskList
 }
 
 // MoAggregateTransformAsStorageNetAppBaseDiskResponse is a convenience function that returns MoAggregateTransform wrapped in StorageNetAppBaseDiskResponse
 func MoAggregateTransformAsStorageNetAppBaseDiskResponse(v *MoAggregateTransform) StorageNetAppBaseDiskResponse {
-	return StorageNetAppBaseDiskResponse{ MoAggregateTransform: v}
+	return StorageNetAppBaseDiskResponse{MoAggregateTransform: v}
 }
 
 // MoDocumentCountAsStorageNetAppBaseDiskResponse is a convenience function that returns MoDocumentCount wrapped in StorageNetAppBaseDiskResponse
 func MoDocumentCountAsStorageNetAppBaseDiskResponse(v *MoDocumentCount) StorageNetAppBaseDiskResponse {
-	return StorageNetAppBaseDiskResponse{ MoDocumentCount: v}
+	return StorageNetAppBaseDiskResponse{MoDocumentCount: v}
 }
 
 // MoTagSummaryAsStorageNetAppBaseDiskResponse is a convenience function that returns MoTagSummary wrapped in StorageNetAppBaseDiskResponse
 func MoTagSummaryAsStorageNetAppBaseDiskResponse(v *MoTagSummary) StorageNetAppBaseDiskResponse {
-	return StorageNetAppBaseDiskResponse{ MoTagSummary: v}
+	return StorageNetAppBaseDiskResponse{MoTagSummary: v}
 }
 
 // StorageNetAppBaseDiskListAsStorageNetAppBaseDiskResponse is a convenience function that returns StorageNetAppBaseDiskList wrapped in StorageNetAppBaseDiskResponse
 func StorageNetAppBaseDiskListAsStorageNetAppBaseDiskResponse(v *StorageNetAppBaseDiskList) StorageNetAppBaseDiskResponse {
-	return StorageNetAppBaseDiskResponse{ StorageNetAppBaseDiskList: v}
+	return StorageNetAppBaseDiskResponse{StorageNetAppBaseDiskList: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *StorageNetAppBaseDiskResponse) UnmarshalJSON(data []byte) error {
@@ -128,7 +127,7 @@ func (src StorageNetAppBaseDiskResponse) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *StorageNetAppBaseDiskResponse) GetActualInstance() (interface{}) {
+func (obj *StorageNetAppBaseDiskResponse) GetActualInstance() interface{} {
 	if obj.MoAggregateTransform != nil {
 		return obj.MoAggregateTransform
 	}
@@ -184,5 +183,3 @@ func (v *NullableStorageNetAppBaseDiskResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

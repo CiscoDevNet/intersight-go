@@ -19,19 +19,18 @@ import (
 // IamDomainGroupRelationship - A relationship to the 'iam.DomainGroup' resource, or the expanded 'iam.DomainGroup' resource, or the 'null' value.
 type IamDomainGroupRelationship struct {
 	IamDomainGroup *IamDomainGroup
-	MoMoRef *MoMoRef
+	MoMoRef        *MoMoRef
 }
 
 // IamDomainGroupAsIamDomainGroupRelationship is a convenience function that returns IamDomainGroup wrapped in IamDomainGroupRelationship
 func IamDomainGroupAsIamDomainGroupRelationship(v *IamDomainGroup) IamDomainGroupRelationship {
-	return IamDomainGroupRelationship{ IamDomainGroup: v}
+	return IamDomainGroupRelationship{IamDomainGroup: v}
 }
 
 // MoMoRefAsIamDomainGroupRelationship is a convenience function that returns MoMoRef wrapped in IamDomainGroupRelationship
 func MoMoRefAsIamDomainGroupRelationship(v *MoMoRef) IamDomainGroupRelationship {
-	return IamDomainGroupRelationship{ MoMoRef: v}
+	return IamDomainGroupRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamDomainGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamDomainGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamDomainGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *IamDomainGroupRelationship) GetActualInstance() interface{} {
 	if obj.IamDomainGroup != nil {
 		return obj.IamDomainGroup
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamDomainGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

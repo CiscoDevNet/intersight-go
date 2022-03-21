@@ -28,8 +28,8 @@ type StorageBaseVolumeAllOf struct {
 	// Named entity of the volume.
 	Name *string `json:"Name,omitempty"`
 	// User provisioned volume size. It is the size exposed to host.
-	Size *int64 `json:"Size,omitempty"`
-	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
+	Size                 *int64                      `json:"Size,omitempty"`
+	StorageUtilization   NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *StorageBaseVolumeAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseVolumeAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *StorageBaseVolumeAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseVolumeAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -243,7 +243,7 @@ func (o *StorageBaseVolumeAllOf) GetStorageUtilization() StorageBaseCapacity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseVolumeAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -262,6 +262,7 @@ func (o *StorageBaseVolumeAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseVolumeAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseVolumeAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -361,5 +362,3 @@ func (v *NullableStorageBaseVolumeAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

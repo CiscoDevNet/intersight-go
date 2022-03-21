@@ -18,20 +18,19 @@ import (
 
 // ResourceGroupRelationship - A relationship to the 'resource.Group' resource, or the expanded 'resource.Group' resource, or the 'null' value.
 type ResourceGroupRelationship struct {
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 	ResourceGroup *ResourceGroup
 }
 
 // MoMoRefAsResourceGroupRelationship is a convenience function that returns MoMoRef wrapped in ResourceGroupRelationship
 func MoMoRefAsResourceGroupRelationship(v *MoMoRef) ResourceGroupRelationship {
-	return ResourceGroupRelationship{ MoMoRef: v}
+	return ResourceGroupRelationship{MoMoRef: v}
 }
 
 // ResourceGroupAsResourceGroupRelationship is a convenience function that returns ResourceGroup wrapped in ResourceGroupRelationship
 func ResourceGroupAsResourceGroupRelationship(v *ResourceGroup) ResourceGroupRelationship {
-	return ResourceGroupRelationship{ ResourceGroup: v}
+	return ResourceGroupRelationship{ResourceGroup: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ResourceGroupRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ResourceGroupRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ResourceGroupRelationship) GetActualInstance() (interface{}) {
+func (obj *ResourceGroupRelationship) GetActualInstance() interface{} {
 	if obj.MoMoRef != nil {
 		return obj.MoMoRef
 	}
@@ -137,5 +136,3 @@ func (v *NullableResourceGroupRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

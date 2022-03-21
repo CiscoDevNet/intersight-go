@@ -25,28 +25,28 @@ type HyperflexVmBackupInfo struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType string `json:"ObjectType"`
 	// Description of the backup status of this VmBackupInfo. * `InitializingProtection` - Protection has started, but not completed. * `Protected` - Protection has completed successfully. * `ExceedsInterval` - Protection has not completed successfully in over two times the backup interval.
-	BackupStatus *string `json:"BackupStatus,omitempty"`
-	ClusterEntityReference NullableHyperflexEntityReference `json:"ClusterEntityReference,omitempty"`
+	BackupStatus               *string                                 `json:"BackupStatus,omitempty"`
+	ClusterEntityReference     NullableHyperflexEntityReference        `json:"ClusterEntityReference,omitempty"`
 	ClusterIdProtectionInfoMap []HyperflexMapClusterIdToProtectionInfo `json:"ClusterIdProtectionInfoMap,omitempty"`
-	Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+	Error                      NullableHyperflexErrorStack             `json:"Error,omitempty"`
 	// Retention count from backup policy for local snapshots.
 	LocalSnapshotRetentionCount *int64 `json:"LocalSnapshotRetentionCount,omitempty"`
 	// The power state of the Virtual Machine.
 	PowerOn *bool `json:"PowerOn,omitempty"`
 	// Description of the protection status of this VmBackupInfo. * `PREPARE_FAILOVER_STARTED` - The protection status is prepare failover started. * `PREPARE_FAILOVER_FAILED` - The protection status is prepare failover failed. * `PREPARE_FAILOVER_COMPLETED` - The protection status is prepaire failover completed. * `FAILOVER_STARTED` - The protection status is failover started. * `FAILOVER_FAILED` - The protection status is failover failed. * `FAILOVER_COMPLETED` - The protection status is failover completed. * `PREPARE_REVERSEPROTECT_STARTED` - The protection status is prepare reverse protect started. * `PREPARE_REVERSEPROTECT_FAILED` - The protection status is prepare reverse protect failed. * `PREPARE_REVERSEPROTECT_COMPLETED` - The protection status is prepair reverse protect completed. * `REVERSEPROTECT_STARTED` - The protection status is reverse protect started. * `REVERSEPROTECT_FAILED` - The protection status is reverse protect failed. * `ACTIVE` - The protection status is active. * `CREATION_IN_PROGRESS` - The protection status is failover in progress. * `CREATION_FAILED` - The protection status is creation failed. * `LOCAL_RESTORE_STARTED` - The protection status is local restore started. * `LOCAL_RESTORE_FAILED` - The protection status is local restore failed.
-	ProtectionStatus *string `json:"ProtectionStatus,omitempty"`
-	Schedule []HyperflexReplicationClusterReferenceToSchedule `json:"Schedule,omitempty"`
+	ProtectionStatus *string                                          `json:"ProtectionStatus,omitempty"`
+	Schedule         []HyperflexReplicationClusterReferenceToSchedule `json:"Schedule,omitempty"`
 	// Retention count from backup policy for remote snapshots.
 	SnapshotRetentionCount *int64 `json:"SnapshotRetentionCount,omitempty"`
 	// Name for the source cluster this Virtual Machine is residing on.
 	SrcClusterName *string `json:"SrcClusterName,omitempty"`
 	// Name for the target cluster this Virtual Machine is residing on.
-	TgtClusterName *string `json:"TgtClusterName,omitempty"`
-	VmEntityReference NullableHyperflexEntityReference `json:"VmEntityReference,omitempty"`
-	VmInfo NullableHyperflexVirtualMachine `json:"VmInfo,omitempty"`
-	SrcBackupCluster *HyperflexBackupClusterRelationship `json:"SrcBackupCluster,omitempty"`
-	SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-	TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+	TgtClusterName       *string                             `json:"TgtClusterName,omitempty"`
+	VmEntityReference    NullableHyperflexEntityReference    `json:"VmEntityReference,omitempty"`
+	VmInfo               NullableHyperflexVirtualMachine     `json:"VmInfo,omitempty"`
+	SrcBackupCluster     *HyperflexBackupClusterRelationship `json:"SrcBackupCluster,omitempty"`
+	SrcCluster           *HyperflexClusterRelationship       `json:"SrcCluster,omitempty"`
+	TgtCluster           *HyperflexClusterRelationship       `json:"TgtCluster,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -88,7 +88,7 @@ func (o *HyperflexVmBackupInfo) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmBackupInfo) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -112,7 +112,7 @@ func (o *HyperflexVmBackupInfo) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexVmBackupInfo) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -168,7 +168,7 @@ func (o *HyperflexVmBackupInfo) GetClusterEntityReference() HyperflexEntityRefer
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmBackupInfo) GetClusterEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClusterEntityReference.Get(), o.ClusterEntityReference.IsSet()
@@ -187,6 +187,7 @@ func (o *HyperflexVmBackupInfo) HasClusterEntityReference() bool {
 func (o *HyperflexVmBackupInfo) SetClusterEntityReference(v HyperflexEntityReference) {
 	o.ClusterEntityReference.Set(&v)
 }
+
 // SetClusterEntityReferenceNil sets the value for ClusterEntityReference to be an explicit nil
 func (o *HyperflexVmBackupInfo) SetClusterEntityReferenceNil() {
 	o.ClusterEntityReference.Set(nil)
@@ -199,7 +200,7 @@ func (o *HyperflexVmBackupInfo) UnsetClusterEntityReference() {
 
 // GetClusterIdProtectionInfoMap returns the ClusterIdProtectionInfoMap field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVmBackupInfo) GetClusterIdProtectionInfoMap() []HyperflexMapClusterIdToProtectionInfo {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexMapClusterIdToProtectionInfo
 		return ret
 	}
@@ -243,7 +244,7 @@ func (o *HyperflexVmBackupInfo) GetError() HyperflexErrorStack {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmBackupInfo) GetErrorOk() (*HyperflexErrorStack, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Error.Get(), o.Error.IsSet()
@@ -262,6 +263,7 @@ func (o *HyperflexVmBackupInfo) HasError() bool {
 func (o *HyperflexVmBackupInfo) SetError(v HyperflexErrorStack) {
 	o.Error.Set(&v)
 }
+
 // SetErrorNil sets the value for Error to be an explicit nil
 func (o *HyperflexVmBackupInfo) SetErrorNil() {
 	o.Error.Set(nil)
@@ -370,7 +372,7 @@ func (o *HyperflexVmBackupInfo) SetProtectionStatus(v string) {
 
 // GetSchedule returns the Schedule field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HyperflexVmBackupInfo) GetSchedule() []HyperflexReplicationClusterReferenceToSchedule {
-	if o == nil  {
+	if o == nil {
 		var ret []HyperflexReplicationClusterReferenceToSchedule
 		return ret
 	}
@@ -510,7 +512,7 @@ func (o *HyperflexVmBackupInfo) GetVmEntityReference() HyperflexEntityReference 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmBackupInfo) GetVmEntityReferenceOk() (*HyperflexEntityReference, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmEntityReference.Get(), o.VmEntityReference.IsSet()
@@ -529,6 +531,7 @@ func (o *HyperflexVmBackupInfo) HasVmEntityReference() bool {
 func (o *HyperflexVmBackupInfo) SetVmEntityReference(v HyperflexEntityReference) {
 	o.VmEntityReference.Set(&v)
 }
+
 // SetVmEntityReferenceNil sets the value for VmEntityReference to be an explicit nil
 func (o *HyperflexVmBackupInfo) SetVmEntityReferenceNil() {
 	o.VmEntityReference.Set(nil)
@@ -552,7 +555,7 @@ func (o *HyperflexVmBackupInfo) GetVmInfo() HyperflexVirtualMachine {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HyperflexVmBackupInfo) GetVmInfoOk() (*HyperflexVirtualMachine, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.VmInfo.Get(), o.VmInfo.IsSet()
@@ -571,6 +574,7 @@ func (o *HyperflexVmBackupInfo) HasVmInfo() bool {
 func (o *HyperflexVmBackupInfo) SetVmInfo(v HyperflexVirtualMachine) {
 	o.VmInfo.Set(&v)
 }
+
 // SetVmInfoNil sets the value for VmInfo to be an explicit nil
 func (o *HyperflexVmBackupInfo) SetVmInfoNil() {
 	o.VmInfo.Set(nil)
@@ -756,28 +760,28 @@ func (o *HyperflexVmBackupInfo) UnmarshalJSON(bytes []byte) (err error) {
 		// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 		ObjectType string `json:"ObjectType"`
 		// Description of the backup status of this VmBackupInfo. * `InitializingProtection` - Protection has started, but not completed. * `Protected` - Protection has completed successfully. * `ExceedsInterval` - Protection has not completed successfully in over two times the backup interval.
-		BackupStatus *string `json:"BackupStatus,omitempty"`
-		ClusterEntityReference NullableHyperflexEntityReference `json:"ClusterEntityReference,omitempty"`
+		BackupStatus               *string                                 `json:"BackupStatus,omitempty"`
+		ClusterEntityReference     NullableHyperflexEntityReference        `json:"ClusterEntityReference,omitempty"`
 		ClusterIdProtectionInfoMap []HyperflexMapClusterIdToProtectionInfo `json:"ClusterIdProtectionInfoMap,omitempty"`
-		Error NullableHyperflexErrorStack `json:"Error,omitempty"`
+		Error                      NullableHyperflexErrorStack             `json:"Error,omitempty"`
 		// Retention count from backup policy for local snapshots.
 		LocalSnapshotRetentionCount *int64 `json:"LocalSnapshotRetentionCount,omitempty"`
 		// The power state of the Virtual Machine.
 		PowerOn *bool `json:"PowerOn,omitempty"`
 		// Description of the protection status of this VmBackupInfo. * `PREPARE_FAILOVER_STARTED` - The protection status is prepare failover started. * `PREPARE_FAILOVER_FAILED` - The protection status is prepare failover failed. * `PREPARE_FAILOVER_COMPLETED` - The protection status is prepaire failover completed. * `FAILOVER_STARTED` - The protection status is failover started. * `FAILOVER_FAILED` - The protection status is failover failed. * `FAILOVER_COMPLETED` - The protection status is failover completed. * `PREPARE_REVERSEPROTECT_STARTED` - The protection status is prepare reverse protect started. * `PREPARE_REVERSEPROTECT_FAILED` - The protection status is prepare reverse protect failed. * `PREPARE_REVERSEPROTECT_COMPLETED` - The protection status is prepair reverse protect completed. * `REVERSEPROTECT_STARTED` - The protection status is reverse protect started. * `REVERSEPROTECT_FAILED` - The protection status is reverse protect failed. * `ACTIVE` - The protection status is active. * `CREATION_IN_PROGRESS` - The protection status is failover in progress. * `CREATION_FAILED` - The protection status is creation failed. * `LOCAL_RESTORE_STARTED` - The protection status is local restore started. * `LOCAL_RESTORE_FAILED` - The protection status is local restore failed.
-		ProtectionStatus *string `json:"ProtectionStatus,omitempty"`
-		Schedule []HyperflexReplicationClusterReferenceToSchedule `json:"Schedule,omitempty"`
+		ProtectionStatus *string                                          `json:"ProtectionStatus,omitempty"`
+		Schedule         []HyperflexReplicationClusterReferenceToSchedule `json:"Schedule,omitempty"`
 		// Retention count from backup policy for remote snapshots.
 		SnapshotRetentionCount *int64 `json:"SnapshotRetentionCount,omitempty"`
 		// Name for the source cluster this Virtual Machine is residing on.
 		SrcClusterName *string `json:"SrcClusterName,omitempty"`
 		// Name for the target cluster this Virtual Machine is residing on.
-		TgtClusterName *string `json:"TgtClusterName,omitempty"`
-		VmEntityReference NullableHyperflexEntityReference `json:"VmEntityReference,omitempty"`
-		VmInfo NullableHyperflexVirtualMachine `json:"VmInfo,omitempty"`
-		SrcBackupCluster *HyperflexBackupClusterRelationship `json:"SrcBackupCluster,omitempty"`
-		SrcCluster *HyperflexClusterRelationship `json:"SrcCluster,omitempty"`
-		TgtCluster *HyperflexClusterRelationship `json:"TgtCluster,omitempty"`
+		TgtClusterName    *string                             `json:"TgtClusterName,omitempty"`
+		VmEntityReference NullableHyperflexEntityReference    `json:"VmEntityReference,omitempty"`
+		VmInfo            NullableHyperflexVirtualMachine     `json:"VmInfo,omitempty"`
+		SrcBackupCluster  *HyperflexBackupClusterRelationship `json:"SrcBackupCluster,omitempty"`
+		SrcCluster        *HyperflexClusterRelationship       `json:"SrcCluster,omitempty"`
+		TgtCluster        *HyperflexClusterRelationship       `json:"TgtCluster,omitempty"`
 	}
 
 	varHyperflexVmBackupInfoWithoutEmbeddedStruct := HyperflexVmBackupInfoWithoutEmbeddedStruct{}
@@ -898,5 +902,3 @@ func (v *NullableHyperflexVmBackupInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

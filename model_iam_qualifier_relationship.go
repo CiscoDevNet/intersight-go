@@ -19,19 +19,18 @@ import (
 // IamQualifierRelationship - A relationship to the 'iam.Qualifier' resource, or the expanded 'iam.Qualifier' resource, or the 'null' value.
 type IamQualifierRelationship struct {
 	IamQualifier *IamQualifier
-	MoMoRef *MoMoRef
+	MoMoRef      *MoMoRef
 }
 
 // IamQualifierAsIamQualifierRelationship is a convenience function that returns IamQualifier wrapped in IamQualifierRelationship
 func IamQualifierAsIamQualifierRelationship(v *IamQualifier) IamQualifierRelationship {
-	return IamQualifierRelationship{ IamQualifier: v}
+	return IamQualifierRelationship{IamQualifier: v}
 }
 
 // MoMoRefAsIamQualifierRelationship is a convenience function that returns MoMoRef wrapped in IamQualifierRelationship
 func MoMoRefAsIamQualifierRelationship(v *MoMoRef) IamQualifierRelationship {
-	return IamQualifierRelationship{ MoMoRef: v}
+	return IamQualifierRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *IamQualifierRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src IamQualifierRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *IamQualifierRelationship) GetActualInstance() (interface{}) {
+func (obj *IamQualifierRelationship) GetActualInstance() interface{} {
 	if obj.IamQualifier != nil {
 		return obj.IamQualifier
 	}
@@ -137,5 +136,3 @@ func (v *NullableIamQualifierRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

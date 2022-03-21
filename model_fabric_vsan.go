@@ -35,8 +35,8 @@ type FabricVsan struct {
 	// Virtual San Identifier in the switch.
 	VsanId *int64 `json:"VsanId,omitempty"`
 	// Used to indicate whether the VSAN Id is defined for storage or uplink or both traffics in FI. * `Uplink` - Vsan associated with uplink network. * `Storage` - Vsan associated with storage network. * `Common` - Vsan that is common for uplink and storage network.
-	VsanScope *string `json:"VsanScope,omitempty"`
-	FcNetworkPolicy *FabricFcNetworkPolicyRelationship `json:"FcNetworkPolicy,omitempty"`
+	VsanScope            *string                            `json:"VsanScope,omitempty"`
+	FcNetworkPolicy      *FabricFcNetworkPolicyRelationship `json:"FcNetworkPolicy,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -86,7 +86,7 @@ func (o *FabricVsan) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *FabricVsan) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -110,7 +110,7 @@ func (o *FabricVsan) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *FabricVsan) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -407,7 +407,7 @@ func (o *FabricVsan) UnmarshalJSON(bytes []byte) (err error) {
 		// Virtual San Identifier in the switch.
 		VsanId *int64 `json:"VsanId,omitempty"`
 		// Used to indicate whether the VSAN Id is defined for storage or uplink or both traffics in FI. * `Uplink` - Vsan associated with uplink network. * `Storage` - Vsan associated with storage network. * `Common` - Vsan that is common for uplink and storage network.
-		VsanScope *string `json:"VsanScope,omitempty"`
+		VsanScope       *string                            `json:"VsanScope,omitempty"`
 		FcNetworkPolicy *FabricFcNetworkPolicyRelationship `json:"FcNetworkPolicy,omitempty"`
 	}
 
@@ -511,5 +511,3 @@ func (v *NullableFabricVsan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

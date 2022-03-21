@@ -19,19 +19,18 @@ import (
 // ComputeVmediaRelationship - A relationship to the 'compute.Vmedia' resource, or the expanded 'compute.Vmedia' resource, or the 'null' value.
 type ComputeVmediaRelationship struct {
 	ComputeVmedia *ComputeVmedia
-	MoMoRef *MoMoRef
+	MoMoRef       *MoMoRef
 }
 
 // ComputeVmediaAsComputeVmediaRelationship is a convenience function that returns ComputeVmedia wrapped in ComputeVmediaRelationship
 func ComputeVmediaAsComputeVmediaRelationship(v *ComputeVmedia) ComputeVmediaRelationship {
-	return ComputeVmediaRelationship{ ComputeVmedia: v}
+	return ComputeVmediaRelationship{ComputeVmedia: v}
 }
 
 // MoMoRefAsComputeVmediaRelationship is a convenience function that returns MoMoRef wrapped in ComputeVmediaRelationship
 func MoMoRefAsComputeVmediaRelationship(v *MoMoRef) ComputeVmediaRelationship {
-	return ComputeVmediaRelationship{ MoMoRef: v}
+	return ComputeVmediaRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ComputeVmediaRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src ComputeVmediaRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ComputeVmediaRelationship) GetActualInstance() (interface{}) {
+func (obj *ComputeVmediaRelationship) GetActualInstance() interface{} {
 	if obj.ComputeVmedia != nil {
 		return obj.ComputeVmedia
 	}
@@ -137,5 +136,3 @@ func (v *NullableComputeVmediaRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

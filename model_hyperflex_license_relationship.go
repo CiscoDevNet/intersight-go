@@ -19,19 +19,18 @@ import (
 // HyperflexLicenseRelationship - A relationship to the 'hyperflex.License' resource, or the expanded 'hyperflex.License' resource, or the 'null' value.
 type HyperflexLicenseRelationship struct {
 	HyperflexLicense *HyperflexLicense
-	MoMoRef *MoMoRef
+	MoMoRef          *MoMoRef
 }
 
 // HyperflexLicenseAsHyperflexLicenseRelationship is a convenience function that returns HyperflexLicense wrapped in HyperflexLicenseRelationship
 func HyperflexLicenseAsHyperflexLicenseRelationship(v *HyperflexLicense) HyperflexLicenseRelationship {
-	return HyperflexLicenseRelationship{ HyperflexLicense: v}
+	return HyperflexLicenseRelationship{HyperflexLicense: v}
 }
 
 // MoMoRefAsHyperflexLicenseRelationship is a convenience function that returns MoMoRef wrapped in HyperflexLicenseRelationship
 func MoMoRefAsHyperflexLicenseRelationship(v *MoMoRef) HyperflexLicenseRelationship {
-	return HyperflexLicenseRelationship{ MoMoRef: v}
+	return HyperflexLicenseRelationship{MoMoRef: v}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *HyperflexLicenseRelationship) UnmarshalJSON(data []byte) error {
@@ -89,7 +88,7 @@ func (src HyperflexLicenseRelationship) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *HyperflexLicenseRelationship) GetActualInstance() (interface{}) {
+func (obj *HyperflexLicenseRelationship) GetActualInstance() interface{} {
 	if obj.HyperflexLicense != nil {
 		return obj.HyperflexLicense
 	}
@@ -137,5 +136,3 @@ func (v *NullableHyperflexLicenseRelationship) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

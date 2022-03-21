@@ -26,10 +26,10 @@ type StorageBaseDiskPoolAllOf struct {
 	// Object ID for the pool. Platforms that use a number should convert it to string.
 	PoolId *string `json:"PoolId,omitempty"`
 	// Human readable status of the pool, indicating the current health. * `Unknown` - Entity status is unknown. * `Degraded` - State is degraded, and might impact normal operation of the entity. * `Critical` - Entity is in a critical state, impacting operations. * `Ok` - Entity status is in a stable state, operating normally.
-	Status *string `json:"Status,omitempty"`
+	Status             *string                     `json:"Status,omitempty"`
 	StorageUtilization NullableStorageBaseCapacity `json:"StorageUtilization,omitempty"`
 	// Human readable type of the pool, such as thin, tiered, active-flash, etc.
-	Type *string `json:"Type,omitempty"`
+	Type                 *string `json:"Type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -67,7 +67,7 @@ func (o *StorageBaseDiskPoolAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseDiskPoolAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -91,7 +91,7 @@ func (o *StorageBaseDiskPoolAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *StorageBaseDiskPoolAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -211,7 +211,7 @@ func (o *StorageBaseDiskPoolAllOf) GetStorageUtilization() StorageBaseCapacity {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StorageBaseDiskPoolAllOf) GetStorageUtilizationOk() (*StorageBaseCapacity, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StorageUtilization.Get(), o.StorageUtilization.IsSet()
@@ -230,6 +230,7 @@ func (o *StorageBaseDiskPoolAllOf) HasStorageUtilization() bool {
 func (o *StorageBaseDiskPoolAllOf) SetStorageUtilization(v StorageBaseCapacity) {
 	o.StorageUtilization.Set(&v)
 }
+
 // SetStorageUtilizationNil sets the value for StorageUtilization to be an explicit nil
 func (o *StorageBaseDiskPoolAllOf) SetStorageUtilizationNil() {
 	o.StorageUtilization.Set(nil)
@@ -361,5 +362,3 @@ func (v *NullableStorageBaseDiskPoolAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

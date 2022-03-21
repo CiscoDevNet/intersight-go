@@ -30,7 +30,7 @@ type HyperflexAppSettingConstraintAllOf struct {
 	// The supported management platform for the HyperFlex Cluster. * `FI` - The host servers used in the cluster deployment are managed by a UCS Fabric Interconnect. * `EDGE` - The host servers used in the cluster deployment are standalone severs.
 	MgmtPlatform *string `json:"MgmtPlatform,omitempty"`
 	// The supported server models in regex format.
-	ServerModel *string `json:"ServerModel,omitempty"`
+	ServerModel          *string `json:"ServerModel,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -84,7 +84,7 @@ func (o *HyperflexAppSettingConstraintAllOf) GetClassId() string {
 // GetClassIdOk returns a tuple with the ClassId field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAppSettingConstraintAllOf) GetClassIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ClassId, true
@@ -108,7 +108,7 @@ func (o *HyperflexAppSettingConstraintAllOf) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value
 // and a boolean to check if the value has been set.
 func (o *HyperflexAppSettingConstraintAllOf) GetObjectTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ObjectType, true
@@ -368,5 +368,3 @@ func (v *NullableHyperflexAppSettingConstraintAllOf) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
