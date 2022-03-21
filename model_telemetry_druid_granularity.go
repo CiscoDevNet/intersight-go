@@ -13,7 +13,6 @@ package intersight
 
 import (
 	"encoding/json"
-	"time"
 	"fmt"
 )
 
