@@ -82,8 +82,6 @@ func CreateObject(config *Config) {
 	ifNoneMatch := ""
 	resp, r, err := apiClient.BootApi.CreateBootPrecisionPolicy(ctx).BootPrecisionPolicy(*bootPrecisionPolicy).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
 	if err != nil {
-		// 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-		// 		fmt.Fprintf(os.Stderr, "HTTP response: %v\n", r)
 		log.Printf("Error: %v\n", err)
 		log.Printf("HTTP response: %v\n", r)
 		return
@@ -94,8 +92,6 @@ func CreateObject(config *Config) {
 	id := resp.GetMoid()
 	getapiResponse, r, err := apiClient.BootApi.GetBootPrecisionPolicyByMoid(ctx, id).Execute()
 	if err != nil {
-		// 		fmt.Fprintf(os.Stderr, "Error -> GetBootPrecisionPolicyByMoid: %v\n", err)
-		// 		fmt.Fprintf(os.Stderr, "HTTP response: %v\n", r)
 		log.Printf("Error -> GetBootPrecisionPolicyByMoid: %v\n", err)
 		log.Printf("HTTP response: %v\n", r)
 		return
@@ -113,8 +109,6 @@ func CreateObject(config *Config) {
 	updatebootPrecisionPolicy.SetOrganization(organization1)
 	updateResp, r, err := apiClient.BootApi.UpdateBootPrecisionPolicy(ctx, objMoid).BootPrecisionPolicy(*updatebootPrecisionPolicy).IfMatch(ifMatch).Execute()
 	if err != nil {
-		// 		fmt.Fprintf(os.Stderr, "Error -> UpdateBootPrecisionPolicy: %v\n", err)
-		// 		fmt.Fprintf(os.Stderr, "HTTP response: %v\n", r)
 		log.Printf("Error -> UpdateBootPrecisionPolicy: %v\n", err)
 		log.Printf("HTTP response: %v\n", r)
 		return
@@ -131,8 +125,6 @@ func CreateObject(config *Config) {
 	patchbootPrecisionPolicy.SetOrganization(organization1)
 	patchResp, r, err := apiClient.BootApi.PatchBootPrecisionPolicy(ctx, objMoid).BootPrecisionPolicy(*patchbootPrecisionPolicy).IfMatch(ifMatch).Execute()
 	if err != nil {
-		// 		fmt.Fprintf(os.Stderr, "Error -> PatchBootPrecisionPolicy: %v\n", err)
-		// 		fmt.Fprintf(os.Stderr, "HTTP response: %v\n", r)
 		log.Printf("Error -> PatchBootPrecisionPolicy: %v\n", err)
 		log.Printf("HTTP response: %v\n", r)
 		return
@@ -142,8 +134,6 @@ func CreateObject(config *Config) {
 	//Delete
 	fullResp, err := apiClient.BootApi.DeleteBootPrecisionPolicy(ctx, objMoid).Execute()
 	if err != nil {
-		// 		fmt.Fprintf(os.Stderr, "Error -> DeleteBootPrecisionPolicy: %v\n", err)
-		// 		fmt.Fprintf(os.Stderr, "HTTP response: %v\n", fullResp)
 		log.Printf("Error -> DeleteBootPrecisionPolicy: %v\n", err)
 		log.Printf("HTTP response: %v\n", fullResp)
 		return
