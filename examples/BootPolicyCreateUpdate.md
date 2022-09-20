@@ -1,6 +1,7 @@
 ### Example to create boot precision policy
 
 ``` go
+
 package example
 
 import (
@@ -46,15 +47,8 @@ func createBootVirtualMedia() *intersight.BootDeviceBase {
 	return bootVirtualMedia
 }
 
-func createOrganization() intersight.OrganizationOrganizationRelationship {
-	organization := new(intersight.OrganizationOrganization)
-	organization.ClassId = "mo.MoRef"
-	organization.ObjectType = "organization.Organization"
-	organizationRelationship := intersight.OrganizationOrganizationAsOrganizationOrganizationRelationship(organization)
-	return organizationRelationship
-}
 
-func createOrganizationWithMoid(moid string) intersight.OrganizationOrganizationRelationship {
+func getOrganizationRelationship(moid string) intersight.OrganizationOrganizationRelationship {
 	organization := new(intersight.OrganizationOrganization)
 	organization.ClassId = "mo.MoRef"
 	organization.ObjectType = "organization.Organization"
@@ -68,15 +62,30 @@ func CreateObject(config *Config) {
 	cfg := getApiClient(config)
 	apiClient := cfg.ApiClient
 	ctx := cfg.ctx
+
+	// Get Organization MOID
+	org_resp, r, org_err := apiClient.OrganizationApi.GetOrganizationOrganizationList(ctx).Filter("Name eq 'default'").Execute()
+	if org_err != nil {
+		log.Printf("Error: %v\n", err)
+                log.Printf("HTTP response: %v\n", r)
+                return
+	}
+	org_list := org_resp.OrganizationOrganizationList.GetResults()
+	if len(org_list) == 0 {
+		log.Printf("Couldn't find the organization specified")
+                return
+	}
+	org_moid := org_list[0].MoBaseMo.GetMoid()
+
 	bootLocalCdd := createBootLocalCdd()
 	bootLocalDisk := createBootLocalDisk()
-	organization := createOrganization()
+	organizationRelationship := getOrganizationRelationship(org_moid)
 	bootDevices := []intersight.BootDeviceBase{*bootLocalDisk, *bootLocalCdd}
 	bootPrecisionPolicy := intersight.NewBootPrecisionPolicyWithDefaults()
 	bootPrecisionPolicy.SetName("sample_boot_policy1")
 	bootPrecisionPolicy.SetDescription("sample boot precision policy")
 	bootPrecisionPolicy.SetBootDevices(bootDevices)
-	bootPrecisionPolicy.SetOrganization(organization)
+	bootPrecisionPolicy.SetOrganization(organizationRelationship)
 
 	ifMatch := ""
 	ifNoneMatch := ""
@@ -100,13 +109,13 @@ func CreateObject(config *Config) {
 	organizationMoid := getapiResponse.GetOrganization().MoMoRef.GetMoid()
 	bootSdcard := createBootSdcard()
 	bootIscsi := createBootIscsi()
-	organization1 := createOrganizationWithMoid(organizationMoid)
+	organizationRelationship1 := getOrganizationRelationship(organizationMoid)
 	bootDevices1 := []intersight.BootDeviceBase{*bootSdcard, *bootIscsi}
 	updatebootPrecisionPolicy := intersight.NewBootPrecisionPolicyWithDefaults()
 	updatebootPrecisionPolicy.SetName("updated_boot_precision_policy_for_go_test")
 	updatebootPrecisionPolicy.SetDescription("updated description of boot precision policy for testing go example")
 	updatebootPrecisionPolicy.SetBootDevices(bootDevices1)
-	updatebootPrecisionPolicy.SetOrganization(organization1)
+	updatebootPrecisionPolicy.SetOrganization(organizationRelationship1)
 	updateResp, r, err := apiClient.BootApi.UpdateBootPrecisionPolicy(ctx, objMoid).BootPrecisionPolicy(*updatebootPrecisionPolicy).IfMatch(ifMatch).Execute()
 	if err != nil {
 		log.Printf("Error -> UpdateBootPrecisionPolicy: %v\n", err)
@@ -122,7 +131,7 @@ func CreateObject(config *Config) {
 	patchbootPrecisionPolicy.SetName("updated_boot_precision_policy_using_patch_go_test")
 	patchbootPrecisionPolicy.SetDescription("update the description of boot precision policy with patch for go test")
 	patchbootPrecisionPolicy.SetBootDevices(bootDevices2)
-	patchbootPrecisionPolicy.SetOrganization(organization1)
+	patchbootPrecisionPolicy.SetOrganization(organizationRelationship1)
 	patchResp, r, err := apiClient.BootApi.PatchBootPrecisionPolicy(ctx, objMoid).BootPrecisionPolicy(*patchbootPrecisionPolicy).IfMatch(ifMatch).Execute()
 	if err != nil {
 		log.Printf("Error -> PatchBootPrecisionPolicy: %v\n", err)
