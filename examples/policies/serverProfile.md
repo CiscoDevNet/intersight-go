@@ -1,4 +1,4 @@
-#### Example to create policy
+#### Example to create server profile by attaching the policies created
 ```
 package policy
 
