@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-7766
+API version: 1.0.11-8814
 Contact: intersight@cisco.com
 */
 
@@ -36,7 +36,8 @@ type TamSecurityAdvisoryAllOf struct {
 	// CVSS version 3 environmental score for the security Advisory.
 	EnvironmentalScore *float32 `json:"EnvironmentalScore,omitempty"`
 	// A link to an external URL describing security Advisory in more details.
-	ExternalUrl *string `json:"ExternalUrl,omitempty"`
+	ExternalUrl  *string  `json:"ExternalUrl,omitempty"`
+	OtherRefUrls []string `json:"OtherRefUrls,omitempty"`
 	// Recommended action to resolve the security advisory.
 	Recommendation *string `json:"Recommendation,omitempty"`
 	// Cisco assigned status of the published advisory based on whether the investigation is complete or on-going. * `interim` - The Cisco investigation for the advisory is ongoing. Cisco will issue revisions to the advisory when additional information, including fixed software release data, becomes available. * `final` - Cisco has completed its evaluation of the vulnerability described in the advisory. There will be no further updates unless there is a material change in the nature of the vulnerability.
@@ -419,6 +420,39 @@ func (o *TamSecurityAdvisoryAllOf) SetExternalUrl(v string) {
 	o.ExternalUrl = &v
 }
 
+// GetOtherRefUrls returns the OtherRefUrls field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TamSecurityAdvisoryAllOf) GetOtherRefUrls() []string {
+	if o == nil {
+		var ret []string
+		return ret
+	}
+	return o.OtherRefUrls
+}
+
+// GetOtherRefUrlsOk returns a tuple with the OtherRefUrls field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TamSecurityAdvisoryAllOf) GetOtherRefUrlsOk() ([]string, bool) {
+	if o == nil || o.OtherRefUrls == nil {
+		return nil, false
+	}
+	return o.OtherRefUrls, true
+}
+
+// HasOtherRefUrls returns a boolean if a field has been set.
+func (o *TamSecurityAdvisoryAllOf) HasOtherRefUrls() bool {
+	if o != nil && o.OtherRefUrls != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOtherRefUrls gets a reference to the given []string and assigns it to the OtherRefUrls field.
+func (o *TamSecurityAdvisoryAllOf) SetOtherRefUrls(v []string) {
+	o.OtherRefUrls = v
+}
+
 // GetRecommendation returns the Recommendation field value if set, zero value otherwise.
 func (o *TamSecurityAdvisoryAllOf) GetRecommendation() string {
 	if o == nil || o.Recommendation == nil {
@@ -646,6 +680,9 @@ func (o TamSecurityAdvisoryAllOf) MarshalJSON() ([]byte, error) {
 	if o.ExternalUrl != nil {
 		toSerialize["ExternalUrl"] = o.ExternalUrl
 	}
+	if o.OtherRefUrls != nil {
+		toSerialize["OtherRefUrls"] = o.OtherRefUrls
+	}
 	if o.Recommendation != nil {
 		toSerialize["Recommendation"] = o.Recommendation
 	}
@@ -693,6 +730,7 @@ func (o *TamSecurityAdvisoryAllOf) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "DateUpdated")
 		delete(additionalProperties, "EnvironmentalScore")
 		delete(additionalProperties, "ExternalUrl")
+		delete(additionalProperties, "OtherRefUrls")
 		delete(additionalProperties, "Recommendation")
 		delete(additionalProperties, "Status")
 		delete(additionalProperties, "TemporalScore")

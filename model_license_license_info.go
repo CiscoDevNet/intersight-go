@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-7766
+API version: 1.0.11-8814
 Contact: intersight@cisco.com
 */
 
@@ -51,6 +51,8 @@ type LicenseLicenseInfo struct {
 	LicenseType *string `json:"LicenseType,omitempty"`
 	// The date and time when the licenseState entered the TrialPeriod or OutOfCompliance state.
 	StartTime *time.Time `json:"StartTime,omitempty"`
+	// The id of license subscription.
+	SubscriptionId *string `json:"SubscriptionId,omitempty"`
 	// The administrative state of the trial license. When the LicenseState is set to 'NotLicensed', 'trialAdmin' can be set to true to start the trial period, i.e. licenseState is set to be TrialPeriod.
 	TrialAdmin           *bool                                  `json:"TrialAdmin,omitempty"`
 	AccountLicenseData   *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
@@ -546,6 +548,38 @@ func (o *LicenseLicenseInfo) SetStartTime(v time.Time) {
 	o.StartTime = &v
 }
 
+// GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
+func (o *LicenseLicenseInfo) GetSubscriptionId() string {
+	if o == nil || o.SubscriptionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SubscriptionId
+}
+
+// GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LicenseLicenseInfo) GetSubscriptionIdOk() (*string, bool) {
+	if o == nil || o.SubscriptionId == nil {
+		return nil, false
+	}
+	return o.SubscriptionId, true
+}
+
+// HasSubscriptionId returns a boolean if a field has been set.
+func (o *LicenseLicenseInfo) HasSubscriptionId() bool {
+	if o != nil && o.SubscriptionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionId gets a reference to the given string and assigns it to the SubscriptionId field.
+func (o *LicenseLicenseInfo) SetSubscriptionId(v string) {
+	o.SubscriptionId = &v
+}
+
 // GetTrialAdmin returns the TrialAdmin field value if set, zero value otherwise.
 func (o *LicenseLicenseInfo) GetTrialAdmin() bool {
 	if o == nil || o.TrialAdmin == nil {
@@ -665,6 +699,9 @@ func (o LicenseLicenseInfo) MarshalJSON() ([]byte, error) {
 	if o.StartTime != nil {
 		toSerialize["StartTime"] = o.StartTime
 	}
+	if o.SubscriptionId != nil {
+		toSerialize["SubscriptionId"] = o.SubscriptionId
+	}
 	if o.TrialAdmin != nil {
 		toSerialize["TrialAdmin"] = o.TrialAdmin
 	}
@@ -711,6 +748,8 @@ func (o *LicenseLicenseInfo) UnmarshalJSON(bytes []byte) (err error) {
 		LicenseType *string `json:"LicenseType,omitempty"`
 		// The date and time when the licenseState entered the TrialPeriod or OutOfCompliance state.
 		StartTime *time.Time `json:"StartTime,omitempty"`
+		// The id of license subscription.
+		SubscriptionId *string `json:"SubscriptionId,omitempty"`
 		// The administrative state of the trial license. When the LicenseState is set to 'NotLicensed', 'trialAdmin' can be set to true to start the trial period, i.e. licenseState is set to be TrialPeriod.
 		TrialAdmin         *bool                                  `json:"TrialAdmin,omitempty"`
 		AccountLicenseData *LicenseAccountLicenseDataRelationship `json:"AccountLicenseData,omitempty"`
@@ -736,6 +775,7 @@ func (o *LicenseLicenseInfo) UnmarshalJSON(bytes []byte) (err error) {
 		varLicenseLicenseInfo.LicenseState = varLicenseLicenseInfoWithoutEmbeddedStruct.LicenseState
 		varLicenseLicenseInfo.LicenseType = varLicenseLicenseInfoWithoutEmbeddedStruct.LicenseType
 		varLicenseLicenseInfo.StartTime = varLicenseLicenseInfoWithoutEmbeddedStruct.StartTime
+		varLicenseLicenseInfo.SubscriptionId = varLicenseLicenseInfoWithoutEmbeddedStruct.SubscriptionId
 		varLicenseLicenseInfo.TrialAdmin = varLicenseLicenseInfoWithoutEmbeddedStruct.TrialAdmin
 		varLicenseLicenseInfo.AccountLicenseData = varLicenseLicenseInfoWithoutEmbeddedStruct.AccountLicenseData
 		*o = LicenseLicenseInfo(varLicenseLicenseInfo)
@@ -770,6 +810,7 @@ func (o *LicenseLicenseInfo) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "LicenseState")
 		delete(additionalProperties, "LicenseType")
 		delete(additionalProperties, "StartTime")
+		delete(additionalProperties, "SubscriptionId")
 		delete(additionalProperties, "TrialAdmin")
 		delete(additionalProperties, "AccountLicenseData")
 
