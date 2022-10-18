@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-7766
+API version: 1.0.11-8814
 Contact: intersight@cisco.com
 */
 
@@ -37,6 +37,8 @@ type NetworkElement struct {
 	ConfModTs *string `json:"ConfModTs,omitempty"`
 	// Configuration modified backup timestamp of the switch.
 	ConfModTsBackup *string `json:"ConfModTsBackup,omitempty"`
+	// Connection status of the switch.
+	ConnectionStatus *string `json:"ConnectionStatus,omitempty"`
 	// The default domain name configured on the switch.
 	DefaultDomain *string `json:"DefaultDomain,omitempty"`
 	// The user configured Ethernet operational mode for this switch (End-Host or Switching).
@@ -104,8 +106,12 @@ type NetworkElement struct {
 	Version *string `json:"Version,omitempty"`
 	// An array of relationships to equipmentSwitchCard resources.
 	Cards []EquipmentSwitchCardRelationship `json:"Cards,omitempty"`
+	// An array of relationships to networkDiscoveredNeighbor resources.
+	CdpNeighbor []NetworkDiscoveredNeighborRelationship `json:"CdpNeighbor,omitempty"`
 	// An array of relationships to consoleConsoleConfig resources.
 	Console []ConsoleConsoleConfigRelationship `json:"Console,omitempty"`
+	// An array of relationships to networkDns resources.
+	Dns []NetworkDnsRelationship `json:"Dns,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
 	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 	// An array of relationships to fcPortChannel resources.
@@ -116,11 +122,13 @@ type NetworkElement struct {
 	InterfaceList       []NetworkInterfaceListRelationship `json:"InterfaceList,omitempty"`
 	InventoryDeviceInfo *InventoryDeviceInfoRelationship   `json:"InventoryDeviceInfo,omitempty"`
 	// An array of relationships to networkLicenseFile resources.
-	LicenseFile          []NetworkLicenseFileRelationship  `json:"LicenseFile,omitempty"`
-	ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
-	ManagementEntity     *ManagementEntityRelationship     `json:"ManagementEntity,omitempty"`
-	NetworkFcZoneInfo    *NetworkFcZoneInfoRelationship    `json:"NetworkFcZoneInfo,omitempty"`
-	NetworkVlanPortInfo  *NetworkVlanPortInfoRelationship  `json:"NetworkVlanPortInfo,omitempty"`
+	LicenseFile []NetworkLicenseFileRelationship `json:"LicenseFile,omitempty"`
+	// An array of relationships to networkDiscoveredNeighbor resources.
+	LldpNeighbor         []NetworkDiscoveredNeighborRelationship `json:"LldpNeighbor,omitempty"`
+	ManagementController *ManagementControllerRelationship       `json:"ManagementController,omitempty"`
+	ManagementEntity     *ManagementEntityRelationship           `json:"ManagementEntity,omitempty"`
+	NetworkFcZoneInfo    *NetworkFcZoneInfoRelationship          `json:"NetworkFcZoneInfo,omitempty"`
+	NetworkVlanPortInfo  *NetworkVlanPortInfoRelationship        `json:"NetworkVlanPortInfo,omitempty"`
 	// An array of relationships to ntpNtpServer resources.
 	NtpServer []NtpNtpServerRelationship `json:"NtpServer,omitempty"`
 	// An array of relationships to portMacBinding resources.
@@ -130,6 +138,8 @@ type NetworkElement struct {
 	// An array of relationships to equipmentPsu resources.
 	Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 	RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+	// An array of relationships to equipmentSensor resources.
+	Sensors []EquipmentSensorRelationship `json:"Sensors,omitempty"`
 	// An array of relationships to storageItem resources.
 	StorageItems []StorageItemRelationship `json:"StorageItems,omitempty"`
 	// An array of relationships to networkSupervisorCard resources.
@@ -455,6 +465,38 @@ func (o *NetworkElement) HasConfModTsBackup() bool {
 // SetConfModTsBackup gets a reference to the given string and assigns it to the ConfModTsBackup field.
 func (o *NetworkElement) SetConfModTsBackup(v string) {
 	o.ConfModTsBackup = &v
+}
+
+// GetConnectionStatus returns the ConnectionStatus field value if set, zero value otherwise.
+func (o *NetworkElement) GetConnectionStatus() string {
+	if o == nil || o.ConnectionStatus == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionStatus
+}
+
+// GetConnectionStatusOk returns a tuple with the ConnectionStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkElement) GetConnectionStatusOk() (*string, bool) {
+	if o == nil || o.ConnectionStatus == nil {
+		return nil, false
+	}
+	return o.ConnectionStatus, true
+}
+
+// HasConnectionStatus returns a boolean if a field has been set.
+func (o *NetworkElement) HasConnectionStatus() bool {
+	if o != nil && o.ConnectionStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionStatus gets a reference to the given string and assigns it to the ConnectionStatus field.
+func (o *NetworkElement) SetConnectionStatus(v string) {
+	o.ConnectionStatus = &v
 }
 
 // GetDefaultDomain returns the DefaultDomain field value if set, zero value otherwise.
@@ -1491,6 +1533,39 @@ func (o *NetworkElement) SetCards(v []EquipmentSwitchCardRelationship) {
 	o.Cards = v
 }
 
+// GetCdpNeighbor returns the CdpNeighbor field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetCdpNeighbor() []NetworkDiscoveredNeighborRelationship {
+	if o == nil {
+		var ret []NetworkDiscoveredNeighborRelationship
+		return ret
+	}
+	return o.CdpNeighbor
+}
+
+// GetCdpNeighborOk returns a tuple with the CdpNeighbor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetCdpNeighborOk() ([]NetworkDiscoveredNeighborRelationship, bool) {
+	if o == nil || o.CdpNeighbor == nil {
+		return nil, false
+	}
+	return o.CdpNeighbor, true
+}
+
+// HasCdpNeighbor returns a boolean if a field has been set.
+func (o *NetworkElement) HasCdpNeighbor() bool {
+	if o != nil && o.CdpNeighbor != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCdpNeighbor gets a reference to the given []NetworkDiscoveredNeighborRelationship and assigns it to the CdpNeighbor field.
+func (o *NetworkElement) SetCdpNeighbor(v []NetworkDiscoveredNeighborRelationship) {
+	o.CdpNeighbor = v
+}
+
 // GetConsole returns the Console field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElement) GetConsole() []ConsoleConsoleConfigRelationship {
 	if o == nil {
@@ -1522,6 +1597,39 @@ func (o *NetworkElement) HasConsole() bool {
 // SetConsole gets a reference to the given []ConsoleConsoleConfigRelationship and assigns it to the Console field.
 func (o *NetworkElement) SetConsole(v []ConsoleConsoleConfigRelationship) {
 	o.Console = v
+}
+
+// GetDns returns the Dns field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetDns() []NetworkDnsRelationship {
+	if o == nil {
+		var ret []NetworkDnsRelationship
+		return ret
+	}
+	return o.Dns
+}
+
+// GetDnsOk returns a tuple with the Dns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetDnsOk() ([]NetworkDnsRelationship, bool) {
+	if o == nil || o.Dns == nil {
+		return nil, false
+	}
+	return o.Dns, true
+}
+
+// HasDns returns a boolean if a field has been set.
+func (o *NetworkElement) HasDns() bool {
+	if o != nil && o.Dns != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDns gets a reference to the given []NetworkDnsRelationship and assigns it to the Dns field.
+func (o *NetworkElement) SetDns(v []NetworkDnsRelationship) {
+	o.Dns = v
 }
 
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1719,6 +1827,39 @@ func (o *NetworkElement) HasLicenseFile() bool {
 // SetLicenseFile gets a reference to the given []NetworkLicenseFileRelationship and assigns it to the LicenseFile field.
 func (o *NetworkElement) SetLicenseFile(v []NetworkLicenseFileRelationship) {
 	o.LicenseFile = v
+}
+
+// GetLldpNeighbor returns the LldpNeighbor field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetLldpNeighbor() []NetworkDiscoveredNeighborRelationship {
+	if o == nil {
+		var ret []NetworkDiscoveredNeighborRelationship
+		return ret
+	}
+	return o.LldpNeighbor
+}
+
+// GetLldpNeighborOk returns a tuple with the LldpNeighbor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetLldpNeighborOk() ([]NetworkDiscoveredNeighborRelationship, bool) {
+	if o == nil || o.LldpNeighbor == nil {
+		return nil, false
+	}
+	return o.LldpNeighbor, true
+}
+
+// HasLldpNeighbor returns a boolean if a field has been set.
+func (o *NetworkElement) HasLldpNeighbor() bool {
+	if o != nil && o.LldpNeighbor != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLldpNeighbor gets a reference to the given []NetworkDiscoveredNeighborRelationship and assigns it to the LldpNeighbor field.
+func (o *NetworkElement) SetLldpNeighbor(v []NetworkDiscoveredNeighborRelationship) {
+	o.LldpNeighbor = v
 }
 
 // GetManagementController returns the ManagementController field value if set, zero value otherwise.
@@ -2013,6 +2154,39 @@ func (o *NetworkElement) SetRegisteredDevice(v AssetDeviceRegistrationRelationsh
 	o.RegisteredDevice = &v
 }
 
+// GetSensors returns the Sensors field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetSensors() []EquipmentSensorRelationship {
+	if o == nil {
+		var ret []EquipmentSensorRelationship
+		return ret
+	}
+	return o.Sensors
+}
+
+// GetSensorsOk returns a tuple with the Sensors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetSensorsOk() ([]EquipmentSensorRelationship, bool) {
+	if o == nil || o.Sensors == nil {
+		return nil, false
+	}
+	return o.Sensors, true
+}
+
+// HasSensors returns a boolean if a field has been set.
+func (o *NetworkElement) HasSensors() bool {
+	if o != nil && o.Sensors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSensors gets a reference to the given []EquipmentSensorRelationship and assigns it to the Sensors field.
+func (o *NetworkElement) SetSensors(v []EquipmentSensorRelationship) {
+	o.Sensors = v
+}
+
 // GetStorageItems returns the StorageItems field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElement) GetStorageItems() []StorageItemRelationship {
 	if o == nil {
@@ -2213,6 +2387,9 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	if o.ConfModTsBackup != nil {
 		toSerialize["ConfModTsBackup"] = o.ConfModTsBackup
 	}
+	if o.ConnectionStatus != nil {
+		toSerialize["ConnectionStatus"] = o.ConnectionStatus
+	}
 	if o.DefaultDomain != nil {
 		toSerialize["DefaultDomain"] = o.DefaultDomain
 	}
@@ -2309,8 +2486,14 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	if o.Cards != nil {
 		toSerialize["Cards"] = o.Cards
 	}
+	if o.CdpNeighbor != nil {
+		toSerialize["CdpNeighbor"] = o.CdpNeighbor
+	}
 	if o.Console != nil {
 		toSerialize["Console"] = o.Console
+	}
+	if o.Dns != nil {
+		toSerialize["Dns"] = o.Dns
 	}
 	if o.Fanmodules != nil {
 		toSerialize["Fanmodules"] = o.Fanmodules
@@ -2329,6 +2512,9 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	}
 	if o.LicenseFile != nil {
 		toSerialize["LicenseFile"] = o.LicenseFile
+	}
+	if o.LldpNeighbor != nil {
+		toSerialize["LldpNeighbor"] = o.LldpNeighbor
 	}
 	if o.ManagementController != nil {
 		toSerialize["ManagementController"] = o.ManagementController
@@ -2356,6 +2542,9 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	}
 	if o.RegisteredDevice != nil {
 		toSerialize["RegisteredDevice"] = o.RegisteredDevice
+	}
+	if o.Sensors != nil {
+		toSerialize["Sensors"] = o.Sensors
 	}
 	if o.StorageItems != nil {
 		toSerialize["StorageItems"] = o.StorageItems
@@ -2399,6 +2588,8 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		ConfModTs *string `json:"ConfModTs,omitempty"`
 		// Configuration modified backup timestamp of the switch.
 		ConfModTsBackup *string `json:"ConfModTsBackup,omitempty"`
+		// Connection status of the switch.
+		ConnectionStatus *string `json:"ConnectionStatus,omitempty"`
 		// The default domain name configured on the switch.
 		DefaultDomain *string `json:"DefaultDomain,omitempty"`
 		// The user configured Ethernet operational mode for this switch (End-Host or Switching).
@@ -2466,8 +2657,12 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		Version *string `json:"Version,omitempty"`
 		// An array of relationships to equipmentSwitchCard resources.
 		Cards []EquipmentSwitchCardRelationship `json:"Cards,omitempty"`
+		// An array of relationships to networkDiscoveredNeighbor resources.
+		CdpNeighbor []NetworkDiscoveredNeighborRelationship `json:"CdpNeighbor,omitempty"`
 		// An array of relationships to consoleConsoleConfig resources.
 		Console []ConsoleConsoleConfigRelationship `json:"Console,omitempty"`
+		// An array of relationships to networkDns resources.
+		Dns []NetworkDnsRelationship `json:"Dns,omitempty"`
 		// An array of relationships to equipmentFanModule resources.
 		Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 		// An array of relationships to fcPortChannel resources.
@@ -2478,11 +2673,13 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		InterfaceList       []NetworkInterfaceListRelationship `json:"InterfaceList,omitempty"`
 		InventoryDeviceInfo *InventoryDeviceInfoRelationship   `json:"InventoryDeviceInfo,omitempty"`
 		// An array of relationships to networkLicenseFile resources.
-		LicenseFile          []NetworkLicenseFileRelationship  `json:"LicenseFile,omitempty"`
-		ManagementController *ManagementControllerRelationship `json:"ManagementController,omitempty"`
-		ManagementEntity     *ManagementEntityRelationship     `json:"ManagementEntity,omitempty"`
-		NetworkFcZoneInfo    *NetworkFcZoneInfoRelationship    `json:"NetworkFcZoneInfo,omitempty"`
-		NetworkVlanPortInfo  *NetworkVlanPortInfoRelationship  `json:"NetworkVlanPortInfo,omitempty"`
+		LicenseFile []NetworkLicenseFileRelationship `json:"LicenseFile,omitempty"`
+		// An array of relationships to networkDiscoveredNeighbor resources.
+		LldpNeighbor         []NetworkDiscoveredNeighborRelationship `json:"LldpNeighbor,omitempty"`
+		ManagementController *ManagementControllerRelationship       `json:"ManagementController,omitempty"`
+		ManagementEntity     *ManagementEntityRelationship           `json:"ManagementEntity,omitempty"`
+		NetworkFcZoneInfo    *NetworkFcZoneInfoRelationship          `json:"NetworkFcZoneInfo,omitempty"`
+		NetworkVlanPortInfo  *NetworkVlanPortInfoRelationship        `json:"NetworkVlanPortInfo,omitempty"`
 		// An array of relationships to ntpNtpServer resources.
 		NtpServer []NtpNtpServerRelationship `json:"NtpServer,omitempty"`
 		// An array of relationships to portMacBinding resources.
@@ -2492,6 +2689,8 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		// An array of relationships to equipmentPsu resources.
 		Psus             []EquipmentPsuRelationship           `json:"Psus,omitempty"`
 		RegisteredDevice *AssetDeviceRegistrationRelationship `json:"RegisteredDevice,omitempty"`
+		// An array of relationships to equipmentSensor resources.
+		Sensors []EquipmentSensorRelationship `json:"Sensors,omitempty"`
 		// An array of relationships to storageItem resources.
 		StorageItems []StorageItemRelationship `json:"StorageItems,omitempty"`
 		// An array of relationships to networkSupervisorCard resources.
@@ -2516,6 +2715,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		varNetworkElement.Chassis = varNetworkElementWithoutEmbeddedStruct.Chassis
 		varNetworkElement.ConfModTs = varNetworkElementWithoutEmbeddedStruct.ConfModTs
 		varNetworkElement.ConfModTsBackup = varNetworkElementWithoutEmbeddedStruct.ConfModTsBackup
+		varNetworkElement.ConnectionStatus = varNetworkElementWithoutEmbeddedStruct.ConnectionStatus
 		varNetworkElement.DefaultDomain = varNetworkElementWithoutEmbeddedStruct.DefaultDomain
 		varNetworkElement.EthernetMode = varNetworkElementWithoutEmbeddedStruct.EthernetMode
 		varNetworkElement.EthernetSwitchingMode = varNetworkElementWithoutEmbeddedStruct.EthernetSwitchingMode
@@ -2548,13 +2748,16 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		varNetworkElement.TotalMemory = varNetworkElementWithoutEmbeddedStruct.TotalMemory
 		varNetworkElement.Version = varNetworkElementWithoutEmbeddedStruct.Version
 		varNetworkElement.Cards = varNetworkElementWithoutEmbeddedStruct.Cards
+		varNetworkElement.CdpNeighbor = varNetworkElementWithoutEmbeddedStruct.CdpNeighbor
 		varNetworkElement.Console = varNetworkElementWithoutEmbeddedStruct.Console
+		varNetworkElement.Dns = varNetworkElementWithoutEmbeddedStruct.Dns
 		varNetworkElement.Fanmodules = varNetworkElementWithoutEmbeddedStruct.Fanmodules
 		varNetworkElement.FcPortChannels = varNetworkElementWithoutEmbeddedStruct.FcPortChannels
 		varNetworkElement.FeatureControl = varNetworkElementWithoutEmbeddedStruct.FeatureControl
 		varNetworkElement.InterfaceList = varNetworkElementWithoutEmbeddedStruct.InterfaceList
 		varNetworkElement.InventoryDeviceInfo = varNetworkElementWithoutEmbeddedStruct.InventoryDeviceInfo
 		varNetworkElement.LicenseFile = varNetworkElementWithoutEmbeddedStruct.LicenseFile
+		varNetworkElement.LldpNeighbor = varNetworkElementWithoutEmbeddedStruct.LldpNeighbor
 		varNetworkElement.ManagementController = varNetworkElementWithoutEmbeddedStruct.ManagementController
 		varNetworkElement.ManagementEntity = varNetworkElementWithoutEmbeddedStruct.ManagementEntity
 		varNetworkElement.NetworkFcZoneInfo = varNetworkElementWithoutEmbeddedStruct.NetworkFcZoneInfo
@@ -2564,6 +2767,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		varNetworkElement.ProcessorUnit = varNetworkElementWithoutEmbeddedStruct.ProcessorUnit
 		varNetworkElement.Psus = varNetworkElementWithoutEmbeddedStruct.Psus
 		varNetworkElement.RegisteredDevice = varNetworkElementWithoutEmbeddedStruct.RegisteredDevice
+		varNetworkElement.Sensors = varNetworkElementWithoutEmbeddedStruct.Sensors
 		varNetworkElement.StorageItems = varNetworkElementWithoutEmbeddedStruct.StorageItems
 		varNetworkElement.SupervisorCard = varNetworkElementWithoutEmbeddedStruct.SupervisorCard
 		varNetworkElement.TopSystem = varNetworkElementWithoutEmbeddedStruct.TopSystem
@@ -2595,6 +2799,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "Chassis")
 		delete(additionalProperties, "ConfModTs")
 		delete(additionalProperties, "ConfModTsBackup")
+		delete(additionalProperties, "ConnectionStatus")
 		delete(additionalProperties, "DefaultDomain")
 		delete(additionalProperties, "EthernetMode")
 		delete(additionalProperties, "EthernetSwitchingMode")
@@ -2627,13 +2832,16 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "TotalMemory")
 		delete(additionalProperties, "Version")
 		delete(additionalProperties, "Cards")
+		delete(additionalProperties, "CdpNeighbor")
 		delete(additionalProperties, "Console")
+		delete(additionalProperties, "Dns")
 		delete(additionalProperties, "Fanmodules")
 		delete(additionalProperties, "FcPortChannels")
 		delete(additionalProperties, "FeatureControl")
 		delete(additionalProperties, "InterfaceList")
 		delete(additionalProperties, "InventoryDeviceInfo")
 		delete(additionalProperties, "LicenseFile")
+		delete(additionalProperties, "LldpNeighbor")
 		delete(additionalProperties, "ManagementController")
 		delete(additionalProperties, "ManagementEntity")
 		delete(additionalProperties, "NetworkFcZoneInfo")
@@ -2643,6 +2851,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ProcessorUnit")
 		delete(additionalProperties, "Psus")
 		delete(additionalProperties, "RegisteredDevice")
+		delete(additionalProperties, "Sensors")
 		delete(additionalProperties, "StorageItems")
 		delete(additionalProperties, "SupervisorCard")
 		delete(additionalProperties, "TopSystem")
