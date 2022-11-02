@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **Account** | Pointer to [**IamAccountRelationship**](IamAccountRelationship.md) |  | [optional] 
 **Assist** | Pointer to [**AssetTargetRelationship**](AssetTargetRelationship.md) |  | [optional] 
 **RegisteredDevice** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**TrustPoint** | Pointer to [**IamTrustPointRelationship**](IamTrustPointRelationship.md) |  | [optional] 
 **WorkflowInfo** | Pointer to [**WorkflowWorkflowInfoRelationship**](WorkflowWorkflowInfoRelationship.md) |  | [optional] 
 
 ## Methods
@@ -584,6 +585,31 @@ SetRegisteredDevice sets RegisteredDevice field to given value.
 `func (o *AssetTarget) HasRegisteredDevice() bool`
 
 HasRegisteredDevice returns a boolean if a field has been set.
+
+### GetTrustPoint
+
+`func (o *AssetTarget) GetTrustPoint() IamTrustPointRelationship`
+
+GetTrustPoint returns the TrustPoint field if non-nil, zero value otherwise.
+
+### GetTrustPointOk
+
+`func (o *AssetTarget) GetTrustPointOk() (*IamTrustPointRelationship, bool)`
+
+GetTrustPointOk returns a tuple with the TrustPoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustPoint
+
+`func (o *AssetTarget) SetTrustPoint(v IamTrustPointRelationship)`
+
+SetTrustPoint sets TrustPoint field to given value.
+
+### HasTrustPoint
+
+`func (o *AssetTarget) HasTrustPoint() bool`
+
+HasTrustPoint returns a boolean if a field has been set.
 
 ### GetWorkflowInfo
 

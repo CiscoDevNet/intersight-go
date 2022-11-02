@@ -11,11 +11,13 @@ Name | Type | Description | Notes
 **AssetTag** | Pointer to **string** | The user defined asset tag assigned to the server. | [optional] [readonly] 
 **AvailableMemory** | Pointer to **int64** | The amount of memory available on the server. | [optional] [readonly] 
 **BiosPostComplete** | Pointer to **bool** | The BIOS POST completion status of the server. | [optional] 
+**DeviceConnectionStatus** | Pointer to **string** | Connection status of the server&#39;s device connector. | [optional] [readonly] 
 **FaultSummary** | Pointer to **int64** | The fault summary for the server. | [optional] 
 **HardwareUuid** | Pointer to **string** | The universally unique hardware identity of the server provided by the manufacturer. | [optional] 
 **KvmIpAddresses** | Pointer to [**[]ComputeIpAddress**](ComputeIpAddress.md) |  | [optional] 
 **KvmServerStateEnabled** | Pointer to **bool** | The KVM server state of the server. | [optional] [readonly] 
 **KvmVendor** | Pointer to **string** | The KVM Vendor for the server. | [optional] [readonly] 
+**Lifecycle** | Pointer to **string** | The lifecycle state of the server. This will map to the discovery lifecycle as represented in the server Identity object. * &#x60;None&#x60; - Default state of an equipment. This should be an initial state when no state is defined for an equipment. * &#x60;Active&#x60; - Default Lifecycle State for a physical entity. * &#x60;Decommissioned&#x60; - Decommission Lifecycle state. * &#x60;DiscoveryInProgress&#x60; - DiscoveryInProgress Lifecycle state. * &#x60;DiscoveryFailed&#x60; - DiscoveryFailed Lifecycle state. * &#x60;FirmwareUpgradeInProgress&#x60; - Firmware upgrade is in progress on given physical entity. * &#x60;BladeMigrationInProgress&#x60; - Server slot migration is in progress on given physical entity. * &#x60;SlotMismatch&#x60; - The blade server is detected in a different chassis/slot than it was previously. | [optional] [readonly] [default to "None"]
 **ManagementMode** | Pointer to **string** | The management mode of the server. * &#x60;IntersightStandalone&#x60; - Intersight Standalone mode of operation. * &#x60;UCSM&#x60; - Unified Computing System Manager mode of operation. * &#x60;Intersight&#x60; - Intersight managed mode of operation. | [optional] [default to "IntersightStandalone"]
 **MemorySpeed** | Pointer to **string** | The maximum memory speed in MHz available on the server. | [optional] [readonly] 
 **MgmtIpAddress** | Pointer to **string** | Management address of the server. | [optional] 
@@ -246,6 +248,31 @@ SetBiosPostComplete sets BiosPostComplete field to given value.
 
 HasBiosPostComplete returns a boolean if a field has been set.
 
+### GetDeviceConnectionStatus
+
+`func (o *ComputePhysical) GetDeviceConnectionStatus() string`
+
+GetDeviceConnectionStatus returns the DeviceConnectionStatus field if non-nil, zero value otherwise.
+
+### GetDeviceConnectionStatusOk
+
+`func (o *ComputePhysical) GetDeviceConnectionStatusOk() (*string, bool)`
+
+GetDeviceConnectionStatusOk returns a tuple with the DeviceConnectionStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceConnectionStatus
+
+`func (o *ComputePhysical) SetDeviceConnectionStatus(v string)`
+
+SetDeviceConnectionStatus sets DeviceConnectionStatus field to given value.
+
+### HasDeviceConnectionStatus
+
+`func (o *ComputePhysical) HasDeviceConnectionStatus() bool`
+
+HasDeviceConnectionStatus returns a boolean if a field has been set.
+
 ### GetFaultSummary
 
 `func (o *ComputePhysical) GetFaultSummary() int64`
@@ -380,6 +407,31 @@ SetKvmVendor sets KvmVendor field to given value.
 `func (o *ComputePhysical) HasKvmVendor() bool`
 
 HasKvmVendor returns a boolean if a field has been set.
+
+### GetLifecycle
+
+`func (o *ComputePhysical) GetLifecycle() string`
+
+GetLifecycle returns the Lifecycle field if non-nil, zero value otherwise.
+
+### GetLifecycleOk
+
+`func (o *ComputePhysical) GetLifecycleOk() (*string, bool)`
+
+GetLifecycleOk returns a tuple with the Lifecycle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycle
+
+`func (o *ComputePhysical) SetLifecycle(v string)`
+
+SetLifecycle sets Lifecycle field to given value.
+
+### HasLifecycle
+
+`func (o *ComputePhysical) HasLifecycle() bool`
+
+HasLifecycle returns a boolean if a field has been set.
 
 ### GetManagementMode
 

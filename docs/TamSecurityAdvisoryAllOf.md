@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **DatePublished** | Pointer to **time.Time** | Date when the security advisory was first published by Cisco. | [optional] 
 **DateUpdated** | Pointer to **time.Time** | Date when the security advisory was last updated by Cisco. | [optional] 
 **EnvironmentalScore** | Pointer to **float32** | CVSS version 3 environmental score for the security Advisory. | [optional] 
+**ExecuteOnPod** | Pointer to **string** | Orion pod on which this advisory should process. * &#x60;tier1&#x60; - Advisory processing will be taken care in first advisory driver of multinode cluster. * &#x60;tier2&#x60; - Advisory processing will be taken care in second advisory driver of multinode cluster. | [optional] [default to "tier1"]
 **ExternalUrl** | Pointer to **string** | A link to an external URL describing security Advisory in more details. | [optional] 
 **OtherRefUrls** | Pointer to **[]string** |  | [optional] 
 **Recommendation** | Pointer to **string** | Recommended action to resolve the security advisory. | [optional] 
@@ -311,6 +312,31 @@ SetEnvironmentalScore sets EnvironmentalScore field to given value.
 `func (o *TamSecurityAdvisoryAllOf) HasEnvironmentalScore() bool`
 
 HasEnvironmentalScore returns a boolean if a field has been set.
+
+### GetExecuteOnPod
+
+`func (o *TamSecurityAdvisoryAllOf) GetExecuteOnPod() string`
+
+GetExecuteOnPod returns the ExecuteOnPod field if non-nil, zero value otherwise.
+
+### GetExecuteOnPodOk
+
+`func (o *TamSecurityAdvisoryAllOf) GetExecuteOnPodOk() (*string, bool)`
+
+GetExecuteOnPodOk returns a tuple with the ExecuteOnPod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExecuteOnPod
+
+`func (o *TamSecurityAdvisoryAllOf) SetExecuteOnPod(v string)`
+
+SetExecuteOnPod sets ExecuteOnPod field to given value.
+
+### HasExecuteOnPod
+
+`func (o *TamSecurityAdvisoryAllOf) HasExecuteOnPod() bool`
+
+HasExecuteOnPod returns a boolean if a field has been set.
 
 ### GetExternalUrl
 
