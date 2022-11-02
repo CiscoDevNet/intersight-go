@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-8814
+API version: 1.0.11-9235
 Contact: intersight@cisco.com
 */
 
@@ -39,6 +39,8 @@ type ComputePhysicalSummary struct {
 	ConnectionStatus *string `json:"ConnectionStatus,omitempty"`
 	// CPU Capacity = Number of CPU Sockets x Enabled Cores x Speed (GHz).
 	CpuCapacity *float32 `json:"CpuCapacity,omitempty"`
+	// Connection status of the server's device connector.
+	DeviceConnectionStatus *string `json:"DeviceConnectionStatus,omitempty"`
 	// The database identifier of the registered device of an object.
 	DeviceMoId *string `json:"DeviceMoId,omitempty"`
 	// The Distinguished Name unambiguously identifies an object in the system.
@@ -57,6 +59,8 @@ type ComputePhysicalSummary struct {
 	KvmServerStateEnabled *bool `json:"KvmServerStateEnabled,omitempty"`
 	// The KVM Vendor for the server.
 	KvmVendor *string `json:"KvmVendor,omitempty"`
+	// The lifecycle state of the server. This will map to the discovery lifecycle as represented in the server Identity object. * `None` - Default state of an equipment. This should be an initial state when no state is defined for an equipment. * `Active` - Default Lifecycle State for a physical entity. * `Decommissioned` - Decommission Lifecycle state. * `DiscoveryInProgress` - DiscoveryInProgress Lifecycle state. * `DiscoveryFailed` - DiscoveryFailed Lifecycle state. * `FirmwareUpgradeInProgress` - Firmware upgrade is in progress on given physical entity. * `BladeMigrationInProgress` - Server slot migration is in progress on given physical entity. * `SlotMismatch` - The blade server is detected in a different chassis/slot than it was previously.
+	Lifecycle *string `json:"Lifecycle,omitempty"`
 	// The management mode of the server. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 	ManagementMode *string `json:"ManagementMode,omitempty"`
 	// The maximum memory speed in MHz available on the server.
@@ -468,6 +472,38 @@ func (o *ComputePhysicalSummary) SetCpuCapacity(v float32) {
 	o.CpuCapacity = &v
 }
 
+// GetDeviceConnectionStatus returns the DeviceConnectionStatus field value if set, zero value otherwise.
+func (o *ComputePhysicalSummary) GetDeviceConnectionStatus() string {
+	if o == nil || o.DeviceConnectionStatus == nil {
+		var ret string
+		return ret
+	}
+	return *o.DeviceConnectionStatus
+}
+
+// GetDeviceConnectionStatusOk returns a tuple with the DeviceConnectionStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputePhysicalSummary) GetDeviceConnectionStatusOk() (*string, bool) {
+	if o == nil || o.DeviceConnectionStatus == nil {
+		return nil, false
+	}
+	return o.DeviceConnectionStatus, true
+}
+
+// HasDeviceConnectionStatus returns a boolean if a field has been set.
+func (o *ComputePhysicalSummary) HasDeviceConnectionStatus() bool {
+	if o != nil && o.DeviceConnectionStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceConnectionStatus gets a reference to the given string and assigns it to the DeviceConnectionStatus field.
+func (o *ComputePhysicalSummary) SetDeviceConnectionStatus(v string) {
+	o.DeviceConnectionStatus = &v
+}
+
 // GetDeviceMoId returns the DeviceMoId field value if set, zero value otherwise.
 func (o *ComputePhysicalSummary) GetDeviceMoId() string {
 	if o == nil || o.DeviceMoId == nil {
@@ -758,6 +794,38 @@ func (o *ComputePhysicalSummary) HasKvmVendor() bool {
 // SetKvmVendor gets a reference to the given string and assigns it to the KvmVendor field.
 func (o *ComputePhysicalSummary) SetKvmVendor(v string) {
 	o.KvmVendor = &v
+}
+
+// GetLifecycle returns the Lifecycle field value if set, zero value otherwise.
+func (o *ComputePhysicalSummary) GetLifecycle() string {
+	if o == nil || o.Lifecycle == nil {
+		var ret string
+		return ret
+	}
+	return *o.Lifecycle
+}
+
+// GetLifecycleOk returns a tuple with the Lifecycle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComputePhysicalSummary) GetLifecycleOk() (*string, bool) {
+	if o == nil || o.Lifecycle == nil {
+		return nil, false
+	}
+	return o.Lifecycle, true
+}
+
+// HasLifecycle returns a boolean if a field has been set.
+func (o *ComputePhysicalSummary) HasLifecycle() bool {
+	if o != nil && o.Lifecycle != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycle gets a reference to the given string and assigns it to the Lifecycle field.
+func (o *ComputePhysicalSummary) SetLifecycle(v string) {
+	o.Lifecycle = &v
 }
 
 // GetManagementMode returns the ManagementMode field value if set, zero value otherwise.
@@ -1953,6 +2021,9 @@ func (o ComputePhysicalSummary) MarshalJSON() ([]byte, error) {
 	if o.CpuCapacity != nil {
 		toSerialize["CpuCapacity"] = o.CpuCapacity
 	}
+	if o.DeviceConnectionStatus != nil {
+		toSerialize["DeviceConnectionStatus"] = o.DeviceConnectionStatus
+	}
 	if o.DeviceMoId != nil {
 		toSerialize["DeviceMoId"] = o.DeviceMoId
 	}
@@ -1979,6 +2050,9 @@ func (o ComputePhysicalSummary) MarshalJSON() ([]byte, error) {
 	}
 	if o.KvmVendor != nil {
 		toSerialize["KvmVendor"] = o.KvmVendor
+	}
+	if o.Lifecycle != nil {
+		toSerialize["Lifecycle"] = o.Lifecycle
 	}
 	if o.ManagementMode != nil {
 		toSerialize["ManagementMode"] = o.ManagementMode
@@ -2117,6 +2191,8 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		ConnectionStatus *string `json:"ConnectionStatus,omitempty"`
 		// CPU Capacity = Number of CPU Sockets x Enabled Cores x Speed (GHz).
 		CpuCapacity *float32 `json:"CpuCapacity,omitempty"`
+		// Connection status of the server's device connector.
+		DeviceConnectionStatus *string `json:"DeviceConnectionStatus,omitempty"`
 		// The database identifier of the registered device of an object.
 		DeviceMoId *string `json:"DeviceMoId,omitempty"`
 		// The Distinguished Name unambiguously identifies an object in the system.
@@ -2135,6 +2211,8 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		KvmServerStateEnabled *bool `json:"KvmServerStateEnabled,omitempty"`
 		// The KVM Vendor for the server.
 		KvmVendor *string `json:"KvmVendor,omitempty"`
+		// The lifecycle state of the server. This will map to the discovery lifecycle as represented in the server Identity object. * `None` - Default state of an equipment. This should be an initial state when no state is defined for an equipment. * `Active` - Default Lifecycle State for a physical entity. * `Decommissioned` - Decommission Lifecycle state. * `DiscoveryInProgress` - DiscoveryInProgress Lifecycle state. * `DiscoveryFailed` - DiscoveryFailed Lifecycle state. * `FirmwareUpgradeInProgress` - Firmware upgrade is in progress on given physical entity. * `BladeMigrationInProgress` - Server slot migration is in progress on given physical entity. * `SlotMismatch` - The blade server is detected in a different chassis/slot than it was previously.
+		Lifecycle *string `json:"Lifecycle,omitempty"`
 		// The management mode of the server. * `IntersightStandalone` - Intersight Standalone mode of operation. * `UCSM` - Unified Computing System Manager mode of operation. * `Intersight` - Intersight managed mode of operation.
 		ManagementMode *string `json:"ManagementMode,omitempty"`
 		// The maximum memory speed in MHz available on the server.
@@ -2220,6 +2298,7 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		varComputePhysicalSummary.ChassisId = varComputePhysicalSummaryWithoutEmbeddedStruct.ChassisId
 		varComputePhysicalSummary.ConnectionStatus = varComputePhysicalSummaryWithoutEmbeddedStruct.ConnectionStatus
 		varComputePhysicalSummary.CpuCapacity = varComputePhysicalSummaryWithoutEmbeddedStruct.CpuCapacity
+		varComputePhysicalSummary.DeviceConnectionStatus = varComputePhysicalSummaryWithoutEmbeddedStruct.DeviceConnectionStatus
 		varComputePhysicalSummary.DeviceMoId = varComputePhysicalSummaryWithoutEmbeddedStruct.DeviceMoId
 		varComputePhysicalSummary.Dn = varComputePhysicalSummaryWithoutEmbeddedStruct.Dn
 		varComputePhysicalSummary.FaultSummary = varComputePhysicalSummaryWithoutEmbeddedStruct.FaultSummary
@@ -2229,6 +2308,7 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		varComputePhysicalSummary.KvmIpAddresses = varComputePhysicalSummaryWithoutEmbeddedStruct.KvmIpAddresses
 		varComputePhysicalSummary.KvmServerStateEnabled = varComputePhysicalSummaryWithoutEmbeddedStruct.KvmServerStateEnabled
 		varComputePhysicalSummary.KvmVendor = varComputePhysicalSummaryWithoutEmbeddedStruct.KvmVendor
+		varComputePhysicalSummary.Lifecycle = varComputePhysicalSummaryWithoutEmbeddedStruct.Lifecycle
 		varComputePhysicalSummary.ManagementMode = varComputePhysicalSummaryWithoutEmbeddedStruct.ManagementMode
 		varComputePhysicalSummary.MemorySpeed = varComputePhysicalSummaryWithoutEmbeddedStruct.MemorySpeed
 		varComputePhysicalSummary.MgmtIpAddress = varComputePhysicalSummaryWithoutEmbeddedStruct.MgmtIpAddress
@@ -2292,6 +2372,7 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ChassisId")
 		delete(additionalProperties, "ConnectionStatus")
 		delete(additionalProperties, "CpuCapacity")
+		delete(additionalProperties, "DeviceConnectionStatus")
 		delete(additionalProperties, "DeviceMoId")
 		delete(additionalProperties, "Dn")
 		delete(additionalProperties, "FaultSummary")
@@ -2301,6 +2382,7 @@ func (o *ComputePhysicalSummary) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "KvmIpAddresses")
 		delete(additionalProperties, "KvmServerStateEnabled")
 		delete(additionalProperties, "KvmVendor")
+		delete(additionalProperties, "Lifecycle")
 		delete(additionalProperties, "ManagementMode")
 		delete(additionalProperties, "MemorySpeed")
 		delete(additionalProperties, "MgmtIpAddress")
