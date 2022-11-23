@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-9235
+API version: 1.0.11-9661
 Contact: intersight@cisco.com
 */
 
@@ -33,8 +33,6 @@ type ComputePhysical struct {
 	AvailableMemory *int64 `json:"AvailableMemory,omitempty"`
 	// The BIOS POST completion status of the server.
 	BiosPostComplete *bool `json:"BiosPostComplete,omitempty"`
-	// Connection status of the server's device connector.
-	DeviceConnectionStatus *string `json:"DeviceConnectionStatus,omitempty"`
 	// The fault summary for the server.
 	// Deprecated
 	FaultSummary *int64 `json:"FaultSummary,omitempty"`
@@ -358,38 +356,6 @@ func (o *ComputePhysical) HasBiosPostComplete() bool {
 // SetBiosPostComplete gets a reference to the given bool and assigns it to the BiosPostComplete field.
 func (o *ComputePhysical) SetBiosPostComplete(v bool) {
 	o.BiosPostComplete = &v
-}
-
-// GetDeviceConnectionStatus returns the DeviceConnectionStatus field value if set, zero value otherwise.
-func (o *ComputePhysical) GetDeviceConnectionStatus() string {
-	if o == nil || o.DeviceConnectionStatus == nil {
-		var ret string
-		return ret
-	}
-	return *o.DeviceConnectionStatus
-}
-
-// GetDeviceConnectionStatusOk returns a tuple with the DeviceConnectionStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputePhysical) GetDeviceConnectionStatusOk() (*string, bool) {
-	if o == nil || o.DeviceConnectionStatus == nil {
-		return nil, false
-	}
-	return o.DeviceConnectionStatus, true
-}
-
-// HasDeviceConnectionStatus returns a boolean if a field has been set.
-func (o *ComputePhysical) HasDeviceConnectionStatus() bool {
-	if o != nil && o.DeviceConnectionStatus != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceConnectionStatus gets a reference to the given string and assigns it to the DeviceConnectionStatus field.
-func (o *ComputePhysical) SetDeviceConnectionStatus(v string) {
-	o.DeviceConnectionStatus = &v
 }
 
 // GetFaultSummary returns the FaultSummary field value if set, zero value otherwise.
@@ -1751,9 +1717,6 @@ func (o ComputePhysical) MarshalJSON() ([]byte, error) {
 	if o.BiosPostComplete != nil {
 		toSerialize["BiosPostComplete"] = o.BiosPostComplete
 	}
-	if o.DeviceConnectionStatus != nil {
-		toSerialize["DeviceConnectionStatus"] = o.DeviceConnectionStatus
-	}
 	if o.FaultSummary != nil {
 		toSerialize["FaultSummary"] = o.FaultSummary
 	}
@@ -1900,8 +1863,6 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		AvailableMemory *int64 `json:"AvailableMemory,omitempty"`
 		// The BIOS POST completion status of the server.
 		BiosPostComplete *bool `json:"BiosPostComplete,omitempty"`
-		// Connection status of the server's device connector.
-		DeviceConnectionStatus *string `json:"DeviceConnectionStatus,omitempty"`
 		// The fault summary for the server.
 		// Deprecated
 		FaultSummary *int64 `json:"FaultSummary,omitempty"`
@@ -1994,7 +1955,6 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		varComputePhysical.AssetTag = varComputePhysicalWithoutEmbeddedStruct.AssetTag
 		varComputePhysical.AvailableMemory = varComputePhysicalWithoutEmbeddedStruct.AvailableMemory
 		varComputePhysical.BiosPostComplete = varComputePhysicalWithoutEmbeddedStruct.BiosPostComplete
-		varComputePhysical.DeviceConnectionStatus = varComputePhysicalWithoutEmbeddedStruct.DeviceConnectionStatus
 		varComputePhysical.FaultSummary = varComputePhysicalWithoutEmbeddedStruct.FaultSummary
 		varComputePhysical.HardwareUuid = varComputePhysicalWithoutEmbeddedStruct.HardwareUuid
 		varComputePhysical.KvmIpAddresses = varComputePhysicalWithoutEmbeddedStruct.KvmIpAddresses
@@ -2060,7 +2020,6 @@ func (o *ComputePhysical) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "AssetTag")
 		delete(additionalProperties, "AvailableMemory")
 		delete(additionalProperties, "BiosPostComplete")
-		delete(additionalProperties, "DeviceConnectionStatus")
 		delete(additionalProperties, "FaultSummary")
 		delete(additionalProperties, "HardwareUuid")
 		delete(additionalProperties, "KvmIpAddresses")

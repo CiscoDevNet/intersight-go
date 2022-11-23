@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-9235
+API version: 1.0.11-9661
 Contact: intersight@cisco.com
 */
 
@@ -26,21 +26,19 @@ type AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions struct {
 	ObjectType string `json:"ObjectType"`
 	// The Google Cloud Platform (GCP) Billing Account ID.
 	BillingAccountId *string `json:"BillingAccountId,omitempty"`
+	// Name of Google BigQuery Cost Export Data Set which is the dataset for the billed cost export.
+	CostExportDataSetName *string `json:"CostExportDataSetName,omitempty"`
+	// Google BigQuery Cost Export Table Name. This table will store the exported data from the Cost Export.
+	CostExportTableName *string `json:"CostExportTableName,omitempty"`
 	// Name of the BigQuery Pricing Export Data Set which is the dataset for negotiated pricing.
 	PricingExportDataSetName *string `json:"PricingExportDataSetName,omitempty"`
 	// The Google BigQuery Pricing Export Table Name field is auto-populated with the table used in BigQuery, cloud_pricing_export. There is no need to modify this name, unless you use a different table for negotiated pricing. The Default name is \"cloud_pricing_export\".
 	PricingExportTableName *string `json:"PricingExportTableName,omitempty"`
 	// The unique ID assigned to the project containing the cost and pricing exports. If the exports are in separate projects, multiple billing targets will be necessary.
 	ProjectId *string `json:"ProjectId,omitempty"`
-	// This dataset contains the resource level billed cost export table.
-	ResourceLevelCostDataSetName *string `json:"ResourceLevelCostDataSetName,omitempty"`
-	// This table stores resource level cost export data.
-	ResourceLevelCostTableName *string `json:"ResourceLevelCostTableName,omitempty"`
-	// Name of Google BigQuery Standard Cost Export Data Set which is the dataset for the standard billed cost export.
-	StandardCostDataSetName *string `json:"StandardCostDataSetName,omitempty"`
-	// Google BigQuery Standard Cost Export Table Name. This table will store the exported data from the Standard Cost Export.
-	StandardCostTableName *string `json:"StandardCostTableName,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	// This flag will enable querying of detailed usage cost with resource level information included.  If not enabled, cost export data will be queried, if dataset and table name are provided.
+	ResourceLevelCostEnabled *bool `json:"ResourceLevelCostEnabled,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions
@@ -148,6 +146,70 @@ func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetBillingAcco
 	o.BillingAccountId = &v
 }
 
+// GetCostExportDataSetName returns the CostExportDataSetName field value if set, zero value otherwise.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportDataSetName() string {
+	if o == nil || o.CostExportDataSetName == nil {
+		var ret string
+		return ret
+	}
+	return *o.CostExportDataSetName
+}
+
+// GetCostExportDataSetNameOk returns a tuple with the CostExportDataSetName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportDataSetNameOk() (*string, bool) {
+	if o == nil || o.CostExportDataSetName == nil {
+		return nil, false
+	}
+	return o.CostExportDataSetName, true
+}
+
+// HasCostExportDataSetName returns a boolean if a field has been set.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasCostExportDataSetName() bool {
+	if o != nil && o.CostExportDataSetName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCostExportDataSetName gets a reference to the given string and assigns it to the CostExportDataSetName field.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetCostExportDataSetName(v string) {
+	o.CostExportDataSetName = &v
+}
+
+// GetCostExportTableName returns the CostExportTableName field value if set, zero value otherwise.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportTableName() string {
+	if o == nil || o.CostExportTableName == nil {
+		var ret string
+		return ret
+	}
+	return *o.CostExportTableName
+}
+
+// GetCostExportTableNameOk returns a tuple with the CostExportTableName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportTableNameOk() (*string, bool) {
+	if o == nil || o.CostExportTableName == nil {
+		return nil, false
+	}
+	return o.CostExportTableName, true
+}
+
+// HasCostExportTableName returns a boolean if a field has been set.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasCostExportTableName() bool {
+	if o != nil && o.CostExportTableName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCostExportTableName gets a reference to the given string and assigns it to the CostExportTableName field.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetCostExportTableName(v string) {
+	o.CostExportTableName = &v
+}
+
 // GetPricingExportDataSetName returns the PricingExportDataSetName field value if set, zero value otherwise.
 func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetPricingExportDataSetName() string {
 	if o == nil || o.PricingExportDataSetName == nil {
@@ -244,132 +306,36 @@ func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetProjectId(v
 	o.ProjectId = &v
 }
 
-// GetResourceLevelCostDataSetName returns the ResourceLevelCostDataSetName field value if set, zero value otherwise.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostDataSetName() string {
-	if o == nil || o.ResourceLevelCostDataSetName == nil {
-		var ret string
+// GetResourceLevelCostEnabled returns the ResourceLevelCostEnabled field value if set, zero value otherwise.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostEnabled() bool {
+	if o == nil || o.ResourceLevelCostEnabled == nil {
+		var ret bool
 		return ret
 	}
-	return *o.ResourceLevelCostDataSetName
+	return *o.ResourceLevelCostEnabled
 }
 
-// GetResourceLevelCostDataSetNameOk returns a tuple with the ResourceLevelCostDataSetName field value if set, nil otherwise
+// GetResourceLevelCostEnabledOk returns a tuple with the ResourceLevelCostEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostDataSetNameOk() (*string, bool) {
-	if o == nil || o.ResourceLevelCostDataSetName == nil {
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostEnabledOk() (*bool, bool) {
+	if o == nil || o.ResourceLevelCostEnabled == nil {
 		return nil, false
 	}
-	return o.ResourceLevelCostDataSetName, true
+	return o.ResourceLevelCostEnabled, true
 }
 
-// HasResourceLevelCostDataSetName returns a boolean if a field has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostDataSetName() bool {
-	if o != nil && o.ResourceLevelCostDataSetName != nil {
+// HasResourceLevelCostEnabled returns a boolean if a field has been set.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostEnabled() bool {
+	if o != nil && o.ResourceLevelCostEnabled != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceLevelCostDataSetName gets a reference to the given string and assigns it to the ResourceLevelCostDataSetName field.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostDataSetName(v string) {
-	o.ResourceLevelCostDataSetName = &v
-}
-
-// GetResourceLevelCostTableName returns the ResourceLevelCostTableName field value if set, zero value otherwise.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostTableName() string {
-	if o == nil || o.ResourceLevelCostTableName == nil {
-		var ret string
-		return ret
-	}
-	return *o.ResourceLevelCostTableName
-}
-
-// GetResourceLevelCostTableNameOk returns a tuple with the ResourceLevelCostTableName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostTableNameOk() (*string, bool) {
-	if o == nil || o.ResourceLevelCostTableName == nil {
-		return nil, false
-	}
-	return o.ResourceLevelCostTableName, true
-}
-
-// HasResourceLevelCostTableName returns a boolean if a field has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostTableName() bool {
-	if o != nil && o.ResourceLevelCostTableName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceLevelCostTableName gets a reference to the given string and assigns it to the ResourceLevelCostTableName field.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostTableName(v string) {
-	o.ResourceLevelCostTableName = &v
-}
-
-// GetStandardCostDataSetName returns the StandardCostDataSetName field value if set, zero value otherwise.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostDataSetName() string {
-	if o == nil || o.StandardCostDataSetName == nil {
-		var ret string
-		return ret
-	}
-	return *o.StandardCostDataSetName
-}
-
-// GetStandardCostDataSetNameOk returns a tuple with the StandardCostDataSetName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostDataSetNameOk() (*string, bool) {
-	if o == nil || o.StandardCostDataSetName == nil {
-		return nil, false
-	}
-	return o.StandardCostDataSetName, true
-}
-
-// HasStandardCostDataSetName returns a boolean if a field has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasStandardCostDataSetName() bool {
-	if o != nil && o.StandardCostDataSetName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStandardCostDataSetName gets a reference to the given string and assigns it to the StandardCostDataSetName field.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetStandardCostDataSetName(v string) {
-	o.StandardCostDataSetName = &v
-}
-
-// GetStandardCostTableName returns the StandardCostTableName field value if set, zero value otherwise.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostTableName() string {
-	if o == nil || o.StandardCostTableName == nil {
-		var ret string
-		return ret
-	}
-	return *o.StandardCostTableName
-}
-
-// GetStandardCostTableNameOk returns a tuple with the StandardCostTableName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostTableNameOk() (*string, bool) {
-	if o == nil || o.StandardCostTableName == nil {
-		return nil, false
-	}
-	return o.StandardCostTableName, true
-}
-
-// HasStandardCostTableName returns a boolean if a field has been set.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasStandardCostTableName() bool {
-	if o != nil && o.StandardCostTableName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStandardCostTableName gets a reference to the given string and assigns it to the StandardCostTableName field.
-func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetStandardCostTableName(v string) {
-	o.StandardCostTableName = &v
+// SetResourceLevelCostEnabled gets a reference to the given bool and assigns it to the ResourceLevelCostEnabled field.
+func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostEnabled(v bool) {
+	o.ResourceLevelCostEnabled = &v
 }
 
 func (o AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) MarshalJSON() ([]byte, error) {
@@ -391,6 +357,12 @@ func (o AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) MarshalJSON() (
 	if o.BillingAccountId != nil {
 		toSerialize["BillingAccountId"] = o.BillingAccountId
 	}
+	if o.CostExportDataSetName != nil {
+		toSerialize["CostExportDataSetName"] = o.CostExportDataSetName
+	}
+	if o.CostExportTableName != nil {
+		toSerialize["CostExportTableName"] = o.CostExportTableName
+	}
 	if o.PricingExportDataSetName != nil {
 		toSerialize["PricingExportDataSetName"] = o.PricingExportDataSetName
 	}
@@ -400,17 +372,8 @@ func (o AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) MarshalJSON() (
 	if o.ProjectId != nil {
 		toSerialize["ProjectId"] = o.ProjectId
 	}
-	if o.ResourceLevelCostDataSetName != nil {
-		toSerialize["ResourceLevelCostDataSetName"] = o.ResourceLevelCostDataSetName
-	}
-	if o.ResourceLevelCostTableName != nil {
-		toSerialize["ResourceLevelCostTableName"] = o.ResourceLevelCostTableName
-	}
-	if o.StandardCostDataSetName != nil {
-		toSerialize["StandardCostDataSetName"] = o.StandardCostDataSetName
-	}
-	if o.StandardCostTableName != nil {
-		toSerialize["StandardCostTableName"] = o.StandardCostTableName
+	if o.ResourceLevelCostEnabled != nil {
+		toSerialize["ResourceLevelCostEnabled"] = o.ResourceLevelCostEnabled
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -428,20 +391,18 @@ func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) UnmarshalJSON(
 		ObjectType string `json:"ObjectType"`
 		// The Google Cloud Platform (GCP) Billing Account ID.
 		BillingAccountId *string `json:"BillingAccountId,omitempty"`
+		// Name of Google BigQuery Cost Export Data Set which is the dataset for the billed cost export.
+		CostExportDataSetName *string `json:"CostExportDataSetName,omitempty"`
+		// Google BigQuery Cost Export Table Name. This table will store the exported data from the Cost Export.
+		CostExportTableName *string `json:"CostExportTableName,omitempty"`
 		// Name of the BigQuery Pricing Export Data Set which is the dataset for negotiated pricing.
 		PricingExportDataSetName *string `json:"PricingExportDataSetName,omitempty"`
 		// The Google BigQuery Pricing Export Table Name field is auto-populated with the table used in BigQuery, cloud_pricing_export. There is no need to modify this name, unless you use a different table for negotiated pricing. The Default name is \"cloud_pricing_export\".
 		PricingExportTableName *string `json:"PricingExportTableName,omitempty"`
 		// The unique ID assigned to the project containing the cost and pricing exports. If the exports are in separate projects, multiple billing targets will be necessary.
 		ProjectId *string `json:"ProjectId,omitempty"`
-		// This dataset contains the resource level billed cost export table.
-		ResourceLevelCostDataSetName *string `json:"ResourceLevelCostDataSetName,omitempty"`
-		// This table stores resource level cost export data.
-		ResourceLevelCostTableName *string `json:"ResourceLevelCostTableName,omitempty"`
-		// Name of Google BigQuery Standard Cost Export Data Set which is the dataset for the standard billed cost export.
-		StandardCostDataSetName *string `json:"StandardCostDataSetName,omitempty"`
-		// Google BigQuery Standard Cost Export Table Name. This table will store the exported data from the Standard Cost Export.
-		StandardCostTableName *string `json:"StandardCostTableName,omitempty"`
+		// This flag will enable querying of detailed usage cost with resource level information included.  If not enabled, cost export data will be queried, if dataset and table name are provided.
+		ResourceLevelCostEnabled *bool `json:"ResourceLevelCostEnabled,omitempty"`
 	}
 
 	varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct := AssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct{}
@@ -452,13 +413,12 @@ func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) UnmarshalJSON(
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ClassId = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ClassId
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ObjectType = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ObjectType
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.BillingAccountId = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.BillingAccountId
+		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.CostExportDataSetName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.CostExportDataSetName
+		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.CostExportTableName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.CostExportTableName
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.PricingExportDataSetName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.PricingExportDataSetName
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.PricingExportTableName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.PricingExportTableName
 		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ProjectId = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ProjectId
-		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ResourceLevelCostDataSetName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ResourceLevelCostDataSetName
-		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ResourceLevelCostTableName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ResourceLevelCostTableName
-		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.StandardCostDataSetName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.StandardCostDataSetName
-		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.StandardCostTableName = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.StandardCostTableName
+		varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions.ResourceLevelCostEnabled = varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptionsWithoutEmbeddedStruct.ResourceLevelCostEnabled
 		*o = AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions(varAssetWorkloadOptimizerGoogleCloudPlatformBillingOptions)
 	} else {
 		return err
@@ -479,13 +439,12 @@ func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) UnmarshalJSON(
 		delete(additionalProperties, "ClassId")
 		delete(additionalProperties, "ObjectType")
 		delete(additionalProperties, "BillingAccountId")
+		delete(additionalProperties, "CostExportDataSetName")
+		delete(additionalProperties, "CostExportTableName")
 		delete(additionalProperties, "PricingExportDataSetName")
 		delete(additionalProperties, "PricingExportTableName")
 		delete(additionalProperties, "ProjectId")
-		delete(additionalProperties, "ResourceLevelCostDataSetName")
-		delete(additionalProperties, "ResourceLevelCostTableName")
-		delete(additionalProperties, "StandardCostDataSetName")
-		delete(additionalProperties, "StandardCostTableName")
+		delete(additionalProperties, "ResourceLevelCostEnabled")
 
 		// remove fields from embedded structs
 		reflectAssetServiceOptions := reflect.ValueOf(o.AssetServiceOptions)

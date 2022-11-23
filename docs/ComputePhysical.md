@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **AssetTag** | Pointer to **string** | The user defined asset tag assigned to the server. | [optional] [readonly] 
 **AvailableMemory** | Pointer to **int64** | The amount of memory available on the server. | [optional] [readonly] 
 **BiosPostComplete** | Pointer to **bool** | The BIOS POST completion status of the server. | [optional] 
-**DeviceConnectionStatus** | Pointer to **string** | Connection status of the server&#39;s device connector. | [optional] [readonly] 
 **FaultSummary** | Pointer to **int64** | The fault summary for the server. | [optional] 
 **HardwareUuid** | Pointer to **string** | The universally unique hardware identity of the server provided by the manufacturer. | [optional] 
 **KvmIpAddresses** | Pointer to [**[]ComputeIpAddress**](ComputeIpAddress.md) |  | [optional] 
@@ -247,31 +246,6 @@ SetBiosPostComplete sets BiosPostComplete field to given value.
 `func (o *ComputePhysical) HasBiosPostComplete() bool`
 
 HasBiosPostComplete returns a boolean if a field has been set.
-
-### GetDeviceConnectionStatus
-
-`func (o *ComputePhysical) GetDeviceConnectionStatus() string`
-
-GetDeviceConnectionStatus returns the DeviceConnectionStatus field if non-nil, zero value otherwise.
-
-### GetDeviceConnectionStatusOk
-
-`func (o *ComputePhysical) GetDeviceConnectionStatusOk() (*string, bool)`
-
-GetDeviceConnectionStatusOk returns a tuple with the DeviceConnectionStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceConnectionStatus
-
-`func (o *ComputePhysical) SetDeviceConnectionStatus(v string)`
-
-SetDeviceConnectionStatus sets DeviceConnectionStatus field to given value.
-
-### HasDeviceConnectionStatus
-
-`func (o *ComputePhysical) HasDeviceConnectionStatus() bool`
-
-HasDeviceConnectionStatus returns a boolean if a field has been set.
 
 ### GetFaultSummary
 

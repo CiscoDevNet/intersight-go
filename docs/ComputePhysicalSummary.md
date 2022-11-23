@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **ChassisId** | Pointer to **string** | The id of the chassis that the blade is discovered in. | [optional] [readonly] 
 **ConnectionStatus** | Pointer to **string** | Connectivity Status of RackUnit to Switch - A or B or AB. | [optional] [readonly] 
 **CpuCapacity** | Pointer to **float32** | CPU Capacity &#x3D; Number of CPU Sockets x Enabled Cores x Speed (GHz). | [optional] [readonly] 
-**DeviceConnectionStatus** | Pointer to **string** | Connection status of the server&#39;s device connector. | [optional] [readonly] 
 **DeviceMoId** | Pointer to **string** | The database identifier of the registered device of an object. | [optional] [readonly] 
 **Dn** | Pointer to **string** | The Distinguished Name unambiguously identifies an object in the system. | [optional] [readonly] 
 **FaultSummary** | Pointer to **int64** | The fault summary for the server. | [optional] [readonly] 
@@ -330,31 +329,6 @@ SetCpuCapacity sets CpuCapacity field to given value.
 `func (o *ComputePhysicalSummary) HasCpuCapacity() bool`
 
 HasCpuCapacity returns a boolean if a field has been set.
-
-### GetDeviceConnectionStatus
-
-`func (o *ComputePhysicalSummary) GetDeviceConnectionStatus() string`
-
-GetDeviceConnectionStatus returns the DeviceConnectionStatus field if non-nil, zero value otherwise.
-
-### GetDeviceConnectionStatusOk
-
-`func (o *ComputePhysicalSummary) GetDeviceConnectionStatusOk() (*string, bool)`
-
-GetDeviceConnectionStatusOk returns a tuple with the DeviceConnectionStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceConnectionStatus
-
-`func (o *ComputePhysicalSummary) SetDeviceConnectionStatus(v string)`
-
-SetDeviceConnectionStatus sets DeviceConnectionStatus field to given value.
-
-### HasDeviceConnectionStatus
-
-`func (o *ComputePhysicalSummary) HasDeviceConnectionStatus() bool`
-
-HasDeviceConnectionStatus returns a boolean if a field has been set.
 
 ### GetDeviceMoId
 
