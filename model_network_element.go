@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-9235
+API version: 1.0.11-9661
 Contact: intersight@cisco.com
 */
 
@@ -112,6 +112,8 @@ type NetworkElement struct {
 	Console []ConsoleConsoleConfigRelationship `json:"Console,omitempty"`
 	// An array of relationships to networkDns resources.
 	Dns []NetworkDnsRelationship `json:"Dns,omitempty"`
+	// An array of relationships to etherPortChannel resources.
+	EtherPortChannels []EtherPortChannelRelationship `json:"EtherPortChannels,omitempty"`
 	// An array of relationships to equipmentFanModule resources.
 	Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 	// An array of relationships to fcPortChannel resources.
@@ -146,6 +148,11 @@ type NetworkElement struct {
 	SupervisorCard      []NetworkSupervisorCardRelationship  `json:"SupervisorCard,omitempty"`
 	TopSystem           *TopSystemRelationship               `json:"TopSystem,omitempty"`
 	UcsmRunningFirmware *FirmwareRunningFirmwareRelationship `json:"UcsmRunningFirmware,omitempty"`
+	VpcDomain           *NetworkVpcDomainRelationship        `json:"VpcDomain,omitempty"`
+	// An array of relationships to networkVpcMember resources.
+	VpcMember []NetworkVpcMemberRelationship `json:"VpcMember,omitempty"`
+	// An array of relationships to networkVpcPeer resources.
+	VpcPeer []NetworkVpcPeerRelationship `json:"VpcPeer,omitempty"`
 	// An array of relationships to networkVrf resources.
 	Vrf                  []NetworkVrfRelationship `json:"Vrf,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -1632,6 +1639,39 @@ func (o *NetworkElement) SetDns(v []NetworkDnsRelationship) {
 	o.Dns = v
 }
 
+// GetEtherPortChannels returns the EtherPortChannels field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetEtherPortChannels() []EtherPortChannelRelationship {
+	if o == nil {
+		var ret []EtherPortChannelRelationship
+		return ret
+	}
+	return o.EtherPortChannels
+}
+
+// GetEtherPortChannelsOk returns a tuple with the EtherPortChannels field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetEtherPortChannelsOk() ([]EtherPortChannelRelationship, bool) {
+	if o == nil || o.EtherPortChannels == nil {
+		return nil, false
+	}
+	return o.EtherPortChannels, true
+}
+
+// HasEtherPortChannels returns a boolean if a field has been set.
+func (o *NetworkElement) HasEtherPortChannels() bool {
+	if o != nil && o.EtherPortChannels != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEtherPortChannels gets a reference to the given []EtherPortChannelRelationship and assigns it to the EtherPortChannels field.
+func (o *NetworkElement) SetEtherPortChannels(v []EtherPortChannelRelationship) {
+	o.EtherPortChannels = v
+}
+
 // GetFanmodules returns the Fanmodules field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElement) GetFanmodules() []EquipmentFanModuleRelationship {
 	if o == nil {
@@ -2317,6 +2357,104 @@ func (o *NetworkElement) SetUcsmRunningFirmware(v FirmwareRunningFirmwareRelatio
 	o.UcsmRunningFirmware = &v
 }
 
+// GetVpcDomain returns the VpcDomain field value if set, zero value otherwise.
+func (o *NetworkElement) GetVpcDomain() NetworkVpcDomainRelationship {
+	if o == nil || o.VpcDomain == nil {
+		var ret NetworkVpcDomainRelationship
+		return ret
+	}
+	return *o.VpcDomain
+}
+
+// GetVpcDomainOk returns a tuple with the VpcDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkElement) GetVpcDomainOk() (*NetworkVpcDomainRelationship, bool) {
+	if o == nil || o.VpcDomain == nil {
+		return nil, false
+	}
+	return o.VpcDomain, true
+}
+
+// HasVpcDomain returns a boolean if a field has been set.
+func (o *NetworkElement) HasVpcDomain() bool {
+	if o != nil && o.VpcDomain != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVpcDomain gets a reference to the given NetworkVpcDomainRelationship and assigns it to the VpcDomain field.
+func (o *NetworkElement) SetVpcDomain(v NetworkVpcDomainRelationship) {
+	o.VpcDomain = &v
+}
+
+// GetVpcMember returns the VpcMember field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetVpcMember() []NetworkVpcMemberRelationship {
+	if o == nil {
+		var ret []NetworkVpcMemberRelationship
+		return ret
+	}
+	return o.VpcMember
+}
+
+// GetVpcMemberOk returns a tuple with the VpcMember field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetVpcMemberOk() ([]NetworkVpcMemberRelationship, bool) {
+	if o == nil || o.VpcMember == nil {
+		return nil, false
+	}
+	return o.VpcMember, true
+}
+
+// HasVpcMember returns a boolean if a field has been set.
+func (o *NetworkElement) HasVpcMember() bool {
+	if o != nil && o.VpcMember != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVpcMember gets a reference to the given []NetworkVpcMemberRelationship and assigns it to the VpcMember field.
+func (o *NetworkElement) SetVpcMember(v []NetworkVpcMemberRelationship) {
+	o.VpcMember = v
+}
+
+// GetVpcPeer returns the VpcPeer field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NetworkElement) GetVpcPeer() []NetworkVpcPeerRelationship {
+	if o == nil {
+		var ret []NetworkVpcPeerRelationship
+		return ret
+	}
+	return o.VpcPeer
+}
+
+// GetVpcPeerOk returns a tuple with the VpcPeer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NetworkElement) GetVpcPeerOk() ([]NetworkVpcPeerRelationship, bool) {
+	if o == nil || o.VpcPeer == nil {
+		return nil, false
+	}
+	return o.VpcPeer, true
+}
+
+// HasVpcPeer returns a boolean if a field has been set.
+func (o *NetworkElement) HasVpcPeer() bool {
+	if o != nil && o.VpcPeer != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVpcPeer gets a reference to the given []NetworkVpcPeerRelationship and assigns it to the VpcPeer field.
+func (o *NetworkElement) SetVpcPeer(v []NetworkVpcPeerRelationship) {
+	o.VpcPeer = v
+}
+
 // GetVrf returns the Vrf field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetworkElement) GetVrf() []NetworkVrfRelationship {
 	if o == nil {
@@ -2495,6 +2633,9 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	if o.Dns != nil {
 		toSerialize["Dns"] = o.Dns
 	}
+	if o.EtherPortChannels != nil {
+		toSerialize["EtherPortChannels"] = o.EtherPortChannels
+	}
 	if o.Fanmodules != nil {
 		toSerialize["Fanmodules"] = o.Fanmodules
 	}
@@ -2557,6 +2698,15 @@ func (o NetworkElement) MarshalJSON() ([]byte, error) {
 	}
 	if o.UcsmRunningFirmware != nil {
 		toSerialize["UcsmRunningFirmware"] = o.UcsmRunningFirmware
+	}
+	if o.VpcDomain != nil {
+		toSerialize["VpcDomain"] = o.VpcDomain
+	}
+	if o.VpcMember != nil {
+		toSerialize["VpcMember"] = o.VpcMember
+	}
+	if o.VpcPeer != nil {
+		toSerialize["VpcPeer"] = o.VpcPeer
 	}
 	if o.Vrf != nil {
 		toSerialize["Vrf"] = o.Vrf
@@ -2663,6 +2813,8 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		Console []ConsoleConsoleConfigRelationship `json:"Console,omitempty"`
 		// An array of relationships to networkDns resources.
 		Dns []NetworkDnsRelationship `json:"Dns,omitempty"`
+		// An array of relationships to etherPortChannel resources.
+		EtherPortChannels []EtherPortChannelRelationship `json:"EtherPortChannels,omitempty"`
 		// An array of relationships to equipmentFanModule resources.
 		Fanmodules []EquipmentFanModuleRelationship `json:"Fanmodules,omitempty"`
 		// An array of relationships to fcPortChannel resources.
@@ -2697,6 +2849,11 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		SupervisorCard      []NetworkSupervisorCardRelationship  `json:"SupervisorCard,omitempty"`
 		TopSystem           *TopSystemRelationship               `json:"TopSystem,omitempty"`
 		UcsmRunningFirmware *FirmwareRunningFirmwareRelationship `json:"UcsmRunningFirmware,omitempty"`
+		VpcDomain           *NetworkVpcDomainRelationship        `json:"VpcDomain,omitempty"`
+		// An array of relationships to networkVpcMember resources.
+		VpcMember []NetworkVpcMemberRelationship `json:"VpcMember,omitempty"`
+		// An array of relationships to networkVpcPeer resources.
+		VpcPeer []NetworkVpcPeerRelationship `json:"VpcPeer,omitempty"`
 		// An array of relationships to networkVrf resources.
 		Vrf []NetworkVrfRelationship `json:"Vrf,omitempty"`
 	}
@@ -2751,6 +2908,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		varNetworkElement.CdpNeighbor = varNetworkElementWithoutEmbeddedStruct.CdpNeighbor
 		varNetworkElement.Console = varNetworkElementWithoutEmbeddedStruct.Console
 		varNetworkElement.Dns = varNetworkElementWithoutEmbeddedStruct.Dns
+		varNetworkElement.EtherPortChannels = varNetworkElementWithoutEmbeddedStruct.EtherPortChannels
 		varNetworkElement.Fanmodules = varNetworkElementWithoutEmbeddedStruct.Fanmodules
 		varNetworkElement.FcPortChannels = varNetworkElementWithoutEmbeddedStruct.FcPortChannels
 		varNetworkElement.FeatureControl = varNetworkElementWithoutEmbeddedStruct.FeatureControl
@@ -2772,6 +2930,9 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		varNetworkElement.SupervisorCard = varNetworkElementWithoutEmbeddedStruct.SupervisorCard
 		varNetworkElement.TopSystem = varNetworkElementWithoutEmbeddedStruct.TopSystem
 		varNetworkElement.UcsmRunningFirmware = varNetworkElementWithoutEmbeddedStruct.UcsmRunningFirmware
+		varNetworkElement.VpcDomain = varNetworkElementWithoutEmbeddedStruct.VpcDomain
+		varNetworkElement.VpcMember = varNetworkElementWithoutEmbeddedStruct.VpcMember
+		varNetworkElement.VpcPeer = varNetworkElementWithoutEmbeddedStruct.VpcPeer
 		varNetworkElement.Vrf = varNetworkElementWithoutEmbeddedStruct.Vrf
 		*o = NetworkElement(varNetworkElement)
 	} else {
@@ -2835,6 +2996,7 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "CdpNeighbor")
 		delete(additionalProperties, "Console")
 		delete(additionalProperties, "Dns")
+		delete(additionalProperties, "EtherPortChannels")
 		delete(additionalProperties, "Fanmodules")
 		delete(additionalProperties, "FcPortChannels")
 		delete(additionalProperties, "FeatureControl")
@@ -2856,6 +3018,9 @@ func (o *NetworkElement) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "SupervisorCard")
 		delete(additionalProperties, "TopSystem")
 		delete(additionalProperties, "UcsmRunningFirmware")
+		delete(additionalProperties, "VpcDomain")
+		delete(additionalProperties, "VpcMember")
+		delete(additionalProperties, "VpcPeer")
 		delete(additionalProperties, "Vrf")
 
 		// remove fields from embedded structs

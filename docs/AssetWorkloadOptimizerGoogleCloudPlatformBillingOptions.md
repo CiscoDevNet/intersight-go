@@ -7,13 +7,12 @@ Name | Type | Description | Notes
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "asset.WorkloadOptimizerGoogleCloudPlatformBillingOptions"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "asset.WorkloadOptimizerGoogleCloudPlatformBillingOptions"]
 **BillingAccountId** | Pointer to **string** | The Google Cloud Platform (GCP) Billing Account ID. | [optional] 
+**CostExportDataSetName** | Pointer to **string** | Name of Google BigQuery Cost Export Data Set which is the dataset for the billed cost export. | [optional] 
+**CostExportTableName** | Pointer to **string** | Google BigQuery Cost Export Table Name. This table will store the exported data from the Cost Export. | [optional] 
 **PricingExportDataSetName** | Pointer to **string** | Name of the BigQuery Pricing Export Data Set which is the dataset for negotiated pricing. | [optional] 
 **PricingExportTableName** | Pointer to **string** | The Google BigQuery Pricing Export Table Name field is auto-populated with the table used in BigQuery, cloud_pricing_export. There is no need to modify this name, unless you use a different table for negotiated pricing. The Default name is \&quot;cloud_pricing_export\&quot;. | [optional] 
 **ProjectId** | Pointer to **string** | The unique ID assigned to the project containing the cost and pricing exports. If the exports are in separate projects, multiple billing targets will be necessary. | [optional] 
-**ResourceLevelCostDataSetName** | Pointer to **string** | This dataset contains the resource level billed cost export table. | [optional] 
-**ResourceLevelCostTableName** | Pointer to **string** | This table stores resource level cost export data. | [optional] 
-**StandardCostDataSetName** | Pointer to **string** | Name of Google BigQuery Standard Cost Export Data Set which is the dataset for the standard billed cost export. | [optional] 
-**StandardCostTableName** | Pointer to **string** | Google BigQuery Standard Cost Export Table Name. This table will store the exported data from the Standard Cost Export. | [optional] 
+**ResourceLevelCostEnabled** | Pointer to **bool** | This flag will enable querying of detailed usage cost with resource level information included.  If not enabled, cost export data will be queried, if dataset and table name are provided. | [optional] 
 
 ## Methods
 
@@ -99,6 +98,56 @@ SetBillingAccountId sets BillingAccountId field to given value.
 
 HasBillingAccountId returns a boolean if a field has been set.
 
+### GetCostExportDataSetName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportDataSetName() string`
+
+GetCostExportDataSetName returns the CostExportDataSetName field if non-nil, zero value otherwise.
+
+### GetCostExportDataSetNameOk
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportDataSetNameOk() (*string, bool)`
+
+GetCostExportDataSetNameOk returns a tuple with the CostExportDataSetName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostExportDataSetName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetCostExportDataSetName(v string)`
+
+SetCostExportDataSetName sets CostExportDataSetName field to given value.
+
+### HasCostExportDataSetName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasCostExportDataSetName() bool`
+
+HasCostExportDataSetName returns a boolean if a field has been set.
+
+### GetCostExportTableName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportTableName() string`
+
+GetCostExportTableName returns the CostExportTableName field if non-nil, zero value otherwise.
+
+### GetCostExportTableNameOk
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetCostExportTableNameOk() (*string, bool)`
+
+GetCostExportTableNameOk returns a tuple with the CostExportTableName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCostExportTableName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetCostExportTableName(v string)`
+
+SetCostExportTableName sets CostExportTableName field to given value.
+
+### HasCostExportTableName
+
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasCostExportTableName() bool`
+
+HasCostExportTableName returns a boolean if a field has been set.
+
 ### GetPricingExportDataSetName
 
 `func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetPricingExportDataSetName() string`
@@ -174,105 +223,30 @@ SetProjectId sets ProjectId field to given value.
 
 HasProjectId returns a boolean if a field has been set.
 
-### GetResourceLevelCostDataSetName
+### GetResourceLevelCostEnabled
 
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostDataSetName() string`
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostEnabled() bool`
 
-GetResourceLevelCostDataSetName returns the ResourceLevelCostDataSetName field if non-nil, zero value otherwise.
+GetResourceLevelCostEnabled returns the ResourceLevelCostEnabled field if non-nil, zero value otherwise.
 
-### GetResourceLevelCostDataSetNameOk
+### GetResourceLevelCostEnabledOk
 
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostDataSetNameOk() (*string, bool)`
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostEnabledOk() (*bool, bool)`
 
-GetResourceLevelCostDataSetNameOk returns a tuple with the ResourceLevelCostDataSetName field if it's non-nil, zero value otherwise
+GetResourceLevelCostEnabledOk returns a tuple with the ResourceLevelCostEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceLevelCostDataSetName
+### SetResourceLevelCostEnabled
 
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostDataSetName(v string)`
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostEnabled(v bool)`
 
-SetResourceLevelCostDataSetName sets ResourceLevelCostDataSetName field to given value.
+SetResourceLevelCostEnabled sets ResourceLevelCostEnabled field to given value.
 
-### HasResourceLevelCostDataSetName
+### HasResourceLevelCostEnabled
 
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostDataSetName() bool`
+`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostEnabled() bool`
 
-HasResourceLevelCostDataSetName returns a boolean if a field has been set.
-
-### GetResourceLevelCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostTableName() string`
-
-GetResourceLevelCostTableName returns the ResourceLevelCostTableName field if non-nil, zero value otherwise.
-
-### GetResourceLevelCostTableNameOk
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetResourceLevelCostTableNameOk() (*string, bool)`
-
-GetResourceLevelCostTableNameOk returns a tuple with the ResourceLevelCostTableName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceLevelCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetResourceLevelCostTableName(v string)`
-
-SetResourceLevelCostTableName sets ResourceLevelCostTableName field to given value.
-
-### HasResourceLevelCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasResourceLevelCostTableName() bool`
-
-HasResourceLevelCostTableName returns a boolean if a field has been set.
-
-### GetStandardCostDataSetName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostDataSetName() string`
-
-GetStandardCostDataSetName returns the StandardCostDataSetName field if non-nil, zero value otherwise.
-
-### GetStandardCostDataSetNameOk
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostDataSetNameOk() (*string, bool)`
-
-GetStandardCostDataSetNameOk returns a tuple with the StandardCostDataSetName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStandardCostDataSetName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetStandardCostDataSetName(v string)`
-
-SetStandardCostDataSetName sets StandardCostDataSetName field to given value.
-
-### HasStandardCostDataSetName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasStandardCostDataSetName() bool`
-
-HasStandardCostDataSetName returns a boolean if a field has been set.
-
-### GetStandardCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostTableName() string`
-
-GetStandardCostTableName returns the StandardCostTableName field if non-nil, zero value otherwise.
-
-### GetStandardCostTableNameOk
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) GetStandardCostTableNameOk() (*string, bool)`
-
-GetStandardCostTableNameOk returns a tuple with the StandardCostTableName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStandardCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) SetStandardCostTableName(v string)`
-
-SetStandardCostTableName sets StandardCostTableName field to given value.
-
-### HasStandardCostTableName
-
-`func (o *AssetWorkloadOptimizerGoogleCloudPlatformBillingOptions) HasStandardCostTableName() bool`
-
-HasStandardCostTableName returns a boolean if a field has been set.
+HasResourceLevelCostEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
