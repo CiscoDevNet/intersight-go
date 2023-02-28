@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-10371
+API version: 1.0.11-10849
 Contact: intersight@cisco.com
 */
 
@@ -22,6 +22,8 @@ type StorageNetAppLunAllOf struct {
 	// The fully-qualified name of the instantiated, concrete type. The value should be the same as the 'ClassId' property.
 	ObjectType            string                                  `json:"ObjectType"`
 	AvgPerformanceMetrics *StorageNetAppPerformanceMetricsAverage `json:"AvgPerformanceMetrics,omitempty"`
+	// The state of the volume and aggregate that contain the LUN. LUNs are only available when their containers are available.
+	ContainerState *string `json:"ContainerState,omitempty"`
 	// Unique identifier of Lun across data center.
 	Key *string `json:"Key,omitempty"`
 	// Reports if the LUN is mapped to one or more initiator groups.
@@ -148,6 +150,38 @@ func (o *StorageNetAppLunAllOf) HasAvgPerformanceMetrics() bool {
 // SetAvgPerformanceMetrics gets a reference to the given StorageNetAppPerformanceMetricsAverage and assigns it to the AvgPerformanceMetrics field.
 func (o *StorageNetAppLunAllOf) SetAvgPerformanceMetrics(v StorageNetAppPerformanceMetricsAverage) {
 	o.AvgPerformanceMetrics = &v
+}
+
+// GetContainerState returns the ContainerState field value if set, zero value otherwise.
+func (o *StorageNetAppLunAllOf) GetContainerState() string {
+	if o == nil || o.ContainerState == nil {
+		var ret string
+		return ret
+	}
+	return *o.ContainerState
+}
+
+// GetContainerStateOk returns a tuple with the ContainerState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageNetAppLunAllOf) GetContainerStateOk() (*string, bool) {
+	if o == nil || o.ContainerState == nil {
+		return nil, false
+	}
+	return o.ContainerState, true
+}
+
+// HasContainerState returns a boolean if a field has been set.
+func (o *StorageNetAppLunAllOf) HasContainerState() bool {
+	if o != nil && o.ContainerState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetContainerState gets a reference to the given string and assigns it to the ContainerState field.
+func (o *StorageNetAppLunAllOf) SetContainerState(v string) {
+	o.ContainerState = &v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
@@ -515,6 +549,9 @@ func (o StorageNetAppLunAllOf) MarshalJSON() ([]byte, error) {
 	if o.AvgPerformanceMetrics != nil {
 		toSerialize["AvgPerformanceMetrics"] = o.AvgPerformanceMetrics
 	}
+	if o.ContainerState != nil {
+		toSerialize["ContainerState"] = o.ContainerState
+	}
 	if o.Key != nil {
 		toSerialize["Key"] = o.Key
 	}
@@ -569,6 +606,7 @@ func (o *StorageNetAppLunAllOf) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ClassId")
 		delete(additionalProperties, "ObjectType")
 		delete(additionalProperties, "AvgPerformanceMetrics")
+		delete(additionalProperties, "ContainerState")
 		delete(additionalProperties, "Key")
 		delete(additionalProperties, "Mapped")
 		delete(additionalProperties, "OsType")
