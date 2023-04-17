@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "asset.WorkloadOptimizerDynatraceOptions"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "asset.WorkloadOptimizerDynatraceOptions"]
-**CollectVmMetrics** | Pointer to **bool** | Enable retrieval of advanced memory metrics. | [optional] 
+**CollectVmMetrics** | Pointer to **bool** | Overwrite Hypervisor or Cloud Provider Virtual Machine metrics with data from the target. | [optional] 
 **EnvironmentId** | Pointer to **string** | Each environment monitored with Dynatrace is identified with a unique character string—the environment ID. The Dynatrace API relies heavily on environment IDs to ensure that it pulls monitoring data from and pushes relevant external events to the correct Dynatrace environments. | [optional] 
 
 ## Methods

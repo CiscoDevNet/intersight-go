@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **InbandIpGateway** | Pointer to **string** | The default gateway of the network Element inband management interface. | [optional] [readonly] 
 **InbandIpMask** | Pointer to **string** | The network mask of the network Element inband management interface. | [optional] [readonly] 
 **InbandVlan** | Pointer to **int64** | The VLAN ID of the network Element inband management interface. | [optional] [readonly] 
-**InterClusterLinkState** | Pointer to **string** | The intercluster link state of the switch. * &#x60;Unknown&#x60; - The link operational state is not known. * &#x60;Up&#x60; - The link operational state is up. * &#x60;Down&#x60; - The link operational state is down. * &#x60;Degraded&#x60; - The link is degraded but operational. This state is applicable to port channels when any one of the member links is down. | [optional] [readonly] [default to "Unknown"]
 **ManagementMode** | Pointer to **string** | The management mode of the fabric interconnect. * &#x60;IntersightStandalone&#x60; - Intersight Standalone mode of operation. * &#x60;UCSM&#x60; - Unified Computing System Manager mode of operation. * &#x60;Intersight&#x60; - Intersight managed mode of operation. | [optional] [default to "IntersightStandalone"]
 **OperEvacState** | Pointer to **string** | Operational state of the Fabric Evacuation feature, for this switch. | [optional] [readonly] 
 **Operability** | Pointer to **string** | The switch&#39;s current overall operational/health state. | [optional] [readonly] 
@@ -596,31 +595,6 @@ SetInbandVlan sets InbandVlan field to given value.
 `func (o *NetworkElementAllOf) HasInbandVlan() bool`
 
 HasInbandVlan returns a boolean if a field has been set.
-
-### GetInterClusterLinkState
-
-`func (o *NetworkElementAllOf) GetInterClusterLinkState() string`
-
-GetInterClusterLinkState returns the InterClusterLinkState field if non-nil, zero value otherwise.
-
-### GetInterClusterLinkStateOk
-
-`func (o *NetworkElementAllOf) GetInterClusterLinkStateOk() (*string, bool)`
-
-GetInterClusterLinkStateOk returns a tuple with the InterClusterLinkState field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInterClusterLinkState
-
-`func (o *NetworkElementAllOf) SetInterClusterLinkState(v string)`
-
-SetInterClusterLinkState sets InterClusterLinkState field to given value.
-
-### HasInterClusterLinkState
-
-`func (o *NetworkElementAllOf) HasInterClusterLinkState() bool`
-
-HasInterClusterLinkState returns a boolean if a field has been set.
 
 ### GetManagementMode
 
