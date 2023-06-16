@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-11765
+API version: 1.0.11-12561
 Contact: intersight@cisco.com
 */
 
@@ -46,6 +46,8 @@ type AssetDeviceContractInformation struct {
 	IsValid *bool `json:"IsValid,omitempty"`
 	// Item type of this specific Cisco device. example \"Chassis\".
 	ItemType *string `json:"ItemType,omitempty"`
+	// The last date of hardware support for this device.
+	LastDateOfSupport *time.Time `json:"LastDateOfSupport,omitempty"`
 	// Maintenance purchase order number for the Cisco device.
 	MaintenancePurchaseOrderNumber *string `json:"MaintenancePurchaseOrderNumber,omitempty"`
 	// Maintenance sales order number for the Cisco device.
@@ -571,6 +573,38 @@ func (o *AssetDeviceContractInformation) HasItemType() bool {
 // SetItemType gets a reference to the given string and assigns it to the ItemType field.
 func (o *AssetDeviceContractInformation) SetItemType(v string) {
 	o.ItemType = &v
+}
+
+// GetLastDateOfSupport returns the LastDateOfSupport field value if set, zero value otherwise.
+func (o *AssetDeviceContractInformation) GetLastDateOfSupport() time.Time {
+	if o == nil || o.LastDateOfSupport == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastDateOfSupport
+}
+
+// GetLastDateOfSupportOk returns a tuple with the LastDateOfSupport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AssetDeviceContractInformation) GetLastDateOfSupportOk() (*time.Time, bool) {
+	if o == nil || o.LastDateOfSupport == nil {
+		return nil, false
+	}
+	return o.LastDateOfSupport, true
+}
+
+// HasLastDateOfSupport returns a boolean if a field has been set.
+func (o *AssetDeviceContractInformation) HasLastDateOfSupport() bool {
+	if o != nil && o.LastDateOfSupport != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLastDateOfSupport gets a reference to the given time.Time and assigns it to the LastDateOfSupport field.
+func (o *AssetDeviceContractInformation) SetLastDateOfSupport(v time.Time) {
+	o.LastDateOfSupport = &v
 }
 
 // GetMaintenancePurchaseOrderNumber returns the MaintenancePurchaseOrderNumber field value if set, zero value otherwise.
@@ -1191,6 +1225,9 @@ func (o AssetDeviceContractInformation) MarshalJSON() ([]byte, error) {
 	if o.ItemType != nil {
 		toSerialize["ItemType"] = o.ItemType
 	}
+	if o.LastDateOfSupport != nil {
+		toSerialize["LastDateOfSupport"] = o.LastDateOfSupport
+	}
 	if o.MaintenancePurchaseOrderNumber != nil {
 		toSerialize["MaintenancePurchaseOrderNumber"] = o.MaintenancePurchaseOrderNumber
 	}
@@ -1277,6 +1314,8 @@ func (o *AssetDeviceContractInformation) UnmarshalJSON(bytes []byte) (err error)
 		IsValid *bool `json:"IsValid,omitempty"`
 		// Item type of this specific Cisco device. example \"Chassis\".
 		ItemType *string `json:"ItemType,omitempty"`
+		// The last date of hardware support for this device.
+		LastDateOfSupport *time.Time `json:"LastDateOfSupport,omitempty"`
 		// Maintenance purchase order number for the Cisco device.
 		MaintenancePurchaseOrderNumber *string `json:"MaintenancePurchaseOrderNumber,omitempty"`
 		// Maintenance sales order number for the Cisco device.
@@ -1328,6 +1367,7 @@ func (o *AssetDeviceContractInformation) UnmarshalJSON(bytes []byte) (err error)
 		varAssetDeviceContractInformation.EndUserGlobalUltimate = varAssetDeviceContractInformationWithoutEmbeddedStruct.EndUserGlobalUltimate
 		varAssetDeviceContractInformation.IsValid = varAssetDeviceContractInformationWithoutEmbeddedStruct.IsValid
 		varAssetDeviceContractInformation.ItemType = varAssetDeviceContractInformationWithoutEmbeddedStruct.ItemType
+		varAssetDeviceContractInformation.LastDateOfSupport = varAssetDeviceContractInformationWithoutEmbeddedStruct.LastDateOfSupport
 		varAssetDeviceContractInformation.MaintenancePurchaseOrderNumber = varAssetDeviceContractInformationWithoutEmbeddedStruct.MaintenancePurchaseOrderNumber
 		varAssetDeviceContractInformation.MaintenanceSalesOrderNumber = varAssetDeviceContractInformationWithoutEmbeddedStruct.MaintenanceSalesOrderNumber
 		varAssetDeviceContractInformation.PlatformType = varAssetDeviceContractInformationWithoutEmbeddedStruct.PlatformType
@@ -1376,6 +1416,7 @@ func (o *AssetDeviceContractInformation) UnmarshalJSON(bytes []byte) (err error)
 		delete(additionalProperties, "EndUserGlobalUltimate")
 		delete(additionalProperties, "IsValid")
 		delete(additionalProperties, "ItemType")
+		delete(additionalProperties, "LastDateOfSupport")
 		delete(additionalProperties, "MaintenancePurchaseOrderNumber")
 		delete(additionalProperties, "MaintenanceSalesOrderNumber")
 		delete(additionalProperties, "PlatformType")
