@@ -2,4 +2,4 @@ module github.com/CiscoDevNet/intersight-go
 
 go 1.13
 
-require golang.org/x/oauth2 v0.11.0
+require golang.org/x/oauth2 v0.12.0
