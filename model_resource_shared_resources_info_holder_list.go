@@ -3,7 +3,7 @@ Cisco Intersight
 
 Cisco Intersight is a management platform delivered as a service with embedded analytics for your Cisco and 3rd party IT infrastructure. This platform offers an intelligent level of management that enables IT organizations to analyze, simplify, and automate their environments in more advanced ways than the prior generations of tools. Cisco Intersight provides an integrated and intuitive management experience for resources in the traditional data center as well as at the edge. With flexible deployment options to address complex security needs, getting started with Intersight is quick and easy. Cisco Intersight has deep integration with Cisco UCS and HyperFlex systems allowing for remote deployment, configuration, and ongoing maintenance. The model-based deployment works for a single system in a remote location or hundreds of systems in a data center and enables rapid, standardized configuration and deployment. It also streamlines maintaining those systems whether you are working with small or very large configurations. The Intersight OpenAPI document defines the complete set of properties that are returned in the HTTP response. From that perspective, a client can expect that no additional properties are returned, unless these properties are explicitly defined in the OpenAPI document. However, when a client uses an older version of the Intersight OpenAPI document, the server may send additional properties because the software is more recent than the client. In that case, the client may receive properties that it does not know about. Some generated SDKs perform a strict validation of the HTTP response body against the OpenAPI document.
 
-API version: 1.0.11-13515
+API version: 1.0.11-13892
 Contact: intersight@cisco.com
 */
 
@@ -17,38 +17,38 @@ import (
 	"strings"
 )
 
-// WorkflowPendingDynamicWorkflowInfoList This resource list is returned as a response to a HTTP GET request that does not include a specific resource identifier.
-type WorkflowPendingDynamicWorkflowInfoList struct {
+// ResourceSharedResourcesInfoHolderList This resource list is returned as a response to a HTTP GET request that does not include a specific resource identifier.
+type ResourceSharedResourcesInfoHolderList struct {
 	MoBaseResponse
-	// The total number of 'workflow.PendingDynamicWorkflowInfo' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
+	// The total number of 'resource.SharedResourcesInfoHolder' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 	Count *int32 `json:"Count,omitempty"`
-	// The array of 'workflow.PendingDynamicWorkflowInfo' resources matching the request.
-	Results              []WorkflowPendingDynamicWorkflowInfo `json:"Results,omitempty"`
+	// The array of 'resource.SharedResourcesInfoHolder' resources matching the request.
+	Results              []ResourceSharedResourcesInfoHolder `json:"Results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _WorkflowPendingDynamicWorkflowInfoList WorkflowPendingDynamicWorkflowInfoList
+type _ResourceSharedResourcesInfoHolderList ResourceSharedResourcesInfoHolderList
 
-// NewWorkflowPendingDynamicWorkflowInfoList instantiates a new WorkflowPendingDynamicWorkflowInfoList object
+// NewResourceSharedResourcesInfoHolderList instantiates a new ResourceSharedResourcesInfoHolderList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWorkflowPendingDynamicWorkflowInfoList(objectType string) *WorkflowPendingDynamicWorkflowInfoList {
-	this := WorkflowPendingDynamicWorkflowInfoList{}
+func NewResourceSharedResourcesInfoHolderList(objectType string) *ResourceSharedResourcesInfoHolderList {
+	this := ResourceSharedResourcesInfoHolderList{}
 	this.ObjectType = objectType
 	return &this
 }
 
-// NewWorkflowPendingDynamicWorkflowInfoListWithDefaults instantiates a new WorkflowPendingDynamicWorkflowInfoList object
+// NewResourceSharedResourcesInfoHolderListWithDefaults instantiates a new ResourceSharedResourcesInfoHolderList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewWorkflowPendingDynamicWorkflowInfoListWithDefaults() *WorkflowPendingDynamicWorkflowInfoList {
-	this := WorkflowPendingDynamicWorkflowInfoList{}
+func NewResourceSharedResourcesInfoHolderListWithDefaults() *ResourceSharedResourcesInfoHolderList {
+	this := ResourceSharedResourcesInfoHolderList{}
 	return &this
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *WorkflowPendingDynamicWorkflowInfoList) GetCount() int32 {
+func (o *ResourceSharedResourcesInfoHolderList) GetCount() int32 {
 	if o == nil || o.Count == nil {
 		var ret int32
 		return ret
@@ -58,7 +58,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WorkflowPendingDynamicWorkflowInfoList) GetCountOk() (*int32, bool) {
+func (o *ResourceSharedResourcesInfoHolderList) GetCountOk() (*int32, bool) {
 	if o == nil || o.Count == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) GetCountOk() (*int32, bool) {
 }
 
 // HasCount returns a boolean if a field has been set.
-func (o *WorkflowPendingDynamicWorkflowInfoList) HasCount() bool {
+func (o *ResourceSharedResourcesInfoHolderList) HasCount() bool {
 	if o != nil && o.Count != nil {
 		return true
 	}
@@ -75,14 +75,14 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) HasCount() bool {
 }
 
 // SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *WorkflowPendingDynamicWorkflowInfoList) SetCount(v int32) {
+func (o *ResourceSharedResourcesInfoHolderList) SetCount(v int32) {
 	o.Count = &v
 }
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WorkflowPendingDynamicWorkflowInfoList) GetResults() []WorkflowPendingDynamicWorkflowInfo {
+func (o *ResourceSharedResourcesInfoHolderList) GetResults() []ResourceSharedResourcesInfoHolder {
 	if o == nil {
-		var ret []WorkflowPendingDynamicWorkflowInfo
+		var ret []ResourceSharedResourcesInfoHolder
 		return ret
 	}
 	return o.Results
@@ -91,7 +91,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) GetResults() []WorkflowPendingD
 // GetResultsOk returns a tuple with the Results field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WorkflowPendingDynamicWorkflowInfoList) GetResultsOk() ([]WorkflowPendingDynamicWorkflowInfo, bool) {
+func (o *ResourceSharedResourcesInfoHolderList) GetResultsOk() ([]ResourceSharedResourcesInfoHolder, bool) {
 	if o == nil || o.Results == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) GetResultsOk() ([]WorkflowPendi
 }
 
 // HasResults returns a boolean if a field has been set.
-func (o *WorkflowPendingDynamicWorkflowInfoList) HasResults() bool {
+func (o *ResourceSharedResourcesInfoHolderList) HasResults() bool {
 	if o != nil && o.Results != nil {
 		return true
 	}
@@ -107,12 +107,12 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) HasResults() bool {
 	return false
 }
 
-// SetResults gets a reference to the given []WorkflowPendingDynamicWorkflowInfo and assigns it to the Results field.
-func (o *WorkflowPendingDynamicWorkflowInfoList) SetResults(v []WorkflowPendingDynamicWorkflowInfo) {
+// SetResults gets a reference to the given []ResourceSharedResourcesInfoHolder and assigns it to the Results field.
+func (o *ResourceSharedResourcesInfoHolderList) SetResults(v []ResourceSharedResourcesInfoHolder) {
 	o.Results = v
 }
 
-func (o WorkflowPendingDynamicWorkflowInfoList) MarshalJSON() ([]byte, error) {
+func (o ResourceSharedResourcesInfoHolderList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedMoBaseResponse, errMoBaseResponse := json.Marshal(o.MoBaseResponse)
 	if errMoBaseResponse != nil {
@@ -136,31 +136,31 @@ func (o WorkflowPendingDynamicWorkflowInfoList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o *WorkflowPendingDynamicWorkflowInfoList) UnmarshalJSON(bytes []byte) (err error) {
-	type WorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct struct {
-		// The total number of 'workflow.PendingDynamicWorkflowInfo' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
+func (o *ResourceSharedResourcesInfoHolderList) UnmarshalJSON(bytes []byte) (err error) {
+	type ResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct struct {
+		// The total number of 'resource.SharedResourcesInfoHolder' resources matching the request, accross all pages. The 'Count' attribute is included when the HTTP GET request includes the '$inlinecount' parameter.
 		Count *int32 `json:"Count,omitempty"`
-		// The array of 'workflow.PendingDynamicWorkflowInfo' resources matching the request.
-		Results []WorkflowPendingDynamicWorkflowInfo `json:"Results,omitempty"`
+		// The array of 'resource.SharedResourcesInfoHolder' resources matching the request.
+		Results []ResourceSharedResourcesInfoHolder `json:"Results,omitempty"`
 	}
 
-	varWorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct := WorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct{}
+	varResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct := ResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct{}
 
-	err = json.Unmarshal(bytes, &varWorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct)
+	err = json.Unmarshal(bytes, &varResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct)
 	if err == nil {
-		varWorkflowPendingDynamicWorkflowInfoList := _WorkflowPendingDynamicWorkflowInfoList{}
-		varWorkflowPendingDynamicWorkflowInfoList.Count = varWorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct.Count
-		varWorkflowPendingDynamicWorkflowInfoList.Results = varWorkflowPendingDynamicWorkflowInfoListWithoutEmbeddedStruct.Results
-		*o = WorkflowPendingDynamicWorkflowInfoList(varWorkflowPendingDynamicWorkflowInfoList)
+		varResourceSharedResourcesInfoHolderList := _ResourceSharedResourcesInfoHolderList{}
+		varResourceSharedResourcesInfoHolderList.Count = varResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct.Count
+		varResourceSharedResourcesInfoHolderList.Results = varResourceSharedResourcesInfoHolderListWithoutEmbeddedStruct.Results
+		*o = ResourceSharedResourcesInfoHolderList(varResourceSharedResourcesInfoHolderList)
 	} else {
 		return err
 	}
 
-	varWorkflowPendingDynamicWorkflowInfoList := _WorkflowPendingDynamicWorkflowInfoList{}
+	varResourceSharedResourcesInfoHolderList := _ResourceSharedResourcesInfoHolderList{}
 
-	err = json.Unmarshal(bytes, &varWorkflowPendingDynamicWorkflowInfoList)
+	err = json.Unmarshal(bytes, &varResourceSharedResourcesInfoHolderList)
 	if err == nil {
-		o.MoBaseResponse = varWorkflowPendingDynamicWorkflowInfoList.MoBaseResponse
+		o.MoBaseResponse = varResourceSharedResourcesInfoHolderList.MoBaseResponse
 	} else {
 		return err
 	}
@@ -195,38 +195,38 @@ func (o *WorkflowPendingDynamicWorkflowInfoList) UnmarshalJSON(bytes []byte) (er
 	return err
 }
 
-type NullableWorkflowPendingDynamicWorkflowInfoList struct {
-	value *WorkflowPendingDynamicWorkflowInfoList
+type NullableResourceSharedResourcesInfoHolderList struct {
+	value *ResourceSharedResourcesInfoHolderList
 	isSet bool
 }
 
-func (v NullableWorkflowPendingDynamicWorkflowInfoList) Get() *WorkflowPendingDynamicWorkflowInfoList {
+func (v NullableResourceSharedResourcesInfoHolderList) Get() *ResourceSharedResourcesInfoHolderList {
 	return v.value
 }
 
-func (v *NullableWorkflowPendingDynamicWorkflowInfoList) Set(val *WorkflowPendingDynamicWorkflowInfoList) {
+func (v *NullableResourceSharedResourcesInfoHolderList) Set(val *ResourceSharedResourcesInfoHolderList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableWorkflowPendingDynamicWorkflowInfoList) IsSet() bool {
+func (v NullableResourceSharedResourcesInfoHolderList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableWorkflowPendingDynamicWorkflowInfoList) Unset() {
+func (v *NullableResourceSharedResourcesInfoHolderList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableWorkflowPendingDynamicWorkflowInfoList(val *WorkflowPendingDynamicWorkflowInfoList) *NullableWorkflowPendingDynamicWorkflowInfoList {
-	return &NullableWorkflowPendingDynamicWorkflowInfoList{value: val, isSet: true}
+func NewNullableResourceSharedResourcesInfoHolderList(val *ResourceSharedResourcesInfoHolderList) *NullableResourceSharedResourcesInfoHolderList {
+	return &NullableResourceSharedResourcesInfoHolderList{value: val, isSet: true}
 }
 
-func (v NullableWorkflowPendingDynamicWorkflowInfoList) MarshalJSON() ([]byte, error) {
+func (v NullableResourceSharedResourcesInfoHolderList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableWorkflowPendingDynamicWorkflowInfoList) UnmarshalJSON(src []byte) error {
+func (v *NullableResourceSharedResourcesInfoHolderList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
