@@ -1,4 +1,4 @@
-# WorkflowPendingDynamicWorkflowInfoRelationship
+# IamSharingRuleRelationship
 
 ## Properties
 
@@ -12,135 +12,135 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewWorkflowPendingDynamicWorkflowInfoRelationship
+### NewIamSharingRuleRelationship
 
-`func NewWorkflowPendingDynamicWorkflowInfoRelationship(classId string, objectType string, ) *WorkflowPendingDynamicWorkflowInfoRelationship`
+`func NewIamSharingRuleRelationship(classId string, objectType string, ) *IamSharingRuleRelationship`
 
-NewWorkflowPendingDynamicWorkflowInfoRelationship instantiates a new WorkflowPendingDynamicWorkflowInfoRelationship object
+NewIamSharingRuleRelationship instantiates a new IamSharingRuleRelationship object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewWorkflowPendingDynamicWorkflowInfoRelationshipWithDefaults
+### NewIamSharingRuleRelationshipWithDefaults
 
-`func NewWorkflowPendingDynamicWorkflowInfoRelationshipWithDefaults() *WorkflowPendingDynamicWorkflowInfoRelationship`
+`func NewIamSharingRuleRelationshipWithDefaults() *IamSharingRuleRelationship`
 
-NewWorkflowPendingDynamicWorkflowInfoRelationshipWithDefaults instantiates a new WorkflowPendingDynamicWorkflowInfoRelationship object
+NewIamSharingRuleRelationshipWithDefaults instantiates a new IamSharingRuleRelationship object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetClassId
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetClassId() string`
+`func (o *IamSharingRuleRelationship) GetClassId() string`
 
 GetClassId returns the ClassId field if non-nil, zero value otherwise.
 
 ### GetClassIdOk
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetClassIdOk() (*string, bool)`
+`func (o *IamSharingRuleRelationship) GetClassIdOk() (*string, bool)`
 
 GetClassIdOk returns a tuple with the ClassId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClassId
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) SetClassId(v string)`
+`func (o *IamSharingRuleRelationship) SetClassId(v string)`
 
 SetClassId sets ClassId field to given value.
 
 
 ### GetObjectType
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetObjectType() string`
+`func (o *IamSharingRuleRelationship) GetObjectType() string`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetObjectTypeOk() (*string, bool)`
+`func (o *IamSharingRuleRelationship) GetObjectTypeOk() (*string, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) SetObjectType(v string)`
+`func (o *IamSharingRuleRelationship) SetObjectType(v string)`
 
 SetObjectType sets ObjectType field to given value.
 
 
 ### GetMoid
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetMoid() string`
+`func (o *IamSharingRuleRelationship) GetMoid() string`
 
 GetMoid returns the Moid field if non-nil, zero value otherwise.
 
 ### GetMoidOk
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetMoidOk() (*string, bool)`
+`func (o *IamSharingRuleRelationship) GetMoidOk() (*string, bool)`
 
 GetMoidOk returns a tuple with the Moid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMoid
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) SetMoid(v string)`
+`func (o *IamSharingRuleRelationship) SetMoid(v string)`
 
 SetMoid sets Moid field to given value.
 
 ### HasMoid
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) HasMoid() bool`
+`func (o *IamSharingRuleRelationship) HasMoid() bool`
 
 HasMoid returns a boolean if a field has been set.
 
 ### GetSelector
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetSelector() string`
+`func (o *IamSharingRuleRelationship) GetSelector() string`
 
 GetSelector returns the Selector field if non-nil, zero value otherwise.
 
 ### GetSelectorOk
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetSelectorOk() (*string, bool)`
+`func (o *IamSharingRuleRelationship) GetSelectorOk() (*string, bool)`
 
 GetSelectorOk returns a tuple with the Selector field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelector
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) SetSelector(v string)`
+`func (o *IamSharingRuleRelationship) SetSelector(v string)`
 
 SetSelector sets Selector field to given value.
 
 ### HasSelector
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) HasSelector() bool`
+`func (o *IamSharingRuleRelationship) HasSelector() bool`
 
 HasSelector returns a boolean if a field has been set.
 
 ### GetLink
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetLink() string`
+`func (o *IamSharingRuleRelationship) GetLink() string`
 
 GetLink returns the Link field if non-nil, zero value otherwise.
 
 ### GetLinkOk
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) GetLinkOk() (*string, bool)`
+`func (o *IamSharingRuleRelationship) GetLinkOk() (*string, bool)`
 
 GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLink
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) SetLink(v string)`
+`func (o *IamSharingRuleRelationship) SetLink(v string)`
 
 SetLink sets Link field to given value.
 
 ### HasLink
 
-`func (o *WorkflowPendingDynamicWorkflowInfoRelationship) HasLink() bool`
+`func (o *IamSharingRuleRelationship) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
 
