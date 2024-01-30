@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **SupportedModels** | Pointer to **[]string** |  | [optional] 
 **Vendor** | Pointer to **string** | The vendor or publisher of this file. | [optional] [default to "Cisco"]
 **DistributableMetas** | Pointer to [**[]FirmwareDistributableMetaRelationship**](FirmwareDistributableMetaRelationship.md) | An array of relationships to firmwareDistributableMeta resources. | [optional] 
-**Release** | Pointer to [**SoftwarerepositoryReleaseRelationship**](SoftwarerepositoryReleaseRelationship.md) |  | [optional] 
+**Release** | Pointer to [**NullableSoftwarerepositoryReleaseRelationship**](SoftwarerepositoryReleaseRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -460,6 +460,16 @@ SetRelease sets Release field to given value.
 
 HasRelease returns a boolean if a field has been set.
 
+### SetReleaseNil
+
+`func (o *FirmwareBaseDistributable) SetReleaseNil(b bool)`
+
+ SetReleaseNil sets the value for Release to be an explicit nil
+
+### UnsetRelease
+`func (o *FirmwareBaseDistributable) UnsetRelease()`
+
+UnsetRelease ensures that no value is present for Release, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

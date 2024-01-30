@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **IsNewPasswordSet** | Pointer to **bool** | Indicates whether the value of the &#39;newPassword&#39; property has been set. | [optional] [readonly] [default to false]
 **NewPassword** | Pointer to **string** | New password that the user&#39;s password should be changed to. | [optional] 
 **Password** | Pointer to **string** | User&#39;s current valid passsord. | [optional] 
-**User** | Pointer to [**IamUserRelationship**](IamUserRelationship.md) |  | [optional] 
+**User** | Pointer to [**NullableIamUserRelationship**](IamUserRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -222,6 +222,16 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
+### SetUserNil
+
+`func (o *IamLocalUserPassword) SetUserNil(b bool)`
+
+ SetUserNil sets the value for User to be an explicit nil
+
+### UnsetUser
+`func (o *IamLocalUserPassword) UnsetUser()`
+
+UnsetUser ensures that no value is present for User, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
