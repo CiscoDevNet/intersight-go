@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The processing status of the request. * &#x60;NotStarted&#x60; - Indicates that the request processing has not begun yet. * &#x60;ObjPresenceCheckInProgress&#x60; - Indicates that the object presence check is in progress for this request. * &#x60;ObjPresenceCheckComplete&#x60; - Indicates that the object presence check is complete. * &#x60;ExecutionInProgress&#x60; - Indicates that the request processing is in progress. * &#x60;Completed&#x60; - Indicates that the request processing has been completed successfully. * &#x60;Failed&#x60; - Indicates that the processing of this request failed. * &#x60;TimedOut&#x60; - Indicates that the request processing timed out. | [optional] [readonly] [default to "NotStarted"]
 **StatusMessage** | Pointer to **string** | The status message shows the error details in human readable format when the request goes to failed state. No additional information is shown for success case. | [optional] [readonly] 
 **Uri** | Pointer to **string** | The URI on which this async operation is being performed. | [optional] [readonly] 
-**MoDeepCloner** | Pointer to [**BulkMoDeepClonerRelationship**](BulkMoDeepClonerRelationship.md) |  | [optional] 
-**Organization** | Pointer to [**OrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
+**MoDeepCloner** | Pointer to [**NullableBulkMoDeepClonerRelationship**](BulkMoDeepClonerRelationship.md) |  | [optional] 
+**Organization** | Pointer to [**NullableOrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
 **Results** | Pointer to [**[]BulkSubRequestObjRelationship**](BulkSubRequestObjRelationship.md) | An array of relationships to bulkSubRequestObj resources. | [optional] [readonly] 
-**WorkflowInfo** | Pointer to [**WorkflowWorkflowInfoRelationship**](WorkflowWorkflowInfoRelationship.md) |  | [optional] 
+**WorkflowInfo** | Pointer to [**NullableWorkflowWorkflowInfoRelationship**](WorkflowWorkflowInfoRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -251,6 +251,16 @@ SetMoDeepCloner sets MoDeepCloner field to given value.
 
 HasMoDeepCloner returns a boolean if a field has been set.
 
+### SetMoDeepClonerNil
+
+`func (o *BulkResult) SetMoDeepClonerNil(b bool)`
+
+ SetMoDeepClonerNil sets the value for MoDeepCloner to be an explicit nil
+
+### UnsetMoDeepCloner
+`func (o *BulkResult) UnsetMoDeepCloner()`
+
+UnsetMoDeepCloner ensures that no value is present for MoDeepCloner, not even an explicit nil
 ### GetOrganization
 
 `func (o *BulkResult) GetOrganization() OrganizationOrganizationRelationship`
@@ -276,6 +286,16 @@ SetOrganization sets Organization field to given value.
 
 HasOrganization returns a boolean if a field has been set.
 
+### SetOrganizationNil
+
+`func (o *BulkResult) SetOrganizationNil(b bool)`
+
+ SetOrganizationNil sets the value for Organization to be an explicit nil
+
+### UnsetOrganization
+`func (o *BulkResult) UnsetOrganization()`
+
+UnsetOrganization ensures that no value is present for Organization, not even an explicit nil
 ### GetResults
 
 `func (o *BulkResult) GetResults() []BulkSubRequestObjRelationship`
@@ -336,6 +356,16 @@ SetWorkflowInfo sets WorkflowInfo field to given value.
 
 HasWorkflowInfo returns a boolean if a field has been set.
 
+### SetWorkflowInfoNil
+
+`func (o *BulkResult) SetWorkflowInfoNil(b bool)`
+
+ SetWorkflowInfoNil sets the value for WorkflowInfo to be an explicit nil
+
+### UnsetWorkflowInfo
+`func (o *BulkResult) UnsetWorkflowInfo()`
+
+UnsetWorkflowInfo ensures that no value is present for WorkflowInfo, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

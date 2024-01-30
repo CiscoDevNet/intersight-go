@@ -17,22 +17,23 @@ Name | Type | Description | Notes
 **Order** | Pointer to **int64** | The order in which the virtual interface is brought up. The order assigned to an interface should be unique for all the Ethernet and Fibre-Channel interfaces on each PCI link on a VIC adapter. The order should start from zero with no overlaps. The maximum value of PCI order is limited by the number of virtual interfaces (Ethernet and Fibre-Channel) on each PCI link on a VIC adapter. All VIC adapters have a single PCI link except VIC 1340, VIC 1380 and VIC 1385 which have two. | [optional] [readonly] 
 **PinGroupName** | Pointer to **string** | Pingroup name associated to vNIC for static pinning. LCP deploy will resolve pingroup name and fetches the correspoding uplink port/port channel to pin the vNIC traffic. | [optional] [readonly] 
 **Placement** | Pointer to [**NullableVnicPlacementSettings**](VnicPlacementSettings.md) |  | [optional] 
+**SriovSettings** | Pointer to [**NullableVnicSriovSettings**](VnicSriovSettings.md) |  | [optional] 
 **StandbyVifId** | Pointer to **int64** | The Standby VIF Id is applicable for failover enabled vNICS. It should be the same as the channel number of the standby vethernet created on switch in order to set up the standby data path. | [optional] [readonly] 
 **StaticMacAddress** | Pointer to **string** | The MAC address must be in hexadecimal format xx:xx:xx:xx:xx:xx. To ensure uniqueness of MACs in the LAN fabric, you are strongly encouraged to use the following MAC prefix 00:25:B5:xx:xx:xx. | [optional] [readonly] 
 **UsnicSettings** | Pointer to [**NullableVnicUsnicSettings**](VnicUsnicSettings.md) |  | [optional] 
 **VifId** | Pointer to **int64** | The Vif Id should be same as the channel number of the vethernet created on switch in order to set up the data path. The property is applicable only for FI attached servers where a vethernet is created on the switch for every vNIC. | [optional] [readonly] 
 **VmqSettings** | Pointer to [**NullableVnicVmqSettings**](VnicVmqSettings.md) |  | [optional] 
-**EthAdapterPolicy** | Pointer to [**VnicEthAdapterPolicyInventoryRelationship**](VnicEthAdapterPolicyInventoryRelationship.md) |  | [optional] 
-**EthNetworkPolicy** | Pointer to [**VnicEthNetworkPolicyInventoryRelationship**](VnicEthNetworkPolicyInventoryRelationship.md) |  | [optional] 
-**EthQosPolicy** | Pointer to [**VnicEthQosPolicyInventoryRelationship**](VnicEthQosPolicyInventoryRelationship.md) |  | [optional] 
-**FabricEthNetworkControlPolicy** | Pointer to [**FabricEthNetworkControlPolicyInventoryRelationship**](FabricEthNetworkControlPolicyInventoryRelationship.md) |  | [optional] 
+**EthAdapterPolicy** | Pointer to [**NullableVnicEthAdapterPolicyInventoryRelationship**](VnicEthAdapterPolicyInventoryRelationship.md) |  | [optional] 
+**EthNetworkPolicy** | Pointer to [**NullableVnicEthNetworkPolicyInventoryRelationship**](VnicEthNetworkPolicyInventoryRelationship.md) |  | [optional] 
+**EthQosPolicy** | Pointer to [**NullableVnicEthQosPolicyInventoryRelationship**](VnicEthQosPolicyInventoryRelationship.md) |  | [optional] 
+**FabricEthNetworkControlPolicy** | Pointer to [**NullableFabricEthNetworkControlPolicyInventoryRelationship**](FabricEthNetworkControlPolicyInventoryRelationship.md) |  | [optional] 
 **FabricEthNetworkGroupPolicy** | Pointer to [**[]FabricEthNetworkGroupPolicyInventoryRelationship**](FabricEthNetworkGroupPolicyInventoryRelationship.md) | An array of relationships to fabricEthNetworkGroupPolicyInventory resources. | [optional] [readonly] 
-**IpLease** | Pointer to [**IppoolIpLeaseRelationship**](IppoolIpLeaseRelationship.md) |  | [optional] 
-**IscsiBootPolicy** | Pointer to [**VnicIscsiBootPolicyInventoryRelationship**](VnicIscsiBootPolicyInventoryRelationship.md) |  | [optional] 
-**LanConnectivityPolicy** | Pointer to [**VnicLanConnectivityPolicyInventoryRelationship**](VnicLanConnectivityPolicyInventoryRelationship.md) |  | [optional] 
-**LcpVnic** | Pointer to [**VnicEthIfInventoryRelationship**](VnicEthIfInventoryRelationship.md) |  | [optional] 
-**MacLease** | Pointer to [**MacpoolLeaseRelationship**](MacpoolLeaseRelationship.md) |  | [optional] 
-**MacPool** | Pointer to [**MacpoolPoolRelationship**](MacpoolPoolRelationship.md) |  | [optional] 
+**IpLease** | Pointer to [**NullableIppoolIpLeaseRelationship**](IppoolIpLeaseRelationship.md) |  | [optional] 
+**IscsiBootPolicy** | Pointer to [**NullableVnicIscsiBootPolicyInventoryRelationship**](VnicIscsiBootPolicyInventoryRelationship.md) |  | [optional] 
+**LanConnectivityPolicy** | Pointer to [**NullableVnicLanConnectivityPolicyInventoryRelationship**](VnicLanConnectivityPolicyInventoryRelationship.md) |  | [optional] 
+**LcpVnic** | Pointer to [**NullableVnicEthIfInventoryRelationship**](VnicEthIfInventoryRelationship.md) |  | [optional] 
+**MacLease** | Pointer to [**NullableMacpoolLeaseRelationship**](MacpoolLeaseRelationship.md) |  | [optional] 
+**MacPool** | Pointer to [**NullableMacpoolPoolRelationship**](MacpoolPoolRelationship.md) |  | [optional] 
 **SpVnics** | Pointer to [**[]VnicEthIfInventoryRelationship**](VnicEthIfInventoryRelationship.md) | An array of relationships to vnicEthIfInventory resources. | [optional] [readonly] 
 
 ## Methods
@@ -399,6 +400,41 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *VnicEthIfInventory) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
+### GetSriovSettings
+
+`func (o *VnicEthIfInventory) GetSriovSettings() VnicSriovSettings`
+
+GetSriovSettings returns the SriovSettings field if non-nil, zero value otherwise.
+
+### GetSriovSettingsOk
+
+`func (o *VnicEthIfInventory) GetSriovSettingsOk() (*VnicSriovSettings, bool)`
+
+GetSriovSettingsOk returns a tuple with the SriovSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSriovSettings
+
+`func (o *VnicEthIfInventory) SetSriovSettings(v VnicSriovSettings)`
+
+SetSriovSettings sets SriovSettings field to given value.
+
+### HasSriovSettings
+
+`func (o *VnicEthIfInventory) HasSriovSettings() bool`
+
+HasSriovSettings returns a boolean if a field has been set.
+
+### SetSriovSettingsNil
+
+`func (o *VnicEthIfInventory) SetSriovSettingsNil(b bool)`
+
+ SetSriovSettingsNil sets the value for SriovSettings to be an explicit nil
+
+### UnsetSriovSettings
+`func (o *VnicEthIfInventory) UnsetSriovSettings()`
+
+UnsetSriovSettings ensures that no value is present for SriovSettings, not even an explicit nil
 ### GetStandbyVifId
 
 `func (o *VnicEthIfInventory) GetStandbyVifId() int64`
@@ -569,6 +605,16 @@ SetEthAdapterPolicy sets EthAdapterPolicy field to given value.
 
 HasEthAdapterPolicy returns a boolean if a field has been set.
 
+### SetEthAdapterPolicyNil
+
+`func (o *VnicEthIfInventory) SetEthAdapterPolicyNil(b bool)`
+
+ SetEthAdapterPolicyNil sets the value for EthAdapterPolicy to be an explicit nil
+
+### UnsetEthAdapterPolicy
+`func (o *VnicEthIfInventory) UnsetEthAdapterPolicy()`
+
+UnsetEthAdapterPolicy ensures that no value is present for EthAdapterPolicy, not even an explicit nil
 ### GetEthNetworkPolicy
 
 `func (o *VnicEthIfInventory) GetEthNetworkPolicy() VnicEthNetworkPolicyInventoryRelationship`
@@ -594,6 +640,16 @@ SetEthNetworkPolicy sets EthNetworkPolicy field to given value.
 
 HasEthNetworkPolicy returns a boolean if a field has been set.
 
+### SetEthNetworkPolicyNil
+
+`func (o *VnicEthIfInventory) SetEthNetworkPolicyNil(b bool)`
+
+ SetEthNetworkPolicyNil sets the value for EthNetworkPolicy to be an explicit nil
+
+### UnsetEthNetworkPolicy
+`func (o *VnicEthIfInventory) UnsetEthNetworkPolicy()`
+
+UnsetEthNetworkPolicy ensures that no value is present for EthNetworkPolicy, not even an explicit nil
 ### GetEthQosPolicy
 
 `func (o *VnicEthIfInventory) GetEthQosPolicy() VnicEthQosPolicyInventoryRelationship`
@@ -619,6 +675,16 @@ SetEthQosPolicy sets EthQosPolicy field to given value.
 
 HasEthQosPolicy returns a boolean if a field has been set.
 
+### SetEthQosPolicyNil
+
+`func (o *VnicEthIfInventory) SetEthQosPolicyNil(b bool)`
+
+ SetEthQosPolicyNil sets the value for EthQosPolicy to be an explicit nil
+
+### UnsetEthQosPolicy
+`func (o *VnicEthIfInventory) UnsetEthQosPolicy()`
+
+UnsetEthQosPolicy ensures that no value is present for EthQosPolicy, not even an explicit nil
 ### GetFabricEthNetworkControlPolicy
 
 `func (o *VnicEthIfInventory) GetFabricEthNetworkControlPolicy() FabricEthNetworkControlPolicyInventoryRelationship`
@@ -644,6 +710,16 @@ SetFabricEthNetworkControlPolicy sets FabricEthNetworkControlPolicy field to giv
 
 HasFabricEthNetworkControlPolicy returns a boolean if a field has been set.
 
+### SetFabricEthNetworkControlPolicyNil
+
+`func (o *VnicEthIfInventory) SetFabricEthNetworkControlPolicyNil(b bool)`
+
+ SetFabricEthNetworkControlPolicyNil sets the value for FabricEthNetworkControlPolicy to be an explicit nil
+
+### UnsetFabricEthNetworkControlPolicy
+`func (o *VnicEthIfInventory) UnsetFabricEthNetworkControlPolicy()`
+
+UnsetFabricEthNetworkControlPolicy ensures that no value is present for FabricEthNetworkControlPolicy, not even an explicit nil
 ### GetFabricEthNetworkGroupPolicy
 
 `func (o *VnicEthIfInventory) GetFabricEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyInventoryRelationship`
@@ -704,6 +780,16 @@ SetIpLease sets IpLease field to given value.
 
 HasIpLease returns a boolean if a field has been set.
 
+### SetIpLeaseNil
+
+`func (o *VnicEthIfInventory) SetIpLeaseNil(b bool)`
+
+ SetIpLeaseNil sets the value for IpLease to be an explicit nil
+
+### UnsetIpLease
+`func (o *VnicEthIfInventory) UnsetIpLease()`
+
+UnsetIpLease ensures that no value is present for IpLease, not even an explicit nil
 ### GetIscsiBootPolicy
 
 `func (o *VnicEthIfInventory) GetIscsiBootPolicy() VnicIscsiBootPolicyInventoryRelationship`
@@ -729,6 +815,16 @@ SetIscsiBootPolicy sets IscsiBootPolicy field to given value.
 
 HasIscsiBootPolicy returns a boolean if a field has been set.
 
+### SetIscsiBootPolicyNil
+
+`func (o *VnicEthIfInventory) SetIscsiBootPolicyNil(b bool)`
+
+ SetIscsiBootPolicyNil sets the value for IscsiBootPolicy to be an explicit nil
+
+### UnsetIscsiBootPolicy
+`func (o *VnicEthIfInventory) UnsetIscsiBootPolicy()`
+
+UnsetIscsiBootPolicy ensures that no value is present for IscsiBootPolicy, not even an explicit nil
 ### GetLanConnectivityPolicy
 
 `func (o *VnicEthIfInventory) GetLanConnectivityPolicy() VnicLanConnectivityPolicyInventoryRelationship`
@@ -754,6 +850,16 @@ SetLanConnectivityPolicy sets LanConnectivityPolicy field to given value.
 
 HasLanConnectivityPolicy returns a boolean if a field has been set.
 
+### SetLanConnectivityPolicyNil
+
+`func (o *VnicEthIfInventory) SetLanConnectivityPolicyNil(b bool)`
+
+ SetLanConnectivityPolicyNil sets the value for LanConnectivityPolicy to be an explicit nil
+
+### UnsetLanConnectivityPolicy
+`func (o *VnicEthIfInventory) UnsetLanConnectivityPolicy()`
+
+UnsetLanConnectivityPolicy ensures that no value is present for LanConnectivityPolicy, not even an explicit nil
 ### GetLcpVnic
 
 `func (o *VnicEthIfInventory) GetLcpVnic() VnicEthIfInventoryRelationship`
@@ -779,6 +885,16 @@ SetLcpVnic sets LcpVnic field to given value.
 
 HasLcpVnic returns a boolean if a field has been set.
 
+### SetLcpVnicNil
+
+`func (o *VnicEthIfInventory) SetLcpVnicNil(b bool)`
+
+ SetLcpVnicNil sets the value for LcpVnic to be an explicit nil
+
+### UnsetLcpVnic
+`func (o *VnicEthIfInventory) UnsetLcpVnic()`
+
+UnsetLcpVnic ensures that no value is present for LcpVnic, not even an explicit nil
 ### GetMacLease
 
 `func (o *VnicEthIfInventory) GetMacLease() MacpoolLeaseRelationship`
@@ -804,6 +920,16 @@ SetMacLease sets MacLease field to given value.
 
 HasMacLease returns a boolean if a field has been set.
 
+### SetMacLeaseNil
+
+`func (o *VnicEthIfInventory) SetMacLeaseNil(b bool)`
+
+ SetMacLeaseNil sets the value for MacLease to be an explicit nil
+
+### UnsetMacLease
+`func (o *VnicEthIfInventory) UnsetMacLease()`
+
+UnsetMacLease ensures that no value is present for MacLease, not even an explicit nil
 ### GetMacPool
 
 `func (o *VnicEthIfInventory) GetMacPool() MacpoolPoolRelationship`
@@ -829,6 +955,16 @@ SetMacPool sets MacPool field to given value.
 
 HasMacPool returns a boolean if a field has been set.
 
+### SetMacPoolNil
+
+`func (o *VnicEthIfInventory) SetMacPoolNil(b bool)`
+
+ SetMacPoolNil sets the value for MacPool to be an explicit nil
+
+### UnsetMacPool
+`func (o *VnicEthIfInventory) UnsetMacPool()`
+
+UnsetMacPool ensures that no value is present for MacPool, not even an explicit nil
 ### GetSpVnics
 
 `func (o *VnicEthIfInventory) GetSpVnics() []VnicEthIfInventoryRelationship`

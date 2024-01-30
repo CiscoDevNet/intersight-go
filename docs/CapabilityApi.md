@@ -213,26 +213,26 @@ Create a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityActionsMetaData(context.Background()).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityActionsMetaData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityActionsMetaData`: CapabilityActionsMetaData
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityActionsMetaData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityActionsMetaData(context.Background()).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityActionsMetaData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityActionsMetaData`: CapabilityActionsMetaData
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityActionsMetaData`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -281,26 +281,26 @@ Create a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityAdapterDeprecatedDef(context.Background()).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityAdapterDeprecatedDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityAdapterDeprecatedDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityAdapterDeprecatedDef(context.Background()).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityAdapterDeprecatedDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityAdapterDeprecatedDef`: %v\n", resp)
 }
 ```
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -349,26 +349,26 @@ Create a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityAdapterUnitDescriptor(context.Background()).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityAdapterUnitDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityAdapterUnitDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityAdapterUnitDescriptor(context.Background()).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityAdapterUnitDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityAdapterUnitDescriptor`: %v\n", resp)
 }
 ```
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -417,26 +417,26 @@ Create a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityChassisDescriptor(context.Background()).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityChassisDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityChassisDescriptor`: CapabilityChassisDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityChassisDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityChassisDescriptor(context.Background()).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityChassisDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityChassisDescriptor`: CapabilityChassisDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityChassisDescriptor`: %v\n", resp)
 }
 ```
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -485,26 +485,26 @@ Create a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityChassisManufacturingDef(context.Background()).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityChassisManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityChassisManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityChassisManufacturingDef(context.Background()).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityChassisManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityChassisManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -553,26 +553,26 @@ Create a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityCimcFirmwareDescriptor(context.Background()).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityCimcFirmwareDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityCimcFirmwareDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityCimcFirmwareDescriptor(context.Background()).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityCimcFirmwareDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityCimcFirmwareDescriptor`: %v\n", resp)
 }
 ```
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -621,26 +621,26 @@ Create a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityEquipmentPhysicalDef(context.Background()).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityEquipmentPhysicalDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityEquipmentPhysicalDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityEquipmentPhysicalDef(context.Background()).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityEquipmentPhysicalDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityEquipmentPhysicalDef`: %v\n", resp)
 }
 ```
 
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -689,26 +689,26 @@ Create a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityEquipmentSlotArray(context.Background()).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityEquipmentSlotArray``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityEquipmentSlotArray`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityEquipmentSlotArray(context.Background()).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityEquipmentSlotArray``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityEquipmentSlotArray`: %v\n", resp)
 }
 ```
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -757,26 +757,26 @@ Create a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityFanModuleDescriptor(context.Background()).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFanModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFanModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityFanModuleDescriptor(context.Background()).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFanModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFanModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -801,7 +801,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -825,26 +825,26 @@ Create a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityFanModuleManufacturingDef(context.Background()).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFanModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFanModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityFanModuleManufacturingDef(context.Background()).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFanModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFanModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -869,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -893,26 +893,26 @@ Create a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexCapabilityDef(context.Background()).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexCapabilityDef(context.Background()).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -961,26 +961,26 @@ Create a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexDescriptor(context.Background()).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityFexDescriptor`: CapabilityFexDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexDescriptor(context.Background()).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityFexDescriptor`: CapabilityFexDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1005,7 +1005,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1029,26 +1029,26 @@ Create a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexManufacturingDef(context.Background()).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityFexManufacturingDef(context.Background()).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityFexManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityFexManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -1073,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1097,26 +1097,26 @@ Create a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardCapabilityDef(context.Background()).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardCapabilityDef(context.Background()).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -1141,7 +1141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1165,26 +1165,26 @@ Create a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardDescriptor(context.Background()).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardDescriptor(context.Background()).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1209,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1233,26 +1233,26 @@ Create a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardManufacturingDef(context.Background()).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityIoCardManufacturingDef(context.Background()).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityIoCardManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityIoCardManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1301,26 +1301,26 @@ Create a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityPortGroupAggregationDef(context.Background()).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPortGroupAggregationDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPortGroupAggregationDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityPortGroupAggregationDef(context.Background()).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPortGroupAggregationDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPortGroupAggregationDef`: %v\n", resp)
 }
 ```
 
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1369,26 +1369,26 @@ Create a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityPsuDescriptor(context.Background()).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPsuDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityPsuDescriptor`: CapabilityPsuDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPsuDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityPsuDescriptor(context.Background()).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPsuDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityPsuDescriptor`: CapabilityPsuDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPsuDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1413,7 +1413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1437,26 +1437,26 @@ Create a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityPsuManufacturingDef(context.Background()).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPsuManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPsuManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityPsuManufacturingDef(context.Background()).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityPsuManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityPsuManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -1481,7 +1481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1505,26 +1505,26 @@ Create a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerDescriptor(context.Background()).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityServerDescriptor`: CapabilityServerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerDescriptor(context.Background()).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityServerDescriptor`: CapabilityServerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1549,7 +1549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1573,26 +1573,26 @@ Create a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerModelsCapabilityDef(context.Background()).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerModelsCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerModelsCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerModelsCapabilityDef(context.Background()).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerModelsCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerModelsCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -1617,7 +1617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1641,26 +1641,26 @@ Create a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerSchemaDescriptor(context.Background()).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerSchemaDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerSchemaDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilityServerSchemaDescriptor(context.Background()).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilityServerSchemaDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilityServerSchemaDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1685,7 +1685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1709,26 +1709,26 @@ Create a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleCapabilityDef(context.Background()).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleCapabilityDef(context.Background()).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -1753,7 +1753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1777,26 +1777,26 @@ Create a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleDescriptor(context.Background()).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleDescriptor(context.Background()).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -1821,7 +1821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1845,26 +1845,26 @@ Create a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleManufacturingDef(context.Background()).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySiocModuleManufacturingDef(context.Background()).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySiocModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySiocModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -1889,7 +1889,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1913,26 +1913,26 @@ Create a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchCapability(context.Background()).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchCapability``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySwitchCapability`: CapabilitySwitchCapability
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchCapability`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchCapability(context.Background()).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchCapability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySwitchCapability`: CapabilitySwitchCapability
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchCapability`: %v\n", resp)
 }
 ```
 
@@ -1957,7 +1957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -1981,26 +1981,26 @@ Create a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchDescriptor(context.Background()).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchDescriptor(context.Background()).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchDescriptor`: %v\n", resp)
 }
 ```
 
@@ -2025,7 +2025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2049,26 +2049,26 @@ Create a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to create.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
-    ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
+	capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to create.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	ifNoneMatch := "ifNoneMatch_example" // string | For methods that apply server-side changes, If-None-Match used with the * value can be used to create a resource not known to exist, guaranteeing that another resource creation didn't happen before, losing the data of the previous put. The request will be processed only if the eventually existing resource's ETag doesn't match any of the values listed. Otherwise, the status code 412 (Precondition Failed) is used. The asterisk is a special value representing any resource. It is only useful when creating a resource, usually with PUT, to check if another resource with the identity has already been created before. The comparison with the stored ETag uses the weak comparison algorithm, meaning two resources are considered identical if the content is equivalent - they don't have to be identical byte for byte. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchManufacturingDef(context.Background()).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `CreateCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.CreateCapabilitySwitchManufacturingDef(context.Background()).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).IfNoneMatch(ifNoneMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.CreateCapabilitySwitchManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.CreateCapabilitySwitchManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -2093,7 +2093,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2117,22 +2117,22 @@ Delete a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityActionsMetaData(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityActionsMetaData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityActionsMetaData(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityActionsMetaData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2159,7 +2159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2183,22 +2183,22 @@ Delete a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityAdapterDeprecatedDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityAdapterDeprecatedDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityAdapterDeprecatedDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityAdapterDeprecatedDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2225,7 +2225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2249,22 +2249,22 @@ Delete a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityAdapterUnitDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityAdapterUnitDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityAdapterUnitDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityAdapterUnitDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2291,7 +2291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2315,22 +2315,22 @@ Delete a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityChassisDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityChassisDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityChassisDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityChassisDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2357,7 +2357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2381,22 +2381,22 @@ Delete a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityChassisManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityChassisManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityChassisManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityChassisManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2423,7 +2423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2447,22 +2447,22 @@ Delete a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityCimcFirmwareDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityCimcFirmwareDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityCimcFirmwareDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityCimcFirmwareDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2489,7 +2489,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2513,22 +2513,22 @@ Delete a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityEquipmentPhysicalDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityEquipmentPhysicalDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityEquipmentPhysicalDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityEquipmentPhysicalDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2555,7 +2555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2579,22 +2579,22 @@ Delete a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityEquipmentSlotArray(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityEquipmentSlotArray``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityEquipmentSlotArray(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityEquipmentSlotArray``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2621,7 +2621,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2645,22 +2645,22 @@ Delete a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityFanModuleDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFanModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityFanModuleDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFanModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2687,7 +2687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2711,22 +2711,22 @@ Delete a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityFanModuleManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFanModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityFanModuleManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFanModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2753,7 +2753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2777,22 +2777,22 @@ Delete a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityFexCapabilityDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityFexCapabilityDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2819,7 +2819,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2843,22 +2843,22 @@ Delete a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityFexDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityFexDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2885,7 +2885,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2909,22 +2909,22 @@ Delete a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityFexManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityFexManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityFexManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -2951,7 +2951,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -2975,22 +2975,22 @@ Delete a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardCapabilityDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardCapabilityDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3017,7 +3017,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3041,22 +3041,22 @@ Delete a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3083,7 +3083,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3107,22 +3107,22 @@ Delete a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityIoCardManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityIoCardManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3149,7 +3149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3173,22 +3173,22 @@ Delete a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityPortGroupAggregationDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPortGroupAggregationDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityPortGroupAggregationDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPortGroupAggregationDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3215,7 +3215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3239,22 +3239,22 @@ Delete a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityPsuDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPsuDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityPsuDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPsuDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3281,7 +3281,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3305,22 +3305,22 @@ Delete a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityPsuManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPsuManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityPsuManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityPsuManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3347,7 +3347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3371,22 +3371,22 @@ Delete a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityServerDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityServerDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3413,7 +3413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3437,22 +3437,22 @@ Delete a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityServerModelsCapabilityDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerModelsCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityServerModelsCapabilityDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerModelsCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3479,7 +3479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3503,22 +3503,22 @@ Delete a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilityServerSchemaDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerSchemaDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilityServerSchemaDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilityServerSchemaDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3545,7 +3545,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3569,22 +3569,22 @@ Delete a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleCapabilityDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleCapabilityDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3611,7 +3611,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3635,22 +3635,22 @@ Delete a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3677,7 +3677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3701,22 +3701,22 @@ Delete a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySiocModuleManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySiocModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3743,7 +3743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3767,22 +3767,22 @@ Delete a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchCapability(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchCapability``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchCapability(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchCapability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3809,7 +3809,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3833,22 +3833,22 @@ Delete a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchDescriptor(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchDescriptor(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3875,7 +3875,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3899,22 +3899,22 @@ Delete a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchManufacturingDef(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CapabilityApi.DeleteCapabilitySwitchManufacturingDef(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.DeleteCapabilitySwitchManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -3941,7 +3941,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -3965,24 +3965,24 @@ Read a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityActionsMetaDataByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityActionsMetaDataByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityActionsMetaDataByMoid`: CapabilityActionsMetaData
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityActionsMetaDataByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityActionsMetaDataByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityActionsMetaDataByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityActionsMetaDataByMoid`: CapabilityActionsMetaData
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityActionsMetaDataByMoid`: %v\n", resp)
 }
 ```
 
@@ -4009,7 +4009,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4033,34 +4033,34 @@ Read a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityActionsMetaDataList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityActionsMetaDataList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityActionsMetaDataList`: CapabilityActionsMetaDataResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityActionsMetaDataList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityActionsMetaDataList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityActionsMetaDataList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityActionsMetaDataList`: CapabilityActionsMetaDataResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityActionsMetaDataList`: %v\n", resp)
 }
 ```
 
@@ -4093,7 +4093,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4117,24 +4117,24 @@ Read a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterDeprecatedDefByMoid`: CapabilityAdapterDeprecatedDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterDeprecatedDefByMoid`: CapabilityAdapterDeprecatedDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterDeprecatedDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -4161,7 +4161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4185,34 +4185,34 @@ Read a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterDeprecatedDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterDeprecatedDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterDeprecatedDefList`: CapabilityAdapterDeprecatedDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterDeprecatedDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterDeprecatedDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterDeprecatedDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterDeprecatedDefList`: CapabilityAdapterDeprecatedDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterDeprecatedDefList`: %v\n", resp)
 }
 ```
 
@@ -4245,7 +4245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4269,24 +4269,24 @@ Read a 'capability.AdapterFirmwareRequirement' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterFirmwareRequirementByMoid`: CapabilityAdapterFirmwareRequirement
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterFirmwareRequirementByMoid`: CapabilityAdapterFirmwareRequirement
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterFirmwareRequirementByMoid`: %v\n", resp)
 }
 ```
 
@@ -4313,7 +4313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4337,34 +4337,34 @@ Read a 'capability.AdapterFirmwareRequirement' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterFirmwareRequirementList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterFirmwareRequirementList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterFirmwareRequirementList`: CapabilityAdapterFirmwareRequirementResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterFirmwareRequirementList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterFirmwareRequirementList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterFirmwareRequirementList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterFirmwareRequirementList`: CapabilityAdapterFirmwareRequirementResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterFirmwareRequirementList`: %v\n", resp)
 }
 ```
 
@@ -4397,7 +4397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4421,24 +4421,24 @@ Read a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUnitDescriptorByMoid`: CapabilityAdapterUnitDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUnitDescriptorByMoid`: CapabilityAdapterUnitDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUnitDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -4465,7 +4465,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4489,34 +4489,34 @@ Read a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUnitDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUnitDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUnitDescriptorList`: CapabilityAdapterUnitDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUnitDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUnitDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUnitDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUnitDescriptorList`: CapabilityAdapterUnitDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUnitDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -4549,7 +4549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4573,24 +4573,24 @@ Read a 'capability.AdapterUpdateConstraintMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUpdateConstraintMetaByMoid`: CapabilityAdapterUpdateConstraintMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUpdateConstraintMetaByMoid`: CapabilityAdapterUpdateConstraintMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -4617,7 +4617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4641,34 +4641,34 @@ Read a 'capability.AdapterUpdateConstraintMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUpdateConstraintMetaList`: CapabilityAdapterUpdateConstraintMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUpdateConstraintMetaList`: CapabilityAdapterUpdateConstraintMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpdateConstraintMetaList`: %v\n", resp)
 }
 ```
 
@@ -4701,7 +4701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4725,24 +4725,24 @@ Read a 'capability.AdapterUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUpgradeSupportMetaByMoid`: CapabilityAdapterUpgradeSupportMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUpgradeSupportMetaByMoid`: CapabilityAdapterUpgradeSupportMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -4769,7 +4769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4793,34 +4793,34 @@ Read a 'capability.AdapterUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityAdapterUpgradeSupportMetaList`: CapabilityAdapterUpgradeSupportMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityAdapterUpgradeSupportMetaList`: CapabilityAdapterUpgradeSupportMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityAdapterUpgradeSupportMetaList`: %v\n", resp)
 }
 ```
 
@@ -4853,7 +4853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4877,24 +4877,24 @@ Read a 'capability.Catalog' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCatalogByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCatalogByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCatalogByMoid`: CapabilityCatalog
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCatalogByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCatalogByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCatalogByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCatalogByMoid`: CapabilityCatalog
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCatalogByMoid`: %v\n", resp)
 }
 ```
 
@@ -4921,7 +4921,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -4945,34 +4945,34 @@ Read a 'capability.Catalog' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCatalogList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCatalogList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCatalogList`: CapabilityCatalogResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCatalogList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCatalogList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCatalogList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCatalogList`: CapabilityCatalogResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCatalogList`: %v\n", resp)
 }
 ```
 
@@ -5005,7 +5005,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5029,24 +5029,24 @@ Read a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisDescriptorByMoid`: CapabilityChassisDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisDescriptorByMoid`: CapabilityChassisDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -5073,7 +5073,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5097,34 +5097,34 @@ Read a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisDescriptorList`: CapabilityChassisDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisDescriptorList`: CapabilityChassisDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -5157,7 +5157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5181,24 +5181,24 @@ Read a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisManufacturingDefByMoid`: CapabilityChassisManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisManufacturingDefByMoid`: CapabilityChassisManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -5225,7 +5225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5249,34 +5249,34 @@ Read a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisManufacturingDefList`: CapabilityChassisManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisManufacturingDefList`: CapabilityChassisManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -5309,7 +5309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5333,24 +5333,24 @@ Read a 'capability.ChassisUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisUpgradeSupportMetaByMoid`: CapabilityChassisUpgradeSupportMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisUpgradeSupportMetaByMoid`: CapabilityChassisUpgradeSupportMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -5377,7 +5377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5401,34 +5401,34 @@ Read a 'capability.ChassisUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityChassisUpgradeSupportMetaList`: CapabilityChassisUpgradeSupportMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityChassisUpgradeSupportMetaList`: CapabilityChassisUpgradeSupportMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityChassisUpgradeSupportMetaList`: %v\n", resp)
 }
 ```
 
@@ -5461,7 +5461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5485,24 +5485,24 @@ Read a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCimcFirmwareDescriptorByMoid`: CapabilityCimcFirmwareDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCimcFirmwareDescriptorByMoid`: CapabilityCimcFirmwareDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCimcFirmwareDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -5529,7 +5529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5553,34 +5553,34 @@ Read a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCimcFirmwareDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCimcFirmwareDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCimcFirmwareDescriptorList`: CapabilityCimcFirmwareDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCimcFirmwareDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCimcFirmwareDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCimcFirmwareDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCimcFirmwareDescriptorList`: CapabilityCimcFirmwareDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCimcFirmwareDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -5613,7 +5613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5637,24 +5637,24 @@ Read a 'capability.CpuEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCpuEndpointDescriptorByMoid`: CapabilityCpuEndpointDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCpuEndpointDescriptorByMoid`: CapabilityCpuEndpointDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCpuEndpointDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -5681,7 +5681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5705,34 +5705,34 @@ Read a 'capability.CpuEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityCpuEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCpuEndpointDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityCpuEndpointDescriptorList`: CapabilityCpuEndpointDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCpuEndpointDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityCpuEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityCpuEndpointDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityCpuEndpointDescriptorList`: CapabilityCpuEndpointDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityCpuEndpointDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -5765,7 +5765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5789,24 +5789,24 @@ Read a 'capability.DimmsEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityDimmsEndpointDescriptorByMoid`: CapabilityDimmsEndpointDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityDimmsEndpointDescriptorByMoid`: CapabilityDimmsEndpointDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDimmsEndpointDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -5833,7 +5833,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5857,34 +5857,34 @@ Read a 'capability.DimmsEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityDimmsEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDimmsEndpointDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityDimmsEndpointDescriptorList`: CapabilityDimmsEndpointDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDimmsEndpointDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityDimmsEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDimmsEndpointDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityDimmsEndpointDescriptorList`: CapabilityDimmsEndpointDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDimmsEndpointDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -5917,7 +5917,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -5941,24 +5941,24 @@ Read a 'capability.DrivesEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityDrivesEndpointDescriptorByMoid`: CapabilityDrivesEndpointDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityDrivesEndpointDescriptorByMoid`: CapabilityDrivesEndpointDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDrivesEndpointDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -5985,7 +5985,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6009,34 +6009,34 @@ Read a 'capability.DrivesEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityDrivesEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDrivesEndpointDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityDrivesEndpointDescriptorList`: CapabilityDrivesEndpointDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDrivesEndpointDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityDrivesEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityDrivesEndpointDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityDrivesEndpointDescriptorList`: CapabilityDrivesEndpointDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityDrivesEndpointDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -6069,7 +6069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6093,24 +6093,24 @@ Read a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityEquipmentPhysicalDefByMoid`: CapabilityEquipmentPhysicalDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityEquipmentPhysicalDefByMoid`: CapabilityEquipmentPhysicalDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentPhysicalDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -6137,7 +6137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6161,34 +6161,34 @@ Read a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentPhysicalDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentPhysicalDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityEquipmentPhysicalDefList`: CapabilityEquipmentPhysicalDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentPhysicalDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentPhysicalDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentPhysicalDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityEquipmentPhysicalDefList`: CapabilityEquipmentPhysicalDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentPhysicalDefList`: %v\n", resp)
 }
 ```
 
@@ -6221,7 +6221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6245,24 +6245,24 @@ Read a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityEquipmentSlotArrayByMoid`: CapabilityEquipmentSlotArray
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityEquipmentSlotArrayByMoid`: CapabilityEquipmentSlotArray
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentSlotArrayByMoid`: %v\n", resp)
 }
 ```
 
@@ -6289,7 +6289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6313,34 +6313,34 @@ Read a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentSlotArrayList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentSlotArrayList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityEquipmentSlotArrayList`: CapabilityEquipmentSlotArrayResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentSlotArrayList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityEquipmentSlotArrayList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityEquipmentSlotArrayList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityEquipmentSlotArrayList`: CapabilityEquipmentSlotArrayResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityEquipmentSlotArrayList`: %v\n", resp)
 }
 ```
 
@@ -6373,7 +6373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6397,24 +6397,24 @@ Read a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFanModuleDescriptorByMoid`: CapabilityFanModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFanModuleDescriptorByMoid`: CapabilityFanModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -6441,7 +6441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6465,34 +6465,34 @@ Read a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFanModuleDescriptorList`: CapabilityFanModuleDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFanModuleDescriptorList`: CapabilityFanModuleDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -6525,7 +6525,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6549,24 +6549,24 @@ Read a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFanModuleManufacturingDefByMoid`: CapabilityFanModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFanModuleManufacturingDefByMoid`: CapabilityFanModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -6593,7 +6593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6617,34 +6617,34 @@ Read a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFanModuleManufacturingDefList`: CapabilityFanModuleManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFanModuleManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFanModuleManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFanModuleManufacturingDefList`: CapabilityFanModuleManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFanModuleManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -6677,7 +6677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6701,24 +6701,24 @@ Read a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexCapabilityDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexCapabilityDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexCapabilityDefByMoid`: CapabilityFexCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexCapabilityDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexCapabilityDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexCapabilityDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexCapabilityDefByMoid`: CapabilityFexCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexCapabilityDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -6745,7 +6745,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6769,34 +6769,34 @@ Read a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexCapabilityDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexCapabilityDefList`: CapabilityFexCapabilityDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexCapabilityDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexCapabilityDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexCapabilityDefList`: CapabilityFexCapabilityDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexCapabilityDefList`: %v\n", resp)
 }
 ```
 
@@ -6829,7 +6829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6853,24 +6853,24 @@ Read a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexDescriptorByMoid`: CapabilityFexDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexDescriptorByMoid`: CapabilityFexDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -6897,7 +6897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -6921,34 +6921,34 @@ Read a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexDescriptorList`: CapabilityFexDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexDescriptorList`: CapabilityFexDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -6981,7 +6981,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7005,24 +7005,24 @@ Read a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexManufacturingDefByMoid`: CapabilityFexManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexManufacturingDefByMoid`: CapabilityFexManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -7049,7 +7049,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7073,34 +7073,34 @@ Read a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityFexManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityFexManufacturingDefList`: CapabilityFexManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityFexManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityFexManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityFexManufacturingDefList`: CapabilityFexManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityFexManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -7133,7 +7133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7157,24 +7157,24 @@ Read a 'capability.GpuEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityGpuEndpointDescriptorByMoid`: CapabilityGpuEndpointDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityGpuEndpointDescriptorByMoid`: CapabilityGpuEndpointDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityGpuEndpointDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -7201,7 +7201,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7225,34 +7225,34 @@ Read a 'capability.GpuEndpointDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityGpuEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityGpuEndpointDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityGpuEndpointDescriptorList`: CapabilityGpuEndpointDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityGpuEndpointDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityGpuEndpointDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityGpuEndpointDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityGpuEndpointDescriptorList`: CapabilityGpuEndpointDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityGpuEndpointDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -7285,7 +7285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7309,24 +7309,24 @@ Read a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardCapabilityDefByMoid`: CapabilityIoCardCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardCapabilityDefByMoid`: CapabilityIoCardCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardCapabilityDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -7353,7 +7353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7377,34 +7377,34 @@ Read a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardCapabilityDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardCapabilityDefList`: CapabilityIoCardCapabilityDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardCapabilityDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardCapabilityDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardCapabilityDefList`: CapabilityIoCardCapabilityDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardCapabilityDefList`: %v\n", resp)
 }
 ```
 
@@ -7437,7 +7437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7461,24 +7461,24 @@ Read a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardDescriptorByMoid`: CapabilityIoCardDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardDescriptorByMoid`: CapabilityIoCardDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -7505,7 +7505,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7529,34 +7529,34 @@ Read a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardDescriptorList`: CapabilityIoCardDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardDescriptorList`: CapabilityIoCardDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -7589,7 +7589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7613,24 +7613,24 @@ Read a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardManufacturingDefByMoid`: CapabilityIoCardManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardManufacturingDefByMoid`: CapabilityIoCardManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -7657,7 +7657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7681,34 +7681,34 @@ Read a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIoCardManufacturingDefList`: CapabilityIoCardManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIoCardManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIoCardManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIoCardManufacturingDefList`: CapabilityIoCardManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIoCardManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -7741,7 +7741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7765,24 +7765,24 @@ Read a 'capability.IomUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIomUpgradeSupportMetaByMoid`: CapabilityIomUpgradeSupportMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIomUpgradeSupportMetaByMoid`: CapabilityIomUpgradeSupportMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIomUpgradeSupportMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -7809,7 +7809,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7833,34 +7833,34 @@ Read a 'capability.IomUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityIomUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIomUpgradeSupportMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityIomUpgradeSupportMetaList`: CapabilityIomUpgradeSupportMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIomUpgradeSupportMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityIomUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityIomUpgradeSupportMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityIomUpgradeSupportMetaList`: CapabilityIomUpgradeSupportMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityIomUpgradeSupportMetaList`: %v\n", resp)
 }
 ```
 
@@ -7893,7 +7893,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7917,24 +7917,24 @@ Read a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPortGroupAggregationDefByMoid`: CapabilityPortGroupAggregationDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPortGroupAggregationDefByMoid`: CapabilityPortGroupAggregationDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPortGroupAggregationDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -7961,7 +7961,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -7985,34 +7985,34 @@ Read a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPortGroupAggregationDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPortGroupAggregationDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPortGroupAggregationDefList`: CapabilityPortGroupAggregationDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPortGroupAggregationDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPortGroupAggregationDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPortGroupAggregationDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPortGroupAggregationDefList`: CapabilityPortGroupAggregationDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPortGroupAggregationDefList`: %v\n", resp)
 }
 ```
 
@@ -8045,7 +8045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8069,24 +8069,24 @@ Read a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPsuDescriptorByMoid`: CapabilityPsuDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPsuDescriptorByMoid`: CapabilityPsuDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -8113,7 +8113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8137,34 +8137,34 @@ Read a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPsuDescriptorList`: CapabilityPsuDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPsuDescriptorList`: CapabilityPsuDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -8197,7 +8197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8221,24 +8221,24 @@ Read a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPsuManufacturingDefByMoid`: CapabilityPsuManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPsuManufacturingDefByMoid`: CapabilityPsuManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -8265,7 +8265,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8289,34 +8289,34 @@ Read a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityPsuManufacturingDefList`: CapabilityPsuManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityPsuManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityPsuManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityPsuManufacturingDefList`: CapabilityPsuManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityPsuManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -8349,7 +8349,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8373,24 +8373,24 @@ Read a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerDescriptorByMoid`: CapabilityServerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerDescriptorByMoid`: CapabilityServerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -8417,7 +8417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8441,34 +8441,34 @@ Read a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerDescriptorList`: CapabilityServerDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerDescriptorList`: CapabilityServerDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -8501,7 +8501,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8525,24 +8525,24 @@ Read a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerModelsCapabilityDefByMoid`: CapabilityServerModelsCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerModelsCapabilityDefByMoid`: CapabilityServerModelsCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerModelsCapabilityDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -8569,7 +8569,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8593,34 +8593,34 @@ Read a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerModelsCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerModelsCapabilityDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerModelsCapabilityDefList`: CapabilityServerModelsCapabilityDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerModelsCapabilityDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerModelsCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerModelsCapabilityDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerModelsCapabilityDefList`: CapabilityServerModelsCapabilityDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerModelsCapabilityDefList`: %v\n", resp)
 }
 ```
 
@@ -8653,7 +8653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8677,24 +8677,24 @@ Read a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerSchemaDescriptorByMoid`: CapabilityServerSchemaDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerSchemaDescriptorByMoid`: CapabilityServerSchemaDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerSchemaDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -8721,7 +8721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8745,34 +8745,34 @@ Read a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerSchemaDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerSchemaDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerSchemaDescriptorList`: CapabilityServerSchemaDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerSchemaDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerSchemaDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerSchemaDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerSchemaDescriptorList`: CapabilityServerSchemaDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerSchemaDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -8805,7 +8805,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8829,24 +8829,24 @@ Read a 'capability.ServerUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerUpgradeSupportMetaByMoid`: CapabilityServerUpgradeSupportMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerUpgradeSupportMetaByMoid`: CapabilityServerUpgradeSupportMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerUpgradeSupportMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -8873,7 +8873,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8897,34 +8897,34 @@ Read a 'capability.ServerUpgradeSupportMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityServerUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerUpgradeSupportMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityServerUpgradeSupportMetaList`: CapabilityServerUpgradeSupportMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerUpgradeSupportMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityServerUpgradeSupportMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityServerUpgradeSupportMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityServerUpgradeSupportMetaList`: CapabilityServerUpgradeSupportMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityServerUpgradeSupportMetaList`: %v\n", resp)
 }
 ```
 
@@ -8957,7 +8957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -8981,24 +8981,24 @@ Read a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleCapabilityDefByMoid`: CapabilitySiocModuleCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleCapabilityDefByMoid`: CapabilitySiocModuleCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleCapabilityDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -9025,7 +9025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9049,34 +9049,34 @@ Read a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleCapabilityDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleCapabilityDefList`: CapabilitySiocModuleCapabilityDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleCapabilityDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleCapabilityDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleCapabilityDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleCapabilityDefList`: CapabilitySiocModuleCapabilityDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleCapabilityDefList`: %v\n", resp)
 }
 ```
 
@@ -9109,7 +9109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9133,24 +9133,24 @@ Read a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleDescriptorByMoid`: CapabilitySiocModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleDescriptorByMoid`: CapabilitySiocModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -9177,7 +9177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9201,34 +9201,34 @@ Read a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleDescriptorList`: CapabilitySiocModuleDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleDescriptorList`: CapabilitySiocModuleDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -9261,7 +9261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9285,24 +9285,24 @@ Read a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleManufacturingDefByMoid`: CapabilitySiocModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleManufacturingDefByMoid`: CapabilitySiocModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -9329,7 +9329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9353,34 +9353,34 @@ Read a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySiocModuleManufacturingDefList`: CapabilitySiocModuleManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySiocModuleManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySiocModuleManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySiocModuleManufacturingDefList`: CapabilitySiocModuleManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySiocModuleManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -9413,7 +9413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9437,24 +9437,24 @@ Read a 'capability.StorageControllerUpdateConstraintMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityStorageControllerUpdateConstraintMetaByMoid`: CapabilityStorageControllerUpdateConstraintMeta
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityStorageControllerUpdateConstraintMetaByMoid`: CapabilityStorageControllerUpdateConstraintMeta
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaByMoid`: %v\n", resp)
 }
 ```
 
@@ -9481,7 +9481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9505,34 +9505,34 @@ Read a 'capability.StorageControllerUpdateConstraintMeta' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilityStorageControllerUpdateConstraintMetaList`: CapabilityStorageControllerUpdateConstraintMetaResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilityStorageControllerUpdateConstraintMetaList`: CapabilityStorageControllerUpdateConstraintMetaResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilityStorageControllerUpdateConstraintMetaList`: %v\n", resp)
 }
 ```
 
@@ -9565,7 +9565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9589,24 +9589,24 @@ Read a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchCapabilityByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchCapabilityByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchCapabilityByMoid`: CapabilitySwitchCapability
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchCapabilityByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchCapabilityByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchCapabilityByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchCapabilityByMoid`: CapabilitySwitchCapability
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchCapabilityByMoid`: %v\n", resp)
 }
 ```
 
@@ -9633,7 +9633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9657,34 +9657,34 @@ Read a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchCapabilityList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchCapabilityList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchCapabilityList`: CapabilitySwitchCapabilityResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchCapabilityList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchCapabilityList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchCapabilityList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchCapabilityList`: CapabilitySwitchCapabilityResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchCapabilityList`: %v\n", resp)
 }
 ```
 
@@ -9717,7 +9717,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9741,24 +9741,24 @@ Read a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchDescriptorByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchDescriptorByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchDescriptorByMoid`: CapabilitySwitchDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchDescriptorByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchDescriptorByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchDescriptorByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchDescriptorByMoid`: CapabilitySwitchDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchDescriptorByMoid`: %v\n", resp)
 }
 ```
 
@@ -9785,7 +9785,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9809,34 +9809,34 @@ Read a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchDescriptorList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchDescriptorList`: CapabilitySwitchDescriptorResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchDescriptorList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchDescriptorList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchDescriptorList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchDescriptorList`: CapabilitySwitchDescriptorResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchDescriptorList`: %v\n", resp)
 }
 ```
 
@@ -9869,7 +9869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9893,24 +9893,24 @@ Read a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid(context.Background(), moid).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchManufacturingDefByMoid`: CapabilitySwitchManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid(context.Background(), moid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchManufacturingDefByMoid`: CapabilitySwitchManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchManufacturingDefByMoid`: %v\n", resp)
 }
 ```
 
@@ -9937,7 +9937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -9961,34 +9961,34 @@ Read a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
-    orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
-    top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
-    skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
-    select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
-    expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
-    apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
-    count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
-    inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
-    at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
-    tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
+	filter := "$filter=CreateTime gt 2012-08-29T21:58:33Z" // string | Filter criteria for the resources to return. A URI with a $filter query option identifies a subset of the entries from the Collection of Entries. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the $filter option. The expression language that is used in $filter queries supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false). (optional) (default to "")
+	orderby := "$orderby=CreationTime" // string | Determines what properties are used to sort the collection of resources. (optional)
+	top := int32($top=10) // int32 | Specifies the maximum number of resources to return in the response. (optional) (default to 100)
+	skip := int32($skip=100) // int32 | Specifies the number of resources to skip in the response. (optional) (default to 0)
+	select_ := "$select=CreateTime,ModTime" // string | Specifies a subset of properties to return. (optional) (default to "")
+	expand := "$expand=DisplayNames" // string | Specify additional attributes or related resources to return in addition to the primary resources. (optional)
+	apply := "apply_example" // string | Specify one or more transformation operations to perform aggregation on the resources. The transformations are processed in order with the output from a transformation being used as input for the subsequent transformation. The \"$apply\" query takes a sequence of set transformations, separated by forward slashes to express that they are consecutively applied, i.e., the result of each transformation is the input to the next transformation. Supported aggregation methods are \"aggregate\" and \"groupby\". The **aggregate** transformation takes a comma-separated list of one or more aggregate expressions as parameters and returns a result set with a single instance, representing the aggregated value for all instances in the input set. The **groupby** transformation takes one or two parameters and 1. Splits the initial set into subsets where all instances in a subset have the same values for the grouping properties specified in the first parameter, 2. Applies set transformations to each subset according to the second parameter, resulting in a new set of potentially different structure and cardinality, 3. Ensures that the instances in the result set contain all grouping properties with the correct values for the group, 4. Concatenates the intermediate result sets into one result set. A groupby transformation affects the structure of the result set. (optional)
+	count := false // bool | The $count query specifies the service should return the count of the matching resources, instead of returning the resources. (optional)
+	inlinecount := "$inlinecount=true" // string | The $inlinecount query option allows clients to request an inline count of the matching resources included with the resources in the response. (optional) (default to "allpages")
+	at := "at=VersionType eq 'Configured'" // string | Similar to \"$filter\", but \"at\" is specifically used to filter versioning information properties for resources to return. A URI with an \"at\" Query Option identifies a subset of the Entries from the Collection of Entries identified by the Resource Path section of the URI. The subset is determined by selecting only the Entries that satisfy the predicate expression specified by the query option. The expression language that is used in at operators supports references to properties and literals. The literal values can be strings enclosed in single quotes, numbers and boolean values (true or false) or any of the additional literal representations shown in the Abstract Type System section. (optional)
+	tags := "tags_example" // string | The 'tags' parameter is used to request a summary of the Tag utilization for this resource. When the 'tags' parameter is specified, the response provides a list of tag keys, the number of times the key has been used across all documents, and the tag values that have been assigned to the tag key. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchManufacturingDefList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCapabilitySwitchManufacturingDefList`: CapabilitySwitchManufacturingDefResponse
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchManufacturingDefList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.GetCapabilitySwitchManufacturingDefList(context.Background()).Filter(filter).Orderby(orderby).Top(top).Skip(skip).Select_(select_).Expand(expand).Apply(apply).Count(count).Inlinecount(inlinecount).At(at).Tags(tags).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.GetCapabilitySwitchManufacturingDefList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCapabilitySwitchManufacturingDefList`: CapabilitySwitchManufacturingDefResponse
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.GetCapabilitySwitchManufacturingDefList`: %v\n", resp)
 }
 ```
 
@@ -10021,7 +10021,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10045,26 +10045,26 @@ Update a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityActionsMetaData(context.Background(), moid).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityActionsMetaData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityActionsMetaData`: CapabilityActionsMetaData
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityActionsMetaData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityActionsMetaData(context.Background(), moid).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityActionsMetaData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityActionsMetaData`: CapabilityActionsMetaData
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityActionsMetaData`: %v\n", resp)
 }
 ```
 
@@ -10093,7 +10093,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10117,26 +10117,26 @@ Update a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityAdapterDeprecatedDef(context.Background(), moid).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityAdapterDeprecatedDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityAdapterDeprecatedDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityAdapterDeprecatedDef(context.Background(), moid).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityAdapterDeprecatedDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityAdapterDeprecatedDef`: %v\n", resp)
 }
 ```
 
@@ -10165,7 +10165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10189,26 +10189,26 @@ Update a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityAdapterUnitDescriptor(context.Background(), moid).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityAdapterUnitDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityAdapterUnitDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityAdapterUnitDescriptor(context.Background(), moid).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityAdapterUnitDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityAdapterUnitDescriptor`: %v\n", resp)
 }
 ```
 
@@ -10237,7 +10237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10261,26 +10261,26 @@ Update a 'capability.Catalog' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityCatalog := *openapiclient.NewCapabilityCatalog("ClassId_example", "ObjectType_example") // CapabilityCatalog | The 'capability.Catalog' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityCatalog := *openapiclient.NewCapabilityCatalog("ClassId_example", "ObjectType_example") // CapabilityCatalog | The 'capability.Catalog' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityCatalog(context.Background(), moid).CapabilityCatalog(capabilityCatalog).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityCatalog``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityCatalog`: CapabilityCatalog
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityCatalog`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityCatalog(context.Background(), moid).CapabilityCatalog(capabilityCatalog).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityCatalog``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityCatalog`: CapabilityCatalog
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityCatalog`: %v\n", resp)
 }
 ```
 
@@ -10309,7 +10309,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10333,26 +10333,26 @@ Update a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityChassisDescriptor(context.Background(), moid).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityChassisDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityChassisDescriptor`: CapabilityChassisDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityChassisDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityChassisDescriptor(context.Background(), moid).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityChassisDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityChassisDescriptor`: CapabilityChassisDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityChassisDescriptor`: %v\n", resp)
 }
 ```
 
@@ -10381,7 +10381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10405,26 +10405,26 @@ Update a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityChassisManufacturingDef(context.Background(), moid).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityChassisManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityChassisManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityChassisManufacturingDef(context.Background(), moid).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityChassisManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityChassisManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -10453,7 +10453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10477,26 +10477,26 @@ Update a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityCimcFirmwareDescriptor(context.Background(), moid).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityCimcFirmwareDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityCimcFirmwareDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityCimcFirmwareDescriptor(context.Background(), moid).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityCimcFirmwareDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityCimcFirmwareDescriptor`: %v\n", resp)
 }
 ```
 
@@ -10525,7 +10525,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10549,26 +10549,26 @@ Update a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityEquipmentPhysicalDef(context.Background(), moid).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityEquipmentPhysicalDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityEquipmentPhysicalDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityEquipmentPhysicalDef(context.Background(), moid).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityEquipmentPhysicalDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityEquipmentPhysicalDef`: %v\n", resp)
 }
 ```
 
@@ -10597,7 +10597,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10621,26 +10621,26 @@ Update a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityEquipmentSlotArray(context.Background(), moid).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityEquipmentSlotArray``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityEquipmentSlotArray`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityEquipmentSlotArray(context.Background(), moid).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityEquipmentSlotArray``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityEquipmentSlotArray`: %v\n", resp)
 }
 ```
 
@@ -10669,7 +10669,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10693,26 +10693,26 @@ Update a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityFanModuleDescriptor(context.Background(), moid).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFanModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFanModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityFanModuleDescriptor(context.Background(), moid).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFanModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFanModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -10741,7 +10741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10765,26 +10765,26 @@ Update a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityFanModuleManufacturingDef(context.Background(), moid).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFanModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFanModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityFanModuleManufacturingDef(context.Background(), moid).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFanModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFanModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -10813,7 +10813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10837,26 +10837,26 @@ Update a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexCapabilityDef(context.Background(), moid).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexCapabilityDef(context.Background(), moid).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -10885,7 +10885,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10909,26 +10909,26 @@ Update a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexDescriptor(context.Background(), moid).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityFexDescriptor`: CapabilityFexDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexDescriptor(context.Background(), moid).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityFexDescriptor`: CapabilityFexDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexDescriptor`: %v\n", resp)
 }
 ```
 
@@ -10957,7 +10957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -10981,26 +10981,26 @@ Update a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexManufacturingDef(context.Background(), moid).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityFexManufacturingDef(context.Background(), moid).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityFexManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityFexManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -11029,7 +11029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11053,26 +11053,26 @@ Update a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardCapabilityDef(context.Background(), moid).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardCapabilityDef(context.Background(), moid).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -11101,7 +11101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11125,26 +11125,26 @@ Update a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardDescriptor(context.Background(), moid).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardDescriptor(context.Background(), moid).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardDescriptor`: %v\n", resp)
 }
 ```
 
@@ -11173,7 +11173,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11197,26 +11197,26 @@ Update a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardManufacturingDef(context.Background(), moid).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityIoCardManufacturingDef(context.Background(), moid).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityIoCardManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityIoCardManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -11245,7 +11245,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11269,26 +11269,26 @@ Update a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityPortGroupAggregationDef(context.Background(), moid).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPortGroupAggregationDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPortGroupAggregationDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityPortGroupAggregationDef(context.Background(), moid).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPortGroupAggregationDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPortGroupAggregationDef`: %v\n", resp)
 }
 ```
 
@@ -11317,7 +11317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11341,26 +11341,26 @@ Update a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityPsuDescriptor(context.Background(), moid).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPsuDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityPsuDescriptor`: CapabilityPsuDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPsuDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityPsuDescriptor(context.Background(), moid).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPsuDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityPsuDescriptor`: CapabilityPsuDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPsuDescriptor`: %v\n", resp)
 }
 ```
 
@@ -11389,7 +11389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11413,26 +11413,26 @@ Update a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityPsuManufacturingDef(context.Background(), moid).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPsuManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPsuManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityPsuManufacturingDef(context.Background(), moid).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityPsuManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityPsuManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -11461,7 +11461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11485,26 +11485,26 @@ Update a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerDescriptor(context.Background(), moid).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityServerDescriptor`: CapabilityServerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerDescriptor(context.Background(), moid).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityServerDescriptor`: CapabilityServerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerDescriptor`: %v\n", resp)
 }
 ```
 
@@ -11533,7 +11533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11557,26 +11557,26 @@ Update a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerModelsCapabilityDef(context.Background(), moid).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerModelsCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerModelsCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerModelsCapabilityDef(context.Background(), moid).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerModelsCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerModelsCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -11605,7 +11605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11629,26 +11629,26 @@ Update a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerSchemaDescriptor(context.Background(), moid).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerSchemaDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerSchemaDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilityServerSchemaDescriptor(context.Background(), moid).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilityServerSchemaDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilityServerSchemaDescriptor`: %v\n", resp)
 }
 ```
 
@@ -11677,7 +11677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11701,26 +11701,26 @@ Update a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleCapabilityDef(context.Background(), moid).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleCapabilityDef(context.Background(), moid).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -11749,7 +11749,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11773,26 +11773,26 @@ Update a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleDescriptor(context.Background(), moid).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleDescriptor(context.Background(), moid).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -11821,7 +11821,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11845,26 +11845,26 @@ Update a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleManufacturingDef(context.Background(), moid).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySiocModuleManufacturingDef(context.Background(), moid).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySiocModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySiocModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -11893,7 +11893,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11917,26 +11917,26 @@ Update a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchCapability(context.Background(), moid).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchCapability``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySwitchCapability`: CapabilitySwitchCapability
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchCapability`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchCapability(context.Background(), moid).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchCapability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySwitchCapability`: CapabilitySwitchCapability
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchCapability`: %v\n", resp)
 }
 ```
 
@@ -11965,7 +11965,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -11989,26 +11989,26 @@ Update a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchDescriptor(context.Background(), moid).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchDescriptor(context.Background(), moid).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchDescriptor`: %v\n", resp)
 }
 ```
 
@@ -12037,7 +12037,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12061,26 +12061,26 @@ Update a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchManufacturingDef(context.Background(), moid).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PatchCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.PatchCapabilitySwitchManufacturingDef(context.Background(), moid).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.PatchCapabilitySwitchManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PatchCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.PatchCapabilitySwitchManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -12109,7 +12109,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12133,26 +12133,26 @@ Update a 'capability.ActionsMetaData' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityActionsMetaData := *openapiclient.NewCapabilityActionsMetaData("ClassId_example", "ObjectType_example") // CapabilityActionsMetaData | The 'capability.ActionsMetaData' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityActionsMetaData(context.Background(), moid).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityActionsMetaData``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityActionsMetaData`: CapabilityActionsMetaData
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityActionsMetaData`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityActionsMetaData(context.Background(), moid).CapabilityActionsMetaData(capabilityActionsMetaData).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityActionsMetaData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityActionsMetaData`: CapabilityActionsMetaData
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityActionsMetaData`: %v\n", resp)
 }
 ```
 
@@ -12181,7 +12181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12205,26 +12205,26 @@ Update a 'capability.AdapterDeprecatedDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityAdapterDeprecatedDef := *openapiclient.NewCapabilityAdapterDeprecatedDef("ClassId_example", "ObjectType_example") // CapabilityAdapterDeprecatedDef | The 'capability.AdapterDeprecatedDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityAdapterDeprecatedDef(context.Background(), moid).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityAdapterDeprecatedDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityAdapterDeprecatedDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityAdapterDeprecatedDef(context.Background(), moid).CapabilityAdapterDeprecatedDef(capabilityAdapterDeprecatedDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityAdapterDeprecatedDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityAdapterDeprecatedDef`: CapabilityAdapterDeprecatedDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityAdapterDeprecatedDef`: %v\n", resp)
 }
 ```
 
@@ -12253,7 +12253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12277,26 +12277,26 @@ Update a 'capability.AdapterUnitDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityAdapterUnitDescriptor := *openapiclient.NewCapabilityAdapterUnitDescriptor("ClassId_example", "ObjectType_example") // CapabilityAdapterUnitDescriptor | The 'capability.AdapterUnitDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityAdapterUnitDescriptor(context.Background(), moid).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityAdapterUnitDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityAdapterUnitDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityAdapterUnitDescriptor(context.Background(), moid).CapabilityAdapterUnitDescriptor(capabilityAdapterUnitDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityAdapterUnitDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityAdapterUnitDescriptor`: CapabilityAdapterUnitDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityAdapterUnitDescriptor`: %v\n", resp)
 }
 ```
 
@@ -12325,7 +12325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12349,26 +12349,26 @@ Update a 'capability.Catalog' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityCatalog := *openapiclient.NewCapabilityCatalog("ClassId_example", "ObjectType_example") // CapabilityCatalog | The 'capability.Catalog' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityCatalog := *openapiclient.NewCapabilityCatalog("ClassId_example", "ObjectType_example") // CapabilityCatalog | The 'capability.Catalog' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityCatalog(context.Background(), moid).CapabilityCatalog(capabilityCatalog).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityCatalog``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityCatalog`: CapabilityCatalog
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityCatalog`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityCatalog(context.Background(), moid).CapabilityCatalog(capabilityCatalog).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityCatalog``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityCatalog`: CapabilityCatalog
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityCatalog`: %v\n", resp)
 }
 ```
 
@@ -12397,7 +12397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12421,26 +12421,26 @@ Update a 'capability.ChassisDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityChassisDescriptor := *openapiclient.NewCapabilityChassisDescriptor("ClassId_example", "ObjectType_example") // CapabilityChassisDescriptor | The 'capability.ChassisDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityChassisDescriptor(context.Background(), moid).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityChassisDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityChassisDescriptor`: CapabilityChassisDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityChassisDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityChassisDescriptor(context.Background(), moid).CapabilityChassisDescriptor(capabilityChassisDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityChassisDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityChassisDescriptor`: CapabilityChassisDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityChassisDescriptor`: %v\n", resp)
 }
 ```
 
@@ -12469,7 +12469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12493,26 +12493,26 @@ Update a 'capability.ChassisManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityChassisManufacturingDef := *openapiclient.NewCapabilityChassisManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityChassisManufacturingDef | The 'capability.ChassisManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityChassisManufacturingDef(context.Background(), moid).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityChassisManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityChassisManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityChassisManufacturingDef(context.Background(), moid).CapabilityChassisManufacturingDef(capabilityChassisManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityChassisManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityChassisManufacturingDef`: CapabilityChassisManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityChassisManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -12541,7 +12541,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12565,26 +12565,26 @@ Update a 'capability.CimcFirmwareDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityCimcFirmwareDescriptor := *openapiclient.NewCapabilityCimcFirmwareDescriptor("ClassId_example", "ObjectType_example") // CapabilityCimcFirmwareDescriptor | The 'capability.CimcFirmwareDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor(context.Background(), moid).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor(context.Background(), moid).CapabilityCimcFirmwareDescriptor(capabilityCimcFirmwareDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityCimcFirmwareDescriptor`: CapabilityCimcFirmwareDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityCimcFirmwareDescriptor`: %v\n", resp)
 }
 ```
 
@@ -12613,7 +12613,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12637,26 +12637,26 @@ Update a 'capability.EquipmentPhysicalDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityEquipmentPhysicalDef := *openapiclient.NewCapabilityEquipmentPhysicalDef("ClassId_example", "ObjectType_example") // CapabilityEquipmentPhysicalDef | The 'capability.EquipmentPhysicalDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityEquipmentPhysicalDef(context.Background(), moid).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityEquipmentPhysicalDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityEquipmentPhysicalDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityEquipmentPhysicalDef(context.Background(), moid).CapabilityEquipmentPhysicalDef(capabilityEquipmentPhysicalDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityEquipmentPhysicalDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityEquipmentPhysicalDef`: CapabilityEquipmentPhysicalDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityEquipmentPhysicalDef`: %v\n", resp)
 }
 ```
 
@@ -12685,7 +12685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12709,26 +12709,26 @@ Update a 'capability.EquipmentSlotArray' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityEquipmentSlotArray := *openapiclient.NewCapabilityEquipmentSlotArray("ClassId_example", "ObjectType_example") // CapabilityEquipmentSlotArray | The 'capability.EquipmentSlotArray' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityEquipmentSlotArray(context.Background(), moid).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityEquipmentSlotArray``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityEquipmentSlotArray`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityEquipmentSlotArray(context.Background(), moid).CapabilityEquipmentSlotArray(capabilityEquipmentSlotArray).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityEquipmentSlotArray``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityEquipmentSlotArray`: CapabilityEquipmentSlotArray
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityEquipmentSlotArray`: %v\n", resp)
 }
 ```
 
@@ -12757,7 +12757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12781,26 +12781,26 @@ Update a 'capability.FanModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFanModuleDescriptor := *openapiclient.NewCapabilityFanModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilityFanModuleDescriptor | The 'capability.FanModuleDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFanModuleDescriptor(context.Background(), moid).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFanModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFanModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFanModuleDescriptor(context.Background(), moid).CapabilityFanModuleDescriptor(capabilityFanModuleDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFanModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityFanModuleDescriptor`: CapabilityFanModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFanModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -12829,7 +12829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12853,26 +12853,26 @@ Update a 'capability.FanModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFanModuleManufacturingDef := *openapiclient.NewCapabilityFanModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFanModuleManufacturingDef | The 'capability.FanModuleManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFanModuleManufacturingDef(context.Background(), moid).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFanModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFanModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFanModuleManufacturingDef(context.Background(), moid).CapabilityFanModuleManufacturingDef(capabilityFanModuleManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFanModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityFanModuleManufacturingDef`: CapabilityFanModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFanModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -12901,7 +12901,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12925,26 +12925,26 @@ Update a 'capability.FexCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexCapabilityDef := *openapiclient.NewCapabilityFexCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityFexCapabilityDef | The 'capability.FexCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexCapabilityDef(context.Background(), moid).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexCapabilityDef(context.Background(), moid).CapabilityFexCapabilityDef(capabilityFexCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityFexCapabilityDef`: CapabilityFexCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -12973,7 +12973,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -12997,26 +12997,26 @@ Update a 'capability.FexDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexDescriptor := *openapiclient.NewCapabilityFexDescriptor("ClassId_example", "ObjectType_example") // CapabilityFexDescriptor | The 'capability.FexDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexDescriptor(context.Background(), moid).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityFexDescriptor`: CapabilityFexDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexDescriptor(context.Background(), moid).CapabilityFexDescriptor(capabilityFexDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityFexDescriptor`: CapabilityFexDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13045,7 +13045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13069,26 +13069,26 @@ Update a 'capability.FexManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityFexManufacturingDef := *openapiclient.NewCapabilityFexManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityFexManufacturingDef | The 'capability.FexManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexManufacturingDef(context.Background(), moid).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityFexManufacturingDef(context.Background(), moid).CapabilityFexManufacturingDef(capabilityFexManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityFexManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityFexManufacturingDef`: CapabilityFexManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityFexManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -13117,7 +13117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13141,26 +13141,26 @@ Update a 'capability.IoCardCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardCapabilityDef := *openapiclient.NewCapabilityIoCardCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityIoCardCapabilityDef | The 'capability.IoCardCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardCapabilityDef(context.Background(), moid).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardCapabilityDef(context.Background(), moid).CapabilityIoCardCapabilityDef(capabilityIoCardCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityIoCardCapabilityDef`: CapabilityIoCardCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -13189,7 +13189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13213,26 +13213,26 @@ Update a 'capability.IoCardDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardDescriptor := *openapiclient.NewCapabilityIoCardDescriptor("ClassId_example", "ObjectType_example") // CapabilityIoCardDescriptor | The 'capability.IoCardDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardDescriptor(context.Background(), moid).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardDescriptor(context.Background(), moid).CapabilityIoCardDescriptor(capabilityIoCardDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityIoCardDescriptor`: CapabilityIoCardDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13261,7 +13261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13285,26 +13285,26 @@ Update a 'capability.IoCardManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityIoCardManufacturingDef := *openapiclient.NewCapabilityIoCardManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityIoCardManufacturingDef | The 'capability.IoCardManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardManufacturingDef(context.Background(), moid).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityIoCardManufacturingDef(context.Background(), moid).CapabilityIoCardManufacturingDef(capabilityIoCardManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityIoCardManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityIoCardManufacturingDef`: CapabilityIoCardManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityIoCardManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -13333,7 +13333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13357,26 +13357,26 @@ Update a 'capability.PortGroupAggregationDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPortGroupAggregationDef := *openapiclient.NewCapabilityPortGroupAggregationDef("ClassId_example", "ObjectType_example") // CapabilityPortGroupAggregationDef | The 'capability.PortGroupAggregationDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPortGroupAggregationDef(context.Background(), moid).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPortGroupAggregationDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPortGroupAggregationDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPortGroupAggregationDef(context.Background(), moid).CapabilityPortGroupAggregationDef(capabilityPortGroupAggregationDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPortGroupAggregationDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityPortGroupAggregationDef`: CapabilityPortGroupAggregationDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPortGroupAggregationDef`: %v\n", resp)
 }
 ```
 
@@ -13405,7 +13405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13429,26 +13429,26 @@ Update a 'capability.PsuDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPsuDescriptor := *openapiclient.NewCapabilityPsuDescriptor("ClassId_example", "ObjectType_example") // CapabilityPsuDescriptor | The 'capability.PsuDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPsuDescriptor(context.Background(), moid).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPsuDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityPsuDescriptor`: CapabilityPsuDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPsuDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPsuDescriptor(context.Background(), moid).CapabilityPsuDescriptor(capabilityPsuDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPsuDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityPsuDescriptor`: CapabilityPsuDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPsuDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13477,7 +13477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13501,26 +13501,26 @@ Update a 'capability.PsuManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityPsuManufacturingDef := *openapiclient.NewCapabilityPsuManufacturingDef("ClassId_example", "ObjectType_example") // CapabilityPsuManufacturingDef | The 'capability.PsuManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPsuManufacturingDef(context.Background(), moid).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPsuManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPsuManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityPsuManufacturingDef(context.Background(), moid).CapabilityPsuManufacturingDef(capabilityPsuManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityPsuManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityPsuManufacturingDef`: CapabilityPsuManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityPsuManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -13549,7 +13549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13573,26 +13573,26 @@ Update a 'capability.ServerDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerDescriptor := *openapiclient.NewCapabilityServerDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerDescriptor | The 'capability.ServerDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerDescriptor(context.Background(), moid).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityServerDescriptor`: CapabilityServerDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerDescriptor(context.Background(), moid).CapabilityServerDescriptor(capabilityServerDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityServerDescriptor`: CapabilityServerDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13621,7 +13621,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13645,26 +13645,26 @@ Update a 'capability.ServerModelsCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerModelsCapabilityDef := *openapiclient.NewCapabilityServerModelsCapabilityDef("ClassId_example", "ObjectType_example") // CapabilityServerModelsCapabilityDef | The 'capability.ServerModelsCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerModelsCapabilityDef(context.Background(), moid).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerModelsCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerModelsCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerModelsCapabilityDef(context.Background(), moid).CapabilityServerModelsCapabilityDef(capabilityServerModelsCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerModelsCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityServerModelsCapabilityDef`: CapabilityServerModelsCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerModelsCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -13693,7 +13693,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13717,26 +13717,26 @@ Update a 'capability.ServerSchemaDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilityServerSchemaDescriptor := *openapiclient.NewCapabilityServerSchemaDescriptor("ClassId_example", "ObjectType_example") // CapabilityServerSchemaDescriptor | The 'capability.ServerSchemaDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerSchemaDescriptor(context.Background(), moid).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerSchemaDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerSchemaDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilityServerSchemaDescriptor(context.Background(), moid).CapabilityServerSchemaDescriptor(capabilityServerSchemaDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilityServerSchemaDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilityServerSchemaDescriptor`: CapabilityServerSchemaDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilityServerSchemaDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13765,7 +13765,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13789,26 +13789,26 @@ Update a 'capability.SiocModuleCapabilityDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleCapabilityDef := *openapiclient.NewCapabilitySiocModuleCapabilityDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleCapabilityDef | The 'capability.SiocModuleCapabilityDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef(context.Background(), moid).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef(context.Background(), moid).CapabilitySiocModuleCapabilityDef(capabilitySiocModuleCapabilityDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySiocModuleCapabilityDef`: CapabilitySiocModuleCapabilityDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleCapabilityDef`: %v\n", resp)
 }
 ```
 
@@ -13837,7 +13837,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13861,26 +13861,26 @@ Update a 'capability.SiocModuleDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleDescriptor := *openapiclient.NewCapabilitySiocModuleDescriptor("ClassId_example", "ObjectType_example") // CapabilitySiocModuleDescriptor | The 'capability.SiocModuleDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleDescriptor(context.Background(), moid).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleDescriptor(context.Background(), moid).CapabilitySiocModuleDescriptor(capabilitySiocModuleDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySiocModuleDescriptor`: CapabilitySiocModuleDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleDescriptor`: %v\n", resp)
 }
 ```
 
@@ -13909,7 +13909,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -13933,26 +13933,26 @@ Update a 'capability.SiocModuleManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySiocModuleManufacturingDef := *openapiclient.NewCapabilitySiocModuleManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySiocModuleManufacturingDef | The 'capability.SiocModuleManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef(context.Background(), moid).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef(context.Background(), moid).CapabilitySiocModuleManufacturingDef(capabilitySiocModuleManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySiocModuleManufacturingDef`: CapabilitySiocModuleManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySiocModuleManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -13981,7 +13981,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -14005,26 +14005,26 @@ Update a 'capability.SwitchCapability' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchCapability := *openapiclient.NewCapabilitySwitchCapability("ClassId_example", "ObjectType_example") // CapabilitySwitchCapability | The 'capability.SwitchCapability' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchCapability(context.Background(), moid).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchCapability``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySwitchCapability`: CapabilitySwitchCapability
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchCapability`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchCapability(context.Background(), moid).CapabilitySwitchCapability(capabilitySwitchCapability).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchCapability``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySwitchCapability`: CapabilitySwitchCapability
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchCapability`: %v\n", resp)
 }
 ```
 
@@ -14053,7 +14053,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -14077,26 +14077,26 @@ Update a 'capability.SwitchDescriptor' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchDescriptor := *openapiclient.NewCapabilitySwitchDescriptor("ClassId_example", "ObjectType_example") // CapabilitySwitchDescriptor | The 'capability.SwitchDescriptor' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchDescriptor(context.Background(), moid).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchDescriptor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchDescriptor`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchDescriptor(context.Background(), moid).CapabilitySwitchDescriptor(capabilitySwitchDescriptor).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchDescriptor``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySwitchDescriptor`: CapabilitySwitchDescriptor
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchDescriptor`: %v\n", resp)
 }
 ```
 
@@ -14125,7 +14125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 
@@ -14149,26 +14149,26 @@ Update a 'capability.SwitchManufacturingDef' resource.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/CiscoDevNet/intersight-go"
 )
 
 func main() {
-    moid := "moid_example" // string | The unique Moid identifier of a resource instance.
-    capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to update.
-    ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
+	moid := "moid_example" // string | The unique Moid identifier of a resource instance.
+	capabilitySwitchManufacturingDef := *openapiclient.NewCapabilitySwitchManufacturingDef("ClassId_example", "ObjectType_example") // CapabilitySwitchManufacturingDef | The 'capability.SwitchManufacturingDef' resource to update.
+	ifMatch := "ifMatch_example" // string | For methods that apply server-side changes, and in particular for PUT, If-Match can be used to prevent the lost update problem. It can check if the modification of a resource that the user wants to upload will not override another change that has been done since the original resource was fetched. If the request cannot be fulfilled, the 412 (Precondition Failed) response is returned. When modifying a resource using POST or PUT, the If-Match header must be set to the value of the resource ModTime property after which no lost update problem should occur. For example, a client send a GET request to obtain a resource, which includes the ModTime property. The ModTime indicates the last time the resource was created or modified. The client then sends a POST or PUT request with the If-Match header set to the ModTime property of the resource as obtained in the GET request. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchManufacturingDef(context.Background(), moid).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchManufacturingDef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `UpdateCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
-    fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchManufacturingDef`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilityApi.UpdateCapabilitySwitchManufacturingDef(context.Background(), moid).CapabilitySwitchManufacturingDef(capabilitySwitchManufacturingDef).IfMatch(ifMatch).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilityApi.UpdateCapabilitySwitchManufacturingDef``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCapabilitySwitchManufacturingDef`: CapabilitySwitchManufacturingDef
+	fmt.Fprintf(os.Stdout, "Response from `CapabilityApi.UpdateCapabilitySwitchManufacturingDef`: %v\n", resp)
 }
 ```
 
@@ -14197,7 +14197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[cookieAuth](../README.md#cookieAuth), [http_signature](../README.md#http_signature), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
+[http_signature](../README.md#http_signature), [cookieAuth](../README.md#cookieAuth), [oAuth2](../README.md#oAuth2), [oAuth2](../README.md#oAuth2)
 
 ### HTTP request headers
 

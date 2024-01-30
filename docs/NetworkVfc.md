@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "network.Vfc"]
 **Description** | Pointer to **string** | Description for the vHBA. | [optional] [readonly] 
 **VfcId** | Pointer to **int64** | Vfc Identifier on a Fabric Interconnect. | [optional] [readonly] 
-**AdapterHostFcInterface** | Pointer to [**AdapterHostFcInterfaceRelationship**](AdapterHostFcInterfaceRelationship.md) |  | [optional] 
-**NetworkElement** | Pointer to [**NetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
-**RegisteredDevice** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**AdapterHostFcInterface** | Pointer to [**NullableAdapterHostFcInterfaceRelationship**](AdapterHostFcInterfaceRelationship.md) |  | [optional] 
+**NetworkElement** | Pointer to [**NullableNetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
+**RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -146,6 +146,16 @@ SetAdapterHostFcInterface sets AdapterHostFcInterface field to given value.
 
 HasAdapterHostFcInterface returns a boolean if a field has been set.
 
+### SetAdapterHostFcInterfaceNil
+
+`func (o *NetworkVfc) SetAdapterHostFcInterfaceNil(b bool)`
+
+ SetAdapterHostFcInterfaceNil sets the value for AdapterHostFcInterface to be an explicit nil
+
+### UnsetAdapterHostFcInterface
+`func (o *NetworkVfc) UnsetAdapterHostFcInterface()`
+
+UnsetAdapterHostFcInterface ensures that no value is present for AdapterHostFcInterface, not even an explicit nil
 ### GetNetworkElement
 
 `func (o *NetworkVfc) GetNetworkElement() NetworkElementRelationship`
@@ -171,6 +181,16 @@ SetNetworkElement sets NetworkElement field to given value.
 
 HasNetworkElement returns a boolean if a field has been set.
 
+### SetNetworkElementNil
+
+`func (o *NetworkVfc) SetNetworkElementNil(b bool)`
+
+ SetNetworkElementNil sets the value for NetworkElement to be an explicit nil
+
+### UnsetNetworkElement
+`func (o *NetworkVfc) UnsetNetworkElement()`
+
+UnsetNetworkElement ensures that no value is present for NetworkElement, not even an explicit nil
 ### GetRegisteredDevice
 
 `func (o *NetworkVfc) GetRegisteredDevice() AssetDeviceRegistrationRelationship`
@@ -196,6 +216,16 @@ SetRegisteredDevice sets RegisteredDevice field to given value.
 
 HasRegisteredDevice returns a boolean if a field has been set.
 
+### SetRegisteredDeviceNil
+
+`func (o *NetworkVfc) SetRegisteredDeviceNil(b bool)`
+
+ SetRegisteredDeviceNil sets the value for RegisteredDevice to be an explicit nil
+
+### UnsetRegisteredDevice
+`func (o *NetworkVfc) UnsetRegisteredDevice()`
+
+UnsetRegisteredDevice ensures that no value is present for RegisteredDevice, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

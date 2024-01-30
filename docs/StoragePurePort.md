@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "storage.PurePort"]
 **Failover** | Pointer to **string** | Name of the port to which this port has failed over. | [optional] [readonly] 
 **Portal** | Pointer to **string** | Ip address of iSCSI portal configured on the port. | [optional] [readonly] 
-**Array** | Pointer to [**StoragePureArrayRelationship**](StoragePureArrayRelationship.md) |  | [optional] 
-**Controller** | Pointer to [**StoragePureControllerRelationship**](StoragePureControllerRelationship.md) |  | [optional] 
-**RegisteredDevice** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**Array** | Pointer to [**NullableStoragePureArrayRelationship**](StoragePureArrayRelationship.md) |  | [optional] 
+**Controller** | Pointer to [**NullableStoragePureControllerRelationship**](StoragePureControllerRelationship.md) |  | [optional] 
+**RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -146,6 +146,16 @@ SetArray sets Array field to given value.
 
 HasArray returns a boolean if a field has been set.
 
+### SetArrayNil
+
+`func (o *StoragePurePort) SetArrayNil(b bool)`
+
+ SetArrayNil sets the value for Array to be an explicit nil
+
+### UnsetArray
+`func (o *StoragePurePort) UnsetArray()`
+
+UnsetArray ensures that no value is present for Array, not even an explicit nil
 ### GetController
 
 `func (o *StoragePurePort) GetController() StoragePureControllerRelationship`
@@ -171,6 +181,16 @@ SetController sets Controller field to given value.
 
 HasController returns a boolean if a field has been set.
 
+### SetControllerNil
+
+`func (o *StoragePurePort) SetControllerNil(b bool)`
+
+ SetControllerNil sets the value for Controller to be an explicit nil
+
+### UnsetController
+`func (o *StoragePurePort) UnsetController()`
+
+UnsetController ensures that no value is present for Controller, not even an explicit nil
 ### GetRegisteredDevice
 
 `func (o *StoragePurePort) GetRegisteredDevice() AssetDeviceRegistrationRelationship`
@@ -196,6 +216,16 @@ SetRegisteredDevice sets RegisteredDevice field to given value.
 
 HasRegisteredDevice returns a boolean if a field has been set.
 
+### SetRegisteredDeviceNil
+
+`func (o *StoragePurePort) SetRegisteredDeviceNil(b bool)`
+
+ SetRegisteredDeviceNil sets the value for RegisteredDevice to be an explicit nil
+
+### UnsetRegisteredDevice
+`func (o *StoragePurePort) UnsetRegisteredDevice()`
+
+UnsetRegisteredDevice ensures that no value is present for RegisteredDevice, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

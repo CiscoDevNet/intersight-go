@@ -17,23 +17,24 @@ Name | Type | Description | Notes
 **Order** | Pointer to **int64** | The order in which the virtual interface is brought up. The order assigned to an interface should be unique for all the Ethernet and Fibre-Channel interfaces on each PCI link on a VIC adapter. The order should start from zero with no overlaps. The maximum value of PCI order is limited by the number of virtual interfaces (Ethernet and Fibre-Channel) on each PCI link on a VIC adapter. All VIC adapters have a single PCI link except VIC 1340, VIC 1380 and VIC 1385 which have two. | [optional] 
 **PinGroupName** | Pointer to **string** | Pingroup name associated to vNIC for static pinning. LCP deploy will resolve pingroup name and fetches the correspoding uplink port/port channel to pin the vNIC traffic. | [optional] 
 **Placement** | Pointer to [**NullableVnicPlacementSettings**](VnicPlacementSettings.md) |  | [optional] 
+**SriovSettings** | Pointer to [**NullableVnicSriovSettings**](VnicSriovSettings.md) |  | [optional] 
 **StandbyVifId** | Pointer to **int64** | The Standby VIF Id is applicable for failover enabled vNICS. It should be the same as the channel number of the standby vethernet created on switch in order to set up the standby data path. | [optional] [readonly] 
 **StaticMacAddress** | Pointer to **string** | The MAC address must be in hexadecimal format xx:xx:xx:xx:xx:xx. To ensure uniqueness of MACs in the LAN fabric, you are strongly encouraged to use the following MAC prefix 00:25:B5:xx:xx:xx. | [optional] 
 **UsnicSettings** | Pointer to [**NullableVnicUsnicSettings**](VnicUsnicSettings.md) |  | [optional] 
 **VifId** | Pointer to **int64** | The Vif Id should be same as the channel number of the vethernet created on switch in order to set up the data path. The property is applicable only for FI attached servers where a vethernet is created on the switch for every vNIC. | [optional] [readonly] 
 **VmqSettings** | Pointer to [**NullableVnicVmqSettings**](VnicVmqSettings.md) |  | [optional] 
-**EthAdapterPolicy** | Pointer to [**VnicEthAdapterPolicyRelationship**](VnicEthAdapterPolicyRelationship.md) |  | [optional] 
-**EthNetworkPolicy** | Pointer to [**VnicEthNetworkPolicyRelationship**](VnicEthNetworkPolicyRelationship.md) |  | [optional] 
-**EthQosPolicy** | Pointer to [**VnicEthQosPolicyRelationship**](VnicEthQosPolicyRelationship.md) |  | [optional] 
-**FabricEthNetworkControlPolicy** | Pointer to [**FabricEthNetworkControlPolicyRelationship**](FabricEthNetworkControlPolicyRelationship.md) |  | [optional] 
+**EthAdapterPolicy** | Pointer to [**NullableVnicEthAdapterPolicyRelationship**](VnicEthAdapterPolicyRelationship.md) |  | [optional] 
+**EthNetworkPolicy** | Pointer to [**NullableVnicEthNetworkPolicyRelationship**](VnicEthNetworkPolicyRelationship.md) |  | [optional] 
+**EthQosPolicy** | Pointer to [**NullableVnicEthQosPolicyRelationship**](VnicEthQosPolicyRelationship.md) |  | [optional] 
+**FabricEthNetworkControlPolicy** | Pointer to [**NullableFabricEthNetworkControlPolicyRelationship**](FabricEthNetworkControlPolicyRelationship.md) |  | [optional] 
 **FabricEthNetworkGroupPolicy** | Pointer to [**[]FabricEthNetworkGroupPolicyRelationship**](FabricEthNetworkGroupPolicyRelationship.md) | An array of relationships to fabricEthNetworkGroupPolicy resources. | [optional] 
-**IpLease** | Pointer to [**IppoolIpLeaseRelationship**](IppoolIpLeaseRelationship.md) |  | [optional] 
-**IscsiBootPolicy** | Pointer to [**VnicIscsiBootPolicyRelationship**](VnicIscsiBootPolicyRelationship.md) |  | [optional] 
-**LanConnectivityPolicy** | Pointer to [**VnicLanConnectivityPolicyRelationship**](VnicLanConnectivityPolicyRelationship.md) |  | [optional] 
-**LcpVnic** | Pointer to [**VnicEthIfRelationship**](VnicEthIfRelationship.md) |  | [optional] 
-**MacLease** | Pointer to [**MacpoolLeaseRelationship**](MacpoolLeaseRelationship.md) |  | [optional] 
-**MacPool** | Pointer to [**MacpoolPoolRelationship**](MacpoolPoolRelationship.md) |  | [optional] 
-**Profile** | Pointer to [**PolicyAbstractConfigProfileRelationship**](PolicyAbstractConfigProfileRelationship.md) |  | [optional] 
+**IpLease** | Pointer to [**NullableIppoolIpLeaseRelationship**](IppoolIpLeaseRelationship.md) |  | [optional] 
+**IscsiBootPolicy** | Pointer to [**NullableVnicIscsiBootPolicyRelationship**](VnicIscsiBootPolicyRelationship.md) |  | [optional] 
+**LanConnectivityPolicy** | Pointer to [**NullableVnicLanConnectivityPolicyRelationship**](VnicLanConnectivityPolicyRelationship.md) |  | [optional] 
+**LcpVnic** | Pointer to [**NullableVnicEthIfRelationship**](VnicEthIfRelationship.md) |  | [optional] 
+**MacLease** | Pointer to [**NullableMacpoolLeaseRelationship**](MacpoolLeaseRelationship.md) |  | [optional] 
+**MacPool** | Pointer to [**NullableMacpoolPoolRelationship**](MacpoolPoolRelationship.md) |  | [optional] 
+**Profile** | Pointer to [**NullablePolicyAbstractConfigProfileRelationship**](PolicyAbstractConfigProfileRelationship.md) |  | [optional] 
 **SpVnics** | Pointer to [**[]VnicEthIfRelationship**](VnicEthIfRelationship.md) | An array of relationships to vnicEthIf resources. | [optional] [readonly] 
 
 ## Methods
@@ -400,6 +401,41 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *VnicEthIf) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
+### GetSriovSettings
+
+`func (o *VnicEthIf) GetSriovSettings() VnicSriovSettings`
+
+GetSriovSettings returns the SriovSettings field if non-nil, zero value otherwise.
+
+### GetSriovSettingsOk
+
+`func (o *VnicEthIf) GetSriovSettingsOk() (*VnicSriovSettings, bool)`
+
+GetSriovSettingsOk returns a tuple with the SriovSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSriovSettings
+
+`func (o *VnicEthIf) SetSriovSettings(v VnicSriovSettings)`
+
+SetSriovSettings sets SriovSettings field to given value.
+
+### HasSriovSettings
+
+`func (o *VnicEthIf) HasSriovSettings() bool`
+
+HasSriovSettings returns a boolean if a field has been set.
+
+### SetSriovSettingsNil
+
+`func (o *VnicEthIf) SetSriovSettingsNil(b bool)`
+
+ SetSriovSettingsNil sets the value for SriovSettings to be an explicit nil
+
+### UnsetSriovSettings
+`func (o *VnicEthIf) UnsetSriovSettings()`
+
+UnsetSriovSettings ensures that no value is present for SriovSettings, not even an explicit nil
 ### GetStandbyVifId
 
 `func (o *VnicEthIf) GetStandbyVifId() int64`
@@ -570,6 +606,16 @@ SetEthAdapterPolicy sets EthAdapterPolicy field to given value.
 
 HasEthAdapterPolicy returns a boolean if a field has been set.
 
+### SetEthAdapterPolicyNil
+
+`func (o *VnicEthIf) SetEthAdapterPolicyNil(b bool)`
+
+ SetEthAdapterPolicyNil sets the value for EthAdapterPolicy to be an explicit nil
+
+### UnsetEthAdapterPolicy
+`func (o *VnicEthIf) UnsetEthAdapterPolicy()`
+
+UnsetEthAdapterPolicy ensures that no value is present for EthAdapterPolicy, not even an explicit nil
 ### GetEthNetworkPolicy
 
 `func (o *VnicEthIf) GetEthNetworkPolicy() VnicEthNetworkPolicyRelationship`
@@ -595,6 +641,16 @@ SetEthNetworkPolicy sets EthNetworkPolicy field to given value.
 
 HasEthNetworkPolicy returns a boolean if a field has been set.
 
+### SetEthNetworkPolicyNil
+
+`func (o *VnicEthIf) SetEthNetworkPolicyNil(b bool)`
+
+ SetEthNetworkPolicyNil sets the value for EthNetworkPolicy to be an explicit nil
+
+### UnsetEthNetworkPolicy
+`func (o *VnicEthIf) UnsetEthNetworkPolicy()`
+
+UnsetEthNetworkPolicy ensures that no value is present for EthNetworkPolicy, not even an explicit nil
 ### GetEthQosPolicy
 
 `func (o *VnicEthIf) GetEthQosPolicy() VnicEthQosPolicyRelationship`
@@ -620,6 +676,16 @@ SetEthQosPolicy sets EthQosPolicy field to given value.
 
 HasEthQosPolicy returns a boolean if a field has been set.
 
+### SetEthQosPolicyNil
+
+`func (o *VnicEthIf) SetEthQosPolicyNil(b bool)`
+
+ SetEthQosPolicyNil sets the value for EthQosPolicy to be an explicit nil
+
+### UnsetEthQosPolicy
+`func (o *VnicEthIf) UnsetEthQosPolicy()`
+
+UnsetEthQosPolicy ensures that no value is present for EthQosPolicy, not even an explicit nil
 ### GetFabricEthNetworkControlPolicy
 
 `func (o *VnicEthIf) GetFabricEthNetworkControlPolicy() FabricEthNetworkControlPolicyRelationship`
@@ -645,6 +711,16 @@ SetFabricEthNetworkControlPolicy sets FabricEthNetworkControlPolicy field to giv
 
 HasFabricEthNetworkControlPolicy returns a boolean if a field has been set.
 
+### SetFabricEthNetworkControlPolicyNil
+
+`func (o *VnicEthIf) SetFabricEthNetworkControlPolicyNil(b bool)`
+
+ SetFabricEthNetworkControlPolicyNil sets the value for FabricEthNetworkControlPolicy to be an explicit nil
+
+### UnsetFabricEthNetworkControlPolicy
+`func (o *VnicEthIf) UnsetFabricEthNetworkControlPolicy()`
+
+UnsetFabricEthNetworkControlPolicy ensures that no value is present for FabricEthNetworkControlPolicy, not even an explicit nil
 ### GetFabricEthNetworkGroupPolicy
 
 `func (o *VnicEthIf) GetFabricEthNetworkGroupPolicy() []FabricEthNetworkGroupPolicyRelationship`
@@ -705,6 +781,16 @@ SetIpLease sets IpLease field to given value.
 
 HasIpLease returns a boolean if a field has been set.
 
+### SetIpLeaseNil
+
+`func (o *VnicEthIf) SetIpLeaseNil(b bool)`
+
+ SetIpLeaseNil sets the value for IpLease to be an explicit nil
+
+### UnsetIpLease
+`func (o *VnicEthIf) UnsetIpLease()`
+
+UnsetIpLease ensures that no value is present for IpLease, not even an explicit nil
 ### GetIscsiBootPolicy
 
 `func (o *VnicEthIf) GetIscsiBootPolicy() VnicIscsiBootPolicyRelationship`
@@ -730,6 +816,16 @@ SetIscsiBootPolicy sets IscsiBootPolicy field to given value.
 
 HasIscsiBootPolicy returns a boolean if a field has been set.
 
+### SetIscsiBootPolicyNil
+
+`func (o *VnicEthIf) SetIscsiBootPolicyNil(b bool)`
+
+ SetIscsiBootPolicyNil sets the value for IscsiBootPolicy to be an explicit nil
+
+### UnsetIscsiBootPolicy
+`func (o *VnicEthIf) UnsetIscsiBootPolicy()`
+
+UnsetIscsiBootPolicy ensures that no value is present for IscsiBootPolicy, not even an explicit nil
 ### GetLanConnectivityPolicy
 
 `func (o *VnicEthIf) GetLanConnectivityPolicy() VnicLanConnectivityPolicyRelationship`
@@ -755,6 +851,16 @@ SetLanConnectivityPolicy sets LanConnectivityPolicy field to given value.
 
 HasLanConnectivityPolicy returns a boolean if a field has been set.
 
+### SetLanConnectivityPolicyNil
+
+`func (o *VnicEthIf) SetLanConnectivityPolicyNil(b bool)`
+
+ SetLanConnectivityPolicyNil sets the value for LanConnectivityPolicy to be an explicit nil
+
+### UnsetLanConnectivityPolicy
+`func (o *VnicEthIf) UnsetLanConnectivityPolicy()`
+
+UnsetLanConnectivityPolicy ensures that no value is present for LanConnectivityPolicy, not even an explicit nil
 ### GetLcpVnic
 
 `func (o *VnicEthIf) GetLcpVnic() VnicEthIfRelationship`
@@ -780,6 +886,16 @@ SetLcpVnic sets LcpVnic field to given value.
 
 HasLcpVnic returns a boolean if a field has been set.
 
+### SetLcpVnicNil
+
+`func (o *VnicEthIf) SetLcpVnicNil(b bool)`
+
+ SetLcpVnicNil sets the value for LcpVnic to be an explicit nil
+
+### UnsetLcpVnic
+`func (o *VnicEthIf) UnsetLcpVnic()`
+
+UnsetLcpVnic ensures that no value is present for LcpVnic, not even an explicit nil
 ### GetMacLease
 
 `func (o *VnicEthIf) GetMacLease() MacpoolLeaseRelationship`
@@ -805,6 +921,16 @@ SetMacLease sets MacLease field to given value.
 
 HasMacLease returns a boolean if a field has been set.
 
+### SetMacLeaseNil
+
+`func (o *VnicEthIf) SetMacLeaseNil(b bool)`
+
+ SetMacLeaseNil sets the value for MacLease to be an explicit nil
+
+### UnsetMacLease
+`func (o *VnicEthIf) UnsetMacLease()`
+
+UnsetMacLease ensures that no value is present for MacLease, not even an explicit nil
 ### GetMacPool
 
 `func (o *VnicEthIf) GetMacPool() MacpoolPoolRelationship`
@@ -830,6 +956,16 @@ SetMacPool sets MacPool field to given value.
 
 HasMacPool returns a boolean if a field has been set.
 
+### SetMacPoolNil
+
+`func (o *VnicEthIf) SetMacPoolNil(b bool)`
+
+ SetMacPoolNil sets the value for MacPool to be an explicit nil
+
+### UnsetMacPool
+`func (o *VnicEthIf) UnsetMacPool()`
+
+UnsetMacPool ensures that no value is present for MacPool, not even an explicit nil
 ### GetProfile
 
 `func (o *VnicEthIf) GetProfile() PolicyAbstractConfigProfileRelationship`
@@ -855,6 +991,16 @@ SetProfile sets Profile field to given value.
 
 HasProfile returns a boolean if a field has been set.
 
+### SetProfileNil
+
+`func (o *VnicEthIf) SetProfileNil(b bool)`
+
+ SetProfileNil sets the value for Profile to be an explicit nil
+
+### UnsetProfile
+`func (o *VnicEthIf) UnsetProfile()`
+
+UnsetProfile ensures that no value is present for Profile, not even an explicit nil
 ### GetSpVnics
 
 `func (o *VnicEthIf) GetSpVnics() []VnicEthIfRelationship`

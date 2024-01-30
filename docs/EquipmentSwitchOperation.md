@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "equipment.SwitchOperation"]
 **AdminLocatorLedAction** | Pointer to **string** | Action performed on the locator LED of the switch. * &#x60;None&#x60; - No operation action for the Locator Led of an equipment. * &#x60;TurnOn&#x60; - Turn on the Locator Led of an equipment. * &#x60;TurnOff&#x60; - Turn off the Locator Led of an equipment. | [optional] [default to "None"]
 **AdminLocatorLedActionState** | Pointer to **string** | Defines status of action performed on AdminLocatorLedState. * &#x60;None&#x60; - Nil value when no action has been triggered by the user. * &#x60;Applied&#x60; - User configured settings are in applied state. * &#x60;Applying&#x60; - User settings are being applied on the target server. * &#x60;Failed&#x60; - User configured settings could not be applied. | [optional] [default to "None"]
-**DeviceRegistration** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
-**NetworkElement** | Pointer to [**NetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
+**DeviceRegistration** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**NetworkElement** | Pointer to [**NullableNetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -145,6 +145,16 @@ SetDeviceRegistration sets DeviceRegistration field to given value.
 
 HasDeviceRegistration returns a boolean if a field has been set.
 
+### SetDeviceRegistrationNil
+
+`func (o *EquipmentSwitchOperation) SetDeviceRegistrationNil(b bool)`
+
+ SetDeviceRegistrationNil sets the value for DeviceRegistration to be an explicit nil
+
+### UnsetDeviceRegistration
+`func (o *EquipmentSwitchOperation) UnsetDeviceRegistration()`
+
+UnsetDeviceRegistration ensures that no value is present for DeviceRegistration, not even an explicit nil
 ### GetNetworkElement
 
 `func (o *EquipmentSwitchOperation) GetNetworkElement() NetworkElementRelationship`
@@ -170,6 +180,16 @@ SetNetworkElement sets NetworkElement field to given value.
 
 HasNetworkElement returns a boolean if a field has been set.
 
+### SetNetworkElementNil
+
+`func (o *EquipmentSwitchOperation) SetNetworkElementNil(b bool)`
+
+ SetNetworkElementNil sets the value for NetworkElement to be an explicit nil
+
+### UnsetNetworkElement
+`func (o *EquipmentSwitchOperation) UnsetNetworkElement()`
+
+UnsetNetworkElement ensures that no value is present for NetworkElement, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

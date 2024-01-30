@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "network.Vethernet"]
 **Description** | Pointer to **string** | Description for the vNIC. | [optional] [readonly] 
 **VethId** | Pointer to **int64** | Vethernet Identifier on a Fabric Interconnect. | [optional] [readonly] 
-**AdapterHostEthInterface** | Pointer to [**AdapterHostEthInterfaceRelationship**](AdapterHostEthInterfaceRelationship.md) |  | [optional] 
-**NetworkElement** | Pointer to [**NetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
-**RegisteredDevice** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**AdapterHostEthInterface** | Pointer to [**NullableAdapterHostEthInterfaceRelationship**](AdapterHostEthInterfaceRelationship.md) |  | [optional] 
+**NetworkElement** | Pointer to [**NullableNetworkElementRelationship**](NetworkElementRelationship.md) |  | [optional] 
+**RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -146,6 +146,16 @@ SetAdapterHostEthInterface sets AdapterHostEthInterface field to given value.
 
 HasAdapterHostEthInterface returns a boolean if a field has been set.
 
+### SetAdapterHostEthInterfaceNil
+
+`func (o *NetworkVethernet) SetAdapterHostEthInterfaceNil(b bool)`
+
+ SetAdapterHostEthInterfaceNil sets the value for AdapterHostEthInterface to be an explicit nil
+
+### UnsetAdapterHostEthInterface
+`func (o *NetworkVethernet) UnsetAdapterHostEthInterface()`
+
+UnsetAdapterHostEthInterface ensures that no value is present for AdapterHostEthInterface, not even an explicit nil
 ### GetNetworkElement
 
 `func (o *NetworkVethernet) GetNetworkElement() NetworkElementRelationship`
@@ -171,6 +181,16 @@ SetNetworkElement sets NetworkElement field to given value.
 
 HasNetworkElement returns a boolean if a field has been set.
 
+### SetNetworkElementNil
+
+`func (o *NetworkVethernet) SetNetworkElementNil(b bool)`
+
+ SetNetworkElementNil sets the value for NetworkElement to be an explicit nil
+
+### UnsetNetworkElement
+`func (o *NetworkVethernet) UnsetNetworkElement()`
+
+UnsetNetworkElement ensures that no value is present for NetworkElement, not even an explicit nil
 ### GetRegisteredDevice
 
 `func (o *NetworkVethernet) GetRegisteredDevice() AssetDeviceRegistrationRelationship`
@@ -196,6 +216,16 @@ SetRegisteredDevice sets RegisteredDevice field to given value.
 
 HasRegisteredDevice returns a boolean if a field has been set.
 
+### SetRegisteredDeviceNil
+
+`func (o *NetworkVethernet) SetRegisteredDeviceNil(b bool)`
+
+ SetRegisteredDeviceNil sets the value for RegisteredDevice to be an explicit nil
+
+### UnsetRegisteredDevice
+`func (o *NetworkVethernet) UnsetRegisteredDevice()`
+
+UnsetRegisteredDevice ensures that no value is present for RegisteredDevice, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

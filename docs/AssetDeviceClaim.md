@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "asset.DeviceClaim"]
 **SecurityToken** | Pointer to **string** | Obtained from the device connector management UI or API (REST endpoint &#39;/connector/SecurityTokens&#39;). | [optional] 
 **SerialNumber** | Pointer to **string** | Obtained from the device connector management UI or API (REST endpoint &#39;/connector/DeviceIdentifiers&#39;). | [optional] 
-**Account** | Pointer to [**IamAccountRelationship**](IamAccountRelationship.md) |  | [optional] 
-**Device** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
-**Reservation** | Pointer to [**ResourceReservationRelationship**](ResourceReservationRelationship.md) |  | [optional] 
+**Account** | Pointer to [**NullableIamAccountRelationship**](IamAccountRelationship.md) |  | [optional] 
+**Device** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**Reservation** | Pointer to [**NullableResourceReservationRelationship**](ResourceReservationRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -146,6 +146,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *AssetDeviceClaim) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *AssetDeviceClaim) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetDevice
 
 `func (o *AssetDeviceClaim) GetDevice() AssetDeviceRegistrationRelationship`
@@ -171,6 +181,16 @@ SetDevice sets Device field to given value.
 
 HasDevice returns a boolean if a field has been set.
 
+### SetDeviceNil
+
+`func (o *AssetDeviceClaim) SetDeviceNil(b bool)`
+
+ SetDeviceNil sets the value for Device to be an explicit nil
+
+### UnsetDevice
+`func (o *AssetDeviceClaim) UnsetDevice()`
+
+UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetReservation
 
 `func (o *AssetDeviceClaim) GetReservation() ResourceReservationRelationship`
@@ -196,6 +216,16 @@ SetReservation sets Reservation field to given value.
 
 HasReservation returns a boolean if a field has been set.
 
+### SetReservationNil
+
+`func (o *AssetDeviceClaim) SetReservationNil(b bool)`
+
+ SetReservationNil sets the value for Reservation to be an explicit nil
+
+### UnsetReservation
+`func (o *AssetDeviceClaim) UnsetReservation()`
+
+UnsetReservation ensures that no value is present for Reservation, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

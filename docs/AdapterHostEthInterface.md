@@ -26,12 +26,12 @@ Name | Type | Description | Notes
 **VifId** | Pointer to **int64** | Identifier of the virtual ethernet interface (Vethernet) on the networking component (e.g., Fabric Interconnect) for the corresponding Host Ethernet Interface (vNIC). | [optional] [readonly] 
 **VirtualizationPreference** | Pointer to **string** | Virtualization Preference of the Host Ethernet Interface indicating if virtualization is enabled or not. | [optional] [readonly] 
 **VnicDn** | Pointer to **string** | The Virtual Ethernet Interface DN connected to the Host Ethernet Interface. | [optional] [readonly] 
-**AdapterUnit** | Pointer to [**AdapterUnitRelationship**](AdapterUnitRelationship.md) |  | [optional] 
-**InventoryDeviceInfo** | Pointer to [**InventoryDeviceInfoRelationship**](InventoryDeviceInfoRelationship.md) |  | [optional] 
-**PinnedInterface** | Pointer to [**InventoryInterfaceRelationship**](InventoryInterfaceRelationship.md) |  | [optional] 
-**RegisteredDevice** | Pointer to [**AssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
-**StandbyVethernet** | Pointer to [**NetworkVethernetRelationship**](NetworkVethernetRelationship.md) |  | [optional] 
-**Vethernet** | Pointer to [**NetworkVethernetRelationship**](NetworkVethernetRelationship.md) |  | [optional] 
+**AdapterUnit** | Pointer to [**NullableAdapterUnitRelationship**](AdapterUnitRelationship.md) |  | [optional] 
+**InventoryDeviceInfo** | Pointer to [**NullableInventoryDeviceInfoRelationship**](InventoryDeviceInfoRelationship.md) |  | [optional] 
+**PinnedInterface** | Pointer to [**NullableInventoryInterfaceRelationship**](InventoryInterfaceRelationship.md) |  | [optional] 
+**RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
+**StandbyVethernet** | Pointer to [**NullableNetworkVethernetRelationship**](NetworkVethernetRelationship.md) |  | [optional] 
+**Vethernet** | Pointer to [**NullableNetworkVethernetRelationship**](NetworkVethernetRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -627,6 +627,16 @@ SetAdapterUnit sets AdapterUnit field to given value.
 
 HasAdapterUnit returns a boolean if a field has been set.
 
+### SetAdapterUnitNil
+
+`func (o *AdapterHostEthInterface) SetAdapterUnitNil(b bool)`
+
+ SetAdapterUnitNil sets the value for AdapterUnit to be an explicit nil
+
+### UnsetAdapterUnit
+`func (o *AdapterHostEthInterface) UnsetAdapterUnit()`
+
+UnsetAdapterUnit ensures that no value is present for AdapterUnit, not even an explicit nil
 ### GetInventoryDeviceInfo
 
 `func (o *AdapterHostEthInterface) GetInventoryDeviceInfo() InventoryDeviceInfoRelationship`
@@ -652,6 +662,16 @@ SetInventoryDeviceInfo sets InventoryDeviceInfo field to given value.
 
 HasInventoryDeviceInfo returns a boolean if a field has been set.
 
+### SetInventoryDeviceInfoNil
+
+`func (o *AdapterHostEthInterface) SetInventoryDeviceInfoNil(b bool)`
+
+ SetInventoryDeviceInfoNil sets the value for InventoryDeviceInfo to be an explicit nil
+
+### UnsetInventoryDeviceInfo
+`func (o *AdapterHostEthInterface) UnsetInventoryDeviceInfo()`
+
+UnsetInventoryDeviceInfo ensures that no value is present for InventoryDeviceInfo, not even an explicit nil
 ### GetPinnedInterface
 
 `func (o *AdapterHostEthInterface) GetPinnedInterface() InventoryInterfaceRelationship`
@@ -677,6 +697,16 @@ SetPinnedInterface sets PinnedInterface field to given value.
 
 HasPinnedInterface returns a boolean if a field has been set.
 
+### SetPinnedInterfaceNil
+
+`func (o *AdapterHostEthInterface) SetPinnedInterfaceNil(b bool)`
+
+ SetPinnedInterfaceNil sets the value for PinnedInterface to be an explicit nil
+
+### UnsetPinnedInterface
+`func (o *AdapterHostEthInterface) UnsetPinnedInterface()`
+
+UnsetPinnedInterface ensures that no value is present for PinnedInterface, not even an explicit nil
 ### GetRegisteredDevice
 
 `func (o *AdapterHostEthInterface) GetRegisteredDevice() AssetDeviceRegistrationRelationship`
@@ -702,6 +732,16 @@ SetRegisteredDevice sets RegisteredDevice field to given value.
 
 HasRegisteredDevice returns a boolean if a field has been set.
 
+### SetRegisteredDeviceNil
+
+`func (o *AdapterHostEthInterface) SetRegisteredDeviceNil(b bool)`
+
+ SetRegisteredDeviceNil sets the value for RegisteredDevice to be an explicit nil
+
+### UnsetRegisteredDevice
+`func (o *AdapterHostEthInterface) UnsetRegisteredDevice()`
+
+UnsetRegisteredDevice ensures that no value is present for RegisteredDevice, not even an explicit nil
 ### GetStandbyVethernet
 
 `func (o *AdapterHostEthInterface) GetStandbyVethernet() NetworkVethernetRelationship`
@@ -727,6 +767,16 @@ SetStandbyVethernet sets StandbyVethernet field to given value.
 
 HasStandbyVethernet returns a boolean if a field has been set.
 
+### SetStandbyVethernetNil
+
+`func (o *AdapterHostEthInterface) SetStandbyVethernetNil(b bool)`
+
+ SetStandbyVethernetNil sets the value for StandbyVethernet to be an explicit nil
+
+### UnsetStandbyVethernet
+`func (o *AdapterHostEthInterface) UnsetStandbyVethernet()`
+
+UnsetStandbyVethernet ensures that no value is present for StandbyVethernet, not even an explicit nil
 ### GetVethernet
 
 `func (o *AdapterHostEthInterface) GetVethernet() NetworkVethernetRelationship`
@@ -752,6 +802,16 @@ SetVethernet sets Vethernet field to given value.
 
 HasVethernet returns a boolean if a field has been set.
 
+### SetVethernetNil
+
+`func (o *AdapterHostEthInterface) SetVethernetNil(b bool)`
+
+ SetVethernetNil sets the value for Vethernet to be an explicit nil
+
+### UnsetVethernet
+`func (o *AdapterHostEthInterface) UnsetVethernet()`
+
+UnsetVethernet ensures that no value is present for Vethernet, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

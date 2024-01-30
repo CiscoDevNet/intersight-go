@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **ConfigChangeContext** | Pointer to [**NullablePolicyConfigChangeContext**](PolicyConfigChangeContext.md) |  | [optional] 
 **ConfigChanges** | Pointer to [**NullablePolicyConfigChange**](PolicyConfigChange.md) |  | [optional] 
 **TargetPlatform** | Pointer to **string** | The platform for which the chassis profile is applicable. It can either be a chassis that is operating in standalone mode or which is attached to a Fabric Interconnect managed by Intersight. * &#x60;FIAttached&#x60; - Chassis which are connected to a Fabric Interconnect that is managed by Intersight. | [optional] [default to "FIAttached"]
-**AssignedChassis** | Pointer to [**EquipmentChassisRelationship**](EquipmentChassisRelationship.md) |  | [optional] 
-**AssociatedChassis** | Pointer to [**EquipmentChassisRelationship**](EquipmentChassisRelationship.md) |  | [optional] 
+**AssignedChassis** | Pointer to [**NullableEquipmentChassisRelationship**](EquipmentChassisRelationship.md) |  | [optional] 
+**AssociatedChassis** | Pointer to [**NullableEquipmentChassisRelationship**](EquipmentChassisRelationship.md) |  | [optional] 
 **ConfigChangeDetails** | Pointer to [**[]ChassisConfigChangeDetailRelationship**](ChassisConfigChangeDetailRelationship.md) | An array of relationships to chassisConfigChangeDetail resources. | [optional] [readonly] 
-**ConfigResult** | Pointer to [**ChassisConfigResultRelationship**](ChassisConfigResultRelationship.md) |  | [optional] 
+**ConfigResult** | Pointer to [**NullableChassisConfigResultRelationship**](ChassisConfigResultRelationship.md) |  | [optional] 
 **IomProfiles** | Pointer to [**[]ChassisIomProfileRelationship**](ChassisIomProfileRelationship.md) | An array of relationships to chassisIomProfile resources. | [optional] [readonly] 
-**Organization** | Pointer to [**OrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
+**Organization** | Pointer to [**NullableOrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
 **RunningWorkflows** | Pointer to [**[]WorkflowWorkflowInfoRelationship**](WorkflowWorkflowInfoRelationship.md) | An array of relationships to workflowWorkflowInfo resources. | [optional] [readonly] 
 
 ## Methods
@@ -196,6 +196,16 @@ SetAssignedChassis sets AssignedChassis field to given value.
 
 HasAssignedChassis returns a boolean if a field has been set.
 
+### SetAssignedChassisNil
+
+`func (o *ChassisProfile) SetAssignedChassisNil(b bool)`
+
+ SetAssignedChassisNil sets the value for AssignedChassis to be an explicit nil
+
+### UnsetAssignedChassis
+`func (o *ChassisProfile) UnsetAssignedChassis()`
+
+UnsetAssignedChassis ensures that no value is present for AssignedChassis, not even an explicit nil
 ### GetAssociatedChassis
 
 `func (o *ChassisProfile) GetAssociatedChassis() EquipmentChassisRelationship`
@@ -221,6 +231,16 @@ SetAssociatedChassis sets AssociatedChassis field to given value.
 
 HasAssociatedChassis returns a boolean if a field has been set.
 
+### SetAssociatedChassisNil
+
+`func (o *ChassisProfile) SetAssociatedChassisNil(b bool)`
+
+ SetAssociatedChassisNil sets the value for AssociatedChassis to be an explicit nil
+
+### UnsetAssociatedChassis
+`func (o *ChassisProfile) UnsetAssociatedChassis()`
+
+UnsetAssociatedChassis ensures that no value is present for AssociatedChassis, not even an explicit nil
 ### GetConfigChangeDetails
 
 `func (o *ChassisProfile) GetConfigChangeDetails() []ChassisConfigChangeDetailRelationship`
@@ -281,6 +301,16 @@ SetConfigResult sets ConfigResult field to given value.
 
 HasConfigResult returns a boolean if a field has been set.
 
+### SetConfigResultNil
+
+`func (o *ChassisProfile) SetConfigResultNil(b bool)`
+
+ SetConfigResultNil sets the value for ConfigResult to be an explicit nil
+
+### UnsetConfigResult
+`func (o *ChassisProfile) UnsetConfigResult()`
+
+UnsetConfigResult ensures that no value is present for ConfigResult, not even an explicit nil
 ### GetIomProfiles
 
 `func (o *ChassisProfile) GetIomProfiles() []ChassisIomProfileRelationship`
@@ -341,6 +371,16 @@ SetOrganization sets Organization field to given value.
 
 HasOrganization returns a boolean if a field has been set.
 
+### SetOrganizationNil
+
+`func (o *ChassisProfile) SetOrganizationNil(b bool)`
+
+ SetOrganizationNil sets the value for Organization to be an explicit nil
+
+### UnsetOrganization
+`func (o *ChassisProfile) UnsetOrganization()`
+
+UnsetOrganization ensures that no value is present for Organization, not even an explicit nil
 ### GetRunningWorkflows
 
 `func (o *ChassisProfile) GetRunningWorkflows() []WorkflowWorkflowInfoRelationship`
