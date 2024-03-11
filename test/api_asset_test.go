@@ -59,6 +59,19 @@ func Test_intersight_AssetApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test AssetApiService DeleteAssetClusterMember", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.AssetApi.DeleteAssetClusterMember(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test AssetApiService DeleteAssetDeployment", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

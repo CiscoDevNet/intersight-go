@@ -1425,6 +1425,32 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CapabilityApiService GetCapabilityProcessorUnitUpdateConstraintMetaByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilityProcessorUnitUpdateConstraintMetaByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService GetCapabilityProcessorUnitUpdateConstraintMetaList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilityProcessorUnitUpdateConstraintMetaList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CapabilityApiService GetCapabilityPsuDescriptorByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

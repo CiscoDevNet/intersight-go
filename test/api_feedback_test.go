@@ -35,4 +35,32 @@ func Test_intersight_FeedbackApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FeedbackApiService PatchFeedbackFeedbackPost", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FeedbackApi.PatchFeedbackFeedbackPost(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FeedbackApiService UpdateFeedbackFeedbackPost", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FeedbackApi.UpdateFeedbackFeedbackPost(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

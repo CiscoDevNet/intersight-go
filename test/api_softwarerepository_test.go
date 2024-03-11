@@ -71,6 +71,18 @@ func Test_intersight_SoftwarerepositoryApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SoftwarerepositoryApiService CreateSoftwarerepositoryCategoryUnsupportedModels", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.SoftwarerepositoryApi.CreateSoftwarerepositoryCategoryUnsupportedModels(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SoftwarerepositoryApiService CreateSoftwarerepositoryOperatingSystemFile", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -128,6 +140,19 @@ func Test_intersight_SoftwarerepositoryApiService(t *testing.T) {
 		var moid string
 
 		httpRes, err := apiClient.SoftwarerepositoryApi.DeleteSoftwarerepositoryCategorySupportConstraint(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SoftwarerepositoryApiService DeleteSoftwarerepositoryCategoryUnsupportedModels", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.SoftwarerepositoryApi.DeleteSoftwarerepositoryCategoryUnsupportedModels(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -316,6 +341,32 @@ func Test_intersight_SoftwarerepositoryApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SoftwarerepositoryApiService GetSoftwarerepositoryCategoryUnsupportedModelsByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.SoftwarerepositoryApi.GetSoftwarerepositoryCategoryUnsupportedModelsByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SoftwarerepositoryApiService GetSoftwarerepositoryCategoryUnsupportedModelsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.SoftwarerepositoryApi.GetSoftwarerepositoryCategoryUnsupportedModelsList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SoftwarerepositoryApiService GetSoftwarerepositoryDownloadSpecByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -450,6 +501,20 @@ func Test_intersight_SoftwarerepositoryApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SoftwarerepositoryApiService PatchSoftwarerepositoryCategoryUnsupportedModels", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.SoftwarerepositoryApi.PatchSoftwarerepositoryCategoryUnsupportedModels(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SoftwarerepositoryApiService PatchSoftwarerepositoryOperatingSystemFile", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -527,6 +592,20 @@ func Test_intersight_SoftwarerepositoryApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.SoftwarerepositoryApi.UpdateSoftwarerepositoryCategorySupportConstraint(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SoftwarerepositoryApiService UpdateSoftwarerepositoryCategoryUnsupportedModels", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.SoftwarerepositoryApi.UpdateSoftwarerepositoryCategoryUnsupportedModels(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
