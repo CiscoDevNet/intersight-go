@@ -387,6 +387,32 @@ func Test_intersight_EquipmentApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test EquipmentApiService GetEquipmentHybridDriveSlotByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.EquipmentApi.GetEquipmentHybridDriveSlotByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EquipmentApiService GetEquipmentHybridDriveSlotList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.EquipmentApi.GetEquipmentHybridDriveSlotList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test EquipmentApiService GetEquipmentIoCardByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

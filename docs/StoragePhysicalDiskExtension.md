@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **DiskDn** | Pointer to **string** | The distinguished name of the Physical drive. | [optional] [readonly] 
 **DiskId** | Pointer to **int64** | The storage Enclosure slotId. | [optional] [readonly] 
 **DiskState** | Pointer to **string** | The current drive state of disk. | [optional] [readonly] 
-**Health** | Pointer to **string** | The current drive state of disk. | [optional] 
+**Health** | Pointer to **string** | The current drive state of disk. | [optional] [readonly] 
 **InventoryDeviceInfo** | Pointer to [**NullableInventoryDeviceInfoRelationship**](InventoryDeviceInfoRelationship.md) |  | [optional] 
 **PhysicalDisk** | Pointer to [**NullableStoragePhysicalDiskRelationship**](StoragePhysicalDiskRelationship.md) |  | [optional] 
 **RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 

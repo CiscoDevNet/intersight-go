@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **FcSwitchingMode** | Pointer to **string** | The user configured FC operational mode for this switch (End-Host or Switching). * &#x60;end-host&#x60; - In end-host mode, the fabric interconnects appear to the upstream devices as end hosts with multiple links.In this mode, the switch does not run Spanning Tree Protocol and avoids loops by following a set of rules for traffic forwarding.In case of ethernet switching mode - Ethernet end-host mode is also known as Ethernet host virtualizer. * &#x60;switch&#x60; - In switch mode, the switch runs Spanning Tree Protocol to avoid loops, and broadcast and multicast packets are handled in the traditional way.This is the traditional switch mode. | [optional] [readonly] [default to "end-host"]
 **Firmware** | Pointer to **string** | Running firmware information. | [optional] [readonly] 
 **FirmwareVersion** | Pointer to **string** | Running firmware information. | [optional] [readonly] 
+**FpgaUpgradeNeeded** | Pointer to **bool** | The flag to check vulnerability with secure boot technology. | [optional] [readonly] 
 **InbandIpAddress** | Pointer to **string** | The IP address of the network Element inband management interface. | [optional] [readonly] 
 **InbandIpGateway** | Pointer to **string** | The default gateway of the network Element inband management interface. | [optional] [readonly] 
 **InbandIpMask** | Pointer to **string** | The network mask of the network Element inband management interface. | [optional] [readonly] 
@@ -614,6 +615,31 @@ SetFirmwareVersion sets FirmwareVersion field to given value.
 `func (o *NetworkElementSummary) HasFirmwareVersion() bool`
 
 HasFirmwareVersion returns a boolean if a field has been set.
+
+### GetFpgaUpgradeNeeded
+
+`func (o *NetworkElementSummary) GetFpgaUpgradeNeeded() bool`
+
+GetFpgaUpgradeNeeded returns the FpgaUpgradeNeeded field if non-nil, zero value otherwise.
+
+### GetFpgaUpgradeNeededOk
+
+`func (o *NetworkElementSummary) GetFpgaUpgradeNeededOk() (*bool, bool)`
+
+GetFpgaUpgradeNeededOk returns a tuple with the FpgaUpgradeNeeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFpgaUpgradeNeeded
+
+`func (o *NetworkElementSummary) SetFpgaUpgradeNeeded(v bool)`
+
+SetFpgaUpgradeNeeded sets FpgaUpgradeNeeded field to given value.
+
+### HasFpgaUpgradeNeeded
+
+`func (o *NetworkElementSummary) HasFpgaUpgradeNeeded() bool`
+
+HasFpgaUpgradeNeeded returns a boolean if a field has been set.
 
 ### GetInbandIpAddress
 

@@ -215,6 +215,18 @@ func Test_intersight_IamApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test IamApiService CreateIamLocalUserPassword", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.IamApi.CreateIamLocalUserPassword(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test IamApiService CreateIamPermission", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1310,6 +1322,32 @@ func Test_intersight_IamApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test IamApiService GetIamLocalUserPasswordByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.IamApi.GetIamLocalUserPasswordByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test IamApiService GetIamLocalUserPasswordList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.IamApi.GetIamLocalUserPasswordList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test IamApiService GetIamLocalUserPasswordPolicyByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2204,6 +2242,20 @@ func Test_intersight_IamApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test IamApiService PatchIamResourceLimits", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.IamApi.PatchIamResourceLimits(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test IamApiService PatchIamResourceRoles", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2603,6 +2655,20 @@ func Test_intersight_IamApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.IamApi.UpdateIamQualifier(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test IamApiService UpdateIamResourceLimits", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.IamApi.UpdateIamResourceLimits(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -870,6 +870,32 @@ func Test_intersight_ApplianceApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApplianceApiService GetApplianceMetricsConfigByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ApplianceApi.GetApplianceMetricsConfigByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApplianceApiService GetApplianceMetricsConfigList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ApplianceApi.GetApplianceMetricsConfigList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApplianceApiService GetApplianceNetworkLinkStatusByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1362,6 +1388,20 @@ func Test_intersight_ApplianceApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApplianceApiService PatchApplianceMetricsConfig", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ApplianceApi.PatchApplianceMetricsConfig(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApplianceApiService PatchApplianceSetupInfo", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1551,6 +1591,20 @@ func Test_intersight_ApplianceApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.ApplianceApi.UpdateApplianceExternalSyslogSetting(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApplianceApiService UpdateApplianceMetricsConfig", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ApplianceApi.UpdateApplianceMetricsConfig(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
