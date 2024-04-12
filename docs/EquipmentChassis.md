@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **PlatformType** | Pointer to **string** | The platform type that the chassis is a part of. | [optional] [readonly] 
 **ProductName** | Pointer to **string** | This field identifies the Product Name for the chassis enclosure. | [optional] [readonly] 
 **Sku** | Pointer to **string** | This field identifies the Stock Keeping Unit for the chassis enclosure. | [optional] [readonly] 
+**UserLabel** | Pointer to **string** | The user defined label assigned to the chassis. | [optional] 
 **Vid** | Pointer to **string** | This field identifies the Vendor ID for the chassis enclosure. | [optional] [readonly] 
 **Blades** | Pointer to [**[]ComputeBladeRelationship**](ComputeBladeRelationship.md) | An array of relationships to computeBlade resources. | [optional] [readonly] 
 **ExpanderModules** | Pointer to [**[]EquipmentExpanderModuleRelationship**](EquipmentExpanderModuleRelationship.md) | An array of relationships to equipmentExpanderModule resources. | [optional] [readonly] 
@@ -492,6 +493,31 @@ SetSku sets Sku field to given value.
 `func (o *EquipmentChassis) HasSku() bool`
 
 HasSku returns a boolean if a field has been set.
+
+### GetUserLabel
+
+`func (o *EquipmentChassis) GetUserLabel() string`
+
+GetUserLabel returns the UserLabel field if non-nil, zero value otherwise.
+
+### GetUserLabelOk
+
+`func (o *EquipmentChassis) GetUserLabelOk() (*string, bool)`
+
+GetUserLabelOk returns a tuple with the UserLabel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserLabel
+
+`func (o *EquipmentChassis) SetUserLabel(v string)`
+
+SetUserLabel sets UserLabel field to given value.
+
+### HasUserLabel
+
+`func (o *EquipmentChassis) HasUserLabel() bool`
+
+HasUserLabel returns a boolean if a field has been set.
 
 ### GetVid
 

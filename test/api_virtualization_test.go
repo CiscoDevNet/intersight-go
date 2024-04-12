@@ -450,6 +450,32 @@ func Test_intersight_VirtualizationApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test VirtualizationApiService GetVirtualizationVmwareProactiveHaByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.VirtualizationApi.GetVirtualizationVmwareProactiveHaByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VirtualizationApiService GetVirtualizationVmwareProactiveHaList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.VirtualizationApi.GetVirtualizationVmwareProactiveHaList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test VirtualizationApiService GetVirtualizationVmwareUplinkPortByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
