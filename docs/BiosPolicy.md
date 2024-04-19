@@ -126,6 +126,7 @@ Name | Type | Description | Notes
 **IntelVtdInterruptRemapping** | Pointer to **string** | BIOS Token for setting Intel (R) VT-d Interrupt Remapping configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **IntelVtdPassThroughDmaSupport** | Pointer to **string** | BIOS Token for setting Intel (R) VT-d PassThrough DMA Support configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **IntelVtdatsSupport** | Pointer to **string** | BIOS Token for setting Intel VTD ATS Support configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
+**IoatConfigCpm** | Pointer to **string** | BIOS Token for setting IOAT Configuration configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **IohErrorEnable** | Pointer to **string** | BIOS Token for setting IIO Error Enable configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;No&#x60; - Value - No for configuring IohErrorEnable token. * &#x60;Yes&#x60; - Value - Yes for configuring IohErrorEnable token. | [optional] [default to "platform-default"]
 **IohResource** | Pointer to **string** | BIOS Token for setting IOH Resource Allocation configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;IOH0 24k IOH1 40k&#x60; - Value - IOH0 24k IOH1 40k for configuring IohResource token. * &#x60;IOH0 32k IOH1 32k&#x60; - Value - IOH0 32k IOH1 32k for configuring IohResource token. * &#x60;IOH0 40k IOH1 24k&#x60; - Value - IOH0 40k IOH1 24k for configuring IohResource token. * &#x60;IOH0 48k IOH1 16k&#x60; - Value - IOH0 48k IOH1 16k for configuring IohResource token. * &#x60;IOH0 56k IOH1 8k&#x60; - Value - IOH0 56k IOH1 8k for configuring IohResource token. | [optional] [default to "platform-default"]
 **IpPrefetch** | Pointer to **string** | BIOS Token for setting DCU IP Prefetcher configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
@@ -153,6 +154,8 @@ Name | Type | Description | Notes
 **MemoryThermalThrottling** | Pointer to **string** | BIOS Token for setting Memory Thermal Throttling Mode configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;CLTT with PECI&#x60; - Value - CLTT with PECI for configuring MemoryThermalThrottling token. * &#x60;Disabled&#x60; - Value - Disabled for configuring MemoryThermalThrottling token. | [optional] [default to "platform-default"]
 **MirroringMode** | Pointer to **string** | BIOS Token for setting Mirroring Mode configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;inter-socket&#x60; - Value - inter-socket for configuring MirroringMode token. * &#x60;intra-socket&#x60; - Value - intra-socket for configuring MirroringMode token. | [optional] [default to "platform-default"]
 **MmcfgBase** | Pointer to **string** | BIOS Token for setting MMCFG BASE configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;1 GB&#x60; - Value - 1 GiB for configuring MmcfgBase token. * &#x60;2 GB&#x60; - Value - 2 GiB for configuring MmcfgBase token. * &#x60;2.5 GB&#x60; - Value - 2.5 GiB for configuring MmcfgBase token. * &#x60;3 GB&#x60; - Value - 3 GiB for configuring MmcfgBase token. * &#x60;Auto&#x60; - Value - Auto for configuring MmcfgBase token. | [optional] [default to "platform-default"]
+**MmiohBase** | Pointer to **string** | BIOS Token for setting MMIO High Base configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;512G&#x60; - Value - 512G for configuring MmiohBase token. * &#x60;1T&#x60; - Value - 1T for configuring MmiohBase token. * &#x60;2T&#x60; - Value - 2T for configuring MmiohBase token. * &#x60;4T&#x60; - Value - 4T for configuring MmiohBase token. * &#x60;16T&#x60; - Value - 16T for configuring MmiohBase token. * &#x60;24T&#x60; - Value - 24T for configuring MmiohBase token. * &#x60;32T&#x60; - Value - 32T for configuring MmiohBase token. * &#x60;40T&#x60; - Value - 40T for configuring MmiohBase token. * &#x60;56T&#x60; - Value - 56T for configuring MmiohBase token. | [optional] [default to "platform-default"]
+**MmiohSize** | Pointer to **string** | BIOS Token for setting MMIO High Granularity Size configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;1G&#x60; - Value - 1G for configuring MmiohSize token. * &#x60;4G&#x60; - Value - 4G for configuring MmiohSize token. * &#x60;16G&#x60; - Value - 16G for configuring MmiohSize token. * &#x60;64G&#x60; - Value - 64G for configuring MmiohSize token. * &#x60;256G&#x60; - Value - 256G for configuring MmiohSize token. * &#x60;1024G&#x60; - Value - 1024G for configuring MmiohSize token. | [optional] [default to "platform-default"]
 **NetworkStack** | Pointer to **string** | BIOS Token for setting Network Stack configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **NumaOptimized** | Pointer to **string** | BIOS Token for setting NUMA Optimized configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **NvmdimmPerformConfig** | Pointer to **string** | BIOS Token for setting NVM Performance Setting configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;BW Optimized&#x60; - Value - BW Optimized for configuring NvmdimmPerformConfig token. * &#x60;Balanced Profile&#x60; - Value - Balanced Profile for configuring NvmdimmPerformConfig token. * &#x60;Latency Optimized&#x60; - Value - Latency Optimized for configuring NvmdimmPerformConfig token. | [optional] [default to "platform-default"]
@@ -207,7 +210,7 @@ Name | Type | Description | Notes
 **PopSupport** | Pointer to **string** | BIOS Token for setting Power ON Password configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **PostErrorPause** | Pointer to **string** | BIOS Token for setting POST Error Pause configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **PostPackageRepair** | Pointer to **string** | BIOS Token for setting Post Package Repair configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;Disabled&#x60; - Value - Disabled for configuring PostPackageRepair token. * &#x60;Hard PPR&#x60; - Value - Hard PPR for configuring PostPackageRepair token. | [optional] [default to "platform-default"]
-**PrmrrSize** | Pointer to **string** | BIOS Token for setting PRMRR Size configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;1G&#x60; - Value - 1G for configuring PrmrrSize token. * &#x60;2G&#x60; - Value - 2G for configuring PrmrrSize token. * &#x60;4G&#x60; - Value - 4G for configuring PrmrrSize token. * &#x60;8G&#x60; - Value - 8G for configuring PrmrrSize token. * &#x60;16G&#x60; - Value - 16G for configuring PrmrrSize token. * &#x60;32G&#x60; - Value - 32G for configuring PrmrrSize token. * &#x60;64G&#x60; - Value - 64G for configuring PrmrrSize token. * &#x60;128G&#x60; - Value - 128G for configuring PrmrrSize token. * &#x60;256G&#x60; - Value - 256G for configuring PrmrrSize token. * &#x60;512G&#x60; - Value - 512G for configuring PrmrrSize token. * &#x60;128M&#x60; - Value - 128M for configuring PrmrrSize token. * &#x60;256M&#x60; - Value - 256M for configuring PrmrrSize token. * &#x60;512M&#x60; - Value - 512M for configuring PrmrrSize token. * &#x60;Invalid Config.&#x60; - Value - Invalid Config for configuring PrmrrSize token. | [optional] [default to "platform-default"]
+**PrmrrSize** | Pointer to **string** | BIOS Token for setting PRMRR Size configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;1G&#x60; - Value - 1G for configuring PrmrrSize token. * &#x60;2G&#x60; - Value - 2G for configuring PrmrrSize token. * &#x60;4G&#x60; - Value - 4G for configuring PrmrrSize token. * &#x60;8G&#x60; - Value - 8G for configuring PrmrrSize token. * &#x60;16G&#x60; - Value - 16G for configuring PrmrrSize token. * &#x60;32G&#x60; - Value - 32G for configuring PrmrrSize token. * &#x60;64G&#x60; - Value - 64G for configuring PrmrrSize token. * &#x60;128G&#x60; - Value - 128G for configuring PrmrrSize token. * &#x60;256G&#x60; - Value - 256G for configuring PrmrrSize token. * &#x60;512G&#x60; - Value - 512G for configuring PrmrrSize token. * &#x60;128M&#x60; - Value - 128M for configuring PrmrrSize token. * &#x60;256M&#x60; - Value - 256M for configuring PrmrrSize token. * &#x60;512M&#x60; - Value - 512M for configuring PrmrrSize token. * &#x60;Auto&#x60; - Value - Auto for configuring PrmrrSize token. * &#x60;Invalid Config.&#x60; - Value - Invalid Config for configuring PrmrrSize token. | [optional] [default to "platform-default"]
 **ProcessorC1e** | Pointer to **string** | BIOS Token for setting Processor C1E configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **ProcessorC3report** | Pointer to **string** | BIOS Token for setting Processor C3 Report configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
 **ProcessorC6report** | Pointer to **string** | BIOS Token for setting Processor C6 Report configuration. * &#x60;platform-default&#x60; - Default value used by the platform for the BIOS setting. * &#x60;enabled&#x60; - Enables the BIOS setting. * &#x60;disabled&#x60; - Disables the BIOS setting. | [optional] [default to "platform-default"]
@@ -3483,6 +3486,31 @@ SetIntelVtdatsSupport sets IntelVtdatsSupport field to given value.
 
 HasIntelVtdatsSupport returns a boolean if a field has been set.
 
+### GetIoatConfigCpm
+
+`func (o *BiosPolicy) GetIoatConfigCpm() string`
+
+GetIoatConfigCpm returns the IoatConfigCpm field if non-nil, zero value otherwise.
+
+### GetIoatConfigCpmOk
+
+`func (o *BiosPolicy) GetIoatConfigCpmOk() (*string, bool)`
+
+GetIoatConfigCpmOk returns a tuple with the IoatConfigCpm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIoatConfigCpm
+
+`func (o *BiosPolicy) SetIoatConfigCpm(v string)`
+
+SetIoatConfigCpm sets IoatConfigCpm field to given value.
+
+### HasIoatConfigCpm
+
+`func (o *BiosPolicy) HasIoatConfigCpm() bool`
+
+HasIoatConfigCpm returns a boolean if a field has been set.
+
 ### GetIohErrorEnable
 
 `func (o *BiosPolicy) GetIohErrorEnable() string`
@@ -4157,6 +4185,56 @@ SetMmcfgBase sets MmcfgBase field to given value.
 `func (o *BiosPolicy) HasMmcfgBase() bool`
 
 HasMmcfgBase returns a boolean if a field has been set.
+
+### GetMmiohBase
+
+`func (o *BiosPolicy) GetMmiohBase() string`
+
+GetMmiohBase returns the MmiohBase field if non-nil, zero value otherwise.
+
+### GetMmiohBaseOk
+
+`func (o *BiosPolicy) GetMmiohBaseOk() (*string, bool)`
+
+GetMmiohBaseOk returns a tuple with the MmiohBase field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMmiohBase
+
+`func (o *BiosPolicy) SetMmiohBase(v string)`
+
+SetMmiohBase sets MmiohBase field to given value.
+
+### HasMmiohBase
+
+`func (o *BiosPolicy) HasMmiohBase() bool`
+
+HasMmiohBase returns a boolean if a field has been set.
+
+### GetMmiohSize
+
+`func (o *BiosPolicy) GetMmiohSize() string`
+
+GetMmiohSize returns the MmiohSize field if non-nil, zero value otherwise.
+
+### GetMmiohSizeOk
+
+`func (o *BiosPolicy) GetMmiohSizeOk() (*string, bool)`
+
+GetMmiohSizeOk returns a tuple with the MmiohSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMmiohSize
+
+`func (o *BiosPolicy) SetMmiohSize(v string)`
+
+SetMmiohSize sets MmiohSize field to given value.
+
+### HasMmiohSize
+
+`func (o *BiosPolicy) HasMmiohSize() bool`
+
+HasMmiohSize returns a boolean if a field has been set.
 
 ### GetNetworkStack
 

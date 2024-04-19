@@ -148,6 +148,32 @@ func Test_intersight_BulkApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test BulkApiService GetBulkMoClonerByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.BulkApi.GetBulkMoClonerByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test BulkApiService GetBulkMoClonerList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.BulkApi.GetBulkMoClonerList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test BulkApiService GetBulkMoDeepClonerByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -167,6 +193,32 @@ func Test_intersight_BulkApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.BulkApi.GetBulkMoDeepClonerList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test BulkApiService GetBulkMoMergerByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.BulkApi.GetBulkMoMergerByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test BulkApiService GetBulkMoMergerList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.BulkApi.GetBulkMoMergerList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

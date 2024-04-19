@@ -73,6 +73,32 @@ func Test_intersight_MarketplaceApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test MarketplaceApiService GetMarketplaceCatalogByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.MarketplaceApi.GetMarketplaceCatalogByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MarketplaceApiService GetMarketplaceCatalogList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.MarketplaceApi.GetMarketplaceCatalogList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MarketplaceApiService GetMarketplaceUseCaseByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
