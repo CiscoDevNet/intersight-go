@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "marketplace.UseCaseVersion"]
 **Locales** | Pointer to [**[]MarketplaceUseCaseVersionLocale**](MarketplaceUseCaseVersionLocale.md) |  | [optional] 
 **Resources** | Pointer to [**[]MarketplaceUseCaseVersionResources**](MarketplaceUseCaseVersionResources.md) |  | [optional] 
-**Version** | Pointer to **string** | A string version for each use case | [optional] 
-**Organization** | Pointer to [**NullableOrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
+**Version** | Pointer to **string** | A string version for each use case. | [optional] 
+**Catalog** | Pointer to [**NullableMarketplaceCatalogRelationship**](MarketplaceCatalogRelationship.md) |  | [optional] 
 **UseCase** | Pointer to [**NullableMarketplaceUseCaseRelationship**](MarketplaceUseCaseRelationship.md) |  | [optional] 
 
 ## Methods
@@ -166,41 +166,41 @@ SetVersion sets Version field to given value.
 
 HasVersion returns a boolean if a field has been set.
 
-### GetOrganization
+### GetCatalog
 
-`func (o *MarketplaceUseCaseVersion) GetOrganization() OrganizationOrganizationRelationship`
+`func (o *MarketplaceUseCaseVersion) GetCatalog() MarketplaceCatalogRelationship`
 
-GetOrganization returns the Organization field if non-nil, zero value otherwise.
+GetCatalog returns the Catalog field if non-nil, zero value otherwise.
 
-### GetOrganizationOk
+### GetCatalogOk
 
-`func (o *MarketplaceUseCaseVersion) GetOrganizationOk() (*OrganizationOrganizationRelationship, bool)`
+`func (o *MarketplaceUseCaseVersion) GetCatalogOk() (*MarketplaceCatalogRelationship, bool)`
 
-GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
+GetCatalogOk returns a tuple with the Catalog field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOrganization
+### SetCatalog
 
-`func (o *MarketplaceUseCaseVersion) SetOrganization(v OrganizationOrganizationRelationship)`
+`func (o *MarketplaceUseCaseVersion) SetCatalog(v MarketplaceCatalogRelationship)`
 
-SetOrganization sets Organization field to given value.
+SetCatalog sets Catalog field to given value.
 
-### HasOrganization
+### HasCatalog
 
-`func (o *MarketplaceUseCaseVersion) HasOrganization() bool`
+`func (o *MarketplaceUseCaseVersion) HasCatalog() bool`
 
-HasOrganization returns a boolean if a field has been set.
+HasCatalog returns a boolean if a field has been set.
 
-### SetOrganizationNil
+### SetCatalogNil
 
-`func (o *MarketplaceUseCaseVersion) SetOrganizationNil(b bool)`
+`func (o *MarketplaceUseCaseVersion) SetCatalogNil(b bool)`
 
- SetOrganizationNil sets the value for Organization to be an explicit nil
+ SetCatalogNil sets the value for Catalog to be an explicit nil
 
-### UnsetOrganization
-`func (o *MarketplaceUseCaseVersion) UnsetOrganization()`
+### UnsetCatalog
+`func (o *MarketplaceUseCaseVersion) UnsetCatalog()`
 
-UnsetOrganization ensures that no value is present for Organization, not even an explicit nil
+UnsetCatalog ensures that no value is present for Catalog, not even an explicit nil
 ### GetUseCase
 
 `func (o *MarketplaceUseCaseVersion) GetUseCase() MarketplaceUseCaseRelationship`

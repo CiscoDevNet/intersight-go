@@ -347,6 +347,18 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CapabilityApiService CreateCapabilitySwitchEquipmentInfo", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.CapabilityApi.CreateCapabilitySwitchEquipmentInfo(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CapabilityApiService CreateCapabilitySwitchManufacturingDef", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -704,6 +716,19 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 		var moid string
 
 		httpRes, err := apiClient.CapabilityApi.DeleteCapabilitySwitchDescriptor(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService DeleteCapabilitySwitchEquipmentInfo", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.CapabilityApi.DeleteCapabilitySwitchEquipmentInfo(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -1763,6 +1788,32 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CapabilityApiService GetCapabilitySwitchEquipmentInfoByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilitySwitchEquipmentInfoByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService GetCapabilitySwitchEquipmentInfoList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilitySwitchEquipmentInfoList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CapabilityApiService GetCapabilitySwitchManufacturingDefByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1782,6 +1833,32 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilitySwitchManufacturingDefList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService GetCapabilityTemplateCatalogByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilityTemplateCatalogByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService GetCapabilityTemplateCatalogList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.CapabilityApi.GetCapabilityTemplateCatalogList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2174,6 +2251,20 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.CapabilityApi.PatchCapabilitySwitchDescriptor(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService PatchCapabilitySwitchEquipmentInfo", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.CapabilityApi.PatchCapabilitySwitchEquipmentInfo(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2580,6 +2671,20 @@ func Test_intersight_CapabilityApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.CapabilityApi.UpdateCapabilitySwitchDescriptor(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CapabilityApiService UpdateCapabilitySwitchEquipmentInfo", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.CapabilityApi.UpdateCapabilitySwitchEquipmentInfo(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

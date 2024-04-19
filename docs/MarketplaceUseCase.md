@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "marketplace.UseCase"]
 **Dependencies** | Pointer to [**[]MarketplaceUseCaseDependency**](MarketplaceUseCaseDependency.md) |  | [optional] 
 **Locales** | Pointer to [**[]MarketplaceUseCaseLocale**](MarketplaceUseCaseLocale.md) |  | [optional] 
-**Organization** | Pointer to [**NullableOrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
+**UniqueName** | Pointer to **string** | A unique identifier is used to prevent duplicates. | [optional] 
+**Catalog** | Pointer to [**NullableMarketplaceCatalogRelationship**](MarketplaceCatalogRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -139,41 +140,66 @@ HasLocales returns a boolean if a field has been set.
 `func (o *MarketplaceUseCase) UnsetLocales()`
 
 UnsetLocales ensures that no value is present for Locales, not even an explicit nil
-### GetOrganization
+### GetUniqueName
 
-`func (o *MarketplaceUseCase) GetOrganization() OrganizationOrganizationRelationship`
+`func (o *MarketplaceUseCase) GetUniqueName() string`
 
-GetOrganization returns the Organization field if non-nil, zero value otherwise.
+GetUniqueName returns the UniqueName field if non-nil, zero value otherwise.
 
-### GetOrganizationOk
+### GetUniqueNameOk
 
-`func (o *MarketplaceUseCase) GetOrganizationOk() (*OrganizationOrganizationRelationship, bool)`
+`func (o *MarketplaceUseCase) GetUniqueNameOk() (*string, bool)`
 
-GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
+GetUniqueNameOk returns a tuple with the UniqueName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOrganization
+### SetUniqueName
 
-`func (o *MarketplaceUseCase) SetOrganization(v OrganizationOrganizationRelationship)`
+`func (o *MarketplaceUseCase) SetUniqueName(v string)`
 
-SetOrganization sets Organization field to given value.
+SetUniqueName sets UniqueName field to given value.
 
-### HasOrganization
+### HasUniqueName
 
-`func (o *MarketplaceUseCase) HasOrganization() bool`
+`func (o *MarketplaceUseCase) HasUniqueName() bool`
 
-HasOrganization returns a boolean if a field has been set.
+HasUniqueName returns a boolean if a field has been set.
 
-### SetOrganizationNil
+### GetCatalog
 
-`func (o *MarketplaceUseCase) SetOrganizationNil(b bool)`
+`func (o *MarketplaceUseCase) GetCatalog() MarketplaceCatalogRelationship`
 
- SetOrganizationNil sets the value for Organization to be an explicit nil
+GetCatalog returns the Catalog field if non-nil, zero value otherwise.
 
-### UnsetOrganization
-`func (o *MarketplaceUseCase) UnsetOrganization()`
+### GetCatalogOk
 
-UnsetOrganization ensures that no value is present for Organization, not even an explicit nil
+`func (o *MarketplaceUseCase) GetCatalogOk() (*MarketplaceCatalogRelationship, bool)`
+
+GetCatalogOk returns a tuple with the Catalog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCatalog
+
+`func (o *MarketplaceUseCase) SetCatalog(v MarketplaceCatalogRelationship)`
+
+SetCatalog sets Catalog field to given value.
+
+### HasCatalog
+
+`func (o *MarketplaceUseCase) HasCatalog() bool`
+
+HasCatalog returns a boolean if a field has been set.
+
+### SetCatalogNil
+
+`func (o *MarketplaceUseCase) SetCatalogNil(b bool)`
+
+ SetCatalogNil sets the value for Catalog to be an explicit nil
+
+### UnsetCatalog
+`func (o *MarketplaceUseCase) UnsetCatalog()`
+
+UnsetCatalog ensures that no value is present for Catalog, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

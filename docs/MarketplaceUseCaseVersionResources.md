@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "marketplace.UseCaseVersionResources"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "marketplace.UseCaseVersionResources"]
-**ResourceId** | Pointer to **string** | A string ID for each use case | [optional] 
-**ResourceType** | Pointer to **string** | A string resource type for each use case | [optional] 
+**ResourceId** | Pointer to **string** | A string ID for each use case. | [optional] 
+**ResourceType** | Pointer to **string** | A string resource type for each use case. | [optional] 
 
 ## Methods
 
