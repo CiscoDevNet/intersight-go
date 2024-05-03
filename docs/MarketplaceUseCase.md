@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Dependencies** | Pointer to [**[]MarketplaceUseCaseDependency**](MarketplaceUseCaseDependency.md) |  | [optional] 
 **Locales** | Pointer to [**[]MarketplaceUseCaseLocale**](MarketplaceUseCaseLocale.md) |  | [optional] 
 **UniqueName** | Pointer to **string** | A unique identifier is used to prevent duplicates. | [optional] 
-**Catalog** | Pointer to [**NullableMarketplaceCatalogRelationship**](MarketplaceCatalogRelationship.md) |  | [optional] 
+**Catalog** | Pointer to [**NullableWorkflowCatalogRelationship**](WorkflowCatalogRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -167,20 +167,20 @@ HasUniqueName returns a boolean if a field has been set.
 
 ### GetCatalog
 
-`func (o *MarketplaceUseCase) GetCatalog() MarketplaceCatalogRelationship`
+`func (o *MarketplaceUseCase) GetCatalog() WorkflowCatalogRelationship`
 
 GetCatalog returns the Catalog field if non-nil, zero value otherwise.
 
 ### GetCatalogOk
 
-`func (o *MarketplaceUseCase) GetCatalogOk() (*MarketplaceCatalogRelationship, bool)`
+`func (o *MarketplaceUseCase) GetCatalogOk() (*WorkflowCatalogRelationship, bool)`
 
 GetCatalogOk returns a tuple with the Catalog field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalog
 
-`func (o *MarketplaceUseCase) SetCatalog(v MarketplaceCatalogRelationship)`
+`func (o *MarketplaceUseCase) SetCatalog(v WorkflowCatalogRelationship)`
 
 SetCatalog sets Catalog field to given value.
 
