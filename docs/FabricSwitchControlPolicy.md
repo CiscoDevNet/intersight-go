@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **UdldSettings** | Pointer to [**NullableFabricUdldGlobalSettings**](FabricUdldGlobalSettings.md) |  | [optional] 
 **VlanPortOptimizationEnabled** | Pointer to **bool** | To enable or disable the VLAN port count optimization. This feature will always be enabled for Cisco UCS Fabric Interconnect 9108 100G. | [optional] [default to false]
 **Organization** | Pointer to [**NullableOrganizationOrganizationRelationship**](OrganizationOrganizationRelationship.md) |  | [optional] 
-**Profiles** | Pointer to [**[]FabricSwitchProfileRelationship**](FabricSwitchProfileRelationship.md) | An array of relationships to fabricSwitchProfile resources. | [optional] 
+**Profiles** | Pointer to [**[]FabricBaseSwitchProfileRelationship**](FabricBaseSwitchProfileRelationship.md) | An array of relationships to fabricBaseSwitchProfile resources. | [optional] 
 
 ## Methods
 
@@ -307,20 +307,20 @@ HasOrganization returns a boolean if a field has been set.
 UnsetOrganization ensures that no value is present for Organization, not even an explicit nil
 ### GetProfiles
 
-`func (o *FabricSwitchControlPolicy) GetProfiles() []FabricSwitchProfileRelationship`
+`func (o *FabricSwitchControlPolicy) GetProfiles() []FabricBaseSwitchProfileRelationship`
 
 GetProfiles returns the Profiles field if non-nil, zero value otherwise.
 
 ### GetProfilesOk
 
-`func (o *FabricSwitchControlPolicy) GetProfilesOk() (*[]FabricSwitchProfileRelationship, bool)`
+`func (o *FabricSwitchControlPolicy) GetProfilesOk() (*[]FabricBaseSwitchProfileRelationship, bool)`
 
 GetProfilesOk returns a tuple with the Profiles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProfiles
 
-`func (o *FabricSwitchControlPolicy) SetProfiles(v []FabricSwitchProfileRelationship)`
+`func (o *FabricSwitchControlPolicy) SetProfiles(v []FabricBaseSwitchProfileRelationship)`
 
 SetProfiles sets Profiles field to given value.
 

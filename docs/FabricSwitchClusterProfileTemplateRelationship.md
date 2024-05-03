@@ -1,4 +1,4 @@
-# MarketplaceCatalogRelationship
+# FabricSwitchClusterProfileTemplateRelationship
 
 ## Properties
 
@@ -12,135 +12,135 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewMarketplaceCatalogRelationship
+### NewFabricSwitchClusterProfileTemplateRelationship
 
-`func NewMarketplaceCatalogRelationship(classId string, objectType string, ) *MarketplaceCatalogRelationship`
+`func NewFabricSwitchClusterProfileTemplateRelationship(classId string, objectType string, ) *FabricSwitchClusterProfileTemplateRelationship`
 
-NewMarketplaceCatalogRelationship instantiates a new MarketplaceCatalogRelationship object
+NewFabricSwitchClusterProfileTemplateRelationship instantiates a new FabricSwitchClusterProfileTemplateRelationship object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMarketplaceCatalogRelationshipWithDefaults
+### NewFabricSwitchClusterProfileTemplateRelationshipWithDefaults
 
-`func NewMarketplaceCatalogRelationshipWithDefaults() *MarketplaceCatalogRelationship`
+`func NewFabricSwitchClusterProfileTemplateRelationshipWithDefaults() *FabricSwitchClusterProfileTemplateRelationship`
 
-NewMarketplaceCatalogRelationshipWithDefaults instantiates a new MarketplaceCatalogRelationship object
+NewFabricSwitchClusterProfileTemplateRelationshipWithDefaults instantiates a new FabricSwitchClusterProfileTemplateRelationship object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetClassId
 
-`func (o *MarketplaceCatalogRelationship) GetClassId() string`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetClassId() string`
 
 GetClassId returns the ClassId field if non-nil, zero value otherwise.
 
 ### GetClassIdOk
 
-`func (o *MarketplaceCatalogRelationship) GetClassIdOk() (*string, bool)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetClassIdOk() (*string, bool)`
 
 GetClassIdOk returns a tuple with the ClassId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClassId
 
-`func (o *MarketplaceCatalogRelationship) SetClassId(v string)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) SetClassId(v string)`
 
 SetClassId sets ClassId field to given value.
 
 
 ### GetObjectType
 
-`func (o *MarketplaceCatalogRelationship) GetObjectType() string`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetObjectType() string`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *MarketplaceCatalogRelationship) GetObjectTypeOk() (*string, bool)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetObjectTypeOk() (*string, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *MarketplaceCatalogRelationship) SetObjectType(v string)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) SetObjectType(v string)`
 
 SetObjectType sets ObjectType field to given value.
 
 
 ### GetMoid
 
-`func (o *MarketplaceCatalogRelationship) GetMoid() string`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetMoid() string`
 
 GetMoid returns the Moid field if non-nil, zero value otherwise.
 
 ### GetMoidOk
 
-`func (o *MarketplaceCatalogRelationship) GetMoidOk() (*string, bool)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetMoidOk() (*string, bool)`
 
 GetMoidOk returns a tuple with the Moid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMoid
 
-`func (o *MarketplaceCatalogRelationship) SetMoid(v string)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) SetMoid(v string)`
 
 SetMoid sets Moid field to given value.
 
 ### HasMoid
 
-`func (o *MarketplaceCatalogRelationship) HasMoid() bool`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) HasMoid() bool`
 
 HasMoid returns a boolean if a field has been set.
 
 ### GetSelector
 
-`func (o *MarketplaceCatalogRelationship) GetSelector() string`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetSelector() string`
 
 GetSelector returns the Selector field if non-nil, zero value otherwise.
 
 ### GetSelectorOk
 
-`func (o *MarketplaceCatalogRelationship) GetSelectorOk() (*string, bool)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetSelectorOk() (*string, bool)`
 
 GetSelectorOk returns a tuple with the Selector field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelector
 
-`func (o *MarketplaceCatalogRelationship) SetSelector(v string)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) SetSelector(v string)`
 
 SetSelector sets Selector field to given value.
 
 ### HasSelector
 
-`func (o *MarketplaceCatalogRelationship) HasSelector() bool`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) HasSelector() bool`
 
 HasSelector returns a boolean if a field has been set.
 
 ### GetLink
 
-`func (o *MarketplaceCatalogRelationship) GetLink() string`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetLink() string`
 
 GetLink returns the Link field if non-nil, zero value otherwise.
 
 ### GetLinkOk
 
-`func (o *MarketplaceCatalogRelationship) GetLinkOk() (*string, bool)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) GetLinkOk() (*string, bool)`
 
 GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLink
 
-`func (o *MarketplaceCatalogRelationship) SetLink(v string)`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) SetLink(v string)`
 
 SetLink sets Link field to given value.
 
 ### HasLink
 
-`func (o *MarketplaceCatalogRelationship) HasLink() bool`
+`func (o *FabricSwitchClusterProfileTemplateRelationship) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
 

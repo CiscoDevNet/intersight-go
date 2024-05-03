@@ -47,6 +47,18 @@ func Test_intersight_ChassisApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ChassisApiService CreateChassisProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ChassisApi.CreateChassisProfileTemplate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ChassisApiService DeleteChassisProfile", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -54,6 +66,19 @@ func Test_intersight_ChassisApiService(t *testing.T) {
 		var moid string
 
 		httpRes, err := apiClient.ChassisApi.DeleteChassisProfile(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ChassisApiService DeleteChassisProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.ChassisApi.DeleteChassisProfileTemplate(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -216,6 +241,32 @@ func Test_intersight_ChassisApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ChassisApiService GetChassisProfileTemplateByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ChassisApi.GetChassisProfileTemplateByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ChassisApiService GetChassisProfileTemplateList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ChassisApi.GetChassisProfileTemplateList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ChassisApiService PatchChassisProfile", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -230,6 +281,20 @@ func Test_intersight_ChassisApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ChassisApiService PatchChassisProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ChassisApi.PatchChassisProfileTemplate(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ChassisApiService UpdateChassisProfile", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -237,6 +302,20 @@ func Test_intersight_ChassisApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.ChassisApi.UpdateChassisProfile(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ChassisApiService UpdateChassisProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ChassisApi.UpdateChassisProfileTemplate(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

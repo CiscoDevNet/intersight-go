@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "marketplace.UseCaseVersion"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "marketplace.UseCaseVersion"]
 **Locales** | Pointer to [**[]MarketplaceUseCaseVersionLocale**](MarketplaceUseCaseVersionLocale.md) |  | [optional] 
-**Resources** | Pointer to [**[]MarketplaceUseCaseVersionResources**](MarketplaceUseCaseVersionResources.md) |  | [optional] 
+**Resources** | Pointer to [**[]MarketplaceUseCaseVersionResource**](MarketplaceUseCaseVersionResource.md) |  | [optional] 
 **Version** | Pointer to **string** | A string version for each use case. | [optional] 
-**Catalog** | Pointer to [**NullableMarketplaceCatalogRelationship**](MarketplaceCatalogRelationship.md) |  | [optional] 
+**Catalog** | Pointer to [**NullableWorkflowCatalogRelationship**](WorkflowCatalogRelationship.md) |  | [optional] 
 **UseCase** | Pointer to [**NullableMarketplaceUseCaseRelationship**](MarketplaceUseCaseRelationship.md) |  | [optional] 
 
 ## Methods
@@ -108,20 +108,20 @@ HasLocales returns a boolean if a field has been set.
 UnsetLocales ensures that no value is present for Locales, not even an explicit nil
 ### GetResources
 
-`func (o *MarketplaceUseCaseVersion) GetResources() []MarketplaceUseCaseVersionResources`
+`func (o *MarketplaceUseCaseVersion) GetResources() []MarketplaceUseCaseVersionResource`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *MarketplaceUseCaseVersion) GetResourcesOk() (*[]MarketplaceUseCaseVersionResources, bool)`
+`func (o *MarketplaceUseCaseVersion) GetResourcesOk() (*[]MarketplaceUseCaseVersionResource, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *MarketplaceUseCaseVersion) SetResources(v []MarketplaceUseCaseVersionResources)`
+`func (o *MarketplaceUseCaseVersion) SetResources(v []MarketplaceUseCaseVersionResource)`
 
 SetResources sets Resources field to given value.
 
@@ -168,20 +168,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetCatalog
 
-`func (o *MarketplaceUseCaseVersion) GetCatalog() MarketplaceCatalogRelationship`
+`func (o *MarketplaceUseCaseVersion) GetCatalog() WorkflowCatalogRelationship`
 
 GetCatalog returns the Catalog field if non-nil, zero value otherwise.
 
 ### GetCatalogOk
 
-`func (o *MarketplaceUseCaseVersion) GetCatalogOk() (*MarketplaceCatalogRelationship, bool)`
+`func (o *MarketplaceUseCaseVersion) GetCatalogOk() (*WorkflowCatalogRelationship, bool)`
 
 GetCatalogOk returns a tuple with the Catalog field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalog
 
-`func (o *MarketplaceUseCaseVersion) SetCatalog(v MarketplaceCatalogRelationship)`
+`func (o *MarketplaceUseCaseVersion) SetCatalog(v WorkflowCatalogRelationship)`
 
 SetCatalog sets Catalog field to given value.
 

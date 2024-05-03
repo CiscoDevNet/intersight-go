@@ -323,6 +323,18 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService CreateFabricSwitchClusterProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.CreateFabricSwitchClusterProfileTemplate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService CreateFabricSwitchControlPolicy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -340,6 +352,18 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.FabricApi.CreateFabricSwitchProfile(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService CreateFabricSwitchProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.CreateFabricSwitchProfileTemplate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -719,6 +743,19 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService DeleteFabricSwitchClusterProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.FabricApi.DeleteFabricSwitchClusterProfileTemplate(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService DeleteFabricSwitchControlPolicy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -739,6 +776,19 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		httpRes, err := apiClient.FabricApi.DeleteFabricSwitchProfile(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService DeleteFabricSwitchProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.FabricApi.DeleteFabricSwitchProfileTemplate(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -1616,6 +1666,32 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService GetFabricSwitchClusterProfileTemplateByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSwitchClusterProfileTemplateByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricSwitchClusterProfileTemplateList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSwitchClusterProfileTemplateList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService GetFabricSwitchControlPolicyByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1661,6 +1737,32 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.FabricApi.GetFabricSwitchProfileList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricSwitchProfileTemplateByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSwitchProfileTemplateByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricSwitchProfileTemplateList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSwitchProfileTemplateList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2226,6 +2328,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService PatchFabricSwitchClusterProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.PatchFabricSwitchClusterProfileTemplate(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService PatchFabricSwitchControlPolicy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2247,6 +2363,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.FabricApi.PatchFabricSwitchProfile(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService PatchFabricSwitchProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.PatchFabricSwitchProfileTemplate(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2674,6 +2804,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService UpdateFabricSwitchClusterProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.UpdateFabricSwitchClusterProfileTemplate(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService UpdateFabricSwitchControlPolicy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2695,6 +2839,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.FabricApi.UpdateFabricSwitchProfile(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService UpdateFabricSwitchProfileTemplate", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.UpdateFabricSwitchProfileTemplate(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
