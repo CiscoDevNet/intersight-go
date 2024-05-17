@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**NullableSchedulerTaskScheduleStatus**](SchedulerTaskScheduleStatus.md) |  | [optional] 
 **SuspendEndTime** | Pointer to **time.Time** | Suspend a task until an end date. this applies only to the action suspendTill. | [optional] 
 **TaskRequest** | Pointer to [**SchedulerRestStimTaskRequest**](SchedulerRestStimTaskRequest.md) |  | [optional] 
-**Type** | Pointer to **string** | An Enum describing the type of scheduler to use. * &#x60;None&#x60; - No value was set for the schedule type (Enum value None). * &#x60;OneTime&#x60; - Define a one-time task execution time that will not automatically repeat. * &#x60;Recurring&#x60; - Specify a recurring task cadence based on a predefined pattern, such as daily, weekly, monthly, yearly, or every &lt;interval&gt; pattern. | [optional] [default to "None"]
+**Type** | Pointer to **string** | An Enum describing the type of scheduler to use. * &#x60;None&#x60; - No value was set for the schedule type (Enum value None). * &#x60;OneTime&#x60; - Define a one-time task execution time that will not automatically repeat. * &#x60;Recurring&#x60; - Specify a recurring task cadence based on a predefined pattern, such as daily, weekly, monthly, yearly, or every &lt;interval&gt; pattern. This option is not currently supported. | [optional] [default to "None"]
 **AssociatedObject** | Pointer to [**NullableMoBaseMoRelationship**](MoBaseMoRelationship.md) |  | [optional] 
 **WorkflowDefinition** | Pointer to [**NullableWorkflowWorkflowDefinitionRelationship**](WorkflowWorkflowDefinitionRelationship.md) |  | [optional] 
 

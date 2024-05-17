@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Account** | Pointer to [**NullableIamAccountRelationship**](IamAccountRelationship.md) |  | [optional] 
 **ClaimedByUser** | Pointer to [**NullableIamUserRelationship**](IamUserRelationship.md) |  | [optional] 
 **ClusterMembers** | Pointer to [**[]AssetClusterMemberRelationship**](AssetClusterMemberRelationship.md) | An array of relationships to assetClusterMember resources. | [optional] [readonly] 
+**CustomPermissionResources** | Pointer to [**[]MoBaseMoRelationship**](MoBaseMoRelationship.md) | An array of relationships to moBaseMo resources. | [optional] [readonly] 
 **DeviceClaim** | Pointer to [**NullableAssetDeviceClaimRelationship**](AssetDeviceClaimRelationship.md) |  | [optional] 
 **DeviceConfiguration** | Pointer to [**NullableAssetDeviceConfigurationRelationship**](AssetDeviceConfigurationRelationship.md) |  | [optional] 
 **DomainGroup** | Pointer to [**NullableIamDomainGroupRelationship**](IamDomainGroupRelationship.md) |  | [optional] 
@@ -567,6 +568,41 @@ HasClusterMembers returns a boolean if a field has been set.
 `func (o *AssetDeviceRegistration) UnsetClusterMembers()`
 
 UnsetClusterMembers ensures that no value is present for ClusterMembers, not even an explicit nil
+### GetCustomPermissionResources
+
+`func (o *AssetDeviceRegistration) GetCustomPermissionResources() []MoBaseMoRelationship`
+
+GetCustomPermissionResources returns the CustomPermissionResources field if non-nil, zero value otherwise.
+
+### GetCustomPermissionResourcesOk
+
+`func (o *AssetDeviceRegistration) GetCustomPermissionResourcesOk() (*[]MoBaseMoRelationship, bool)`
+
+GetCustomPermissionResourcesOk returns a tuple with the CustomPermissionResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomPermissionResources
+
+`func (o *AssetDeviceRegistration) SetCustomPermissionResources(v []MoBaseMoRelationship)`
+
+SetCustomPermissionResources sets CustomPermissionResources field to given value.
+
+### HasCustomPermissionResources
+
+`func (o *AssetDeviceRegistration) HasCustomPermissionResources() bool`
+
+HasCustomPermissionResources returns a boolean if a field has been set.
+
+### SetCustomPermissionResourcesNil
+
+`func (o *AssetDeviceRegistration) SetCustomPermissionResourcesNil(b bool)`
+
+ SetCustomPermissionResourcesNil sets the value for CustomPermissionResources to be an explicit nil
+
+### UnsetCustomPermissionResources
+`func (o *AssetDeviceRegistration) UnsetCustomPermissionResources()`
+
+UnsetCustomPermissionResources ensures that no value is present for CustomPermissionResources, not even an explicit nil
 ### GetDeviceClaim
 
 `func (o *AssetDeviceRegistration) GetDeviceClaim() AssetDeviceClaimRelationship`
