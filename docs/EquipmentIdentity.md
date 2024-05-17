@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the equipment for unique identification. | [optional] [readonly] 
 **Serial** | Pointer to **string** | The serial number of the equipment. | [optional] [readonly] 
 **Vendor** | Pointer to **string** | The manufacturer of the equipment. | [optional] [readonly] 
+**CustomPermissionResources** | Pointer to [**[]MoBaseMoRelationship**](MoBaseMoRelationship.md) | An array of relationships to moBaseMo resources. | [optional] [readonly] 
 **RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
 
 ## Methods
@@ -301,6 +302,41 @@ SetVendor sets Vendor field to given value.
 
 HasVendor returns a boolean if a field has been set.
 
+### GetCustomPermissionResources
+
+`func (o *EquipmentIdentity) GetCustomPermissionResources() []MoBaseMoRelationship`
+
+GetCustomPermissionResources returns the CustomPermissionResources field if non-nil, zero value otherwise.
+
+### GetCustomPermissionResourcesOk
+
+`func (o *EquipmentIdentity) GetCustomPermissionResourcesOk() (*[]MoBaseMoRelationship, bool)`
+
+GetCustomPermissionResourcesOk returns a tuple with the CustomPermissionResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomPermissionResources
+
+`func (o *EquipmentIdentity) SetCustomPermissionResources(v []MoBaseMoRelationship)`
+
+SetCustomPermissionResources sets CustomPermissionResources field to given value.
+
+### HasCustomPermissionResources
+
+`func (o *EquipmentIdentity) HasCustomPermissionResources() bool`
+
+HasCustomPermissionResources returns a boolean if a field has been set.
+
+### SetCustomPermissionResourcesNil
+
+`func (o *EquipmentIdentity) SetCustomPermissionResourcesNil(b bool)`
+
+ SetCustomPermissionResourcesNil sets the value for CustomPermissionResources to be an explicit nil
+
+### UnsetCustomPermissionResources
+`func (o *EquipmentIdentity) UnsetCustomPermissionResources()`
+
+UnsetCustomPermissionResources ensures that no value is present for CustomPermissionResources, not even an explicit nil
 ### GetRegisteredDevice
 
 `func (o *EquipmentIdentity) GetRegisteredDevice() AssetDeviceRegistrationRelationship`

@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "adapter.HostEthInterface"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "adapter.HostEthInterface"]
+**ActiveOperState** | Pointer to **string** | The operational state of the Active vNIC. vNIC operational state information is updated by events from the adapter. This operational state is applicable to primary vNIC. If a host is powered off, this property might not be accurate as we may or may not receive events from the adapter. For Intersight Managed Domains Mode domains (IMM), the vNIC&#39;s peer object Vethernet will have the current operational state of the connection when a host is powered off. | [optional] [readonly] 
+**ActiveVethOperState** | Pointer to **string** | The operational state of the Active Vethernet peer of a vNIC in Intersight Managed Mode. This state is updated by events from Fabric Interconnect or by periodic updates from Fabric Interconnect. When a Fabric Interconnect is not connected to Intersight or if the Fabric Interconnect is powered down, this property will not be updated. This state is not applicable for standalone servers. * &#x60;unknown&#x60; - The operational state of the Vethernet is not known. * &#x60;adminDown&#x60; - The operational state of the Vethernet is admin down. * &#x60;up&#x60; - The operational state of the Vethernet is Up. * &#x60;down&#x60; - The operational state of the Vethernet is Down. * &#x60;noLicense&#x60; - The operational state of the Vethernet is no license. * &#x60;linkUp&#x60; - The operational state of the Vethernet is link up. * &#x60;hardwareFailure&#x60; - The operational state of the Vethernet is hardware failure. * &#x60;softwareFailure&#x60; - The operational state of the Vethernet is software failure. * &#x60;errorDisabled&#x60; - The operational state of the Vethernet is error disabled. * &#x60;linkDown&#x60; - The operational state of the Vethernet is link down. * &#x60;sfpNotPresent&#x60; - The operational state of the Vethernet is SFP not present. * &#x60;udldAggrDown&#x60; - The operational state of the Vethernet is UDLD aggregate down. | [optional] [readonly] [default to "unknown"]
 **AdminState** | Pointer to **string** | Admin state of the Host Ethernet Interface. | [optional] [readonly] 
 **EpDn** | Pointer to **string** | The Endpoint Config Dn of the Host Ethernet Interface. | [optional] [readonly] 
 **HostEthInterfaceId** | Pointer to **int64** | Unique Identifier for an Host Ethernet Interface within the adapter object. | [optional] [readonly] 
@@ -20,7 +22,8 @@ Name | Type | Description | Notes
 **PinGroupName** | Pointer to **string** | Name given for Lan PinGroup. | [optional] 
 **QinqEnabled** | Pointer to **bool** | Setting qinqEnabled to true if we have QinQ tagging enabled on the vNIC. | [optional] 
 **QinqVlan** | Pointer to **int64** | The VLAN ID for VIC QinQ (802.1Q) Tunneling. | [optional] [default to 2]
-**StandbyOperState** | Pointer to **string** | Standby Operational state of an Interface. | [optional] [readonly] 
+**StandbyOperState** | Pointer to **string** | The operational state of the standby vNIC. vNIC operational state information is updated by events from the adapter. This operational state is applicable only to failover vNIC. If a host is powered off, this property might not be accurate as we may or may not receive events from the adapter. For Intersight Managed Mode domains (IMM), the vNIC&#39;s peer object Vethernet will have the current operational state of the connection when a host is powered off. | [optional] [readonly] 
+**StandbyVethOperState** | Pointer to **string** | The operational state of the Standby Vethernet peer of a failover vNIC in Intersight Managed Mode. This state is updated by events from Fabric Interconnect or by periodic updates from Fabric Interconnect. When a Fabric Interconnect is not connected to Intersight or if the Fabric Interconnect is powered down, this property will not be updated. This state is not applicable for standalone servers. * &#x60;unknown&#x60; - The operational state of the Vethernet is not known. * &#x60;adminDown&#x60; - The operational state of the Vethernet is admin down. * &#x60;up&#x60; - The operational state of the Vethernet is Up. * &#x60;down&#x60; - The operational state of the Vethernet is Down. * &#x60;noLicense&#x60; - The operational state of the Vethernet is no license. * &#x60;linkUp&#x60; - The operational state of the Vethernet is link up. * &#x60;hardwareFailure&#x60; - The operational state of the Vethernet is hardware failure. * &#x60;softwareFailure&#x60; - The operational state of the Vethernet is software failure. * &#x60;errorDisabled&#x60; - The operational state of the Vethernet is error disabled. * &#x60;linkDown&#x60; - The operational state of the Vethernet is link down. * &#x60;sfpNotPresent&#x60; - The operational state of the Vethernet is SFP not present. * &#x60;udldAggrDown&#x60; - The operational state of the Vethernet is UDLD aggregate down. | [optional] [readonly] [default to "unknown"]
 **StandbyVifId** | Pointer to **int64** | Identifier of the Standby virtual ethernet interface (Vethernet) on the networking component (e.g., Fabric Interconnect) for the corresponding Host Ethernet Interface (vNIC). | [optional] [readonly] 
 **VethAction** | Pointer to **string** | The action to be performed on the vethernet corresponding to the vNIC. * &#x60;None&#x60; - Default value for vif operation. * &#x60;ResetConnectivity&#x60; - Resets connectivity on both active and passive vif. * &#x60;ResetConnectivityActive&#x60; - Resets connectivity on the active vif. * &#x60;ResetConnectivityPassive&#x60; - Resets connectivity on the passive vif. * &#x60;Enable&#x60; - Enables the vif on both the FIs. * &#x60;Disable&#x60; - Disables the vif on both the FIs. * &#x60;EnableActive&#x60; - Enables the corresponding active vif. * &#x60;EnablePassive&#x60; - Enables the corresponding standby vif. * &#x60;DisableActive&#x60; - Disables the corresponding active vif. * &#x60;DisablePassive&#x60; - Disables the corresponding standby vif. | [optional] [default to "None"]
 **VifId** | Pointer to **int64** | Identifier of the virtual ethernet interface (Vethernet) on the networking component (e.g., Fabric Interconnect) for the corresponding Host Ethernet Interface (vNIC). | [optional] [readonly] 
@@ -91,6 +94,56 @@ and a boolean to check if the value has been set.
 
 SetObjectType sets ObjectType field to given value.
 
+
+### GetActiveOperState
+
+`func (o *AdapterHostEthInterface) GetActiveOperState() string`
+
+GetActiveOperState returns the ActiveOperState field if non-nil, zero value otherwise.
+
+### GetActiveOperStateOk
+
+`func (o *AdapterHostEthInterface) GetActiveOperStateOk() (*string, bool)`
+
+GetActiveOperStateOk returns a tuple with the ActiveOperState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActiveOperState
+
+`func (o *AdapterHostEthInterface) SetActiveOperState(v string)`
+
+SetActiveOperState sets ActiveOperState field to given value.
+
+### HasActiveOperState
+
+`func (o *AdapterHostEthInterface) HasActiveOperState() bool`
+
+HasActiveOperState returns a boolean if a field has been set.
+
+### GetActiveVethOperState
+
+`func (o *AdapterHostEthInterface) GetActiveVethOperState() string`
+
+GetActiveVethOperState returns the ActiveVethOperState field if non-nil, zero value otherwise.
+
+### GetActiveVethOperStateOk
+
+`func (o *AdapterHostEthInterface) GetActiveVethOperStateOk() (*string, bool)`
+
+GetActiveVethOperStateOk returns a tuple with the ActiveVethOperState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActiveVethOperState
+
+`func (o *AdapterHostEthInterface) SetActiveVethOperState(v string)`
+
+SetActiveVethOperState sets ActiveVethOperState field to given value.
+
+### HasActiveVethOperState
+
+`func (o *AdapterHostEthInterface) HasActiveVethOperState() bool`
+
+HasActiveVethOperState returns a boolean if a field has been set.
 
 ### GetAdminState
 
@@ -476,6 +529,31 @@ SetStandbyOperState sets StandbyOperState field to given value.
 `func (o *AdapterHostEthInterface) HasStandbyOperState() bool`
 
 HasStandbyOperState returns a boolean if a field has been set.
+
+### GetStandbyVethOperState
+
+`func (o *AdapterHostEthInterface) GetStandbyVethOperState() string`
+
+GetStandbyVethOperState returns the StandbyVethOperState field if non-nil, zero value otherwise.
+
+### GetStandbyVethOperStateOk
+
+`func (o *AdapterHostEthInterface) GetStandbyVethOperStateOk() (*string, bool)`
+
+GetStandbyVethOperStateOk returns a tuple with the StandbyVethOperState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandbyVethOperState
+
+`func (o *AdapterHostEthInterface) SetStandbyVethOperState(v string)`
+
+SetStandbyVethOperState sets StandbyVethOperState field to given value.
+
+### HasStandbyVethOperState
+
+`func (o *AdapterHostEthInterface) HasStandbyVethOperState() bool`
+
+HasStandbyVethOperState returns a boolean if a field has been set.
 
 ### GetStandbyVifId
 

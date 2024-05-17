@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **SourceObjectType** | Pointer to **string** | The source object type of the given component. | [optional] [readonly] 
 **ComputeBlade** | Pointer to [**NullableComputeBladeRelationship**](ComputeBladeRelationship.md) |  | [optional] 
 **ComputeRackUnit** | Pointer to [**NullableComputeRackUnitRelationship**](ComputeRackUnitRelationship.md) |  | [optional] 
+**CustomPermissionResources** | Pointer to [**[]MoBaseMoRelationship**](MoBaseMoRelationship.md) | An array of relationships to moBaseMo resources. | [optional] [readonly] 
 **EquipmentChassis** | Pointer to [**NullableEquipmentChassisRelationship**](EquipmentChassisRelationship.md) |  | [optional] 
 **EquipmentFex** | Pointer to [**NullableEquipmentFexRelationship**](EquipmentFexRelationship.md) |  | [optional] 
 **InventoryDeviceInfo** | Pointer to [**NullableInventoryDeviceInfoRelationship**](InventoryDeviceInfoRelationship.md) |  | [optional] 
@@ -247,6 +248,41 @@ HasComputeRackUnit returns a boolean if a field has been set.
 `func (o *EquipmentDeviceSummary) UnsetComputeRackUnit()`
 
 UnsetComputeRackUnit ensures that no value is present for ComputeRackUnit, not even an explicit nil
+### GetCustomPermissionResources
+
+`func (o *EquipmentDeviceSummary) GetCustomPermissionResources() []MoBaseMoRelationship`
+
+GetCustomPermissionResources returns the CustomPermissionResources field if non-nil, zero value otherwise.
+
+### GetCustomPermissionResourcesOk
+
+`func (o *EquipmentDeviceSummary) GetCustomPermissionResourcesOk() (*[]MoBaseMoRelationship, bool)`
+
+GetCustomPermissionResourcesOk returns a tuple with the CustomPermissionResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomPermissionResources
+
+`func (o *EquipmentDeviceSummary) SetCustomPermissionResources(v []MoBaseMoRelationship)`
+
+SetCustomPermissionResources sets CustomPermissionResources field to given value.
+
+### HasCustomPermissionResources
+
+`func (o *EquipmentDeviceSummary) HasCustomPermissionResources() bool`
+
+HasCustomPermissionResources returns a boolean if a field has been set.
+
+### SetCustomPermissionResourcesNil
+
+`func (o *EquipmentDeviceSummary) SetCustomPermissionResourcesNil(b bool)`
+
+ SetCustomPermissionResourcesNil sets the value for CustomPermissionResources to be an explicit nil
+
+### UnsetCustomPermissionResources
+`func (o *EquipmentDeviceSummary) UnsetCustomPermissionResources()`
+
+UnsetCustomPermissionResources ensures that no value is present for CustomPermissionResources, not even an explicit nil
 ### GetEquipmentChassis
 
 `func (o *EquipmentDeviceSummary) GetEquipmentChassis() EquipmentChassisRelationship`

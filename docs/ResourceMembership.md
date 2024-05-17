@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **TargetApp** | Pointer to **string** | Name of the Service owning the resource. | [optional] [readonly] 
 **Holder** | Pointer to [**NullableResourceMembershipHolderRelationship**](ResourceMembershipHolderRelationship.md) |  | [optional] 
 **Resource** | Pointer to [**NullableMoBaseMoRelationship**](MoBaseMoRelationship.md) |  | [optional] 
+**ResourceAncestors** | Pointer to [**[]MoBaseMoRelationship**](MoBaseMoRelationship.md) | An array of relationships to moBaseMo resources. | [optional] 
 
 ## Methods
 
@@ -226,6 +227,41 @@ HasResource returns a boolean if a field has been set.
 `func (o *ResourceMembership) UnsetResource()`
 
 UnsetResource ensures that no value is present for Resource, not even an explicit nil
+### GetResourceAncestors
+
+`func (o *ResourceMembership) GetResourceAncestors() []MoBaseMoRelationship`
+
+GetResourceAncestors returns the ResourceAncestors field if non-nil, zero value otherwise.
+
+### GetResourceAncestorsOk
+
+`func (o *ResourceMembership) GetResourceAncestorsOk() (*[]MoBaseMoRelationship, bool)`
+
+GetResourceAncestorsOk returns a tuple with the ResourceAncestors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceAncestors
+
+`func (o *ResourceMembership) SetResourceAncestors(v []MoBaseMoRelationship)`
+
+SetResourceAncestors sets ResourceAncestors field to given value.
+
+### HasResourceAncestors
+
+`func (o *ResourceMembership) HasResourceAncestors() bool`
+
+HasResourceAncestors returns a boolean if a field has been set.
+
+### SetResourceAncestorsNil
+
+`func (o *ResourceMembership) SetResourceAncestorsNil(b bool)`
+
+ SetResourceAncestorsNil sets the value for ResourceAncestors to be an explicit nil
+
+### UnsetResourceAncestors
+`func (o *ResourceMembership) UnsetResourceAncestors()`
+
+UnsetResourceAncestors ensures that no value is present for ResourceAncestors, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
