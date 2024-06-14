@@ -1234,6 +1234,32 @@ func Test_intersight_ApplianceApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ApplianceApiService GetApplianceUpgradeTrackerByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.ApplianceApi.GetApplianceUpgradeTrackerByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ApplianceApiService GetApplianceUpgradeTrackerList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ApplianceApi.GetApplianceUpgradeTrackerList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ApplianceApiService PatchApplianceAutoRmaPolicy", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
