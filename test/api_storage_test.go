@@ -878,6 +878,84 @@ func Test_intersight_StorageApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairGadByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairGadByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairGadList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairGadList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairTcByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairTcByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairTcList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairTcList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairUrByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairUrByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StorageApiService GetStorageHitachiRemoteCopyPairUrList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.StorageApi.GetStorageHitachiRemoteCopyPairUrList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StorageApiService GetStorageHitachiRemoteReplicationByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
