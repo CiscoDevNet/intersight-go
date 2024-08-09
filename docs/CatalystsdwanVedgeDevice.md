@@ -7,20 +7,17 @@ Name | Type | Description | Notes
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "catalystsdwan.VedgeDevice"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "catalystsdwan.VedgeDevice"]
 **ConfigStatusMessage** | Pointer to **string** | The Catalyst SDWAN device config status message. | [optional] 
-**DeviceId** | Pointer to **string** | UUID for the Catalyst SDWAN Vedge Device. | [optional] 
-**DeviceModel** | Pointer to **string** | The Catalyst SDWAN device model. | [optional] 
 **DeviceState** | Pointer to **string** | The Catalyst SDWAN device state. | [optional] 
-**DeviceType** | Pointer to **string** | The Catalyst SDWAN device type. | [optional] 
 **HostName** | Pointer to **string** | The Catalyst SDWAN device host name. | [optional] 
 **PlatformFamily** | Pointer to **string** | The Catalyst SDWAN device platform family. | [optional] 
 **Reachability** | Pointer to **string** | The Catalyst SDWAN device reachability. | [optional] 
-**SerialNumber** | Pointer to **string** | The Catalyst SDWAN device serial number. | [optional] 
 **SiteId** | Pointer to **string** | The Catalyst SDWAN device site id. | [optional] 
 **SiteName** | Pointer to **string** | The Catalyst SDWAN device site name. | [optional] 
 **SpOrganizationName** | Pointer to **string** | The Catalyst SDWAN device sp organization name. | [optional] 
 **SystemIp** | Pointer to **string** | The Catalyst SDWAN device system IP. | [optional] 
+**TemplateStatus** | Pointer to **string** | The Catalyst SDWAN device template status. | [optional] 
 **Validity** | Pointer to **string** | The Catalyst SDWAN device validity. | [optional] 
-**Version** | Pointer to **string** | The Catalyst SDWAN device version. | [optional] 
+**RegisteredDevice** | Pointer to [**NullableAssetDeviceRegistrationRelationship**](AssetDeviceRegistrationRelationship.md) |  | [optional] 
 
 ## Methods
 
@@ -106,56 +103,6 @@ SetConfigStatusMessage sets ConfigStatusMessage field to given value.
 
 HasConfigStatusMessage returns a boolean if a field has been set.
 
-### GetDeviceId
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceId() string`
-
-GetDeviceId returns the DeviceId field if non-nil, zero value otherwise.
-
-### GetDeviceIdOk
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceIdOk() (*string, bool)`
-
-GetDeviceIdOk returns a tuple with the DeviceId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceId
-
-`func (o *CatalystsdwanVedgeDevice) SetDeviceId(v string)`
-
-SetDeviceId sets DeviceId field to given value.
-
-### HasDeviceId
-
-`func (o *CatalystsdwanVedgeDevice) HasDeviceId() bool`
-
-HasDeviceId returns a boolean if a field has been set.
-
-### GetDeviceModel
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceModel() string`
-
-GetDeviceModel returns the DeviceModel field if non-nil, zero value otherwise.
-
-### GetDeviceModelOk
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceModelOk() (*string, bool)`
-
-GetDeviceModelOk returns a tuple with the DeviceModel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceModel
-
-`func (o *CatalystsdwanVedgeDevice) SetDeviceModel(v string)`
-
-SetDeviceModel sets DeviceModel field to given value.
-
-### HasDeviceModel
-
-`func (o *CatalystsdwanVedgeDevice) HasDeviceModel() bool`
-
-HasDeviceModel returns a boolean if a field has been set.
-
 ### GetDeviceState
 
 `func (o *CatalystsdwanVedgeDevice) GetDeviceState() string`
@@ -180,31 +127,6 @@ SetDeviceState sets DeviceState field to given value.
 `func (o *CatalystsdwanVedgeDevice) HasDeviceState() bool`
 
 HasDeviceState returns a boolean if a field has been set.
-
-### GetDeviceType
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceType() string`
-
-GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
-
-### GetDeviceTypeOk
-
-`func (o *CatalystsdwanVedgeDevice) GetDeviceTypeOk() (*string, bool)`
-
-GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceType
-
-`func (o *CatalystsdwanVedgeDevice) SetDeviceType(v string)`
-
-SetDeviceType sets DeviceType field to given value.
-
-### HasDeviceType
-
-`func (o *CatalystsdwanVedgeDevice) HasDeviceType() bool`
-
-HasDeviceType returns a boolean if a field has been set.
 
 ### GetHostName
 
@@ -280,31 +202,6 @@ SetReachability sets Reachability field to given value.
 `func (o *CatalystsdwanVedgeDevice) HasReachability() bool`
 
 HasReachability returns a boolean if a field has been set.
-
-### GetSerialNumber
-
-`func (o *CatalystsdwanVedgeDevice) GetSerialNumber() string`
-
-GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
-
-### GetSerialNumberOk
-
-`func (o *CatalystsdwanVedgeDevice) GetSerialNumberOk() (*string, bool)`
-
-GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSerialNumber
-
-`func (o *CatalystsdwanVedgeDevice) SetSerialNumber(v string)`
-
-SetSerialNumber sets SerialNumber field to given value.
-
-### HasSerialNumber
-
-`func (o *CatalystsdwanVedgeDevice) HasSerialNumber() bool`
-
-HasSerialNumber returns a boolean if a field has been set.
 
 ### GetSiteId
 
@@ -406,6 +303,31 @@ SetSystemIp sets SystemIp field to given value.
 
 HasSystemIp returns a boolean if a field has been set.
 
+### GetTemplateStatus
+
+`func (o *CatalystsdwanVedgeDevice) GetTemplateStatus() string`
+
+GetTemplateStatus returns the TemplateStatus field if non-nil, zero value otherwise.
+
+### GetTemplateStatusOk
+
+`func (o *CatalystsdwanVedgeDevice) GetTemplateStatusOk() (*string, bool)`
+
+GetTemplateStatusOk returns a tuple with the TemplateStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplateStatus
+
+`func (o *CatalystsdwanVedgeDevice) SetTemplateStatus(v string)`
+
+SetTemplateStatus sets TemplateStatus field to given value.
+
+### HasTemplateStatus
+
+`func (o *CatalystsdwanVedgeDevice) HasTemplateStatus() bool`
+
+HasTemplateStatus returns a boolean if a field has been set.
+
 ### GetValidity
 
 `func (o *CatalystsdwanVedgeDevice) GetValidity() string`
@@ -431,31 +353,41 @@ SetValidity sets Validity field to given value.
 
 HasValidity returns a boolean if a field has been set.
 
-### GetVersion
+### GetRegisteredDevice
 
-`func (o *CatalystsdwanVedgeDevice) GetVersion() string`
+`func (o *CatalystsdwanVedgeDevice) GetRegisteredDevice() AssetDeviceRegistrationRelationship`
 
-GetVersion returns the Version field if non-nil, zero value otherwise.
+GetRegisteredDevice returns the RegisteredDevice field if non-nil, zero value otherwise.
 
-### GetVersionOk
+### GetRegisteredDeviceOk
 
-`func (o *CatalystsdwanVedgeDevice) GetVersionOk() (*string, bool)`
+`func (o *CatalystsdwanVedgeDevice) GetRegisteredDeviceOk() (*AssetDeviceRegistrationRelationship, bool)`
 
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+GetRegisteredDeviceOk returns a tuple with the RegisteredDevice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVersion
+### SetRegisteredDevice
 
-`func (o *CatalystsdwanVedgeDevice) SetVersion(v string)`
+`func (o *CatalystsdwanVedgeDevice) SetRegisteredDevice(v AssetDeviceRegistrationRelationship)`
 
-SetVersion sets Version field to given value.
+SetRegisteredDevice sets RegisteredDevice field to given value.
 
-### HasVersion
+### HasRegisteredDevice
 
-`func (o *CatalystsdwanVedgeDevice) HasVersion() bool`
+`func (o *CatalystsdwanVedgeDevice) HasRegisteredDevice() bool`
 
-HasVersion returns a boolean if a field has been set.
+HasRegisteredDevice returns a boolean if a field has been set.
 
+### SetRegisteredDeviceNil
+
+`func (o *CatalystsdwanVedgeDevice) SetRegisteredDeviceNil(b bool)`
+
+ SetRegisteredDeviceNil sets the value for RegisteredDevice to be an explicit nil
+
+### UnsetRegisteredDevice
+`func (o *CatalystsdwanVedgeDevice) UnsetRegisteredDevice()`
+
+UnsetRegisteredDevice ensures that no value is present for RegisteredDevice, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
