@@ -1,110 +1,110 @@
-# NiaapiNdMetadataFileDownloaderResponse
+# ApplianceMetricsIngestionUtilizationResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** | A discriminator value to disambiguate the schema of a HTTP GET response body. | 
-**Count** | Pointer to **int32** | The total number of &#39;niaapi.NdMetadataFileDownloader&#39; resources matching the request, accross all pages. The &#39;Count&#39; attribute is included when the HTTP GET request includes the &#39;$inlinecount&#39; parameter. | [optional] 
+**Count** | Pointer to **int32** | The total number of &#39;appliance.MetricsIngestionUtilization&#39; resources matching the request, accross all pages. The &#39;Count&#39; attribute is included when the HTTP GET request includes the &#39;$inlinecount&#39; parameter. | [optional] 
 **Results** | Pointer to [**[]MoTagKeySummary**](MoTagKeySummary.md) |  | [optional] 
 
 ## Methods
 
-### NewNiaapiNdMetadataFileDownloaderResponse
+### NewApplianceMetricsIngestionUtilizationResponse
 
-`func NewNiaapiNdMetadataFileDownloaderResponse(objectType string, ) *NiaapiNdMetadataFileDownloaderResponse`
+`func NewApplianceMetricsIngestionUtilizationResponse(objectType string, ) *ApplianceMetricsIngestionUtilizationResponse`
 
-NewNiaapiNdMetadataFileDownloaderResponse instantiates a new NiaapiNdMetadataFileDownloaderResponse object
+NewApplianceMetricsIngestionUtilizationResponse instantiates a new ApplianceMetricsIngestionUtilizationResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNiaapiNdMetadataFileDownloaderResponseWithDefaults
+### NewApplianceMetricsIngestionUtilizationResponseWithDefaults
 
-`func NewNiaapiNdMetadataFileDownloaderResponseWithDefaults() *NiaapiNdMetadataFileDownloaderResponse`
+`func NewApplianceMetricsIngestionUtilizationResponseWithDefaults() *ApplianceMetricsIngestionUtilizationResponse`
 
-NewNiaapiNdMetadataFileDownloaderResponseWithDefaults instantiates a new NiaapiNdMetadataFileDownloaderResponse object
+NewApplianceMetricsIngestionUtilizationResponseWithDefaults instantiates a new ApplianceMetricsIngestionUtilizationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetObjectType
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetObjectType() string`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetObjectType() string`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetObjectTypeOk() (*string, bool)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetObjectTypeOk() (*string, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) SetObjectType(v string)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) SetObjectType(v string)`
 
 SetObjectType sets ObjectType field to given value.
 
 
 ### GetCount
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetCount() int32`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetCount() int32`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetCountOk() (*int32, bool)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetCountOk() (*int32, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) SetCount(v int32)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) SetCount(v int32)`
 
 SetCount sets Count field to given value.
 
 ### HasCount
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) HasCount() bool`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
 
 ### GetResults
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetResults() []MoTagKeySummary`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetResults() []MoTagKeySummary`
 
 GetResults returns the Results field if non-nil, zero value otherwise.
 
 ### GetResultsOk
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) GetResultsOk() (*[]MoTagKeySummary, bool)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) GetResultsOk() (*[]MoTagKeySummary, bool)`
 
 GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResults
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) SetResults(v []MoTagKeySummary)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) SetResults(v []MoTagKeySummary)`
 
 SetResults sets Results field to given value.
 
 ### HasResults
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) HasResults() bool`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) HasResults() bool`
 
 HasResults returns a boolean if a field has been set.
 
 ### SetResultsNil
 
-`func (o *NiaapiNdMetadataFileDownloaderResponse) SetResultsNil(b bool)`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) SetResultsNil(b bool)`
 
  SetResultsNil sets the value for Results to be an explicit nil
 
 ### UnsetResults
-`func (o *NiaapiNdMetadataFileDownloaderResponse) UnsetResults()`
+`func (o *ApplianceMetricsIngestionUtilizationResponse) UnsetResults()`
 
 UnsetResults ensures that no value is present for Results, not even an explicit nil
 

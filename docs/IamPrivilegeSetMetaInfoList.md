@@ -1,89 +1,89 @@
-# NiaapiNdMetadataList
+# IamPrivilegeSetMetaInfoList
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Count** | Pointer to **int32** | The total number of &#39;niaapi.NdMetadata&#39; resources matching the request, accross all pages. The &#39;Count&#39; attribute is included when the HTTP GET request includes the &#39;$inlinecount&#39; parameter. | [optional] 
-**Results** | Pointer to [**[]NiaapiNdMetadata**](NiaapiNdMetadata.md) | The array of &#39;niaapi.NdMetadata&#39; resources matching the request. | [optional] 
+**Count** | Pointer to **int32** | The total number of &#39;iam.PrivilegeSetMetaInfo&#39; resources matching the request, accross all pages. The &#39;Count&#39; attribute is included when the HTTP GET request includes the &#39;$inlinecount&#39; parameter. | [optional] 
+**Results** | Pointer to [**[]IamPrivilegeSetMetaInfo**](IamPrivilegeSetMetaInfo.md) | The array of &#39;iam.PrivilegeSetMetaInfo&#39; resources matching the request. | [optional] 
 
 ## Methods
 
-### NewNiaapiNdMetadataList
+### NewIamPrivilegeSetMetaInfoList
 
-`func NewNiaapiNdMetadataList() *NiaapiNdMetadataList`
+`func NewIamPrivilegeSetMetaInfoList() *IamPrivilegeSetMetaInfoList`
 
-NewNiaapiNdMetadataList instantiates a new NiaapiNdMetadataList object
+NewIamPrivilegeSetMetaInfoList instantiates a new IamPrivilegeSetMetaInfoList object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewNiaapiNdMetadataListWithDefaults
+### NewIamPrivilegeSetMetaInfoListWithDefaults
 
-`func NewNiaapiNdMetadataListWithDefaults() *NiaapiNdMetadataList`
+`func NewIamPrivilegeSetMetaInfoListWithDefaults() *IamPrivilegeSetMetaInfoList`
 
-NewNiaapiNdMetadataListWithDefaults instantiates a new NiaapiNdMetadataList object
+NewIamPrivilegeSetMetaInfoListWithDefaults instantiates a new IamPrivilegeSetMetaInfoList object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCount
 
-`func (o *NiaapiNdMetadataList) GetCount() int32`
+`func (o *IamPrivilegeSetMetaInfoList) GetCount() int32`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *NiaapiNdMetadataList) GetCountOk() (*int32, bool)`
+`func (o *IamPrivilegeSetMetaInfoList) GetCountOk() (*int32, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *NiaapiNdMetadataList) SetCount(v int32)`
+`func (o *IamPrivilegeSetMetaInfoList) SetCount(v int32)`
 
 SetCount sets Count field to given value.
 
 ### HasCount
 
-`func (o *NiaapiNdMetadataList) HasCount() bool`
+`func (o *IamPrivilegeSetMetaInfoList) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
 
 ### GetResults
 
-`func (o *NiaapiNdMetadataList) GetResults() []NiaapiNdMetadata`
+`func (o *IamPrivilegeSetMetaInfoList) GetResults() []IamPrivilegeSetMetaInfo`
 
 GetResults returns the Results field if non-nil, zero value otherwise.
 
 ### GetResultsOk
 
-`func (o *NiaapiNdMetadataList) GetResultsOk() (*[]NiaapiNdMetadata, bool)`
+`func (o *IamPrivilegeSetMetaInfoList) GetResultsOk() (*[]IamPrivilegeSetMetaInfo, bool)`
 
 GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResults
 
-`func (o *NiaapiNdMetadataList) SetResults(v []NiaapiNdMetadata)`
+`func (o *IamPrivilegeSetMetaInfoList) SetResults(v []IamPrivilegeSetMetaInfo)`
 
 SetResults sets Results field to given value.
 
 ### HasResults
 
-`func (o *NiaapiNdMetadataList) HasResults() bool`
+`func (o *IamPrivilegeSetMetaInfoList) HasResults() bool`
 
 HasResults returns a boolean if a field has been set.
 
 ### SetResultsNil
 
-`func (o *NiaapiNdMetadataList) SetResultsNil(b bool)`
+`func (o *IamPrivilegeSetMetaInfoList) SetResultsNil(b bool)`
 
  SetResultsNil sets the value for Results to be an explicit nil
 
 ### UnsetResults
-`func (o *NiaapiNdMetadataList) UnsetResults()`
+`func (o *IamPrivilegeSetMetaInfoList) UnsetResults()`
 
 UnsetResults ensures that no value is present for Results, not even an explicit nil
 
