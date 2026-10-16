@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **DeviceId** | Pointer to **string** | Device ID of the WAN Edge Device. | [optional] [readonly] 
 **DeviceState** | Pointer to **string** | Device state of the WAN Edge Device. | [optional] [readonly] 
 **HostName** | Pointer to **string** | Host name of the WAN Edge Device. | [optional] [readonly] 
+**LastCollectedTime** | Pointer to **string** | The last time the inventory was collected for the WAN Edge Device. | [optional] [readonly] 
+**LocalSystemIp** | Pointer to **string** | System IP of the WAN Edge Device configured on the device. | [optional] [readonly] 
 **ManagementPortHwAddr** | Pointer to **string** | MAC address of the WAN Edge Device management port. | [optional] [readonly] 
 **ManagementPortIp** | Pointer to **string** | IP address of the WAN Edge Device management port. | [optional] [readonly] 
 **ManagementPortSubnet** | Pointer to **string** | Subnet of the WAN Edge Device management port. | [optional] [readonly] 
@@ -26,7 +28,7 @@ Name | Type | Description | Notes
 **SiteId** | Pointer to **int64** | Site ID of the WAN Edge Device. | [optional] [readonly] 
 **SiteName** | Pointer to **string** | Site name of the WAN Edge Device. | [optional] [readonly] 
 **SpOrganizationName** | Pointer to **string** | The WAN Edge Device sp organization name. | [optional] [readonly] 
-**SystemIp** | Pointer to **string** | System IP of the WAN Edge Device. | [optional] [readonly] 
+**SystemIp** | Pointer to **string** | Internal system IP of the WAN Edge Device assigned by Catalyst SD-WAN Manager for internal communication. | [optional] [readonly] 
 **Tlocs** | Pointer to **string** | Total number of TLOCs from the WAN Edge Device to Cisco Catalyst SD-WAN Manager. | [optional] [readonly] 
 **TlocsUp** | Pointer to **string** | Number of TLOCs in up state from the WAN Edge Device to Cisco Catalyst SD-WAN Manager. | [optional] [readonly] 
 **Uptime** | Pointer to **string** | Uptime of the WAN Edge Device. | [optional] [readonly] 
@@ -341,6 +343,56 @@ SetHostName sets HostName field to given value.
 `func (o *CatalystsdwanWanEdgeDevice) HasHostName() bool`
 
 HasHostName returns a boolean if a field has been set.
+
+### GetLastCollectedTime
+
+`func (o *CatalystsdwanWanEdgeDevice) GetLastCollectedTime() string`
+
+GetLastCollectedTime returns the LastCollectedTime field if non-nil, zero value otherwise.
+
+### GetLastCollectedTimeOk
+
+`func (o *CatalystsdwanWanEdgeDevice) GetLastCollectedTimeOk() (*string, bool)`
+
+GetLastCollectedTimeOk returns a tuple with the LastCollectedTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastCollectedTime
+
+`func (o *CatalystsdwanWanEdgeDevice) SetLastCollectedTime(v string)`
+
+SetLastCollectedTime sets LastCollectedTime field to given value.
+
+### HasLastCollectedTime
+
+`func (o *CatalystsdwanWanEdgeDevice) HasLastCollectedTime() bool`
+
+HasLastCollectedTime returns a boolean if a field has been set.
+
+### GetLocalSystemIp
+
+`func (o *CatalystsdwanWanEdgeDevice) GetLocalSystemIp() string`
+
+GetLocalSystemIp returns the LocalSystemIp field if non-nil, zero value otherwise.
+
+### GetLocalSystemIpOk
+
+`func (o *CatalystsdwanWanEdgeDevice) GetLocalSystemIpOk() (*string, bool)`
+
+GetLocalSystemIpOk returns a tuple with the LocalSystemIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalSystemIp
+
+`func (o *CatalystsdwanWanEdgeDevice) SetLocalSystemIp(v string)`
+
+SetLocalSystemIp sets LocalSystemIp field to given value.
+
+### HasLocalSystemIp
+
+`func (o *CatalystsdwanWanEdgeDevice) HasLocalSystemIp() bool`
+
+HasLocalSystemIp returns a boolean if a field has been set.
 
 ### GetManagementPortHwAddr
 

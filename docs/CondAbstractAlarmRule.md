@@ -1,4 +1,4 @@
-# ServerProfilePendingChangeEval
+# CondAbstractAlarmRule
 
 ## Properties
 
@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewServerProfilePendingChangeEval
+### NewCondAbstractAlarmRule
 
-`func NewServerProfilePendingChangeEval() *ServerProfilePendingChangeEval`
+`func NewCondAbstractAlarmRule() *CondAbstractAlarmRule`
 
-NewServerProfilePendingChangeEval instantiates a new ServerProfilePendingChangeEval object
+NewCondAbstractAlarmRule instantiates a new CondAbstractAlarmRule object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewServerProfilePendingChangeEvalWithDefaults
+### NewCondAbstractAlarmRuleWithDefaults
 
-`func NewServerProfilePendingChangeEvalWithDefaults() *ServerProfilePendingChangeEval`
+`func NewCondAbstractAlarmRuleWithDefaults() *CondAbstractAlarmRule`
 
-NewServerProfilePendingChangeEvalWithDefaults instantiates a new ServerProfilePendingChangeEval object
+NewCondAbstractAlarmRuleWithDefaults instantiates a new CondAbstractAlarmRule object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 

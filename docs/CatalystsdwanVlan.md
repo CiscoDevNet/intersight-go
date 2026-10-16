@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "catalystsdwan.Vlan"]
 **AdminState** | Pointer to **string** | The administrative state of the WAN Edge Device. * &#x60;Unknown&#x60; - Administrative state is unknown. * &#x60;Up&#x60; - Administrative state is up. * &#x60;Down&#x60; - Administrative state is down. | [optional] [readonly] [default to "Unknown"]
 **Dn** | Pointer to **string** | The distinguished name of the VLAN. | [optional] [readonly] 
-**SystemIp** | Pointer to **string** | The system IP address of the WAN Edge Device. | [optional] [readonly] 
+**LocalSystemIp** | Pointer to **string** | The local System IP address of the WAN Edge Device configured on the device. | [optional] [readonly] 
+**SystemIp** | Pointer to **string** | The internal system IP of the WAN Edge Device assigned by Catalyst SD-WAN Manager for internal communication. | [optional] [readonly] 
 **Uuid** | Pointer to **string** | The UUID of the WAN Edge Device to which this VLAN belongs. | [optional] [readonly] 
 **VlanId** | Pointer to **int64** | The VLAN number configured on the WAN Edge Device. | [optional] [readonly] 
 **VlanState** | Pointer to **string** | The state of the VLAN on the WAN Edge Device. * &#x60;Unknown&#x60; - VLAN state is unknown on the Catalyst SDWAN device. * &#x60;Active&#x60; - VLAN state is active on the Catalyst SDWAN device. * &#x60;Inactive&#x60; - VLAN state is inactive on the Catalyst SDWAN device. * &#x60;Suspended&#x60; - VLAN state is suspended on the Catalyst SDWAN device. | [optional] [readonly] [default to "Unknown"]
@@ -122,6 +123,31 @@ SetDn sets Dn field to given value.
 `func (o *CatalystsdwanVlan) HasDn() bool`
 
 HasDn returns a boolean if a field has been set.
+
+### GetLocalSystemIp
+
+`func (o *CatalystsdwanVlan) GetLocalSystemIp() string`
+
+GetLocalSystemIp returns the LocalSystemIp field if non-nil, zero value otherwise.
+
+### GetLocalSystemIpOk
+
+`func (o *CatalystsdwanVlan) GetLocalSystemIpOk() (*string, bool)`
+
+GetLocalSystemIpOk returns a tuple with the LocalSystemIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalSystemIp
+
+`func (o *CatalystsdwanVlan) SetLocalSystemIp(v string)`
+
+SetLocalSystemIp sets LocalSystemIp field to given value.
+
+### HasLocalSystemIp
+
+`func (o *CatalystsdwanVlan) HasLocalSystemIp() bool`
+
+HasLocalSystemIp returns a boolean if a field has been set.
 
 ### GetSystemIp
 

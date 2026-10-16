@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **DefaultVlanId** | Pointer to **int64** | Default or Native VLAN configured on the port. | [optional] [readonly] [default to 1]
 **Dn** | Pointer to **string** | The distinguished name of the physical port. | [optional] [readonly] 
 **FecEnabled** | Pointer to **bool** | Indicates if FEC is enabled on the physical port. | [optional] [readonly] [default to false]
+**LocalSystemIp** | Pointer to **string** | The System IP address of the WAN Edge Device configured on the device. | [optional] [readonly] 
 **MacAddress** | Pointer to **string** | MAC address of the physical port. | [optional] [readonly] 
 **Mode** | Pointer to **string** | Configured physical port mode. Value will be &#39;access&#39; or &#39;trunk&#39; when configured as a switch port; &#39;backplane&#39; for internal backplane ports and &#39;routed&#39; all other ports. * &#x60;Routed&#x60; - Port mode is routed. This mode will be set when switchport mode is disabled regardless of the port configuration. * &#x60;Access&#x60; - Port mode is access. This mode will be set when switchport mode is enabled and the port is configured as an access port. * &#x60;Trunk&#x60; - Port mode is trunk. This mode will be set when switchport mode is enabled and the port is configured as a trunk port. | [optional] [readonly] [default to "Routed"]
 **Mtu** | Pointer to **int64** | MTU configured on the physical port. | [optional] [readonly] 
@@ -22,7 +23,7 @@ Name | Type | Description | Notes
 **PortChannelName** | Pointer to **string** | Port channel name if the physical port is part of a port channel. | [optional] [readonly] 
 **PortName** | Pointer to **string** | Physical port name of the WAN Edge Device. | [optional] [readonly] 
 **PortType** | Pointer to **string** | Type of the physical port (e.g., Backplane and frontpanel). * &#x60;Front Panel&#x60; - The physical ports that are located on the front panel of Catalyst SDWAN devices. * &#x60;Backplane&#x60; - The internal backplane ports on Catalyst SDWAN devices. | [optional] [readonly] [default to "Front Panel"]
-**SystemIp** | Pointer to **string** | The IP address of the WAN Edge Device. | [optional] [readonly] 
+**SystemIp** | Pointer to **string** | The internal system IP of the WAN Edge Device assigned by Catalyst SD-WAN Manager for internal communication. | [optional] [readonly] 
 **Uuid** | Pointer to **string** | The UUID of the WAN Edge Device to which this physical port belongs. | [optional] [readonly] 
 **WanEdgeDevice** | Pointer to [**NullableCatalystsdwanWanEdgeDeviceRelationship**](CatalystsdwanWanEdgeDeviceRelationship.md) |  | [optional] 
 
@@ -259,6 +260,31 @@ SetFecEnabled sets FecEnabled field to given value.
 `func (o *CatalystsdwanPhysicalPort) HasFecEnabled() bool`
 
 HasFecEnabled returns a boolean if a field has been set.
+
+### GetLocalSystemIp
+
+`func (o *CatalystsdwanPhysicalPort) GetLocalSystemIp() string`
+
+GetLocalSystemIp returns the LocalSystemIp field if non-nil, zero value otherwise.
+
+### GetLocalSystemIpOk
+
+`func (o *CatalystsdwanPhysicalPort) GetLocalSystemIpOk() (*string, bool)`
+
+GetLocalSystemIpOk returns a tuple with the LocalSystemIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalSystemIp
+
+`func (o *CatalystsdwanPhysicalPort) SetLocalSystemIp(v string)`
+
+SetLocalSystemIp sets LocalSystemIp field to given value.
+
+### HasLocalSystemIp
+
+`func (o *CatalystsdwanPhysicalPort) HasLocalSystemIp() bool`
+
+HasLocalSystemIp returns a boolean if a field has been set.
 
 ### GetMacAddress
 

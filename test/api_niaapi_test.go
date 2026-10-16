@@ -361,6 +361,32 @@ func Test_intersight_NiaapiApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test NiaapiApiService GetNiaapiLegacyMetadataFileDownloadByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.NiaapiApi.GetNiaapiLegacyMetadataFileDownloadByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiaapiApiService GetNiaapiLegacyMetadataFileDownloadList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.NiaapiApi.GetNiaapiLegacyMetadataFileDownloadList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test NiaapiApiService GetNiaapiNdEncryptedFileDownloadByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
