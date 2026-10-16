@@ -1687,6 +1687,58 @@ func Test_intersight_NiatelemetryApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test NiatelemetryApiService GetNiatelemetryNeighborByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryNeighborByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiatelemetryApiService GetNiatelemetryNeighborList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryNeighborList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiatelemetryApiService GetNiatelemetryNetworkByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryNetworkByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiatelemetryApiService GetNiatelemetryNetworkList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryNetworkList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test NiatelemetryApiService GetNiatelemetryNexusCloudAccountByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2096,6 +2148,32 @@ func Test_intersight_NiatelemetryApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryPodTimeServerPoliciesList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiatelemetryApiService GetNiatelemetryRouteByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryRouteByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test NiatelemetryApiService GetNiatelemetryRouteList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.NiatelemetryApi.GetNiatelemetryRouteList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

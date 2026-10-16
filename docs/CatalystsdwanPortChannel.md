@@ -10,12 +10,13 @@ Name | Type | Description | Notes
 **AllowedVlanIds** | Pointer to **string** | The allowed VLAN IDs configured on the WAN Edge Device port channel. | [optional] [readonly] 
 **DefaultVlanId** | Pointer to **int64** | The default VLAN ID configured on the WAN Edge Device port channel. | [optional] [readonly] [default to 1]
 **Dn** | Pointer to **string** | The distinguished name of the port channel. | [optional] [readonly] 
+**LocalSystemIp** | Pointer to **string** | The system IP address of the WAN Edge Device configured on the device. | [optional] [readonly] 
 **Mode** | Pointer to **string** | Portchannel mode on WAN Edge Device will be &#39;access&#39; or &#39;trunk&#39; when switchport mode is enabled; otherwise, the mode is &#39;routed&#39;. * &#x60;Routed&#x60; - Port mode is routed. This mode will be set when switchport mode is disabled regardless of the port configuration. * &#x60;Access&#x60; - Port mode is access. This mode will be set when switchport mode is enabled and the port is configured as an access port. * &#x60;Trunk&#x60; - Port mode is trunk. This mode will be set when switchport mode is enabled and the port is configured as a trunk port. | [optional] [readonly] [default to "Routed"]
 **Mtu** | Pointer to **int64** | The MTU of the WAN Edge Device port channel. | [optional] [readonly] 
 **OperSpeed** | Pointer to **string** | The operational speed (in Mbps) of the WAN Edge Device port channel. | [optional] [readonly] 
 **OperState** | Pointer to **string** | The operational state of the WAN Edge Device port channel. * &#x60;Unknown&#x60; - Operational state of physical port or port channel or interface is unknown. * &#x60;Up&#x60; - Operational state of physical port or port channel or interface is up. * &#x60;Down&#x60; - Operational state of physical port or port channel or interface is down. | [optional] [readonly] [default to "Unknown"]
 **PortChannelName** | Pointer to **string** | Port channel name of the WAN Edge Device. | [optional] [readonly] 
-**SystemIp** | Pointer to **string** | The IP address of the WAN Edge Device. | [optional] [readonly] 
+**SystemIp** | Pointer to **string** | The internal system IP of the WAN Edge Device assigned by Catalyst SD-WAN Manager for internal communication. | [optional] [readonly] 
 **Uuid** | Pointer to **string** | The UUID of the WAN Edge Device to which this port channel belongs. | [optional] [readonly] 
 **WanEdgeDevice** | Pointer to [**NullableCatalystsdwanWanEdgeDeviceRelationship**](CatalystsdwanWanEdgeDeviceRelationship.md) |  | [optional] 
 
@@ -177,6 +178,31 @@ SetDn sets Dn field to given value.
 `func (o *CatalystsdwanPortChannel) HasDn() bool`
 
 HasDn returns a boolean if a field has been set.
+
+### GetLocalSystemIp
+
+`func (o *CatalystsdwanPortChannel) GetLocalSystemIp() string`
+
+GetLocalSystemIp returns the LocalSystemIp field if non-nil, zero value otherwise.
+
+### GetLocalSystemIpOk
+
+`func (o *CatalystsdwanPortChannel) GetLocalSystemIpOk() (*string, bool)`
+
+GetLocalSystemIpOk returns a tuple with the LocalSystemIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalSystemIp
+
+`func (o *CatalystsdwanPortChannel) SetLocalSystemIp(v string)`
+
+SetLocalSystemIp sets LocalSystemIp field to given value.
+
+### HasLocalSystemIp
+
+`func (o *CatalystsdwanPortChannel) HasLocalSystemIp() bool`
+
+HasLocalSystemIp returns a boolean if a field has been set.
 
 ### GetMode
 

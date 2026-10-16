@@ -12,10 +12,11 @@ Name | Type | Description | Notes
 **InterfaceType** | Pointer to **string** | The type of the interface (Portchannel, Sub-interfaces, tunnels, SVIs, Routed ports). * &#x60;Unknown&#x60; - Interface type is unknown. * &#x60;Loopback&#x60; - Interface type is loopback. * &#x60;Port Channel&#x60; - Interface type is port channel. * &#x60;Sub-Interface&#x60; - Interface type is sub-interface. * &#x60;Tunnel&#x60; - Interface type is tunnel. * &#x60;SVI&#x60; - Interface type is SVI (Switched Virtual Interface). * &#x60;Routed Port&#x60; - Interface type is routed port. | [optional] [readonly] [default to "Unknown"]
 **IpAddress** | Pointer to **string** | The IP address assigned to the WAN Edge Device interface. | [optional] [readonly] 
 **IsNativeVlan** | Pointer to **bool** | Indicates whether the sub-interface&#39;s VLAN is configured as a native VLAN. | [optional] [readonly] 
+**LocalSystemIp** | Pointer to **string** | The local System IP address of the WAN Edge Device configured on the device. | [optional] [readonly] 
 **MacAddress** | Pointer to **string** | The MAC address of the interface. | [optional] [readonly] 
 **OperState** | Pointer to **string** | The operational state of the WAN Edge Device interface. * &#x60;Unknown&#x60; - Operational state of physical port or port channel or interface is unknown. * &#x60;Up&#x60; - Operational state of physical port or port channel or interface is up. * &#x60;Down&#x60; - Operational state of physical port or port channel or interface is down. | [optional] [readonly] [default to "Unknown"]
 **Subnet** | Pointer to **string** | The subnet configured on the WAN Edge Device interface. | [optional] [readonly] 
-**SystemIp** | Pointer to **string** | The system IP address of the WAN Edge Device. | [optional] [readonly] 
+**SystemIp** | Pointer to **string** | The internal system IP of the WAN Edge Device assigned by Catalyst SD-WAN Manager for internal communication. | [optional] [readonly] 
 **Uuid** | Pointer to **string** | The UUID of the WAN Edge Device to which this interface belongs. | [optional] [readonly] 
 **VlanId** | Pointer to **int64** | The VLAN ID configured on the sub-interface. | [optional] [readonly] [default to 1]
 **VpnId** | Pointer to **int64** | The VPN ID associated with this interface. | [optional] [readonly] 
@@ -229,6 +230,31 @@ SetIsNativeVlan sets IsNativeVlan field to given value.
 `func (o *CatalystsdwanInterface) HasIsNativeVlan() bool`
 
 HasIsNativeVlan returns a boolean if a field has been set.
+
+### GetLocalSystemIp
+
+`func (o *CatalystsdwanInterface) GetLocalSystemIp() string`
+
+GetLocalSystemIp returns the LocalSystemIp field if non-nil, zero value otherwise.
+
+### GetLocalSystemIpOk
+
+`func (o *CatalystsdwanInterface) GetLocalSystemIpOk() (*string, bool)`
+
+GetLocalSystemIpOk returns a tuple with the LocalSystemIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalSystemIp
+
+`func (o *CatalystsdwanInterface) SetLocalSystemIp(v string)`
+
+SetLocalSystemIp sets LocalSystemIp field to given value.
+
+### HasLocalSystemIp
+
+`func (o *CatalystsdwanInterface) HasLocalSystemIp() bool`
+
+HasLocalSystemIp returns a boolean if a field has been set.
 
 ### GetMacAddress
 

@@ -347,6 +347,18 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService CreateFabricRemoteSpanExporter", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.CreateFabricRemoteSpanExporter(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService CreateFabricSanPinGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -388,6 +400,18 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.FabricApi.CreateFabricSpanDestEthPort(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService CreateFabricSpanDestRemote", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.CreateFabricSpanDestRemote(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -913,6 +937,19 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService DeleteFabricRemoteSpanExporter", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.FabricApi.DeleteFabricRemoteSpanExporter(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService DeleteFabricSanPinGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -959,6 +996,19 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		httpRes, err := apiClient.FabricApi.DeleteFabricSpanDestEthPort(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService DeleteFabricSpanDestRemote", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		httpRes, err := apiClient.FabricApi.DeleteFabricSpanDestRemote(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -2018,6 +2068,32 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService GetFabricRemoteSpanExporterByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricRemoteSpanExporterByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricRemoteSpanExporterList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricRemoteSpanExporterList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService GetFabricSanPinGroupByMoid", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2115,6 +2191,32 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.FabricApi.GetFabricSpanDestEthPortList(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricSpanDestRemoteByMoid", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSpanDestRemoteByMoid(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService GetFabricSpanDestRemoteList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.FabricApi.GetFabricSpanDestRemoteList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2968,6 +3070,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService PatchFabricRemoteSpanExporter", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.PatchFabricRemoteSpanExporter(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService PatchFabricSanPinGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -3017,6 +3133,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.FabricApi.PatchFabricSpanDestEthPort(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService PatchFabricSpanDestRemote", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.PatchFabricSpanDestRemote(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -3556,6 +3686,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test FabricApiService UpdateFabricRemoteSpanExporter", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.UpdateFabricRemoteSpanExporter(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test FabricApiService UpdateFabricSanPinGroup", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -3605,6 +3749,20 @@ func Test_intersight_FabricApiService(t *testing.T) {
 		var moid string
 
 		resp, httpRes, err := apiClient.FabricApi.UpdateFabricSpanDestEthPort(context.Background(), moid).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test FabricApiService UpdateFabricSpanDestRemote", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var moid string
+
+		resp, httpRes, err := apiClient.FabricApi.UpdateFabricSpanDestRemote(context.Background(), moid).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

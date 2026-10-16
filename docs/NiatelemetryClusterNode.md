@@ -8,14 +8,17 @@ Name | Type | Description | Notes
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "niatelemetry.ClusterNode"]
 **BootTime** | Pointer to **string** | The boot time of the node in the cluster. | [optional] [readonly] 
 **ClusterName** | Pointer to **string** | The name of the cluster this node belongs to. | [optional] [readonly] 
+**CpuUtilization** | Pointer to **float32** | Average CPU utilization for the node in the cluster. | [optional] [readonly] 
 **FirmwareVersion** | Pointer to **string** | The firmware version of the node in the cluster. | [optional] [readonly] 
 **ManagementIp** | Pointer to **string** | The management IP address of the node in the cluster. | [optional] [readonly] 
+**MemoryUtilization** | Pointer to **float32** | Average memory utilization for the node in the cluster. | [optional] [readonly] 
 **Model** | Pointer to **string** | The model of the node in the cluster. | [optional] [readonly] 
 **Name** | Pointer to **string** | Returns the name of the node. | [optional] [readonly] 
 **PlatformType** | Pointer to **string** | The platform type of the node in the cluster. | [optional] [readonly] 
 **Role** | Pointer to **string** | Role of the node in the cluster. | [optional] [readonly] 
 **SerialNumber** | Pointer to **string** | Serial number of the node in the cluster. | [optional] [readonly] 
 **Status** | Pointer to **string** | Status of the node in the cluster. | [optional] [readonly] 
+**StorageUtilization** | Pointer to **float32** | Average storage utilization for the node in the cluster. | [optional] [readonly] 
 **Cluster** | Pointer to [**NullableNiatelemetryClusterRelationship**](NiatelemetryClusterRelationship.md) |  | [optional] 
 
 ## Methods
@@ -127,6 +130,31 @@ SetClusterName sets ClusterName field to given value.
 
 HasClusterName returns a boolean if a field has been set.
 
+### GetCpuUtilization
+
+`func (o *NiatelemetryClusterNode) GetCpuUtilization() float32`
+
+GetCpuUtilization returns the CpuUtilization field if non-nil, zero value otherwise.
+
+### GetCpuUtilizationOk
+
+`func (o *NiatelemetryClusterNode) GetCpuUtilizationOk() (*float32, bool)`
+
+GetCpuUtilizationOk returns a tuple with the CpuUtilization field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCpuUtilization
+
+`func (o *NiatelemetryClusterNode) SetCpuUtilization(v float32)`
+
+SetCpuUtilization sets CpuUtilization field to given value.
+
+### HasCpuUtilization
+
+`func (o *NiatelemetryClusterNode) HasCpuUtilization() bool`
+
+HasCpuUtilization returns a boolean if a field has been set.
+
 ### GetFirmwareVersion
 
 `func (o *NiatelemetryClusterNode) GetFirmwareVersion() string`
@@ -176,6 +204,31 @@ SetManagementIp sets ManagementIp field to given value.
 `func (o *NiatelemetryClusterNode) HasManagementIp() bool`
 
 HasManagementIp returns a boolean if a field has been set.
+
+### GetMemoryUtilization
+
+`func (o *NiatelemetryClusterNode) GetMemoryUtilization() float32`
+
+GetMemoryUtilization returns the MemoryUtilization field if non-nil, zero value otherwise.
+
+### GetMemoryUtilizationOk
+
+`func (o *NiatelemetryClusterNode) GetMemoryUtilizationOk() (*float32, bool)`
+
+GetMemoryUtilizationOk returns a tuple with the MemoryUtilization field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemoryUtilization
+
+`func (o *NiatelemetryClusterNode) SetMemoryUtilization(v float32)`
+
+SetMemoryUtilization sets MemoryUtilization field to given value.
+
+### HasMemoryUtilization
+
+`func (o *NiatelemetryClusterNode) HasMemoryUtilization() bool`
+
+HasMemoryUtilization returns a boolean if a field has been set.
 
 ### GetModel
 
@@ -326,6 +379,31 @@ SetStatus sets Status field to given value.
 `func (o *NiatelemetryClusterNode) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetStorageUtilization
+
+`func (o *NiatelemetryClusterNode) GetStorageUtilization() float32`
+
+GetStorageUtilization returns the StorageUtilization field if non-nil, zero value otherwise.
+
+### GetStorageUtilizationOk
+
+`func (o *NiatelemetryClusterNode) GetStorageUtilizationOk() (*float32, bool)`
+
+GetStorageUtilizationOk returns a tuple with the StorageUtilization field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStorageUtilization
+
+`func (o *NiatelemetryClusterNode) SetStorageUtilization(v float32)`
+
+SetStorageUtilization sets StorageUtilization field to given value.
+
+### HasStorageUtilization
+
+`func (o *NiatelemetryClusterNode) HasStorageUtilization() bool`
+
+HasStorageUtilization returns a boolean if a field has been set.
 
 ### GetCluster
 

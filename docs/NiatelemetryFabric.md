@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ClassId** | **string** | The fully-qualified name of the instantiated, concrete type. This property is used as a discriminator to identify the type of the payload when marshaling and unmarshaling data. | [default to "niatelemetry.Fabric"]
 **ObjectType** | **string** | The fully-qualified name of the instantiated, concrete type. The value should be the same as the &#39;ClassId&#39; property. | [default to "niatelemetry.Fabric"]
 **Advisories** | Pointer to [**[]NiatelemetryAdvisories**](NiatelemetryAdvisories.md) |  | [optional] 
+**FabricType** | Pointer to **string** | The management type reported for the fabric. | [optional] [readonly] 
 **LicenseTier** | Pointer to **string** | The license tier of the fabric. | [optional] [readonly] 
 **Name** | Pointer to **string** | Returns the name of the fabric. | [optional] [readonly] 
 **NetworkCount** | Pointer to **int64** | The network count of the fabric. | [optional] [readonly] 
@@ -114,6 +115,31 @@ HasAdvisories returns a boolean if a field has been set.
 `func (o *NiatelemetryFabric) UnsetAdvisories()`
 
 UnsetAdvisories ensures that no value is present for Advisories, not even an explicit nil
+### GetFabricType
+
+`func (o *NiatelemetryFabric) GetFabricType() string`
+
+GetFabricType returns the FabricType field if non-nil, zero value otherwise.
+
+### GetFabricTypeOk
+
+`func (o *NiatelemetryFabric) GetFabricTypeOk() (*string, bool)`
+
+GetFabricTypeOk returns a tuple with the FabricType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFabricType
+
+`func (o *NiatelemetryFabric) SetFabricType(v string)`
+
+SetFabricType sets FabricType field to given value.
+
+### HasFabricType
+
+`func (o *NiatelemetryFabric) HasFabricType() bool`
+
+HasFabricType returns a boolean if a field has been set.
+
 ### GetLicenseTier
 
 `func (o *NiatelemetryFabric) GetLicenseTier() string`
