@@ -1,4 +1,4 @@
-# IamAppCredentials
+# BlueprintOdataDependencyQualifier
 
 ## Properties
 
@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewIamAppCredentials
+### NewBlueprintOdataDependencyQualifier
 
-`func NewIamAppCredentials() *IamAppCredentials`
+`func NewBlueprintOdataDependencyQualifier() *BlueprintOdataDependencyQualifier`
 
-NewIamAppCredentials instantiates a new IamAppCredentials object
+NewBlueprintOdataDependencyQualifier instantiates a new BlueprintOdataDependencyQualifier object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewIamAppCredentialsWithDefaults
+### NewBlueprintOdataDependencyQualifierWithDefaults
 
-`func NewIamAppCredentialsWithDefaults() *IamAppCredentials`
+`func NewBlueprintOdataDependencyQualifierWithDefaults() *BlueprintOdataDependencyQualifier`
 
-NewIamAppCredentialsWithDefaults instantiates a new IamAppCredentials object
+NewBlueprintOdataDependencyQualifierWithDefaults instantiates a new BlueprintOdataDependencyQualifier object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
