@@ -1,4 +1,4 @@
-# IamAbstractClientApplicationRelationship
+# WorkloadDeferredCleanupInputRelationship
 
 ## Properties
 
@@ -12,135 +12,135 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewIamAbstractClientApplicationRelationship
+### NewWorkloadDeferredCleanupInputRelationship
 
-`func NewIamAbstractClientApplicationRelationship(classId string, objectType string, ) *IamAbstractClientApplicationRelationship`
+`func NewWorkloadDeferredCleanupInputRelationship(classId string, objectType string, ) *WorkloadDeferredCleanupInputRelationship`
 
-NewIamAbstractClientApplicationRelationship instantiates a new IamAbstractClientApplicationRelationship object
+NewWorkloadDeferredCleanupInputRelationship instantiates a new WorkloadDeferredCleanupInputRelationship object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewIamAbstractClientApplicationRelationshipWithDefaults
+### NewWorkloadDeferredCleanupInputRelationshipWithDefaults
 
-`func NewIamAbstractClientApplicationRelationshipWithDefaults() *IamAbstractClientApplicationRelationship`
+`func NewWorkloadDeferredCleanupInputRelationshipWithDefaults() *WorkloadDeferredCleanupInputRelationship`
 
-NewIamAbstractClientApplicationRelationshipWithDefaults instantiates a new IamAbstractClientApplicationRelationship object
+NewWorkloadDeferredCleanupInputRelationshipWithDefaults instantiates a new WorkloadDeferredCleanupInputRelationship object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetClassId
 
-`func (o *IamAbstractClientApplicationRelationship) GetClassId() string`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetClassId() string`
 
 GetClassId returns the ClassId field if non-nil, zero value otherwise.
 
 ### GetClassIdOk
 
-`func (o *IamAbstractClientApplicationRelationship) GetClassIdOk() (*string, bool)`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetClassIdOk() (*string, bool)`
 
 GetClassIdOk returns a tuple with the ClassId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetClassId
 
-`func (o *IamAbstractClientApplicationRelationship) SetClassId(v string)`
+`func (o *WorkloadDeferredCleanupInputRelationship) SetClassId(v string)`
 
 SetClassId sets ClassId field to given value.
 
 
 ### GetObjectType
 
-`func (o *IamAbstractClientApplicationRelationship) GetObjectType() string`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetObjectType() string`
 
 GetObjectType returns the ObjectType field if non-nil, zero value otherwise.
 
 ### GetObjectTypeOk
 
-`func (o *IamAbstractClientApplicationRelationship) GetObjectTypeOk() (*string, bool)`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetObjectTypeOk() (*string, bool)`
 
 GetObjectTypeOk returns a tuple with the ObjectType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetObjectType
 
-`func (o *IamAbstractClientApplicationRelationship) SetObjectType(v string)`
+`func (o *WorkloadDeferredCleanupInputRelationship) SetObjectType(v string)`
 
 SetObjectType sets ObjectType field to given value.
 
 
 ### GetMoid
 
-`func (o *IamAbstractClientApplicationRelationship) GetMoid() string`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetMoid() string`
 
 GetMoid returns the Moid field if non-nil, zero value otherwise.
 
 ### GetMoidOk
 
-`func (o *IamAbstractClientApplicationRelationship) GetMoidOk() (*string, bool)`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetMoidOk() (*string, bool)`
 
 GetMoidOk returns a tuple with the Moid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMoid
 
-`func (o *IamAbstractClientApplicationRelationship) SetMoid(v string)`
+`func (o *WorkloadDeferredCleanupInputRelationship) SetMoid(v string)`
 
 SetMoid sets Moid field to given value.
 
 ### HasMoid
 
-`func (o *IamAbstractClientApplicationRelationship) HasMoid() bool`
+`func (o *WorkloadDeferredCleanupInputRelationship) HasMoid() bool`
 
 HasMoid returns a boolean if a field has been set.
 
 ### GetSelector
 
-`func (o *IamAbstractClientApplicationRelationship) GetSelector() string`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetSelector() string`
 
 GetSelector returns the Selector field if non-nil, zero value otherwise.
 
 ### GetSelectorOk
 
-`func (o *IamAbstractClientApplicationRelationship) GetSelectorOk() (*string, bool)`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetSelectorOk() (*string, bool)`
 
 GetSelectorOk returns a tuple with the Selector field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelector
 
-`func (o *IamAbstractClientApplicationRelationship) SetSelector(v string)`
+`func (o *WorkloadDeferredCleanupInputRelationship) SetSelector(v string)`
 
 SetSelector sets Selector field to given value.
 
 ### HasSelector
 
-`func (o *IamAbstractClientApplicationRelationship) HasSelector() bool`
+`func (o *WorkloadDeferredCleanupInputRelationship) HasSelector() bool`
 
 HasSelector returns a boolean if a field has been set.
 
 ### GetLink
 
-`func (o *IamAbstractClientApplicationRelationship) GetLink() string`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetLink() string`
 
 GetLink returns the Link field if non-nil, zero value otherwise.
 
 ### GetLinkOk
 
-`func (o *IamAbstractClientApplicationRelationship) GetLinkOk() (*string, bool)`
+`func (o *WorkloadDeferredCleanupInputRelationship) GetLinkOk() (*string, bool)`
 
 GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLink
 
-`func (o *IamAbstractClientApplicationRelationship) SetLink(v string)`
+`func (o *WorkloadDeferredCleanupInputRelationship) SetLink(v string)`
 
 SetLink sets Link field to given value.
 
 ### HasLink
 
-`func (o *IamAbstractClientApplicationRelationship) HasLink() bool`
+`func (o *WorkloadDeferredCleanupInputRelationship) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
 
